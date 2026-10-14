@@ -1,0 +1,13 @@
+{
+  "functions": [{"source":"cms-recovery-api","codebase":"cms-recovery-local","runtime":"nodejs22","ignore":["node_modules",".git","*.log"]}],
+  "emulators": {
+    "auth":{"host":"127.0.0.1","port":9098},
+    "functions":{"host":"127.0.0.1","port":5002},
+    "hub":{"host":"127.0.0.1","port":4401},
+    "logging":{"host":"127.0.0.1","port":4501},
+    "eventarc":{"host":"127.0.0.1","port":9298},
+    "tasks":{"host":"127.0.0.1","port":9498},
+    "ui":{"enabled":false},
+    "singleProjectMode":true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "provenance": "Immutable independently reviewed five-family golden subset; synthetic declaration, no authority/native proof",
+  "metadata": {
+    "name": "Golden Tiếng Việt 😀",
+    "rights": {
+      "basis": "Synthetic submitter declaration",
+      "evidence": {
+        "text": "Synthetic evidence G01\nDòng hai",
+        "sourceRefs": []
+      }
+    }
+  },
+  "actors": {
+    "uploaderUid": "uploader-g01",
+    "rightsEvidenceSubmittedBy": "evidence-g01"
+  },
+  "allowlist": {
+    "schemaVersion": 1,
+    "allowedSourceRefs": []
+  },
+  "expected": {
+    "metadataDigest": "e147ecb13d240ac15c1d7ad3d744a051fe8fc4da088402b7d1e645b365e40d9c",
+    "evidenceSha256": "aa3e43a7f4636521b7e43621868adc41de897ba073db63b13f68f324d5bfa935"
+  },
+  "referenceCase": {
+    "allowlist": {
+      "schemaVersion": 1,
+      "allowedSourceRefs": [
+        "rights-ref-g01",
+        "rights-ref-g02"
+      ]
+    },
+    "sourceRefs": [
+      "rights-ref-g01",
+      "rights-ref-g02"
+    ]
+  }
+}

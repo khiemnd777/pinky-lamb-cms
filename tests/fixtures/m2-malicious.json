@@ -1,0 +1,7 @@
+{
+  "headingText": "<script>globalThis.pwned=1</script>",
+  "copy": "  <img src=x onerror=alert(1)> & </script><script>alert('x')</script> \" \\ 😀  ",
+  "alt": "\" onerror=\"alert(1)\" <svg onload=alert(1)>",
+  "multiline": "Dòng một\nDòng hai\u2028Dòng ba\u2029Kết thúc",
+  "escapedUnit": "\ud800"
+}

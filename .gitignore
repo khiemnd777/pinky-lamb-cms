@@ -1,0 +1,13 @@
+node_modules/
+.local/
+.preview-output/
+admin-dist/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.p12
+.DS_Store

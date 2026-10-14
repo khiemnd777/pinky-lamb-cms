@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "tupleSha256": "e970d5dd6fb9c1dc55ed7bfbd99191f7a024c46c52769dc2aa4674ccfd356c8d",
+  "totalArchiveBytes": 4069885,
+  "rows": [
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/cairo-1.18.4-he0f2337_1.conda",
+      "filename": "cairo-1.18.4-he0f2337_1.conda",
+      "build": "he0f2337_1",
+      "subdir": "osx-arm64",
+      "bytes": 900035,
+      "sha256": "cde9b79ee206fe3ba6ca2dc5906593fb7a1350515f85b2a1135a4ce8ec1539e3",
+      "license": "LGPL-2.1-only or MPL-1.1"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/fontconfig-2.18.0-h2b252f5_0.conda",
+      "filename": "fontconfig-2.18.0-h2b252f5_0.conda",
+      "build": "h2b252f5_0",
+      "subdir": "osx-arm64",
+      "bytes": 247593,
+      "sha256": "938d18fca474d5a7ed716b88dbc4f962f9a44ac9f2fe29393d7d9d04ac6cbf15",
+      "license": "MIT"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/lcms2-2.19.1-hdfa7624_0.conda",
+      "filename": "lcms2-2.19.1-hdfa7624_0.conda",
+      "build": "hdfa7624_0",
+      "subdir": "osx-arm64",
+      "bytes": 212998,
+      "sha256": "d589ff5294e42576563b22bdea0860cb80b0cbe0f3852836eddaadedf6eec4ef",
+      "license": "MIT"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libexpat-2.8.1-hf6b4638_0.conda",
+      "filename": "libexpat-2.8.1-hf6b4638_0.conda",
+      "build": "hf6b4638_0",
+      "subdir": "osx-arm64",
+      "bytes": 69110,
+      "sha256": "3133fb6bfa871288b92c8b8752696686a841bf4ffe035aa3038033c9e15b738e",
+      "license": "MIT"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libfreetype6-2.14.3-hdfa99f5_0.conda",
+      "filename": "libfreetype6-2.14.3-hdfa99f5_0.conda",
+      "build": "hdfa99f5_0",
+      "subdir": "osx-arm64",
+      "bytes": 338085,
+      "sha256": "ff764608e1f2839e95e2cf9b243681475f8778c36af7a42b3f78f476fdbb1dd3",
+      "license": "GPL-2.0-only OR FTL"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libiconv-1.18-h23cfdf5_2.conda",
+      "filename": "libiconv-1.18-h23cfdf5_2.conda",
+      "build": "h23cfdf5_2",
+      "subdir": "osx-arm64",
+      "bytes": 750379,
+      "sha256": "de0336e800b2af9a40bdd694b03870ac4a848161b35c8a2325704f123f185f03",
+      "license": "LGPL-2.1-only"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libintl-0.25.1-h493aca8_0.conda",
+      "filename": "libintl-0.25.1-h493aca8_0.conda",
+      "build": "h493aca8_0",
+      "subdir": "osx-arm64",
+      "bytes": 90957,
+      "sha256": "99d2cebcd8f84961b86784451b010f5f0a795ed1c08f1e7c76fbb3c22abf021a",
+      "license": "LGPL-2.1-or-later"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libjpeg-turbo-3.1.4.1-h84a0fba_0.conda",
+      "filename": "libjpeg-turbo-3.1.4.1-h84a0fba_0.conda",
+      "build": "h84a0fba_0",
+      "subdir": "osx-arm64",
+      "bytes": 555681,
+      "sha256": "17e035ae6a520ff6a6bb5dd93a4a7c3895891f4f9743bcb8c6ef607445a31cd0",
+      "license": "IJG AND BSD-3-Clause AND Zlib"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libpng-1.6.58-h132b30e_0.conda",
+      "filename": "libpng-1.6.58-h132b30e_0.conda",
+      "build": "h132b30e_0",
+      "subdir": "osx-arm64",
+      "bytes": 289546,
+      "sha256": "66eae34546df1f098a67064970c92aa14ae7a7505091889e00468294d2882c36",
+      "license": "zlib-acknowledgement"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libzlib-1.3.2-h8088a28_2.conda",
+      "filename": "libzlib-1.3.2-h8088a28_2.conda",
+      "build": "h8088a28_2",
+      "subdir": "osx-arm64",
+      "bytes": 47759,
+      "sha256": "361415a698514b19a852f5d1123c5da746d4642139904156ddfca7c922d23a05",
+      "license": "Zlib"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/openjpeg-2.5.4-hd9e9057_0.conda",
+      "filename": "openjpeg-2.5.4-hd9e9057_0.conda",
+      "build": "hd9e9057_0",
+      "subdir": "osx-arm64",
+      "bytes": 319697,
+      "sha256": "60aca8b9f94d06b852b296c276b3cf0efba5a6eb9f25feb8708570d3a74f00e4",
+      "license": "BSD-2-Clause"
+    },
+    {
+      "url": "https://conda.anaconda.org/conda-forge/osx-arm64/pixman-0.46.4-h81086ad_1.conda",
+      "filename": "pixman-0.46.4-h81086ad_1.conda",
+      "build": "h81086ad_1",
+      "subdir": "osx-arm64",
+      "bytes": 248045,
+      "sha256": "29c9b08a9b8b7810f9d4f159aecfd205fce051633169040005c0b7efad4bc718",
+      "license": "MIT"
+    }
+  ],
+  "metadataProof": [
+    {
+      "filename": "cairo-1.18.4-he0f2337_1.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/cairo-1.18.4-he0f2337_1.json",
+      "bytes": 18101,
+      "sha256": "667fbbfcd27fe6c50594a749a97dab5b7cf64e224f1ee10dac0975816f0c3fb0"
+    },
+    {
+      "filename": "fontconfig-2.18.0-h2b252f5_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/fontconfig-2.18.0-h2b252f5_0.json",
+      "bytes": 37770,
+      "sha256": "6c34e6552a9e7f0a8a547c8ae9fdb4ea212efb774cb7787631f05c5ea7f92d55"
+    },
+    {
+      "filename": "lcms2-2.19.1-hdfa7624_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/lcms2-2.19.1-hdfa7624_0.json",
+      "bytes": 6870,
+      "sha256": "398e8439f997e5c6651d7b0f8fca70877e23012c693046ac676752c82941c761"
+    },
+    {
+      "filename": "libexpat-2.8.1-hf6b4638_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libexpat-2.8.1-hf6b4638_0.json",
+      "bytes": 1894,
+      "sha256": "29f59f1d4c448dc4022af146dbf0cbe13ef83045cf4de650d8a4644200798aa9"
+    },
+    {
+      "filename": "libfreetype6-2.14.3-hdfa99f5_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libfreetype6-2.14.3-hdfa99f5_0.json",
+      "bytes": 1687,
+      "sha256": "6957480f9273e7b5b9f8e52a835da2b33f9eaabeff4ed68d1b78f95a976df9ca"
+    },
+    {
+      "filename": "libiconv-1.18-h23cfdf5_2.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libiconv-1.18-h23cfdf5_2.json",
+      "bytes": 4405,
+      "sha256": "e6588310556c373f5eec18ff42fdd45849d4b7600225732e6b8aa475966b4850"
+    },
+    {
+      "filename": "libintl-0.25.1-h493aca8_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libintl-0.25.1-h493aca8_0.json",
+      "bytes": 1555,
+      "sha256": "815a77d8c9c34296afccc752ead1113fb9ec7a48c38585cec41b2f7540cec0ce"
+    },
+    {
+      "filename": "libjpeg-turbo-3.1.4.1-h84a0fba_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libjpeg-turbo-3.1.4.1-h84a0fba_0.json",
+      "bytes": 17277,
+      "sha256": "d0ef966628332f55921bd698b9bef56ff96afb08d3e94fe53c995d04960a699f"
+    },
+    {
+      "filename": "libpng-1.6.58-h132b30e_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libpng-1.6.58-h132b30e_0.json",
+      "bytes": 8120,
+      "sha256": "a470b442a89d80dc60163b0234daa918e6953329f5910812f59e1c27cc973079"
+    },
+    {
+      "filename": "libzlib-1.3.2-h8088a28_2.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/libzlib-1.3.2-h8088a28_2.json",
+      "bytes": 1874,
+      "sha256": "74823eb1abc0372e1c0e4292cea180806d5bc4d2532830fe88a2429e7721f828"
+    },
+    {
+      "filename": "openjpeg-2.5.4-hd9e9057_0.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/openjpeg-2.5.4-hd9e9057_0.json",
+      "bytes": 6764,
+      "sha256": "f22fa732fc2c9e752893882434ccac26b073093984bd972f98b0f4115781027e"
+    },
+    {
+      "filename": "pixman-0.46.4-h81086ad_1.conda",
+      "path": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/conda-meta/pixman-0.46.4-h81086ad_1.json",
+      "bytes": 3416,
+      "sha256": "86cb89f1a8daa38f0d1ce99de9f426e623cd50de0f628906ff59f5142db1079b"
+    }
+  ],
+  "inventorySha256": "d469094e92e95ea6f25ba07fa350dc10be123935692122247a43da8a578127ab",
+  "popplerSource": {
+    "bytes": 2051484,
+    "sha256": "6792cb7c69205007ad87d2e936cecc5b3a31fac29ab54ffc3175fdb6b2a6ce35",
+    "path": ".local/cache/m3/pdf-tools/01Pa-setup/reference-poppler-26.10.0.tar.xz",
+    "url": "https://poppler.freedesktop.org/poppler-26.10.0.tar.xz",
+    "publisherSignature": "NOT_VERIFIED"
+  },
+  "configurationSha256": "8b34107b74526e9d888e93c0f59ef645e7306c91052a13b2295b6bdd628d21fe"
+}

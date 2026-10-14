@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 2,
+  "locale": "vi-VN",
+  "hero": {
+    "kind": "HERO",
+    "variant": "hero-split",
+    "heading": {
+      "lines": [
+        [
+          {
+            "text": "Big ideas."
+          }
+        ],
+        [
+          {
+            "text": "Lovely "
+          },
+          {
+            "text": "impact.",
+            "emphasis": "ACCENT"
+          }
+        ]
+      ]
+    },
+    "eyebrow": "INDEPENDENT MINDS. MEMORABLE EXPERIENCES.",
+    "description": [
+      {
+        "text": "Từ ý tưởng thương hiệu đến phim, truyền thông và sự kiện. Chúng tôi biến sáng tạo thành những trải nghiệm đáng nhớ — với một chút "
+      },
+      {
+        "text": "Pinky",
+        "emphasis": "STRONG"
+      },
+      {
+        "text": "."
+      }
+    ],
+    "primaryAction": {
+      "kind": "SECTION",
+      "sectionId": "work",
+      "label": "Khám phá dự án"
+    },
+    "secondaryAction": {
+      "kind": "SHOWREEL",
+      "label": "Xem showreel"
+    },
+    "footnote": "BASED IN VIETNAM. CREATING FOR THE WORLD.",
+    "note": "The house of all cutest things.",
+    "image": {
+      "assetId": "pinky-hero",
+      "alt": "Mascot cừu hồng Pinky Lamb trong bộ nhận diện Crystal Blossom",
+      "isDecorative": false
+    }
+  },
+  "seo": {
+    "title": "Pinky Lamb — Creative, Media & Events",
+    "description": "Pinky Lamb — Independent Creative Production Agency & IP Studio. Brand, phim & nội dung, truyền thông, sự kiện và những trải nghiệm đáng nhớ.",
+    "ogTitle": "Pinky Lamb — Big ideas. Lovely impact.",
+    "ogDescription": "Creative production, media & events. Cùng Pinky Lamb biến ý tưởng thành những điều đáng nhớ.",
+    "ogImage": {
+      "assetId": "pinky-hero",
+      "alt": "Mascot cừu hồng Pinky Lamb trong bộ nhận diện Crystal Blossom",
+      "isDecorative": false
+    }
+  },
+  "settings": {
+    "header": {
+      "descriptor": "CREATIVE AGENCY & IP STUDIO",
+      "ctaLabel": "Kể ý tưởng của bạn"
+    },
+    "brand": {
+      "name": "Pinky Lamb",
+      "logo": {
+        "assetId": "pinky-logo",
+        "alt": "",
+        "isDecorative": true
+      },
+      "tagline": "A LITTLE CUTE. A LOT OF CREATIVE."
+    },
+    "credential": {
+      "assetId": "credential",
+      "label": "Xem credential 2026",
+      "edition": "2026"
+    },
+    "showreel": {
+      "assetId": "showreel-2025",
+      "poster": {
+        "assetId": "showreel-poster",
+        "alt": "Đội ngũ sản xuất vận hành bàn điều khiển âm thanh tại sự kiện",
+        "isDecorative": false
+      },
+      "title": "Pinky Lamb / Showreel 2025",
+      "originalSourceUrl": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+      "durationSeconds": 65.344
+    },
+    "contact": {
+      "email": "pinkylamb.co@gmail.com",
+      "personName": "Ms. Bảo Ngọc (Christy)",
+      "personPhoneE164": "+84332338667",
+      "personPhoneLabel": "+84 33 233 8667",
+      "officePhoneE164": "+842822101441",
+      "officePhoneLabel": "Văn phòng: (028) 22 101 441",
+      "addressLines": [
+        "981 Hồng Bàng, Phường Bình Tây,",
+        "TP. Hồ Chí Minh, Việt Nam"
+      ],
+      "facebookUrl": "https://www.facebook.com/pinkylamb.media",
+      "illustration": {
+        "assetId": "pinky-mascot",
+        "alt": "",
+        "isDecorative": true
+      }
+    },
+    "nav": [
+      {
+        "sectionId": "work",
+        "label": "Dự án"
+      },
+      {
+        "sectionId": "services",
+        "label": "Dịch vụ"
+      },
+      {
+        "sectionId": "about",
+        "label": "Về Pinky"
+      },
+      {
+        "sectionId": "ip-studio",
+        "label": "IP Studio"
+      }
+    ],
+    "clientLogos": [
+      {
+        "id": "sony",
+        "clientName": "Sony",
+        "image": {
+          "assetId": "client-sony",
+          "alt": "Sony",
+          "isDecorative": false
+        },
+        "isVisible": true
+      },
+      {
+        "id": "wayfair",
+        "clientName": "Wayfair",
+        "image": {
+          "assetId": "client-wayfair",
+          "alt": "Wayfair",
+          "isDecorative": false
+        },
+        "isVisible": true
+      },
+      {
+        "id": "samsung",
+        "clientName": "Samsung",
+        "image": {
+          "assetId": "client-samsung",
+          "alt": "Samsung",
+          "isDecorative": false
+        },
+        "isVisible": true
+      },
+      {
+        "id": "aqua",
+        "clientName": "AQUA",
+        "image": {
+          "assetId": "client-aqua",
+          "alt": "AQUA",
+          "isDecorative": false
+        },
+        "isVisible": true
+      },
+      {
+        "id": "manulife",
+        "clientName": "Manulife",
+        "image": {
+          "assetId": "client-manulife",
+          "alt": "Manulife",
+          "isDecorative": false
+        },
+        "isVisible": true
+      }
+    ],
+    "copyright": {
+      "startYear": 2026,
+      "label": "Pinky Lamb. All rights reserved."
+    }
+  },
+  "services": [
+    {
+      "id": "brand-creative",
+      "title": "Brand & Creative",
+      "titleVi": "Thương hiệu & sáng tạo",
+      "summary": "Phát triển concept và ngôn ngữ sáng tạo cho thương hiệu. Từ nhân vật thương hiệu đến key visual, mỗi ý tưởng được định hướng để bước vào sản xuất.",
+      "scope": [
+        "Ý tưởng & concept",
+        "Nhân vật thương hiệu",
+        "Key visual"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "film-content",
+      "title": "Film & Content Production",
+      "titleVi": "Phim & nội dung",
+      "summary": "Từ phim doanh nghiệp, TVC đến viral video và hoạt hình. Chúng tôi phát triển ý tưởng và đưa câu chuyện thương hiệu lên hình.",
+      "scope": [
+        "Video thương hiệu",
+        "TVC & viral video",
+        "Hậu kỳ hoạt hình"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "events-experiences",
+      "title": "Events & Experiences",
+      "titleVi": "Sự kiện & trải nghiệm",
+      "summary": "Hội nghị, lễ khai mạc, ký kết, concert hay lễ hội. Chúng tôi kết nối nội dung, sản xuất và truyền thông để tạo nên trải nghiệm trực tiếp.",
+      "scope": [
+        "Hội nghị doanh nghiệp",
+        "Lễ khai mạc & ký kết",
+        "Concert & lễ hội"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "exhibition-activation",
+      "title": "Exhibition & Activation",
+      "titleVi": "Triển lãm & activation",
+      "summary": "Đưa thương hiệu vào những không gian gặp gỡ thực tế. Từ lễ khai mạc triển lãm đến sự kiện bên lề và trải nghiệm đăng ký, đón tiếp.",
+      "scope": [
+        "Lễ khai mạc triển lãm",
+        "Sự kiện bên lề",
+        "Dịch vụ đăng ký"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "integrated-communications",
+      "title": "Integrated Communications",
+      "titleVi": "Truyền thông tích hợp",
+      "summary": "Kết hợp PR, nội dung social và hoạt động cùng KOL/KOC để triển khai truyền thông thương hiệu. Phạm vi công việc bao gồm advertorial, seeding, campaign và talent booking.",
+      "scope": [
+        "PR & advertorial",
+        "Social campaign & seeding",
+        "KOL/KOC & talent booking"
+      ],
+      "isVisible": true
+    },
+    {
+      "id": "original-ip",
+      "title": "Original IP Development",
+      "titleVi": "Phát triển IP nguyên bản",
+      "summary": "Phát triển các ý tưởng sáng tạo nguyên bản với định hướng mở rộng dài hạn thành trải nghiệm, format và thương hiệu.",
+      "scope": [
+        "Ý tưởng nguyên bản",
+        "Format & trải nghiệm",
+        "Định hướng thương hiệu IP"
+      ],
+      "isVisible": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "wayfair",
+      "slug": "wayfair",
+      "title": "Wayfair Global Selling Vietnam Summit",
+      "client": "Wayfair",
+      "year": 2026,
+      "category": "EVENTS",
+      "eyebrow": "Hội nghị · 2026",
+      "summary": "Hội nghị Wayfair Global Selling Vietnam Summit 2026, với không gian sân khấu và các khu vực đón tiếp mang nhận diện Wayfair.",
+      "scope": [],
+      "cover": {
+        "assetId": "wayfair-summit-2026",
+        "alt": "Wayfair Global Selling Vietnam Summit — Wayfair",
+        "isDecorative": false
+      },
+      "gallery": [
+        {
+          "assetId": "wayfair-team-2026",
+          "alt": "Wayfair Global Selling Vietnam Summit — hình ảnh 2",
+          "isDecorative": false
+        },
+        {
+          "assetId": "wayfair-registration-2026",
+          "alt": "Wayfair Global Selling Vietnam Summit — hình ảnh 3",
+          "isDecorative": false
+        }
+      ],
+      "serviceIds": [],
+      "publicCredentialPage": 21,
+      "isVisible": true
+    },
+    {
+      "id": "sony",
+      "slug": "sony",
+      "title": "Karaoke ULT Speakers",
+      "client": "Sony",
+      "year": 2025,
+      "category": "FILM",
+      "eyebrow": "Film & Content · 2025",
+      "summary": "Phát triển concept và sản xuất video cho dòng loa karaoke ULT của Sony.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Sản xuất video"
+      ],
+      "cover": {
+        "assetId": "sony-ult-2025",
+        "alt": "Karaoke ULT Speakers — Sony",
+        "isDecorative": false
+      },
+      "gallery": [],
+      "serviceIds": [
+        "film-content"
+      ],
+      "publicCredentialPage": 6,
+      "isVisible": true
+    },
+    {
+      "id": "diag",
+      "slug": "diag",
+      "title": "Brand Awareness Strategy",
+      "client": "Diag",
+      "year": 2022,
+      "category": "COMMUNICATIONS",
+      "eyebrow": "Truyền thông thương hiệu · 2022",
+      "summary": "Triển khai nội dung và truyền thông thương hiệu với nhân vật Lab Bot, video doanh nghiệp, PR và các hoạt động social.",
+      "scope": [
+        "Thiết kế nhân vật Lab Bot",
+        "Sản xuất video doanh nghiệp",
+        "PR advertorial",
+        "Social & group seeding",
+        "Booking và quản lý KOL/KOC trên TikTok",
+        "Chuỗi video trong giai đoạn COVID-19"
+      ],
+      "cover": {
+        "assetId": "diag-awareness-2022",
+        "alt": "Brand Awareness Strategy — Diag",
+        "isDecorative": false
+      },
+      "gallery": [],
+      "serviceIds": [
+        "brand-creative",
+        "film-content",
+        "integrated-communications"
+      ],
+      "publicCredentialPage": 7,
+      "isVisible": true
+    },
+    {
+      "id": "vifa",
+      "slug": "vifa",
+      "title": "VIFA EXPO 2026",
+      "client": "VIFA EXPO",
+      "year": 2026,
+      "category": "EVENTS",
+      "eyebrow": "Triển lãm · 2026",
+      "summary": "Lễ khai mạc và dịch vụ đăng ký cho Vietnam International Furniture & Home Accessories 2026.",
+      "scope": [
+        "Lễ khai mạc",
+        "Dịch vụ đăng ký"
+      ],
+      "cover": {
+        "assetId": "vifa-opening-2026",
+        "alt": "VIFA EXPO 2026 — VIFA EXPO",
+        "isDecorative": false
+      },
+      "gallery": [
+        {
+          "assetId": "vifa-fair-2026",
+          "alt": "VIFA EXPO 2026 — hình ảnh 2",
+          "isDecorative": false
+        }
+      ],
+      "serviceIds": [
+        "exhibition-activation"
+      ],
+      "publicCredentialPage": 22,
+      "isVisible": true
+    },
+    {
+      "id": "petrosetco",
+      "slug": "petrosetco",
+      "title": "New Year Party 2026",
+      "client": "Petrosetco Distribution",
+      "year": 2026,
+      "category": "EVENTS",
+      "eyebrow": "Sự kiện doanh nghiệp · 2026",
+      "summary": "Đêm tiệc năm mới 2026 của Petrosetco Distribution, với sân khấu trình diễn mang sắc màu Tết.",
+      "scope": [],
+      "cover": {
+        "assetId": "petrosetco-party-2026",
+        "alt": "New Year Party 2026 — Petrosetco Distribution",
+        "isDecorative": false
+      },
+      "gallery": [
+        {
+          "assetId": "petrosetco-guests-2026",
+          "alt": "New Year Party 2026 — hình ảnh 2",
+          "isDecorative": false
+        },
+        {
+          "assetId": "petrosetco-fireworks-2026",
+          "alt": "New Year Party 2026 — hình ảnh 3",
+          "isDecorative": false
+        }
+      ],
+      "serviceIds": [],
+      "publicCredentialPage": 20,
+      "isVisible": true
+    },
+    {
+      "id": "varna",
+      "slug": "varna",
+      "title": "Thanh Xuân Hoàng Kim",
+      "client": "NutiFood · VARNA ELITE",
+      "year": 2023,
+      "category": "COMMUNICATIONS",
+      "eyebrow": "Brand campaign · 2023",
+      "summary": "Concept, hình ảnh và hoạt động social cho VARNA ELITE, kết hợp KOL và bộ ảnh của chiến dịch Thanh Xuân Hoàng Kim.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Booking KOL",
+        "Photoshoot",
+        "Social media"
+      ],
+      "cover": {
+        "assetId": "varna-elite-2023",
+        "alt": "Thanh Xuân Hoàng Kim — NutiFood · VARNA ELITE",
+        "isDecorative": false
+      },
+      "gallery": [
+        {
+          "assetId": "varna-elite-collage-2023",
+          "alt": "Thanh Xuân Hoàng Kim — hình ảnh 2",
+          "isDecorative": false
+        },
+        {
+          "assetId": "varna-elite-lifestyle-2023",
+          "alt": "Thanh Xuân Hoàng Kim — hình ảnh 3",
+          "isDecorative": false
+        }
+      ],
+      "serviceIds": [
+        "brand-creative",
+        "integrated-communications"
+      ],
+      "publicCredentialPage": 9,
+      "isVisible": true
+    },
+    {
+      "id": "samsung",
+      "slug": "samsung",
+      "title": "Samsung Flip 2 · Teacher’s Day",
+      "client": "Samsung",
+      "year": 2019,
+      "category": "FILM",
+      "eyebrow": "Viral video · 2019",
+      "summary": "Phát triển concept và sản xuất video viral cho Samsung Flip 2 nhân dịp Ngày Nhà giáo Việt Nam 20/11/2019.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Sản xuất video"
+      ],
+      "cover": {
+        "assetId": "samsung-flip2-2019",
+        "alt": "Samsung Flip 2 · Teacher’s Day — Samsung",
+        "isDecorative": false
+      },
+      "gallery": [],
+      "serviceIds": [
+        "film-content"
+      ],
+      "publicCredentialPage": 14,
+      "isVisible": true
+    },
+    {
+      "id": "psd",
+      "slug": "psd",
+      "title": "Partner Year End Party",
+      "client": "PSD · Dell · Microsoft",
+      "year": 2025,
+      "category": "EVENTS",
+      "eyebrow": "Sự kiện đối tác · 2025",
+      "summary": "Đêm tiệc cuối năm 2025 dành cho đối tác PSD – Dell – Microsoft.",
+      "scope": [],
+      "cover": {
+        "assetId": "psd-dell-microsoft-2025",
+        "alt": "Partner Year End Party — PSD · Dell · Microsoft",
+        "isDecorative": false
+      },
+      "gallery": [
+        {
+          "assetId": "psd-dell-microsoft-stage-2025",
+          "alt": "Partner Year End Party — hình ảnh 2",
+          "isDecorative": false
+        },
+        {
+          "assetId": "psd-dell-microsoft-guests-2025",
+          "alt": "Partner Year End Party — hình ảnh 3",
+          "isDecorative": false
+        }
+      ],
+      "serviceIds": [],
+      "publicCredentialPage": 23,
+      "isVisible": true
+    }
+  ],
+  "sections": [
+    {
+      "kind": "CLIENTS",
+      "sectionId": "clients",
+      "isVisible": true,
+      "heading": [
+        {
+          "text": "Những thương hiệu"
+        },
+        {
+          "text": "đã cùng tạo dấu ấn.",
+          "emphasis": "STRONG"
+        }
+      ]
+    },
+    {
+      "isVisible": true,
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "Good work."
+            }
+          ],
+          [
+            {
+              "text": "Great feelings.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "kind": "WORK",
+      "sectionId": "work",
+      "variant": "work-grid",
+      "intro": "Mỗi thương hiệu, một câu chuyện.\nMỗi dự án, một cách để được nhớ đến.",
+      "featuredIds": [],
+      "initialVisibleCount": 4,
+      "filterLabels": {
+        "all": "Tất cả",
+        "EVENTS": "Events & Experiences",
+        "FILM": "Film & Content",
+        "COMMUNICATIONS": "Brand & Communications"
+      }
+    },
+    {
+      "isVisible": true,
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "From the"
+            }
+          ],
+          [
+            {
+              "text": "first spark"
+            }
+          ],
+          [
+            {
+              "text": "to the "
+            },
+            {
+              "text": "wow.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "kind": "SERVICES",
+      "sectionId": "services",
+      "variant": "services-accordion",
+      "intro": "Ý tưởng có thể bắt đầu rất nhỏ.\nChúng tôi giúp ý tưởng ấy hiện diện,\nchạm đến khán giả và lớn lên.",
+      "serviceOrder": [
+        "brand-creative",
+        "film-content",
+        "events-experiences",
+        "exhibition-activation",
+        "integrated-communications",
+        "original-ip"
+      ],
+      "action": {
+        "kind": "SECTION",
+        "sectionId": "contact",
+        "label": "Cùng tạo điều đáng nhớ"
+      }
+    },
+    {
+      "isVisible": true,
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "Creative at heart."
+            }
+          ],
+          [
+            {
+              "text": "Hands-on by nature.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "kind": "ABOUT",
+      "sectionId": "about",
+      "variant": "about-split",
+      "lead": "Chúng tôi là Pinky Lamb. Một Creative Production Agency & IP Studio độc lập tại Việt Nam.",
+      "paragraphs": [
+        "Chúng tôi kết nối sáng tạo thương hiệu, sản xuất phim và nội dung, truyền thông, sự kiện và phát triển IP. Từ ý tưởng đến sản phẩm thực tế, mỗi dự án là cơ hội tạo nên một trải nghiệm có cá tính."
+      ],
+      "experienceFact": {
+        "value": "15+",
+        "label": "Năm kinh nghiệm sáng tạo & sản xuất.",
+        "copy": "Trong thương hiệu, phim & nội dung,\nsự kiện và trải nghiệm.",
+        "location": "HO CHI MINH CITY, VIETNAM"
+      },
+      "signature": {
+        "image": {
+          "assetId": "pinky-mascot",
+          "alt": "",
+          "isDecorative": true
+        },
+        "copy": [
+          {
+            "text": "Independent minds."
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "A shared creative heart.",
+            "emphasis": "STRONG"
+          }
+        ]
+      },
+      "reelHeading": {
+        "lines": [
+          [
+            {
+              "text": "Made of ideas."
+            }
+          ],
+          [
+            {
+              "text": "Made with heart."
+            }
+          ]
+        ]
+      },
+      "reelCaption": "65 giây bước vào thế giới sáng tạo của Pinky."
+    },
+    {
+      "isVisible": true,
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "Little characters."
+            }
+          ],
+          [
+            {
+              "text": "Endless possibilities.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "kind": "IP",
+      "sectionId": "ip-studio",
+      "variant": "ip-split",
+      "description": "Bên cạnh các dự án thương hiệu, Pinky Lamb phát triển tài sản trí tuệ sáng tạo riêng — những ý tưởng có thể lớn lên thành trải nghiệm, định dạng nội dung và thương hiệu dài hạn.",
+      "image": {
+        "assetId": "pinky-mascot",
+        "alt": "Mascot cừu hồng của Pinky Lamb",
+        "isDecorative": false
+      },
+      "disciplines": [
+        "CREATIVE CONCEPTS",
+        "CONTENT FORMATS",
+        "LONG-TERM EXPERIENCES"
+      ],
+      "action": {
+        "kind": "SECTION",
+        "sectionId": "contact",
+        "label": "Cùng phát triển một ý tưởng"
+      }
+    },
+    {
+      "isVisible": true,
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "Your next big thing"
+            }
+          ],
+          [
+            {
+              "text": "starts with "
+            },
+            {
+              "text": "hello.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "kind": "CONTACT",
+      "sectionId": "contact",
+      "variant": "contact-form",
+      "intro": "Bạn có một ý tưởng, một câu chuyện, hay chỉ một câu hỏi?\nKể Pinky nghe nhé.",
+      "formMode": "MAILTO_COPY",
+      "serviceOptionIds": [
+        "brand-creative",
+        "film-content",
+        "events-experiences",
+        "exhibition-activation",
+        "integrated-communications",
+        "original-ip"
+      ]
+    },
+    {
+      "kind": "FOOTER",
+      "sectionId": "footer",
+      "variant": "footer-wordmark",
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "LET'S CREATE"
+            }
+          ],
+          [
+            {
+              "text": "SOMETHING MEMORABLE."
+            }
+          ]
+        ]
+      },
+      "descriptor": "INDEPENDENT CREATIVE PRODUCTION AGENCY & IP STUDIO",
+      "backToTopLabel": "BACK TO TOP"
+    }
+  ],
+  "sectionOrder": [
+    "work",
+    "services",
+    "about",
+    "ip-studio"
+  ],
+  "claimSources": [
+    {
+      "claimPath": "clientLogos/aqua/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "clientLogos/manulife/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "clientLogos/samsung/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "clientLogos/sony/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "clientLogos/wayfair/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "creative-copy",
+      "sourceIds": [
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "hero/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/diag/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/petrosetco/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/psd/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/samsung/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/sony/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/varna/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/vifa/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "projects/wayfair/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "sections/about/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "sections/footer/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "sections/ip-studio/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "seo/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/brand-creative/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/events-experiences/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/exhibition-activation/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/film-content/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/integrated-communications/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "services/original-ip/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "settings/brand/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "settings/contact/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "settings/credential/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    },
+    {
+      "claimPath": "settings/showreel/facts",
+      "sourceIds": [
+        "baseline-credential",
+        "baseline-source"
+      ]
+    }
+  ]
+}

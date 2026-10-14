@@ -1,0 +1,661 @@
+[
+  {
+    "id": "brand-diagonal",
+    "kind": "IMAGE",
+    "legacyPath": "assets/brand-diagonal.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 12540,
+    "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/brand-diagonal.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/brand-diagonal.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "id": "client-aqua",
+    "kind": "IMAGE",
+    "legacyPath": "assets/client-aqua.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 17434,
+    "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/client-aqua.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/client-aqua.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 590,
+    "height": 144
+  },
+  {
+    "id": "client-manulife",
+    "kind": "IMAGE",
+    "legacyPath": "assets/client-manulife.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 6046,
+    "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/client-manulife.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/client-manulife.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 480,
+    "height": 92
+  },
+  {
+    "id": "client-samsung",
+    "kind": "IMAGE",
+    "legacyPath": "assets/client-samsung.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 26684,
+    "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/client-samsung.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/client-samsung.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 793,
+    "height": 126
+  },
+  {
+    "id": "client-sony",
+    "kind": "IMAGE",
+    "legacyPath": "assets/client-sony.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 4806,
+    "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/client-sony.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/client-sony.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 592,
+    "height": 104
+  },
+  {
+    "id": "client-wayfair",
+    "kind": "IMAGE",
+    "legacyPath": "assets/client-wayfair.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 12618,
+    "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/client-wayfair.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/client-wayfair.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 635,
+    "height": 146
+  },
+  {
+    "id": "credential",
+    "kind": "PDF",
+    "legacyPath": "assets/Pinky-Lamb-Credential-2026.pdf",
+    "mimeType": "application/pdf",
+    "sizeBytes": 17349548,
+    "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/Pinky-Lamb-Credential-2026.pdf"
+    },
+    "sourceRefs": [
+      "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "diag-awareness-2022",
+    "kind": "IMAGE",
+    "legacyPath": "assets/diag-awareness-2022.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 32040,
+    "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/diag-awareness-2022.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/diag-awareness-2022.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 683,
+    "height": 428
+  },
+  {
+    "id": "favicon",
+    "kind": "IMAGE",
+    "legacyPath": "assets/favicon.png",
+    "mimeType": "image/png",
+    "sizeBytes": 6186,
+    "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/favicon.png"
+    },
+    "sourceRefs": [
+      "dist/assets/favicon.png",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "id": "petrosetco-fireworks-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/petrosetco-fireworks-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 92836,
+    "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/petrosetco-fireworks-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/petrosetco-fireworks-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 733,
+    "height": 1100
+  },
+  {
+    "id": "petrosetco-guests-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/petrosetco-guests-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 122614,
+    "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/petrosetco-guests-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/petrosetco-guests-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 887,
+    "height": 591
+  },
+  {
+    "id": "petrosetco-party-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/petrosetco-party-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 115474,
+    "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/petrosetco-party-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/petrosetco-party-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1011,
+    "height": 476
+  },
+  {
+    "id": "pinky-hero",
+    "kind": "IMAGE",
+    "legacyPath": "assets/pinky-hero.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 51282,
+    "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/pinky-hero.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/pinky-hero.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 830,
+    "height": 900
+  },
+  {
+    "id": "pinky-logo",
+    "kind": "IMAGE",
+    "legacyPath": "assets/pinky-logo.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 28046,
+    "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/pinky-logo.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/pinky-logo.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 400,
+    "height": 400
+  },
+  {
+    "id": "pinky-mascot",
+    "kind": "IMAGE",
+    "legacyPath": "assets/pinky-mascot.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 61562,
+    "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/pinky-mascot.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/pinky-mascot.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 969,
+    "height": 905
+  },
+  {
+    "id": "psd-dell-microsoft-2025",
+    "kind": "IMAGE",
+    "legacyPath": "assets/psd-dell-microsoft-2025.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 108712,
+    "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/psd-dell-microsoft-2025.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/psd-dell-microsoft-2025.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 883,
+    "height": 589
+  },
+  {
+    "id": "psd-dell-microsoft-guests-2025",
+    "kind": "IMAGE",
+    "legacyPath": "assets/psd-dell-microsoft-guests-2025.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 64474,
+    "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/psd-dell-microsoft-guests-2025.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 883,
+    "height": 589
+  },
+  {
+    "id": "psd-dell-microsoft-stage-2025",
+    "kind": "IMAGE",
+    "legacyPath": "assets/psd-dell-microsoft-stage-2025.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 78392,
+    "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/psd-dell-microsoft-stage-2025.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 883,
+    "height": 589
+  },
+  {
+    "id": "samsung-flip2-2019",
+    "kind": "IMAGE",
+    "legacyPath": "assets/samsung-flip2-2019.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 34148,
+    "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/samsung-flip2-2019.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/samsung-flip2-2019.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 769,
+    "height": 478
+  },
+  {
+    "id": "showreel-2025",
+    "kind": "VIDEO",
+    "legacyPath": "assets/showreel-2025.mp4",
+    "mimeType": "video/mp4",
+    "sizeBytes": 11403830,
+    "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/showreel-2025.mp4"
+    },
+    "sourceRefs": [
+      "dist/assets/showreel-2025.mp4",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "durationSeconds": 65.344,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "showreel-poster",
+    "kind": "IMAGE",
+    "legacyPath": "assets/showreel-poster.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 54698,
+    "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/showreel-poster.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/showreel-poster.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1440,
+    "height": 810
+  },
+  {
+    "id": "sony-ult-2025",
+    "kind": "IMAGE",
+    "legacyPath": "assets/sony-ult-2025.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 56578,
+    "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/sony-ult-2025.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/sony-ult-2025.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 839,
+    "height": 396
+  },
+  {
+    "id": "varna-elite-2023",
+    "kind": "IMAGE",
+    "legacyPath": "assets/varna-elite-2023.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 39670,
+    "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/varna-elite-2023.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/varna-elite-2023.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 708,
+    "height": 473
+  },
+  {
+    "id": "varna-elite-collage-2023",
+    "kind": "IMAGE",
+    "legacyPath": "assets/varna-elite-collage-2023.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 54590,
+    "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/varna-elite-collage-2023.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/varna-elite-collage-2023.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 614,
+    "height": 636
+  },
+  {
+    "id": "varna-elite-lifestyle-2023",
+    "kind": "IMAGE",
+    "legacyPath": "assets/varna-elite-lifestyle-2023.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 35632,
+    "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/varna-elite-lifestyle-2023.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/varna-elite-lifestyle-2023.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 650,
+    "height": 434
+  },
+  {
+    "id": "vifa-fair-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/vifa-fair-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 117020,
+    "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/vifa-fair-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/vifa-fair-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 897,
+    "height": 597
+  },
+  {
+    "id": "vifa-opening-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/vifa-opening-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 182808,
+    "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/vifa-opening-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/vifa-opening-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1211,
+    "height": 597
+  },
+  {
+    "id": "wayfair-registration-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/wayfair-registration-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 112116,
+    "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/wayfair-registration-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/wayfair-registration-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1248,
+    "height": 558
+  },
+  {
+    "id": "wayfair-summit-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/wayfair-summit-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 47196,
+    "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/wayfair-summit-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/wayfair-summit-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 1104,
+    "height": 575
+  },
+  {
+    "id": "wayfair-team-2026",
+    "kind": "IMAGE",
+    "legacyPath": "assets/wayfair-team-2026.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 61756,
+    "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+    "status": "LEGACY_READY",
+    "derivatives": [],
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "dist/assets/wayfair-team-2026.webp"
+    },
+    "sourceRefs": [
+      "dist/assets/wayfair-team-2026.webp",
+      "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+    ],
+    "createdBy": "local-fixture-operator",
+    "createdAt": "2026-10-11T00:00:00Z",
+    "width": 954,
+    "height": 575
+  }
+]

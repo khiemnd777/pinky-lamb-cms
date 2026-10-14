@@ -1,0 +1,68 @@
+{
+  "scope": "Metadata-only accepted C0 A v2; independent literal data, not producer fixture/output or Auth/native proof",
+  "vectors": [
+    {
+      "name": "QA asset",
+      "canonicalJson": "{\"name\":\"QA asset\"}",
+      "utf8Bytes": 19,
+      "sha256": "4d22410ded554f8dad733aa8ec35034452ed39226a56901c4657a9138de216c3"
+    },
+    {
+      "name": "  Vi\u1ec7t Nam  ",
+      "canonicalJson": "{\"name\":\"  Vi\u1ec7t Nam  \"}",
+      "utf8Bytes": 25,
+      "sha256": "c94d4826e9432bda23a76eb5901419938920a728a5e51aba51654ade9f04d246"
+    },
+    {
+      "name": "\u00e9",
+      "canonicalJson": "{\"name\":\"\u00e9\"}",
+      "utf8Bytes": 13,
+      "sha256": "2f16b8477146a1b2ba7d6bb7cf7c9979c191cc2838a107dbf5f0d920b4cb3ba1"
+    },
+    {
+      "name": "e\u0301",
+      "canonicalJson": "{\"name\":\"e\u0301\"}",
+      "utf8Bytes": 14,
+      "sha256": "6a547588c4055916e090ed61467326046dd52810679d03bfb84d862a7123522e"
+    },
+    {
+      "name": "Portrait \"Q\" \\ draft",
+      "canonicalJson": "{\"name\":\"Portrait \\\"Q\\\" \\\\ draft\"}",
+      "utf8Bytes": 34,
+      "sha256": "579422f860d09e5e490cd1ba6edeef3019a412799906d6cfebd784e7723fc9da"
+    },
+    {
+      "name": "\ud83d\ude00",
+      "canonicalJson": "{\"name\":\"\ud83d\ude00\"}",
+      "utf8Bytes": 15,
+      "sha256": "aab4cc6cb1b653e3b72c99d51a4af9bddd67593a0e32647c30b3b1967ce77678"
+    }
+  ],
+  "removedFields": [
+    "rights",
+    "declaration",
+    "sourceRefs",
+    "evidence",
+    "evidenceSha256",
+    "rightsEvidenceSubmittedBy",
+    "rightsStatus",
+    "rightsRevision",
+    "rightsProof",
+    "mediaRightsChecks",
+    "approved",
+    "rightsReferenceAllowlist"
+  ],
+  "invalidNames": [
+    "",
+    "   ",
+    "a\nb",
+    "a\rb",
+    "a\tb",
+    "a\u0000b",
+    "a\u007fb",
+    "a\u2028b",
+    "a\u2029b",
+    "\ud800",
+    "\udfff"
+  ]
+}

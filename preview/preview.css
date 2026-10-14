@@ -1,0 +1,5 @@
+#preview-panel{border-top:1px solid #eedde5;margin-top:32px;padding-top:28px}#preview-revision{font-weight:700}#preview-dirty{color:#992351;min-height:24px}.preview-controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:20px 0}.preview-controls label{margin:0}.preview-controls select{width:auto;max-width:100%}.preview-controls button{background:#f3e2eb;color:#35212d}.preview-viewport{max-width:100%;overflow:auto;border:1px solid #eedde5;border-radius:12px;background:#fff9f5}#preview.preview-desktop{display:block;width:1440px;height:900px;min-height:900px}#preview.preview-mobile{display:block;width:390px;height:844px;min-height:844px}@media(max-width:480px){.preview-controls{align-items:stretch;flex-direction:column}.preview-controls select{width:100%}}
+
+.preview-viewport:focus-visible{outline:3px solid #c51e68;outline-offset:3px}
+
+#preview-revision{overflow-wrap:anywhere;}

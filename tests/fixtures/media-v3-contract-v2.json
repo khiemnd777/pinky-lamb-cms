@@ -1,0 +1,1474 @@
+{
+  "method": "Independent literal Python stdlib authoring only: UTF16BE object-key ordering/direct string joining, JSON string escaping, explicit canonical zero, integer/0.5 scalar spellings, ordered arrays, UTF8 and hashlib SHA256/no newline. No product/oracle imports/evaluation or full96-root generation. G2_CORE markers are structural synthetic DATA, not image/PDF/video bytes or actual READY/Storage/Auth proof. Legacy Rights fields are historical only.",
+  "families": [
+    {
+      "id": "image",
+      "readyVersion": {
+        "contractRevision": 2,
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "originalSha256": "1714588a6156d039a3f10221d290a70c3d9ec11fc095861342e7f4e552ff88b5",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741001",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 160
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741002",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 480
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741003",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 960
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 2000,
+        "height": 1000
+      },
+      "binding": {
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "originalSha256": "1714588a6156d039a3f10221d290a70c3d9ec11fc095861342e7f4e552ff88b5",
+        "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7",
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "immutable": {
+        "contractRevision": 2,
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "originalSha256": "1714588a6156d039a3f10221d290a70c3d9ec11fc095861342e7f4e552ff88b5",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741001",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 160
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741002",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 480
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741003",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 960
+          }
+        ],
+        "width": 2000,
+        "height": 1000
+      },
+      "safe": {
+        "contractRevision": 2,
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "width": 2000,
+        "height": 1000
+      },
+      "normalizedDerivatives": [
+        {
+          "key": "image-320",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+          "generation": "9007199254741001",
+          "targetWidth": 320,
+          "width": 320,
+          "height": 160
+        },
+        {
+          "key": "image-960",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+          "generation": "9007199254741002",
+          "targetWidth": 960,
+          "width": 960,
+          "height": 480
+        },
+        {
+          "key": "image-1920",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 24,
+          "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+          "generation": "9007199254741003",
+          "targetWidth": 1920,
+          "width": 1920,
+          "height": 960
+        }
+      ],
+      "canonicalDerivatives": "[{\"generation\":\"9007199254741001\",\"height\":160,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9\",\"sizeBytes\":23,\"targetWidth\":320,\"width\":320},{\"generation\":\"9007199254741002\",\"height\":480,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc\",\"sizeBytes\":23,\"targetWidth\":960,\"width\":960},{\"generation\":\"9007199254741003\",\"height\":960,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4\",\"sizeBytes\":24,\"targetWidth\":1920,\"width\":1920}]",
+      "derivativeCanonicalUtf8Bytes": 679,
+      "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7"
+    },
+    {
+      "id": "tiny",
+      "readyVersion": {
+        "contractRevision": 2,
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "originalSha256": "e50b54d2724d2304a4f4d117918d898276361ea572ab5a36dd68633b366df699",
+        "originalSizeBytes": 21,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741101",
+            "targetWidth": 320,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741102",
+            "targetWidth": 960,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741103",
+            "targetWidth": 1920,
+            "width": 120,
+            "height": 80
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 120,
+        "height": 80
+      },
+      "binding": {
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "originalSha256": "e50b54d2724d2304a4f4d117918d898276361ea572ab5a36dd68633b366df699",
+        "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80",
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "immutable": {
+        "contractRevision": 2,
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "originalSha256": "e50b54d2724d2304a4f4d117918d898276361ea572ab5a36dd68633b366df699",
+        "originalSizeBytes": 21,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741101",
+            "targetWidth": 320,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741102",
+            "targetWidth": 960,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741103",
+            "targetWidth": 1920,
+            "width": 120,
+            "height": 80
+          }
+        ],
+        "width": 120,
+        "height": 80
+      },
+      "safe": {
+        "contractRevision": 2,
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "width": 120,
+        "height": 80
+      },
+      "normalizedDerivatives": [
+        {
+          "key": "image-320",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 12,
+          "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+          "generation": "9007199254741101",
+          "targetWidth": 320,
+          "width": 120,
+          "height": 80
+        },
+        {
+          "key": "image-960",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 12,
+          "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+          "generation": "9007199254741102",
+          "targetWidth": 960,
+          "width": 120,
+          "height": 80
+        },
+        {
+          "key": "image-1920",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 12,
+          "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+          "generation": "9007199254741103",
+          "targetWidth": 1920,
+          "width": 120,
+          "height": 80
+        }
+      ],
+      "canonicalDerivatives": "[{\"generation\":\"9007199254741101\",\"height\":80,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442\",\"sizeBytes\":12,\"targetWidth\":320,\"width\":120},{\"generation\":\"9007199254741102\",\"height\":80,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442\",\"sizeBytes\":12,\"targetWidth\":960,\"width\":120},{\"generation\":\"9007199254741103\",\"height\":80,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442\",\"sizeBytes\":12,\"targetWidth\":1920,\"width\":120}]",
+      "derivativeCanonicalUtf8Bytes": 675,
+      "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80"
+    },
+    {
+      "id": "portrait",
+      "readyVersion": {
+        "contractRevision": 2,
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "originalSha256": "b2f623fafbc4ca855458d57acd4d2b1890b75fc98b62aa687d37976034a19c3d",
+        "originalSizeBytes": 25,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741201",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 480
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741202",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741203",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 2880
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 2000,
+        "height": 3000
+      },
+      "binding": {
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "originalSha256": "b2f623fafbc4ca855458d57acd4d2b1890b75fc98b62aa687d37976034a19c3d",
+        "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a",
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "immutable": {
+        "contractRevision": 2,
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "originalSha256": "b2f623fafbc4ca855458d57acd4d2b1890b75fc98b62aa687d37976034a19c3d",
+        "originalSizeBytes": 25,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741201",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 480
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741202",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741203",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 2880
+          }
+        ],
+        "width": 2000,
+        "height": 3000
+      },
+      "safe": {
+        "contractRevision": 2,
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "width": 2000,
+        "height": 3000
+      },
+      "normalizedDerivatives": [
+        {
+          "key": "image-320",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+          "generation": "9007199254741201",
+          "targetWidth": 320,
+          "width": 320,
+          "height": 480
+        },
+        {
+          "key": "image-960",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+          "generation": "9007199254741202",
+          "targetWidth": 960,
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "key": "image-1920",
+          "role": "IMAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 24,
+          "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+          "generation": "9007199254741203",
+          "targetWidth": 1920,
+          "width": 1920,
+          "height": 2880
+        }
+      ],
+      "canonicalDerivatives": "[{\"generation\":\"9007199254741201\",\"height\":480,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9\",\"sizeBytes\":23,\"targetWidth\":320,\"width\":320},{\"generation\":\"9007199254741202\",\"height\":1440,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc\",\"sizeBytes\":23,\"targetWidth\":960,\"width\":960},{\"generation\":\"9007199254741203\",\"height\":2880,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4\",\"sizeBytes\":24,\"targetWidth\":1920,\"width\":1920}]",
+      "derivativeCanonicalUtf8Bytes": 681,
+      "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a"
+    },
+    {
+      "id": "pdf",
+      "readyVersion": {
+        "contractRevision": 2,
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "originalSha256": "1f54dacfaf50539ae8d9592c0f5ff34ededc54f2963495de0bc39138f8db4791",
+        "originalSizeBytes": 20,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "download",
+            "role": "PDF_DOWNLOAD",
+            "mimeType": "application/pdf",
+            "sizeBytes": 29,
+            "sha256": "d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e",
+            "generation": "9007199254741301"
+          },
+          {
+            "key": "page-1",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236",
+            "generation": "9007199254741302",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 1
+          },
+          {
+            "key": "page-2",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56",
+            "generation": "9007199254741303",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 2
+          },
+          {
+            "key": "page-3",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274",
+            "generation": "9007199254741304",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 3
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "pageCount": 3
+      },
+      "binding": {
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "originalSha256": "1f54dacfaf50539ae8d9592c0f5ff34ededc54f2963495de0bc39138f8db4791",
+        "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813",
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "immutable": {
+        "contractRevision": 2,
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "originalSha256": "1f54dacfaf50539ae8d9592c0f5ff34ededc54f2963495de0bc39138f8db4791",
+        "originalSizeBytes": 20,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "download",
+            "role": "PDF_DOWNLOAD",
+            "mimeType": "application/pdf",
+            "sizeBytes": 29,
+            "sha256": "d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e",
+            "generation": "9007199254741301"
+          },
+          {
+            "key": "page-1",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236",
+            "generation": "9007199254741302",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 1
+          },
+          {
+            "key": "page-2",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56",
+            "generation": "9007199254741303",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 2
+          },
+          {
+            "key": "page-3",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274",
+            "generation": "9007199254741304",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 3
+          }
+        ],
+        "pageCount": 3
+      },
+      "safe": {
+        "contractRevision": 2,
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "pageCount": 3
+      },
+      "normalizedDerivatives": [
+        {
+          "key": "download",
+          "role": "PDF_DOWNLOAD",
+          "mimeType": "application/pdf",
+          "sizeBytes": 29,
+          "sha256": "d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e",
+          "generation": "9007199254741301"
+        },
+        {
+          "key": "page-1",
+          "role": "PDF_PAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236",
+          "generation": "9007199254741302",
+          "width": 800,
+          "height": 1200,
+          "pageNumber": 1
+        },
+        {
+          "key": "page-2",
+          "role": "PDF_PAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56",
+          "generation": "9007199254741303",
+          "width": 800,
+          "height": 1200,
+          "pageNumber": 2
+        },
+        {
+          "key": "page-3",
+          "role": "PDF_PAGE",
+          "mimeType": "image/webp",
+          "sizeBytes": 23,
+          "sha256": "504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274",
+          "generation": "9007199254741304",
+          "width": 800,
+          "height": 1200,
+          "pageNumber": 3
+        }
+      ],
+      "canonicalDerivatives": "[{\"generation\":\"9007199254741301\",\"key\":\"download\",\"mimeType\":\"application/pdf\",\"role\":\"PDF_DOWNLOAD\",\"sha256\":\"d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e\",\"sizeBytes\":29},{\"generation\":\"9007199254741302\",\"height\":1200,\"key\":\"page-1\",\"mimeType\":\"image/webp\",\"pageNumber\":1,\"role\":\"PDF_PAGE\",\"sha256\":\"369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236\",\"sizeBytes\":23,\"width\":800},{\"generation\":\"9007199254741303\",\"height\":1200,\"key\":\"page-2\",\"mimeType\":\"image/webp\",\"pageNumber\":2,\"role\":\"PDF_PAGE\",\"sha256\":\"35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56\",\"sizeBytes\":23,\"width\":800},{\"generation\":\"9007199254741304\",\"height\":1200,\"key\":\"page-3\",\"mimeType\":\"image/webp\",\"pageNumber\":3,\"role\":\"PDF_PAGE\",\"sha256\":\"504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274\",\"sizeBytes\":23,\"width\":800}]",
+      "derivativeCanonicalUtf8Bytes": 863,
+      "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813"
+    },
+    {
+      "id": "video",
+      "readyVersion": {
+        "contractRevision": 2,
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "originalSha256": "179c6c1a43a74d1d25674a050b01d71bf6c8007b5e254ca3e5b5c245212c8037",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "poster",
+            "role": "POSTER",
+            "mimeType": "image/webp",
+            "sizeBytes": 21,
+            "sha256": "5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd",
+            "generation": "9007199254741401",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "key": "video",
+            "role": "VIDEO",
+            "mimeType": "video/mp4",
+            "sizeBytes": 19,
+            "sha256": "6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee",
+            "generation": "9007199254741402",
+            "width": 1280,
+            "height": 720,
+            "durationSeconds": 300
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 300
+      },
+      "binding": {
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "originalSha256": "179c6c1a43a74d1d25674a050b01d71bf6c8007b5e254ca3e5b5c245212c8037",
+        "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59",
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      "immutable": {
+        "contractRevision": 2,
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "originalSha256": "179c6c1a43a74d1d25674a050b01d71bf6c8007b5e254ca3e5b5c245212c8037",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "poster",
+            "role": "POSTER",
+            "mimeType": "image/webp",
+            "sizeBytes": 21,
+            "sha256": "5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd",
+            "generation": "9007199254741401",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "key": "video",
+            "role": "VIDEO",
+            "mimeType": "video/mp4",
+            "sizeBytes": 19,
+            "sha256": "6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee",
+            "generation": "9007199254741402",
+            "width": 1280,
+            "height": 720,
+            "durationSeconds": 300
+          }
+        ],
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 300
+      },
+      "safe": {
+        "contractRevision": 2,
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 300
+      },
+      "normalizedDerivatives": [
+        {
+          "key": "poster",
+          "role": "POSTER",
+          "mimeType": "image/webp",
+          "sizeBytes": 21,
+          "sha256": "5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd",
+          "generation": "9007199254741401",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "key": "video",
+          "role": "VIDEO",
+          "mimeType": "video/mp4",
+          "sizeBytes": 19,
+          "sha256": "6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee",
+          "generation": "9007199254741402",
+          "width": 1280,
+          "height": 720,
+          "durationSeconds": 300
+        }
+      ],
+      "canonicalDerivatives": "[{\"generation\":\"9007199254741401\",\"height\":720,\"key\":\"poster\",\"mimeType\":\"image/webp\",\"role\":\"POSTER\",\"sha256\":\"5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd\",\"sizeBytes\":21,\"width\":1280},{\"durationSeconds\":300,\"generation\":\"9007199254741402\",\"height\":720,\"key\":\"video\",\"mimeType\":\"video/mp4\",\"role\":\"VIDEO\",\"sha256\":\"6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee\",\"sizeBytes\":19,\"width\":1280}]",
+      "derivativeCanonicalUtf8Bytes": 432,
+      "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59"
+    }
+  ],
+  "canonicalVectors": [
+    {
+      "value": {
+        "b": "Ti\u1ebfng Vi\u1ec7t \ud83d\ude00",
+        "a": [
+          2,
+          1
+        ]
+      },
+      "canonicalJson": "{\"a\":[2,1],\"b\":\"Ti\u1ebfng Vi\u1ec7t \ud83d\ude00\"}",
+      "utf8Bytes": 37,
+      "sha256": "dbb79e2b1c16685ba2b19e18a96f2be5e895d6f195b8c52a1bebab3547541a9b"
+    },
+    {
+      "value": {
+        "2": "two",
+        "10": "ten"
+      },
+      "canonicalJson": "{\"10\":\"ten\",\"2\":\"two\"}",
+      "utf8Bytes": 22,
+      "sha256": "b71e124675fc80e7314688bffdb68e83515851fb51474125db9a0c4c8aca3808"
+    },
+    {
+      "value": {
+        "\ue000": "BMP",
+        "\ud800\udc00": "astral"
+      },
+      "canonicalJson": "{\"\ud800\udc00\":\"astral\",\"\ue000\":\"BMP\"}",
+      "utf8Bytes": 29,
+      "sha256": "16ab72c7d809cd8c65427f263923d948fa80b2c5c74d9254d8afab550a2ba49e"
+    },
+    {
+      "value": {
+        "string": "line\nquote\"slash\\",
+        "zero": -0.0,
+        "fraction": 0.5
+      },
+      "canonicalJson": "{\"fraction\":0.5,\"string\":\"line\\nquote\\\"slash\\\\\",\"zero\":0}",
+      "utf8Bytes": 57,
+      "sha256": "9b22b070dc0b131bee644bcdb078de31951b6af5f42696888cc72203a75053f1"
+    }
+  ],
+  "forbiddenNewFields": [
+    "rights",
+    "evidenceSha256",
+    "rightsEvidenceSubmittedBy",
+    "mediaRightsProofPins",
+    "mediaRightsChecks"
+  ],
+  "legacyManifest": [
+    {
+      "source": "LEGACY",
+      "asset": {
+        "id": "brand-diagonal",
+        "kind": "IMAGE",
+        "legacyPath": "assets/brand-diagonal.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      }
+    },
+    {
+      "source": "LEGACY",
+      "asset": {
+        "id": "favicon",
+        "kind": "IMAGE",
+        "legacyPath": "assets/favicon.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      }
+    }
+  ],
+  "selectedManifest": [
+    {
+      "source": "LEGACY",
+      "asset": {
+        "id": "brand-diagonal",
+        "kind": "IMAGE",
+        "legacyPath": "assets/brand-diagonal.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      }
+    },
+    {
+      "source": "LEGACY",
+      "asset": {
+        "id": "favicon",
+        "kind": "IMAGE",
+        "legacyPath": "assets/favicon.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "contractRevision": 2,
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "originalSha256": "1714588a6156d039a3f10221d290a70c3d9ec11fc095861342e7f4e552ff88b5",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741001",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 160
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741002",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 480
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741003",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 960
+          }
+        ],
+        "width": 2000,
+        "height": 1000
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "contractRevision": 2,
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "originalSha256": "1f54dacfaf50539ae8d9592c0f5ff34ededc54f2963495de0bc39138f8db4791",
+        "originalSizeBytes": 20,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "download",
+            "role": "PDF_DOWNLOAD",
+            "mimeType": "application/pdf",
+            "sizeBytes": 29,
+            "sha256": "d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e",
+            "generation": "9007199254741301"
+          },
+          {
+            "key": "page-1",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236",
+            "generation": "9007199254741302",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 1
+          },
+          {
+            "key": "page-2",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56",
+            "generation": "9007199254741303",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 2
+          },
+          {
+            "key": "page-3",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274",
+            "generation": "9007199254741304",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 3
+          }
+        ],
+        "pageCount": 3
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "contractRevision": 2,
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "originalSha256": "b2f623fafbc4ca855458d57acd4d2b1890b75fc98b62aa687d37976034a19c3d",
+        "originalSizeBytes": 25,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741201",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 480
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741202",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741203",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 2880
+          }
+        ],
+        "width": 2000,
+        "height": 3000
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "contractRevision": 2,
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "originalSha256": "e50b54d2724d2304a4f4d117918d898276361ea572ab5a36dd68633b366df699",
+        "originalSizeBytes": 21,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741101",
+            "targetWidth": 320,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741102",
+            "targetWidth": 960,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741103",
+            "targetWidth": 1920,
+            "width": 120,
+            "height": 80
+          }
+        ],
+        "width": 120,
+        "height": 80
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "contractRevision": 2,
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "originalSha256": "179c6c1a43a74d1d25674a050b01d71bf6c8007b5e254ca3e5b5c245212c8037",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "poster",
+            "role": "POSTER",
+            "mimeType": "image/webp",
+            "sizeBytes": 21,
+            "sha256": "5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd",
+            "generation": "9007199254741401",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "key": "video",
+            "role": "VIDEO",
+            "mimeType": "video/mp4",
+            "sizeBytes": 19,
+            "sha256": "6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee",
+            "generation": "9007199254741402",
+            "width": 1280,
+            "height": 720,
+            "durationSeconds": 300
+          }
+        ],
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 300
+      }
+    }
+  ],
+  "context": {
+    "legacyCatalog": [
+      {
+        "id": "brand-diagonal",
+        "kind": "IMAGE",
+        "legacyPath": "assets/brand-diagonal.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      },
+      {
+        "id": "favicon",
+        "kind": "IMAGE",
+        "legacyPath": "assets/favicon.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "Synthetic historical source"
+        },
+        "sourceRefs": [
+          "Second historical reference",
+          "First historical reference"
+        ],
+        "width": 100,
+        "height": 100
+      }
+    ],
+    "readyVersions": [
+      {
+        "contractRevision": 2,
+        "assetId": "asset-image-a2",
+        "kind": "IMAGE",
+        "originalSha256": "1714588a6156d039a3f10221d290a70c3d9ec11fc095861342e7f4e552ff88b5",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "8d01566d65ceb78dd1c82ba1b89088e9ccb046f2df3d54a19535e5ce8d50c7b7",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741001",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 160
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741002",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 480
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741003",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 960
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 2000,
+        "height": 1000
+      },
+      {
+        "contractRevision": 2,
+        "assetId": "asset-tiny-a2",
+        "kind": "IMAGE",
+        "originalSha256": "e50b54d2724d2304a4f4d117918d898276361ea572ab5a36dd68633b366df699",
+        "originalSizeBytes": 21,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "67ccbf0bcc8084dc035134af693350113d50e45cf7779020aa1c971552868b80",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741101",
+            "targetWidth": 320,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741102",
+            "targetWidth": 960,
+            "width": 120,
+            "height": 80
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 12,
+            "sha256": "d1b52f25f850563dfbc304bebfc5432fcaa72f9ba65d31fd8eb83988f7064442",
+            "generation": "9007199254741103",
+            "targetWidth": 1920,
+            "width": 120,
+            "height": 80
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 120,
+        "height": 80
+      },
+      {
+        "contractRevision": 2,
+        "assetId": "asset-portrait-a2",
+        "kind": "IMAGE",
+        "originalSha256": "b2f623fafbc4ca855458d57acd4d2b1890b75fc98b62aa687d37976034a19c3d",
+        "originalSizeBytes": 25,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "b5b89c9ed79b6905e139a8db2048969d9a06e30f82c946805405b4d188cb3b3a",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "ba1354eafb37f53c417f91526e7a49957fa6141b8c85c0cbfbbf00e8cfdf0ad9",
+            "generation": "9007199254741201",
+            "targetWidth": 320,
+            "width": 320,
+            "height": 480
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "761899262e546edb175d8e7ec0a165ef448874e0e55b4274e0f90cecd52423bc",
+            "generation": "9007199254741202",
+            "targetWidth": 960,
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 24,
+            "sha256": "e0d589a8da2aa2a5eb6c23dd2444cda6fd5dc3aff3148c7e1c68d1be3637abe4",
+            "generation": "9007199254741203",
+            "targetWidth": 1920,
+            "width": 1920,
+            "height": 2880
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 2000,
+        "height": 3000
+      },
+      {
+        "contractRevision": 2,
+        "assetId": "asset-pdf-a2",
+        "kind": "PDF",
+        "originalSha256": "1f54dacfaf50539ae8d9592c0f5ff34ededc54f2963495de0bc39138f8db4791",
+        "originalSizeBytes": 20,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "3919a0270f650fb8f240a1c4a053767f9e4219002f81caee73b0a018d0e41813",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "download",
+            "role": "PDF_DOWNLOAD",
+            "mimeType": "application/pdf",
+            "sizeBytes": 29,
+            "sha256": "d8ae24c145cf40472ef4db630c23bf3e05c764447c4ee2480bebf4e2bb7f127e",
+            "generation": "9007199254741301"
+          },
+          {
+            "key": "page-1",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "369d9cec6e0b0a127b9f8ad5fc2ab4719b4e436ecb68031297e68e915ada2236",
+            "generation": "9007199254741302",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 1
+          },
+          {
+            "key": "page-2",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "35d92f2a806d246c47eb864ec612218c1ccde38963e2e184f0fc9d4d4d179c56",
+            "generation": "9007199254741303",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 2
+          },
+          {
+            "key": "page-3",
+            "role": "PDF_PAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 23,
+            "sha256": "504b27088c6bfb33ea826efe3adc349dba9069febe31d71f843efd9a0f544274",
+            "generation": "9007199254741304",
+            "width": 800,
+            "height": 1200,
+            "pageNumber": 3
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "pageCount": 3
+      },
+      {
+        "contractRevision": 2,
+        "assetId": "asset-video-a2",
+        "kind": "VIDEO",
+        "originalSha256": "179c6c1a43a74d1d25674a050b01d71bf6c8007b5e254ca3e5b5c245212c8037",
+        "originalSizeBytes": 22,
+        "processingRecipeSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "toolSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "derivativeSetSha256": "1b7d7167be2a3657d62c35abb6bd34042becaad72d46811114405bb4bb319b59",
+        "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1",
+        "derivatives": [
+          {
+            "key": "poster",
+            "role": "POSTER",
+            "mimeType": "image/webp",
+            "sizeBytes": 21,
+            "sha256": "5a180d0d0d7b1fd77804bbb70830d2ef73ae3e8f70bbd2f8c6e7e6ffc07f51dd",
+            "generation": "9007199254741401",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "key": "video",
+            "role": "VIDEO",
+            "mimeType": "video/mp4",
+            "sizeBytes": 19,
+            "sha256": "6390c05446428b8e19535694218a6ebbd18ad21fd1e9b687555b9ac24f0c3fee",
+            "generation": "9007199254741402",
+            "width": 1280,
+            "height": 720,
+            "durationSeconds": 300
+          }
+        ],
+        "status": "READY",
+        "archived": false,
+        "revision": 1,
+        "uploaderUid": "uploader-a2",
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 300
+      }
+    ]
+  }
+}

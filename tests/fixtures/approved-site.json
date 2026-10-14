@@ -1,0 +1,1769 @@
+{
+  "qaEnvelopeVersion": 2,
+  "snapshot": {
+    "id": "synthetic-approved-site",
+    "draftId": "home-v2",
+    "schemaVersion": 2,
+    "templateVersion": "m2-site-baseline-v1",
+    "draftRevision": 0,
+    "content": {
+      "schemaVersion": 2,
+      "locale": "vi-VN",
+      "hero": {
+        "kind": "HERO",
+        "variant": "hero-split",
+        "heading": {
+          "lines": [
+            [
+              {
+                "text": "Big ideas."
+              }
+            ],
+            [
+              {
+                "text": "Lovely "
+              },
+              {
+                "text": "impact.",
+                "emphasis": "ACCENT"
+              }
+            ]
+          ]
+        },
+        "eyebrow": "INDEPENDENT MINDS. MEMORABLE EXPERIENCES.",
+        "description": [
+          {
+            "text": "Từ ý tưởng thương hiệu đến phim, truyền thông và sự kiện. Chúng tôi biến sáng tạo thành những trải nghiệm đáng nhớ — với một chút "
+          },
+          {
+            "text": "Pinky",
+            "emphasis": "STRONG"
+          },
+          {
+            "text": "."
+          }
+        ],
+        "primaryAction": {
+          "kind": "SECTION",
+          "sectionId": "work",
+          "label": "Khám phá dự án"
+        },
+        "secondaryAction": {
+          "kind": "SHOWREEL",
+          "label": "Xem showreel"
+        },
+        "footnote": "BASED IN VIETNAM. CREATING FOR THE WORLD.",
+        "note": "The house of all cutest things.",
+        "image": {
+          "assetId": "pinky-hero",
+          "alt": "Mascot cừu hồng Pinky Lamb trong bộ nhận diện Crystal Blossom",
+          "isDecorative": false
+        }
+      },
+      "seo": {
+        "title": "Pinky Lamb — Creative, Media & Events",
+        "description": "Pinky Lamb — Independent Creative Production Agency & IP Studio. Brand, phim & nội dung, truyền thông, sự kiện và những trải nghiệm đáng nhớ.",
+        "ogTitle": "Pinky Lamb — Big ideas. Lovely impact.",
+        "ogDescription": "Creative production, media & events. Cùng Pinky Lamb biến ý tưởng thành những điều đáng nhớ.",
+        "ogImage": {
+          "assetId": "pinky-hero",
+          "alt": "Mascot cừu hồng Pinky Lamb trong bộ nhận diện Crystal Blossom",
+          "isDecorative": false
+        }
+      },
+      "settings": {
+        "header": {
+          "descriptor": "CREATIVE AGENCY & IP STUDIO",
+          "ctaLabel": "Kể ý tưởng của bạn"
+        },
+        "brand": {
+          "name": "Pinky Lamb",
+          "logo": {
+            "assetId": "pinky-logo",
+            "alt": "",
+            "isDecorative": true
+          },
+          "tagline": "A LITTLE CUTE. A LOT OF CREATIVE."
+        },
+        "credential": {
+          "assetId": "credential",
+          "label": "Xem credential 2026",
+          "edition": "2026"
+        },
+        "showreel": {
+          "assetId": "showreel-2025",
+          "poster": {
+            "assetId": "showreel-poster",
+            "alt": "Đội ngũ sản xuất vận hành bàn điều khiển âm thanh tại sự kiện",
+            "isDecorative": false
+          },
+          "title": "Pinky Lamb / Showreel 2025",
+          "originalSourceUrl": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+          "durationSeconds": 65.344
+        },
+        "contact": {
+          "email": "pinkylamb.co@gmail.com",
+          "personName": "Ms. Bảo Ngọc (Christy)",
+          "personPhoneE164": "+84332338667",
+          "personPhoneLabel": "+84 33 233 8667",
+          "officePhoneE164": "+842822101441",
+          "officePhoneLabel": "Văn phòng: (028) 22 101 441",
+          "addressLines": [
+            "981 Hồng Bàng, Phường Bình Tây,",
+            "TP. Hồ Chí Minh, Việt Nam"
+          ],
+          "facebookUrl": "https://www.facebook.com/pinkylamb.media",
+          "illustration": {
+            "assetId": "pinky-mascot",
+            "alt": "",
+            "isDecorative": true
+          }
+        },
+        "nav": [
+          {
+            "sectionId": "work",
+            "label": "Dự án"
+          },
+          {
+            "sectionId": "services",
+            "label": "Dịch vụ"
+          },
+          {
+            "sectionId": "about",
+            "label": "Về Pinky"
+          },
+          {
+            "sectionId": "ip-studio",
+            "label": "IP Studio"
+          }
+        ],
+        "clientLogos": [
+          {
+            "id": "sony",
+            "clientName": "Sony",
+            "image": {
+              "assetId": "client-sony",
+              "alt": "Sony",
+              "isDecorative": false
+            },
+            "isVisible": true
+          },
+          {
+            "id": "wayfair",
+            "clientName": "Wayfair",
+            "image": {
+              "assetId": "client-wayfair",
+              "alt": "Wayfair",
+              "isDecorative": false
+            },
+            "isVisible": true
+          },
+          {
+            "id": "samsung",
+            "clientName": "Samsung",
+            "image": {
+              "assetId": "client-samsung",
+              "alt": "Samsung",
+              "isDecorative": false
+            },
+            "isVisible": true
+          },
+          {
+            "id": "aqua",
+            "clientName": "AQUA",
+            "image": {
+              "assetId": "client-aqua",
+              "alt": "AQUA",
+              "isDecorative": false
+            },
+            "isVisible": true
+          },
+          {
+            "id": "manulife",
+            "clientName": "Manulife",
+            "image": {
+              "assetId": "client-manulife",
+              "alt": "Manulife",
+              "isDecorative": false
+            },
+            "isVisible": true
+          }
+        ],
+        "copyright": {
+          "startYear": 2026,
+          "label": "Pinky Lamb. All rights reserved."
+        }
+      },
+      "services": [
+        {
+          "id": "brand-creative",
+          "title": "Brand & Creative",
+          "titleVi": "Thương hiệu & sáng tạo",
+          "summary": "Phát triển concept và ngôn ngữ sáng tạo cho thương hiệu. Từ nhân vật thương hiệu đến key visual, mỗi ý tưởng được định hướng để bước vào sản xuất.",
+          "scope": [
+            "Ý tưởng & concept",
+            "Nhân vật thương hiệu",
+            "Key visual"
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "film-content",
+          "title": "Film & Content Production",
+          "titleVi": "Phim & nội dung",
+          "summary": "Từ phim doanh nghiệp, TVC đến viral video và hoạt hình. Chúng tôi phát triển ý tưởng và đưa câu chuyện thương hiệu lên hình.",
+          "scope": [
+            "Video thương hiệu",
+            "TVC & viral video",
+            "Hậu kỳ hoạt hình"
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "events-experiences",
+          "title": "Events & Experiences",
+          "titleVi": "Sự kiện & trải nghiệm",
+          "summary": "Hội nghị, lễ khai mạc, ký kết, concert hay lễ hội. Chúng tôi kết nối nội dung, sản xuất và truyền thông để tạo nên trải nghiệm trực tiếp.",
+          "scope": [
+            "Hội nghị doanh nghiệp",
+            "Lễ khai mạc & ký kết",
+            "Concert & lễ hội"
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "exhibition-activation",
+          "title": "Exhibition & Activation",
+          "titleVi": "Triển lãm & activation",
+          "summary": "Đưa thương hiệu vào những không gian gặp gỡ thực tế. Từ lễ khai mạc triển lãm đến sự kiện bên lề và trải nghiệm đăng ký, đón tiếp.",
+          "scope": [
+            "Lễ khai mạc triển lãm",
+            "Sự kiện bên lề",
+            "Dịch vụ đăng ký"
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "integrated-communications",
+          "title": "Integrated Communications",
+          "titleVi": "Truyền thông tích hợp",
+          "summary": "Kết hợp PR, nội dung social và hoạt động cùng KOL/KOC để triển khai truyền thông thương hiệu. Phạm vi công việc bao gồm advertorial, seeding, campaign và talent booking.",
+          "scope": [
+            "PR & advertorial",
+            "Social campaign & seeding",
+            "KOL/KOC & talent booking"
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "original-ip",
+          "title": "Original IP Development",
+          "titleVi": "Phát triển IP nguyên bản",
+          "summary": "Phát triển các ý tưởng sáng tạo nguyên bản với định hướng mở rộng dài hạn thành trải nghiệm, format và thương hiệu.",
+          "scope": [
+            "Ý tưởng nguyên bản",
+            "Format & trải nghiệm",
+            "Định hướng thương hiệu IP"
+          ],
+          "isVisible": true
+        }
+      ],
+      "projects": [
+        {
+          "id": "wayfair",
+          "slug": "wayfair",
+          "title": "Wayfair Global Selling Vietnam Summit",
+          "client": "Wayfair",
+          "year": 2026,
+          "category": "EVENTS",
+          "eyebrow": "Hội nghị · 2026",
+          "summary": "Hội nghị Wayfair Global Selling Vietnam Summit 2026, với không gian sân khấu và các khu vực đón tiếp mang nhận diện Wayfair.",
+          "scope": [],
+          "cover": {
+            "assetId": "wayfair-summit-2026",
+            "alt": "Wayfair Global Selling Vietnam Summit — Wayfair",
+            "isDecorative": false
+          },
+          "gallery": [
+            {
+              "assetId": "wayfair-team-2026",
+              "alt": "Wayfair Global Selling Vietnam Summit — hình ảnh 2",
+              "isDecorative": false
+            },
+            {
+              "assetId": "wayfair-registration-2026",
+              "alt": "Wayfair Global Selling Vietnam Summit — hình ảnh 3",
+              "isDecorative": false
+            }
+          ],
+          "serviceIds": [],
+          "publicCredentialPage": 21,
+          "isVisible": true
+        },
+        {
+          "id": "sony",
+          "slug": "sony",
+          "title": "Karaoke ULT Speakers",
+          "client": "Sony",
+          "year": 2025,
+          "category": "FILM",
+          "eyebrow": "Film & Content · 2025",
+          "summary": "Phát triển concept và sản xuất video cho dòng loa karaoke ULT của Sony.",
+          "scope": [
+            "Concept & ý tưởng",
+            "Sản xuất video"
+          ],
+          "cover": {
+            "assetId": "sony-ult-2025",
+            "alt": "Karaoke ULT Speakers — Sony",
+            "isDecorative": false
+          },
+          "gallery": [],
+          "serviceIds": [
+            "film-content"
+          ],
+          "publicCredentialPage": 6,
+          "isVisible": true
+        },
+        {
+          "id": "diag",
+          "slug": "diag",
+          "title": "Brand Awareness Strategy",
+          "client": "Diag",
+          "year": 2022,
+          "category": "COMMUNICATIONS",
+          "eyebrow": "Truyền thông thương hiệu · 2022",
+          "summary": "Triển khai nội dung và truyền thông thương hiệu với nhân vật Lab Bot, video doanh nghiệp, PR và các hoạt động social.",
+          "scope": [
+            "Thiết kế nhân vật Lab Bot",
+            "Sản xuất video doanh nghiệp",
+            "PR advertorial",
+            "Social & group seeding",
+            "Booking và quản lý KOL/KOC trên TikTok",
+            "Chuỗi video trong giai đoạn COVID-19"
+          ],
+          "cover": {
+            "assetId": "diag-awareness-2022",
+            "alt": "Brand Awareness Strategy — Diag",
+            "isDecorative": false
+          },
+          "gallery": [],
+          "serviceIds": [
+            "brand-creative",
+            "film-content",
+            "integrated-communications"
+          ],
+          "publicCredentialPage": 7,
+          "isVisible": true
+        },
+        {
+          "id": "vifa",
+          "slug": "vifa",
+          "title": "VIFA EXPO 2026",
+          "client": "VIFA EXPO",
+          "year": 2026,
+          "category": "EVENTS",
+          "eyebrow": "Triển lãm · 2026",
+          "summary": "Lễ khai mạc và dịch vụ đăng ký cho Vietnam International Furniture & Home Accessories 2026.",
+          "scope": [
+            "Lễ khai mạc",
+            "Dịch vụ đăng ký"
+          ],
+          "cover": {
+            "assetId": "vifa-opening-2026",
+            "alt": "VIFA EXPO 2026 — VIFA EXPO",
+            "isDecorative": false
+          },
+          "gallery": [
+            {
+              "assetId": "vifa-fair-2026",
+              "alt": "VIFA EXPO 2026 — hình ảnh 2",
+              "isDecorative": false
+            }
+          ],
+          "serviceIds": [
+            "exhibition-activation"
+          ],
+          "publicCredentialPage": 22,
+          "isVisible": true
+        },
+        {
+          "id": "petrosetco",
+          "slug": "petrosetco",
+          "title": "New Year Party 2026",
+          "client": "Petrosetco Distribution",
+          "year": 2026,
+          "category": "EVENTS",
+          "eyebrow": "Sự kiện doanh nghiệp · 2026",
+          "summary": "Đêm tiệc năm mới 2026 của Petrosetco Distribution, với sân khấu trình diễn mang sắc màu Tết.",
+          "scope": [],
+          "cover": {
+            "assetId": "petrosetco-party-2026",
+            "alt": "New Year Party 2026 — Petrosetco Distribution",
+            "isDecorative": false
+          },
+          "gallery": [
+            {
+              "assetId": "petrosetco-guests-2026",
+              "alt": "New Year Party 2026 — hình ảnh 2",
+              "isDecorative": false
+            },
+            {
+              "assetId": "petrosetco-fireworks-2026",
+              "alt": "New Year Party 2026 — hình ảnh 3",
+              "isDecorative": false
+            }
+          ],
+          "serviceIds": [],
+          "publicCredentialPage": 20,
+          "isVisible": true
+        },
+        {
+          "id": "varna",
+          "slug": "varna",
+          "title": "Thanh Xuân Hoàng Kim",
+          "client": "NutiFood · VARNA ELITE",
+          "year": 2023,
+          "category": "COMMUNICATIONS",
+          "eyebrow": "Brand campaign · 2023",
+          "summary": "Concept, hình ảnh và hoạt động social cho VARNA ELITE, kết hợp KOL và bộ ảnh của chiến dịch Thanh Xuân Hoàng Kim.",
+          "scope": [
+            "Concept & ý tưởng",
+            "Booking KOL",
+            "Photoshoot",
+            "Social media"
+          ],
+          "cover": {
+            "assetId": "varna-elite-2023",
+            "alt": "Thanh Xuân Hoàng Kim — NutiFood · VARNA ELITE",
+            "isDecorative": false
+          },
+          "gallery": [
+            {
+              "assetId": "varna-elite-collage-2023",
+              "alt": "Thanh Xuân Hoàng Kim — hình ảnh 2",
+              "isDecorative": false
+            },
+            {
+              "assetId": "varna-elite-lifestyle-2023",
+              "alt": "Thanh Xuân Hoàng Kim — hình ảnh 3",
+              "isDecorative": false
+            }
+          ],
+          "serviceIds": [
+            "brand-creative",
+            "integrated-communications"
+          ],
+          "publicCredentialPage": 9,
+          "isVisible": true
+        },
+        {
+          "id": "samsung",
+          "slug": "samsung",
+          "title": "Samsung Flip 2 · Teacher’s Day",
+          "client": "Samsung",
+          "year": 2019,
+          "category": "FILM",
+          "eyebrow": "Viral video · 2019",
+          "summary": "Phát triển concept và sản xuất video viral cho Samsung Flip 2 nhân dịp Ngày Nhà giáo Việt Nam 20/11/2019.",
+          "scope": [
+            "Concept & ý tưởng",
+            "Sản xuất video"
+          ],
+          "cover": {
+            "assetId": "samsung-flip2-2019",
+            "alt": "Samsung Flip 2 · Teacher’s Day — Samsung",
+            "isDecorative": false
+          },
+          "gallery": [],
+          "serviceIds": [
+            "film-content"
+          ],
+          "publicCredentialPage": 14,
+          "isVisible": true
+        },
+        {
+          "id": "psd",
+          "slug": "psd",
+          "title": "Partner Year End Party",
+          "client": "PSD · Dell · Microsoft",
+          "year": 2025,
+          "category": "EVENTS",
+          "eyebrow": "Sự kiện đối tác · 2025",
+          "summary": "Đêm tiệc cuối năm 2025 dành cho đối tác PSD – Dell – Microsoft.",
+          "scope": [],
+          "cover": {
+            "assetId": "psd-dell-microsoft-2025",
+            "alt": "Partner Year End Party — PSD · Dell · Microsoft",
+            "isDecorative": false
+          },
+          "gallery": [
+            {
+              "assetId": "psd-dell-microsoft-stage-2025",
+              "alt": "Partner Year End Party — hình ảnh 2",
+              "isDecorative": false
+            },
+            {
+              "assetId": "psd-dell-microsoft-guests-2025",
+              "alt": "Partner Year End Party — hình ảnh 3",
+              "isDecorative": false
+            }
+          ],
+          "serviceIds": [],
+          "publicCredentialPage": 23,
+          "isVisible": true
+        }
+      ],
+      "sections": [
+        {
+          "kind": "CLIENTS",
+          "sectionId": "clients",
+          "isVisible": true,
+          "heading": [
+            {
+              "text": "Những thương hiệu"
+            },
+            {
+              "text": "đã cùng tạo dấu ấn.",
+              "emphasis": "STRONG"
+            }
+          ]
+        },
+        {
+          "isVisible": true,
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "Good work."
+                }
+              ],
+              [
+                {
+                  "text": "Great feelings.",
+                  "emphasis": "ACCENT"
+                }
+              ]
+            ]
+          },
+          "kind": "WORK",
+          "sectionId": "work",
+          "variant": "work-grid",
+          "intro": "Mỗi thương hiệu, một câu chuyện.\nMỗi dự án, một cách để được nhớ đến.",
+          "featuredIds": [],
+          "initialVisibleCount": 4,
+          "filterLabels": {
+            "all": "Tất cả",
+            "EVENTS": "Events & Experiences",
+            "FILM": "Film & Content",
+            "COMMUNICATIONS": "Brand & Communications"
+          }
+        },
+        {
+          "isVisible": true,
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "From the"
+                }
+              ],
+              [
+                {
+                  "text": "first spark"
+                }
+              ],
+              [
+                {
+                  "text": "to the "
+                },
+                {
+                  "text": "wow.",
+                  "emphasis": "ACCENT"
+                }
+              ]
+            ]
+          },
+          "kind": "SERVICES",
+          "sectionId": "services",
+          "variant": "services-accordion",
+          "intro": "Ý tưởng có thể bắt đầu rất nhỏ.\nChúng tôi giúp ý tưởng ấy hiện diện,\nchạm đến khán giả và lớn lên.",
+          "serviceOrder": [
+            "brand-creative",
+            "film-content",
+            "events-experiences",
+            "exhibition-activation",
+            "integrated-communications",
+            "original-ip"
+          ],
+          "action": {
+            "kind": "SECTION",
+            "sectionId": "contact",
+            "label": "Cùng tạo điều đáng nhớ"
+          }
+        },
+        {
+          "isVisible": true,
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "Creative at heart."
+                }
+              ],
+              [
+                {
+                  "text": "Hands-on by nature.",
+                  "emphasis": "ACCENT"
+                }
+              ]
+            ]
+          },
+          "kind": "ABOUT",
+          "sectionId": "about",
+          "variant": "about-split",
+          "lead": "Chúng tôi là Pinky Lamb. Một Creative Production Agency & IP Studio độc lập tại Việt Nam.",
+          "paragraphs": [
+            "Chúng tôi kết nối sáng tạo thương hiệu, sản xuất phim và nội dung, truyền thông, sự kiện và phát triển IP. Từ ý tưởng đến sản phẩm thực tế, mỗi dự án là cơ hội tạo nên một trải nghiệm có cá tính."
+          ],
+          "experienceFact": {
+            "value": "15+",
+            "label": "Năm kinh nghiệm sáng tạo & sản xuất.",
+            "copy": "Trong thương hiệu, phim & nội dung,\nsự kiện và trải nghiệm.",
+            "location": "HO CHI MINH CITY, VIETNAM"
+          },
+          "signature": {
+            "image": {
+              "assetId": "pinky-mascot",
+              "alt": "",
+              "isDecorative": true
+            },
+            "copy": [
+              {
+                "text": "Independent minds."
+              },
+              {
+                "text": " "
+              },
+              {
+                "text": "A shared creative heart.",
+                "emphasis": "STRONG"
+              }
+            ]
+          },
+          "reelHeading": {
+            "lines": [
+              [
+                {
+                  "text": "Made of ideas."
+                }
+              ],
+              [
+                {
+                  "text": "Made with heart."
+                }
+              ]
+            ]
+          },
+          "reelCaption": "65 giây bước vào thế giới sáng tạo của Pinky."
+        },
+        {
+          "isVisible": true,
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "Little characters."
+                }
+              ],
+              [
+                {
+                  "text": "Endless possibilities.",
+                  "emphasis": "ACCENT"
+                }
+              ]
+            ]
+          },
+          "kind": "IP",
+          "sectionId": "ip-studio",
+          "variant": "ip-split",
+          "description": "Bên cạnh các dự án thương hiệu, Pinky Lamb phát triển tài sản trí tuệ sáng tạo riêng — những ý tưởng có thể lớn lên thành trải nghiệm, định dạng nội dung và thương hiệu dài hạn.",
+          "image": {
+            "assetId": "pinky-mascot",
+            "alt": "Mascot cừu hồng của Pinky Lamb",
+            "isDecorative": false
+          },
+          "disciplines": [
+            "CREATIVE CONCEPTS",
+            "CONTENT FORMATS",
+            "LONG-TERM EXPERIENCES"
+          ],
+          "action": {
+            "kind": "SECTION",
+            "sectionId": "contact",
+            "label": "Cùng phát triển một ý tưởng"
+          }
+        },
+        {
+          "isVisible": true,
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "Your next big thing"
+                }
+              ],
+              [
+                {
+                  "text": "starts with "
+                },
+                {
+                  "text": "hello.",
+                  "emphasis": "ACCENT"
+                }
+              ]
+            ]
+          },
+          "kind": "CONTACT",
+          "sectionId": "contact",
+          "variant": "contact-form",
+          "intro": "Bạn có một ý tưởng, một câu chuyện, hay chỉ một câu hỏi?\nKể Pinky nghe nhé.",
+          "formMode": "MAILTO_COPY",
+          "serviceOptionIds": [
+            "brand-creative",
+            "film-content",
+            "events-experiences",
+            "exhibition-activation",
+            "integrated-communications",
+            "original-ip"
+          ]
+        },
+        {
+          "kind": "FOOTER",
+          "sectionId": "footer",
+          "variant": "footer-wordmark",
+          "heading": {
+            "lines": [
+              [
+                {
+                  "text": "LET'S CREATE"
+                }
+              ],
+              [
+                {
+                  "text": "SOMETHING MEMORABLE."
+                }
+              ]
+            ]
+          },
+          "descriptor": "INDEPENDENT CREATIVE PRODUCTION AGENCY & IP STUDIO",
+          "backToTopLabel": "BACK TO TOP"
+        }
+      ],
+      "sectionOrder": [
+        "work",
+        "services",
+        "about",
+        "ip-studio"
+      ],
+      "claimSources": [
+        {
+          "claimPath": "clientLogos/aqua/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "clientLogos/manulife/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "clientLogos/samsung/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "clientLogos/sony/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "clientLogos/wayfair/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "creative-copy",
+          "sourceIds": [
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "hero/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/diag/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/petrosetco/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/psd/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/samsung/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/sony/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/varna/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/vifa/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "projects/wayfair/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "sections/about/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "sections/footer/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "sections/ip-studio/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "seo/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/brand-creative/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/events-experiences/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/exhibition-activation/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/film-content/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/integrated-communications/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "services/original-ip/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "settings/brand/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "settings/contact/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "settings/credential/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        },
+        {
+          "claimPath": "settings/showreel/facts",
+          "sourceIds": [
+            "baseline-credential",
+            "baseline-source"
+          ]
+        }
+      ]
+    },
+    "contentHash": "4472685860dce1708bb79b42822f4ced36749f1ffedb35c0fc934c17a5ed604e",
+    "mediaManifestHash": "d5171a17bbf65b0ad2c38b5849aade5346218ba5434fc4ecab47f9ec4d471c57",
+    "mediaManifest": [
+      {
+        "id": "brand-diagonal",
+        "kind": "IMAGE",
+        "legacyPath": "assets/brand-diagonal.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 12540,
+        "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/brand-diagonal.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/brand-diagonal.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1672,
+        "height": 941
+      },
+      {
+        "id": "client-aqua",
+        "kind": "IMAGE",
+        "legacyPath": "assets/client-aqua.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 17434,
+        "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/client-aqua.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/client-aqua.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 590,
+        "height": 144
+      },
+      {
+        "id": "client-manulife",
+        "kind": "IMAGE",
+        "legacyPath": "assets/client-manulife.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 6046,
+        "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/client-manulife.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/client-manulife.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 480,
+        "height": 92
+      },
+      {
+        "id": "client-samsung",
+        "kind": "IMAGE",
+        "legacyPath": "assets/client-samsung.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 26684,
+        "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/client-samsung.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/client-samsung.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 793,
+        "height": 126
+      },
+      {
+        "id": "client-sony",
+        "kind": "IMAGE",
+        "legacyPath": "assets/client-sony.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 4806,
+        "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/client-sony.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/client-sony.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 592,
+        "height": 104
+      },
+      {
+        "id": "client-wayfair",
+        "kind": "IMAGE",
+        "legacyPath": "assets/client-wayfair.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 12618,
+        "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/client-wayfair.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/client-wayfair.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 635,
+        "height": 146
+      },
+      {
+        "id": "credential",
+        "kind": "PDF",
+        "legacyPath": "assets/Pinky-Lamb-Credential-2026.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 17349548,
+        "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/Pinky-Lamb-Credential-2026.pdf"
+        },
+        "sourceRefs": [
+          "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ]
+      },
+      {
+        "id": "diag-awareness-2022",
+        "kind": "IMAGE",
+        "legacyPath": "assets/diag-awareness-2022.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 32040,
+        "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/diag-awareness-2022.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/diag-awareness-2022.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 683,
+        "height": 428
+      },
+      {
+        "id": "favicon",
+        "kind": "IMAGE",
+        "legacyPath": "assets/favicon.png",
+        "mimeType": "image/png",
+        "sizeBytes": 6186,
+        "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/favicon.png"
+        },
+        "sourceRefs": [
+          "dist/assets/favicon.png",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 64,
+        "height": 64
+      },
+      {
+        "id": "petrosetco-fireworks-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/petrosetco-fireworks-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 92836,
+        "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/petrosetco-fireworks-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/petrosetco-fireworks-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 733,
+        "height": 1100
+      },
+      {
+        "id": "petrosetco-guests-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/petrosetco-guests-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 122614,
+        "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/petrosetco-guests-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/petrosetco-guests-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 887,
+        "height": 591
+      },
+      {
+        "id": "petrosetco-party-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/petrosetco-party-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 115474,
+        "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/petrosetco-party-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/petrosetco-party-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1011,
+        "height": 476
+      },
+      {
+        "id": "pinky-hero",
+        "kind": "IMAGE",
+        "legacyPath": "assets/pinky-hero.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 51282,
+        "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/pinky-hero.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/pinky-hero.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 830,
+        "height": 900
+      },
+      {
+        "id": "pinky-logo",
+        "kind": "IMAGE",
+        "legacyPath": "assets/pinky-logo.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 28046,
+        "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/pinky-logo.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/pinky-logo.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 400,
+        "height": 400
+      },
+      {
+        "id": "pinky-mascot",
+        "kind": "IMAGE",
+        "legacyPath": "assets/pinky-mascot.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 61562,
+        "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/pinky-mascot.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/pinky-mascot.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 969,
+        "height": 905
+      },
+      {
+        "id": "psd-dell-microsoft-2025",
+        "kind": "IMAGE",
+        "legacyPath": "assets/psd-dell-microsoft-2025.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 108712,
+        "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/psd-dell-microsoft-2025.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/psd-dell-microsoft-2025.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 883,
+        "height": 589
+      },
+      {
+        "id": "psd-dell-microsoft-guests-2025",
+        "kind": "IMAGE",
+        "legacyPath": "assets/psd-dell-microsoft-guests-2025.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 64474,
+        "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/psd-dell-microsoft-guests-2025.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/psd-dell-microsoft-guests-2025.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 883,
+        "height": 589
+      },
+      {
+        "id": "psd-dell-microsoft-stage-2025",
+        "kind": "IMAGE",
+        "legacyPath": "assets/psd-dell-microsoft-stage-2025.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 78392,
+        "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/psd-dell-microsoft-stage-2025.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/psd-dell-microsoft-stage-2025.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 883,
+        "height": 589
+      },
+      {
+        "id": "samsung-flip2-2019",
+        "kind": "IMAGE",
+        "legacyPath": "assets/samsung-flip2-2019.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 34148,
+        "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/samsung-flip2-2019.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/samsung-flip2-2019.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 769,
+        "height": 478
+      },
+      {
+        "id": "showreel-2025",
+        "kind": "VIDEO",
+        "legacyPath": "assets/showreel-2025.mp4",
+        "mimeType": "video/mp4",
+        "sizeBytes": 11403830,
+        "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/showreel-2025.mp4"
+        },
+        "sourceRefs": [
+          "dist/assets/showreel-2025.mp4",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 65.344
+      },
+      {
+        "id": "showreel-poster",
+        "kind": "IMAGE",
+        "legacyPath": "assets/showreel-poster.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 54698,
+        "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/showreel-poster.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/showreel-poster.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1440,
+        "height": 810
+      },
+      {
+        "id": "sony-ult-2025",
+        "kind": "IMAGE",
+        "legacyPath": "assets/sony-ult-2025.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 56578,
+        "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/sony-ult-2025.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/sony-ult-2025.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 839,
+        "height": 396
+      },
+      {
+        "id": "varna-elite-2023",
+        "kind": "IMAGE",
+        "legacyPath": "assets/varna-elite-2023.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 39670,
+        "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/varna-elite-2023.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/varna-elite-2023.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 708,
+        "height": 473
+      },
+      {
+        "id": "varna-elite-collage-2023",
+        "kind": "IMAGE",
+        "legacyPath": "assets/varna-elite-collage-2023.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 54590,
+        "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/varna-elite-collage-2023.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/varna-elite-collage-2023.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 614,
+        "height": 636
+      },
+      {
+        "id": "varna-elite-lifestyle-2023",
+        "kind": "IMAGE",
+        "legacyPath": "assets/varna-elite-lifestyle-2023.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 35632,
+        "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/varna-elite-lifestyle-2023.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/varna-elite-lifestyle-2023.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 650,
+        "height": 434
+      },
+      {
+        "id": "vifa-fair-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/vifa-fair-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 117020,
+        "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/vifa-fair-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/vifa-fair-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 897,
+        "height": 597
+      },
+      {
+        "id": "vifa-opening-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/vifa-opening-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 182808,
+        "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/vifa-opening-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/vifa-opening-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1211,
+        "height": 597
+      },
+      {
+        "id": "wayfair-registration-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/wayfair-registration-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 112116,
+        "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/wayfair-registration-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/wayfair-registration-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1248,
+        "height": 558
+      },
+      {
+        "id": "wayfair-summit-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/wayfair-summit-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 47196,
+        "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/wayfair-summit-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/wayfair-summit-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 1104,
+        "height": 575
+      },
+      {
+        "id": "wayfair-team-2026",
+        "kind": "IMAGE",
+        "legacyPath": "assets/wayfair-team-2026.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 61756,
+        "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "dist/assets/wayfair-team-2026.webp"
+        },
+        "sourceRefs": [
+          "dist/assets/wayfair-team-2026.webp",
+          "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+        ],
+        "width": 954,
+        "height": 575
+      }
+    ],
+    "sourceRefs": [
+      {
+        "id": "source-7b3f90885b440aadf57578de3494f6e28a60fbccf54ec3cef97ab216d8bb2b82",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-7b3f90885b440aadf57578de3494f6e28a60fbccf54ec3cef97ab216d8bb2b82",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-513ec0ab4c90f00fa5a2017ba54023b21f99298cebd3c7741acd75a6e65259dc",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-513ec0ab4c90f00fa5a2017ba54023b21f99298cebd3c7741acd75a6e65259dc",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-66f3c45a5ffcb7c1c230b2a4dabb77c53949467a7b2d4d27b3fb4457bd3db322",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-66f3c45a5ffcb7c1c230b2a4dabb77c53949467a7b2d4d27b3fb4457bd3db322",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-c7ab8895384cfdccda867ccf2c3d7b7478c9a2330cf43c83342a69d26d853940",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-c7ab8895384cfdccda867ccf2c3d7b7478c9a2330cf43c83342a69d26d853940",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-c23509e8edc879a13f1fffb9345bd4621fc036e7fceae6ed37436fce94db02ce",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-c23509e8edc879a13f1fffb9345bd4621fc036e7fceae6ed37436fce94db02ce",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-f773d07d34a150c0fdc60debef4f9455129a02dc5f352b1d8909b004c973d9ee",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-f773d07d34a150c0fdc60debef4f9455129a02dc5f352b1d8909b004c973d9ee",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-da0a21bab579659ba1b4ead58e6b4edef06e2f232a1ca67fece3665a37902ea1",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-da0a21bab579659ba1b4ead58e6b4edef06e2f232a1ca67fece3665a37902ea1",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-187665181facdb61c41139c1b7818576090485d74b75514a658a5c00a8bf89db",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-187665181facdb61c41139c1b7818576090485d74b75514a658a5c00a8bf89db",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-a0bcb2e3cb107bc77fd4c39d74b7d0e4bc1130474dfe53adf7464d7a2b61df66",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-a0bcb2e3cb107bc77fd4c39d74b7d0e4bc1130474dfe53adf7464d7a2b61df66",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-62793f48adcdc33028eefe9b381823c0207c84a9ed709d8402fb6e88e1f166f1",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-62793f48adcdc33028eefe9b381823c0207c84a9ed709d8402fb6e88e1f166f1",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-20bb456c85b02668387cb7554cc7bb1041fe22c3c328c19193db27b4311bdf64",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-20bb456c85b02668387cb7554cc7bb1041fe22c3c328c19193db27b4311bdf64",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-87540fa81b57ab9b2f2cc58fa6b26b7012de4cebc59346ca7964b38da3fdea12",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-87540fa81b57ab9b2f2cc58fa6b26b7012de4cebc59346ca7964b38da3fdea12",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-f996b0782944e0ad019840c6990feb9ddd5223bc60d141c3c1fcbaf7a0704a5e",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-f996b0782944e0ad019840c6990feb9ddd5223bc60d141c3c1fcbaf7a0704a5e",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-fabc746bee9cbd21192f487d63dc081d89bc8ff93be43cfa7281c77039c181fc",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-fabc746bee9cbd21192f487d63dc081d89bc8ff93be43cfa7281c77039c181fc",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-4158af0a96e1ed67d80af69bb9a81bbbfd67d4637c094b2e039e23f744e2e52c",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-4158af0a96e1ed67d80af69bb9a81bbbfd67d4637c094b2e039e23f744e2e52c",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-a6f0d31129682f4cf9ca6dd73df35f12a000a14b7551aa6b82ab4303f858c8f3",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-a6f0d31129682f4cf9ca6dd73df35f12a000a14b7551aa6b82ab4303f858c8f3",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-c6ab65d03aa9b9ca4a0e3ba9c9fcbcae0898309bb2d26f17ebb156507308fb05",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-c6ab65d03aa9b9ca4a0e3ba9c9fcbcae0898309bb2d26f17ebb156507308fb05",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-242e9b089528df8cc3eb75888ad289175132cc72a6d1660d2bfc756dadb09c35",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-242e9b089528df8cc3eb75888ad289175132cc72a6d1660d2bfc756dadb09c35",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-dccafcf87942b91594d96b60f3c74c951ba261d71ff86dbea22cc9977a44605e",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-dccafcf87942b91594d96b60f3c74c951ba261d71ff86dbea22cc9977a44605e",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-8b5e42940043395d1ffd0e4f365aee7cb679cd08645a18d2e84412a8770c0105",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-8b5e42940043395d1ffd0e4f365aee7cb679cd08645a18d2e84412a8770c0105",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-2b007ae9033c04b9a88a1072509ec19a655ec461dd8f7d792f0e4a3131dbeeda",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-2b007ae9033c04b9a88a1072509ec19a655ec461dd8f7d792f0e4a3131dbeeda",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-b35f3742d7e6948a9a35bbc126ce328a1fb0a805ca7ea75cc9ef3f720f3ff0c2",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-b35f3742d7e6948a9a35bbc126ce328a1fb0a805ca7ea75cc9ef3f720f3ff0c2",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-66aa3da2d738e8b5f4a458dbaa9a7b6ac6cbc32c1f230dac51e3a21b24b0cc50",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-66aa3da2d738e8b5f4a458dbaa9a7b6ac6cbc32c1f230dac51e3a21b24b0cc50",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-dae62aaf8762f6dce92162eddfcf8068b66d1bd27c36641962de8596eb93d2e5",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-dae62aaf8762f6dce92162eddfcf8068b66d1bd27c36641962de8596eb93d2e5",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-4ecf4dc49736f20dc52536379193e7435dea913c832a2ce1c85ce0d3d85b727d",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-4ecf4dc49736f20dc52536379193e7435dea913c832a2ce1c85ce0d3d85b727d",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-594ba9f06bb75e74d2d5becfc5f8c33647a9c75c7e6e20652ce2f88f59844b3e",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-594ba9f06bb75e74d2d5becfc5f8c33647a9c75c7e6e20652ce2f88f59844b3e",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-89ab1d2929aaf5e3f4b90527a7d74e76c82ba26a33ff277c8275ad1cc9baa681",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-89ab1d2929aaf5e3f4b90527a7d74e76c82ba26a33ff277c8275ad1cc9baa681",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-f46e7022a72aa29db846901611da7d706d7b24ed49f06be565a663243b66b066",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-f46e7022a72aa29db846901611da7d706d7b24ed49f06be565a663243b66b066",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-071c86cf5c270172c7182174a48a410965ae6efc4346574c7fbce24a068e86d7",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-071c86cf5c270172c7182174a48a410965ae6efc4346574c7fbce24a068e86d7",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-40ecdc3e0ed4f54d7da6a005006e35e50348edab78f8057e582dfbcdd824f4ef",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-40ecdc3e0ed4f54d7da6a005006e35e50348edab78f8057e582dfbcdd824f4ef",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      },
+      {
+        "id": "source-df3f0475fae152d3a31e57c8326852c0d91e24d85d1c5be8cd9b85225d894bbc",
+        "kind": "SUPPLIED_FILE",
+        "privateDocumentId": "legacy-source-df3f0475fae152d3a31e57c8326852c0d91e24d85d1c5be8cd9b85225d894bbc",
+        "claimBindings": [],
+        "verification": "UNVERIFIED"
+      }
+    ],
+    "importLineage": {
+      "importId": "synthetic-import-site",
+      "importedM1Revision": 0,
+      "importedM1ContentHash": "5f4ea6c2cbb8bb32ae1ab8d24a1f172929bd050c6d154223108548e04ee2b3fe",
+      "baselineManifestHash": "65fb8d571118ee0cbf8a2e26295219d763691c1af08c82d03d5b3909a7b8535b",
+      "importReportHash": "7b32f334708f58336566be32376d42c7fa8f6923d03b4974f185cd2057fa7b84"
+    },
+    "submittedBy": "synthetic-editor",
+    "submittedAt": "2026-10-11T00:00:00.000Z",
+    "message": "Synthetic unit test input; no editorial approval."
+  },
+  "reviewState": {
+    "snapshotId": "synthetic-approved-site",
+    "status": "APPROVED",
+    "revision": 1,
+    "activeReviewId": "synthetic-review-site",
+    "sourceRevision": 0,
+    "activeSourceCheckIds": {},
+    "updatedAt": "2026-10-11T00:01:00.000Z"
+  },
+  "review": {
+    "id": "synthetic-review-site",
+    "snapshotId": "synthetic-approved-site",
+    "outcome": "APPROVED",
+    "contentHash": "4472685860dce1708bb79b42822f4ced36749f1ffedb35c0fc934c17a5ed604e",
+    "reviewedBy": "synthetic-reviewer",
+    "reviewedAt": "2026-10-11T00:01:00.000Z",
+    "creativeCopyDeclaration": "NO_FACTUAL_CLAIMS",
+    "sourceRevision": 0,
+    "sourceCheckIds": [],
+    "attestationSetHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "sourceChecks": []
+}

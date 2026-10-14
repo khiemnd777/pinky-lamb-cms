@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 1,
+  "task": "M3-RIGHTS-REMOVAL-QA-01 v1",
+  "status": "CURRENT_NO_RIGHTS_PREPARATION_SOURCE_ONLY_PRODUCT_NOT_RUN",
+  "scope": "Current human requirement removes manual media rights approval; 20 original group IDs/18AC trace retained, obsolete rights-only AC expectations superseded; not an executable v2 contract",
+  "sourceChecks": "BLOCKED_CONTRACT",
+  "proofKeys": "BLOCKED_CONTRACT for retained technical/factual proof shapes only; active rights proof/EV removed",
+  "exactErrorCodes": "BLOCKED_CONTRACT except descriptive M3-IDEMPOTENCY-DECISION-01",
+  "schemaV3GoldenVectors": "BLOCKED_CONTRACT pending exact accepted C0 v2 API/shapes/fixtures; historical goldens unchanged",
+  "caps": {
+    "source": "docs/CMS-001-v2-M3-PROPOSAL.md:99,125-168",
+    "partBytes": 4194304,
+    "image": {
+      "inputBytes": 10485760,
+      "edge": 8192,
+      "pixels": 40000000,
+      "frames": 1,
+      "outputBytes": 12582912,
+      "timeoutSeconds": 30
+    },
+    "pdf": {
+      "inputBytes": 26214400,
+      "pagesMin": 1,
+      "pagesMax": 48,
+      "previewLongEdge": 1600,
+      "pixelsPerPage": 4000000,
+      "previewBytes": 33554432,
+      "pdfBytes": 67108864,
+      "totalBytes": 100663296,
+      "timeoutSeconds": 120
+    },
+    "video": {
+      "inputBytes": 134217728,
+      "durationSeconds": 300,
+      "inputWidth": 1920,
+      "inputHeight": 1080,
+      "inputFps": 60,
+      "outputWidth": 1280,
+      "outputHeight": 720,
+      "outputFps": 30,
+      "mp4Bytes": 50331648,
+      "posterBytes": 1048576,
+      "timeoutSeconds": 600
+    },
+    "retainedBytes": 2147483648,
+    "cacheBytes": 2147483648,
+    "scratchBytes": 268435456,
+    "heapMiB": 256,
+    "rssWatchdogMiB": 768,
+    "cpuThreads": 2,
+    "logBytesPerStream": 65536,
+    "maxProcessingAttemptsTotal": 2,
+    "libraryVersionsMax": 200,
+    "activeIntentsPerUploaderMax": 2,
+    "activeIntentsPerProjectMax": 4,
+    "processorJobsGlobalMax": 1
+  },
+  "cases": [
+    {
+      "id": "ENV-01",
+      "title": "Demo, loopback và guard",
+      "acs": [
+        "M3-AC01",
+        "M3-AC18"
+      ],
+      "targetTasks": [
+        "CMS-M3-34"
+      ],
+      "inputs": "demo-pinky-lamb-cms; missing/real project/host/ADC; outbound target",
+      "steps": "So sánh valid profile và từng invalid profile trước side effects",
+      "expected": "Invalid bị từ chối; chỉ demo/loopback được phép",
+      "oracle": "Source + actual process/network observations",
+      "dependencies": [
+        "runtime admission",
+        "guard integration"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Profile, source pins, denial/network evidence",
+      "sideEffects": "Future process/network probes; none now"
+    },
+    {
+      "id": "ACL-01",
+      "title": "Current member và direct Rules",
+      "acs": [
+        "M3-AC02"
+      ],
+      "targetTasks": [
+        "CMS-M3-34"
+      ],
+      "inputs": "Anonymous, non-member, inactive, disabled, unverified, unknown role; bốn role; token role tamper",
+      "steps": "Gọi API/private reads và direct SDK riêng; đổi current membership",
+      "expected": "Deny theo current membership; Rules deny-all; không lộ existence/original/token",
+      "oracle": "Actual API/Rules/browser results",
+      "dependencies": [
+        "ACL/backend integration",
+        "runtime admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Status/body redacted, Rules evidence, network inventory",
+      "sideEffects": "Future synthetic Auth/reads need separate permission"
+    },
+    {
+      "id": "UPLOAD-01",
+      "title": "Chunks và completion",
+      "acs": [
+        "M3-AC03"
+      ],
+      "targetTasks": [
+        "CMS-M3-34",
+        "CMS-M3-36"
+      ],
+      "inputs": "Missing part, exact replay, same part different bytes, hash/size mismatch, 4 MiB và +1",
+      "steps": "Upload parts; replay; complete partial; complete twice/concurrent",
+      "expected": "Partial bị chặn; exact replay không double-account; conflict không false READY",
+      "oracle": "Actual bytes/receipts/quota/state",
+      "dependencies": [
+        "U0/C0 freeze",
+        "upload integration"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Independent hashes, transaction/Storage evidence",
+      "sideEffects": "Future writes/concurrent clients"
+    },
+    {
+      "id": "IDEMPOTENCY-01",
+      "title": "Operation key binding",
+      "acs": [
+        "M3-AC03",
+        "M3-AC08"
+      ],
+      "targetTasks": [
+        "CMS-M3-34",
+        "CMS-M3-36"
+      ],
+      "inputs": "Idempotency-Key; optional body requestId mirror; actor/operation/resource/key/exact payload",
+      "steps": "Same key same payload replay; changed payload; mismatched mirror; authorization revoked before replay; no rights command/state prerequisite",
+      "expected": "Header transport authority and normalized operation key retained per accepted transport contract; current authorization rechecked; no separate rights approval replay/gate. Exact accepted v2 payload/operation fields BLOCKED_CONTRACT",
+      "oracle": "Descriptive decision only; machine vectors BLOCKED_CONTRACT",
+      "dependencies": [
+        "M3-IDEMPOTENCY-DECISION-01",
+        "accepted no-rights C0 v2/U0 compatibility"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Future contract vectors and API evidence",
+      "sideEffects": "Future replay writes; none now"
+    },
+    {
+      "id": "QUOTA-01",
+      "title": "Quota và cancel",
+      "acs": [
+        "M3-AC03",
+        "M3-AC07"
+      ],
+      "targetTasks": [
+        "CMS-M3-34",
+        "CMS-M3-35",
+        "CMS-M3-36"
+      ],
+      "inputs": "2 GiB retained/cache; reservation 2×input+kind outputs; retained old attempts; cancel wrong state; 2 active intents/uploader and 4/project at boundary and cap+1; global processor job1 and attempted2",
+      "steps": "Race reservations; cap/+1; retry reserve additional; live cancel; race active intent reservations across uploader/project; attempt concurrent global processor",
+      "expected": "No oversubscription/reset/overwrite; invalid cancel rejected; reap/partial outputs recorded; uploader/project caps cannot be exceeded; only1 global processor job admitted",
+      "oracle": "Independent safe accounting + real transactions/process custody",
+      "dependencies": [
+        "quota/jobs integration",
+        "runtime/native admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Before/after quota/bytes; reap proof",
+      "sideEffects": "Future writes/native cancellation require authority"
+    },
+    {
+      "id": "JOBS-01",
+      "title": "Lease, retry và crash",
+      "acs": [
+        "M3-AC07"
+      ],
+      "targetTasks": [
+        "CMS-M3-35"
+      ],
+      "inputs": "Two claims, expired lease, stale finalizer, crash after object/cache/receipt/before READY; max_processing_attempts=2 TOTAL",
+      "steps": "Inject each crash point; concurrent claims; attempt 2 then forbidden 3",
+      "expected": "One valid lease; stale finalize fails; no partial READY; retained bytes and quota reconciled",
+      "oracle": "State/receipt/object/cache correspondence",
+      "dependencies": [
+        "job contract freeze",
+        "failure injection and lifecycle authority"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Exact attempt receipts, lease/state, preservation",
+      "sideEffects": "Future failure injection/restarts; none now"
+    },
+    {
+      "id": "IMAGE-01",
+      "title": "IMAGE orientation, alpha và abuse",
+      "acs": [
+        "M3-AC04"
+      ],
+      "targetTasks": [
+        "CMS-M3-35"
+      ],
+      "inputs": "JPEG/PNG/static WebP; 10 MiB/+1; 8192 edge/+1; 40M pixels/+1; orientation/alpha; spoof/animated/truncated/bomb; portrait oriented2000x3000; tiny120x80; exactly3 targetWidth320/960/1920 entries with distinct logical keys",
+      "steps": "Decode/reencode then independently decode every target bucket; compare effective width=min(targetWidth, oriented original width), aspect ratio rounding≤1px and no upscale; do not deduplicate equal effective widths",
+      "expected": "sRGB/alpha/orientation correct; metadata removed; outputs≤12 MiB; abuse rejected; oriented original8192edge/40Mp caps preserved; effective width≤1920 but height may exceed1920; portrait1920 bucket→1920x2880; tiny→all3 buckets120x80; equal effective widths valid; full processed three-entry technical set retained and integrity pinned without rights proof. Geometry examples are Proposed expected values, not native evidence",
+      "oracle": "Native output decode/hash/structural inspection",
+      "dependencies": [
+        "standalone IMAGE processor frozen full three-bucket recipe",
+        "native admission",
+        "tool integrity"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Input/output hash, dimensions, alpha/orientation comparison",
+      "sideEffects": "Future native fixtures; no bomb allocation now"
+    },
+    {
+      "id": "PDF-01",
+      "title": "PDF boundaries và sanitization",
+      "acs": [
+        "M3-AC05"
+      ],
+      "targetTasks": [
+        "CMS-M3-35"
+      ],
+      "inputs": "1/48/49 pages; 25 MiB/+1; encrypted/malformed; actions/forms/attachments; finite page boxes",
+      "steps": "Render all pages; inspect rebuilt PDF and preview set",
+      "expected": "Only raster rebuilt PDF; no source actions/forms/attachments/metadata; ≤1600 long edge/4M pixels/page; previews≤32 MiB/PDF≤64 MiB/total≤96 MiB",
+      "oracle": "Full-page native decode and independent structure inspection",
+      "dependencies": [
+        "PDF TOOL_BYTES HOLD",
+        "native admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Actual output inspection and per-page hashes",
+      "sideEffects": "Future native decode only; native started=0 in historical PDF handoff"
+    },
+    {
+      "id": "VIDEO-01",
+      "title": "VIDEO safe codec và no audio",
+      "acs": [
+        "M3-AC06"
+      ],
+      "targetTasks": [
+        "CMS-M3-35"
+      ],
+      "inputs": "MP4 H.264/AAC or no audio; malformed/extra stream; 128 MiB/300s/1920×1080/60fps and +1",
+      "steps": "Full decode/transcode; independently probe/decode MP4/poster",
+      "expected": "Safe H.264/AAC faststart ≤1280×720/30fps no upscale; strip extra streams/metadata; MP4≤48 MiB poster≤1 MiB",
+      "oracle": "Actual ffprobe/full decode/output inspection",
+      "dependencies": [
+        "VIDEO integration",
+        "native/tool admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Codec/duration/frame/hash/size evidence",
+      "sideEffects": "Future native processing"
+    },
+    {
+      "id": "RESOURCE-01",
+      "title": "Native resource limits",
+      "acs": [
+        "M3-AC04",
+        "M3-AC05",
+        "M3-AC06",
+        "M3-AC07"
+      ],
+      "targetTasks": [
+        "CMS-M3-35"
+      ],
+      "inputs": "IMAGE30s/PDF120s/VIDEO600s; threads2; heap256 MiB; RSS watchdog768 MiB; scratch256 MiB; logs64 KiB/stream",
+      "steps": "Exercise boundary/timeouts/cancel and process-tree reap",
+      "expected": "Bounded rejection/recovery; retained bytes preserved; watchdog best-effort not kernel quota",
+      "oracle": "Actual resource/process observations",
+      "dependencies": [
+        "native admission",
+        "owned custody"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Peak RSS/scratch/log bytes and absence/reap evidence",
+      "sideEffects": "Future native subprocesses; none now"
+    },
+    {
+      "id": "RIGHTS-01",
+      "title": "Superseded rights gate: technical READY use và retained factual/editorial review",
+      "acs": [
+        "M3-AC08",
+        "M3-AC12"
+      ],
+      "targetTasks": [
+        "CMS-M3-34",
+        "CMS-M3-36"
+      ],
+      "inputs": "Active metadata exact{name}, existing name validation240; actor exact{uploaderUid} server-owned; technically READY/nonarchived media; anonymous/unauthorized actor; file/integrity failure; editorial self-review attempt",
+      "steps": "After upload→validate/process, use technically READY media without rights declaration/evidence/sourceRefs/EV/submitter/manual approval. Try to forge uploaderUid and bypass file/ACL gates. Exercise retained M1/M2 SOURCE_CHECKED/editorial Snapshot self-review denial separately",
+      "expected": "Separate media rights state/reviewer/revision/proof/useability gate absent; no fakeAPPROVED, checkbox, attribution or allowlist substitute. READY/archive/private-public/integrity/AuthACL enforced; existing factual SOURCE_CHECKED and editorial Snapshot self-review rules preserved. Old AC08/12 rights-only acceptance superseded by current direct human requirement, not silently reported PASS",
+      "oracle": "Meaningful real accepted C0 v2 parser/cross-contract tests pending; actual ACL/workflow needs later admission",
+      "dependencies": [
+        "M3-NO-RIGHTS-V2-CONTRACT-DIRECTION-01",
+        "exact accepted C0 v2 metadata/actor/eligibility APIs",
+        "retained factual/editorial contracts",
+        "runtime admission for product flow"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Future v2 RED/GREEN outputs, independent technical digests, current auth denial and factual/editorial review evidence",
+      "sideEffects": "Future test source then admitted pure checks; actual upload/use/review writes need separate runtime scope"
+    },
+    {
+      "id": "LIBRARY-01",
+      "title": "Paged cursor và archive history",
+      "acs": [
+        "M3-AC09"
+      ],
+      "targetTasks": [
+        "CMS-M3-36"
+      ],
+      "inputs": "pageSize1; stable tied sort; malformed cursor; filter binding; empty/error; archived selected/history; 200 library versions boundary and attempted201",
+      "steps": "Page forward/back; change filters; archive asset; inspect new selection and retained refs; verify library capacity boundary/cap+1 without changing historical records",
+      "expected": "Unique tie-breaker/no scope leak; bad cursor rejected; no new archived selection; historical bytes unchanged; library versions≤200 with explicit capacity refusal at201",
+      "oracle": "Actual paged API+UI and preservation",
+      "dependencies": [
+        "library module",
+        "runtime admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Pages/cursors redacted, retained hashes, UI images",
+      "sideEffects": "Future reads/archive mutation requires scope"
+    },
+    {
+      "id": "COMPAT-01",
+      "title": "CURRENT v2 import và legacy compatibility",
+      "acs": [
+        "M3-AC10",
+        "M3-AC18"
+      ],
+      "targetTasks": [
+        "CMS-M3-34",
+        "CMS-M3-36"
+      ],
+      "inputs": "CURRENT v2 revision/hash; stale CURRENT; frozen v1/v2 digests/replays/render/export",
+      "steps": "Explicit import; compare home/home-v2/history; stale reject; replay/render/export legacy",
+      "expected": "No silent migration; exact content/hash/history preserved; existing behavior retained",
+      "oracle": "Frozen baseline pins and independent byte comparisons",
+      "dependencies": [
+        "import/exporter integration",
+        "runtime admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Before/after pins and compatibility results",
+      "sideEffects": "Future import writes only separately approved"
+    },
+    {
+      "id": "V3-01",
+      "title": "Typed slots, same-version poster và manifest",
+      "acs": [
+        "M3-AC11",
+        "M3-AC12"
+      ],
+      "targetTasks": [
+        "CMS-M3-35",
+        "CMS-M3-36"
+      ],
+      "inputs": "Wrong kind; VIDEO poster different version; hidden technically nonREADY/archived media; PDF publicCredentialPage beyond actual pageCount; duplicate/unknown keys; technical hash/factual proof tamper; IMAGE exactly3 distinct targetWidth320/960/1920 and logical keys; equal effective widths; targetWidth on PDF/VIDEO; proposed projection/order targetWidth+trusted Storage generation",
+      "steps": "Validate hidden+visible full content; replace48page PDF with1page; tamper manifest/review; distinguish selected references from complete processed IMAGE technical integrity binding; reject missing/duplicate target buckets and targetWidth on nonIMAGE; do not use executable v3 golden vectors before Coordinator freeze",
+      "expected": "Wrong kind/links/technical hash fail; VIDEO poster same version; immutable selected manifest and full three-bucket processed integrity preserved without rights approval/proof. targetWidth forbidden PDF/VIDEO. Active metadata exact{name} existing240 validation; actor exact{uploaderUid} server-owned. SOURCE_CHECKED/editorial Snapshot rules remain separate; exact revised APIs/projection/hash vectors BLOCKED_CONTRACT until accepted C0 v2",
+      "oracle": "Accepted C0 v2 real parsers and independent digest/cross-contract vectors pending; no fabricated rights or v2 payloads",
+      "dependencies": [
+        "accepted no-rights C0 v2/U0 compatibility",
+        "v3 modules"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Future literal golden vectors and real API race evidence",
+      "sideEffects": "Future save/submit; none now"
+    },
+    {
+      "id": "BUDGET-01",
+      "title": "UTF-8 persisted budgets",
+      "acs": [
+        "M3-AC11"
+      ],
+      "targetTasks": [
+        "CMS-M3-35",
+        "CMS-M3-36"
+      ],
+      "inputs": "Retained technical caps64 referenced versions incl hidden/fixed,256 manifest entries,Draft/Snapshot/retained factual proofs≤256KiB,v3 envelope≤2MiB,v1/v2≤1MiB; exact C0 v2 measurement contract pending; active rightsproofs/EV absent; Vietnamese/escaped strings",
+      "steps": "Boundary and +1 measured serialized bytes/counts",
+      "expected": "No character-count substitute; exact bytes reject oversized records/envelope",
+      "oracle": "Independent UTF-8/cap accounting; schema measurements BLOCKED_CONTRACT",
+      "dependencies": [
+        "C0 byte convention freeze",
+        "v3 integration"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Measured bytes and expected persisted serialization",
+      "sideEffects": "Small pure future vectors; no large allocations now"
+    },
+    {
+      "id": "PREVIEW-01",
+      "title": "Private empty iframe/CSP, lazy and pages",
+      "acs": [
+        "M3-AC13"
+      ],
+      "targetTasks": [
+        "CMS-M3-36"
+      ],
+      "inputs": "Images/PDF/video at exact revision; empty sandbox/CSP; no tokens; retained Blob64 MiB/download1≤64 MiB",
+      "steps": "Observe DOM/network/storage; lazy video click; parent PDF Previous/Next and sanitized download",
+      "expected": "Opaque iframe no privileged tokens; bounded logical bytes; parent controls; no service worker/storage cache",
+      "oracle": "Rendered Chromium plus network/console/URL lifecycle",
+      "dependencies": [
+        "private preview integration",
+        "browser/runtime admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "DOM/network redacted, console, Blob accounting",
+      "sideEffects": "Future browser reads/downloads"
+    },
+    {
+      "id": "LIFECYCLE-01",
+      "title": "Logout/deactivate/selection/unmount/auth fail",
+      "acs": [
+        "M3-AC14"
+      ],
+      "targetTasks": [
+        "CMS-M3-36"
+      ],
+      "inputs": "In-flight download/hash; late async success; abort; two sessions",
+      "steps": "Trigger each lifecycle transition then complete late task",
+      "expected": "Cancel/clear/revoke; late result cannot restore preview; already loaded device bytes not remotely recalled",
+      "oracle": "Actual async/browser two-session evidence",
+      "dependencies": [
+        "preview/auth integration",
+        "browser/runtime authority"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Object URL/revocation and request outcomes redacted",
+      "sideEffects": "Future browser/logout/deactivate requires scope"
+    },
+    {
+      "id": "ARTIFACT-01",
+      "title": "Exact offline inventory/privacy và cache fail",
+      "acs": [
+        "M3-AC15"
+      ],
+      "targetTasks": [
+        "CMS-M3-35",
+        "CMS-M3-36"
+      ],
+      "inputs": "Caller-supplied actual files/bytes; missing/extra/duplicate/hash mismatch; private sentinel/original/evidence/UID/storagepath/JSON; missing cache; links escape",
+      "steps": "Rehash every served artifact; compare exact inventory; JS-off/on; missing/tampered/link cache",
+      "expected": "Only safe exact selected bytes; fail closed; no original fallback or credentials/private leakage",
+      "oracle": "Pure generic inventory+sentinel is limited; actual bytes/DOM/network/native proof separate",
+      "dependencies": [
+        "exporter integration",
+        "artifact serving/browser admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Per-file byte hashes/type/no-follow inventory; served DOM/network",
+      "sideEffects": "Future export/serve/download only separate authority"
+    },
+    {
+      "id": "UI-01",
+      "title": "Responsive keyboard và material states",
+      "acs": [
+        "M3-AC09",
+        "M3-AC13",
+        "M3-AC14",
+        "M3-AC15"
+      ],
+      "targetTasks": [
+        "CMS-M3-36"
+      ],
+      "inputs": "Chromium390/768/1440 +320/1920; long Vietnamese names/copy; denied/processing/rejected/quota/conflict/missing bytes",
+      "steps": "Keyboard tab/focus trap/restore/Escape; PDF Previous/Next; video controls/progress/errors; JS-off/on artifact",
+      "expected": "Readable reachable controls/states; no clipping; clear conflict/errors; preserve input",
+      "oracle": "Actual rendered authenticated UI; Safari/physical/OS clipboard NOT_RUN",
+      "dependencies": [
+        "UI modules",
+        "browser admission"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Viewport images, keyboard/control/console outcomes",
+      "sideEffects": "Future browser only"
+    },
+    {
+      "id": "FINAL-01",
+      "title": "Fresh gates, preservation và reproduction",
+      "acs": [
+        "M3-AC16",
+        "M3-AC17",
+        "M3-AC18"
+      ],
+      "targetTasks": [
+        "CMS-M3-37",
+        "CMS-M3-38"
+      ],
+      "inputs": "Exact frozen source/tool profiles; owned process custody; protected historical/source/data inventories",
+      "steps": "After34→35→36 run fresh applicable37 gates; freeze; High38 review; reproduce runbook",
+      "expected": "No old pass promoted; failures retained; scope preserved; REVIEW_READY distinct human Accepted; historical generic9/9 not proof of changed no-rights matrix/new v2 suite",
+      "oracle": "Fresh commands/exits/pins and independent review",
+      "dependencies": [
+        "modules/exporter ready",
+        "separate integrated QA/runtime authority"
+      ],
+      "productStatus": "NOT_RUN",
+      "checkAuthorization": "HOLD",
+      "evidenceNeeded": "Gate outputs, before/after, limits and runbook observations",
+      "sideEffects": "Future tests/build/audit/native/browser all HOLD now"
+    }
+  ],
+  "acCoverage": {
+    "M3-AC01": [
+      "ENV-01"
+    ],
+    "M3-AC02": [
+      "ACL-01"
+    ],
+    "M3-AC03": [
+      "UPLOAD-01",
+      "IDEMPOTENCY-01",
+      "QUOTA-01"
+    ],
+    "M3-AC04": [
+      "IMAGE-01",
+      "RESOURCE-01"
+    ],
+    "M3-AC05": [
+      "PDF-01",
+      "RESOURCE-01"
+    ],
+    "M3-AC06": [
+      "VIDEO-01",
+      "RESOURCE-01"
+    ],
+    "M3-AC07": [
+      "QUOTA-01",
+      "JOBS-01",
+      "RESOURCE-01"
+    ],
+    "M3-AC08": [
+      "IDEMPOTENCY-01",
+      "RIGHTS-01"
+    ],
+    "M3-AC09": [
+      "LIBRARY-01",
+      "UI-01"
+    ],
+    "M3-AC10": [
+      "COMPAT-01"
+    ],
+    "M3-AC11": [
+      "V3-01",
+      "BUDGET-01"
+    ],
+    "M3-AC12": [
+      "RIGHTS-01",
+      "V3-01"
+    ],
+    "M3-AC13": [
+      "PREVIEW-01",
+      "UI-01"
+    ],
+    "M3-AC14": [
+      "LIFECYCLE-01",
+      "UI-01"
+    ],
+    "M3-AC15": [
+      "ARTIFACT-01",
+      "UI-01"
+    ],
+    "M3-AC16": [
+      "FINAL-01"
+    ],
+    "M3-AC17": [
+      "FINAL-01"
+    ],
+    "M3-AC18": [
+      "ENV-01",
+      "COMPAT-01",
+      "FINAL-01"
+    ]
+  },
+  "limitations": [
+    "Metadata MIME is not native decode proof",
+    "Synthetic marker scan is not full privacy proof",
+    "Pure byte accounting is not hard native/browser RSS containment",
+    "Human factual truth, Safari, physical devices and OS clipboard NOT_RUN"
+  ],
+  "currentAuthority": {
+    "human": "M3-RIGHTS-REMOVAL-IMPLEMENTATION-HUMAN-AUTHORITY-01 v1",
+    "direction": "M3-NO-RIGHTS-V2-CONTRACT-DIRECTION-01 v1",
+    "sourceScope": "QA-RIGHTS-REMOVAL-01-SOURCE v1",
+    "historicalPreparation": "Original generic9/9 and QA_PREPARATION_READY refer to prior frozen matrix; not v2/new suite proof"
+  }
+}

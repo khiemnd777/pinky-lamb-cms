@@ -1,0 +1,599 @@
+{
+  "image": {
+    "assetId": "media-image",
+    "kind": "IMAGE",
+    "status": "READY",
+    "archived": false,
+    "revision": 1,
+    "uploaderUid": "synthetic-uploader",
+    "rightsEvidenceSubmittedBy": "synthetic-submitter",
+    "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "originalSizeBytes": 1024,
+    "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "derivatives": [
+      {
+        "key": "image-320",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 320,
+        "height": 200,
+        "targetWidth": 320
+      },
+      {
+        "key": "image-960",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 960,
+        "height": 600,
+        "targetWidth": 960
+      },
+      {
+        "key": "image-1920",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 960,
+        "height": 600,
+        "targetWidth": 1920
+      }
+    ],
+    "width": 960,
+    "height": 600
+  },
+  "pdf": {
+    "assetId": "media-pdf",
+    "kind": "PDF",
+    "status": "READY",
+    "archived": false,
+    "revision": 1,
+    "uploaderUid": "synthetic-uploader",
+    "rightsEvidenceSubmittedBy": "synthetic-submitter",
+    "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "originalSizeBytes": 1024,
+    "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "derivatives": [
+      {
+        "key": "download",
+        "role": "PDF_DOWNLOAD",
+        "mimeType": "application/pdf",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345"
+      },
+      {
+        "key": "page-1",
+        "role": "PDF_PAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 1000,
+        "height": 1600,
+        "pageNumber": 1
+      }
+    ],
+    "pageCount": 1
+  },
+  "video": {
+    "assetId": "media-video",
+    "kind": "VIDEO",
+    "status": "READY",
+    "archived": false,
+    "revision": 1,
+    "uploaderUid": "synthetic-uploader",
+    "rightsEvidenceSubmittedBy": "synthetic-submitter",
+    "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "originalSizeBytes": 1024,
+    "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "derivatives": [
+      {
+        "key": "video",
+        "role": "VIDEO",
+        "mimeType": "video/mp4",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 12.5
+      },
+      {
+        "key": "poster",
+        "role": "POSTER",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "width": 1280,
+    "height": 720,
+    "durationSeconds": 12.5
+  },
+  "legacy": {
+    "id": "brand-diagonal",
+    "kind": "IMAGE",
+    "legacyPath": "assets/brand.webp",
+    "mimeType": "image/webp",
+    "sizeBytes": 128,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "rights": {
+      "basis": "CLIENT_SUPPLIED",
+      "evidenceRef": "synthetic-client"
+    },
+    "sourceRefs": [
+      "synthetic-source"
+    ],
+    "width": 320,
+    "height": 200
+  },
+  "manifest": [
+    {
+      "source": "LEGACY",
+      "asset": {
+        "id": "brand-diagonal",
+        "kind": "IMAGE",
+        "legacyPath": "assets/brand.webp",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "rights": {
+          "basis": "CLIENT_SUPPLIED",
+          "evidenceRef": "synthetic-client"
+        },
+        "sourceRefs": [
+          "synthetic-source"
+        ],
+        "width": 320,
+        "height": 200
+      }
+    },
+    {
+      "source": "MEDIA_VERSION",
+      "asset": {
+        "assetId": "media-image",
+        "kind": "IMAGE",
+        "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "originalSizeBytes": 1024,
+        "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 320,
+            "height": 200,
+            "targetWidth": 320
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 960,
+            "height": 600,
+            "targetWidth": 960
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 960,
+            "height": 600,
+            "targetWidth": 1920
+          }
+        ],
+        "width": 960,
+        "height": 600
+      }
+    }
+  ],
+  "content": {
+    "projects": [
+      {
+        "isVisible": false,
+        "cover": {
+          "assetId": "media-image",
+          "alt": "\u1ea2nh th\u1eed",
+          "isDecorative": false
+        }
+      }
+    ],
+    "copy": "Pinky \ud83d\udc11 Lamb\nTi\u1ebfng Vi\u1ec7t"
+  },
+  "vectors": [
+    {
+      "value": {
+        "z": " Ti\u1ebfng Vi\u1ec7t \ud83d\udc11\n",
+        "a": [
+          2,
+          1,
+          {
+            "hidden": true
+          }
+        ]
+      },
+      "canonical": "{\"a\":[2,1,{\"hidden\":true}],\"z\":\" Ti\u1ebfng Vi\u1ec7t \ud83d\udc11\\n\"}",
+      "utf8Bytes": 56,
+      "sha256": "8ae6c5e9e03068834c0f3c4b5d6c2a4a8f2aca9d4d568e7ac2b2e757b96e442e"
+    },
+    {
+      "value": {
+        "z": "e\u0301",
+        "a": "\u00e9"
+      },
+      "canonical": "{\"a\":\"\u00e9\",\"z\":\"e\u0301\"}",
+      "utf8Bytes": 20,
+      "sha256": "9833538876d3d2bb108095dfdd365940f858634c1bcf00a824d09648c4587bcd"
+    },
+    {
+      "value": [
+        {
+          "source": "LEGACY",
+          "asset": {
+            "id": "brand-diagonal",
+            "kind": "IMAGE",
+            "legacyPath": "assets/brand.webp",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "rights": {
+              "basis": "CLIENT_SUPPLIED",
+              "evidenceRef": "synthetic-client"
+            },
+            "sourceRefs": [
+              "synthetic-source"
+            ],
+            "width": 320,
+            "height": 200
+          }
+        },
+        {
+          "source": "MEDIA_VERSION",
+          "asset": {
+            "assetId": "media-image",
+            "kind": "IMAGE",
+            "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "originalSizeBytes": 1024,
+            "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "derivatives": [
+              {
+                "key": "image-320",
+                "role": "IMAGE",
+                "mimeType": "image/webp",
+                "sizeBytes": 128,
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "generation": "900719925474099312345",
+                "width": 320,
+                "height": 200,
+                "targetWidth": 320
+              },
+              {
+                "key": "image-960",
+                "role": "IMAGE",
+                "mimeType": "image/webp",
+                "sizeBytes": 128,
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "generation": "900719925474099312345",
+                "width": 960,
+                "height": 600,
+                "targetWidth": 960
+              },
+              {
+                "key": "image-1920",
+                "role": "IMAGE",
+                "mimeType": "image/webp",
+                "sizeBytes": 128,
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "generation": "900719925474099312345",
+                "width": 960,
+                "height": 600,
+                "targetWidth": 1920
+              }
+            ],
+            "width": 960,
+            "height": 600
+          }
+        }
+      ],
+      "canonical": "[{\"asset\":{\"height\":200,\"id\":\"brand-diagonal\",\"kind\":\"IMAGE\",\"legacyPath\":\"assets/brand.webp\",\"mimeType\":\"image/webp\",\"rights\":{\"basis\":\"CLIENT_SUPPLIED\",\"evidenceRef\":\"synthetic-client\"},\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"sourceRefs\":[\"synthetic-source\"],\"width\":320},\"source\":\"LEGACY\"},{\"asset\":{\"assetId\":\"media-image\",\"derivativeSetSha256\":\"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\",\"derivatives\":[{\"generation\":\"900719925474099312345\",\"height\":200,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":320,\"width\":320},{\"generation\":\"900719925474099312345\",\"height\":600,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":960,\"width\":960},{\"generation\":\"900719925474099312345\",\"height\":600,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":1920,\"width\":960}],\"evidenceSha256\":\"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\"height\":600,\"kind\":\"IMAGE\",\"originalSha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"originalSizeBytes\":1024,\"processingRecipeSha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"toolSetSha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"width\":960},\"source\":\"MEDIA_VERSION\"}]",
+      "utf8Bytes": 1615,
+      "sha256": "5b2176ec3bb93479c13d9ff1cc5a9b67baea44c5a10c9d62b3697a21f0e18e7a"
+    },
+    {
+      "value": {
+        "content": {
+          "projects": [
+            {
+              "isVisible": false,
+              "cover": {
+                "assetId": "media-image",
+                "alt": "\u1ea2nh th\u1eed",
+                "isDecorative": false
+              }
+            }
+          ],
+          "copy": "Pinky \ud83d\udc11 Lamb\nTi\u1ebfng Vi\u1ec7t"
+        },
+        "mediaManifestHash": "5b2176ec3bb93479c13d9ff1cc5a9b67baea44c5a10c9d62b3697a21f0e18e7a",
+        "schemaVersion": 3,
+        "templateVersion": "m3-site-media-v1"
+      },
+      "canonical": "{\"content\":{\"copy\":\"Pinky \ud83d\udc11 Lamb\\nTi\u1ebfng Vi\u1ec7t\",\"projects\":[{\"cover\":{\"alt\":\"\u1ea2nh th\u1eed\",\"assetId\":\"media-image\",\"isDecorative\":false},\"isVisible\":false}]},\"mediaManifestHash\":\"5b2176ec3bb93479c13d9ff1cc5a9b67baea44c5a10c9d62b3697a21f0e18e7a\",\"schemaVersion\":3,\"templateVersion\":\"m3-site-media-v1\"}",
+      "utf8Bytes": 304,
+      "sha256": "6db75a76de63f931e91cb70afa19739a0f54748c09395a3256cb7ff7ef6497e2"
+    },
+    {
+      "value": {
+        "a": "\ud800",
+        "b": [
+          0,
+          true,
+          null
+        ]
+      },
+      "canonical": "{\"a\":\"\\ud800\",\"b\":[0,true,null]}",
+      "utf8Bytes": 32,
+      "sha256": "2b0f91c31e1107ba9617137f53f9d507df6085f4fc807aed4902e3bdb12eed39"
+    },
+    {
+      "value": {
+        "assetId": "media-tiny",
+        "kind": "IMAGE",
+        "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "originalSizeBytes": 1024,
+        "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 120,
+            "height": 80,
+            "targetWidth": 320
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 120,
+            "height": 80,
+            "targetWidth": 960
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 120,
+            "height": 80,
+            "targetWidth": 1920
+          }
+        ],
+        "width": 120,
+        "height": 80
+      },
+      "canonical": "{\"assetId\":\"media-tiny\",\"derivativeSetSha256\":\"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\",\"derivatives\":[{\"generation\":\"900719925474099312345\",\"height\":80,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":320,\"width\":120},{\"generation\":\"900719925474099312345\",\"height\":80,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":960,\"width\":120},{\"generation\":\"900719925474099312345\",\"height\":80,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":1920,\"width\":120}],\"evidenceSha256\":\"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\"height\":80,\"kind\":\"IMAGE\",\"originalSha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"originalSizeBytes\":1024,\"processingRecipeSha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"toolSetSha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"width\":120}",
+      "utf8Bytes": 1228,
+      "sha256": "35a92f085b930bd2a132c64546e34e3f4b4d88eec0f3fa559e19449768e4cfe2"
+    },
+    {
+      "value": {
+        "assetId": "media-portrait",
+        "kind": "IMAGE",
+        "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "originalSizeBytes": 1024,
+        "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "derivatives": [
+          {
+            "key": "image-320",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 320,
+            "height": 480,
+            "targetWidth": 320
+          },
+          {
+            "key": "image-960",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 960,
+            "height": 1440,
+            "targetWidth": 960
+          },
+          {
+            "key": "image-1920",
+            "role": "IMAGE",
+            "mimeType": "image/webp",
+            "sizeBytes": 128,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation": "900719925474099312345",
+            "width": 1920,
+            "height": 2880,
+            "targetWidth": 1920
+          }
+        ],
+        "width": 2000,
+        "height": 3000
+      },
+      "canonical": "{\"assetId\":\"media-portrait\",\"derivativeSetSha256\":\"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\",\"derivatives\":[{\"generation\":\"900719925474099312345\",\"height\":480,\"key\":\"image-320\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":320,\"width\":320},{\"generation\":\"900719925474099312345\",\"height\":1440,\"key\":\"image-960\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":960,\"width\":960},{\"generation\":\"900719925474099312345\",\"height\":2880,\"key\":\"image-1920\",\"mimeType\":\"image/webp\",\"role\":\"IMAGE\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sizeBytes\":128,\"targetWidth\":1920,\"width\":1920}],\"evidenceSha256\":\"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\",\"height\":3000,\"kind\":\"IMAGE\",\"originalSha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"originalSizeBytes\":1024,\"processingRecipeSha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"toolSetSha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"width\":2000}",
+      "utf8Bytes": 1241,
+      "sha256": "5119fabfb5fa2c866f36c385a24d0c593c93b4bd42a5526596f3ecfad1904931"
+    }
+  ],
+  "mediaManifestHash": "5b2176ec3bb93479c13d9ff1cc5a9b67baea44c5a10c9d62b3697a21f0e18e7a",
+  "contentHash": "6db75a76de63f931e91cb70afa19739a0f54748c09395a3256cb7ff7ef6497e2",
+  "budgetVectors": [
+    {
+      "name": "storedDraft",
+      "cap": 262144,
+      "repeatAsciiChars": 262126,
+      "prefix": "{\"contentJson\":\"",
+      "suffix": "\"}"
+    },
+    {
+      "name": "storedSnapshot",
+      "cap": 262144,
+      "repeatAsciiChars": 262126,
+      "prefix": "{\"contentJson\":\"",
+      "suffix": "\"}"
+    }
+  ],
+  "tinyImage": {
+    "assetId": "media-tiny",
+    "kind": "IMAGE",
+    "status": "READY",
+    "archived": false,
+    "revision": 1,
+    "uploaderUid": "synthetic-uploader",
+    "rightsEvidenceSubmittedBy": "synthetic-submitter",
+    "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "originalSizeBytes": 1024,
+    "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "derivatives": [
+      {
+        "key": "image-320",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 120,
+        "height": 80,
+        "targetWidth": 320
+      },
+      {
+        "key": "image-960",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 120,
+        "height": 80,
+        "targetWidth": 960
+      },
+      {
+        "key": "image-1920",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 120,
+        "height": 80,
+        "targetWidth": 1920
+      }
+    ],
+    "width": 120,
+    "height": 80
+  },
+  "portraitImage": {
+    "assetId": "media-portrait",
+    "kind": "IMAGE",
+    "status": "READY",
+    "archived": false,
+    "revision": 1,
+    "uploaderUid": "synthetic-uploader",
+    "rightsEvidenceSubmittedBy": "synthetic-submitter",
+    "originalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "originalSizeBytes": 1024,
+    "processingRecipeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "toolSetSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "derivativeSetSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "evidenceSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "derivatives": [
+      {
+        "key": "image-320",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 320,
+        "height": 480,
+        "targetWidth": 320
+      },
+      {
+        "key": "image-960",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 960,
+        "height": 1440,
+        "targetWidth": 960
+      },
+      {
+        "key": "image-1920",
+        "role": "IMAGE",
+        "mimeType": "image/webp",
+        "sizeBytes": 128,
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "generation": "900719925474099312345",
+        "width": 1920,
+        "height": 2880,
+        "targetWidth": 1920
+      }
+    ],
+    "width": 2000,
+    "height": 3000
+  }
+}

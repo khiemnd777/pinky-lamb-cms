@@ -1,0 +1,164 @@
+{
+  "id": "fixture-export-synthetic",
+  "draftRevision": 0,
+  "mediaManifestHash": "f4ce111ee7225454f14b38e08ebb2385d06569b317a2dcefe4f27b8bdba56742",
+  "contentHash": "c735eef7d9a1e98b5f7f4fac04671792a2bef52af1e0492a2dbf729543874c30",
+  "schemaVersion": 1,
+  "templateVersion": "m1-hero-split-v1",
+  "submittedBy": "fixture-export-author",
+  "submittedAt": "2026-10-11T00:00:00Z",
+  "content": {
+    "schemaVersion": 1,
+    "locale": "vi-VN",
+    "hero": {
+      "kind": "HERO",
+      "variant": "hero-split",
+      "heading": {
+        "lines": [
+          [
+            {
+              "text": "Big ideas."
+            }
+          ],
+          [
+            {
+              "text": "Lovely "
+            },
+            {
+              "text": "impact.",
+              "emphasis": "ACCENT"
+            }
+          ]
+        ]
+      },
+      "eyebrow": "INDEPENDENT MINDS. MEMORABLE EXPERIENCES.",
+      "description": [
+        {
+          "text": "Từ ý tưởng thương hiệu đến phim, truyền thông và sự kiện. Chúng tôi biến sáng tạo thành những trải nghiệm đáng nhớ — với một chút "
+        },
+        {
+          "text": "Pinky",
+          "emphasis": "STRONG"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "primaryAction": {
+        "kind": "SECTION",
+        "sectionId": "work",
+        "label": "Khám phá dự án"
+      },
+      "secondaryAction": {
+        "kind": "SHOWREEL",
+        "label": "Xem showreel"
+      },
+      "footnote": "BASED IN VIETNAM. CREATING FOR THE WORLD.",
+      "note": "The house of all cutest things.",
+      "image": {
+        "assetId": "pinky-hero",
+        "alt": "Mascot cừu hồng Pinky Lamb trong bộ nhận diện Crystal Blossom",
+        "isDecorative": false
+      }
+    },
+    "seo": {
+      "title": "Pinky Lamb — Creative, Media & Events",
+      "description": "Pinky Lamb — Independent Creative Production Agency & IP Studio. Brand, phim & nội dung, truyền thông, sự kiện và những trải nghiệm đáng nhớ.",
+      "ogTitle": "Pinky Lamb — Big ideas. Lovely impact.",
+      "ogDescription": "Creative production, media & events. Cùng Pinky Lamb biến ý tưởng thành những điều đáng nhớ.",
+      "ogImage": {
+        "assetId": "pinky-hero",
+        "alt": "Mascot cừu hồng Pinky Lamb",
+        "isDecorative": false
+      }
+    }
+  },
+  "mediaManifest": [
+    {
+      "id": "pinky-hero",
+      "kind": "IMAGE",
+      "legacyPath": "assets/pinky-hero.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 51282,
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "width": 830,
+      "height": 900,
+      "rights": {
+        "basis": "CLIENT_SUPPLIED",
+        "evidenceRef": "dist/assets/pinky-hero.webp"
+      },
+      "sourceRefs": [
+        "dist/assets/pinky-hero.webp",
+        "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+      ]
+    },
+    {
+      "id": "showreel-2025",
+      "kind": "VIDEO",
+      "legacyPath": "assets/showreel-2025.mp4",
+      "mimeType": "video/mp4",
+      "sizeBytes": 11403830,
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 65.344,
+      "rights": {
+        "basis": "CLIENT_SUPPLIED",
+        "evidenceRef": "dist/assets/showreel-2025.mp4"
+      },
+      "sourceRefs": [
+        "dist/assets/showreel-2025.mp4",
+        "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+      ]
+    },
+    {
+      "id": "showreel-poster",
+      "kind": "IMAGE",
+      "legacyPath": "assets/showreel-poster.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 54698,
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "width": 1440,
+      "height": 810,
+      "rights": {
+        "basis": "CLIENT_SUPPLIED",
+        "evidenceRef": "dist/assets/showreel-poster.webp"
+      },
+      "sourceRefs": [
+        "dist/assets/showreel-poster.webp",
+        "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json"
+      ]
+    }
+  ],
+  "sourceRefs": [
+    {
+      "id": "source-f996b0782944e0ad019840c6990feb9ddd5223bc60d141c3c1fcbaf7a0704a5e",
+      "kind": "SUPPLIED_FILE",
+      "privateDocumentId": "legacy-source-f996b0782944e0ad019840c6990feb9ddd5223bc60d141c3c1fcbaf7a0704a5e",
+      "claimBindings": [],
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "source-8b5e42940043395d1ffd0e4f365aee7cb679cd08645a18d2e84412a8770c0105",
+      "kind": "SUPPLIED_FILE",
+      "privateDocumentId": "legacy-source-8b5e42940043395d1ffd0e4f365aee7cb679cd08645a18d2e84412a8770c0105",
+      "claimBindings": [],
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "source-2b007ae9033c04b9a88a1072509ec19a655ec461dd8f7d792f0e4a3131dbeeda",
+      "kind": "SUPPLIED_FILE",
+      "privateDocumentId": "legacy-source-2b007ae9033c04b9a88a1072509ec19a655ec461dd8f7d792f0e4a3131dbeeda",
+      "claimBindings": [],
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "source-df3f0475fae152d3a31e57c8326852c0d91e24d85d1c5be8cd9b85225d894bbc",
+      "kind": "SUPPLIED_FILE",
+      "privateDocumentId": "legacy-source-df3f0475fae152d3a31e57c8326852c0d91e24d85d1c5be8cd9b85225d894bbc",
+      "claimBindings": [],
+      "verification": "UNVERIFIED"
+    }
+  ],
+  "message": "Synthetic local QA input. Not an editorial approval."
+}

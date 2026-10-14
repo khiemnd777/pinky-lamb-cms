@@ -1,0 +1,9 @@
+{
+  "name":"pinky-lamb-cms-recovery-api-local",
+  "version":"0.1.0",
+  "private":true,
+  "type":"module",
+  "main":"index.mjs",
+  "engines":{"node":"22"},
+  "dependencies":{"firebase-admin":"14.5.0","firebase-functions":"7.4.0"}
+}

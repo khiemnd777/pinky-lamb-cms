@@ -1,0 +1,90 @@
+{
+  "method": "Independent Python stdlib JSON string escaping and hashlib SHA256 over literal single-ASCII-key {name}; valid vectors exclude lone surrogates and controls; exact UTF8/no newline, no target imports or execution. Full96 golden chain not generated.",
+  "vectorCount": 7,
+  "vectors": [
+    {
+      "id": "ascii",
+      "name": "Golden",
+      "canonicalJson": "{\"name\":\"Golden\"}",
+      "canonicalUtf8Bytes": 17,
+      "metadataDigest": "9636d6e102426f9b77907bb07531e69276661e601caebf73fce684023ec8a2e1"
+    },
+    {
+      "id": "unicode",
+      "name": "Golden Ti\u1ebfng Vi\u1ec7t \ud83d\ude00",
+      "canonicalJson": "{\"name\":\"Golden Ti\u1ebfng Vi\u1ec7t \ud83d\ude00\"}",
+      "canonicalUtf8Bytes": 37,
+      "metadataDigest": "626e720e51ad255639d4c2a8f675e0921e118570151969d7ff64b8905f27147e"
+    },
+    {
+      "id": "whitespace",
+      "name": "  Golden  ",
+      "canonicalJson": "{\"name\":\"  Golden  \"}",
+      "canonicalUtf8Bytes": 21,
+      "metadataDigest": "96cd0b163b40085a103a26006455b88a0561298ca3e333addd8415fa953ab126"
+    },
+    {
+      "id": "decomposed",
+      "name": "e\u0301",
+      "canonicalJson": "{\"name\":\"e\u0301\"}",
+      "canonicalUtf8Bytes": 14,
+      "metadataDigest": "6a547588c4055916e090ed61467326046dd52810679d03bfb84d862a7123522e"
+    },
+    {
+      "id": "escaped",
+      "name": "Golden \"A\" \\ /",
+      "canonicalJson": "{\"name\":\"Golden \\\"A\\\" \\\\ /\"}",
+      "canonicalUtf8Bytes": 28,
+      "metadataDigest": "1e6c29994ff1d9b23a68ad3d650d3b18f491fa1b3c4f9fd18515ad78c85ab57a"
+    },
+    {
+      "id": "ascii240",
+      "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "canonicalJson": "{\"name\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+      "canonicalUtf8Bytes": 251,
+      "metadataDigest": "3257390aa3a79d54fd39dfb46c7ffee365896f0a55f2c93d4dd21bcd2b4ccd5d"
+    },
+    {
+      "id": "astral240",
+      "name": "\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00",
+      "canonicalJson": "{\"name\":\"\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\"}",
+      "canonicalUtf8Bytes": 491,
+      "metadataDigest": "4b875f0212d000aaea0c6dcf5ef898fc42fa276343653fffe54b6eaeb9ef1fd0"
+    }
+  ],
+  "invalidNames": [
+    "",
+    "   ",
+    "\t",
+    "a\nb",
+    "a\rb",
+    "a\u2028b",
+    "a\u2029b",
+    "a\u0000b",
+    "a\u007fb",
+    "\ud800",
+    "\udc00"
+  ],
+  "forbiddenMetadataFields": [
+    "rights",
+    "evidence",
+    "sourceRefs",
+    "referenceAllowlist",
+    "evidenceSha256",
+    "rightsEvidenceSubmittedBy",
+    "uploaderUid",
+    "actors",
+    "contractRevision"
+  ],
+  "validUploaderUids": [
+    "uploader-a2",
+    "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+  ],
+  "invalidUploaderUids": [
+    "",
+    "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+    "user name",
+    "user:one",
+    "Ti\u1ebfng_Vi\u1ec7t"
+  ]
+}

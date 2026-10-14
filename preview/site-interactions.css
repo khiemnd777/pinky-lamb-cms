@@ -1,0 +1,30 @@
+/* Functional adaptation of the frozen baseline; native HTML remains the fallback. */
+[hidden] { display:none !important; }
+.site-enhanced .case-enhanced > .case-body { display:none; }
+.project-card > summary { cursor:pointer; }
+.project-card > summary:focus-visible, .menu-toggle:focus-visible,
+.site-enhanced button:focus-visible, .site-enhanced a:focus-visible {
+  outline:2px solid var(--dark); outline-offset:4px;
+}
+.case-dialog, .video-dialog { padding:0; }
+.dialog-toolbar { min-width:0; }
+.dialog-toolbar > span {
+  flex:1 1 0; min-width:0; max-width:100%;
+  overflow-wrap:anywhere; white-space:normal;
+}
+.dialog-toolbar .dialog-close { flex-shrink:0; }
+.case-dialog .case-body, .video-dialog { overflow-wrap:anywhere; }
+.case-dialog .case-gallery img { max-width:100%; }
+/* Automatic height lets the baseline responsive aspect ratio size the cloned cover. */
+.case-dialog .case-main-image { height:auto; }
+.case-dialog #case-interest { margin-top:24px; white-space:normal; }
+.video-dialog video { display:block; width:100%; max-height:75vh; }
+.reel-status { padding:12px 18px; }
+#brief-status { overflow-wrap:anywhere; }
+#brief-fallback { margin-top:20px; min-width:0; }
+#brief-copy-text { width:100%; max-width:100%; resize:vertical; }
+.service-item > summary { cursor:pointer; }
+.service-item > summary:focus-visible { outline:2px solid var(--dark); outline-offset:4px; }
+#mobile-menu > summary { list-style:none; cursor:pointer; }
+#mobile-menu > summary::-webkit-details-marker { display:none; }
+@media (min-width:1021px) { #mobile-menu > .mobile-nav { display:none; } }

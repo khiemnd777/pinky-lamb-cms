@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
+const canonical=v=>Array.isArray(v)?`[${v.map(canonical).join(',')}]`:v!==null&&typeof v==='object'?`{${Object.keys(v).sort().map(k=>`${JSON.stringify(k)}:${canonical(v[k])}`).join(',')}}`:JSON.stringify(v);
+const hash=v=>createHash('sha256').update(canonical(v)).digest('hex');
+import {siteSnapshotHashes} from '../cms-api/site-snapshots.mjs';
+import {canonicalJson} from '../contracts/draft.mjs';
+const fixture=read('./fixtures/approved-site.json'),tamper=read('./fixtures/m2-tamper.json');
+test('v2 exact versioned envelope SHA uses independent canonical ordering and all private selections',()=>{const mediaManifestHash=hash(fixture.snapshot.mediaManifest);assert.deepEqual(siteSnapshotHashes(fixture.snapshot.content,fixture.snapshot.mediaManifest),{mediaManifestHash,contentHash:hash({content:fixture.snapshot.content,mediaManifestHash,schemaVersion:2,templateVersion:'m2-site-baseline-v1'})});});
+test('canonical JSON preserves array order and exact escaped Unicode without trimming',()=>{const value={z:['é','é','"\\','🩷'],a:{x:1,b:false}};assert.equal(canonicalJson(value),canonical(value));assert.notEqual(hash(value),hash({...value,z:[...value.z].reverse()}));assert.notEqual(hash({copy:' copy '}),hash({copy:'copy'}));});
+test('presentation ordering, hidden facts and claim binding mutations each change full content digest',()=>{const s=fixture.snapshot;for(const mutation of tamper.contentMutations){const c=structuredClone(s.content);if(mutation==='projectOrder')c.projects.reverse();if(mutation==='hiddenFact'){c.projects[0].isVisible=false;c.projects[0].summary+=' independent changed fact';}if(mutation==='claimSources')c.claimSources[0].sourceIds.reverse();if(mutation==='claimSources'&&hash(c)===hash(s.content))c.claimSources.pop();assert.notEqual(siteSnapshotHashes(c,s.mediaManifest).contentHash,siteSnapshotHashes(s.content,s.mediaManifest).contentHash);}});
+test('frozen 5409-byte archived M1 fixture keeps literal independent content and media hashes',()=>{const bytes=readFileSync(new URL('./fixtures/approved-hero.json',import.meta.url));assert.equal(bytes.length,5409);assert.equal(createHash('sha256').update(bytes).digest('hex'),'364f4c393753a8505694efd7f454bfa8740e3c7ba2d51fe5252450397364fd3d');const s=JSON.parse(bytes),mediaManifestHash=hash(s.mediaManifest);assert.equal(mediaManifestHash,'f4ce111ee7225454f14b38e08ebb2385d06569b317a2dcefe4f27b8bdba56742');assert.equal(hash({content:s.content,mediaManifestHash,schemaVersion:1,templateVersion:'m1-hero-split-v1'}),'c735eef7d9a1e98b5f7f4fac04671792a2bef52af1e0492a2dbf729543874c30');});

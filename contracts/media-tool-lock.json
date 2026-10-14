@@ -1,0 +1,742 @@
+{
+  "lockVersion": 1,
+  "milestone": "CMS-M3-01",
+  "status": "PDF_LOCAL_SOURCE_SETUP_REVIEW_READY_PENDING_FULL_HIGH_NATIVE_CAPABILITY_HOLD",
+  "platform": {
+    "os": "darwin",
+    "arch": "arm64",
+    "node": "22.23.3",
+    "npm": "10.9.9",
+    "runtime": "26.1009.11318"
+  },
+  "packages": {
+    "sharp": {
+      "version": "0.35.5",
+      "tarball": {
+        "path": ".local/cache/m3/task01-downloads/sharp-0.35.5.tgz",
+        "bytes": 214749,
+        "sha256": "3b6bbbe6b308f5c383938ca4a31926cd5d79c4651ed8c5fda16a97da2014a9ac"
+      },
+      "integrity": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g==",
+      "license": "Apache-2.0",
+      "nativeVersions": {
+        "aom": "3.15.1",
+        "archive": "3.8.9",
+        "cairo": "1.18.6",
+        "cgif": "0.5.4",
+        "exif": "0.6.26",
+        "expat": "2.8.5",
+        "ffi": "3.8.0",
+        "fontconfig": "2.18.3",
+        "freetype": "2.14.3",
+        "fribidi": "1.0.17",
+        "glib": "2.90.0",
+        "harfbuzz": "14.5.0",
+        "heif": "1.23.5",
+        "highway": "1.4.0",
+        "imagequant": "2.4.1",
+        "lcms": "2.19.1",
+        "mozjpeg": "0826579",
+        "pango": "1.58.2",
+        "pixman": "0.46.4",
+        "png": "1.6.58",
+        "proxy-libintl": "0.5",
+        "rsvg": "2.63.2",
+        "tiff": "4.7.2",
+        "uhdr": "2.0.2",
+        "vips": "8.18.7",
+        "webp": "1.6.0",
+        "xml2": "2.15.4",
+        "zlib-ng": "2.3.3",
+        "sharp": "0.35.5"
+      }
+    },
+    "pdf-lib": {
+      "version": "1.17.1",
+      "tarball": {
+        "path": ".local/cache/m3/task01-downloads/pdf-lib-1.17.1.tgz",
+        "bytes": 4226739,
+        "sha256": "a7cc1eaf12e41e612a7be581162a63b18118aefc01e90f6a1f35347b1f324a1c"
+      },
+      "integrity": "sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==",
+      "license": "MIT"
+    }
+  },
+  "poppler": {
+    "version": "26.10.0",
+    "status": "LOCAL_SOURCE_BUILD_SETUP_REVIEW_READY_PENDING_INDEPENDENT_FULL_HIGH_GATE",
+    "root": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/tools/m3/pdf-tools/poppler-26.10.0-cairo",
+    "runtime": "LOCAL_ISOLATED_SOURCE_BUILD_DARWIN_ARM64",
+    "renderer": "CairoOutputDev PNG only; retained SplashBitmap/shared core not claimed absent",
+    "tools": [
+      "pdfinfo",
+      "pdftocairo"
+    ],
+    "core": "STATIC",
+    "sourceArtifact": {
+      "url": "https://poppler.freedesktop.org/poppler-26.10.0.tar.xz",
+      "path": ".local/cache/m3/pdf-tools/01Pa-setup/reference-poppler-26.10.0.tar.xz",
+      "bytes": 2051484,
+      "sha256": "6792cb7c69205007ad87d2e936cecc5b3a31fac29ab54ffc3175fdb6b2a6ce35"
+    },
+    "publisherSignature": "NOT_VERIFIED_PRIMARY_ORIGIN_SHA_PINS_ONLY",
+    "inventory": {
+      "path": ".local/cache/m3/pdf-tools/01Pa-readonly-cache/installed-tools-with-readonly-policy.json",
+      "bytes": 3317,
+      "sha256": "9a5c261ea29f736d9eed87b4a4889093749ead943f0c14e808278cd563af9760"
+    },
+    "binaryPins": [
+      {
+        "path": "bin/pdfinfo",
+        "type": "file",
+        "bytes": 3297176,
+        "sha256": "f67700d0175d23d70539a917aed185b00519c69548a6daff4ea510153101728d"
+      },
+      {
+        "path": "bin/pdftocairo",
+        "type": "file",
+        "bytes": 3500552,
+        "sha256": "daceeb000fab5ac2413a3a992fbc15d6a230bc0729c998ab0f3d987b55bf2134"
+      }
+    ],
+    "linkedLibraryIdentityStatus": "RECURSIVE_OTOOL_AND_ACTUAL_DYLD_IDENTITY_PATHS_CHECKED_PENDING_HIGH_REVIEW",
+    "linkageEvidence": {
+      "path": ".local/cache/m3/pdf-tools/01Pa-resume-headers/recursive-native-linkage.json",
+      "bytes": 124906,
+      "sha256": "9c51d673753ad748c381356726e25e8dc74b88725fba8af65256193cba5c4a65"
+    },
+    "actualLoaderEvidence": {
+      "path": ".local/cache/m3/pdf-tools/01Pa-resume-headers/actual-dyld-loader-identity.json",
+      "bytes": 103309,
+      "sha256": "62d72544255a8fa366dcf0b0d313954ce964e98b114347c7aa616105a954788f"
+    },
+    "systemRuntimeBytePins": false,
+    "fontConfig": {
+      "path": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/tools/m3/pdf-tools/poppler-26.10.0-cairo/etc/fonts/fonts.conf",
+      "sha256": "6d08edd123945d18aa54835a1e8c6c24aedfa56c2d724a4af5c22b9680fff989",
+      "fontDir": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/fonts",
+      "cacheDir": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/tools/m3/pdf-tools/poppler-26.10.0-cairo/var/cache/fontconfig",
+      "actualReportedFontFiles": 31,
+      "proof": {
+        "path": ".local/cache/m3/pdf-tools/01Pa-resume-headers/actual-font-configuration-identity.json",
+        "bytes": 4924,
+        "sha256": "ec786f4dbeb06050af495fec638c835b89335bef8d7d753237dfb57c5f3865e3"
+      },
+      "limits": "Privateconfig andtrustedfontenumeration; not allOSfilesystemaccess orPDFfontfixtureproof",
+      "readOnlyPolicy": {
+        "status": "VERIFIED_NORMAL_NATIVE_READONLY_CACHE_PENDING_FULL_HIGH_REVIEW",
+        "configMode": "0400",
+        "configDirectoryMode": "0500",
+        "cacheDirectoryMode": "0500",
+        "cacheFileMode": "0400",
+        "cacheFileNames": [
+          "d687952fd431cbe9963033d3698b2ee0-le64.cache-11"
+        ],
+        "modeReceipt": {
+          "path": ".local/cache/m3/pdf-tools/01Pa-readonly-cache/readonly-mode-change-receipt.json",
+          "bytes": 1821,
+          "sha256": "e0565dfb774b93c130bc210ef7af71a5d88f4d4a023d979c6101bb40da30213c"
+        },
+        "verification": {
+          "path": ".local/cache/m3/pdf-tools/01Pa-readonly-cache/actual-readonly-cache-verification.json",
+          "bytes": 8407,
+          "sha256": "90fd7059f6e055d497381b4949132e0f717f10564975f1658029cf0d82bde872"
+        },
+        "noCacheWritesDuringVerification": true,
+        "diagnosticsSuppressed": false,
+        "limits": "Ordinary filesystem modes; not hardOSsandbox/allmaliciouscode proof"
+      }
+    },
+    "dataDir": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/share/poppler",
+    "buildEvidence": {
+      "path": ".local/cache/m3/pdf-tools/01Pa-resume-headers/configuration-and-warning-receipt.json",
+      "bytes": 8832,
+      "sha256": "8b34107b74526e9d888e93c0f59ef645e7306c91052a13b2295b6bdd628d21fe"
+    },
+    "compilerDependencyEvidence": {
+      "path": ".local/cache/m3/pdf-tools/01Pa-resume-headers/actual-compiled-dependency-gate.json",
+      "bytes": 215959,
+      "sha256": "89dd1e56535b813764a14865d66e069b37a11b4abe6a62e2a6f9aadc06dc9901"
+    },
+    "securityGate": {
+      "status": "HOLD_PENDING_FULL_HIGH_SETUP_AND01Pb_NATIVE_PDF_GATE",
+      "nativePdfInputs": "NOT_RUN",
+      "CVE107705": "UnfixedlongcallerpasswordR6corepath; futurefixedargvnocallerPW/noAPI andencryptedR6/emptyPWrefusalmandatory; notblanketsafety",
+      "BrotliOFF": "EOFwarningfallback requiresallwarning/errorrefusalevenexit0 in01Pb",
+      "retainedSplashCore": "Cairoselectedbutsharedcore remains; no blanketsecurityclaim"
+    },
+    "fixedRasterPageRecipe": [
+      "-png",
+      "-singlefile",
+      "-f",
+      "N",
+      "-l",
+      "N",
+      "-scale-to",
+      "1600",
+      "OWNED_INPUT",
+      "OWNED_PREFIX"
+    ],
+    "mediaTests": "NOT_RUN_01Pb_REQUIRES_FULL_HIGH_SETUP_PASS"
+  },
+  "ffmpeg": {
+    "version": "9.0.2",
+    "sourceUrl": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+    "signatureUrl": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz.asc",
+    "keyUrl": "https://ffmpeg.org/ffmpeg-devel.asc",
+    "expectedSignerFingerprint": "FCF986EA15E6E293A5644F10B4322F04D67658D8",
+    "files": [
+      {
+        "path": ".local/cache/m3/task01-downloads/ffmpeg-9.0.2.tar.xz",
+        "bytes": 12040788,
+        "sha256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e"
+      },
+      {
+        "path": ".local/cache/m3/task01-downloads/ffmpeg-9.0.2.tar.xz.asc",
+        "bytes": 520,
+        "sha256": "d617fd94ea354dadd2a8bb16243d37c44e1e9729b06b6ad58fe30bfb0fa943f2"
+      },
+      {
+        "path": ".local/cache/m3/task01-downloads/ffmpeg-devel.asc",
+        "bytes": 1709,
+        "sha256": "397b3becedcd5a98769967ff1ff8501ddc89f8368b8f766e4701377d7dbaabe5"
+      }
+    ],
+    "signatureVerification": "VERIFIED_DEFAULT_POLICY_INDEPENDENT_HIGH_V_PASS",
+    "sourceExtracted": true,
+    "build": "COMPLETED_IDENTITY_AND_CAPABILITY_LISTS_ONLY",
+    "binaries": [
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/bin/ffmpeg",
+        "bytes": 5215704,
+        "sha256": "dece05f7fdedb3027a4a9e438cad6b208e3f0da93872ae2ac0d19d2bbe14aa1d"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/bin/ffprobe",
+        "bytes": 5039672,
+        "sha256": "cf2989fc4f5c20e35f184a1b17ffe14dfe977cf822fd735837b51ad4f56d82c3"
+      }
+    ],
+    "verificationResult": {
+      "verified": true,
+      "fingerprint": "FCF986EA15E6E293A5644F10B4322F04D67658D8",
+      "signerKeyId": "b4322f04d67658d8",
+      "signatureCount": 1,
+      "sourceSha256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+      "signatureSha256": "d617fd94ea354dadd2a8bb16243d37c44e1e9729b06b6ad58fe30bfb0fa943f2",
+      "keySha256": "397b3becedcd5a98769967ff1ff8501ddc89f8368b8f766e4701377d7dbaabe5",
+      "verifierInventorySha256": "d7bf54e896c7935fe176899bd68d592bc27bf689c824462e2077efe3209962e1"
+    },
+    "verificationEvidence": {
+      "path": ".local/cache/m3/verifier-setup/vb-official-final.log",
+      "bytes": 466,
+      "sha256": "06a9685a101857d43688dfe9cc777e61f7483d209a70181c3f3776aea17e1251"
+    },
+    "staticLibraries": [
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libavcodec.a",
+        "bytes": 2739528,
+        "sha256": "726b22f6ddd1a49f33a81c46ea67d4bad83881c5db0504f29cd32e7497c2c716"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libavdevice.a",
+        "bytes": 19984,
+        "sha256": "969a23556ebf87b83ca1a2f3bb59518ad73c7e90402c4d337f52b44caa37dcfb"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libavfilter.a",
+        "bytes": 376544,
+        "sha256": "dd7c853330cc7a6dadba7ac7a20ab8152ca3e272feadc672536e52b98980827b"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libavformat.a",
+        "bytes": 1074792,
+        "sha256": "a6abf2bce6d82543be3c8769d4bf98abd0f9da54f3226b9124e4fa2a9802f119"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libavutil.a",
+        "bytes": 1036592,
+        "sha256": "835bffdbc045655f3079c3ad636aeb1708095e321b1291ebb0493445dd383606"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libswresample.a",
+        "bytes": 134840,
+        "sha256": "ef94dcdd7afc3f83216920ec4decf1b45c650cb474b3ba9abc1718fab8bed254"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/install/lib/libswscale.a",
+        "bytes": 1631064,
+        "sha256": "6f4a7aa9b95556095a4a08feff31e381cbbdd1e34cf4d726011410f1a2ec64c6"
+      }
+    ],
+    "licenses": [
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/COPYING.GPLv2",
+        "bytes": 18092,
+        "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/COPYING.GPLv3",
+        "bytes": 35147,
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/COPYING.LGPLv2.1",
+        "bytes": 26517,
+        "sha256": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/COPYING.LGPLv3",
+        "bytes": 7651,
+        "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/LICENSE.md",
+        "bytes": 4346,
+        "sha256": "2e1d16c72fd74e12063776371da757322f8b77589386532f4fd8634bde7de1af"
+      }
+    ],
+    "configurationFiles": [
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/config.h",
+        "bytes": 25027,
+        "sha256": "ffc2fb465cd6563c5605cc2eb179631e6aa7705e770672db213518a93c3e75d9"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/config_components.h",
+        "bytes": 75690,
+        "sha256": "b991305349647be5989ba6e3bff74de5d125ca7d7b14b4227420f14bd2e4be1a"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/ffbuild/config.mak",
+        "bytes": 91367,
+        "sha256": "9fb4a1e61fe12f432d8ade4feeaf17368bcc57d3767c269ac9880e2db5cba539"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/ffbuild/config.log",
+        "bytes": 833756,
+        "sha256": "64ffe3742c758f2e047c9ad91daf6b6e08f50876f389c08d7e660ef178ccfcfd"
+      },
+      {
+        "path": ".local/tools/m3/ffmpeg-9.0.2/ffmpeg-9.0.2/ffbuild/config.sh",
+        "bytes": 948,
+        "sha256": "938b198a56ad4e347e637d0ee7715001d29559c006b8a6e6ef491d3b1ea7a64c"
+      }
+    ],
+    "buildEvidence": [
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/build-commands.json",
+        "bytes": 4397,
+        "sha256": "2dc8d2e7508fed98f5f252ef30780ed984a82d6434d7bf8252bfb471583d9de0"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/configuration-license-inventory.json",
+        "bytes": 1971,
+        "sha256": "b4acf54fa8f9c972455511ba3eb90783d62f08e78aa83c167b2a010cd65f9619"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/configure.log",
+        "bytes": 2832,
+        "sha256": "780e4df81e6536b075aaef16bcb59b2e1b8a720e81fda353caade14c646b375c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-buildconf.log",
+        "bytes": 971,
+        "sha256": "5c135ae357f9da51d77ccd9f70732125c17c1ce4c0578ab94fb69536b63ad744"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-buildconf.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-decoders.log",
+        "bytes": 505,
+        "sha256": "2d70a970a91f83f1703c2379ccdf0140ba9478863fd52de5825d7a4819c9d768"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-decoders.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-demuxers.log",
+        "bytes": 182,
+        "sha256": "b8b38a58244ecfa77cbd15f14b01c20d3234794c519bbff89728fa8b70d3c663"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-demuxers.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-encoders.log",
+        "bytes": 609,
+        "sha256": "ddce93557be111efda344ed47ad32c979a5c3bab3a8024a95c68b6a0bffe10df"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-encoders.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-filters.log",
+        "bytes": 1842,
+        "sha256": "471e82fd2062531a3de93ec60ad0376578a31b7e960770e6c2115722ddc3453c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-filters.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-linkage.log",
+        "bytes": 924,
+        "sha256": "a0bc70db90b545fbe6dd7f91b146505a78c0d673e7aa7318867a2c9d77754b2a"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-muxers.log",
+        "bytes": 266,
+        "sha256": "e112505d35f0cf29c04fd2faf92596f6425b11b997a706c20cd6da17941d38eb"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-muxers.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-protocols.log",
+        "bytes": 69,
+        "sha256": "915ff778b7271117f83acd0fed65088ff70ce6b90b45fb7cb4b94a9de40d2a36"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-protocols.stderr",
+        "bytes": 1261,
+        "sha256": "5824c65bd656e47e2a14f52b434753854de88480869d24875f4259736926613c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-version.log",
+        "bytes": 1269,
+        "sha256": "ad4585e31f632da9aad3a2361b35914c3cc28fbf67879fe10577035f7802f1bc"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffmpeg-version.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffprobe-linkage.log",
+        "bytes": 925,
+        "sha256": "35d5c20de73c4a4654adc1d28909a1b7c6549593566686a2ec79532a81a8c24c"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffprobe-protocols.log",
+        "bytes": 69,
+        "sha256": "915ff778b7271117f83acd0fed65088ff70ce6b90b45fb7cb4b94a9de40d2a36"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffprobe-protocols.stderr",
+        "bytes": 1262,
+        "sha256": "0c2a4e97115388fe5dfbdc63da2bb63b9e8f13510f165172108195d0bad2d1b8"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffprobe-version.log",
+        "bytes": 1244,
+        "sha256": "bc66ada58545ba3f92a196aaf42fccab600c881dd76d4153ffdf600625af95bf"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/ffprobe-version.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/identity-commands.json",
+        "bytes": 3180,
+        "sha256": "708c210302eef22998f407ccbb0fa1ec77de0115080c04871adbbc70e5921426"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/install.log",
+        "bytes": 7063,
+        "sha256": "cbda89313bebd6cd94461123ffe7de5987a0cc76254761d0822f62592850effa"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/installed-file-inventory.json",
+        "bytes": 39084,
+        "sha256": "92670a14a305ef8967c0b877dbb630123717062024275682787ff08a850e9b36"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/make.log",
+        "bytes": 11708,
+        "sha256": "0361f1bcbdb7674b471fcc1800b86e2e669db934f7b13bd42ca7a01792e818dc"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/source-integrity.json",
+        "bytes": 273,
+        "sha256": "7b2bd36a28d7e234801ec6ff4099218d32aea4c52744e16252f842c25ff55d02"
+      },
+      {
+        "path": ".local/cache/m3/task01-fixture-rebuild/prebuild/relocation-index.json",
+        "bytes": 134818,
+        "sha256": "0de54601f1fd8451dde88bf4d037d54c74dc019dda5e014775a5284013cf9b79"
+      }
+    ],
+    "configuration": {
+      "protocols": [
+        "file",
+        "pipe"
+      ],
+      "network": false,
+      "autodetect": false,
+      "inputDecoders": [
+        "h264",
+        "aac"
+      ],
+      "videoEncoder": "h264_videotoolbox",
+      "externalLibraries": [
+        "system zlib"
+      ],
+      "license": "LGPL-2.1-or-later",
+      "compiler": "Apple clang 21.0.0 (clang-2100.0.123.102)",
+      "sdk": "26.4",
+      "runtimeMediaFixtures": "NOT_RUN_TASK02",
+      "systemRuntimeBytePins": false,
+      "compiledDecoders": [
+        "h264",
+        "aac",
+        "wrapped_avframe",
+        "pcm_s16le"
+      ],
+      "fixtureOnlyInternalDecoders": [
+        "wrapped_avframe",
+        "pcm_s16le"
+      ],
+      "uploadInputPolicy": {
+        "format": "mov",
+        "codecWhitelist": [
+          "h264",
+          "aac"
+        ],
+        "protocolWhitelist": [
+          "file",
+          "pipe"
+        ],
+        "enableDrefs": false,
+        "useAbsolutePath": false
+      }
+    },
+    "buildCorrection": "Built-in lavfi fixture decoder support only; media fixtures still task02"
+  },
+  "audit": {
+    "status": "COMPLETED_WITH_FINDINGS",
+    "counts": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 3,
+      "critical": 0,
+      "total": 5
+    },
+    "json": {
+      "path": ".local/cache/m3/task01-npm/audit.json",
+      "bytes": 3563,
+      "sha256": "a4af053c509ae9f76a0f8da3fbc453077178722262d1ce0ecbc7f3c2e0e6e8c9"
+    }
+  },
+  "existingDependencyIdentityChanges": [],
+  "additionClosure": {
+    "path": ".local/cache/m3/task01-npm/lock-diff.json",
+    "bytes": 20018,
+    "sha256": "7b267ba66313d83e146ffcb0a63116aac12b8d8869ee301f5693477f0448fe36"
+  },
+  "installedPackageInventory": {
+    "path": ".local/cache/m3/task01-npm/installed-file-inventory.json",
+    "bytes": 306172,
+    "sha256": "e8889fa7ca68f8b3661d8a92425501e6b40b185749d24434de805b977491bfe8"
+  },
+  "sourceVerifier": {
+    "name": "openpgp",
+    "version": "6.3.2",
+    "scope": "ISOLATED_SETUP_TOOL_ONLY",
+    "approval": "CMS-M3-TOOL-01 revision1",
+    "status": "DETACHED_VERIFICATION_AND_TAMPER_TESTS_PASS_INDEPENDENT_HIGH_V_PASS",
+    "license": "LGPL-3.0+",
+    "runtimeDependencies": [],
+    "optionalPeerOmitted": "@openpgp/web-stream-tools~0.3.0 (optional TypeScript types peer)",
+    "scriptsDisabled": true,
+    "toolPackage": {
+      "path": ".local/tools/m3/source-verifier/package.json",
+      "bytes": 252,
+      "sha256": "0b0a1a92c25f2608a26e278cbcb6de004d0fb3b71e206e39b9d1d66a7990a7fa"
+    },
+    "toolLock": {
+      "path": ".local/tools/m3/source-verifier/package-lock.json",
+      "bytes": 936,
+      "sha256": "208735b7ea6875b47ef8282ba342b1a947433be7168a6e0573a7515508213c52"
+    },
+    "tarball": {
+      "path": ".local/cache/m3/verifier-setup/openpgp-6.3.2.tgz",
+      "bytes": 4500591,
+      "sha256": "3eeea348b6e02e81387af584a189eab5446f3df223382127bc17ac06b6ea77b7"
+    },
+    "tarballIntegrity": "sha512-wcZTzHz41LV8Y48zH/JlD1JT8YdNmpWOuMAjQ/podvvCwsjBEU37K3znJh4UQcj3hksE5z9TzvhbUbwzsGvlLQ==",
+    "trustedInstalledInventory": {
+      "path": ".local/cache/m3/verifier-setup/installed-package-inventory.json",
+      "bytes": 8735,
+      "sha256": "d7bf54e896c7935fe176899bd68d592bc27bf689c824462e2077efe3209962e1"
+    },
+    "inventoryVerificationBeforeImportRequired": true,
+    "audit": {
+      "exit": 0,
+      "advisories": 0,
+      "output": {
+        "path": ".local/cache/m3/verifier-setup/audit.log",
+        "bytes": 358,
+        "sha256": "846fc260eb0bf70e6b21419d4cab9fcc61c224c7362324d4cbc8aebf8355f9bd"
+      },
+      "limits": "Known-advisory check only; not proof of safe package or source signature."
+    },
+    "registrySignatureCheck": {
+      "exit": 1,
+      "status": "NOT_VERIFIED_COMMAND_FOUND_NO_SUPPORTED_REGISTRY_DEPENDENCIES",
+      "output": {
+        "path": ".local/cache/m3/verifier-setup/registry-signatures.log",
+        "bytes": 133,
+        "sha256": "476f0c372446b65dd57e82384e18f851a984615dbad1d9cb0549ece46a41e4f7"
+      }
+    },
+    "applicationPackagePinsUnchanged": true,
+    "adapter": {
+      "path": "scripts/verify-ffmpeg-source.mjs",
+      "bytes": 9361,
+      "sha256": "05b7cb6e49ba1c9bfa3cabe450c128857b9f5530043cc3ba9c9a8af908232255"
+    },
+    "tests": {
+      "path": "tests/ffmpeg-source-verification.test.mjs",
+      "bytes": 6714,
+      "sha256": "ce50873285e76808051c2d5e926fab2bf0838d66a8c0b96caf3e808c9ec13e71"
+    },
+    "verificationLimits": {
+      "sourceBytes": 33554432,
+      "keySignatureBytesEach": 65536,
+      "timeoutMs": 30000,
+      "heapMiB": 256,
+      "stdoutStderrBytesEach": 65536,
+      "cli": "fixed owned inputs only; IPC child with exact heap; no arbitrary paths",
+      "permissiveConfigOrDateOverride": false,
+      "networkOrKeyring": false,
+      "processLimitsAreNotOsSandbox": true
+    }
+  },
+  "pdfDevelopmentHeaders": {
+    "amendment": "M3-PDF-02 revision1 Approved",
+    "task": "CMS-M3-01Ph",
+    "status": "PASS_HEADER_ONLY_INDEPENDENT_HIGH_REVIEWED",
+    "prefix": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/tools/m3/pdf-tools/headers-01Ph",
+    "versions": {
+      "freetype": "2.14.3",
+      "freetype_pkgconfig": "26.6.20",
+      "zlib": "1.3.2"
+    },
+    "installedInventory": {
+      "path": ".local/cache/m3/pdf-tools/01Ph-headers/installed-header-inventory.json",
+      "bytes": 47643,
+      "sha256": "596c2fde1a8f7f9fd4be294e32db69ae0e04c263f2a9f87d3187a1c05926065a"
+    },
+    "parserProof": {
+      "path": ".local/cache/m3/pdf-tools/01Ph-headers/actual-private-pkgconf-proof.json",
+      "bytes": 4441,
+      "sha256": "f5c1956eddeaf3cb24a4643045f2082bf3abf157a958d11752386a444918de0d"
+    },
+    "originalRuntimeLibrariesChanged": false,
+    "runtimeLibraryIdentities": [
+      {
+        "path": "lib/libfreetype.6.dylib",
+        "bytes": 752064,
+        "sha256": "b141c0044dff925e5fcd41585c35d80618d809da8805fdbe6ab080e0f39490cb"
+      },
+      {
+        "path": "lib/libz.1.3.2.dylib",
+        "bytes": 139488,
+        "sha256": "9dfecff0e4bb89be13277b02dc6ae7f1d3d9924c33cd8391630b51aa3e645719"
+      }
+    ],
+    "publisherSignatures": "NOT_VERIFIED",
+    "licenses": "Three original FreeType GPLv2/FTL and zlib LICENSE notices copiedbyteidentical frompayload TAR; rawarchives/recipe noticesretained; no fullcomplianceclaim",
+    "original01PaAnd01Pb": "NOT_RESUMED_PENDING_HIGH_HEADER_PASS",
+    "implicitCompilerRootCorrection": "REQUIRED_AT_RESUMED_01Pa_NOT_RUN_01Ph",
+    "independentReview": {
+      "path": ".local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-header-review.json",
+      "bytes": 1873,
+      "sha256": "9af830f7a12e95201049f13a937e8d3a4c7579d75d5b6051e249a00734957e1a"
+    }
+  },
+  "supersededBundledPopplerIdentity": {
+    "version": "26.05.0",
+    "runtime": "26.1009.11318",
+    "root": "/Users/khiemnguyen/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler",
+    "packageSpec": "poppler=26.05.0=hd83632c_3",
+    "inventory": {
+      "path": ".local/cache/m3/task01-poppler/bundle-inventory.json",
+      "bytes": 1138302,
+      "sha256": "d469094e92e95ea6f25ba07fa350dc10be123935692122247a43da8a578127ab"
+    },
+    "binaryPins": [
+      {
+        "path": "bin/pdfinfo",
+        "type": "file",
+        "bytes": 309,
+        "sha256": "45fa717fb4aaec4bfbefc3a07612ff2539dbfcce30fb30e976aa5d4a35bef802"
+      },
+      {
+        "path": "bin/pdftoppm",
+        "type": "file",
+        "bytes": 310,
+        "sha256": "d9d81b176e8fd38d07f2fbf4f84c17dc991c6bac3730ff3cad3239c4fcbed892"
+      },
+      {
+        "path": "manifest.json",
+        "type": "file",
+        "bytes": 150,
+        "sha256": "dc761290ef9e4f32783ccf0cdc68fca89962d4a989a8b940f3e294bc3ed471b8"
+      },
+      {
+        "path": "poppler/bin/pdfinfo",
+        "type": "file",
+        "bytes": 120608,
+        "sha256": "f1fb07d2e64229865dc3f21d01a4ba77e9a5f761f0f66bff7be378d496061d0b"
+      },
+      {
+        "path": "poppler/bin/pdftoppm",
+        "type": "file",
+        "bytes": 89840,
+        "sha256": "5029f3f6b29634086f0b58cd493862d35498d9f675fa1e095e187caa86b22008"
+      }
+    ],
+    "licenseTextStatus": "CORE_LICENSE_NOT_INCLUDED_IN_BUNDLED_TREE",
+    "configurationLimits": [
+      "Bundled fontconfig default references user/system font directories; task02 must use isolated configuration.",
+      "pkgconfig contains original build prefix; not used for execution."
+    ],
+    "mediaTests": "NOT_RUN_TASK02",
+    "linkedLibraryIdentityStatus": "PINNED_BUNDLED_BYTES_AND_OTOOL_IDENTITIES_NOT_REBUILT",
+    "officialLicense": {
+      "url": "https://gitlab.freedesktop.org/poppler/poppler/-/raw/poppler-26.05.0/COPYING",
+      "path": ".local/cache/m3/task01-poppler/COPYING-official-26.05.0",
+      "bytes": 17987,
+      "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+      "sourceTag": "poppler-26.05.0",
+      "bundledTextPresent": false
+    },
+    "securityGate": {
+      "status": "HOLD",
+      "advisory": "CVE-2026-102621",
+      "officialSource": "https://ubuntu.com/security/CVE-2026-102621",
+      "affectedThrough": "26.08.0",
+      "fixedUpstream": "26.09.0",
+      "upstreamPatch": "323c91036d99926a8b90dc14329f7b40aece22f8",
+      "bundledBackportStatus": "UNKNOWN_NO_PATCH_MANIFEST_OR_SOURCE_CACHE",
+      "untrustedPdfProcessing": "HOLD",
+      "versionChanged": false
+    }
+  }
+}
