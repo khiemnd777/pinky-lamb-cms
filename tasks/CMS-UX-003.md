@@ -1,5 +1,23 @@
 # CMS-UX-003 v6 — Rework CMS theo template đã duyệt
 
+## TEST-REPAIR-001 v1 — Scoped repair verified local, 16/10/2026
+
+**Git delivery approved — 16/10/2026:** người dùng yêu cầu “Commit, push phần sửa 6 test và cập nhật task.” Chỉ bàn giao hai file `tests/home-v3-recovery-ui.test.mjs` và task này trên nhánh `main`; quyền này thay giới hạn chưa commit/push của lượt sửa bên dưới. Tái sử dụng kết quả 171/171 PASS, lint/build/sensitivity và preservation vì source test/ứng dụng không đổi từ lần kiểm chứng; kiểm staged whitespace và phạm vi trước commit. Không deploy hoặc thay trạng thái nghiệm thu/LOCAL_COMPLETE.
+
+Direct human approval: **“Approved CMS-UX-003 TEST-REPAIR-001 v1. Triển khai sửa 6 test FAIL theo kế hoạch, giữ nguyên CMS đã nghiệm thu. Chạy kiểm thử và báo kết quả; chưa commit/push.”**
+
+Baseline `84792e29066be222e9be7216450be746281a4176`, clean worktree. Một agent tuần tự theo Recovery v2; chỉ sửa `tests/home-v3-recovery-ui.test.mjs` và task này. Bổ sung dependency/event bindings tường minh, bỏ fallback che import thiếu, giữ hành vi recovery và cập nhật nhãn đã được duyệt. Kiểm cả sáu ca, cleanup/async completion và sensitivity trong bản sao tạm. Không sửa application/backend/contracts/runtime controls, không ghi emulator hoặc dữ liệu giữ lại, không commit/push/deploy. Preview delta HOLD và LOCAL_COMPLETE=false.
+
+Evidence: `.local/test-outputs/cms-ux-003/test-repair-001-v1/` (`baseline.json`, `red.log`, `green.log`, `regression.log`, `lint.log`, `build.log`, `sensitivity.json`, `preservation.json`, `summary.json`). Historical FAIL của Git delivery giữ nguyên; kết quả mới bên dưới thay trạng thái còn mở của sáu test đó.
+
+**Cause/fix:** harness thiếu factory resolver nhưng fallback `bindings[name] ?? noop` che dependency thiếu; còn thiếu event environment và kỳ vọng nhãn Home v3 cũ. Đã khai báo resolver/get/clear/destroy tường minh, dùng `siteDirtyGroups` thật, bổ sung CustomEvent/EventTarget và báo thiếu binding ngay tại module link. Boundary ngoài recovery fail rõ nếu bị gọi; không giả thành công. Đổi đúng nhãn Toàn website đã nghiệm thu; không giảm assertion. Chờ idle theo requests/control state có timeout 1s và diagnostics, cleanup try/finally; giữ quyền, safe-error, revision, receipt/readback và idempotency checks.
+
+**Verification:** pinned Node22.23.3 `--experimental-vm-modules --test tests/home-v3-recovery-ui.test.mjs`: RED 0/6 PASS trước sửa → GREEN **6/6 PASS**. `--experimental-vm-modules --test tests/cms-ux*.test.mjs tests/home-v3-recovery-*.test.mjs`: **171/171 PASS**, không skip, không unhandled rejection hoặc async activity sau test. `node node_modules/eslint/bin/eslint.js tests/home-v3-recovery-ui.test.mjs` PASS; `node scripts/local-guard.mjs build` PASS; whitespace PASS.
+
+**Sensitivity:** ba bản sao tạm: bỏ OWNER guard → test non-OWNER FAIL vì request ngoài ý muốn; đảo import lineage/receipt identity check → test import thành công FAIL; bỏ resolver binding → FAIL lúc link với tên dependency. Cả **3/3 mutations được phát hiện**, không sửa source ứng dụng. Bộ chọn mutation đầu tiên quá rộng (hai matches) đã bị assertion chặn trước khi ghi bản sao; sau đó dùng đúng guard trong importCurrent.
+
+**Preservation/limits:** baseline hash đối chiếu mọi tracked file: chỉ test và task này đổi, toàn bộ source CMS/backend/contracts/config giữ nguyên. Unit/VM controller với DOM/components/preview giả lập; không phải browser/HTTP E2E, không chứng minh runtime import thực. Không gọi SDK/emulator, không ghi dữ liệu giữ lại, không restart, không commit/push. Nghiệm thu CMS UX giữ nguyên; Preview delta HOLD, LOCAL_COMPLETE=false. Đây là scoped repair đã kiểm chứng, không tự nghiệm thu một milestone mới.
+
 ## Git delivery — 16/10/2026
 
 Direct human instruction sau nghiệm thu: **“Commit, push”**. Cho phép bàn giao các thay đổi tích hợp hiện có trên nhánh `main` của repository CMS, bao gồm source UI, Lucide/PinkySelect, recovery home-v3 đã được duyệt trước đó, tests và task/review docs. Quyền Git này thay giới hạn không commit/push trong các snapshot lịch sử bên dưới; không cấp quyền triển khai S04 mới, Preview controls, deploy hoặc đổi dữ liệu/runtime.
