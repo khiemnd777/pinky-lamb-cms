@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {randomUUID} from 'node:crypto';
+import {ApiError,errorEnvelope} from './contracts/errors.mjs';
 import {existsSync,realpathSync} from 'node:fs';
 import { ROOT, validateRuntime,installNetworkFence } from './scripts/local-guard.mjs';
 import {m2Root,m2Environment,m2UiSources,m2Read} from './scripts/m2-recovery-profile.mjs';
@@ -46,13 +49,66 @@ export function recoveryBuildOutput(token){
  let current=ROOT;for(const part of path.relative(ROOT,output).split('/')){current=path.join(current,part);if(existsSync(current) && realpathSync(current)!==current)throw new Error('Escaped recovery build output');}
  if(existsSync(output))throw new Error('Recovery build output already exists');return output;
 }
+/** Canonical local API runs on the already configured Vite loopback server.
+ * Computed imports below execute only on Node inside configureServer/request
+ * handling; no Firebase SDK or private server source enters the browser graph. */
+function canonicalCmsApi(){
+  return {name:'canonical-cms-api',configureServer(server){
+    let initialized=null;
+    const safeFailure=(response,code)=>{
+      if(response.headersSent){response.destroy();return;}
+      const error=new ApiError(code);
+      response.statusCode=error.status;
+      response.setHeader('Cache-Control','no-store');
+      response.setHeader('X-Content-Type-Options','nosniff');
+      response.setHeader('Content-Type','application/json; charset=utf-8');
+      response.end(JSON.stringify(errorEnvelope(error,randomUUID())));
+    };
+    async function application(){
+      if(initialized===null){
+        initialized=(async()=>{
+          // The actual handler validates the demo runtime before loading SDKs,
+          // then reuses canonical Auth/ACL, route validation and private reads.
+          validateRuntime();installNetworkFence();
+          const expressUrl=pathToFileURL(path.join(ROOT,'node_modules','express','index.js')).href;
+          const apiUrl=pathToFileURL(path.join(ROOT,'cms-api','index.mjs')).href;
+          const [{default:express},{handleRequest}]=await Promise.all([import(expressUrl),import(apiUrl)]);
+          if(typeof express!=='function'||typeof handleRequest!=='function')throw new Error('Canonical API source unavailable');
+          const app=express();
+          app.disable('x-powered-by');app.disable('etag');app.set('trust proxy',false);app.set('query parser','simple');
+          app.use((request,_response,next)=>{request.rawBody=Buffer.alloc(0);next();});
+          app.use(express.raw({type:()=>true,limit:4*1024*1024,inflate:false,verify(request,_response,bytes){request.rawBody=bytes;}}));
+          // Express retains rawHeaders, originalUrl/path/query and the real
+          // ServerResponse implementation, including private binary streams.
+          // Each canonical route still applies its narrower JSON/body limits.
+          app.use((request,response,next)=>{Promise.resolve(handleRequest(request,response)).catch(next);});
+          app.use((error,_request,response,_next)=>{
+            const code=error?.type==='entity.too.large'?'PAYLOAD_TOO_LARGE':error?.type==='encoding.unsupported'?'UNSUPPORTED_MEDIA_TYPE':error?.type==='entity.parse.failed'||error?.type==='request.aborted'||error?.type==='request.size.invalid'?'BAD_REQUEST':'INTERNAL_ERROR';
+            safeFailure(response,code);
+          });
+          return app;
+        })().catch(error=>{initialized=null;throw error;});
+      }
+      return initialized;
+    }
+    // Unmounted Connect middleware preserves /api/cms in req.url. Mounting the
+    // Express app at that prefix would strip the path expected by actual routes.
+    server.middlewares.use((request,response,next)=>{
+      const pathname=(request.url??'').split(/[?#]/,1)[0];
+      if(pathname!=='/api/cms'&&!pathname.startsWith('/api/cms/')){next();return;}
+      const host=request.headers.host,remote=request.socket.remoteAddress;
+      if(!['127.0.0.1:5173','localhost:5173'].includes(host)||!['127.0.0.1','::ffff:127.0.0.1','::1'].includes(remote)){safeFailure(response,'FORBIDDEN');return;}
+      application().then(app=>app(request,response,error=>safeFailure(response,error?'INTERNAL_ERROR':'NOT_FOUND'))).catch(()=>safeFailure(response,'LOCAL_RUNTIME_UNAVAILABLE'));
+    });
+  }};
+}
 export function createLocalViteConfig({recovery=false,output,cache}={}){return {
   root:path.join(ROOT,'admin'),
   publicDir:false,
   ...(recovery?{cacheDir:cache??path.join(ROOT,'.local/cache/cms-recovery-001/v2/vite-source-cache'),optimizeDeps:{noDiscovery:true,include:[]}}:{}),
   define:{__PINKY_M2_RECOVERY__:JSON.stringify(recovery)},
   server:{host:'127.0.0.1',port:recovery?5175:5173,strictPort:true,
-    proxy:{'/api/cms':{target:`http://127.0.0.1:${recovery?5002:5001}`,changeOrigin:false,rewrite:p=>`/demo-pinky-lamb-cms/us-central1/cmsApi${p}`}},
+    ...(recovery?{proxy:{'/api/cms':{target:'http://127.0.0.1:5002',changeOrigin:false,rewrite:p=>`/demo-pinky-lamb-cms/us-central1/cmsApi${p}`}}}:{}),
     fs:{strict:true,allow:[path.join(ROOT,'admin'),path.join(ROOT,'contracts'),path.join(ROOT,'preview'),path.join(ROOT,'node_modules')],
       deny:['**/.local/**','**/cms-api/**','**/cms-recovery-api/**','**/docs/**','**/tests/**','**/scripts/**','**/infra-local/**','**/quarantine/**','**/private/**','**/media-cache/**','**/media-scratch/**',...privateNames.map(name=>`**/contracts/${name}`),'**/node_modules/pinky-lamb-cms-api-local/**','**/node_modules/pinky-lamb-cms-recovery-api-local/**','**/.env*','**/*.pem','**/*.key']}
   },
@@ -67,7 +123,7 @@ export function createLocalViteConfig({recovery=false,output,cache}={}){return {
       if(!allowed || privateFile(actual)){res.statusCode=403;res.end('Private local file');return;}
     }
     next();
-  });}},...(recovery?[{name:'m2-recovery-fixed-csp',transformIndexHtml:{order:'pre',handler:recoveryHtml}}]:[])],
+  });}},...(!recovery?[canonicalCmsApi()]:[]),...(recovery?[{name:'m2-recovery-fixed-csp',transformIndexHtml:{order:'pre',handler:recoveryHtml}}]:[])],
   build:{outDir:recovery?output:path.join(ROOT,'admin-dist'),emptyOutDir:!recovery}
 };}
 export default defineConfig(({mode,command})=>{

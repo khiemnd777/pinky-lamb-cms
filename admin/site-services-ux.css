@@ -1,0 +1,28 @@
+/* G04 only. Shared collection controls keep the representative project layout. */
+[data-record-collection=services] .ux-table .ux-cell-title{min-width:160px}
+[data-record-collection=services] .ux-cell-related{color:var(--muted)}
+.ux-service-record .ux-service-names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;grid-column:1/-1}
+.ux-service-record .ux-service-names>.editor-field{min-width:0;margin:0}
+.ux-service-content{border:0!important;padding:0!important;margin:0!important;background:transparent!important;box-shadow:none!important}
+.ux-service-content>h3{font-size:16px;margin:0 0 16px}
+.ux-service-content>.editor-check{min-height:44px;margin:0 0 16px}
+.ux-service-content>.editor-field{margin:0 0 16px}
+.ux-service-content>.editor-group{border:0;background:transparent;padding:0;margin:24px 0 0;box-shadow:none}
+.ux-service-content>.editor-group>h3{font-size:14px;margin:0 0 12px}
+.ux-service-content>.editor-group>.editor-field{margin:0 0 16px}
+.ux-service-record .run-row{min-width:0;align-items:start}
+.ux-service-record .run-row>.editor-field{min-width:0}
+.ux-service-record .run-row>.ux-sort-tools{flex-wrap:wrap}
+.ux-service-record :is(button,.ps-trigger){min-height:44px}
+@media(max-width:767px){
+ [data-record-collection=services] .ux-table-wrap>.ux-table tbody tr{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:16px}
+ [data-record-collection=services] .ux-table-wrap>.ux-table .ux-cell-client{grid-column:1/-1;grid-row:2;padding-left:0}
+ [data-record-collection=services] .ux-table-wrap>.ux-table .ux-cell-related{display:block!important;grid-column:1/-1;grid-row:3;font-size:12px}
+ [data-record-collection=services] .ux-cell-related::before{content:attr(data-label) ': ';color:var(--muted)}
+ [data-record-collection=services] .ux-table-wrap>.ux-table .ux-cell-status{grid-column:1;grid-row:4}
+ [data-record-collection=services] .ux-table-wrap>.ux-table .ux-cell-action{grid-column:2;grid-row:4;justify-self:end}
+ [data-record-collection=services] .ux-table-wrap>.ux-table.is-ordering .ux-cell-client{grid-row:3}
+ [data-record-collection=services] .ux-table-wrap>.ux-table.is-ordering .ux-cell-related{grid-row:4}
+ [data-record-collection=services] .ux-table-wrap>.ux-table.is-ordering :is(.ux-cell-status,.ux-cell-action){grid-row:5}
+ .ux-service-record .ux-service-names{grid-template-columns:minmax(0,1fr)}
+}

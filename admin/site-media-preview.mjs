@@ -1,12 +1,15 @@
+import {z} from 'zod';
+import {revisionSchema,hashSchema} from '../contracts/hero.mjs';
+import {createCmsIcon} from './cms-icons.mjs';
+import {createPinkySelect} from './pinky-select.mjs';
 import {createMediaV2RecordSchemas,contentDigestProjectionV2} from '../contracts/media-v3-records-v2.mjs';
 import {strictMediaV2JsonSchema} from '../contracts/media-v3-metadata-v2.mjs';
 import {canonicalMediaV2Json,v2MediaManifestSchema} from '../contracts/media-v3-contract-v2.mjs';
 import {mediaDerivativePublicSchema} from '../contracts/media-read-public.mjs';
 import {renderSiteMediaDocument,projectSiteMediaPublicData,collectSiteMediaReferenceIds,collectVisibleSiteMediaReferences} from '../preview/site-media-renderer.mjs';
-import {beginMediaPreviewBinary,registerMediaPreviewResourceOwner} from './media-file-preview.mjs';
+import {acquireMediaPreviewBinary,registerMediaPreviewResourceOwner} from './media-file-preview.mjs';
 import {APPROVED_SHOWREEL_SOURCE_URL} from './site-about-ip-editor.mjs';
 
-const same=(a,b)=>canonicalMediaV2Json(a)===canonicalMediaV2Json(b);
 export function siteMediaContentContext(record){
  strictMediaV2JsonSchema.parse(record);
  return {sourceCatalog:structuredClone(record.sourceCatalog),currentYear:new Date().getUTCFullYear(),allowedShowreelSourceUrl:APPROVED_SHOWREEL_SOURCE_URL};
@@ -26,15 +29,54 @@ export async function validateSiteMediaSnapshot(record,guard){
  if(manifestHash!==s.mediaManifestHash||contentHash!==s.contentHash)throw Error('Snapshot hash mismatch');
  guard();return {response,context};
 }
+const savedPreviewSchema=z.strictObject({contractRevision:z.literal(2),draftId:z.literal('home-v3'),draftRevision:revisionSchema,contentHash:hashSchema,mediaManifestHash:hashSchema,mediaManifest:v2MediaManifestSchema});
+/** Same immutable manifest/content fence for canonical preview and form thumbnails. */
+export async function validateSavedSiteMediaPreview(record,savedDraft,guard=()=>{}){
+ const receipt=savedPreviewSchema.parse(record);guard();
+ if(receipt.draftRevision!==savedDraft.revision)throw Error('Saved preview revision mismatch');
+ const manifestHash=await digest(receipt.mediaManifest,guard),contentHash=await digest(contentDigestProjectionV2(savedDraft.content,manifestHash),guard);guard();
+ if(manifestHash!==receipt.mediaManifestHash||contentHash!==receipt.contentHash)throw Error('Saved preview hash mismatch');
+ return receipt;
+}
+/** Cache one verified read per exact saved content/revision and authenticated member.
+ * A failed read remains failed until explicit reload/new saved revision. */
+export function createSavedSiteManifestResolver({apiFetch,getSession}){
+ let current=null,destroyed=false;
+ const member=()=>{const session=getSession();return session?JSON.stringify([session.uid,session.role,session.authzVersion]):null;};
+ function clear(){current?.controller.abort();current=null;}
+ function get(savedDraft){
+  const identity=member();if(destroyed||!identity)return Promise.reject(new DOMException('Phiên đã thay đổi.','AbortError'));
+  const key=canonicalMediaV2Json({revision:savedDraft.revision,content:savedDraft.content});
+  if(current?.key===key&&current.member===identity)return current.promise;
+  clear();const run={key,member:identity,controller:new AbortController(),promise:null};current=run;
+  const guard=()=>{if(destroyed||current!==run||run.controller.signal.aborted||member()!==identity)throw new DOMException('Phiên đã thay đổi.','AbortError');};
+  run.promise=(async()=>{const raw=await apiFetch('/api/cms/media-site/drafts/home-v3/preview?expectedRevision='+savedDraft.revision,{signal:run.controller.signal});guard();return validateSavedSiteMediaPreview(raw,savedDraft,guard);})();return run.promise;
+ }
+ return Object.freeze({get,clear,destroy(){clear();destroyed=true;}});
+}
 const idOf=entry=>entry.source==='LEGACY'?entry.asset.id:entry.asset.assetId;
 const publicDerivative=d=>mediaDerivativePublicSchema.parse({key:d.key,role:d.role,mime:d.mimeType,bytes:d.sizeBytes,sha256:d.sha256,generation:d.generation,...Object.fromEntries(['width','height','targetWidth','pageNumber','durationSeconds'].filter(k=>d[k]!==undefined).map(k=>[k,d[k]]))});
 const escape=value=>value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const focusDocument=(url,poster,video=false)=>'<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src blob:; media-src blob:; script-src \'none\'; connect-src \'none\'; object-src \'none\'; frame-src \'none\'; style-src \'none\'; base-uri \'none\'; form-action \'none\'"></head><body>'+(video?'<video controls preload="none" width="320" src="'+escape(url)+'"'+(poster?' poster="'+escape(poster)+'"':'')+' aria-label="Video đã chọn"></video>':'<img width="320" alt="Trang PDF đã xử lý" src="'+escape(url)+'">')+'</body></html>';
 /** savedDraft must be the actual saved read; mediaManifest is server-resolved,
  * never synthesized from safeCatalog. Snapshot fences pin its immutable read. */
-export function createSiteMediaPreview(root,{apiFetch,getSession}){
+export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false}){
  const doc=root.ownerDocument,owned=doc.createElement('section'),status=doc.createElement('p'),actions=doc.createElement('div'),host=doc.createElement('div');
- status.setAttribute('role','status');owned.append(status,actions,host);root.append(owned);
+ owned.className='site-media-preview-content';actions.className='preview-controls cms-preview-controls ux-preview-actions';host.className='site-media-preview-viewport';root.hidden=true;
+ const head=doc.createElement('div'),cardHead=doc.createElement('div'),copy=doc.createElement('div'),title=doc.createElement('h2'),subtitle=doc.createElement('p'),versionRow=doc.createElement('div'),dot=doc.createElement('span'),versionLabel=doc.createElement('p'),refresh=doc.createElement('button');
+ head.className='cms-preview-head';cardHead.className='cms-card-head';versionRow.className='cms-preview-version';dot.className='cms-state-dot';dot.setAttribute('aria-hidden','true');subtitle.className='cms-card-subtitle';subtitle.textContent='Bản thử local · chưa xuất bản';title.textContent='Xem trước bản đã lưu';refresh.type='button';refresh.className='cms-icon';refresh.append(createCmsIcon('RefreshCw'));refresh.setAttribute('aria-label','Làm mới bản xem trước media');refresh.title='Làm mới bản xem trước media';refresh.disabled=true;
+ refresh.addEventListener('click',()=>{if(current && active(current) && !current.busy)void documentPreview(current.selection);});copy.append(title,subtitle);cardHead.append(copy,refresh);versionRow.append(dot,versionLabel);head.append(cardHead,versionRow,status,actions);
+ if(thumbnail){head.hidden=true;owned.classList.add('ux-thumbnail-preview');}
+ const devices=doc.createElement('div');devices.className='ux-preview-devices';
+ let size=null;
+ if(!thumbnail){
+  const sizes=[['fluid','Thu vừa khung'],['1440','Máy tính — 1440 px'],['768','Máy tính bảng — 768 px'],['390','Điện thoại — 390 px']];
+  size=createPinkySelect(doc,{label:'Kích thước xem trước',value:'fluid',disabled:true,options:sizes.map(([value,label])=>({value,label}))});
+  const resize=()=>{if(!sizes.some(([value])=>value===size.value))return;host.dataset.previewWidth=size.value;host.style.setProperty('--preview-width',size.value==='fluid'?'100%':`${size.value}px`);};
+  resize();size.addEventListener('change',resize);
+  const expand=doc.createElement('button');expand.type='button';expand.append(createCmsIcon('Maximize2'),doc.createTextNode('Mở rộng'));expand.addEventListener('click',()=>{const operation=!doc.fullscreenElement?root.requestFullscreen?.():doc.exitFullscreen?.();operation?.catch(()=>{status.textContent='Trình duyệt chưa cho phép toàn màn hình. Bản xem trước vẫn giữ nguyên.';});});devices.append(size,expand);head.append(devices);}
+ status.setAttribute('role','status');status.setAttribute('aria-live','polite');owned.append(head,host);root.append(owned);
+
  let revision=0,current=null,destroyed=false;
  const sessionKey=()=>{const s=getSession();return s?JSON.stringify([s.uid,s.role,s.authzVersion]):null;};
  const active=run=>!destroyed&&current===run&&!run.controller.signal.aborted&&run.revision===revision&&run.member&&run.member===sessionKey();
@@ -48,11 +90,11 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
   }
   if(!run.resources.size){run.unregister?.();run.unregister=null;}
  }
- function clear(){revision++;const old=current;current=null;old?.controller.abort();if(old)dispose(old);host.replaceChildren();actions.replaceChildren();status.textContent='';}
+ function clear(){size?.pinkySelect?.close();size?.pinkySelect?.setDisabled(true);root.hidden=true;delete root.dataset.cmsPreview;versionLabel.textContent='';refresh.disabled=true;if(!thumbnail)doc.dispatchEvent(new CustomEvent('cms:preview-state',{detail:{snapshot:false}}));revision++;const old=current;current=null;old?.controller.abort();if(old)dispose(old);host.replaceChildren();actions.replaceChildren();status.textContent='';}
  function start(selection){
   clear();if(destroyed||!sessionKey())return null;
   const run={selection,revision,member:sessionKey(),controller:new AbortController(),resources:new Set(),frame:null,link:null,busy:false,buttons:[]};
-  run.evict=()=>{if(current===run)clear();else dispose(run);};current=run;return run;
+  run.evict=()=>{if(current===run)clear();else dispose(run);};current=run;root.hidden=false;size?.pinkySelect?.setDisabled(false);root.dataset.cmsPreview=selection.snapshotId?'snapshot':'draft';title.textContent=selection.snapshotId?'Xem trước bản nội dung':'Xem trước bản đã lưu';versionLabel.textContent=selection.snapshotId?'Snapshot '+selection.snapshotId:'Bản nháp đã lưu · phiên bản '+selection.savedRevision;if(!thumbnail)doc.dispatchEvent(new CustomEvent('cms:preview-state',{detail:{snapshot:Boolean(selection.snapshotId)}}));return run;
  }
  function binaryPath(run,id,key){
   return run.selection.snapshotId?'/api/cms/media-site/snapshots/'+encodeURIComponent(run.selection.snapshotId)+'/media/'+encodeURIComponent(id)+'/derivatives/'+encodeURIComponent(key):
@@ -60,10 +102,10 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
  }
  async function binary(run,entry,d){
   guard(run);
-  const derivative=publicDerivative(d),reservation=beginMediaPreviewBinary(derivative.bytes,run.evict);
+  const derivative=publicDerivative(d),reservation=await acquireMediaPreviewBinary(derivative.bytes,run.evict,{signal:run.controller.signal});
   let transferred=false,payload,bytes,blob,bitmap;
   try{
-   payload=await apiFetch(binaryPath(run,idOf(entry),derivative.key),{signal:run.controller.signal,responseType:'bytes',derivative,maxBytes:derivative.bytes});guard(run);
+   guard(run);payload=await apiFetch(binaryPath(run,idOf(entry),derivative.key),{signal:run.controller.signal,responseType:'bytes',derivative,maxBytes:derivative.bytes});guard(run);
    if(!(payload?.bytes instanceof Uint8Array)||payload.bytes.length!==derivative.bytes||payload.mime!==derivative.mime||payload.sha256!==derivative.sha256||payload.generation!==derivative.generation)throw Error('Derivative mismatch');
    bytes=new Uint8Array(payload.bytes);payload=null;
    const hash=await crypto.subtle.digest('SHA-256',bytes);guard(run);
@@ -78,10 +120,10 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
  async function legacyBinary(run,entry){
   guard(run);const a=entry.asset,mimes={IMAGE:['image/jpeg','image/png','image/webp','image/svg+xml'],VIDEO:['video/mp4'],PDF:['application/pdf']};
   if(entry.source!=='LEGACY'||!mimes[a.kind]?.includes(a.mimeType)||!/^assets\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test(a.legacyPath))throw Error('Legacy manifest mismatch');
-  const url=new URL(a.legacyPath,'http://127.0.0.1:5010/'),reservation=beginMediaPreviewBinary(a.sizeBytes,run.evict);
+  const url=new URL(a.legacyPath,'http://127.0.0.1:5010/'),reservation=await acquireMediaPreviewBinary(a.sizeBytes,run.evict,{signal:run.controller.signal});
   let reader,bytes,blob,bitmap,transferred=false;
   try{
-   const response=await fetch(url.href,{signal:run.controller.signal,credentials:'omit',redirect:'error',cache:'no-store'});guard(run);
+   guard(run);const response=await fetch(url.href,{signal:run.controller.signal,credentials:'omit',redirect:'error',cache:'no-store'});guard(run);
    if(!response.ok||response.url!==url.href||response.headers.get('Content-Type')?.split(';')[0].trim()!==a.mimeType||!response.body)throw Error('Legacy response mismatch');
    bytes=new Uint8Array(a.sizeBytes);reader=response.body.getReader();let offset=0;
    while(true){const chunk=await reader.read();guard(run);if(chunk.done)break;if(!(chunk.value instanceof Uint8Array)||offset+chunk.value.length>a.sizeBytes)throw Error('Legacy bytes mismatch');bytes.set(chunk.value,offset);offset+=chunk.value.length;}
@@ -118,7 +160,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
    }
    status.textContent='Tài nguyên đã kiểm tra đúng bản đã chọn.';
   }catch(error){dispose(run);if(active(run))status.textContent='Không thể xem tài nguyên. Phiên bản và byte budget vẫn được giữ nghiêm.';}
-  finally{run.busy=false;if(active(run))run.buttons.forEach(b=>{b.disabled=false;});}
+  finally{run.busy=false;if(active(run)){refresh.disabled=false;run.buttons.forEach(b=>{b.disabled=false;});}}
  }
  function addControls(run){
   const visible=new Set(collectVisibleSiteMediaReferences(run.selection.content).map(r=>r.id));
@@ -148,7 +190,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
    frame(run,renderSiteMediaDocument(selection.content,options),'Website — bản đã lưu');status.textContent='Bản xem trước khớp bản đã lưu.';
   }catch(error){
    dispose(run);if(active(run))status.textContent='Không thể dựng bản đã lưu. Không tải trước video/PDF download hoặc tạo URL thay thế.';
-  }finally{run.busy=false;if(active(run))run.buttons.forEach(b=>{b.disabled=false;});}
+  }finally{run.busy=false;if(active(run)){refresh.disabled=false;run.buttons.forEach(b=>{b.disabled=false;});}}
  }
  async function showSaved({savedDraft,mediaManifest,expectedRevision}){
   clear();const member=sessionKey(),n=revision;if(!member||destroyed)return;
@@ -166,6 +208,10 @@ export function createSiteMediaPreview(root,{apiFetch,getSession}){
   await documentPreview({content:s.content,context:parsed.context,manifest:s.mediaManifest,snapshotId:s.id});
  }
  document.addEventListener('cms:session',clear);
- return Object.freeze({showSaved,showSnapshot,clear,destroy(){if(destroyed)return;document.removeEventListener('cms:session',clear);clear();destroyed=true;owned.remove();}});
+ async function showThumbnail(entry,label){
+  const run=start({manifest:[entry]});if(!run)return;run.busy=true;
+  try{if(entry.source!=='LEGACY'||entry.asset.kind!=='IMAGE')throw Error('Invalid thumbnail');const url=await legacyBinary(run,entry);guard(run);const image=doc.createElement('img');image.alt=label??entry.asset.label??'';image.loading='lazy';image.src=url;host.append(image);}catch{if(active(run)){host.replaceChildren(createCmsIcon('Image'),doc.createTextNode((label??entry.asset.label??entry.asset.id)+' — Không thể tải ảnh xem trước. Hãy tải lại bản đã lưu để thử lại.'));host.setAttribute('role','status');}}finally{run.busy=false;}
+ }
+ return Object.freeze({showSaved,showSnapshot,showThumbnail,clear,destroy(){if(destroyed)return;document.removeEventListener('cms:session',clear);clear();destroyed=true;size?.pinkySelect?.destroy();owned.remove();}});
 }
 

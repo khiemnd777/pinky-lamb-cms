@@ -19,9 +19,9 @@ C1 xác nhận năm services/provider/common dispatch, saved-Draft preview-manif
 
 ## Bàn giao sử dụng
 
-[Runbook manual](M3-PARALLEL-QA-01-RUNBOOK.md) ghi main flow upload → library Ảnh/PDF/Video → Toàn website — media/picker → Lưu thay đổi Home v3 → Snapshot/source/editorial → private preview/logout → Đọc QA snapshot → Tải QA bundle → offline export, với exact source labels/API và invalid/denied/error cases. Configured canonical admin5173 khác recovery5175 read-only M2. Live availability/Auth/ports/process/tool compatibility Unknown; agent không probe hoặc launch để xác minh.
+[Runbook manual](M3-PARALLEL-QA-01-RUNBOOK.md) ghi main flow upload → library Ảnh/PDF/Video → Toàn website — media/picker → Lưu thay đổi Home v3 → Snapshot/source/editorial → private preview/logout → Đọc QA snapshot → Tải QA bundle → offline export, với exact source labels/API và invalid/denied/error cases. Canonical UI `http://127.0.0.1:5173` và same-origin API `http://127.0.0.1:5173/api/cms/**`: Vite middleware gọi actual cms-api/index.handleRequest, không Functions5001 proxy/dependency. Prerequisites Auth9099/Firestore8080/Storage9199/Hosting5010, bounded local tools và current membership. Recovery5175→Functions5002 giữ historical read-only M2. Không adopt/restart/rebind retained5001, không5003/new command hoặc fake password/reset/seed. dev:local/media-worker/export commands giữ nguyên. API readiness/account/runtime/PIDs chưa được QA xác minh ở đây; actual owner observations nếu có có attribution riêng, không suy global chưa ai login. QA không probe hoặc launch.
 
-QA test/fixture source hiện có được giữ nguyên, tests NOT_RUN. Không thêm primitive tests trùng C0 hoặc biến test/golden/admission thành điều kiện chặn application code. QA9/Metadata20 operators đã CANCELLED/NOT_RUN; không resume từ tài liệu cũ.
+Source GET `/api/cms/session` có deadline15s; timeout báo “Không thể kết nối API kiểm tra quyền. Vui lòng thử đăng nhập lại.”, clear session/show login và fence late private completion. Đây không deadline chung mọi API hoặc runtime PASS. QA test/fixture source hiện có được giữ nguyên, tests NOT_RUN. Không thêm primitive tests trùng C0 hoặc biến test/golden/admission thành điều kiện chặn application code. QA9/Metadata20 operators đã CANCELLED/NOT_RUN; không resume từ tài liệu cũ.
 
 ## Lịch sử
 

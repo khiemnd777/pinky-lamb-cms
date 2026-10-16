@@ -40,7 +40,7 @@ Manual chi tiết và các ca invalid/denied/error: [M3-PARALLEL-QA-01-RUNBOOK](
 ## URL và điều kiện chạy local
 
 - CMS canonical theo cấu hình: http://127.0.0.1:5173/.
-- API đi qua proxy /api/cms tới Functions demo tại 127.0.0.1:5001.
+- API canonical `/api/cms` được middleware Node của Vite 5173 chuyển trực tiếp tới actual `cms-api/index.mjs.handleRequest`, với Auth/ACL và parser hiện hành. Functions 5001 retained không còn là dependency của đường API này; recovery 5175/5002 giữ riêng.
 - Hosting/assets baseline: http://127.0.0.1:5010/.
 - QA artifact có base local 127.0.0.1:4173; chỉ serve thư mục artifact đã export.
 - Recovery UI 5175 là workflow lịch sử riêng; không thay cho CMS M3 canonical.
@@ -85,4 +85,12 @@ Thay ID_SNAPSHOT bằng đúng ID trong envelope. Output phải là thư mục m
 - Source/wiring hoàn thành không chứng minh thực thi hoặc nghiệm thu. Khiêm ghi kết quả kiểm thử và quyết định bước tiếp theo.
 
 Nguồn authority hiện hành: FAST-CODE-HANDOFF và direct human message `01a138a1-b45d-7210-8371-422b30519717` trong chat báo cáo. Bản bàn giao không đóng M3 register, không thay historical approvals/receipts và không mở M4.
+
+## Correction sau khi người dùng khởi động
+
+Sau bàn giao source, Khiêm yêu cầu khởi động CMS/worker và phản hồi login chờ kiểm tra quyền. Actual user `/api/cms/session` cho thấy worker Functions retained thất bại với `R1 High release source/bundle mismatch`. Auth sign-in đã thành công, nhưng API startup chưa sẵn sàng tại thời điểm quan sát đó.
+
+Writer Medium sửa riêng `vite.config.mjs`: canonical Node middleware `/api/cms` gọi actual handler qua cached Express/raw HTTP, giữ bounded body/headers/query/response, runtime/demo/network guards, Auth/ACL và browser/private-file denial. Không đổi ports, không tạo API giả, không sửa hoặc rebaseline R1, không restart/kill/reset retained services. Lệnh vẫn là `npm run dev:local`; report chat vận hành lại riêng Vite do mình sở hữu. C2 sửa deadline 15 giây cho toàn GET session để UI không chờ vô hạn.
+
+Hai bản sửa đã bàn giao source; readiness/login sau correction phải dựa trên startup và request thật của người dùng. Source writers không chạy tests/build/lint/probes/HTTP/SDK/runtime. Các thao tác ứng dụng sau đó thuộc quyền startup mới của Khiêm, không phải bằng chứng kiểm thử M3 hoặc nghiệm thu.
 

@@ -1,0 +1,20 @@
+/* Scoped component styling; no font, asset or network dependency. */
+button.ps-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-width:0;min-height:48px;margin:0;border:1px solid #c9b8c0;border-radius:10px;padding:11px 14px;background:#fff;color:#35212d;font:inherit;font-weight:400;text-align:left;cursor:pointer;box-sizing:border-box}
+button.ps-trigger:hover:not(:disabled){border-color:#c51e68;background:#fff8fb}
+button.ps-trigger:focus-visible{outline:3px solid #c51e68;outline-offset:3px}
+button.ps-trigger[aria-expanded=true]{border-color:#c51e68;box-shadow:0 0 0 1px #c51e68}
+button.ps-trigger[aria-invalid=true]{border-color:#992351}
+button.ps-trigger:disabled{cursor:not-allowed;background:#f5f1f3;color:#6c5d65}
+.ps-value{min-width:0;overflow-wrap:anywhere;flex:1}
+.ps-chevron{width:20px;height:20px;flex:0 0 20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.ps-trigger[aria-expanded=true] .ps-chevron{transform:rotate(180deg)}
+.ps-popup{position:fixed;z-index:10000;box-sizing:border-box;overflow:auto;overscroll-behavior:contain;padding:6px;margin:0;border:1px solid #c9b8c0;border-radius:12px;background:#fff;color:#35212d;font:inherit;box-shadow:0 8px 24px #35212d29;scrollbar-gutter:stable}
+.ps-option{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;box-sizing:border-box;padding:10px 12px;border-radius:8px;cursor:pointer}
+.ps-option-text{min-width:0;overflow-wrap:anywhere}
+.ps-option.is-active{outline:2px solid #c51e68;outline-offset:-2px;background:#fff2f8}
+.ps-option[aria-selected=true]{background:#f8e3ed;font-weight:600}
+.ps-option[aria-disabled=true]{color:#756771;cursor:not-allowed}
+.ps-option-check{flex:0 0 18px;visibility:hidden}
+.ps-option[aria-selected=true] .ps-option-check{visibility:visible}
+.ps-message{margin:4px 0;color:#992351;font-size:14px}
+@media(max-width:700px){button.ps-trigger,.ps-popup{font-size:16px}}

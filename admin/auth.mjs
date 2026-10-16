@@ -1,3 +1,5 @@
+import {mountCmsShell} from './cms-shell.mjs';
+import {closePinkySelects,disposePinkySelects} from './pinky-select.mjs';
 import {mediaDerivativePublicSchema} from '../contracts/media-read-public.mjs';
 import {assertLocalOrigin,firebaseConfig,LOCAL,RECOVERY_READ_ONLY} from './config-local.mjs';
 import {TEMPLATE_VERSION as HERO_TEMPLATE_VERSION} from '../preview/hero-renderer.mjs';
@@ -12,21 +14,21 @@ connectAuthEmulator(auth,LOCAL.auth,{disableWarnings:true});
 const element=id=>document.getElementById(id);
 const pending=new Set();const objectUrls=new Set();
 let generation=0;let resourceGeneration=0;let session=null;let editor=null;let review=null;
+const shell=mountCmsShell(document,{onResource:selectResource,closePopups:closePinkySelects,recoveryReadOnly:RECOVERY_READ_ONLY});
 if(RECOVERY_READ_ONLY){
  const banner=document.createElement('p');banner.id='recovery-read-only';banner.className='card';banner.setAttribute('role','status');banner.textContent='Khôi phục — chỉ xem';element('session-panel').prepend(banner);
- for(const option of element('cms-resource').querySelectorAll('option'))if(option.value!=='home-v2')option.disabled=true;
- element('cms-resource').value='home-v2';element('cms-resource').disabled=true;
 }
 const accessError='Không thể truy cập nội dung. Vui lòng kiểm tra quyền hoặc đăng nhập lại.';
 function announce(message){element('status').textContent=message;}
 function clearPrivate(){
- editor?.destroy();editor=null;review?.destroy();review=null;generation++;resourceGeneration++;session=null;for(const controller of pending)controller.abort();pending.clear();
+ closePinkySelects();shell.setSession(null);
+ editor?.destroy();editor=null;review?.destroy();review=null;disposePinkySelects(element('private-content'));generation++;resourceGeneration++;session=null;for(const controller of pending)controller.abort();pending.clear();
  for(const url of objectUrls)URL.revokeObjectURL(url);objectUrls.clear();
  element('private-content').replaceChildren();for(const frame of document.querySelectorAll('iframe')){frame.removeAttribute('srcdoc');frame.hidden=true;}
  element('session-panel').hidden=true;element('session-role').textContent='';
  document.dispatchEvent(new CustomEvent('cms:session',{detail:null}));
 }
-async function endSession(message=accessError){clearPrivate();announce(message);await signOut(auth);}
+async function endSession(message=accessError,{showLogin=false}={}){clearPrivate();announce(message);if(showLogin){element('login-panel').hidden=false;element('logout').hidden=true;element('login-submit').disabled=false;}await signOut(auth);}
 export function getSession(){return session?{...session}:null;}
 export function registerObjectUrl(url){objectUrls.add(url);}
 /** An opaque cursor must use the same canonical base64url/UTF-8 format as
@@ -110,7 +112,10 @@ export async function apiFetch(path,options={}){
  const callerHeaders=media||mediaSite?mediaCallerHeaders(options.headers):options.headers;
  const current=generation;const user=auth.currentUser;if(!user)throw new Error(accessError);
  const controller=new AbortController(),external=options.signal,abortCaller=()=>controller.abort();if(external?.aborted)controller.abort();else external?.addEventListener('abort',abortCaller,{once:true});pending.add(controller);
+ const sessionRead=method==='GET'&&path==='/api/cms/session',timeoutMessage='Không thể kết nối API kiểm tra quyền. Vui lòng thử đăng nhập lại.';let deadlineTimer,timedOut=false,abortDeadline;
+ const deadlineGate=sessionRead?new Promise((_resolve,reject)=>{abortDeadline=()=>{const error=timedOut?Object.assign(new Error(timeoutMessage),{code:'SESSION_API_TIMEOUT'}):new DOMException('Phiên đã kết thúc.','AbortError');reject(error);};controller.signal.addEventListener('abort',abortDeadline,{once:true});deadlineTimer=setTimeout(()=>{if(current!==generation||controller.signal.aborted||external?.aborted){controller.abort();return;}timedOut=true;controller.abort();},15000);if(controller.signal.aborted)abortDeadline();}):null;
  try{
+  const operation=(async()=>{
   let response;
   for(let attempt=0;attempt<2;attempt++){
    const token=await user.getIdToken(attempt===1);
@@ -125,20 +130,24 @@ export async function apiFetch(path,options={}){
   if(response.status===403 && body.error?.code!=='SELF_REVIEW_FORBIDDEN'){await endSession();throw new Error(accessError);}
   if(!response.ok){const error=new Error(body.error?.message??'Không thể xử lý yêu cầu.');error.code=body.error?.code;error.status=response.status;error.fieldErrors=body.error?.fieldErrors;throw error;}
   return body;
- }catch(error){if(current===generation && error.code?.startsWith('auth/'))await endSession();throw error;}finally{external?.removeEventListener('abort',abortCaller);pending.delete(controller);}
+  })();
+  // Token promises cannot be cancelled. Observe late rejection and block late private completion.
+  operation.catch(()=>{});return await (deadlineGate?Promise.race([operation,deadlineGate]):operation);
+ }catch(error){if(error.code==='SESSION_API_TIMEOUT'&&timedOut&&current===generation&&!external?.aborted){void endSession(timeoutMessage,{showLogin:true}).catch(()=>{});}else if(current===generation&&error.code?.startsWith('auth/'))await endSession();throw error;}finally{clearTimeout(deadlineTimer);if(abortDeadline)controller.signal.removeEventListener('abort',abortDeadline);external?.removeEventListener('abort',abortCaller);pending.delete(controller);}
 }
 element('login-form').addEventListener('submit',async event=>{
  event.preventDefault();element('login-submit').disabled=true;announce('Đang đăng nhập…');
  try{await signInWithEmailAndPassword(auth,element('email').value.trim(),element('password').value);}catch{announce('Không thể đăng nhập. Vui lòng kiểm tra thông tin và thử lại.');}
  finally{element('password').value='';element('login-submit').disabled=false;}
 });
-element('logout').addEventListener('click',()=>{if(editor && !editor.canLeave())return;void endSession('Bạn đã đăng xuất.');});
+element('logout').addEventListener('click',()=>{if((editor && !editor.canLeave())||(review?.canLeave&&!review.canLeave()))return;void endSession('Bạn đã đăng xuất.');});
 async function mountResource(value,member){
- if(RECOVERY_READ_ONLY && value!=='home-v2')throw new Error('Yêu cầu không hợp lệ.');
+ if((RECOVERY_READ_ONLY && value!=='home-v2')||(!RECOVERY_READ_ONLY && !['home-v3','home','media'].includes(value)))throw new Error('Yêu cầu không hợp lệ.');
  const current=++resourceGeneration,sessionGeneration=generation;
- editor?.destroy();editor=null;review?.destroy();review=null;element('private-content').replaceChildren();
+ closePinkySelects();shell.setBusy(true);
+ editor?.destroy();editor=null;review?.destroy();review=null;disposePinkySelects(element('private-content'));element('private-content').replaceChildren();
  document.dispatchEvent(new CustomEvent('cms:content',{detail:null}));
- element('cms-resource').value=value;
+ shell.setResource(value);
  const resourceApi=async(path,options)=>{
   const body=await apiFetch(path,options);
   if(current!==resourceGeneration || sessionGeneration!==generation)throw new DOMException('Nội dung đã được chuyển.','AbortError');
@@ -151,6 +160,7 @@ async function mountResource(value,member){
   editor=mountSiteEditor(element('private-content'),{apiFetch:resourceApi,session:member,readOnly:RECOVERY_READ_ONLY});
  }else if(value==='home-v3'){
   const {mountSiteMediaEditor}=await import('./site-media-editor.mjs');if(current!==resourceGeneration||sessionGeneration!==generation)return;editor=mountSiteMediaEditor(element('private-content'),{apiFetch:resourceApi,getSession,session:member});
+  const {mountSiteLegacyHistory}=await import('./site-legacy-history.mjs');if(current!==resourceGeneration||sessionGeneration!==generation)return;review=mountSiteLegacyHistory(element('private-content'),{apiFetch:resourceApi,session:member});
  }else if(value==='media'){
   const [{mountMediaLibrary},{mountMediaUpload}]=await Promise.all([import('./media-library.mjs'),import('./media-upload.mjs')]);if(current!==resourceGeneration||sessionGeneration!==generation)return;
   const root=element('private-content'),uploadRoot=document.createElement('div'),libraryRoot=document.createElement('div');root.append(uploadRoot,libraryRoot);const library=mountMediaLibrary(libraryRoot,{apiFetch:resourceApi,getSession});const upload=mountMediaUpload(uploadRoot,{apiFetch:resourceApi,getSession,onQueued:()=>library.reload()});editor={canLeave:()=>upload.canLeave()&&library.canLeave(),destroy(){upload.destroy();library.destroy();root.replaceChildren();}};
@@ -159,19 +169,20 @@ async function mountResource(value,member){
   if(current!==resourceGeneration || sessionGeneration!==generation)return;
   review=mountReview(element('private-content'),{apiFetch:resourceApi,session:member});editor=mountHeroEditor(element('private-content'),{apiFetch:resourceApi,session:member});
  }
+ shell.refreshPanels();
 }
-element('cms-resource').addEventListener('change',event=>{
- const value=event.target.value;
- if(RECOVERY_READ_ONLY && value!=='home-v2'){event.target.value='home-v2';return;}
- if(!session)return;
- if(editor && !editor.canLeave()){event.target.value=editorResource;return;}
- editorResource=value;void mountResource(value,session);
-});
-let editorResource='home';
+function selectResource(value){
+ if((RECOVERY_READ_ONLY && value!=='home-v2')||(!RECOVERY_READ_ONLY && !['home-v3','home','media'].includes(value)))return;
+ if(!session || (value===editorResource && editor))return;
+ if((editor && !editor.canLeave())||(review?.canLeave&&!review.canLeave()))return;
+ editorResource=value;const member=session;
+ void mountResource(value,member).catch(error=>{if(error.name!=='AbortError' && session===member)announce('Không thể mở nội dung. Vui lòng thử lại.');}).finally(()=>{if(session===member && editorResource===value)shell.setBusy(false);});
+}
+let editorResource=RECOVERY_READ_ONLY?'home-v2':'home-v3';
 onAuthStateChanged(auth,async user=>{
  clearPrivate();element('logout').hidden=!user;element('login-panel').hidden=Boolean(user);
  if(!user)return;
  const current=generation;announce('Đang kiểm tra quyền truy cập…');
- try{const member=await apiFetch('/api/cms/session');if(current!==generation)return;session=Object.freeze(member);element('session-role').textContent=member.role;element('session-panel').hidden=false;announce('');element('session-ready').textContent='';editorResource=RECOVERY_READ_ONLY?'home-v2':'home';await mountResource(editorResource,member);if(current!==generation)return;document.dispatchEvent(new CustomEvent('cms:session',{detail:{...member}}));}
- catch(error){if(error.name!=='AbortError' && current===generation)await endSession();}
+ try{const member=await apiFetch('/api/cms/session');if(current!==generation)return;session=Object.freeze(member);element('session-role').textContent=member.role;element('session-panel').hidden=false;shell.setSession(member,{readOnly:RECOVERY_READ_ONLY});announce('');element('session-ready').textContent='';editorResource=RECOVERY_READ_ONLY?'home-v2':'home-v3';await mountResource(editorResource,member);if(current!==generation)return;shell.setBusy(false);shell.refreshPanels();document.dispatchEvent(new CustomEvent('cms:session',{detail:{...member}}));}
+ catch(error){if(error.code==='SESSION_API_TIMEOUT')return;if(error.name!=='AbortError' && current===generation)await endSession();}
 });

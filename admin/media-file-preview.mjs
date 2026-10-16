@@ -2,7 +2,7 @@ import {mediaDetailPublicSchema,mediaIdSchema} from '../contracts/media-read-pub
 
 const MiB=1048576,CAP=64*MiB;
 let retainedBlobBytes=0,binaryInFlight=false;
-const resourceOwners=new Set();
+const resourceOwners=new Set(),binaryWaiters=[];let drainingWaiters=false;
 const statusLabels={QUEUED:'Đang chờ xử lý',PROCESSING:'Đang xử lý',READY:'Sẵn sàng',REJECTED:'Đã từ chối',RECOVERY_REQUIRED:'Cần khôi phục'};
 const escapeAttribute=value=>value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const childDocument=(url,poster)=>'<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src blob:; media-src blob:; script-src \'none\'; connect-src \'none\'; object-src \'none\'; frame-src \'none\'; style-src \'none\'; base-uri \'none\'; form-action \'none\'"><meta name="referrer" content="no-referrer"></head><body>'+
@@ -21,9 +21,20 @@ function beginBinary(bytes,protectedOwner) {
   retainedBlobBytes+=bytes;binaryInFlight=true;
   let released=false,settled=false;
   return {release(){if(!released){released=true;retainedBlobBytes-=bytes;}},
-    settle(){if(!settled){settled=true;binaryInFlight=false;}}};
+    settle(){if(!settled){settled=true;binaryInFlight=false;drainBinaryWaiters();}}};
 }
 export function beginMediaPreviewBinary(bytes,protectedOwner){return beginBinary(bytes,protectedOwner);}
+function drainBinaryWaiters(){
+ if(drainingWaiters||binaryInFlight)return;drainingWaiters=true;
+ try{while(!binaryInFlight&&binaryWaiters.length){const waiter=binaryWaiters.shift();waiter.signal?.removeEventListener('abort',waiter.abort);if(waiter.signal?.aborted){waiter.reject(new DOMException('Phiên đã thay đổi.','AbortError'));continue;}try{waiter.resolve(beginBinary(waiter.bytes,waiter.owner));}catch(error){waiter.reject(error);}}}finally{drainingWaiters=false;}
+}
+/** Wait for the existing single binary reservation. Abort only removes queued
+ * admission; the active caller retains its charge/lock until actual settle. */
+export function acquireMediaPreviewBinary(bytes,protectedOwner,{signal}={}){
+ if(!Number.isSafeInteger(bytes)||bytes<1||bytes>CAP)return Promise.reject(new Error('PREVIEW_BYTES'));
+ if(signal?.aborted)return Promise.reject(new DOMException('Phiên đã thay đổi.','AbortError'));
+ return new Promise((resolve,reject)=>{const waiter={bytes,owner:protectedOwner,signal,resolve,reject,abort:null};waiter.abort=()=>{const index=binaryWaiters.indexOf(waiter);if(index<0)return;binaryWaiters.splice(index,1);signal.removeEventListener('abort',waiter.abort);reject(new DOMException('Phiên đã thay đổi.','AbortError'));};signal?.addEventListener('abort',waiter.abort,{once:true});binaryWaiters.push(waiter);drainBinaryWaiters();});
+}
 export function registerMediaPreviewResourceOwner(evict){
   if(typeof evict!=='function')throw new TypeError('Resource owner required');
   resourceOwners.add(evict);let removed=false;

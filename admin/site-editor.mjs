@@ -100,21 +100,23 @@ export function planSiteSave(saved,working,context){
 /** One mounted resource owns all state. No autosave, persistence or v1 content event. */
 export function mountSiteEditor(container,{apiFetch,session,readOnly=false}){
  let saved=null,working=null,context=null,pending=false,disposed=false,generation=0,fields=null,intent=null,importIntent=null,missing=false;
- let componentControllers=[];
+ let componentControllers=[],selectedGroup,errorTarget=null;
  const editable=!readOnly && ['EDITOR','OWNER'].includes(session.role);
  const root=siteNode('section',undefined,{id:'site-editor','aria-label':'Biên tập toàn website'});
  const revision=siteNode('p','',{id:'site-revision'}),dirtyLabel=siteNode('p','',{id:'site-dirty'}),status=siteNode('p','Đang tải bản website…',{id:'site-status',role:'status','aria-live':'polite'}),errors=siteNode('div',undefined,{id:'site-errors',role:'alert'}),body=siteNode('div',undefined,{id:'site-form'});
  const save=siteButton('Lưu website','site-save',()=>void saveWorking()),reload=siteButton('Tải lại website','site-reload',()=>{if(canLeave())void load();}),importButton=siteButton('Khởi tạo website từ bản bàn giao','site-import',()=>void importSite());
  const actions=siteNode('div',undefined,{class:'editor-actions'});actions.append(save,reload,importButton);
- const frame=siteNode('div',undefined,{class:'site-editor-frame'}),information=siteNode('aside',undefined,{class:'site-information','aria-label':'Trạng thái bản website'});
- information.append(siteNode('h3','Trạng thái bản nháp'),revision,dirtyLabel,status,errors,actions);frame.append(body,information);
- root.append(siteNode('h2','Toàn website'),frame);container.append(root);
+ const frame=siteNode('div',undefined,{class:'site-editor-frame cms-site-composition'}),information=siteNode('aside',undefined,{class:'site-information','aria-label':'Trạng thái bản website'});
+ frame.classList.add('cms-editor-card');frame.dataset.cmsPane='edit';
+ const cardHead=siteNode('div',undefined,{class:'cms-card-head'}),headingCopy=siteNode('div');headingCopy.append(siteNode('h2','Biên tập nội dung'),siteNode('p','Thay đổi được lưu vào bản nháp.',{class:'cms-card-subtitle'}));cardHead.append(headingCopy,siteNode('span','BẢN NHÁP',{class:'cms-badge'}));
+ information.append(revision,dirtyLabel,status,errors);frame.append(cardHead,information,body,actions);
+ root.append(frame);container.append(root);
  // Keep browsing/navigation available while blocking even dispatched field events.
  const blockRecoveryEdit=event=>{
   if(!readOnly || !event.target.closest?.('#site-fields'))return;
   const link=event.type==='click'?event.target.closest('a[href^="#"]'):null,fragment=link?.getAttribute('href');
   const target=fragment && /^#site-(?:header-fields|hero-fields|seo-fields|project-[A-Za-z0-9_-]+|service-[A-Za-z0-9_-]+)$/.test(fragment)?document.getElementById(fragment.slice(1)):null;
-  if(target && body.contains(target))return;
+  if(target && body.contains(target) || event.type==='click' && event.target.closest?.('[data-site-group-target]'))return;
   event.preventDefault();event.stopImmediatePropagation();
  };
  for(const type of ['input','change','click'])body.addEventListener(type,blockRecoveryEdit,true);
@@ -129,10 +131,11 @@ export function mountSiteEditor(container,{apiFetch,session,readOnly=false}){
   revision.textContent=saved?`Phiên bản website: ${saved.revision}`:'';dirtyLabel.textContent=pendingInput()?'Nội dung mới chưa được thêm.':dirty()?'Có thay đổi chưa lưu.':saved?'Đã lưu.':'';
   fields?.setDisabled(!editable || pending);save.disabled=!editable || pending || pendingInput() || (!dirty() && !intent);reload.disabled=pending || Boolean(intent || importIntent);
   importButton.hidden=!missing || session.role!=='OWNER';importButton.disabled=readOnly || pending;
+  if(!pending && errorTarget){fields?.revealTarget(errorTarget);errorTarget=null;}
  }
  function emitSaved(){if(saved)document.dispatchEvent(new CustomEvent('cms:site-content',{detail:{draft:copy(saved),dirty:unsaved()}}));}
  function clearErrors(){
-  errors.replaceChildren();
+  errors.replaceChildren();errorTarget=null;
   for(const control of body.querySelectorAll('[aria-invalid]')){
    control.removeAttribute('aria-invalid');
    const hints=(control.getAttribute('aria-describedby')??'').split(/\s+/).filter(id=>id && !id.startsWith('site-field-error-'));
@@ -150,6 +153,7 @@ export function mountSiteEditor(container,{apiFetch,session,readOnly=false}){
    const normalized=path.replace(/^patch\./,'');
    // Only a path already owned by a rendered control can receive a field error.
    const controls=[...body.querySelectorAll('[data-validation-path]')].filter(control=>control.dataset.validationPath===normalized || control.dataset.validationPath.startsWith(normalized+'.'));
+   if(controls.length){const link=siteButton('Vị trí cần kiểm tra: '+normalized,undefined,()=>fields?.revealTarget(controls[0]));link.className='cms-error-link';errors.append(link);errorTarget??=controls[0];}
    for(const control of controls){
     if(control.hasAttribute('aria-invalid'))continue;
     const id=`site-field-error-${sequence++}`,note=siteNode('p','Nội dung này chưa hợp lệ. Hãy kiểm tra giá trị và liên kết đã chọn.',{id,class:'field-error'});
@@ -159,10 +163,10 @@ export function mountSiteEditor(container,{apiFetch,session,readOnly=false}){
   }
  }
  function render(){
-  componentControllers=[];
+  selectedGroup=fields?.getSelectedGroup()??selectedGroup;componentControllers=[];
   const mountComponent=mount=>(host,options)=>{const controller=mount(host,options);componentControllers.push(controller);return controller;};
   fields?.destroy();fields=null;body.replaceChildren();
-  if(working)fields=mountSiteFields(body,{content:working,context,onChange:()=>{clearErrors();if(pendingInput())status.textContent='Nội dung mới chưa được thêm. Thêm bản ghi hoặc bỏ phần nhập này trước khi lưu.';else if(status.textContent.startsWith('Nội dung mới chưa được thêm.'))status.textContent=dirty()?'Có thay đổi chưa lưu. Hãy lưu website sau khi kiểm tra.':'Chọn nội dung cần sửa, sau đó lưu website.';for(const controller of componentControllers)controller.refreshReferences?.();update();emitSaved();},components:[
+  if(working)fields=mountSiteFields(body,{content:working,context,initialGroup:selectedGroup,onChange:()=>{clearErrors();if(pendingInput())status.textContent='Nội dung mới chưa được thêm. Thêm bản ghi hoặc bỏ phần nhập này trước khi lưu.';else if(status.textContent.startsWith('Nội dung mới chưa được thêm.'))status.textContent=dirty()?'Có thay đổi chưa lưu. Hãy lưu website sau khi kiểm tra.':'Chọn nội dung cần sửa, sau đó lưu website.';for(const controller of componentControllers)controller.refreshReferences?.();update();emitSaved();},components:[
    {key:'settings',label:'Đầu trang, Hero và SEO',sectionIds:[],mount:mountComponent((host,options)=>mountSiteSettings(host,{...options,includeContact:false}))},
    {key:'clients',label:'Khách hàng',sectionIds:['clients'],mount:mountComponent(mountSiteClients)},
    {key:'work',label:'Dự án',sectionIds:['work'],mount:mountComponent(mountSiteWork)},

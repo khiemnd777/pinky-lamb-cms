@@ -18,9 +18,11 @@ npm run dev:local
 npm run media-worker:local
 ```
 
-Canonical admin configured `http://127.0.0.1:5173`, project `demo-pinky-lamb-cms`; Auth9099, Functions5001, Firestore8080, Hosting5010, Storage9199. Worker entry gọi `startMediaJobPump`, không tự launch/adopt emulators hoặc reset queue. Recovery admin5175/Auth9098/Functions5002 là read-only M2, không dùng cho M3 upload.
+Canonical UI `http://127.0.0.1:5173`, same-origin API `http://127.0.0.1:5173/api/cms/**`, project `demo-pinky-lamb-cms`. Vite middleware gọi actual `cms-api/index.handleRequest` qua Express raw4MiB/inflate:false; canonical không proxy hoặc phụ thuộc Functions5001. Per-route JSON/chunk bounds, Auth/ACL và private fences giữ nguyên. Prerequisites: Auth9099, Firestore8080, Hosting5010, Storage9199. Worker entry gọi `startMediaJobPump`, không tự launch/adopt emulators hoặc reset queue. Recovery admin5175/Auth9098/Functions5002 là read-only M2, không dùng cho M3 upload.
 
-Prerequisites: canonical local services do Khiêm quản lý, tài khoản demo có membership/role phù hợp, native tools hợp lệ. Availability/Auth/ports/process/tool compatibility hiện Unknown. `npm run emulators:local` chỉ dành cho fresh known user-managed canonical runtime; không adopt/reset/reseed/import/kill/restart unknown retained runtime. Không Firebase login, install dependencies hoặc chỉnh loader/security env để vượt lỗi. [LOCAL-RUNBOOK](LOCAL-RUNBOOK.md) giữ lịch sử runtime/recovery riêng.
+Prerequisites: canonical local services do Khiêm quản lý, tài khoản demo có membership/role phù hợp, native tools hợp lệ. API readiness/account/runtime/ports/PIDs/tool compatibility chưa được QA xác minh ở đây; cần actual request do người dùng thực hiện. Đây không phủ nhận runtime observations riêng của owner nếu có. `npm run emulators:local` chỉ dành cho fresh known user-managed canonical runtime; không adopt/reset/reseed/import/kill/restart unknown retained runtime. Retained Functions5001 không được adopt/restart/rebind; không tạo5003 hoặc command mới. Không fake password, Firebase login, reset/seed, install dependencies hoặc chỉnh loader/security env để vượt lỗi. [LOCAL-RUNBOOK](LOCAL-RUNBOOK.md) giữ lịch sử runtime/recovery riêng.
+
+Session source có deadline15s riêng cho GET `/api/cms/session`. Nếu quá hạn, UI báo **Không thể kết nối API kiểm tra quyền. Vui lòng thử đăng nhập lại.**, clear session/show login và chặn late private completion. Không áp claim15s cho mọi API request. Behavior này source-written, QA chưa gọi request hoặc xác nhận PASS.
 
 ## Main flow để Khiêm tự kiểm — theo labels source hiện có
 

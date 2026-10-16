@@ -1,7 +1,10 @@
 import {z} from 'zod';
-import {canonicalMediaV2Json,v2MediaManifestSchema} from '../contracts/media-v3-contract-v2.mjs';
+import {createCmsIcon} from './cms-icons.mjs';
+import {siteDirtyGroups} from './site-group-dirty.mjs';
+import {createImagePreview} from './media-image-preview.mjs';
+import {canonicalMediaV2Json} from '../contracts/media-v3-contract-v2.mjs';
 import {contentDigestProjectionV2} from '../contracts/media-v3-records-v2.mjs';
-import {parseMediaV3Content,projectClaimGroupsV3} from '../contracts/media-v3-content.mjs';
+import {createMediaV3ContentSchemas,parseMediaV3Content,projectClaimGroupsV3} from '../contracts/media-v3-content.mjs';
 import {createMediaV2RecordSchemas} from '../contracts/media-v3-records-v2.mjs';
 import {sourceCheckRequestSchema,sourceCheckReceiptSchema} from '../contracts/source-checks.mjs';
 import {sourceCheckV3Schema} from '../contracts/media-v3-attestations.mjs';
@@ -13,18 +16,29 @@ import {mountSiteServices} from './site-services-editor.mjs';
 import {mountSiteAbout,mountSiteIp} from './site-about-ip-editor.mjs';
 import {mountSiteContact,mountSiteFooter} from './site-contact-footer-editor.mjs';
 import {openMediaSlotPicker} from './media-slot-picker.mjs';
-import {createSiteMediaPreview,parseSiteMediaDraft,validateSiteMediaSnapshot} from './site-media-preview.mjs';
+import {createSiteMediaPreview,createSavedSiteManifestResolver,parseSiteMediaDraft,validateSiteMediaSnapshot} from './site-media-preview.mjs';
 import {strictMediaV2JsonSchema} from '../contracts/media-v3-metadata-v2.mjs';
 import {beginMediaPreviewBinary,registerMediaPreviewResourceOwner} from './media-file-preview.mjs';
+import {createPinkySelect,disposePinkySelects,closePinkySelects} from './pinky-select.mjs';
 
 const copy=value=>structuredClone(value),same=(a,b)=>canonicalMediaV2Json(a)===canonicalMediaV2Json(b);
 const saveReceipt=z.strictObject({draftId:z.literal('home-v3'),contractRevision:z.literal(2),revision:revisionSchema,updatedAt:z.string().datetime().length(24),lastEventId:resourceIdSchema});
 const importReceipt=z.strictObject({draftId:z.literal('home-v3'),contractRevision:z.literal(2),revision:z.literal(0),importId:resourceIdSchema,sourceDraftRevision:revisionSchema});
 const summary=z.strictObject({id:resourceIdSchema,draftId:z.literal('home-v3'),schemaVersion:z.literal(3),templateVersion:z.literal('m3-site-media-v1'),contractRevision:z.literal(2),draftRevision:revisionSchema,contentHash:hashSchema,mediaManifestHash:hashSchema,submittedBy:resourceIdSchema,submittedAt:z.string().datetime().length(24)});
-const savedPreviewSchema=z.strictObject({contractRevision:z.literal(2),draftId:z.literal('home-v3'),draftRevision:revisionSchema,contentHash:hashSchema,mediaManifestHash:hashSchema,mediaManifest:v2MediaManifestSchema});
 const reviewReceipt=z.strictObject({snapshotId:resourceIdSchema,contentHash:hashSchema,reviewId:resourceIdSchema,status:z.enum(['APPROVED','CHANGES_REQUESTED']),revision:z.literal(1),sourceRevision:revisionSchema,attestationSetHash:hashSchema});
 const sourcesPage=z.strictObject({snapshotId:resourceIdSchema,contentHash:hashSchema,view:z.enum(['ACTIVE','APPROVED']),sourceRevision:revisionSchema,checks:z.array(sourceCheckV3Schema).max(50),nextCursor:z.string().min(1).max(2048).nullable()});
 const definite=e=>e.status>=400&&e.status<500&&Boolean(e.code)&&e.code!=='IDEMPOTENCY_IN_PROGRESS';
+/** Keep local schema paths for UI reveal; the transport error allowlist remains unchanged. */
+function validateWorkingContentForReveal(content,context){
+ const result=createMediaV3ContentSchemas(context).contentSchema.safeParse(content);if(result.success)return;
+ const error=new Error('Nội dung chưa hợp lệ. Hãy kiểm tra các trường và liên kết trước khi lưu.');error.code='SITE_PLAN_INVALID';
+ error.siteValidationPaths=result.error.issues.slice(0,32).map(issue=>{
+  const value=issue.path.reduce((parent,key)=>parent?.[key],content),path=issue.path.join('.');
+  const imagePath=/^(hero\.image|seo\.ogImage|settings\.(brand\.logo|showreel\.poster|contact\.illustration|clientLogos\.\d+\.image)|projects\.\d+\.(cover|gallery\.\d+)|sections\.\d+\.(image|signature\.image))$/.test(path);
+  return imagePath&&value&&typeof value.alt==='string'&&typeof value.isDecorative==='boolean'&&(value.isDecorative?value.alt!=='':!value.alt.trim())?path+'.alt':path;
+ }).filter(path=>path.length>0&&path.length<=240);
+ throw error;
+}
 /** Match the server's single-record CAS operations; hidden records remain intact. */
 function apply(current,patch){
  const next=copy(current);
@@ -68,10 +82,14 @@ function savePlan(saved,target,context){
 }
 
 export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
- const owned=siteNode('section',undefined,{'aria-label':'Website Home v3'}),status=siteNode('p','Đang tải Home v3…',{role:'status'}),body=siteNode('div'),actions=siteNode('div',undefined,{class:'editor-actions'}),workflow=siteNode('section'),previewRoot=siteNode('section');
- owned.append(siteNode('h2','Website Home v3'),status,actions,body,workflow,previewRoot);root.append(owned);
- const preview=createSiteMediaPreview(previewRoot,{apiFetch,getSession}),selected=new Map(),member=JSON.stringify([session.uid,session.role,session.authzVersion]);
- let saved,working,context,fields,controllers=[],pending=false,disposed=false,serial=0,controller,intent=null,snapshotRead=null,snapshotContext=null,pickerCleanup,missing=false,errorText='',qaDownload=null;
+ const owned=siteNode('section',undefined,{'aria-label':'Toàn website'}),status=siteNode('p','Đang tải Toàn website…',{id:'v3-status',role:'status','aria-live':'polite'}),body=siteNode('div'),actions=siteNode('div',undefined,{class:'editor-actions'}),workflow=siteNode('section',undefined,{id:'v3-workflow',class:'cms-review-layout','data-cms-pane':'review','aria-label':'Gửi và duyệt website media'}),previewRoot=siteNode('section',undefined,{class:'site-media-preview cms-preview-panel','aria-label':'Xem trước website media đã lưu'});
+ const editCard=siteNode('section',undefined,{class:'cms-editor-card','data-cms-pane':'edit'}),cardHead=siteNode('div',undefined,{class:'cms-card-head'}),headingCopy=siteNode('div');headingCopy.append(siteNode('h2','Biên tập nội dung'),siteNode('p','Thay đổi được lưu vào bản nháp.',{class:'cms-card-subtitle'}));cardHead.append(headingCopy,siteNode('span','BẢN NHÁP',{class:'cms-badge'}));editCard.append(cardHead,body,actions);
+ const submitCard=siteNode('article',undefined,{class:'cms-review-card'}),decisionCard=siteNode('article',undefined,{class:'cms-review-card'}),savedSummary=siteNode('p','Đang tải bản nháp đã lưu…',{class:'cms-saved-note'});
+ submitCard.append(siteNode('p','01 / GỬI BẢN ĐÃ LƯU',{class:'cms-step-label'}),siteNode('h2','Gửi website để duyệt'),savedSummary,siteNode('p','Snapshot giữ đúng bản đã lưu tại thời điểm gửi.',{class:'cms-hint'}));workflow.append(submitCard,decisionCard);
+ owned.append(status,editCard,workflow);root.append(owned);
+ (root.ownerDocument.getElementById('cms-preview-host')??owned).append(previewRoot);
+ const preview=createSiteMediaPreview(previewRoot,{apiFetch,getSession}),manifestResolver=createSavedSiteManifestResolver({apiFetch,getSession}),selected=new Map(),member=JSON.stringify([session.uid,session.role,session.authzVersion]);
+ let saved,working,context,fields,controllers=[],pending=false,disposed=false,serial=0,controller,intent=null,snapshotRead=null,snapshotContext=null,pickerCleanup,missing=false,errorText='',qaDownload=null,selectedGroup,errorTarget=null,errorPath=null;
  function clearQaDownload(){
   if(!qaDownload)return;qaDownload.anchor.removeAttribute('href');qaDownload.anchor.remove();
   try{URL.revokeObjectURL(qaDownload.url);}catch{return;}
@@ -83,8 +101,12 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
  const staged=()=>controllers.some(c=>c.hasPendingInput?.());
  function canLeave(){return !(dirty()||staged()||intent)||window.confirm('Có thay đổi chưa lưu hoặc thao tác chưa được xác nhận. Rời trang?');}
  const editable=()=>active()&&['EDITOR','OWNER'].includes(getSession().role);
- function update(){if(qaDownload&&qaDownload.serial!==serial)clearQaDownload();fields?.setDisabled(!editable()||pending||Boolean(intent));save.disabled=!editable()||pending||staged()||Boolean(intent)||!dirty();reload.disabled=pending||Boolean(intent);importButton.hidden=!missing||session.role!=='OWNER';importButton.disabled=pending||Boolean(intent);snapshotButton.disabled=pending||Boolean(intent)||!saved||dirty()||staged();retry.disabled=!active()||pending||!intent;savedPreviewButton.disabled=!active()||pending||!saved;status.textContent=errorText||(intent?'Kết quả thao tác chưa xác nhận. Dùng cùng thao tác để thử lại.':saved?'Home v3 — phiên bản '+saved.revision+(dirty()?' — chưa lưu':' — đã lưu'):missing?'Chưa có Home v3. Chỉ nhập từ Home v2 khi bạn chọn.':status.textContent);}
- function fail(error){errorText=error.name==='AbortError'?'Phiên đã thay đổi.':error.status===409?'Xung đột phiên bản. Giữ thay đổi và tải bản mới để đối chiếu.':error.message||'Thao tác chưa được xác nhận.';status.textContent=errorText;}
+ function emitDirtyGroups(groups){window.dispatchEvent(new CustomEvent('cms:site-dirty',{detail:{groups}}));}
+ function update(){emitDirtyGroups(active()?siteDirtyGroups(saved?.content,working):[]);savedSummary.textContent=saved?'Toàn website · phiên bản '+saved.revision+' · Bản nháp đã lưu':'Chưa có bản nháp đã lưu.';if(qaDownload&&qaDownload.serial!==serial)clearQaDownload();fields?.setDisabled(!editable()||pending||Boolean(intent));save.disabled=!editable()||pending||staged()||Boolean(intent)||!dirty();reload.disabled=pending||Boolean(intent);importButton.hidden=!missing||!active()||getSession().role!=='OWNER';importButton.disabled=pending||Boolean(intent);snapshotButton.disabled=pending||Boolean(intent)||!saved||dirty()||staged();retry.disabled=!active()||pending||!intent;savedPreviewButton.disabled=!active()||pending||!saved;status.textContent=errorText||(intent?'Kết quả thao tác chưa xác nhận. Dùng cùng thao tác để thử lại.':saved?'Toàn website — phiên bản '+saved.revision+(dirty()?' — chưa lưu':' — đã lưu'):missing?session.role==='OWNER'?'Chưa có Home v3. Chọn “Nhập Home v2 hiện tại” để tạo bản nháp từ bản Home v2 đã lưu.':'Chưa có Home v3. Cần OWNER nhập bản Home v2 đã lưu để khởi tạo.':status.textContent);if(!pending&&errorPath){const path=errorPath;errorPath=null;const target=fields?.revealValidationPath(path);if(target instanceof Element){target.setAttribute('aria-invalid','true');fields?.revealTarget(target);}errorPath=null;}if(!pending && errorTarget){fields?.revealTarget(errorTarget);errorTarget=null;}}
+ function fail(error){errorText=error.name==='AbortError'?'Phiên đã thay đổi.':error.status===409?'Xung đột phiên bản. Giữ thay đổi và tải bản mới để đối chiếu.':error.message||'Thao tác chưa được xác nhận.';status.textContent=errorText;
+  const paths=[...(error.siteValidationPaths??[]),...(error.issues??[]).map(issue=>issue.path?.join('.')),...Object.keys(error.fieldErrors??{})].filter(path=>typeof path==='string'&&path.length<=240).slice(0,32);
+  for(const path of paths){const normalized=path.replace(/^patch\./,'');errorPath=normalized;const target=[...body.querySelectorAll('[data-validation-path]')].find(control=>control.dataset.validationPath===normalized || control.dataset.validationPath.startsWith(normalized+'.'));if(!target&&fields?.revealValidationPath(normalized))break;if(target){fields?.revealValidationPath(normalized);target.setAttribute('aria-invalid','true');errorTarget=target;fields?.revealTarget(target,{focus:false});break;}}
+ }
  async function mutate(path,value,schema){
   if(intent&&(intent.path!==path||!same(intent.body,value)))throw Error('Phải xác nhận thao tác trước khi gửi nội dung khác.');
   intent??={path,body:copy(value),key:crypto.randomUUID(),receipt:null};update();
@@ -93,23 +115,36 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
  }
  function asset(entry){
   if(entry.source==='LEGACY')return copy(entry.asset);
-  const a=entry.asset;return {id:a.assetId??a.id,kind:a.kind,status:a.status,isArchived:a.archived??a.isArchived,width:a.width,height:a.height,...(a.kind==='PDF'?{pageCount:a.pageCount??a.derivatives?.filter(d=>d.role==='PDF_PAGE').length}:{}),...(a.kind==='VIDEO'?{durationSeconds:a.durationSeconds??a.derivatives?.find(d=>d.role==='VIDEO')?.durationSeconds}:{})};
+  const a=entry.asset;return {id:a.assetId??a.id,label:a.name??a.assetId??a.id,kind:a.kind,status:a.status,isArchived:a.archived??a.isArchived,width:a.width,height:a.height,...(a.kind==='PDF'?{pageCount:a.pageCount??a.derivatives?.filter(d=>d.role==='PDF_PAGE').length}:{}),...(a.kind==='VIDEO'?{durationSeconds:a.durationSeconds??a.derivatives?.find(d=>d.role==='VIDEO')?.durationSeconds}:{})};
  }
  function mount(){
-  fields?.destroy();controllers=[];const catalog=saved.catalog.map(asset),uiContext={...context,catalog,sourceIds:context.sourceCatalog.map(s=>s.id),importLineage:saved.importLineage,resolveMediaAsset:id=>selected.get(id)??catalog.find(a=>a.id===id)};
-  uiContext.openMediaPicker=options=>{pickerCleanup?.();pickerCleanup=openMediaSlotPicker({...options,apiFetch,getSession,catalog:saved.catalog,requiredPages:options.kind==='PDF'?working.projects.filter(p=>p.publicCredentialPage!==undefined).map(p=>({projectId:p.id,label:p.title,pageNumber:p.publicCredentialPage})):[],onSelect:entry=>{if(!active())return;const chosen=asset(entry);selected.set(chosen.id,chosen);options.onSelect(chosen);}});return pickerCleanup;};
-  const changed=()=>{preview.clear();clearQaDownload();update();};
-  uiContext.validateProjectAddition=(content,project)=>{try{const candidate=copy(content);candidate.projects.push(copy(project));const valid=parseMediaV3Content(candidate,context);return {success:true,data:valid.projects.find(p=>p.id===project.id)};}catch{return {success:false};}};
+  selectedGroup=fields?.getSelectedGroup()??selectedGroup;closePinkySelects(document);fields?.destroy();controllers=[];const catalog=saved.catalog.map(asset),uiContext={...context,siteUx:true,catalog,sourceIds:context.sourceCatalog.map(s=>s.id),importLineage:saved.importLineage,resolveMediaAsset:id=>selected.get(id)??catalog.find(a=>a.id===id)};
+  uiContext.mountMediaThumbnail=(host,id,{label}={})=>{
+   let viewer=null,disposedThumb=false;const selectedAsset=uiContext.resolveMediaAsset(id),kind=selectedAsset?.kind;host.replaceChildren(createCmsIcon(kind==='PDF'?'FileText':kind==='VIDEO'?'Clapperboard':'Image'),siteNode('span',label??selectedAsset?.label??id));if(kind!=='IMAGE')return ()=>host.replaceChildren();
+   const actualSaved=saved;
+   const begin=async()=>{if(disposedThumb||viewer||!active()||!id)return;const entry=actualSaved.catalog.find(value=>(value.source==='LEGACY'?value.asset.id:value.asset.assetId)===id);
+    try{if(entry?.source==='LEGACY'){const receipt=await manifestResolver.get(actualSaved);if(disposedThumb||!active()||saved!==actualSaved)return;const fullEntry=receipt.mediaManifest.find(value=>value.source==='LEGACY'&&value.asset.id===id);if(!fullEntry||fullEntry.asset.kind!=='IMAGE')throw Error('Legacy thumbnail not in verified saved manifest');host.replaceChildren();viewer=createSiteMediaPreview(host,{apiFetch,getSession,thumbnail:true});await viewer.showThumbnail(fullEntry,label);}else{host.replaceChildren();viewer=createImagePreview(host,{apiFetch,getSession});await viewer.show(id);}}
+    catch{if(!disposedThumb&&active())host.replaceChildren(createCmsIcon('Image'),siteNode('span',label??selectedAsset?.label??id));}
+   };
+   const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();begin();}},{rootMargin:'100px'}):null;
+   if(observer)observer.observe(host);else begin();
+   return ()=>{disposedThumb=true;observer?.disconnect();viewer?.destroy();host.replaceChildren();};
+  };
+  uiContext.createMediaThumbnail=uiContext.mountMediaThumbnail;uiContext.onPendingChange=()=>update();
+  uiContext.openMediaPicker=options=>{closePinkySelects(document);pickerCleanup?.();pickerCleanup=openMediaSlotPicker({...options,apiFetch,getSession,catalog:saved.catalog,mountThumbnail(host,entry){if(entry.asset.kind!=='IMAGE')return;if(entry.source==='LEGACY')return uiContext.mountMediaThumbnail(host,entry.asset.id,{label:entry.asset.label});const viewer=createImagePreview(host,{apiFetch,getSession});void viewer.show(entry.asset.id);return ()=>viewer.destroy();},requiredPages:options.kind==='PDF'?working.projects.filter(p=>p.publicCredentialPage!==undefined).map(p=>({projectId:p.id,label:p.title,pageNumber:p.publicCredentialPage})):[],onSelect:entry=>{if(!active())return;const chosen=asset(entry);selected.set(chosen.id,chosen);options.onSelect(chosen);}});return pickerCleanup;};
+  const changed=()=>{errorTarget=null;errorPath=null;for(const control of body.querySelectorAll('[aria-invalid]'))control.removeAttribute('aria-invalid');preview.clear();clearQaDownload();for(const component of controllers)component.refreshReferences?.();update();};
+  uiContext.validateProjectAddition=(content,project,{claimSources=[],featured=false}={})=>{try{const candidate=copy(content);candidate.projects.push(copy(project));for(const binding of claimSources)if(binding.sourceIds.length)candidate.claimSources.push({claimPath:`projects/${project.id}/facts`,sourceIds:copy(binding.sourceIds)});if(featured)candidate.sections.find(section=>section.sectionId==='work').featuredIds.push(project.id);const valid=parseMediaV3Content(candidate,context);return {success:true,data:valid.projects.find(p=>p.id===project.id)};}catch{return {success:false};}};
+  uiContext.validateServiceAddition=(content,service,{claimSources=[]}={})=>{try{const candidate=copy(content);candidate.services.push(copy(service));candidate.sections.find(section=>section.sectionId==='services').serviceOrder.push(service.id);for(const binding of claimSources)if(binding.sourceIds.length)candidate.claimSources.push({claimPath:`services/${service.id}/facts`,sourceIds:copy(binding.sourceIds)});const valid=parseMediaV3Content(candidate,context);return {success:true,data:valid.services.find(value=>value.id===service.id)};}catch{return {success:false};}};
   const wrap=(key,label,sectionIds,mountComponent,extra={})=>({key,label,sectionIds,mount:(host,opts)=>{const c=mountComponent(host,{...opts,...extra});controllers.push(c);return c;}});
-  fields=mountSiteFields(body,{content:working,context:uiContext,onChange:changed,components:[
-   wrap('settings','Nhận diện và Hero',[],mountSiteSettings,{includeContact:false}),wrap('clients','Khách hàng',['clients'],mountSiteClients),wrap('work','Dự án',['work'],mountSiteWork),wrap('services','Dịch vụ',['services'],mountSiteServices),wrap('about','Giới thiệu',['about'],mountSiteAbout),wrap('ip','IP Studio',['ip-studio'],mountSiteIp),wrap('contact','Liên hệ',['contact'],mountSiteContact),wrap('footer','Chân trang',['footer'],mountSiteFooter)]});
+  fields=mountSiteFields(body,{content:working,context:uiContext,initialGroup:selectedGroup,onChange:changed,components:[
+   wrap('settings','Đầu trang, Hero và SEO',[],mountSiteSettings,{includeContact:false}),wrap('clients','Khách hàng',['clients'],mountSiteClients),wrap('work','Dự án',['work'],mountSiteWork),wrap('services','Dịch vụ',['services'],mountSiteServices),wrap('about','Giới thiệu',['about'],mountSiteAbout),wrap('ip','IP Studio',['ip-studio'],mountSiteIp),wrap('contact','Liên hệ',['contact'],mountSiteContact),wrap('footer','Chân trang',['footer'],mountSiteFooter)]});
   update();
  }
  async function readSaved(n){const parsed=parseSiteMediaDraft(await apiFetch('/api/cms/drafts/home-v3',{signal:controller.signal}));guard(n);return parsed;}
  async function load(){
-  if(pending||intent)return;errorText='';preview.clear();pickerCleanup?.();pending=true;const n=++serial;controller?.abort();controller=new AbortController();update();
+  if(pending||intent)return;errorText='';manifestResolver.clear();preview.clear();pickerCleanup?.();pending=true;const n=++serial;controller?.abort();controller=new AbortController();update();
   try{const parsed=await readSaved(n);saved=parsed.draft;context=parsed.context;working=copy(saved.content);missing=false;selected.clear();mount();}
-  catch(e){if(active()&&n===serial){missing=e.status===404;if(missing){fields?.destroy();fields=null;saved=null;working=null;}fail(e);}}
+  catch(e){if(active()&&n===serial){missing=e.status===404&&e.code==='DRAFT_NOT_INITIALIZED';if(missing){fields?.destroy();fields=null;controllers=[];body.replaceChildren();saved=null;working=null;errorTarget=null;}else fail(e);}}
   finally{if(n===serial){pending=false;update();}}
  }
  async function saveWorking(){
@@ -119,6 +154,7 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
    const target=copy(working);
    const catalogEntry=saved.catalog.find(e=>(e.asset.id??e.asset.assetId)===target.settings.credential.assetId),chosen=selected.get(target.settings.credential.assetId)??(catalogEntry?asset(catalogEntry):null);
    if(chosen?.pageCount&&target.projects.some(p=>p.publicCredentialPage>chosen.pageCount))throw Error('Có trang dự án vượt PDF đã chọn. Sửa liên kết; không tự xóa.');
+   if(!intent)validateWorkingContentForReveal(target,context);
    const plan=intent?[intent.body.patch]:savePlan(saved.content,target,context);
    for(const patch of plan){
     const expected=intent?intent.body.expectedRevision:saved.revision,receipt=await mutate('/api/cms/drafts/home-v3',{expectedRevision:expected,patch},saveReceipt);guard(n);
@@ -132,7 +168,7 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
   finally{pending=false;update();}
  }
  async function importCurrent(){
-  if(pending||!active()||session.role!=='OWNER')return;pending=true;const n=++serial;controller=new AbortController();update();
+  if(pending||!active()||!missing||getSession().role!=='OWNER')return;pending=true;errorText='';const n=++serial;controller=new AbortController();update();
   try{
    let value;if(intent){if(intent.path!=='/api/cms/drafts/home-v3/import')throw Error('Xác nhận thao tác đang giữ.');value=intent.body;}
    else{const m2=await apiFetch('/api/cms/drafts/home-v2',{signal:controller.signal});guard(n);value={expectedM2Revision:revisionSchema.parse(m2.revision)};if(!window.confirm('Nhập bản Home v2 hiện tại, phiên bản '+value.expectedM2Revision+'?'))return;}
@@ -141,15 +177,11 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
    intent=null;saved=parsed.draft;context=parsed.context;working=copy(saved.content);missing=false;mount();
   }catch(e){if(active())fail(e);}finally{pending=false;update();}
  }
- const snapshotInput=siteNode('input',undefined,{'aria-label':'Mã snapshot'});snapshotInput.maxLength=100;
+ const snapshotInput=siteNode('input',undefined,{id:'v3-snapshot-id','aria-label':'Mã snapshot'});snapshotInput.maxLength=100;
  async function showSavedPreview(){
   if(pending||!saved||!active())return;pending=true;errorText='';const n=++serial;controller=new AbortController();const actualSaved=copy(saved);update();
   try{
-   const receipt=savedPreviewSchema.parse(await apiFetch('/api/cms/media-site/drafts/home-v3/preview?expectedRevision='+actualSaved.revision,{signal:controller.signal}));guard(n);
-   if(receipt.draftRevision!==actualSaved.revision)throw Error('Saved preview revision mismatch');
-   const hash=async value=>{const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonicalMediaV2Json(value)));guard(n);return Array.from(new Uint8Array(bytes),v=>v.toString(16).padStart(2,'0')).join('');};
-   const manifestHash=await hash(receipt.mediaManifest),contentHash=await hash(contentDigestProjectionV2(actualSaved.content,manifestHash));guard(n);
-   if(manifestHash!==receipt.mediaManifestHash||contentHash!==receipt.contentHash)throw Error('Saved preview hash mismatch');
+   const receipt=await manifestResolver.get(actualSaved);guard(n);
    await preview.showSaved({savedDraft:actualSaved,mediaManifest:receipt.mediaManifest,expectedRevision:actualSaved.revision});guard(n);
   }catch(e){if(active())fail(e);}finally{pending=false;update();}
  }
@@ -157,7 +189,7 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
   clearQaDownload();
   resourceIdSchema.parse(id);const n=serial,raw=await apiFetch('/api/cms/media-site/snapshots/'+encodeURIComponent(id),{signal:controller.signal});guard(n);
   const parsed=await validateSiteMediaSnapshot(raw,()=>guard(n));guard(n);if(parsed.response.snapshot.id!==id)throw Error('Snapshot identity mismatch');
-  snapshotRead=parsed.response;snapshotContext=parsed.context;snapshotInput.value=id;renderReview(parsed.response);const s=parsed.response.snapshot;await preview.showSnapshot({response:parsed.response,expectedSnapshotId:id,expectedContentHash:s.contentHash,expectedMediaManifestHash:s.mediaManifestHash});guard(n);
+  snapshotRead=parsed.response;snapshotContext=parsed.context;snapshotInput.value=id;document.dispatchEvent(new CustomEvent('cms:show-work',{detail:{pane:'review'}}));renderReview(parsed.response);const s=parsed.response.snapshot;await preview.showSnapshot({response:parsed.response,expectedSnapshotId:id,expectedContentHash:s.contentHash,expectedMediaManifestHash:s.mediaManifestHash});guard(n);
  }
  async function snapshot(){
   if(pending||!saved||dirty()||staged()||!editable())return;pending=true;const n=++serial;controller=new AbortController();update();
@@ -165,13 +197,12 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
   catch(e){if(active())fail(e);}finally{pending=false;update();}
  }
  function renderReview(read){
-  workflow.replaceChildren(snapshotInput,openSnapshotButton);
+  disposePinkySelects(decisionCard);decisionCard.replaceChildren(siteNode('p','02 / XEM & QUYẾT ĐỊNH',{class:'cms-step-label'}),siteNode('h2','Duyệt bản website'),snapshotField,openSnapshotButton);
   const s=read.snapshot,state=read.reviewState;
-  workflow.append(siteNode('h3','Snapshot '+s.id),siteNode('p','Bản đã lưu '+s.draftRevision+' — '+state.status+' — nguồn '+state.sourceRevision));
-  const note=siteNode('textarea',undefined,{'aria-label':'Ghi chú review'});note.maxLength=2000;
-  const declaration=siteNode('select',undefined,{'aria-label':'Khai báo nội dung sáng tạo'});
-  for(const [value,label] of [['','Chọn khai báo'],['NO_FACTUAL_CLAIMS','Không có factual claims'],['SOURCE_CHECKED','Đã đối chiếu nguồn']]){const o=siteNode('option',label,{value});declaration.append(o);}
-  workflow.append(note,declaration);
+  decisionCard.append(siteNode('h3','Snapshot '+s.id),siteNode('p','Bản đã lưu '+s.draftRevision+' — '+state.status+' — nguồn '+state.sourceRevision));
+  const note=siteNode('textarea',undefined,{id:'v3-review-note','aria-label':'Ghi chú review'});note.maxLength=2000;
+  const declaration=createPinkySelect(document,{id:'v3-creative-declaration',label:'Khai báo nội dung sáng tạo',value:'',options:[['','Chọn khai báo'],['NO_FACTUAL_CLAIMS','Không có factual claims'],['SOURCE_CHECKED','Đã đối chiếu nguồn']].map(([value,label])=>({value,label}))});
+  labeledField(decisionCard,note,'Ghi chú review');labeledField(decisionCard,declaration,'Khai báo nội dung sáng tạo');
   const permitted=()=>active()&&['OWNER','REVIEWER'].includes(getSession().role)&&getSession().uid!==s.submittedBy&&state.status==='IN_REVIEW';
   async function operation(path,value,schema){
    if(pending||!permitted())return;pending=true;const n=++serial;controller=new AbortController();update();
@@ -179,16 +210,15 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
    catch(e){if(active())fail(e);}finally{pending=false;update();}
   }
   for(const outcome of ['APPROVED','CHANGES_REQUESTED']){
-   const b=siteButton(outcome==='APPROVED'?'Chấp thuận snapshot':'Yêu cầu sửa','v3-review-'+outcome,()=>{const value={snapshotId:s.id,contentHash:s.contentHash,expectedReviewRevision:0,expectedSourceRevision:state.sourceRevision,outcome,...(note.value.trim()?{note:note.value}:{}),...(declaration.value?{creativeCopyDeclaration:declaration.value}:{})};if(outcome==='APPROVED'&&!declaration.value||outcome==='CHANGES_REQUESTED'&&!note.value.trim()){status.textContent='Chọn khai báo hoặc ghi chú cần thiết.';return;}void operation('/api/cms/media-site/reviews',value,reviewReceipt);});b.disabled=!permitted();workflow.append(b);
+   const b=siteButton(outcome==='APPROVED'?'Chấp thuận snapshot':'Yêu cầu sửa','v3-review-'+outcome,()=>{const value={snapshotId:s.id,contentHash:s.contentHash,expectedReviewRevision:0,expectedSourceRevision:state.sourceRevision,outcome,...(note.value.trim()?{note:note.value}:{}),...(declaration.value?{creativeCopyDeclaration:declaration.value}:{})};if(outcome==='APPROVED'&&!declaration.value||outcome==='CHANGES_REQUESTED'&&!note.value.trim()){status.textContent='Chọn khai báo hoặc ghi chú cần thiết.';return;}void operation('/api/cms/media-site/reviews',value,reviewReceipt);});b.disabled=!permitted();decisionCard.append(b);
   }
-  const claim=siteNode('select',undefined,{'aria-label':'Factual claim'}),source=siteNode('select',undefined,{'aria-label':'Nguồn đối chiếu'}),pages=siteNode('input',undefined,{'aria-label':'Trang nguồn, ngăn bằng dấu phẩy'});pages.maxLength=160;
-  for(const group of projectClaimGroupsV3(s.content).filter(g=>g.claimPath!=='creative-copy'))claim.append(siteNode('option',group.claimPath,{value:group.claimPath}));
-  for(const entry of read.sourceCatalog)source.append(siteNode('option',entry.title,{value:entry.id}));
-  const check=siteButton('Ghi nhận đối chiếu nguồn','v3-source-submit',()=>{try{const evidence={sourceId:source.value,...(pages.value.trim()?{pages:pages.value.split(',').map(v=>Number(v.trim()))}:{})},value=sourceCheckRequestSchema.parse({snapshotId:s.id,contentHash:s.contentHash,expectedReviewRevision:0,expectedSourceRevision:state.sourceRevision,checks:[{claimPath:claim.value,evidence:[evidence]}]});void operation('/api/cms/media-site/source-checks',value,sourceCheckReceiptSchema);}catch{status.textContent='Nguồn và trang đối chiếu chưa hợp lệ.';}});check.disabled=!permitted();workflow.append(claim,source,pages,check);
+  const claims=projectClaimGroupsV3(s.content).filter(g=>g.claimPath!=='creative-copy');
+  const claim=createPinkySelect(document,{id:'v3-factual-claim',label:'Factual claim',value:claims[0]?.claimPath??'',options:claims.map(group=>({value:group.claimPath,label:group.claimPath}))}),source=createPinkySelect(document,{id:'v3-check-source',label:'Nguồn đối chiếu',value:read.sourceCatalog[0]?.id??'',options:read.sourceCatalog.map(entry=>({value:entry.id,label:entry.title}))}),pages=siteNode('input',undefined,{'aria-label':'Trang nguồn, ngăn bằng dấu phẩy'});pages.maxLength=160;
+  const check=siteButton('Ghi nhận đối chiếu nguồn','v3-source-submit',()=>{try{const evidence={sourceId:source.value,...(pages.value.trim()?{pages:pages.value.split(',').map(v=>Number(v.trim()))}:{})},value=sourceCheckRequestSchema.parse({snapshotId:s.id,contentHash:s.contentHash,expectedReviewRevision:0,expectedSourceRevision:state.sourceRevision,checks:[{claimPath:claim.value,evidence:[evidence]}]});void operation('/api/cms/media-site/source-checks',value,sourceCheckReceiptSchema);}catch{status.textContent='Nguồn và trang đối chiếu chưa hợp lệ.';}});check.disabled=!permitted();const sources=siteNode('details',undefined,{class:'cms-accordion'});sources.append(siteNode('summary','Đối chiếu nguồn'));const sourceBody=siteNode('div',undefined,{class:'cms-accordion-body'});sources.append(sourceBody);decisionCard.append(sources);labeledField(sourceBody,claim,'Factual claim');labeledField(sourceBody,source,'Nguồn đối chiếu');labeledField(sourceBody,pages,'Trang nguồn, ngăn bằng dấu phẩy');sourceBody.append(check);
   const evidence=siteNode('div',undefined,{'aria-label':'Đối chiếu nguồn đã lưu'});
   const readChecks=siteButton('Đọc đối chiếu nguồn','v3-source-read',()=>void readSourceChecks(s,evidence));
-  workflow.append(readChecks,evidence);
-  const qa=siteButton('Đọc QA snapshot','v3-qa-read',()=>void readQa(s,evidence));qa.disabled=state.status!=='APPROVED';workflow.append(qa);
+  sourceBody.append(readChecks,evidence);
+  const qa=siteButton('Đọc QA snapshot','v3-qa-read',()=>void readQa(s,evidence));qa.disabled=state.status!=='APPROVED';sourceBody.append(qa);
  }
  async function readSourceChecks(s,target){
   if(pending)return;pending=true;const n=++serial;controller=new AbortController();update();
@@ -224,7 +254,7 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
    }finally{if(!retained)reservation.release();reservation.settle();}
   }catch(e){clearQaDownload();if(active())fail(e);}finally{pending=false;update();}
  }
- const save=siteButton('Lưu thay đổi Home v3','v3-save',()=>void saveWorking()),reload=siteButton('Tải lại bản đã lưu','v3-reload',()=>{if(canLeave())void load();}),importButton=siteButton('Nhập Home v2 hiện tại','v3-import',()=>void importCurrent()),snapshotButton=siteButton('Tạo snapshot bản đã lưu','v3-snapshot',()=>void snapshot());
+ const save=siteButton('Lưu website','v3-save',()=>void saveWorking()),reload=siteButton('Tải lại bản đã lưu','v3-reload',()=>{if(canLeave())void load();}),importButton=siteButton('Nhập Home v2 hiện tại','v3-import',()=>void importCurrent()),snapshotButton=siteButton('Tạo snapshot bản đã lưu','v3-snapshot',()=>void snapshot());
  const openSnapshotButton=siteButton('Mở snapshot','v3-snapshot-open',()=>{if(pending)return;pending=true;++serial;controller=new AbortController();update();void openSnapshot(snapshotInput.value).catch(e=>{if(active())fail(e);}).finally(()=>{pending=false;update();});});
  const retry=siteButton('Xác nhận lại thao tác đang giữ','v3-retry',()=>void retryIntent());
  async function retryIntent(){
@@ -240,10 +270,13 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
   }catch(e){if(active())fail(e);}finally{pending=false;update();}
  }
  const savedPreviewButton=siteButton('Xem bản đã lưu','v3-saved-preview',()=>void showSavedPreview());
- actions.append(save,reload,importButton,snapshotButton,retry,savedPreviewButton);workflow.append(snapshotInput,openSnapshotButton);
- function sessionChanged(){serial++;controller?.abort();pickerCleanup?.();preview.clear();clearQaDownload();fields?.setDisabled(true);if(!active()){body.replaceChildren();workflow.replaceChildren();status.textContent='Phiên đã thay đổi. Mở lại Home v3.';}}
+ const snapshotField=siteNode('div',undefined,{class:'editor-field'});snapshotField.append(siteNode('label','Mã snapshot',{for:'v3-snapshot-id'}),snapshotInput);
+ actions.append(save,reload,importButton,retry,savedPreviewButton);submitCard.append(snapshotButton);decisionCard.append(siteNode('p','02 / XEM & QUYẾT ĐỊNH',{class:'cms-step-label'}),siteNode('h2','Duyệt bản website'),snapshotField,openSnapshotButton);
+ function labeledField(parent,control,label){const wrapper=siteNode('div',undefined,{class:'editor-field'}),caption=siteNode('label',label);if(control.id)caption.htmlFor=control.id;wrapper.append(caption,control);parent.append(wrapper);}
+
+ function sessionChanged(){if(active())return;emitDirtyGroups([]);manifestResolver.clear();closePinkySelects(document);serial++;controller?.abort();pickerCleanup?.();preview.clear();clearQaDownload();fields?.setDisabled(true);if(!active()){fields?.destroy();fields=null;disposePinkySelects(body);disposePinkySelects(workflow);body.replaceChildren();workflow.replaceChildren();status.textContent='Phiên đã thay đổi. Mở lại Toàn website.';}}
  function beforeUnload(event){if(dirty()||staged()||intent){event.preventDefault();event.returnValue='';}}
  document.addEventListener('cms:session',sessionChanged);window.addEventListener('beforeunload',beforeUnload);void load();
- return Object.freeze({canLeave,destroy(){if(disposed)return;disposed=true;serial++;controller?.abort();pickerCleanup?.();fields?.destroy();preview.destroy();clearQaDownload();document.removeEventListener('cms:session',sessionChanged);window.removeEventListener('beforeunload',beforeUnload);owned.remove();}});
+ return Object.freeze({canLeave,destroy(){if(disposed)return;disposed=true;emitDirtyGroups([]);serial++;controller?.abort();pickerCleanup?.();disposePinkySelects(workflow);fields?.destroy();manifestResolver.destroy();preview.destroy();previewRoot.remove();clearQaDownload();document.removeEventListener('cms:session',sessionChanged);window.removeEventListener('beforeunload',beforeUnload);owned.remove();}});
 }
 

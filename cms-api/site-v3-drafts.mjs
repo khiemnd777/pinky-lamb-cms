@@ -45,7 +45,9 @@ export async function createSiteV3DraftService(options={}){
    const context={contentContext,expectedImport:lineage,hashCanonical},draft={...descriptor,content,revision:0,updatedBy:actor.uid,updatedAt:at,lastEventId:eventId,importLineage:lineage},stored=assertV3Bytes(encodeStoredDraftV2(draft,context));
    const receipt={draftId:'home-v3',contractRevision:2,revision:0,importId:id,sourceDraftRevision:m2.current.revision};
    const legacyCatalog=m2.context.catalog.map(a=>Object.fromEntries(['id','kind','legacyPath','mimeType','sizeBytes','sha256','rights','sourceRefs','width','height','durationSeconds'].filter(k=>a[k]!==undefined).map(k=>[k,a[k]])));
-   const record=assertV3Bytes({contractRevision:2,id,lineage,report,receipt,initialDraft:stored,baselineContent:content,legacyCatalog,sourceCatalog:contentContext.sourceCatalog,sourceRefs:projectSiteSourceReferences(manifest),createdBy:actor.uid,createdAt:at,eventId,...(contentContext.allowedShowreelSourceUrl!==undefined?{allowedShowreelSourceUrl:contentContext.allowedShowreelSourceUrl}:{})},1048576);
+   // contentJson retains heading arrays without persisting Firestore's forbidden
+   // direct array-in-array shape. The immutable initial draft owns the baseline.
+   const record=assertV3Bytes({contractRevision:2,id,lineage,report,receipt,initialDraft:stored,legacyCatalog,sourceCatalog:contentContext.sourceCatalog,sourceRefs:projectSiteSourceReferences(manifest),createdBy:actor.uid,createdAt:at,eventId,...(contentContext.allowedShowreelSourceUrl!==undefined?{allowedShowreelSourceUrl:contentContext.allowedShowreelSourceUrl}:{})},1048576);
    if((await authorize(request,'SITE_IMPORT',tx)).uid!==actor.uid)throw new ApiError('FORBIDDEN');tx.create(draftRef,stored);tx.create(db.collection('cmsSiteV3Imports').doc(id),record);tx.create(db.collection('cmsAudit').doc(eventId),{id:eventId,action:'SITE_V3_IMPORTED',actorUid:actor.uid,at,correlationId,importId:id,requestHash:identity.requestHash});tx.create(keyRef,{contractRevision:2,requestHash:identity.requestHash,state:'COMPLETED',response:receipt,eventId});return receipt;
   });
  }

@@ -26,12 +26,16 @@ export async function createSiteV3ContextService(options={}){
   if(!doc.exists)throw new ApiError('INTERNAL_ERROR');const record=assertV3Bytes(doc.data(),1048576);
   if(record.contractRevision!==2||record.id!==doc.id||!sameV3(record.lineage,expectedImport)||hashCanonical(record.report)!==expectedImport.importReportHash||hashCanonical(record.sourceRefs)!==expectedImport.sourceRefsHash||Object.keys(record.report).some(key=>!sameV3(record.report[key],expectedImport[key])))throw new ApiError('INTERNAL_ERROR');
   const context={contentContext:contentContext(record),expectedImport,hashCanonical};
-  parseMediaV3Content(record.baselineContent,context.contentContext);
   const initial=decodeStoredDraftV2(record.initialDraft,context);
-  if(initial.revision!==0||initial.updatedBy!==record.createdBy||initial.updatedAt!==record.createdAt||initial.lastEventId!==record.eventId||!sameV3(initial.content,record.baselineContent))throw new ApiError('INTERNAL_ERROR');
+  if(initial.revision!==0||initial.updatedBy!==record.createdBy||initial.updatedAt!==record.createdAt||initial.lastEventId!==record.eventId)throw new ApiError('INTERNAL_ERROR');
+  // Historical raw copies must agree; never repair divergent evidence silently.
+  if(Object.hasOwn(record,'baselineContent')){
+   try{parseMediaV3Content(record.baselineContent,context.contentContext);if(!sameV3(initial.content,record.baselineContent))throw new Error('Baseline mismatch');}
+   catch{throw new ApiError('INTERNAL_ERROR');}
+  }
   const audit=await transaction.get(db.collection('cmsAudit').doc(record.eventId));
   if(!audit.exists||audit.data()?.action!=='SITE_V3_IMPORTED'||audit.data()?.actorUid!==record.createdBy||audit.data()?.importId!==record.id||audit.data()?.at!==record.createdAt)throw new ApiError('INTERNAL_ERROR');
-  return {record,context};
+  return {record:{...record,baselineContent:initial.content},context};
  }
  async function selection(transaction,content,record,pinnedManifest,existingAssetIds){
   const result=await options.mediaProvider.resolveSelection({transaction,content,legacyCatalog:record.legacyCatalog,...(pinnedManifest?{pinnedManifest}:{}),...(existingAssetIds?{existingAssetIds}:{})});
@@ -42,7 +46,7 @@ export async function createSiteV3ContextService(options={}){
   return {selectedAssetIds,orderedManifest:result.orderedManifest,expectedMediaVersions:result.expectedMediaVersions,expectedSourceRefs,safeCatalog:result.safeCatalog};
  }
  async function readTrustedDraftContext({transaction,target}){
-  if(!target.exists)throw new ApiError('NOT_FOUND');const {record,context}=await loadImport(transaction,target.data()?.importLineage);
+  if(!target.exists)throw new ApiError('DRAFT_NOT_INITIALIZED');const {record,context}=await loadImport(transaction,target.data()?.importLineage);
   const current=decodeStoredDraftV2(assertV3Bytes(target.data()),context);if(current.draftId!=='home-v3')throw new ApiError('INTERNAL_ERROR');
   return {context,current,record};
  }
