@@ -2,12 +2,19 @@ import {siteNode,siteButton} from './site-fields.mjs';
 import {createSortableList} from './site-collection-ui.mjs';
 
 /** Panels keep the actual typed controls mounted. Switching tabs never changes data. */
-export function createFormTabs(container,{label,tabs,selected,onSelect=()=>{}}){
+export function createFormTabs(container,{label,tabs,selected,onSelect=()=>{},beforeSelect}){
  const bar=siteNode('div',undefined,{class:'ux-form-tabs',role:'tablist','aria-label':label});
- const panels=[];let active=selected??tabs[0]?.id;
- function select(id,{focus=false}={}){
-  if(!panels.some(entry=>entry.id===id))return;active=id;
-  for(const entry of panels){const chosen=entry.id===id;entry.panel.hidden=!chosen;entry.button.setAttribute('aria-selected',String(chosen));entry.button.tabIndex=chosen?0:-1;if(chosen&&focus)entry.button.focus();}onSelect(id);
+ const panels=[];let active=selected??tabs[0]?.id,initialized=false,pending=false;
+ function commit(id,{focus=false}={}){active=id;
+  for(const entry of panels){const chosen=entry.id===id;entry.panel.hidden=!chosen;entry.button.setAttribute('aria-selected',String(chosen));entry.button.tabIndex=chosen?0:-1;if(chosen&&focus)entry.button.focus();}onSelect(id);return true;
+ }
+ function select(id,options={}){
+  if(!panels.some(entry=>entry.id===id)||pending)return false;
+  if(initialized&&id===active)return true;
+  if(!initialized||!beforeSelect)return commit(id,options);
+  const allowed=beforeSelect(id,active);
+  if(allowed?.then){pending=true;return Promise.resolve(allowed).then(ok=>ok===true&&commit(id,options)).finally(()=>{pending=false;});}
+  return allowed===true&&commit(id,options);
  }
  for(const tab of tabs){
   const panel=siteNode('section',undefined,{id:tab.id,class:'ux-form-panel',role:'tabpanel','aria-labelledby':`${tab.id}-tab`});
@@ -15,8 +22,8 @@ export function createFormTabs(container,{label,tabs,selected,onSelect=()=>{}}){
   button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const index=panels.findIndex(entry=>entry.id===active),target=event.key==='Home'?0:event.key==='End'?panels.length-1:(index+(event.key==='ArrowRight'?1:-1)+panels.length)%panels.length;select(panels[target].id,{focus:true});});
   bar.append(button);panels.push({...tab,panel,button});
  }
- container.prepend(bar);for(const entry of panels)container.append(entry.panel);select(active);
- return {panel:id=>panels.find(entry=>entry.id===id)?.panel,select,reveal(target){const entry=panels.find(item=>item.panel.contains(target));if(entry)select(entry.id);for(let parent=target?.parentElement;parent&&parent!==container;parent=parent.parentElement)if(parent.tagName?.toUpperCase()==='DETAILS')parent.open=true;return Boolean(entry);}};
+ container.prepend(bar);for(const entry of panels)container.append(entry.panel);select(active);initialized=true;
+ return {panel:id=>panels.find(entry=>entry.id===id)?.panel,select,reveal(target){const entry=panels.find(item=>item.panel.contains(target));if(!entry)return false;const finish=ok=>{if(!ok)return false;for(let parent=target?.parentElement;parent&&parent!==container;parent=parent.parentElement)if(parent.tagName?.toUpperCase()==='DETAILS')parent.open=true;return true;};const allowed=select(entry.id);return allowed?.then?allowed.then(finish):finish(allowed);}};
 }
 
 export function moveFields(panel,root,ids){

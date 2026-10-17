@@ -288,6 +288,7 @@ export async function createMediaUploadService(options={}){
    if(record.retryRecord&&canonicalJson(record.retryRecord.identity)===canonicalJson(i)){
     requireValue(record.retryRecord.requestHash===hash(retryRequest),'IDEMPOTENCY_PAYLOAD_MISMATCH');return record.retryRecord.response;
    }
+   const retired=await tx.get(db.collection('cmsMediaRecoveries').doc(jobId));if(retired.exists)throw new ApiError('REVIEW_STATE_CONFLICT');
    const slotSnapshot=await tx.get(slotRef);requireValue(slotSnapshot.exists,'LOCAL_RUNTIME_UNAVAILABLE');const slot=parseGlobalSlot(slotSnapshot.data());
    const command={identity:i,request:retryRequest,expectedSlotRevision:slot.revision};
    const auth={contractRevision:2,verification:'MEDIA_MUTATION_AUTHORIZED',actorUid:current.uid,role:current.role==='OWNER'?'OWNER':'UPLOADER',uploaderUid:record.uploaderUid,assetId:record.job.assetId,jobId,proofId:proof()};
@@ -308,10 +309,11 @@ export async function createMediaUploadService(options={}){
   if(!snapshot.exists)throw new ApiError('NOT_FOUND');
   const record=parseJobRecord(snapshot.data()),job=record.job;
   requireValue(job.jobId===jobId);
+  const retired=await db.collection('cmsMediaRecoveries').doc(jobId).get();
   const current=await authorize(request,'MEMBER_READ');
   requireValue(current.uid===actor.uid&&current.role===actor.role&&current.authzVersion===actor.authzVersion,'FORBIDDEN');
   const mayRetry=current.role==='OWNER'||current.role==='EDITOR'&&current.uid===record.uploaderUid;
-  const canRetry=mayRetry&&job.state==='RECOVERY_REQUIRED'&&record.failureClass==='INFRASTRUCTURE'&&job.attempt===1&&record.retryRecord===null&&record.completion?.quiescence!=null;
+  const canRetry=!retired.exists&&mayRetry&&job.state==='RECOVERY_REQUIRED'&&record.failureClass==='INFRASTRUCTURE'&&job.attempt===1&&record.retryRecord===null&&record.completion?.quiescence!=null;
   return {contractRevision:2,jobId:job.jobId,intentId:job.intentId,assetId:job.assetId,kind:job.kind,state:job.state,jobRevision:job.revision,attempt:job.attempt,canRetry};
  }
  return Object.freeze({createUpload,uploadPart,completeUpload,cancelUpload,retryJob,readJobSummary});

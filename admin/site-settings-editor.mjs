@@ -128,7 +128,7 @@ export function createSiteFieldTools({content,context,onChange,redraw}){
 }
 
 export function mountSiteSettings(container,{content,context,onChange,includeContact=true}){
- let disposed=false,selectedTab='site-settings-header';let tabs;const illustrationCleanups=[];
+ let disposed=false,selectedTab='site-settings-header';let tabs,localized=null;const illustrationCleanups=[];
  function clearIllustrations(){for(const cleanup of illustrationCleanups.splice(0))cleanup?.();}
  function illustrate(panel,kind,fields){
   const layout=siteNode('div',undefined,{class:'ux-settings-layout'}),surface=siteNode('div',undefined,{class:'ux-settings-surface'}),aside=siteNode('aside',undefined,{class:'ux-settings-context','aria-label':`Minh họa ${kind==='header'?'Đầu trang':kind==='hero'?'Hero':'SEO và chia sẻ'} chưa lưu`});
@@ -151,7 +151,7 @@ export function mountSiteSettings(container,{content,context,onChange,includeCon
  }
  const tools=createSiteFieldTools({content,context,onChange,redraw});
  function redraw(focusId=document.activeElement?.id){
-  if(disposed)return;clearIllustrations();tools.disposeControls(container);container.replaceChildren();
+  if(disposed)return;localized?.destroy();localized=null;clearIllustrations();tools.disposeControls(container);container.replaceChildren();
   if(context.siteUx)container.classList.add('ux-settings-editor');
   const navigation=siteNode('nav',undefined,{'aria-label':'Cài đặt Header, Hero và SEO',class:'site-section-navigation'});
   for(const [id,label] of [['site-header-fields','Đầu trang'],['site-hero-fields','Hero'],['site-seo-fields','SEO']]){const link=siteNode('a',label,{href:`#${id}`});navigation.append(link);}container.append(navigation);
@@ -182,33 +182,36 @@ export function mountSiteSettings(container,{content,context,onChange,includeCon
   const available=()=>tools.sectionOptions(NAV_SECTIONS).filter(([id])=>!content.settings.nav.some(value=>value.sectionId===id));
   tools.structural(nav,'Thêm mục menu','site-nav-add',()=>{const [sectionId,label]=available()[0];content.settings.nav.push({sectionId,label});},{disabled:content.settings.nav.length>=6 || !available().length,focusId:`site-nav-${content.settings.nav.length}-label`});
   const hero=tools.group(container,'Hero của website','site-hero-fields');hero.tabIndex=-1;
+  let actions;
+  if(!context.mountLocalizedHero){
   tools.input(hero,'site-hero-eyebrow','Dòng giới thiệu',content.hero.eyebrow,value=>{content.hero.eyebrow=value;},{max:120,path:'hero.eyebrow'});
   tools.heading(hero,content.hero.heading,'hero.heading','site-hero-heading','Tiêu đề Hero',{legacy:true});
   tools.runs(hero,content.hero.description,'hero.description','site-hero-description','Mô tả Hero',{maxRuns:12,cap:1000,multiline:true});
   tools.image(hero,content.hero.image,'hero.image','site-hero-image','ảnh Hero');
-  const actions=context.siteUx?tools.group(container,'Nút hành động','site-hero-action-fields'):hero;
+  actions=context.siteUx?tools.group(container,'Nút hành động','site-hero-action-fields'):hero;
   tools.action(actions,content.hero.primaryAction,'hero.primaryAction','site-primaryAction','Nút chính',value=>{content.hero.primaryAction=value;});
   tools.checkbox(actions,'site-secondary-enabled','Hiện nút phụ',Boolean(content.hero.secondaryAction),checked=>{if(checked)content.hero.secondaryAction={kind:'SECTION',sectionId:'contact',label:'Liên hệ'};else delete content.hero.secondaryAction;},{path:'hero.secondaryAction',refresh:true});
   if(content.hero.secondaryAction)tools.action(actions,content.hero.secondaryAction,'hero.secondaryAction','site-secondaryAction','Nút phụ',value=>{content.hero.secondaryAction=value;});
   tools.input(actions,'site-hero-footnote','Chú thích Hero',content.hero.footnote,value=>{content.hero.footnote=value;},{max:240,multiline:true,path:'hero.footnote'});
   tools.input(actions,'site-hero-note','Ghi chú Hero',content.hero.note,value=>{content.hero.note=value;},{max:300,multiline:true,path:'hero.note'});
+  }
   const seo=tools.group(container,'SEO và chia sẻ','site-seo-fields');seo.tabIndex=-1;
   for(const [key,label,max] of [['title','Tiêu đề SEO',80],['description','Mô tả SEO',200],['ogTitle','Tiêu đề chia sẻ',80],['ogDescription','Mô tả chia sẻ',200]])tools.input(seo,`site-seo-${key}`,label,content.seo[key],value=>{content.seo[key]=value;},{max,multiline:key.includes('escription'),path:`seo.${key}`});
   tools.image(seo,content.seo.ogImage,'seo.ogImage','site-seo-image','ảnh chia sẻ',{decorative:false});
   // Preserve the task11 contact foundation until the Contact component takes ownership.
   if(includeContact){const contact=tools.group(container,'Thông tin liên hệ','site-contact-settings');for(const [key,label,max] of [['email','Email nhận brief',254],['personName','Người liên hệ',120],['personPhoneE164','Số điện thoại liên hệ (+84…)',16],['personPhoneLabel','Nhãn điện thoại liên hệ',80],['officePhoneE164','Số điện thoại văn phòng (+84…)',16],['officePhoneLabel','Nhãn điện thoại văn phòng',80],['facebookUrl','Địa chỉ Facebook',2048]])tools.input(contact,`site-contact-${key}`,label,content.settings.contact[key],value=>{content.settings.contact[key]=value;},{max,path:`settings.contact.${key}`});}
   if(context.siteUx){
-   navigation.remove();tabs=createFormTabs(container,{label:'Đầu trang, Hero và SEO',selected:selectedTab,onSelect:id=>{selectedTab=id;},tabs:[{id:'site-settings-header',label:'Đầu trang'},{id:'site-settings-hero',label:'Hero'},{id:'site-settings-seo',label:'SEO & chia sẻ'}]});
+   navigation.remove();tabs=createFormTabs(container,{label:'Đầu trang, Hero và SEO',selected:selectedTab,beforeSelect:id=>localized?.requestTransition(`tab:${id}`)??true,onSelect:id=>{selectedTab=id;localized?.setActive(id==='site-settings-hero');context.onSettingsTab?.(id);},tabs:[{id:'site-settings-header',label:'Đầu trang'},{id:'site-settings-hero',label:'Hero'},{id:'site-settings-seo',label:'SEO & chia sẻ'}]});
    renderSiteSourceBindings(tools,header,content,context,'settings/brand/facts','site-brand');
-   renderSiteSourceBindings(tools,actions,content,context,'hero/facts','site-hero');
+   if(actions)renderSiteSourceBindings(tools,actions,content,context,'hero/facts','site-hero');
    renderSiteSourceBindings(tools,seo,content,context,'seo/facts','site-seo');
    illustrate(tabs.panel('site-settings-header'),'header',[header,nav]);
-   illustrate(tabs.panel('site-settings-hero'),'hero',[hero,actions]);
+   if(context.mountLocalizedHero){hero.remove();localized=context.mountLocalizedHero(tabs.panel('site-settings-hero'));localized.setActive(selectedTab==='site-settings-hero');}else illustrate(tabs.panel('site-settings-hero'),'hero',[hero,actions]);
    illustrate(tabs.panel('site-settings-seo'),'seo',[seo]);
   }
   if(focusId){const target=document.getElementById(focusId);tabs?.reveal(target);target?.focus();}
  }
- redraw();return {revealValidationPath(path){const target=[...container.querySelectorAll('[data-validation-path]')].find(el=>el.dataset.validationPath===path||el.dataset.validationPath.startsWith(path+'.'));if(target){tabs?.reveal(target);return target;}return false;},refreshReferences(){tools.refreshReferences();const add=container.querySelector('#site-nav-add');if(add)add.disabled=content.settings.nav.length>=6 || !tools.sectionOptions(NAV_SECTIONS).some(([id])=>!content.settings.nav.some(item=>item.sectionId===id));},setDisabled(value){tools.setDisabled(value);},destroy(){disposed=true;clearIllustrations();tools.dispose();container.classList.remove('ux-settings-editor');container.replaceChildren();}};
+ redraw();return {requestTransition:target=>localized?.requestTransition(target)??true,setGroupActive(value){localized?.setActive(value&&selectedTab==='site-settings-hero');},canLeave:()=>localized?.canLeave()??true,hasPendingInput:()=>localized?.hasPendingInput()??false,revealValidationPath(path){const target=[...container.querySelectorAll('[data-validation-path]')].find(el=>el.dataset.validationPath===path||el.dataset.validationPath.startsWith(path+'.'));if(target){const allowed=tabs?.reveal(target)??true;return allowed?.then?allowed.then(ok=>ok?target:false):allowed?target:false;}return false;},refreshReferences(){tools.refreshReferences();const add=container.querySelector('#site-nav-add');if(add)add.disabled=content.settings.nav.length>=6 || !tools.sectionOptions(NAV_SECTIONS).some(([id])=>!content.settings.nav.some(item=>item.sectionId===id));},setDisabled(value){tools.setDisabled(value);},destroy(){disposed=true;localized?.destroy();clearIllustrations();tools.dispose();container.classList.remove('ux-settings-editor');container.replaceChildren();}};
 }
 
 export function mountSiteClients(container,{content,context,onChange}){

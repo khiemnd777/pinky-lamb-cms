@@ -7,10 +7,13 @@ import {createHash,randomBytes} from 'node:crypto';
 import {constants} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 import {SourceTextModule,SyntheticModule,createContext} from 'node:vm';
+import * as authSessionPolicy from '../admin/auth-session.mjs';
 import {mountSiteEditor} from '../admin/site-editor.mjs';
 import {mountSiteReview} from '../admin/review.mjs';
 import {canonicalJson} from '../contracts/draft.mjs';
-import {sourceCheckCursorSchema} from '../contracts/source-checks.mjs';
+import {sourceCheckCursorSchema,sourceCheckQuerySchema} from '../contracts/source-checks.mjs';
+import {mediaDerivativePublicSchema} from '../contracts/media-read-public.mjs';
+import {resourceIdSchema,hashSchema,revisionSchema} from '../contracts/hero.mjs';
 
 // This phase evaluates the real auth module with inert boundary doubles. It never
 // imports Firebase, opens a browser, reads credentials, or sends a network request.
@@ -35,17 +38,20 @@ function dom(){
 }
 async function authHarness(recovery){
  const {document,nodes}=dom(),mounts=[],requests=[];let observer,tokens=0;
- const user={getIdToken:async()=>{tokens++;return 'synthetic-token';}},auth={currentUser:user};
+ const user={getIdToken:async()=>{tokens++;return 'synthetic-token';}},auth={currentUser:user,authStateReady:async()=>{}};
  const member={uid:'synthetic-owner',role:'OWNER'};
  class CustomEvent extends Event{constructor(type,options){super(type);this.detail=options?.detail;}}
- const context=createContext({document,CustomEvent,Event,EventTarget,URL,URLSearchParams,TextDecoder,TextEncoder,Uint8Array,AbortController,DOMException,atob,btoa,console,fetch:async(path,options)=>{requests.push({path,method:options.method??'GET'});return {status:200,ok:true,json:async()=>member};}});
+ const context=createContext({document,CustomEvent,Event,EventTarget,setTimeout,clearTimeout,URL,URLSearchParams,TextDecoder,TextEncoder,Uint8Array,AbortController,DOMException,atob,btoa,console,fetch:async(path,options)=>{requests.push({path,method:options.method??'GET'});return {status:200,ok:true,json:async()=>member};}});
  const modules=new Map();
  function synthetic(key,exports){const module=new SyntheticModule(Object.keys(exports),function(){for(const [name,value]of Object.entries(exports))this.setExport(name,value);},{context,identifier:key});modules.set(key,module);return module;}
  synthetic('./config-local.mjs',{assertLocalOrigin(){},firebaseConfig:{},LOCAL:{auth:'http://127.0.0.1:9098'},RECOVERY_READ_ONLY:recovery});
  synthetic('../preview/hero-renderer.mjs',{TEMPLATE_VERSION:'hero-test'});
- synthetic('../contracts/source-checks.mjs',{sourceCheckCursorSchema});
+ synthetic('../contracts/source-checks.mjs',{sourceCheckCursorSchema,sourceCheckQuerySchema});
+ synthetic('../contracts/media-read-public.mjs',{mediaDerivativePublicSchema});
+ synthetic('../contracts/hero.mjs',{resourceIdSchema,hashSchema,revisionSchema});
  synthetic('firebase/app',{initializeApp:()=>({})});
- synthetic('firebase/auth',{initializeAuth:()=>auth,inMemoryPersistence:{},connectAuthEmulator(){},signInWithEmailAndPassword:async()=>{},signOut:async()=>{auth.currentUser=null;},onAuthStateChanged:(value,callback)=>{observer=callback;}});
+ synthetic('./auth-session.mjs',authSessionPolicy);
+ synthetic('firebase/auth',{initializeAuth:()=>auth,indexedDBLocalPersistence:{},browserLocalPersistence:{},inMemoryPersistence:{},connectAuthEmulator(){},signInWithEmailAndPassword:async()=>{},signOut:async()=>{auth.currentUser=null;},onAuthStateChanged:(value,callback)=>{observer=callback;}});
  const mount=resource=>(container,props)=>{mounts.push({resource,props});return {canLeave:()=>true,destroy(){}};};
  synthetic('./site-editor.mjs',{mountSiteEditor:mount('home-v2')});synthetic('./hero-editor.mjs',{mountHeroEditor:mount('home')});synthetic('./review.mjs',{mountReview:()=>({destroy(){}})});
  // UI boundary doubles isolate auth admission; they do not prove shell behavior.
@@ -56,7 +62,7 @@ async function authHarness(recovery){
  }});
 
  const entry=new SourceTextModule(await readFile(new URL('../admin/auth.mjs',import.meta.url),'utf8'),{context,identifier:'auth',importModuleDynamically:async specifier=>{const module=modules.get(specifier);assert.ok(module,`unexpected import ${specifier}`);if(module.status==='unlinked')await module.link(()=>{throw Error('unexpected import');});if(module.status==='linked')await module.evaluate();return module;}});
- await entry.link(specifier=>{assert.ok(modules.has(specifier));return modules.get(specifier);});await entry.evaluate();
+ await entry.link(specifier=>{assert.ok(modules.has(specifier),`Missing synthetic dependency ${specifier}`);return modules.get(specifier);});await entry.evaluate();
  return {api:entry.namespace,login:()=>observer(user),nodes,mounts,requests,tokenCount:()=>tokens};
 }
 

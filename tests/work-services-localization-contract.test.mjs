@@ -1,0 +1,12 @@
+import nodeTest from 'node:test';
+import {fileURLToPath} from 'node:url';
+const test=process.argv[1]===fileURLToPath(import.meta.url)?nodeTest:()=>{};
+import assert from 'node:assert/strict';
+import {SECTION_TEMPLATE_ID,mergeLocalizedSection,parseLocalizedSectionSave} from '../contracts/work-services-localization.mjs';
+export const section={kind:'WORK',sectionId:'work',variant:'work-grid',isVisible:true,heading:{lines:[[{text:'Source heading'}]]},intro:'Source intro',featuredIds:[],initialVisibleCount:4,filterLabels:{all:'All',EVENTS:'Events',FILM:'Film',COMMUNICATIONS:'Communications'}};
+export const base={dependencyHash:'a'.repeat(64),sectionIndex:1,section,templateIdentity:SECTION_TEMPLATE_ID};
+export const sectionContent=()=>({eyebrow:'DỰ ÁN',heading:{lines:[[{text:'日本語 ',emphasis:'NONE'},{text:'見出し',emphasis:'ACCENT'}]]},intro:'Nội dung\nđã lưu',loadMoreLabel:'Xem thêm'});
+export const sectionSaveBody=()=>({contractRevision:1,expectedRevision:null,expectedDependencyHash:base.dependencyHash,content:sectionContent()});
+export const servicesSection={kind:'SERVICES',sectionId:'services',variant:'services-accordion',isVisible:true,heading:{lines:[[{text:'Source'}]]},intro:'Source',serviceOrder:['brand-creative'],action:{kind:'SECTION',sectionId:'contact',label:'Contact'}};
+test('section copy keeps typed runs, shared config and distinct Work-only field',()=>{const out=mergeLocalizedSection(section,sectionContent());assert.deepEqual(out.featuredIds,section.featuredIds);assert.equal(out.initialVisibleCount,4);assert.equal(out.heading.lines[0][1].emphasis,'ACCENT');const serviceCopy=sectionContent();delete serviceCopy.loadMoreLabel;assert.equal(mergeLocalizedSection(servicesSection,serviceCopy).action.sectionId,'contact');assert.throws(()=>mergeLocalizedSection(servicesSection,sectionContent()));assert.throws(()=>mergeLocalizedSection(section,serviceCopy));});
+test('section limits and strict envelopes reject invalid run trees/shared config/inherited fields',()=>{for(const mutate of [v=>v.content.heading='<h1>raw</h1>',v=>v.content.heading.lines[0][0].emphasis='STYLE',v=>v.content.heading.lines=Array(4).fill([{text:'line'}]),v=>v.content.heading.lines[0]=Array(9).fill({text:'x'}),v=>v.content.initialVisibleCount=1,v=>v.content.intro='x'.repeat(4001),v=>v.extra=true]){const body=sectionSaveBody();mutate(body);assert.throws(()=>parseLocalizedSectionSave(body,base));}assert.throws(()=>parseLocalizedSectionSave(Object.assign(Object.create({inherited:true}),sectionSaveBody()),base));});

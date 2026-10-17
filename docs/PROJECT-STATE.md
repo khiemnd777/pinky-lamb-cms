@@ -1,5 +1,14 @@
 # Pinky Lamb CMS — trạng thái local hiện hành
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 Ngày11/10/2026. **M1 và M2 Accepted/CLOSED. M3 AWAITING_APPROVAL / implementation NOT_STARTED.** Authority hiện hành: direct human `Accepted CMS-001 v2 — M1 local/emulators. Approved CMS-001 v2 — M2 local/emulators.` M2 đã Accepted bằng lời trực tiếp của người dùng ở lượt lập M3. Yêu cầu mới chỉ cho lập/trình tài liệu M3; không cấp quyền implementation M3/M4.
 
 M2 đã triển khai CMS toàn site qua template baseline: explicit import riêng `home-v2` giữ CURRENT M1Hero/SEO; typed fields/stable IDs/add/archive/order/manual Save; CAS/idempotency/truthful partial errors; saved Draft hoặc immutable Snapshot PRIVATE preview; nguồn mới/đổi kể cả hidden được reviewer đối chiếu; terminal review pin exact proofs; tải tệp QA và offline full-site artifact JS-off/on. M1 v1 history/hash/receipt/export tiếp tục compatible. Media chỉ catalog hiện có; brief vẫn mailto/copy, chưa có backend lead.

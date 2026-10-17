@@ -1,0 +1,12 @@
+import nodeTest from 'node:test';
+import {fileURLToPath} from 'node:url';
+const test=process.argv[1]===fileURLToPath(import.meta.url)?nodeTest:()=>{};
+import assert from 'node:assert/strict';
+import {SERVICE_TEMPLATE_ID,localizedServiceContentSchema,parseLocalizedServiceSave,mergeLocalizedService} from '../contracts/service-localization.mjs';
+import {encodeLocalizedService,decodeLocalizedService} from '../contracts/service-localization-records.mjs';
+import {hashProjectValue} from '../cms-api/project-localization-context.mjs';
+export const service={id:'brand-creative',title:'Creative service',titleVi:'Nguồn đối chiếu',summary:'Source summary',scope:['Source scope'],isVisible:true};
+export const base={dependencyHash:'a'.repeat(64),serviceIndex:0,service,templateIdentity:SERVICE_TEMPLATE_ID};
+export const saveBody=()=>({contractRevision:1,expectedRevision:null,expectedDependencyHash:base.dependencyHash,content:{title:'日本語のサービス',subtitle:'日本語の説明',summary:'Nội dung\nđúng locale',scope:['Phạm vi']}});
+test('strict Service content keeps both title slots in selected locale and preserves shared identity',()=>{const content=saveBody().content,merged=mergeLocalizedService(service,content);assert.equal(merged.titleVi,content.subtitle);assert.equal(merged.id,service.id);assert.equal(merged.isVisible,true);assert.deepEqual(service.scope,['Source scope']);for(const mutate of [v=>v.title='x'.repeat(121),v=>v.title='😀'.repeat(61),v=>v.id='other',v=>v.summary='\u0000',v=>v.scope=Array(13).fill('scope')]){const value=structuredClone(content);mutate(value);assert.equal(localizedServiceContentSchema.safeParse(value).success,false);}});
+test('save envelope rejects unknown/shared input and codec detects actor leaks/tamper',()=>{assert.deepEqual(parseLocalizedServiceSave(saveBody(),base),saveBody());assert.throws(()=>parseLocalizedServiceSave({...saveBody(),shared:true},base));const value={contractRevision:1,draftId:'home-v3',serviceId:service.id,locale:'ja',revision:1,dependencyHash:base.dependencyHash,content:saveBody().content,contentHash:hashProjectValue(saveBody().content),updatedAt:'2026-10-16T00:00:00.000Z'},stored=encodeLocalizedService(value,'synthetic-owner');const decoded=decodeLocalizedService(stored,{serviceId:service.id,locale:'ja',base,hashCanonical:hashProjectValue});assert.deepEqual(decoded,value);assert.equal(JSON.stringify(decoded).includes('synthetic-owner'),false);assert.throws(()=>decodeLocalizedService({...stored,contentHash:'b'.repeat(64)},{serviceId:service.id,locale:'ja',hashCanonical:hashProjectValue}));});

@@ -1,12 +1,14 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validateMediaApplicationRuntime,ENDPOINTS,PROJECT} from './local-guard.mjs';
+import {validateLocalDataRuntime,installLocalDataNetworkFence} from './local-data-guard.mjs';
 
 /** A manual canonical worker entry. It does not launch/adopt emulators, seed
  * Auth/Firestore, reset queues, release uncertain slots or inspect other PIDs. */
 export async function runMediaWorkerLocal(argv=process.argv.slice(2)) {
   if(!Array.isArray(argv) || argv.length!==0)throw new Error('MEDIA_WORKER_LOCAL: no command arguments accepted');
-  validateMediaApplicationRuntime();
+  const durable=process.env.PINKY_LOCAL_DATA_MODE==='durable';
+  if(durable){validateLocalDataRuntime();installLocalDataNetworkFence();}else validateMediaApplicationRuntime();
   process.umask(0o077);
   // Delay every SDK and processor import until the local runtime guard passed.
   const [{db,auth},{createLocalMediaUploadStorage},{createMediaCache},{createMediaRecovery},{startMediaJobPump},{J1_LIMITS}]=await Promise.all([
@@ -31,7 +33,7 @@ export async function runMediaWorkerLocal(argv=process.argv.slice(2)) {
     console.log('MEDIA_WORKER_LOCAL: queue scanning stopped; active work retains its normal completion path');
   };
   process.on('SIGINT',stop);process.on('SIGTERM',stop);
-  console.log(`MEDIA_WORKER_LOCAL: ${PROJECT} queue pump; Auth 127.0.0.1:${ENDPOINTS.auth}, Firestore 127.0.0.1:${ENDPOINTS.firestore}, Storage 127.0.0.1:${ENDPOINTS.storage}`);
+  console.log(durable?'MEDIA_WORKER_LOCAL: durable CMS queue pump':`MEDIA_WORKER_LOCAL: ${PROJECT} queue pump; Auth 127.0.0.1:${ENDPOINTS.auth}, Firestore 127.0.0.1:${ENDPOINTS.firestore}, Storage 127.0.0.1:${ENDPOINTS.storage}`);
   return Object.freeze({stop});
 }
 

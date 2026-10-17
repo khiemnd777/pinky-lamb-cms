@@ -1,5 +1,14 @@
 # UI-APPLY-001 v2 — CMS LOCAL UI correction
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 ## Authority and scope
 
 Status: **Integrated / Ready for human review — v2 source and inspected UI complete; explicit data/test limits remain.** Direct current approval: **Approve `UI-APPLY-001 v2`**, human message in this chat following the concrete replacement proposal. Historical v1 remains HUMAN_UI_REJECTED / FAIL_TEMPLATE_PARITY. Its old syntax/build/source-review results retain source/static meaning only. Full repository lint has nine pre-existing protected backend/contracts findings; this task is not closed or runtime-Verified. Original v1 approval was **Duyệt `UI-APPLY-001 v1`**. Template v4 remains the accepted design source with SHA256 `4965bcf130d7ac800c390a026c48786ffdbbc159cb8e1264d94072abe128a0e8`.

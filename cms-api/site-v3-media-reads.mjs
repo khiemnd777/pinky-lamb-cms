@@ -30,7 +30,7 @@ function requestRoute(request) {
 }
 function origin(request) {
   const count=request.rawHeaders?.filter((_value,index)=>index%2===0&&String(request.rawHeaders[index]).toLowerCase()==='origin').length;
-  if((count!==undefined&&count>1)||(request.headers?.origin!==undefined&&request.headers.origin!=='http://127.0.0.1:5173'))throw new ApiError('FORBIDDEN');
+  if((count!==undefined&&count>1)||(request.headers?.origin!==undefined&&request.headers.origin!=='http://127.0.0.1:5273'))throw new ApiError('FORBIDDEN');
 }
 function pinnedSnapshot(value,route) {
   // Actual C0 readSnapshot performs contextual content/claim/hash validation.

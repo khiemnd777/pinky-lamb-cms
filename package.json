@@ -25,11 +25,13 @@
     "export:media:local": "node scripts/local-guard.mjs export-media"
   },
   "dependencies": {
+    "better-auth": "1.7.10",
+    "better-sqlite3": "13.0.3",
     "firebase": "12.19.0",
-    "zod": "4.6.5",
-    "sharp": "0.35.5",
+    "lucide": "1.57.0",
     "pdf-lib": "1.17.1",
-    "lucide": "1.57.0"
+    "sharp": "0.35.5",
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "5.0.2",

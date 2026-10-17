@@ -1,3 +1,8 @@
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL5_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL5_PROGRAM} from './media-pdf-local-profile-v5.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL4_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL4_PROGRAM} from './media-pdf-local-profile-v4.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL3_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL3_PROGRAM} from './media-pdf-local-profile-v3.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL2_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL2_PROGRAM} from './media-pdf-local-profile-v2.mjs';
+import {PDF_LOCAL_MANIFEST,PDF_LOCAL_PROGRAM} from './media-pdf-local-profile.mjs';
 import {z} from 'zod';
 import {inflateSync} from 'node:zlib';
 import {ApiError} from './errors.mjs';
@@ -18,21 +23,24 @@ function hashOptions(input){
   const keys=Reflect.ownKeys(input);requireRelation(keys.length===2 && keys.includes('profileId') && keys.includes('hashCanonical'));
   for(const key of keys){const d=Object.getOwnPropertyDescriptor(input,key);requireRelation(d.enumerable && 'value' in d);}
   const profileId=Object.getOwnPropertyDescriptor(input,'profileId').value,hashCanonical=Object.getOwnPropertyDescriptor(input,'hashCanonical').value;
-  z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1']).parse(profileId);requireRelation(typeof hashCanonical==='function');return {profileId,hashCanonical};
+  z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1','M3-PDF-LOCAL-1','M3-PDF-LOCAL-2','M3-PDF-LOCAL-3','M3-PDF-LOCAL-4','M3-PDF-LOCAL-5']).parse(profileId);requireRelation(typeof hashCanonical==='function');return {profileId,hashCanonical};
 }
 function sha(hash,value){return digest.parse(hash(capture(value)));}
 /** Returns fresh manifest DATA. Expected identity does not verify installed binaries. */
 export function expectedStaticR0ToolSet(kind){kindSchema.parse(kind);return capture({...fixed.manifests[kind],common:fixed.common});}
 /** PROGRAM is metadata-independent pre-QUEUE authority; execution is expanded after CLAIM. */
 export function expectedProcessingProgram(kind){kindSchema.parse(kind);return capture(fixed.programs[kind]);}
-export const processingProgramV2Schema=strictMediaV2JsonSchema.pipe(z.strictObject({contractRevision:z.literal(2),verification:z.literal('PROCESSING_PROGRAM'),kind:kindSchema,processorSha256:digest,runtimeSha256:digest,helperSha256:digest,toolSetSha256:digest,recipe:strictMediaV2JsonSchema})).refine(value=>equal(value,fixed.programs[value.kind]));
+export const registeredToolSetManifestSchema=z.union([r0ToolSetManifestSchema,strictMediaV2JsonSchema.refine(value=>equal(value,PDF_LOCAL_MANIFEST)||equal(value,PDF_LOCAL2_MANIFEST)||equal(value,PDF_LOCAL3_MANIFEST)||equal(value,PDF_LOCAL4_MANIFEST)||equal(value,PDF_LOCAL5_MANIFEST))]);
+export const processingProgramV2Schema=strictMediaV2JsonSchema.pipe(z.strictObject({contractRevision:z.literal(2),verification:z.literal('PROCESSING_PROGRAM'),kind:kindSchema,processorSha256:digest,runtimeSha256:digest,helperSha256:digest,toolSetSha256:digest,recipe:strictMediaV2JsonSchema})).refine(value=>equal(value,fixed.programs[value.kind])||equal(value,PDF_LOCAL_PROGRAM)||equal(value,PDF_LOCAL2_PROGRAM)||equal(value,PDF_LOCAL3_PROGRAM)||equal(value,PDF_LOCAL4_PROGRAM)||equal(value,PDF_LOCAL5_PROGRAM));
 /** Validators return fresh parsed DATA, not wrappers. Consumers hash this DATA. */
-export function validateToolSetManifest(input,options){const c=hashOptions(options),data=capture(input),value=r0ToolSetManifestSchema.parse(data);requireRelation(value.profileId===c.profileId && sha(c.hashCanonical,value)===fixed.identities[value.kind]);return capture(value);}
-export function validateProcessingProgram(input,options){const c=hashOptions(options),value=processingProgramV2Schema.parse(capture(input));requireRelation(c.profileId===`M3-${value.kind}-R0-1`);sha(c.hashCanonical,value);return capture(value);}
+export function validateToolSetManifest(input,options){const c=hashOptions(options),data=capture(input),value=registeredToolSetManifestSchema.parse(data);requireRelation(value.profileId===c.profileId && sha(c.hashCanonical,value)===(c.profileId==='M3-PDF-LOCAL-5'?sha(c.hashCanonical,PDF_LOCAL5_MANIFEST):c.profileId==='M3-PDF-LOCAL-4'?sha(c.hashCanonical,PDF_LOCAL4_MANIFEST):c.profileId==='M3-PDF-LOCAL-3'?sha(c.hashCanonical,PDF_LOCAL3_MANIFEST):c.profileId==='M3-PDF-LOCAL-2'?sha(c.hashCanonical,PDF_LOCAL2_MANIFEST):c.profileId==='M3-PDF-LOCAL-1'?sha(c.hashCanonical,PDF_LOCAL_MANIFEST):fixed.identities[value.kind]));return capture(value);}
+export function validateProcessingProgram(input,options){const c=hashOptions(options),value=processingProgramV2Schema.parse(capture(input));requireRelation(c.profileId===(equal(value,PDF_LOCAL5_PROGRAM)?'M3-PDF-LOCAL-5':equal(value,PDF_LOCAL4_PROGRAM)?'M3-PDF-LOCAL-4':equal(value,PDF_LOCAL3_PROGRAM)?'M3-PDF-LOCAL-3':equal(value,PDF_LOCAL2_PROGRAM)?'M3-PDF-LOCAL-2':equal(value,PDF_LOCAL_PROGRAM)?'M3-PDF-LOCAL-1':`M3-${value.kind}-R0-1`));sha(c.hashCanonical,value);return capture(value);}
 const positive=max=>z.number().int().positive().max(max);
 const originalSchemas={IMAGE:z.strictObject({width:positive(8192),height:positive(8192)}).refine(v=>v.width*v.height<=40000000),PDF:z.strictObject({pageCount:positive(48)}),VIDEO:z.strictObject({width:positive(1920),height:positive(1080),duration:z.number().finite().positive().max(300),fps:z.number().finite().positive().max(60),audio:z.boolean()})};
 function expandedRecipe(program,metadata){
-  if(program.kind==='IMAGE')return capture(program.recipe.encode);
+  // The native image manifest records encoder knobs. The immutable PROGRAM still
+  // owns the complete decode, resize, metadata and byte-limit policy.
+  if(program.kind==='IMAGE'){const output=program.recipe.encode.output;return {quality:output.quality,alphaQuality:output.alphaQuality,effort:output.effort};}
   if(program.kind==='PDF')return capture(program.recipe);
   const a=program.recipe.arrays,k=program.recipe.recipeConstants;
   const width=Math.max(2,Math.floor(Math.min(metadata.width,1280,metadata.width*720/metadata.height)/2)*2);

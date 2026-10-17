@@ -1,3 +1,8 @@
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL5_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL5_PROGRAM} from '../contracts/media-pdf-local-profile-v5.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL4_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL4_PROGRAM} from '../contracts/media-pdf-local-profile-v4.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL3_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL3_PROGRAM} from '../contracts/media-pdf-local-profile-v3.mjs';
+import {PDF_LOCAL_MANIFEST as PDF_LOCAL2_MANIFEST,PDF_LOCAL_PROGRAM as PDF_LOCAL2_PROGRAM} from '../contracts/media-pdf-local-profile-v2.mjs';
+import {PDF_LOCAL_MANIFEST,PDF_LOCAL_PROGRAM} from '../contracts/media-pdf-local-profile.mjs';
 import {createHash} from 'node:crypto';
 import {ApiError} from '../contracts/errors.mjs';
 import {resourceIdSchema} from '../contracts/hero.mjs';
@@ -10,11 +15,13 @@ export const hashMediaProcessingBytes=bytes=>createHash('sha256').update(bytes).
 const requireValue=(condition,code='INTERNAL_ERROR')=>{if(!condition)throw new ApiError(code);};
 
 /** No decoder, ffprobe or processor execution belongs in upload COMPLETE. */
-export function loadMediaProcessingProfile(kind){
+export function loadMediaProcessingProfile(kind,binding){
  requireValue(Object.hasOwn(MEDIA_UPLOAD_CAPS,kind),'VALIDATION_ERROR');
  requireValue(typeof toolset.expectedStaticR0ToolSet==='function'&&typeof toolset.expectedProcessingProgram==='function'&&typeof toolset.validateProcessingProgram==='function'&&typeof toolset.validateProcessingExecution==='function','LOCAL_RUNTIME_UNAVAILABLE');
- const toolSetManifest=toolset.expectedStaticR0ToolSet(kind),program=toolset.expectedProcessingProgram(kind);
- const profileId=`M3-${kind}-R0-1`;
+ const profiles=[{profileId:'M3-PDF-LOCAL-5',toolSetManifest:PDF_LOCAL5_MANIFEST,program:PDF_LOCAL5_PROGRAM},{profileId:'M3-PDF-LOCAL-4',toolSetManifest:PDF_LOCAL4_MANIFEST,program:PDF_LOCAL4_PROGRAM},{profileId:'M3-PDF-LOCAL-3',toolSetManifest:PDF_LOCAL3_MANIFEST,program:PDF_LOCAL3_PROGRAM},{profileId:'M3-PDF-LOCAL-2',toolSetManifest:PDF_LOCAL2_MANIFEST,program:PDF_LOCAL2_PROGRAM},{profileId:'M3-PDF-LOCAL-1',toolSetManifest:PDF_LOCAL_MANIFEST,program:PDF_LOCAL_PROGRAM}];
+ const local=kind==='PDF'?(binding?profiles.find(p=>binding.processingRecipeSha256===hashMediaProcessingValue(p.program)&&binding.toolSetSha256===hashMediaProcessingValue(p.toolSetManifest)):profiles[0]):null;
+ const toolSetManifest=local?structuredClone(local.toolSetManifest):toolset.expectedStaticR0ToolSet(kind),program=local?structuredClone(local.program):toolset.expectedProcessingProgram(kind);
+ const profileId=local?local.profileId:`M3-${kind}-R0-1`;
  toolset.validateToolSetManifest(toolSetManifest,{profileId,hashCanonical:hashMediaProcessingValue});
  toolset.validateProcessingProgram(program,{profileId,hashCanonical:hashMediaProcessingValue});
  requireValue(toolSetManifest.kind===kind&&program.kind===kind);

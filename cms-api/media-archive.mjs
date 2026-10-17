@@ -5,7 +5,8 @@ import {MAX_REVISION,revisionSchema,resourceIdSchema} from '../contracts/hero.mj
 import {MEDIA_COLLECTION,mediaIdSchema,parsePersistedMediaV2} from '../contracts/media.mjs';
 import {strictMediaV2JsonSchema} from '../contracts/media-v3-metadata-v2.mjs';
 import {canonicalMediaV2Json} from '../contracts/media-v3-contract-v2.mjs';
-import {validateRuntime,installNetworkFence,PROJECT} from '../scripts/local-guard.mjs';
+import {PROJECT} from '../scripts/local-guard.mjs';
+import {validateCmsServerRuntime,installCmsNetworkFence} from '../scripts/local-data-guard.mjs';
 
 const exact=shape=>strictMediaV2JsonSchema.pipe(z.strictObject(shape));
 const bodySchema=exact({expectedRevision:revisionSchema});
@@ -45,7 +46,7 @@ export function createMediaArchiveService(options) {
   const {db,authorize}=ownData(options,['db','authorize']);
   requireValue(db&&typeof db.collection==='function'&&typeof db.runTransaction==='function'&&typeof authorize==='function','VALIDATION_ERROR');
   const guard=()=>{
-    validateRuntime(process.env,undefined,{server:true});installNetworkFence();
+    validateCmsServerRuntime();installCmsNetworkFence();
     requireValue(db.projectId===PROJECT,'LOCAL_RUNTIME_UNAVAILABLE');
   };
   return {async archiveMedia(value) {

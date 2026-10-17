@@ -21,7 +21,7 @@ const effectiveId=entry=>entry.source==='LEGACY'?entry.asset.id:entry.asset.asse
 const entryOrder=(a,b)=>compare(a.source,b.source)||compare(effectiveId(a),effectiveId(b));
 const evidenceSchema=strictMediaV2JsonSchema.pipe(z.strictObject({
  contractRevision:z.literal(2),tuple:attemptTupleV2Schema,
- profileId:z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1']),
+ profileId:z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1','M3-PDF-LOCAL-1','M3-PDF-LOCAL-2','M3-PDF-LOCAL-3','M3-PDF-LOCAL-4','M3-PDF-LOCAL-5']),
  processingProgram:processingProgramV2Schema,executionRecipe:strictMediaV2JsonSchema,
  executionRecipeSha256:hashSchema,originalMetadata:strictMediaV2JsonSchema,
  toolSetSha256:hashSchema,processingRecipeSha256:hashSchema
@@ -83,7 +83,7 @@ export function createSiteV3MediaProvider({db,library}){
   const evidence=evidenceSchema.parse(await read(transaction,ref('cmsMediaProcessingEvidence',receiptId)));
   demand(metadata.assetId===assetId&&metadata.intentId===mapping.intentId&&same(metadata.metadata,row.metadata)&&row.createdAtMs===upload.intentHeader.createdAtMs);
   demand(same(evidence.tuple,row.readyFact.tuple)&&evidence.executionRecipeSha256===hash(evidence.executionRecipe)&&evidence.processingRecipeSha256===row.readyVersion.processingRecipeSha256&&evidence.processingRecipeSha256===hash(evidence.processingProgram)&&evidence.toolSetSha256===row.readyVersion.toolSetSha256);
-  const profile=loadMediaProcessingProfile(row.kind);
+  const profile=loadMediaProcessingProfile(row.kind,row.readyVersion);
   demand(evidence.profileId===profile.profileId&&same(evidence.processingProgram,profile.program)&&evidence.toolSetSha256===profile.toolSetSha256);
   validateAuthorityEnvelopeV2({readyVersion:row.readyVersion,readyFact:row.readyFact,metadata:row.metadata,actors:row.actors},{expectedUpload:expectedUploadFromRecord(upload),expectedJob:{record:job,toolSetManifest:profile.toolSetManifest,processingProgram:evidence.processingProgram,executionRecipe:evidence.executionRecipe,originalMetadata:evidence.originalMetadata},profileId:profile.profileId,hashCanonical:hash});
   demand(row.storage.original.key===`private/media/v2/${assetId}/originals/${upload.completion.originalId}`&&row.storage.original.generation===upload.completion.effect.generation);

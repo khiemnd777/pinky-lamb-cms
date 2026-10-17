@@ -111,3 +111,8 @@ test('outer heading reorder remounts inner row paths and preserves keyboard, pos
   const footer=sections()[1].children.find(node=>node.attributes.class==='ux-form-sort');footer.children[0].children.at(-1).listeners.click();assert.deepEqual(original,[b,a]);assert.equal(b.text,'Edited B');assert.equal(a.emphasis,'ACCENT');assert.equal(lines[0],other);assert.deepEqual(Object.keys(a).sort(),['emphasis','text']);assert.equal(changes,4);await Promise.resolve();sorts.destroy();
  }finally{await Promise.resolve();sorts?.destroy();globalThis.document=previous;}
 });
+
+test('guarded tab change commits selection and focus only after allowed, including reveal',async()=>{
+ const previous=globalThis.document;globalThis.document={createElement:tag=>new Node(tag)};
+ try{const container=new Node('div');let release;const selected=[];const tabs=createFormTabs(container,{label:'Guarded',tabs:[{id:'a',label:'A'},{id:'b',label:'B'}],beforeSelect:()=>new Promise(resolve=>{release=resolve;}),onSelect:id=>selected.push(id)});const input=new Node('input');tabs.panel('b').append(input);const change=tabs.select('b',{focus:true});assert.equal(tabs.panel('b').hidden,true);release(false);assert.equal(await change,false);assert.deepEqual(selected,['a']);const reveal=tabs.reveal(input);release(true);assert.equal(await reveal,true);assert.equal(tabs.panel('b').hidden,false);assert.deepEqual(selected,['a','b']);}finally{globalThis.document=previous;}
+});

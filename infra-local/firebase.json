@@ -37,7 +37,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "http://127.0.0.1:5173"
+            "value": "http://127.0.0.1:5273"
           }
         ]
       }

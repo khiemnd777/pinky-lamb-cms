@@ -13,7 +13,8 @@ import {J1_LIMITS,parseJobRecord,parseGlobalSlot,planClaimJob,planHeartbeat,plan
 import {parseQuotaView,parseReservation,planClaimWrite,planMarkUncertain,planSettleWrite,planReleaseUnused,planCloseActiveSlot} from './media-quota-domain.mjs';
 import {createLocalMediaUploadStorage} from './media-upload-storage.mjs';
 import {readRegularFile} from '../scripts/media-tool-audit.mjs';
-import {validateRuntime,PROJECT} from '../scripts/local-guard.mjs';
+import {PROJECT} from '../scripts/local-guard.mjs';
+import {validateCmsServerRuntime} from '../scripts/local-data-guard.mjs';
 import {IMAGE_SCRATCH_ROOT,readImageFile,readImageManifestPair,validateImageContainer,processImage} from './media-images.mjs';
 import {PDF_SCRATCH_ROOT,processPdf} from './media-pdf.mjs';
 import {VIDEO_SCRATCH_ROOT,processVideo} from './media-video.mjs';
@@ -88,7 +89,7 @@ export async function createMediaWorker({db,storage=createLocalMediaUploadStorag
  const uploadRef=id=>ref('cmsMediaUploads',mediaV2DocumentId({kind:'INTENT',intentId:id}));
  const metadataRef=id=>ref('cmsMediaMetadata',mediaV2DocumentId({kind:'INTENT',intentId:id}));
  const slotRef=ref('cmsMediaProcessingSlots','global'),quotaRef=ref('cmsMediaQuota','global');
- const guard=()=>{validateRuntime(process.env,undefined,{server:true});demand(db.projectId===PROJECT,'LOCAL_RUNTIME_UNAVAILABLE');};
+ const guard=()=>{validateCmsServerRuntime();demand(db.projectId===PROJECT,'LOCAL_RUNTIME_UNAVAILABLE');};
  const run=callback=>{guard();return db.runTransaction(async tx=>{guard();return callback(tx);},{maxAttempts:5});};
  const pending=new Map();let draining=false,retryTimer=null,retries=0;
 
@@ -215,7 +216,7 @@ export async function createMediaWorker({db,storage=createLocalMediaUploadStorag
    heartbeatTask=heartbeat(identity,tuple).catch(error=>{heartbeatError=error;abort.abort();}).finally(()=>{heartbeatTask=null;});
   },J1_LIMITS.heartbeatMs);
   try{
-   const input=claimed.record.input,profile=loadMediaProcessingProfile(input.kind);
+   const input=claimed.record.input,profile=loadMediaProcessingProfile(input.kind,input);
    demand(profile.processingRecipeSha256===input.processingRecipeSha256&&profile.toolSetSha256===input.toolSetSha256);
    const completed=claimed.upload.completion;
    const original=await storage.readOriginal({assetId:identity.assetId,originalId:completed.originalId,generation:completed.effect.generation,sizeBytes:input.inputBytes,sha256:input.originalSha256});
@@ -276,6 +277,7 @@ export async function createMediaWorker({db,storage=createLocalMediaUploadStorag
    clearInterval(interval);if(heartbeatTask)await heartbeatTask;if(heartbeatError)throw heartbeatError;
    return await finishReady(identity,tuple,{readyVersion,readyFact,execution,profile,stored,authorization:claimed.authorization,originalId:completed.originalId,originalGeneration:completed.effect.generation});
   }catch(error){
+   console.warn('MEDIA_ATTEMPT_FAILED',{jobId:identity.jobId,attempt:tuple.attempt,code:error.code??'INTERNAL_ERROR',stack:error.stack});
    clearInterval(interval);if(heartbeatTask)await heartbeatTask;
    const noActorStarted=!processorCalled&&!activeWrite&&!localWritePending&&uncertainWrites.size===0;
    const controlUnknown=/PROCESS_CONTROL|CLEANUP_TIMEOUT|PIPE_HOLD|GROUP|ANCESTRY|ATTEMPT_CHANGED|CUSTODY_CHANGED/.test(nativeError?.code??'');

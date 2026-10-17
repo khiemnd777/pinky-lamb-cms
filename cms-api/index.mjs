@@ -3,19 +3,19 @@ import { existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { validateRuntime,installNetworkFence,installLocalHttpParser } from '../scripts/local-guard.mjs';
+import {validateLocalDataRuntime,installLocalDataNetworkFence} from '../scripts/local-data-guard.mjs';
 import {ApiError,errorEnvelope} from '../contracts/errors.mjs';
 // Fail before loading a Firebase SDK if the approved local boundary is absent.
-validateRuntime(process.env,undefined,{server:true});
-installNetworkFence();
-process.env.METADATA_SERVER_DETECTION='none';
-installLocalHttpParser();
-const { onRequest } = createRequire(import.meta.url)('firebase-functions/v2/https');
+const durable=process.env.PINKY_LOCAL_DATA_MODE==='durable';
+if(durable){validateLocalDataRuntime();installLocalDataNetworkFence();}
+else{validateRuntime(process.env,undefined,{server:true});installNetworkFence();process.env.METADATA_SERVER_DETECTION='none';installLocalHttpParser();}
+const onRequest=durable?null:createRequire(import.meta.url)('firebase-functions/v2/https').onRequest;
 export async function handleRequest(request,response) {
   response.set('Cache-Control','no-store');response.set('X-Content-Type-Options','nosniff');
-  try {validateRuntime(process.env,undefined,{server:true});} catch {
+  try {if(durable)validateLocalDataRuntime();else validateRuntime(process.env,undefined,{server:true});} catch {
     response.status(503).json({error:{code:'LOCAL_RUNTIME_UNAVAILABLE',message:'Môi trường local chưa sẵn sàng.',correlationId:randomUUID()}});return;
   }
-  if(request.headers.origin && request.headers.origin!=='http://127.0.0.1:5173') {
+  if(request.headers.origin && request.headers.origin!=='http://127.0.0.1:5273') {
     response.status(403).json({error:{code:'FORBIDDEN',message:'Không có quyền truy cập.',correlationId:randomUUID()}});return;
   }
   const correlationId=randomUUID();
@@ -43,8 +43,9 @@ export async function handleRequest(request,response) {
     }
     await dispatchRequest(request,response,actor,correlationId);
   } catch(error) {
+    if(!(error instanceof ApiError))console.warn('CMS_REQUEST_FAILED',{correlationId,name:error?.name,code:error?.code,frames:String(error?.stack??'').split('\n').filter(line=>line.trimStart().startsWith('at ')).slice(0,6)});
     const safe=error instanceof ApiError?error:new ApiError('INTERNAL_ERROR');
     response.status(safe.status).json(errorEnvelope(safe,correlationId));
   }
 }
-export const cmsApi=onRequest({region:'us-central1',cors:false,timeoutSeconds:900,memory:'1GiB'},handleRequest);
+export const cmsApi=durable?null:onRequest({region:'us-central1',cors:false,timeoutSeconds:900,memory:'1GiB'},handleRequest);

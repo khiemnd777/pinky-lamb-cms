@@ -18,7 +18,7 @@ function baseUrl(value,mode){
 function safeUrl(value,mode,base){
  if(typeof value!=='string')fail();
  if(mode==='QA_EXPORT'){if(!/^assets\/[A-Za-z0-9][A-Za-z0-9._-]*$(?![\s\S])/.test(value))fail();return value;}
- if(/^blob:http:\/\/127\.0\.0\.1:5173\/[A-Za-z0-9_-]+$(?![\s\S])/.test(value))return value;
+ if(/^blob:http:\/\/127\.0\.0\.1:5273\/[A-Za-z0-9_-]+$(?![\s\S])/.test(value))return value;
  if(/^assets\/[A-Za-z0-9][A-Za-z0-9._-]*$(?![\s\S])/.test(value))return new URL(value,base).href;
  const url=new URL(value);
  if(url.href!==value||url.origin!==base.origin||!/^\/assets\/[A-Za-z0-9][A-Za-z0-9._-]*$(?![\s\S])/.test(url.pathname)||url.search||url.hash||url.username||url.password)fail();

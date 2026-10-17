@@ -2,7 +2,7 @@ import {z} from 'zod';
 import {ApiError} from './errors.mjs';
 import {resourceIdSchema,hashSchema,revisionSchema,idempotencyKeySchema} from './hero.mjs';
 import {strictMediaV2JsonSchema,mediaMetadataV2Schema,uploadActorsV2Schema,hashMediaMetadataV2} from './media-v3-metadata-v2.mjs';
-import {r0ToolSetManifestSchema,processingProgramV2Schema,validateToolSetManifest,validateProcessingProgram,validateProcessingExecution} from './media-v3-toolset-v2.mjs';
+import {registeredToolSetManifestSchema,processingProgramV2Schema,validateToolSetManifest,validateProcessingProgram,validateProcessingExecution} from './media-v3-toolset-v2.mjs';
 import {readyVersionV2Schema,mediaBindingV2Schema,bindingFromReadyVersionV2,safeMetadataFromReadyVersionV2,normalizedDerivativeProjectionV2,canonicalMediaV2Json,V2_MEDIA_LIMITS} from './media-v3-contract-v2.mjs';
 
 const digestSchema=hashSchema.refine(value=>value.length===64);
@@ -51,7 +51,7 @@ const originalMetadataSchema=z.union([
   exact({pageCount:positive(48)}),
   exact({width:positive(1920),height:positive(1080),duration:z.number().finite().positive().max(300),fps:z.number().finite().positive().max(60),audio:z.boolean()})
 ]);
-const expectedJobSchema=exact({record:jobRecordSchema,toolSetManifest:r0ToolSetManifestSchema,processingProgram:processingProgramV2Schema,originalMetadata:originalMetadataSchema,executionRecipe:strictMediaV2JsonSchema});
+const expectedJobSchema=exact({record:jobRecordSchema,toolSetManifest:registeredToolSetManifestSchema,processingProgram:processingProgramV2Schema,originalMetadata:originalMetadataSchema,executionRecipe:strictMediaV2JsonSchema});
 const summaryCommon={contractRevision:z.literal(2),assetId:asset,status:z.literal('READY'),archived:z.boolean(),revision:revisionSchema};
 const summarySchema=z.union([
   exact({...summaryCommon,kind:z.literal('IMAGE'),width:positive(8192),height:positive(8192)}).refine(value=>value.width*value.height<=40000000),
@@ -104,7 +104,7 @@ export function validateAuthorityEnvelopeV2(input,context){
     const c=options(context,['expectedUpload','expectedJob','profileId','hashCanonical']);
     // Capture every DATA input before a hash capability can mutate caller state.
     const data=capture({expectedUpload:c.expectedUpload,expectedJob:c.expectedJob,profileId:c.profileId,envelope:input});
-    z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1']).parse(data.profileId);
+    z.enum(['M3-IMAGE-R0-1','M3-PDF-R0-1','M3-VIDEO-R0-1','M3-PDF-LOCAL-1','M3-PDF-LOCAL-2','M3-PDF-LOCAL-3','M3-PDF-LOCAL-4','M3-PDF-LOCAL-5']).parse(data.profileId);
     const upload=expectedUploadSchema.parse(data.expectedUpload),expected=expectedJobSchema.parse(data.expectedJob);
     const value=validateEnvelopeData(data.envelope,c.hashCanonical),version=value.readyVersion,binding=bindingFromReadyVersionV2(version),{intent,metadataFact}=upload,{record}=expected,job=record.job;
     requireRelation(intent.state==='QUEUED' && same(intent.actors,value.actors) && intent.assetId===version.assetId && intent.core.kind===version.kind && intent.core.inputBytes===version.originalSizeBytes);

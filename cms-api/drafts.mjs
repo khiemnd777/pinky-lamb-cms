@@ -2,7 +2,8 @@ import {createHash,randomUUID} from 'node:crypto';
 import {readFileSync,realpathSync,lstatSync,existsSync} from 'node:fs';
 import path from 'node:path';
 import {z} from 'zod';
-import {ROOT,validateRuntime} from '../scripts/local-guard.mjs';
+import {ROOT} from '../scripts/local-guard.mjs';
+import {validateCmsServerRuntime} from '../scripts/local-data-guard.mjs';
 import {ApiError,validationError} from '../contracts/errors.mjs';
 import {idempotencyKeySchema,hashSchema,resourceIdSchema,revisionSchema,MAX_REVISION,assertEnvelopeSize,validateContent} from '../contracts/hero.mjs';
 import {canonicalJson,decodeStoredDraft,encodeStoredContent,parseSaveRequest,utcTimestampSchema} from '../contracts/draft.mjs';
@@ -16,7 +17,7 @@ export function mutationIdentity(uid,operation,key,body){
 }
 
 export function loadTrustedCatalog(){
- validateRuntime(process.env,undefined,{server:true});
+ validateCmsServerRuntime();
  const filename=path.join(ROOT,'contracts/legacy-assets.json');
  if(!existsSync(filename))throw new ApiError('LOCAL_RUNTIME_UNAVAILABLE');
  try{

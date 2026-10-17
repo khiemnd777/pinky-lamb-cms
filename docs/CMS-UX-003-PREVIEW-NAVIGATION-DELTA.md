@@ -1,5 +1,14 @@
 # CMS-UX-003 — Preview navigation delta v1
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử. Đề xuất delta bên dưới là lịch sử; trạng thái đóng hồ sơ không khẳng định tính năng đã được triển khai.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 Status: **PROPOSED / AWAITING_HUMAN_DECISION**. Đây chưa phải scope đã Approved. Phần section navigation tiếp tục HOLD. Recovery v2 đã sửa container: global Xem trước mở native dialog, tái sử dụng đúng viewer/controller saved revision; ảnh mobile xác nhận revision0 và đóng được. Không đổi backend, sandbox, CSP hoặc transport. Modal container PASS không xóa FAIL tự nhảy section.
 
 Follow-up16/10/2026 chỉ sửa form/Dịch vụ/fixture/focus; không triển khai proposal navigation này. Quyết định preview được trình riêng, không là điều kiện để hoàn tất các routine repairs đã duyệt.

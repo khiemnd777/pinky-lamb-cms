@@ -1,5 +1,14 @@
 # CMS-RECOVERY-001 — current v2 and historical v1 review
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 ## Kết quả hiện hành — sửa Vite và kiểm thử CMS local, 13/10/2026
 
 **Verified: PASS kỹ thuật; chờ Khiêm review/nghiệm thu.** [Approval Vite](../.local/cache/cms-recovery-001/v2/vite-fix/approval.json), [register hiện hành](../../approvals/CMS-RECOVERY-001-v2-REGISTER.json) và [High final review](../.local/cache/cms-recovery-001/v2/vite-fix/final-high-review.json) là nguồn thật. Đúng một emulator thêm theo lần duyệt Vite đã dùng; cumulative v2 3/3. CLI94803/worker95035 và Vite96430 tại127.0.0.1:5175 giữ hoạt động; không restart/native slot4.

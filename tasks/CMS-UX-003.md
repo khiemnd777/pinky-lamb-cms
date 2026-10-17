@@ -1,5 +1,14 @@
 # CMS-UX-003 v6 — Rework CMS theo template đã duyệt
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 ## TEST-REPAIR-001 v1 — Scoped repair verified local, 16/10/2026
 
 **Git delivery approved — 16/10/2026:** người dùng yêu cầu “Commit, push phần sửa 6 test và cập nhật task.” Chỉ bàn giao hai file `tests/home-v3-recovery-ui.test.mjs` và task này trên nhánh `main`; quyền này thay giới hạn chưa commit/push của lượt sửa bên dưới. Tái sử dụng kết quả 171/171 PASS, lint/build/sensitivity và preservation vì source test/ứng dụng không đổi từ lần kiểm chứng; kiểm staged whitespace và phạm vi trước commit. Không deploy hoặc thay trạng thái nghiệm thu/LOCAL_COMPLETE.

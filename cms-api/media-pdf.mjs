@@ -2,12 +2,15 @@ import {createHash} from 'node:crypto';
 import {lstat, mkdir, writeFile} from 'node:fs/promises';
 import {resolve, dirname, sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {readRegularFile, verifyMediaTools} from '../scripts/media-tool-audit.mjs';
+import {readRegularFile} from '../scripts/media-tool-audit.mjs';
+
+import {verifyLocalPdfRuntime} from './pdf-local-runtime.mjs';
+import {PDF_LOCAL_PROGRAM} from '../contracts/media-pdf-local-profile-v5.mjs';
 
 export const PDF_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const PDF_SCRATCH_ROOT = resolve(PDF_ROOT, '.local/media-scratch/m3');
 export const PDF_EVIDENCE_ROOT = resolve(PDF_ROOT, '.local/test-outputs/m3/parallel-pdf-01');
-export const PDF_LIMITS = Object.freeze({inputBytes:25*1024**2,pages:48,edge:1600,pixels:4000000,webpBytes:32*1024**2,pdfBytes:64*1024**2,combinedBytes:96*1024**2,scratchBytes:256*1024**2,timeoutMs:120000,rssBytes:768*1024**2,heapMiB:256,threads:2,logBytes:65536});
+export const PDF_LIMITS = Object.freeze({inputBytes:25*1024**2,pages:48,edge:1280,pixels:4000000,webpBytes:64*1024**2,pdfBytes:64*1024**2,combinedBytes:96*1024**2,scratchBytes:256*1024**2,timeoutMs:120000,rssBytes:768*1024**2,heapMiB:256,threads:2,logBytes:65536});
 export const pdfSha = bytes => createHash('sha256').update(bytes).digest('hex');
 export function pdfFail(code) { throw Object.assign(new Error(code), {code}); }
 
@@ -59,9 +62,9 @@ export function validatePdfCandidate(value,{originalBytes,originalSha256}) {
   if(!uint(original.bytes,PDF_LIMITS.inputBytes)||!hash(original.sha256)||original.bytes!==originalBytes||original.sha256!==originalSha256) pdfFail('PDF_MANIFEST');
   const recipe=ownData(c.recipe,['version','limits','render','webp','pdf','lockSha256','runtimeSha256','processorSha256','tools','sharp','pdfLib']);
   const limits=ownData(recipe.limits,Object.keys(PDF_LIMITS));
-  const render=densePdfArray(recipe.render),fixedRender=['-png','-singlefile','-f','N','-l','N','-scale-to','1600','OWNED_INPUT','OWNED_PREFIX'];
-  if(Object.keys(PDF_LIMITS).some(key=>limits[key]!==PDF_LIMITS[key])||recipe.version!=='M3-PARALLEL-PDF-01-v1'||render.length!==fixedRender.length||render.some((part,i)=>part!==fixedRender[i])||recipe.webp!=='lossless-srgb-rgba'||recipe.pdf!=='fresh-embedPng-immediate-embed'||recipe.lockSha256!=='2c049b8684ba07916855f009b1a52af77650a118e96090fadc45453f4eb18081'||!hash(recipe.runtimeSha256)||!hash(recipe.processorSha256)||recipe.sharp!=='0.35.5'||recipe.pdfLib!=='1.17.1') pdfFail('PDF_MANIFEST');
-  const tools=[{path:'bin/pdfinfo',type:'file',bytes:3297176,sha256:'f67700d0175d23d70539a917aed185b00519c69548a6daff4ea510153101728d'},{path:'bin/pdftocairo',type:'file',bytes:3500552,sha256:'daceeb000fab5ac2413a3a992fbc15d6a230bc0729c998ab0f3d987b55bf2134'}];
+  const render=densePdfArray(recipe.render),fixedRender=PDF_LOCAL_PROGRAM.recipe.render;
+  if(Object.keys(PDF_LIMITS).some(key=>limits[key]!==PDF_LIMITS[key])||recipe.version!=='M3-PARALLEL-PDF-01-v1'||render.length!==fixedRender.length||render.some((part,i)=>part!==fixedRender[i])||recipe.webp!=='lossless-srgb-rgba'||recipe.pdf!=='fresh-embedPng-immediate-embed'||recipe.lockSha256!==PDF_LOCAL_PROGRAM.recipe.lockSha256||!hash(recipe.runtimeSha256)||!hash(recipe.processorSha256)||recipe.sharp!=='0.35.5'||recipe.pdfLib!=='1.17.1') pdfFail('PDF_MANIFEST');
+  const tools=PDF_LOCAL_PROGRAM.recipe.tools;
   const toolItems=densePdfArray(recipe.tools);
   if(toolItems.length!==tools.length) pdfFail('PDF_MANIFEST');
   toolItems.forEach((tool,i)=>{const pin=ownData(tool,['path','type','bytes','sha256']);if(Object.keys(tools[i]).some(key=>pin[key]!==tools[i][key])) pdfFail('PDF_MANIFEST');});
@@ -122,7 +125,7 @@ export async function processPdf(request) {
   const original=await readRegularFile(input,PDF_LIMITS.inputBytes);
   if(pdfSha(original)!==expectedSha256) pdfFail('PDF_INPUT_HASH');
   if(!/^%PDF-[12]\.[0-9]/.test(original.subarray(0,8).toString('ascii'))) pdfFail('PDF_SIGNATURE');
-  await verifyMediaTools('PDF');
+  await verifyLocalPdfRuntime();
   if(pdfSignalAborted(signal)) pdfFail('PDF_CANCELLED');
   if(Date.now()>deadline) pdfFail('PDF_TIMEOUT');
   await checkPdfDirectory(dirname(attemptDirectory));
@@ -155,7 +158,7 @@ export async function processPdf(request) {
     const current=await lstat(input),currentAttempt=await lstat(attemptDirectory);
     if(current.ino!==custody.ino||current.dev!==custody.dev||current.size!==custody.size||current.mode!==custody.mode||current.uid!==custody.uid||current.nlink!==1||current.mtimeMs!==custody.mtimeMs||current.ctimeMs!==custody.ctimeMs) pdfFail('PDF_ORIGINAL_CHANGED');
     if(currentAttempt.ino!==attempt.ino||currentAttempt.dev!==attempt.dev||currentAttempt.uid!==attempt.uid||currentAttempt.mode!==attempt.mode) pdfFail('PDF_ATTEMPT_CHANGED');
-    await verifyMediaTools('PDF');
+    await verifyLocalPdfRuntime();
     if(Date.now()>deadline) pdfFail('PDF_TIMEOUT');
     if(pdfSignalAborted(signal)) pdfFail('PDF_CANCELLED');
   } catch(e) { problem=e; }

@@ -19,6 +19,40 @@ async function siteV3Dependencies(){
 }
 
 export function routeDefinition(pathname){
+ if(pathname==='/api/cms/localizations/website/status')return {methods:['GET'],kind:'LOCAL_WEBSITE_STATUS'};
+ const website=/^\/api\/cms\/localizations\/website\/(seed|publish|rollback|retry-media|recover-pdf)$/.exec(pathname);
+ if(website)return {methods:['POST'],kind:'LOCAL_WEBSITE_'+website[1].replace('-','_').toUpperCase()};
+ if(pathname==='/api/cms/localizations/groups/status')return {methods:['GET'],kind:'GROUP_LOCALIZATION_STATUS'};
+ const group=/^\/api\/cms\/localizations\/groups\/(header|clients|about|ip-studio|contact|footer|seo)\/(en|vi|ja)(\/qa)?$(?![\s\S])/.exec(pathname);
+ if(group)return {methods:group[3]?['GET']:['GET','PUT'],kind:group[3]?'GROUP_LOCALIZATION_QA':'GROUP_LOCALIZATION',groupId:group[1],locale:group[2]};
+ const fullSite=/^\/api\/cms\/localizations\/site\/(en|vi|ja)\/qa$(?![\s\S])/.exec(pathname);
+ if(fullSite)return {methods:['GET'],kind:'FULL_SITE_LOCALIZATION_QA',locale:fullSite[1]};
+ const editorialPrefix='/api/cms/localizations/editorial';
+ if(pathname===editorialPrefix+'/publish')return {methods:['POST'],kind:'LOCALIZED_EDITORIAL_PUBLISH'};
+ if(pathname===editorialPrefix+'/snapshots')throw new ApiError('METHOD_NOT_ALLOWED');
+ if(pathname===editorialPrefix+'/queue')return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_QUEUE'};
+ if(pathname===editorialPrefix+'/rebase')return {methods:['POST'],kind:'LOCALIZED_EDITORIAL_REBASE'};
+ if(pathname===editorialPrefix+'/release')return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_RELEASE'};
+ if(pathname===editorialPrefix+'/readiness')return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_READINESS'};
+ const eligibility=/^\/api\/cms\/localizations\/editorial\/eligibility\/(en|vi|ja)$(?![\s\S])/.exec(pathname);
+ if(eligibility)return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_ELIGIBILITY',locale:eligibility[1]};
+ const editorialResource=/^\/api\/cms\/localizations\/editorial\/resources\/(hero|project|service|section|group)\/([a-z0-9]+(?:-[a-z0-9]+)*)\/(en|vi|ja)$(?![\s\S])/.exec(pathname);
+ if(editorialResource&&editorialResource[2].length<=100&&(editorialResource[1]==='hero'?editorialResource[2]==='home-v3':editorialResource[1]==='section'?['work','services'].includes(editorialResource[2]):editorialResource[1]==='group'?['header','clients','about','ip-studio','contact','footer','seo'].includes(editorialResource[2]):true))return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_RESOURCE',resource:{kind:editorialResource[1],entityId:editorialResource[2],locale:editorialResource[3]}};
+ const editorialSnapshot=/^\/api\/cms\/localizations\/editorial\/snapshots\/([A-Za-z0-9_-]{1,128})(?:\/(source-checks|review))?$(?![\s\S])/.exec(pathname);
+ if(editorialSnapshot){if(editorialSnapshot[2])throw new ApiError('METHOD_NOT_ALLOWED');return {methods:['GET'],kind:'LOCALIZED_EDITORIAL_SNAPSHOT',id:editorialSnapshot[1]};}
+ if(pathname==='/api/cms/localizations/services/status')return {methods:['GET'],kind:'SERVICE_LOCALIZATION_STATUS'};
+ const service=/^\/api\/cms\/localizations\/services\/([a-z0-9]+(?:-[a-z0-9]+)*)\/(en|vi|ja)(\/qa)?$(?![\s\S])/.exec(pathname);
+ if(service&&service[1].length<=100)return {methods:service[3]?['GET']:['GET','PUT'],kind:service[3]?'SERVICE_LOCALIZATION_QA':'SERVICE_LOCALIZATION',serviceId:service[1],locale:service[2]};
+ const section=/^\/api\/cms\/localizations\/sections\/(work|services)\/(en|vi|ja)(\/qa)?$(?![\s\S])/.exec(pathname);
+ if(section)return {methods:section[3]?['GET']:['GET','PUT'],kind:section[3]?'SECTION_LOCALIZATION_QA':'SECTION_LOCALIZATION',sectionId:section[1],locale:section[2]};
+ const workServices=/^\/api\/cms\/localizations\/work-services\/(en|vi|ja)\/qa$(?![\s\S])/.exec(pathname);
+ if(workServices)return {methods:['GET'],kind:'WORK_SERVICES_LOCALIZATION_QA',locale:workServices[1]};
+ const projectStatus=pathname==='/api/cms/localizations/projects/status';
+ if(projectStatus)return {methods:['GET'],kind:'PROJECT_LOCALIZATION_STATUS'};
+ const project=/^\/api\/cms\/localizations\/projects\/([a-z0-9]+(?:-[a-z0-9]+)*)\/(en|vi|ja)(\/qa)?$(?![\s\S])/.exec(pathname);
+ if(project&&project[1].length<=100)return {methods:project[3]?['GET']:['GET','PUT'],kind:project[3]?'PROJECT_LOCALIZATION_QA':'PROJECT_LOCALIZATION',projectId:project[1],locale:project[2]};
+ const localized=/^\/api\/cms\/hero-localizations\/home-v3\/(en|vi|ja)(\/qa)?$/.exec(pathname);
+ if(localized)return {methods:localized[2]?['GET']:['GET','PUT'],kind:localized[2]?'HERO_LOCALIZATION_QA':'HERO_LOCALIZATION',locale:localized[1]};
  if(pathname==='/api/cms/media-site/drafts/home-v3/preview')return {methods:['GET'],kind:'SITE_V3_DRAFT_PREVIEW'};
  if(pathname==='/api/cms/drafts/home-v3/import')return {methods:['POST'],kind:'SITE_V3_IMPORT'};
  if(pathname==='/api/cms/drafts/home-v3')return {methods:['GET','PATCH'],kind:'SITE_V3_DRAFT'};
@@ -142,6 +176,18 @@ function parseSourceQuery(request){
  return result;
 }
 
+function parseLocalizedQueueQuery(request){
+ const parameters=new URL(request.originalUrl??request.url,'http://127.0.0.1').searchParams,query=request.query??{},allowed=['cursor','pageSize','locale','kind','status'],result={};
+ if([...parameters.keys(),...Object.keys(query)].some(k=>!allowed.includes(k)))throw new ApiError('BAD_REQUEST');
+ for(const name of allowed){const values=parameters.getAll(name);if(values.length>1||(Object.hasOwn(query,name)&&typeof query[name]!=='string'))throw new ApiError('VALIDATION_ERROR');const value=values.length?values[0]:query[name];if(value===undefined)continue;
+  if(name==='pageSize'){if(!/^(?:[1-9]|1[0-9]|2[0-4])$/.test(value))throw new ApiError('VALIDATION_ERROR');result.pageSize=Number(value);}
+  else if(name==='cursor'){if(!/^[A-Za-z0-9_-]{1,2048}$/.test(value))throw new ApiError('VALIDATION_ERROR');result.cursor=value;}
+  else if(name==='locale'){if(!['en','vi','ja'].includes(value))throw new ApiError('VALIDATION_ERROR');result.locale=value;}
+  else if(name==='status'){if(!['SUBMITTED','APPROVED','CHANGES_REQUESTED'].includes(value))throw new ApiError('VALIDATION_ERROR');result.status=value;}
+  else{if(!['hero','project','service','section','group'].includes(value))throw new ApiError('VALIDATION_ERROR');result.kind=value;}
+ }return result;
+}
+
 function parseDraftPreviewQuery(request){
  if(request.rawBody?.byteLength||request.headers['transfer-encoding']!==undefined||(request.headers['content-length']!==undefined&&request.headers['content-length']!=='0'))throw new ApiError('BAD_REQUEST');
  const parameters=new URL(request.originalUrl??request.url,'http://127.0.0.1').searchParams,query=request.query??{};
@@ -172,6 +218,8 @@ function safeSiteFieldPath(field){
  return parts.every(part=>siteFieldKeys.has(part) || /^(0|[1-5]?[0-9]|60)$/.test(part));
 }
 export function siteErrorResponse(error,correlationId){
+ if(error instanceof ApiError&&error.code==='REVISION_CONFLICT'&&['BASE_REBASE_REQUIRED','LOCALIZED_REVISION_CONFLICT'].includes(error.heroReason))return {status:409,body:{error:{...errorEnvelope(error,correlationId).error,reason:error.heroReason}}};
+ if(error instanceof ApiError&&error.code==='REVISION_CONFLICT'&&['DEPENDENCY_REBASE_REQUIRED','LOCALIZED_REVISION_CONFLICT'].includes(error.projectReason??error.serviceReason))return {status:409,body:{error:{...errorEnvelope(error,correlationId).error,reason:error.projectReason??error.serviceReason}}};
  const marked=error && (Object.hasOwn(error,'siteReason') || Object.hasOwn(error,'siteValidationPaths'));
  if(!marked){const safe=error instanceof ApiError?error:new ApiError('INTERNAL_ERROR');return {status:safe.status,body:errorEnvelope(safe,correlationId)};}
  if(error instanceof ApiError && error.code==='REVISION_CONFLICT' && error.status===409 && !Object.hasOwn(error,'siteValidationPaths')){
@@ -188,8 +236,53 @@ export async function dispatchRequest(request,response,actor,correlationId){
   const pathname=request.path??new URL(request.url,'http://127.0.0.1').pathname;
   const route=routeDefinition(pathname);
   if(!route.methods.includes(request.method)){response.set('Allow',route.methods.join(', '));throw new ApiError('METHOD_NOT_ALLOWED');}
-  if((route.kind!=='SOURCE_LIST' && route.kind!=='SITE_V3_SOURCE_LIST' && route.kind!=='SITE_V3_DRAFT_PREVIEW' && !route.kind.startsWith('MEDIA_READ') && Object.keys(request.query??{}).length) || (request.method==='GET' && request.rawBody?.byteLength))throw new ApiError('BAD_REQUEST');
+  if((route.kind!=='LOCALIZED_EDITORIAL_QUEUE' && route.kind!=='SOURCE_LIST' && route.kind!=='SITE_V3_SOURCE_LIST' && route.kind!=='SITE_V3_DRAFT_PREVIEW' && !route.kind.startsWith('MEDIA_READ') && Object.keys(request.query??{}).length) || (request.method==='GET' && request.rawBody?.byteLength))throw new ApiError('BAD_REQUEST');
   const context={request,actor,correlationId};
+  if(route.kind.startsWith('LOCAL_WEBSITE_')){
+   if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
+   const deps=await siteV3Dependencies(),{createLocalWebsiteService}=await import('./local-website.mjs'),service=await createLocalWebsiteService(deps);
+   let result;if(route.kind==='LOCAL_WEBSITE_STATUS')result=await service.status(context);else{const {body,key:commandKey}=parseMediaMutation(request);if(Object.keys(body).length)throw new ApiError('BAD_REQUEST');result=route.kind==='LOCAL_WEBSITE_RECOVER_PDF'?await service.recoverPdf({...context,commandKey}):route.kind==='LOCAL_WEBSITE_RETRY_MEDIA'?await service.retryMedia({...context,commandKey}):route.kind==='LOCAL_WEBSITE_ROLLBACK'?await service.rollback({...context,commandKey}):await service.start({...context,commandKey,kind:route.kind==='LOCAL_WEBSITE_SEED'?'SEED':'PUBLISH'});}
+   response.status(200).json(result);return;
+  }
+  if(route.kind.startsWith('LOCALIZED_EDITORIAL')){
+   if(route.kind!=='LOCALIZED_EDITORIAL_QUEUE'&&new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
+   const {options}=await siteV3Dependencies(),{createLocalizedEditorialService}=await import('./localized-editorial.mjs'),service=await createLocalizedEditorialService(options);let result,status=200;
+   if(route.kind==='LOCALIZED_EDITORIAL_QUEUE'){const query=parseLocalizedQueueQuery(request);result=await service.readQueue({request,query});}
+   else if(route.kind==='LOCALIZED_EDITORIAL_RESOURCE')result=await service.readResource({request,resource:route.resource});
+   else if(route.kind==='LOCALIZED_EDITORIAL_SNAPSHOT')result=await service.readSnapshot({request,id:route.id});
+   else if(['LOCALIZED_EDITORIAL_RELEASE','LOCALIZED_EDITORIAL_ELIGIBILITY','LOCALIZED_EDITORIAL_READINESS'].includes(route.kind)){const {createLocalizedEligibilityService}=await import('./localized-eligibility.mjs'),eligibility=await createLocalizedEligibilityService({editorial:service});result=route.kind==='LOCALIZED_EDITORIAL_RELEASE'?await eligibility.readReleaseBundle({request}):route.kind==='LOCALIZED_EDITORIAL_READINESS'?await eligibility.readReadiness({request}):await eligibility.readEligibility({request,locale:route.locale});}
+   else{const args={...context,...parseMediaMutation(request),id:route.id};if(route.kind==='LOCALIZED_EDITORIAL_PUBLISH'){result=await service.publishDraft(args);status=201;}else if(route.kind==='LOCALIZED_EDITORIAL_SUBMIT'){result=await service.submitSnapshot(args);status=201;}else if(route.kind==='LOCALIZED_EDITORIAL_SOURCE_CHECK'){result=await service.writeSourceChecks(args);status=201;}else if(route.kind==='LOCALIZED_EDITORIAL_REVIEW'){result=await service.submitReview(args);status=201;}else result=await service.rebaseDraft(args);}
+   response.status(status).json(result);return;
+  }
+  if(route.kind.startsWith('GROUP_LOCALIZATION')||route.kind==='FULL_SITE_LOCALIZATION_QA'){
+   if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');const {options}=await siteV3Dependencies();let service;
+   if(route.kind==='FULL_SITE_LOCALIZATION_QA'){const {createFullSiteLocalizationService}=await import('./full-site-localizations.mjs');service=await createFullSiteLocalizationService(options);}else{const {createGroupLocalizationService}=await import('./group-localizations.mjs');service=await createGroupLocalizationService(options);}
+   const args={request,actor,groupId:route.groupId,locale:route.locale},result=route.kind.endsWith('_STATUS')?await service.readStatus(args):request.method==='PUT'?await service.saveDraft({...args,...parseMediaMutation(request)}):route.kind.endsWith('_QA')?await service.readQa(args):await service.readDraft(args);response.status(200).json(result);return;
+  }
+  if(route.kind.startsWith('SERVICE_LOCALIZATION')||route.kind.startsWith('SECTION_LOCALIZATION')||route.kind==='WORK_SERVICES_LOCALIZATION_QA'){
+   if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
+   const {options}=await siteV3Dependencies();let service;
+   if(route.kind.startsWith('SERVICE_LOCALIZATION')){const {createServiceLocalizationService}=await import('./service-localizations.mjs');service=await createServiceLocalizationService(options);}
+   else if(route.kind.startsWith('SECTION_LOCALIZATION')){const {createWorkServicesLocalizationService}=await import('./work-services-localizations.mjs');service=await createWorkServicesLocalizationService(options);}
+   else{const {createSiteLocaleProjectionService}=await import('./site-locale-projections.mjs');service=await createSiteLocaleProjectionService(options);}
+   const args={request,actor,locale:route.locale,...(route.serviceId?{serviceId:route.serviceId}:{}),...(route.sectionId?{sectionId:route.sectionId}:{})};
+   const result=route.kind.endsWith('_STATUS')?await service.readStatus(args):request.method==='PUT'?await service.saveDraft({...args,...parseMediaMutation(request)}):route.kind.endsWith('_QA')?await service.readQa(args):await service.readDraft(args);
+   response.status(200).json(result);return;
+  }
+  if(route.kind.startsWith('PROJECT_LOCALIZATION')){
+   if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
+   const {options}=await siteV3Dependencies(),{createProjectLocalizationService}=await import('./project-localizations.mjs'),service=await createProjectLocalizationService(options);
+   const args={request,actor,projectId:route.projectId,locale:route.locale};
+   const result=route.kind==='PROJECT_LOCALIZATION_STATUS'?await service.readStatus(args):request.method==='PUT'?await service.saveDraft({...args,...parseMediaMutation(request)}):route.kind==='PROJECT_LOCALIZATION_QA'?await service.readQa(args):await service.readDraft(args);
+   response.status(200).json(result);return;
+  }
+  if(route.kind.startsWith('HERO_LOCALIZATION')){
+   if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
+   const {options}=await siteV3Dependencies(),{createHeroLocalizationService}=await import('./hero-localizations.mjs'),service=await createHeroLocalizationService(options);
+   const args={request,actor,locale:route.locale};
+   const result=request.method==='PUT'?await service.saveDraft({...args,...parseMediaMutation(request)}):route.kind==='HERO_LOCALIZATION_QA'?await service.readQa(args):await service.readDraft(args);
+   response.status(200).json(result);return;
+  }
   if(route.kind==='MEDIA_READ_SNAPSHOT_BYTES'){
    const {options,library,storage}=await siteV3Dependencies(),{createSiteV3SnapshotService}=await import('./site-v3-snapshots.mjs');
    const snapshots=await createSiteV3SnapshotService(options);
@@ -274,6 +367,7 @@ export async function dispatchRequest(request,response,actor,correlationId){
   const result=await futureHandler(...handler,{...context,...parseMutation(request)});
   response.status(201).json(result);
  }catch(error){
+  if(!(error instanceof ApiError))console.warn('CMS_ROUTE_FAILED',{correlationId,name:error?.name,frames:String(error?.stack??'').split('\n').filter(line=>line.trimStart().startsWith('at ')).slice(0,6)});
   const safe=siteErrorResponse(error,correlationId);
   response.status(safe.status).json(safe.body);
  }

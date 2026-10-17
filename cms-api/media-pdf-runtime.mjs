@@ -1,22 +1,39 @@
+import {PDF_LOCAL_PROGRAM} from '../contracts/media-pdf-local-profile-v5.mjs';
+import {verifyLocalPdfRuntime} from './pdf-local-runtime.mjs';
 import {spawn} from 'node:child_process';
 import {lstat,readdir,writeFile,unlink} from 'node:fs/promises';
 import {resolve,dirname,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {readRegularFile,verifyMediaTools} from '../scripts/media-tool-audit.mjs';
+import {readRegularFile} from '../scripts/media-tool-audit.mjs';
 import {PDF_ROOT,PDF_LIMITS,PDF_SCRATCH_ROOT,checkPdfDirectory,checkPdfSignal,pdfSignalAborted,validatePdfCandidate,parsePdfInfo,pdfSha,pdfFail} from './media-pdf.mjs';
 
 const SELF=fileURLToPath(import.meta.url);
 const NODE=resolve(PDF_ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node');
 const ENV={PATH:'/usr/bin:/bin',LANG:'C',LC_ALL:'C',VIPS_CONCURRENCY:'2',UV_THREADPOOL_SIZE:'2'};
 
-async function scratchBytes(dir) {
+export async function measurePdfScratch(dir,{listFiles=readdir,statFile=lstat}={}) {
   let bytes=0;
-  for(const name of await readdir(dir)) {
-    const s=await lstat(resolve(dir,name));
+  for(const name of await listFiles(dir)) {
+    let s;
+    try{s=await statFile(resolve(dir,name));}catch(error){
+      // The producer removes only these intermediates after validating inode custody.
+      // A file absent between readdir and lstat consumes no scratch space.
+      if(error.code==='ENOENT'&&['raster.png','proof.png'].includes(name))continue;
+      throw error;
+    }
     if(!s.isFile()||s.nlink!==1||s.isSymbolicLink()) pdfFail('PDF_SCRATCH_TYPE');
     bytes+=s.size;
   }
   return bytes;
+}
+// pdf-lib normalizes a newly drawn page with an empty annotation array.
+// Remove only that empty scaffold; active annotations still fail before serialization.
+export async function sealRasterPage(page){
+ const {PDFName,PDFArray}=await import('pdf-lib'),key=PDFName.of('Annots');
+ if(!page.node.has(key))return;
+ let annotations;try{annotations=page.node.lookup(key,PDFArray);}catch{pdfFail('PDF_OUTPUT_ACTIVE');}
+ if(annotations.size()!==0)pdfFail('PDF_OUTPUT_ACTIVE');
+ page.node.delete(key);
 }
 async function processSnapshot() {
   return new Promise((ok,bad)=>{
@@ -118,7 +135,7 @@ async function supervised(command,args,dir,{deadline,signal,env={},worker=false}
     try {
       const rows=capture(await processSnapshot());
       observation.peakRssBytes=Math.max(observation.peakRssBytes,rows.reduce((n,r)=>n+r.rss,0));
-      observation.peakScratchBytes=Math.max(observation.peakScratchBytes,await scratchBytes(dir));
+      observation.peakScratchBytes=Math.max(observation.peakScratchBytes,await measurePdfScratch(dir));
       if(observation.peakRssBytes>PDF_LIMITS.rssBytes) stop('PDF_RSS_LIMIT');
       if(observation.peakScratchBytes>PDF_LIMITS.scratchBytes) stop('PDF_SCRATCH_LIMIT');
     } catch(e) {stop(e.code??'PDF_WATCHDOG');} finally {polling=false;}
@@ -141,7 +158,7 @@ async function supervised(command,args,dir,{deadline,signal,env={},worker=false}
     const rows=await processSnapshot();
     observation.remainingPids=rows.filter(r=>worker?r.group===child.pid:r.pid===child.pid).map(r=>r.pid);
     observation.reaped=observation.close&&observation.remainingPids.length===0&&(child.exitCode!==null||child.signalCode!==null);
-    observation.peakScratchBytes=Math.max(observation.peakScratchBytes,await scratchBytes(dir));
+    observation.peakScratchBytes=Math.max(observation.peakScratchBytes,await measurePdfScratch(dir));
   } catch(e) {observation.controlError=e.code;}
   observation.stdoutBytes=stdout.length;observation.stderrBytes=stderr.length;
   if(!observation.reaped||observation.controlError) reason='PDF_PROCESS_CONTROL';
@@ -161,7 +178,7 @@ export async function startPdfRuntime(request) {
   if(typeof attemptDirectory!=='string'||!attemptDirectory.startsWith(sep)||attemptDirectory!==resolve(attemptDirectory)||dirname(dirname(attemptDirectory))!==PDF_SCRATCH_ROOT||!attemptDirectory.slice(PDF_SCRATCH_ROOT.length+1).split(sep).every(part=>part.length>=1&&part.length<=96&&/^[A-Za-z0-9]/.test(part)&&!/[^A-Za-z0-9_.-]/.test(part)&&part!=='.'&&part!=='..')||!Number.isSafeInteger(deadline)||deadline>Date.now()+PDF_LIMITS.timeoutMs) pdfFail('PDF_RUNTIME_REQUEST');
   if(pdfSignalAborted(signal)) pdfFail('PDF_CANCELLED');
   if(deadline<=Date.now()) pdfFail('PDF_TIMEOUT');
-  await verifyMediaTools('PDF');
+  await verifyLocalPdfRuntime();
   if(pdfSignalAborted(signal)) pdfFail('PDF_CANCELLED');
   if(deadline<=Date.now()) pdfFail('PDF_TIMEOUT');
   await checkPdfDirectory(attemptDirectory);
@@ -177,14 +194,12 @@ async function pdfWorker() {
   const attempt=await lstat(dir);
   if(attempt.uid!==process.getuid()||(attempt.mode&0o777)!==0o700) pdfFail('PDF_ATTEMPT_MODE');
   if(deadline<=Date.now()||!process.connected) pdfFail('PDF_TIMEOUT');
-  await verifyMediaTools('PDF');
+  await verifyLocalPdfRuntime();
   if(deadline<=Date.now()||!process.connected) pdfFail('PDF_TIMEOUT');
-  const lockBytes=await readRegularFile(resolve(PDF_ROOT,'contracts/media-tool-lock.json'),65536);
-  if(pdfSha(lockBytes)!=='2c049b8684ba07916855f009b1a52af77650a118e96090fadc45453f4eb18081') pdfFail('PDF_LOCK');
-  const lock=JSON.parse(lockBytes),poppler=lock.poppler,observations=[];
+  const {lockBytes,lock}=await verifyLocalPdfRuntime(),poppler=lock.poppler,observations=[];
   const env={FONTCONFIG_FILE:poppler.fontConfig.path,FONTCONFIG_PATH:dirname(poppler.fontConfig.path),XDG_CACHE_HOME:dirname(poppler.fontConfig.cacheDir)};
   async function native(kind,input,page,prefix) {
-    const args=kind==='info'?[input]:['-png','-singlefile','-f',String(page),'-l',String(page),'-scale-to','1600',input,prefix];
+    const args=kind==='info'?[input]:['-png','-singlefile','-f',String(page),'-l',String(page),'-scale-to',String(PDF_LIMITS.edge),input,prefix];
     const result=await supervised(resolve(poppler.root,'bin',kind==='info'?'pdfinfo':'pdftocairo'),args,dir,{deadline,env});
     observations.push(result.observation);
     if(result.stderr.trim()) pdfFail('PDF_DIAGNOSTIC');
@@ -222,7 +237,7 @@ async function pdfWorker() {
     if(checked.width!==width||checked.height!==height||pdfSha(checked.raw)!==pdfSha(raw)) pdfFail('PDF_WEBP_PIXELS');
     // Public embed() clears the pinned 1.17.1 embedder, allowing raster channels to be collected per page.
     const png=await image.clone().png().toBuffer(),embedded=await document.embedPng(png);
-    const page=document.addPage([width,height]);page.drawImage(embedded,{x:0,y:0,width,height});await embedded.embed();
+    const page=document.addPage([width,height]);page.drawImage(embedded,{x:0,y:0,width,height});await sealRasterPage(page);await embedded.embed();
     pages.push({page:n,width,height,pixelSha256:pdfSha(raw),webp:{file,bytes:webp.length,sha256:pdfSha(webp),role:'PDF_PAGE',mime:'image/webp',pageNumber:n}});
     const fresh=await lstat(prefix+'.png'),currentDir=await lstat(dir);
     if(currentDir.ino!==attempt.ino||currentDir.dev!==attempt.dev||currentDir.uid!==attempt.uid||currentDir.mode!==attempt.mode) pdfFail('PDF_ATTEMPT_CHANGED');
@@ -253,7 +268,7 @@ async function pdfWorker() {
     await unlink(prefix+'.png');
   }
   for(const page of pages) await inspectPage(page);
-  const recipe={version:'M3-PARALLEL-PDF-01-v1',limits:PDF_LIMITS,render:lock.poppler.fixedRasterPageRecipe,webp:'lossless-srgb-rgba',pdf:'fresh-embedPng-immediate-embed',lockSha256:pdfSha(lockBytes),runtimeSha256:pdfSha(await readRegularFile(SELF,1024**2)),processorSha256:pdfSha(await readRegularFile(resolve(PDF_ROOT,'cms-api/media-pdf.mjs'),1024**2)),tools:poppler.binaryPins,sharp:lock.packages.sharp.version,pdfLib:lock.packages['pdf-lib'].version};
+  const recipe={version:'M3-PARALLEL-PDF-01-v1',limits:PDF_LIMITS,render:PDF_LOCAL_PROGRAM.recipe.render,webp:'lossless-srgb-rgba',pdf:'fresh-embedPng-immediate-embed',lockSha256:pdfSha(lockBytes),runtimeSha256:pdfSha(await readRegularFile(SELF,1024**2)),processorSha256:pdfSha(await readRegularFile(resolve(PDF_ROOT,'cms-api/media-pdf.mjs'),1024**2)),tools:poppler.binaryPins,sharp:lock.packages.sharp.version,pdfLib:lock.packages['pdf-lib'].version};
   await writeFile(resolve(dir,'native-observations.json'),JSON.stringify({private:true,observations}),{flag:'wx',mode:0o600});
   const nativeSummary={count:observations.length,allReaped:observations.every(o=>o.close&&o.reaped&&o.exit===0),peakRssBytes:Math.max(...observations.map(o=>o.peakRssBytes)),peakScratchBytes:Math.max(...observations.map(o=>o.peakScratchBytes))};
   const manifest={version:1,private:true,ready:false,original:{bytes:inputBytes.length,sha256:pdfSha(inputBytes)},recipe,recipeSha256:pdfSha(Buffer.from(JSON.stringify(recipe))),pageCount:metadata.pages,pages,pdf:{file:'raster-only.pdf',bytes:pdf.length,sha256:pdfSha(pdf),role:'PDF_DOWNLOAD',mime:'application/pdf'},webpBytes,combinedBytes:webpBytes+pdf.length,verification:{allPagesDecoded:true,webpPixelsEqual:true,pdfPixelsEqual:true,noSourceComponents:true},nativeSummary};

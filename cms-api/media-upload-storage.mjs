@@ -2,6 +2,8 @@ import {request as httpRequest} from 'node:http';
 import {createHash} from 'node:crypto';
 import {ApiError} from '../contracts/errors.mjs';
 import {validateRuntime,STORAGE_BUCKET} from '../scripts/local-guard.mjs';
+import {DATA_ROOT,validateLocalDataRuntime} from '../scripts/local-data-guard.mjs';
+const durableModules=process.env.PINKY_LOCAL_DATA_MODE==='durable'?await Promise.all([import('./local-data-store.mjs'),import('./local-media-store.mjs')]):null;
 
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 const id=value=>typeof value==='string' && /^[A-Za-z0-9_-]{1,128}$/.test(value);
@@ -69,6 +71,11 @@ async function writeObject(key,bytes,mimeType,sha256){
 /** All keys are server allocated and private. This adapter never creates a
  * download token, public URL, IAM rule, deletion or overwrite operation. */
 export function createLocalMediaUploadStorage(){
+ if(process.env.PINKY_LOCAL_DATA_MODE==='durable'){
+  validateLocalDataRuntime();
+  durableStorage??=durableModules[1].createLocalMediaStore({root:DATA_ROOT,sqlite:durableModules[0].openLocalDataStore(DATA_ROOT).sqlite});
+  return durableStorage;
+ }
  const partKey=({assetId,objectId})=>{requireValue(id(assetId)&&id(objectId));return `private/media/v2/${assetId}/parts/${objectId}`;};
  const originalKey=({assetId,originalId})=>{requireValue(id(assetId)&&id(originalId));return `private/media/v2/${assetId}/originals/${originalId}`;};
  async function writeUpload({target,declaration},bytes){
@@ -88,3 +95,4 @@ export function createLocalMediaUploadStorage(){
   stat:metadata
  });
 }
+let durableStorage;

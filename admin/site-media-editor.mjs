@@ -1,4 +1,20 @@
+import {mountSharedLocalizationWorkspace} from './shared-localization-workspace.mjs';
+import {mountSiteSettings,mountSiteClients} from './site-settings-editor.mjs';
+import {mountSiteWork} from './site-work-editor.mjs';
+import {mountSiteServices} from './site-services-editor.mjs';
+import {mountSiteAbout,mountSiteIp} from './site-about-ip-editor.mjs';
+import {mountSiteContact,mountSiteFooter} from './site-contact-footer-editor.mjs';
+import {createContentLocaleSession} from './content-locale-session.mjs';
+import {createFullSiteLocalizationPreview} from './full-site-localization-preview.mjs';
+import {mountLocalizationReviewEditor} from './localization-review-editor.mjs';
+import {mountGroupLocalizationEditor} from './group-localization-editor.mjs';
+import {mountLocalizationSettings} from './localization-settings-editor.mjs';
+import groupLocalizationStylesheet from './group-localization-editor.css?url&no-inline';
+import {mountLocalizedCollection} from './work-services-localization-editor.mjs';
 import {z} from 'zod';
+import {mountProjectLocalizationEditor} from './project-localization-editor.mjs';
+import projectLocalizationStylesheet from './project-localization-editor.css?url&no-inline';
+import heroLocalizationStylesheet from './hero-localization-editor.css?url&no-inline';
 import {createCmsIcon} from './cms-icons.mjs';
 import {siteDirtyGroups} from './site-group-dirty.mjs';
 import {createImagePreview} from './media-image-preview.mjs';
@@ -10,11 +26,8 @@ import {sourceCheckRequestSchema,sourceCheckReceiptSchema} from '../contracts/so
 import {sourceCheckV3Schema} from '../contracts/media-v3-attestations.mjs';
 import {revisionSchema,resourceIdSchema,hashSchema} from '../contracts/hero.mjs';
 import {siteNode,siteButton,mountSiteFields} from './site-fields.mjs';
-import {mountSiteSettings,mountSiteClients} from './site-settings-editor.mjs';
-import {mountSiteWork} from './site-work-editor.mjs';
-import {mountSiteServices} from './site-services-editor.mjs';
-import {mountSiteAbout,mountSiteIp} from './site-about-ip-editor.mjs';
-import {mountSiteContact,mountSiteFooter} from './site-contact-footer-editor.mjs';
+import {mountServiceLocalizationEditor} from './service-localization-editor.mjs';
+import serviceLocalizationStylesheet from './service-localization-editor.css?url&no-inline';
 import {openMediaSlotPicker} from './media-slot-picker.mjs';
 import {createSiteMediaPreview,createSavedSiteManifestResolver,parseSiteMediaDraft,validateSiteMediaSnapshot} from './site-media-preview.mjs';
 import {strictMediaV2JsonSchema} from '../contracts/media-v3-metadata-v2.mjs';
@@ -81,13 +94,24 @@ function savePlan(saved,target,context){
  return plans;
 }
 
-export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
- const owned=siteNode('section',undefined,{'aria-label':'Toàn website'}),status=siteNode('p','Đang tải Toàn website…',{id:'v3-status',role:'status','aria-live':'polite'}),body=siteNode('div'),actions=siteNode('div',undefined,{class:'editor-actions'}),workflow=siteNode('section',undefined,{id:'v3-workflow',class:'cms-review-layout','data-cms-pane':'review','aria-label':'Gửi và duyệt website media'}),previewRoot=siteNode('section',undefined,{class:'site-media-preview cms-preview-panel','aria-label':'Xem trước website media đã lưu'});
+export function ensureHeroLocalizationStylesheet(document){
+ if(document.getElementById('hero-localization-stylesheet'))return;
+ const stylesheet=document.createElement('link');stylesheet.id='hero-localization-stylesheet';stylesheet.rel='stylesheet';stylesheet.href=heroLocalizationStylesheet;document.head.append(stylesheet);
+}
+
+export function mountSiteMediaEditor(root,{apiFetch,getSession,session,localeSession:providedLocaleSession}){
+ ensureHeroLocalizationStylesheet(root.ownerDocument);
+ const ownsLocaleSession=!providedLocaleSession,localeSession=providedLocaleSession??createContentLocaleSession({getSession});
+ if(!root.ownerDocument.getElementById('group-localization-stylesheet')){const sheet=root.ownerDocument.createElement('link');sheet.id='group-localization-stylesheet';sheet.rel='stylesheet';sheet.href=groupLocalizationStylesheet;root.ownerDocument.head.append(sheet);}
+ if(!root.ownerDocument.getElementById('service-localization-stylesheet')){const sheet=root.ownerDocument.createElement('link');sheet.id='service-localization-stylesheet';sheet.rel='stylesheet';sheet.href=serviceLocalizationStylesheet;root.ownerDocument.head.append(sheet);}
+ if(!root.ownerDocument.getElementById('project-localization-stylesheet')){const sheet=root.ownerDocument.createElement('link');sheet.id='project-localization-stylesheet';sheet.rel='stylesheet';sheet.href=projectLocalizationStylesheet;root.ownerDocument.head.append(sheet);}
+ const owned=siteNode('section',undefined,{'aria-label':'Toàn website'}),status=siteNode('p','Đang tải Toàn website…',{id:'v3-status',role:'status','aria-live':'polite'}),body=siteNode('div'),actions=siteNode('div',undefined,{class:'editor-actions'}),workflow=siteNode('section',undefined,{id:'v3-workflow',class:'cms-review-layout','data-cms-pane':'review','aria-label':'Xuất bản nội dung'}),previewRoot=siteNode('section',undefined,{class:'site-media-preview cms-preview-panel','aria-label':'Xem trước website media đã lưu'});
  const editCard=siteNode('section',undefined,{class:'cms-editor-card','data-cms-pane':'edit'}),cardHead=siteNode('div',undefined,{class:'cms-card-head'}),headingCopy=siteNode('div');headingCopy.append(siteNode('h2','Biên tập nội dung'),siteNode('p','Thay đổi được lưu vào bản nháp.',{class:'cms-card-subtitle'}));cardHead.append(headingCopy,siteNode('span','BẢN NHÁP',{class:'cms-badge'}));editCard.append(cardHead,body,actions);
  const submitCard=siteNode('article',undefined,{class:'cms-review-card'}),decisionCard=siteNode('article',undefined,{class:'cms-review-card'}),savedSummary=siteNode('p','Đang tải bản nháp đã lưu…',{class:'cms-saved-note'});
  submitCard.append(siteNode('p','01 / GỬI BẢN ĐÃ LƯU',{class:'cms-step-label'}),siteNode('h2','Gửi website để duyệt'),savedSummary,siteNode('p','Snapshot giữ đúng bản đã lưu tại thời điểm gửi.',{class:'cms-hint'}));workflow.append(submitCard,decisionCard);
  owned.append(status,editCard,workflow);root.append(owned);
  (root.ownerDocument.getElementById('cms-preview-host')??owned).append(previewRoot);
+ const fullPreviewRoot=siteNode('section');previewRoot.append(fullPreviewRoot);const fullPreview=createFullSiteLocalizationPreview(fullPreviewRoot,{apiFetch,getSession});
  const preview=createSiteMediaPreview(previewRoot,{apiFetch,getSession}),manifestResolver=createSavedSiteManifestResolver({apiFetch,getSession}),selected=new Map(),member=JSON.stringify([session.uid,session.role,session.authzVersion]);
  let saved,working,context,fields,controllers=[],pending=false,disposed=false,serial=0,controller,intent=null,snapshotRead=null,snapshotContext=null,pickerCleanup,missing=false,errorText='',qaDownload=null,selectedGroup,errorTarget=null,errorPath=null;
  function clearQaDownload(){
@@ -99,8 +123,9 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
  function guard(n){if(!active()||n!==serial||controller?.signal.aborted)throw new DOMException('Phiên đã thay đổi.','AbortError');}
  const dirty=()=>Boolean(saved&&working&&!same(saved.content,working));
  const staged=()=>controllers.some(c=>c.hasPendingInput?.());
- function canLeave(){return !(dirty()||staged()||intent)||window.confirm('Có thay đổi chưa lưu hoặc thao tác chưa được xác nhận. Rời trang?');}
+ function canLeave(){if(localizationReview?.canLeave()===false)return false;if(localizationReview?.hasPendingInput()&&!window.confirm('Có ghi chú hoặc thao tác duyệt chưa hoàn tất. Rời trang?'))return false;if(controllers.some(c=>c.canLeave&&!c.canLeave()))return false;return !(dirty()||staged()||intent)||window.confirm('Có thay đổi chưa lưu hoặc thao tác chưa được xác nhận. Rời trang?');}
  const editable=()=>active()&&['EDITOR','OWNER'].includes(getSession().role);
+ const unregisterLocaleWorkspace=localeSession.register({requestTransition:()=>!pending&&!intent,sync:()=>true});
  function emitDirtyGroups(groups){window.dispatchEvent(new CustomEvent('cms:site-dirty',{detail:{groups}}));}
  function update(){emitDirtyGroups(active()?siteDirtyGroups(saved?.content,working):[]);savedSummary.textContent=saved?'Toàn website · phiên bản '+saved.revision+' · Bản nháp đã lưu':'Chưa có bản nháp đã lưu.';if(qaDownload&&qaDownload.serial!==serial)clearQaDownload();fields?.setDisabled(!editable()||pending||Boolean(intent));save.disabled=!editable()||pending||staged()||Boolean(intent)||!dirty();reload.disabled=pending||Boolean(intent);importButton.hidden=!missing||!active()||getSession().role!=='OWNER';importButton.disabled=pending||Boolean(intent);snapshotButton.disabled=pending||Boolean(intent)||!saved||dirty()||staged();retry.disabled=!active()||pending||!intent;savedPreviewButton.disabled=!active()||pending||!saved;status.textContent=errorText||(intent?'Kết quả thao tác chưa xác nhận. Dùng cùng thao tác để thử lại.':saved?'Toàn website — phiên bản '+saved.revision+(dirty()?' — chưa lưu':' — đã lưu'):missing?session.role==='OWNER'?'Chưa có Home v3. Chọn “Nhập Home v2 hiện tại” để tạo bản nháp từ bản Home v2 đã lưu.':'Chưa có Home v3. Cần OWNER nhập bản Home v2 đã lưu để khởi tạo.':status.textContent);if(!pending&&errorPath){const path=errorPath;errorPath=null;const target=fields?.revealValidationPath(path);if(target instanceof Element){target.setAttribute('aria-invalid','true');fields?.revealTarget(target);}errorPath=null;}if(!pending && errorTarget){fields?.revealTarget(errorTarget);errorTarget=null;}}
  function fail(error){errorText=error.name==='AbortError'?'Phiên đã thay đổi.':error.status===409?'Xung đột phiên bản. Giữ thay đổi và tải bản mới để đối chiếu.':error.message||'Thao tác chưa được xác nhận.';status.textContent=errorText;
@@ -135,14 +160,15 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
   const changed=()=>{errorTarget=null;errorPath=null;for(const control of body.querySelectorAll('[aria-invalid]'))control.removeAttribute('aria-invalid');preview.clear();clearQaDownload();for(const component of controllers)component.refreshReferences?.();update();};
   uiContext.validateProjectAddition=(content,project,{claimSources=[],featured=false}={})=>{try{const candidate=copy(content);candidate.projects.push(copy(project));for(const binding of claimSources)if(binding.sourceIds.length)candidate.claimSources.push({claimPath:`projects/${project.id}/facts`,sourceIds:copy(binding.sourceIds)});if(featured)candidate.sections.find(section=>section.sectionId==='work').featuredIds.push(project.id);const valid=parseMediaV3Content(candidate,context);return {success:true,data:valid.projects.find(p=>p.id===project.id)};}catch{return {success:false};}};
   uiContext.validateServiceAddition=(content,service,{claimSources=[]}={})=>{try{const candidate=copy(content);candidate.services.push(copy(service));candidate.sections.find(section=>section.sectionId==='services').serviceOrder.push(service.id);for(const binding of claimSources)if(binding.sourceIds.length)candidate.claimSources.push({claimPath:`services/${service.id}/facts`,sourceIds:copy(binding.sourceIds)});const valid=parseMediaV3Content(candidate,context);return {success:true,data:valid.services.find(value=>value.id===service.id)};}catch{return {success:false};}};
-  const wrap=(key,label,sectionIds,mountComponent,extra={})=>({key,label,sectionIds,mount:(host,opts)=>{const c=mountComponent(host,{...opts,...extra});controllers.push(c);return c;}});
-  fields=mountSiteFields(body,{content:working,context:uiContext,initialGroup:selectedGroup,onChange:changed,components:[
-   wrap('settings','Đầu trang, Hero và SEO',[],mountSiteSettings,{includeContact:false}),wrap('clients','Khách hàng',['clients'],mountSiteClients),wrap('work','Dự án',['work'],mountSiteWork),wrap('services','Dịch vụ',['services'],mountSiteServices),wrap('about','Giới thiệu',['about'],mountSiteAbout),wrap('ip','IP Studio',['ip-studio'],mountSiteIp),wrap('contact','Liên hệ',['contact'],mountSiteContact),wrap('footer','Chân trang',['footer'],mountSiteFooter)]});
+  const sharedMounts={settings:(host,opts)=>mountSiteSettings(host,{...opts,includeContact:false}),clients:mountSiteClients,work:mountSiteWork,services:mountSiteServices,about:mountSiteAbout,ip:mountSiteIp,contact:mountSiteContact,footer:mountSiteFooter};
+  const wrap=(key,label,sectionIds,mountComponent,extra={})=>({key,label,sectionIds,mount:(host,opts)=>{const c=mountSharedLocalizationWorkspace(host,{...opts,...extra,localeSession},{key,mountShared:sharedMounts[key],mountLocalized:mountComponent});controllers.push(c);return c;}});
+  fields=mountSiteFields(body,{content:working,context:uiContext,initialGroup:selectedGroup,requestTransition:target=>{const guarded=controllers.filter(c=>c.requestTransition);return guarded.reduce((result,c)=>Promise.resolve(result).then(ok=>ok===true?c.requestTransition(target):false),Promise.resolve(true));},onChange:changed,components:[
+   wrap('settings','Đầu trang, Hero và SEO',[],(host,opts)=>mountLocalizationSettings(host,{...opts,apiFetch,getSession,mountMediaThumbnail:uiContext.mountMediaThumbnail,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))})),wrap('clients','Khách hàng',['clients'],(host,opts)=>mountGroupLocalizationEditor(host,{...opts,groupId:'clients',apiFetch,getSession,mountMediaThumbnail:uiContext.mountMediaThumbnail,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))})),wrap('work','Dự án',['work'],(host,opts)=>mountLocalizedCollection(host,{kind:'project',mountCollection:mountProjectLocalizationEditor,...opts,apiFetch,getSession,mountMediaThumbnail:uiContext.mountMediaThumbnail,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:project-context',{detail}))})),wrap('services','Dịch vụ',['services'],(host,opts)=>mountLocalizedCollection(host,{kind:'service',mountCollection:mountServiceLocalizationEditor,...opts,apiFetch,getSession,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:service-context',{detail}))})),wrap('about','Giới thiệu',['about'],(host,opts)=>mountGroupLocalizationEditor(host,{...opts,groupId:'about',apiFetch,getSession,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))})),wrap('ip','IP Studio',['ip-studio'],(host,opts)=>mountGroupLocalizationEditor(host,{...opts,groupId:'ip-studio',apiFetch,getSession,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))})),wrap('contact','Liên hệ',['contact'],(host,opts)=>mountGroupLocalizationEditor(host,{...opts,groupId:'contact',apiFetch,getSession,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))})),wrap('footer','Chân trang',['footer'],(host,opts)=>mountGroupLocalizationEditor(host,{...opts,groupId:'footer',apiFetch,getSession,onContext:detail=>window.dispatchEvent(new CustomEvent('cms:group-localization-context',{detail}))}))]});
   update();
  }
  async function readSaved(n){const parsed=parseSiteMediaDraft(await apiFetch('/api/cms/drafts/home-v3',{signal:controller.signal}));guard(n);return parsed;}
  async function load(){
-  if(pending||intent)return;errorText='';manifestResolver.clear();preview.clear();pickerCleanup?.();pending=true;const n=++serial;controller?.abort();controller=new AbortController();update();
+  if(pending||intent)return;errorText='';manifestResolver.clear();preview.clear();fullPreview.clear();pickerCleanup?.();pending=true;const n=++serial;controller?.abort();controller=new AbortController();update();
   try{const parsed=await readSaved(n);saved=parsed.draft;context=parsed.context;working=copy(saved.content);missing=false;selected.clear();mount();}
   catch(e){if(active()&&n===serial){missing=e.status===404&&e.code==='DRAFT_NOT_INITIALIZED';if(missing){fields?.destroy();fields=null;controllers=[];body.replaceChildren();saved=null;working=null;errorTarget=null;}else fail(e);}}
   finally{if(n===serial){pending=false;update();}}
@@ -179,10 +205,9 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
  }
  const snapshotInput=siteNode('input',undefined,{id:'v3-snapshot-id','aria-label':'Mã snapshot'});snapshotInput.maxLength=100;
  async function showSavedPreview(){
-  if(pending||!saved||!active())return;pending=true;errorText='';const n=++serial;controller=new AbortController();const actualSaved=copy(saved);update();
+  if(pending||!saved||!active())return;pending=true;errorText='';const n=++serial;controller=new AbortController();update();
   try{
-   const receipt=await manifestResolver.get(actualSaved);guard(n);
-   await preview.showSaved({savedDraft:actualSaved,mediaManifest:receipt.mediaManifest,expectedRevision:actualSaved.revision});guard(n);
+   preview.clear();previewRoot.hidden=false;for(const old of previewRoot.querySelectorAll(':scope>.site-media-preview-content'))old.hidden=true;await fullPreview.show(localeSession.get());guard(n);
   }catch(e){if(active())fail(e);}finally{pending=false;update();}
  }
  async function openSnapshot(id){
@@ -274,9 +299,10 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session}){
  actions.append(save,reload,importButton,retry,savedPreviewButton);submitCard.append(snapshotButton);decisionCard.append(siteNode('p','02 / XEM & QUYẾT ĐỊNH',{class:'cms-step-label'}),siteNode('h2','Duyệt bản website'),snapshotField,openSnapshotButton);
  function labeledField(parent,control,label){const wrapper=siteNode('div',undefined,{class:'editor-field'}),caption=siteNode('label',label);if(control.id)caption.htmlFor=control.id;wrapper.append(caption,control);parent.append(wrapper);}
 
- function sessionChanged(){if(active())return;emitDirtyGroups([]);manifestResolver.clear();closePinkySelects(document);serial++;controller?.abort();pickerCleanup?.();preview.clear();clearQaDownload();fields?.setDisabled(true);if(!active()){fields?.destroy();fields=null;disposePinkySelects(body);disposePinkySelects(workflow);body.replaceChildren();workflow.replaceChildren();status.textContent='Phiên đã thay đổi. Mở lại Toàn website.';}}
+ function sessionChanged(){if(active())return;if(ownsLocaleSession)localeSession.destroy();fullPreview.clear();emitDirtyGroups([]);manifestResolver.clear();closePinkySelects(document);serial++;controller?.abort();pickerCleanup?.();preview.clear();clearQaDownload();fields?.setDisabled(true);if(!active()){fields?.destroy();fields=null;disposePinkySelects(body);disposePinkySelects(workflow);body.replaceChildren();workflow.replaceChildren();status.textContent='Phiên đã thay đổi. Mở lại Toàn website.';}}
  function beforeUnload(event){if(dirty()||staged()||intent){event.preventDefault();event.returnValue='';}}
+ const localizationReview=mountLocalizationReviewEditor(workflow,{apiFetch,getSession,getContent:()=>saved?.content});
  document.addEventListener('cms:session',sessionChanged);window.addEventListener('beforeunload',beforeUnload);void load();
- return Object.freeze({canLeave,destroy(){if(disposed)return;disposed=true;emitDirtyGroups([]);serial++;controller?.abort();pickerCleanup?.();disposePinkySelects(workflow);fields?.destroy();manifestResolver.destroy();preview.destroy();previewRoot.remove();clearQaDownload();document.removeEventListener('cms:session',sessionChanged);window.removeEventListener('beforeunload',beforeUnload);owned.remove();}});
+ return Object.freeze({canLeave,destroy(){if(disposed)return;disposed=true;emitDirtyGroups([]);serial++;controller?.abort();pickerCleanup?.();disposePinkySelects(workflow);localizationReview.destroy();fullPreview.destroy();unregisterLocaleWorkspace();if(ownsLocaleSession)localeSession.destroy();fields?.destroy();manifestResolver.destroy();preview.destroy();previewRoot.remove();clearQaDownload();document.removeEventListener('cms:session',sessionChanged);window.removeEventListener('beforeunload',beforeUnload);owned.remove();}});
 }
 

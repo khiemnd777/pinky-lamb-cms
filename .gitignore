@@ -1,5 +1,6 @@
 node_modules/
 .local/
+.cms-data-local/
 .preview-output/
 admin-dist/
 test-results/

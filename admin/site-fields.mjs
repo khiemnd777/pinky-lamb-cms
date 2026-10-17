@@ -15,24 +15,32 @@ export function siteHeadingNode(value){
 export const SITE_SECTION_LABELS=Object.freeze({clients:'Khách hàng',work:'Dự án',services:'Dịch vụ',about:'Giới thiệu','ip-studio':'IP Studio',contact:'Liên hệ',footer:'Chân trang'});
 
 /** Task11 foundation fields. Later section components mount through the same controller. */
-export function mountSiteFields(container,{content,context,onChange,components=[],initialGroup}){
+export function mountSiteFields(container,{content,context,onChange,components=[],initialGroup,requestTransition}){
  const frame=siteNode('div',undefined,{class:'site-fields-layout cms-section-layout'}),root=siteNode('fieldset',undefined,{id:'site-fields'}),navigation=siteNode('nav',undefined,{'aria-label':'Các mục website',class:'site-section-navigation cms-section-nav'});
  frame.append(navigation,root);container.append(frame);const mounted=[];let selectedGroup=initialGroup;let bodySorter;
  if(context.siteUx){frame.classList.add('ux-site-fields');const order=siteNode('section',undefined,{id:'site-structure-content',class:'editor-group cms-field-group','data-site-group':''});order.append(siteNode('h3','Cấu trúc website'),siteNode('p','Kéo các mục nội dung chính để đổi thứ tự. Các mục có khóa giữ nguyên vị trí.'));const fixed=(labels)=>{const host=siteNode('div',undefined,{class:'ux-structure-fixed'});for(const label of labels){const row=siteNode('div',undefined,{class:'ux-structure-fixed-row'});row.append(createCmsIcon('LockKeyhole'),siteNode('strong',label),siteNode('span','Cố định'));host.append(row);}order.append(host);};fixed(['Đầu trang, Hero và SEO','Khách hàng']);root.append(order);bodySorter=createSortableList({container:order,getIds:()=>[...content.sectionOrder],getLabel:id=>SITE_SECTION_LABELS[id],label:'Thứ tự nội dung chính',onReorder:ids=>{if(ids.length===4&&new Set(ids).size===4&&ids.every(id=>['work','services','about','ip-studio'].includes(id))){content.sectionOrder.splice(0,content.sectionOrder.length,...ids);onChange();}}});fixed(['Liên hệ','Chân trang']);mounted.push({setDisabled:value=>bodySorter.setDisabled(value),destroy(){bodySorter.destroy();}});}
  function publishNavigation(){if(context.siteUx)window.dispatchEvent(new CustomEvent('cms:site-navigation',{detail:{node:navigation,groupId:selectedGroup,label:root.querySelector(`#${selectedGroup} h3`)?.textContent??''}}));}
  function receiveGroup(event){selectGroup(event.detail?.id);}
  window.addEventListener('cms:site-group',receiveGroup);
- function selectGroup(id){
+ function commitGroup(id){
   const target=document.getElementById(id);if(!target || !root.contains(target))return;selectedGroup=id;closePinkySelects();
   for(const section of root.children)section.hidden=section.id!==id;
   for(const button of navigation.querySelectorAll('[data-site-group-target]')){const active=button.dataset.siteGroupTarget===id;button.setAttribute('aria-pressed',String(active));if(active)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');}
-  publishNavigation();
+  for(const controller of mounted)controller.setGroupActive?.(id===`site-component-${controller.groupKey}`);publishNavigation();return true;
  }
- function revealTarget(target,{focus=true,navigation=false}={}){
-  if(!target || !root.contains(target))return false;const path=target.dataset?.validationPath;for(const controller of mounted)if(path)controller.revealValidationPath?.(path);const section=target.closest('[data-site-group]');if(section)selectGroup(section.id);
+ let groupPending=false;function selectGroup(id){if(id===selectedGroup)return true;const target=document.getElementById(id);if(!target||!root.contains(target)||groupPending)return false;const allowed=requestTransition?.(`group:${id}`)??true;if(allowed?.then){groupPending=true;return allowed.then(ok=>ok===true&&commitGroup(id)).finally(()=>{groupPending=false;});}return allowed===true&&commitGroup(id);
+ }
+ function revealTargetCommitted(target,{focus=true,navigation=false}={}){
+  if(!target || !root.contains(target))return false;
   for(let parent=target.parentElement;parent && parent!==root;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
   document.dispatchEvent(new CustomEvent('cms:show-work',{detail:{pane:'edit'}}));
   if(focus){const focusTarget=navigation?document.getElementById('cms-resource-title')??target:target;if(!focusTarget.matches('input,textarea,button,a,[tabindex]'))focusTarget.tabIndex=-1;focusTarget.scrollIntoView({block:'start'});focusTarget.focus({preventScroll:true});}return true;
+ }
+ const after=(value,next)=>value?.then?value.then(next):next(value);
+ function revealTarget(target,options={}){
+  if(!target||!root.contains(target))return false;const section=target.closest('[data-site-group]');
+  return after(section?selectGroup(section.id):true,allowed=>{if(!allowed)return false;const path=target.dataset?.validationPath;const controller=mounted.find(c=>c.revealValidationPath&&c.ownsTarget?.(target));
+   return after(path&&controller?controller.revealValidationPath(path):true,shown=>shown===false?false:revealTargetCommitted(target,options));});
  }
  function fragment(event){const link=event.target.closest?.('a[href^="#site-"]');if(!link)return;const target=document.getElementById(link.getAttribute('href').slice(1));if(revealTarget(target)){event.preventDefault();}}
  frame.addEventListener('click',fragment);
@@ -59,7 +67,7 @@ export function mountSiteFields(container,{content,context,onChange,components=[
  }
  for(const component of components){
   const host=group(component.label,`site-component-${component.key}`);host.tabIndex=-1;if(component.key==='settings')addNavigation(component.label,'site-go-settings',host.id);
-  const controller=component.mount(host,{content,context,onChange});if(controller)mounted.push(controller);
+  const controller=component.mount(host,{content,context,onChange});if(controller){controller.groupKey=component.key;controller.ownsTarget=target=>host.contains(target);mounted.push(controller);}
  }
  for(const section of content.sections){
   const label=SITE_SECTION_LABELS[section.sectionId],id=`site-section-${section.sectionId}`;
@@ -73,6 +81,9 @@ export function mountSiteFields(container,{content,context,onChange,components=[
   if(section.sectionId==='work')summary.append(siteNode('p',`${content.projects.length} dự án`));
  }
  if(!settingsComponent){for(const section of root.children)if(!navigation.querySelector(`[data-site-group-target="${section.id}"]`))addNavigation(section.querySelector('h3')?.textContent??section.id,`site-go-${section.id}`,section.id);}
- selectGroup(selectedGroup && document.getElementById(selectedGroup)?selectedGroup:(context.siteUx?'site-component-settings':root.firstElementChild?.id));
- return {getSelectedGroup:()=>selectedGroup,revealTarget,revealValidationPath(path){const sectionId=path.startsWith('sections.')?content.sections[Number(path.split('.')[1])]?.sectionId:null;const key=sectionId==='ip-studio'?'ip':sectionId??(path.startsWith('projects.')?'work':path.startsWith('services.')?'services':path.startsWith('settings.clientLogos')?'clients':/^settings\.(showreel|credential)/.test(path)?'about':path.startsWith('settings.contact')?'contact':path.startsWith('settings.copyright')?'footer':'settings');selectGroup(`site-component-${key}`);for(const controller of mounted){const target=controller.revealValidationPath?.(path);if(target){if(target instanceof Element && root.contains(target))revealTarget(target);return target;}}return false;},setDisabled(value){if(context.siteUx){root.disabled=false;for(const control of root.querySelectorAll('input,textarea,button,select')){if(control.closest('.ux-form-tabs')||control.hasAttribute('data-site-view-only'))continue;if(value){if(control.dataset.siteLockDisabled===undefined)control.dataset.siteLockDisabled=String(control.disabled);control.disabled=true;}else if(control.dataset.siteLockDisabled!==undefined){control.disabled=control.dataset.siteLockDisabled==='true';delete control.dataset.siteLockDisabled;}}}else root.disabled=value;for(const controller of mounted)controller.setDisabled?.(value);},destroy(){window.removeEventListener('cms:site-group',receiveGroup);if(context.siteUx)window.dispatchEvent(new CustomEvent('cms:site-navigation',{detail:{node:null,groupId:null,label:''}}));navigation.remove();frame.removeEventListener('click',fragment);for(const controller of mounted)controller.destroy?.();frame.remove();}};
+ commitGroup(selectedGroup && document.getElementById(selectedGroup)?selectedGroup:(context.siteUx?'site-component-settings':root.firstElementChild?.id));
+ return {getSelectedGroup:()=>selectedGroup,revealTarget,revealValidationPath(path){
+ const sectionId=path.startsWith('sections.')?content.sections[Number(path.split('.')[1])]?.sectionId:null;const key=sectionId==='ip-studio'?'ip':sectionId??(path.startsWith('projects.')?'work':path.startsWith('services.')?'services':path.startsWith('settings.clientLogos')?'clients':/^settings\.(showreel|credential)/.test(path)?'about':path.startsWith('settings.contact')?'contact':path.startsWith('settings.copyright')?'footer':'settings');
+ return after(selectGroup(`site-component-${key}`),allowed=>{if(!allowed)return false;const controller=mounted.find(c=>c.revealValidationPath&&c.ownsTarget?.(document.getElementById(`site-component-${key}`)?.firstElementChild));if(controller)return after(controller.revealValidationPath(path),target=>{if(target instanceof Element&&root.contains(target))revealTargetCommitted(target);return target;});return false;});
+ },setDisabled(value){if(context.siteUx){root.disabled=false;for(const control of root.querySelectorAll('input,textarea,button,select')){if(control.closest('.hero-localization-editor')||control.closest('.project-localization-editor')||control.closest('.service-localization-editor')||control.closest('.group-localization-editor')||control.closest('.ux-form-tabs')||control.hasAttribute('data-site-view-only'))continue;if(value){if(control.dataset.siteLockDisabled===undefined)control.dataset.siteLockDisabled=String(control.disabled);control.disabled=true;}else if(control.dataset.siteLockDisabled!==undefined){control.disabled=control.dataset.siteLockDisabled==='true';delete control.dataset.siteLockDisabled;}}}else root.disabled=value;for(const controller of mounted)controller.setDisabled?.(value);},destroy(){window.removeEventListener('cms:site-group',receiveGroup);if(context.siteUx)window.dispatchEvent(new CustomEvent('cms:site-navigation',{detail:{node:null,groupId:null,label:''}}));navigation.remove();frame.removeEventListener('click',fragment);for(const controller of mounted)controller.destroy?.();frame.remove();}};
 }

@@ -66,7 +66,10 @@ const createRequest=exact({identity:createIdentity,core:coreSchema,metadataDiges
 const partRequest=exact({identity:partIdentity,expectedIntentRevision:rev,part:partSchema});
 const completeRequest=exact({identity:completeIdentity,expectedIntentRevision:rev});
 const cancelRequest=exact({identity:cancelIdentity,expectedIntentRevision:rev});
-const requestSchema=z.union([createRequest,partRequest,completeRequest,cancelRequest]);
+// Select the identity operation before parsing guarded nested fields. Trying the
+// CREATE parser against PART/COMPLETE would throw on absent core/actors and abort the union.
+const requestVariant=(operation,schema)=>z.unknown().refine(value=>value?.identity?.operation===operation).pipe(schema);
+const requestSchema=z.union([requestVariant('UPLOAD_CREATE',createRequest),requestVariant('UPLOAD_PART',partRequest),requestVariant('UPLOAD_COMPLETE',completeRequest),requestVariant('UPLOAD_CANCEL',cancelRequest)]);
 const receiptSchema=privateReceiptSchema.refine(asciiTypedStrings);
 const rawOperation=owned({receipt:receiptSchema,request:requestSchema,allocation:z.union([createAllocation,partAllocation,originalAllocation,lit(null)]),allocationHash:sha}).refine(operationRelations);
 

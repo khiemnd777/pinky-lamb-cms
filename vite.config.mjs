@@ -5,9 +5,10 @@ import {randomUUID} from 'node:crypto';
 import {ApiError,errorEnvelope} from './contracts/errors.mjs';
 import {existsSync,realpathSync} from 'node:fs';
 import { ROOT, validateRuntime,installNetworkFence } from './scripts/local-guard.mjs';
+import {validateLocalDataRuntime,installLocalDataNetworkFence} from './scripts/local-data-guard.mjs';
 import {m2Root,m2Environment,m2UiSources,m2Read} from './scripts/m2-recovery-profile.mjs';
 const privateNames=['legacy-assets.json','baseline-site.json','baseline-provenance.json','media-tool-lock.json','media-fixtures.json'];
-const privateSegment=/(?:^|\/)(?:\.local|cms-api|cms-recovery-api|docs|tests|scripts|infra-local|quarantine|private|media-cache|media-scratch)(?:\/|$)|pinky-lamb-cms-(?:recovery-)?api-local|\.env(?:[/?]|$)/i;
+const privateSegment=/(?:^|\/)(?:\.local|\.cms-data-local|cms-api|cms-recovery-api|docs|tests|scripts|infra-local|quarantine|private|media-cache|media-scratch)(?:\/|$)|pinky-lamb-cms-(?:recovery-)?api-local|\.env(?:[/?]|$)/i;
 function decodedPath(value){
   let decoded=value;
   for(let i=0;i<4;i++){const next=decodeURIComponent(decoded);if(next===decoded)return decoded;decoded=next;}
@@ -39,9 +40,14 @@ function privateImports(){
 }
 export function recoveryHtml(html){
  const meta=/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/g,matches=[...html.matchAll(meta)];
- if(matches.length!==1 || !matches[0][1].includes('http://127.0.0.1:9099') || !matches[0][1].includes('ws://127.0.0.1:5173') || !/<iframe[^>]*\bsandbox(?:\s|>)/.test(html))throw new Error('M2 recovery source CSP/sandbox unavailable');
- const csp=matches[0][1].replaceAll('http://127.0.0.1:9099','http://127.0.0.1:9098').replaceAll('ws://127.0.0.1:5173','ws://127.0.0.1:5175');
+ if(matches.length!==1 || !matches[0][1].includes('http://127.0.0.1:9099') || !matches[0][1].includes('ws://127.0.0.1:5273') || !/<iframe[^>]*\bsandbox(?:\s|>)/.test(html))throw new Error('M2 recovery source CSP/sandbox unavailable');
+ const csp=matches[0][1].replaceAll('http://127.0.0.1:9099','http://127.0.0.1:9098').replaceAll('ws://127.0.0.1:5273','ws://127.0.0.1:5175');
  return html.replace(matches[0][0],matches[0][0].replace(matches[0][1],csp));
+}
+function durableHtml(html){
+ const old=' http://127.0.0.1:9099';
+ if(!html.includes(old))throw Error('Local Admin CSP unavailable');
+ return html.replace(old,'');
 }
 export function recoveryBuildOutput(token){
  if(typeof token!=='string' || !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(token))throw new Error('M2 recovery build token required');
@@ -54,6 +60,7 @@ export function recoveryBuildOutput(token){
  * handling; no Firebase SDK or private server source enters the browser graph. */
 function canonicalCmsApi(){
   return {name:'canonical-cms-api',configureServer(server){
+    const durable=process.env.PINKY_LOCAL_DATA_MODE==='durable';
     let initialized=null;
     const safeFailure=(response,code)=>{
       if(response.headersSent){response.destroy();return;}
@@ -69,7 +76,8 @@ function canonicalCmsApi(){
         initialized=(async()=>{
           // The actual handler validates the demo runtime before loading SDKs,
           // then reuses canonical Auth/ACL, route validation and private reads.
-          validateRuntime();installNetworkFence();
+          if(durable){validateLocalDataRuntime();installLocalDataNetworkFence();}
+          else{validateRuntime();installNetworkFence();}
           const expressUrl=pathToFileURL(path.join(ROOT,'node_modules','express','index.js')).href;
           const apiUrl=pathToFileURL(path.join(ROOT,'cms-api','index.mjs')).href;
           const [{default:express},{handleRequest}]=await Promise.all([import(expressUrl),import(apiUrl)]);
@@ -93,11 +101,26 @@ function canonicalCmsApi(){
     }
     // Unmounted Connect middleware preserves /api/cms in req.url. Mounting the
     // Express app at that prefix would strip the path expected by actual routes.
+    if(durable){
+      let authHandler=null;
+      server.middlewares.use((request,response,next)=>{
+        const pathname=(request.url??'').split(/[?#]/,1)[0];
+        if(pathname!=='/api/auth'&&!pathname.startsWith('/api/auth/')){next();return;}
+        const host=request.headers.host,remote=request.socket.remoteAddress,origin=request.headers.origin;
+        const duplicate=['host','origin','cookie','authorization'].some(name=>request.rawHeaders?.filter((_value,index)=>index%2===0&&String(request.rawHeaders[index]).toLowerCase()===name).length>1);
+        if(duplicate||request.headers.authorization!==undefined||host!=='127.0.0.1:5273'||!['127.0.0.1','::ffff:127.0.0.1'].includes(remote)||origin&&origin!=='http://127.0.0.1:5273'){safeFailure(response,'FORBIDDEN');return;}
+        const route=pathname.slice('/api/auth/'.length),method=request.method;
+        if(!((route==='get-session'&&method==='GET')||(route==='sign-in/email'&&method==='POST')||(route==='sign-out'&&method==='POST'))){safeFailure(response,'NOT_FOUND');return;}
+        if(method==='POST'&&origin!=='http://127.0.0.1:5273'){safeFailure(response,'FORBIDDEN');return;}
+        if(method==='POST'&&(!/^application\/json(?:;|$)/i.test(request.headers['content-type']??'')||Number(request.headers['content-length']??0)>4096)){safeFailure(response,'BAD_REQUEST');return;}
+        (async()=>{if(!authHandler){validateLocalDataRuntime();const [{toNodeHandler},{localAuthServer}]=await Promise.all([import('better-auth/node'),import('./cms-api/authorization.mjs')]);authHandler=toNodeHandler(localAuthServer);}await authHandler(request,response);})().catch(()=>safeFailure(response,'LOCAL_RUNTIME_UNAVAILABLE'));
+      });
+    }
     server.middlewares.use((request,response,next)=>{
       const pathname=(request.url??'').split(/[?#]/,1)[0];
       if(pathname!=='/api/cms'&&!pathname.startsWith('/api/cms/')){next();return;}
       const host=request.headers.host,remote=request.socket.remoteAddress;
-      if(!['127.0.0.1:5173','localhost:5173'].includes(host)||!['127.0.0.1','::ffff:127.0.0.1','::1'].includes(remote)){safeFailure(response,'FORBIDDEN');return;}
+      if(!['127.0.0.1:5273','localhost:5273'].includes(host)||!['127.0.0.1','::ffff:127.0.0.1','::1'].includes(remote)){safeFailure(response,'FORBIDDEN');return;}
       application().then(app=>app(request,response,error=>safeFailure(response,error?'INTERNAL_ERROR':'NOT_FOUND'))).catch(()=>safeFailure(response,'LOCAL_RUNTIME_UNAVAILABLE'));
     });
   }};
@@ -106,11 +129,11 @@ export function createLocalViteConfig({recovery=false,output,cache}={}){return {
   root:path.join(ROOT,'admin'),
   publicDir:false,
   ...(recovery?{cacheDir:cache??path.join(ROOT,'.local/cache/cms-recovery-001/v2/vite-source-cache'),optimizeDeps:{noDiscovery:true,include:[]}}:{}),
-  define:{__PINKY_M2_RECOVERY__:JSON.stringify(recovery)},
-  server:{host:'127.0.0.1',port:recovery?5175:5173,strictPort:true,
+  define:{__PINKY_M2_RECOVERY__:JSON.stringify(recovery),__PINKY_LOCAL_DATA_DURABLE__:JSON.stringify(process.env.PINKY_LOCAL_DATA_MODE==='durable'&&!recovery)},
+  server:{host:'127.0.0.1',port:recovery?5175:5273,strictPort:true,
     ...(recovery?{proxy:{'/api/cms':{target:'http://127.0.0.1:5002',changeOrigin:false,rewrite:p=>`/demo-pinky-lamb-cms/us-central1/cmsApi${p}`}}}:{}),
     fs:{strict:true,allow:[path.join(ROOT,'admin'),path.join(ROOT,'contracts'),path.join(ROOT,'preview'),path.join(ROOT,'node_modules')],
-      deny:['**/.local/**','**/cms-api/**','**/cms-recovery-api/**','**/docs/**','**/tests/**','**/scripts/**','**/infra-local/**','**/quarantine/**','**/private/**','**/media-cache/**','**/media-scratch/**',...privateNames.map(name=>`**/contracts/${name}`),'**/node_modules/pinky-lamb-cms-api-local/**','**/node_modules/pinky-lamb-cms-recovery-api-local/**','**/.env*','**/*.pem','**/*.key']}
+      deny:['**/.local/**','**/.cms-data-local/**','**/cms-api/**','**/cms-recovery-api/**','**/docs/**','**/tests/**','**/scripts/**','**/infra-local/**','**/quarantine/**','**/private/**','**/media-cache/**','**/media-scratch/**',...privateNames.map(name=>`**/contracts/${name}`),'**/node_modules/pinky-lamb-cms-api-local/**','**/node_modules/pinky-lamb-cms-recovery-api-local/**','**/.env*','**/*.pem','**/*.key']}
   },
   plugins:[privateImports(),{name:'deny-private-local-files',configureServer(server){server.middlewares.use((req,res,next)=>{
     let url;try{url=decodedPath(req.url??'').replaceAll('\\','/');}catch{res.statusCode=400;res.end();return;}
@@ -123,7 +146,7 @@ export function createLocalViteConfig({recovery=false,output,cache}={}){return {
       if(!allowed || privateFile(actual)){res.statusCode=403;res.end('Private local file');return;}
     }
     next();
-  });}},...(!recovery?[canonicalCmsApi()]:[]),...(recovery?[{name:'m2-recovery-fixed-csp',transformIndexHtml:{order:'pre',handler:recoveryHtml}}]:[])],
+  });}},...(!recovery?[canonicalCmsApi()]:[]),...(recovery?[{name:'m2-recovery-fixed-csp',transformIndexHtml:{order:'pre',handler:recoveryHtml}}]:process.env.PINKY_LOCAL_DATA_MODE==='durable'?[{name:'local-durable-csp',transformIndexHtml:{order:'pre',handler:durableHtml}}]:[])],
   build:{outDir:recovery?output:path.join(ROOT,'admin-dist'),emptyOutDir:!recovery}
 };}
 export default defineConfig(({mode,command})=>{
@@ -137,6 +160,7 @@ export default defineConfig(({mode,command})=>{
    if(gate.task!=='CMS-RECOVERY-001' || gate.revision!==2 || gate.status!=='PASS_SOURCE_PRIVACY' || gate.reviewer!=='/root/pdf_setup_reviewer' || gate.coordinator!=='/root' || gate.actual_effort!=='high' || gate.runtime_observation?.model!=='gpt-6.1-sol' || gate.runtime_observation?.effort!=='high' || gate.ui_source_release!==true || JSON.stringify(gate.sources)!==JSON.stringify(m2UiSources()))throw new Error('Current High source/privacy release required');
    validateRuntime(m2Environment(m2Root(gate.runToken),process.env));installNetworkFence();cache=path.join(m2Root(gate.runToken),'vite-cache');
   }
- }else validateRuntime();
+ }else if(process.env.PINKY_LOCAL_DATA_MODE==='durable'){validateLocalDataRuntime();installLocalDataNetworkFence();}
+ else validateRuntime();
  return createLocalViteConfig({recovery,output,cache});
 });

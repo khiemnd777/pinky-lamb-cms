@@ -1,5 +1,14 @@
 # CMS-UX-003 — Follow-up đã kiểm chứng local, 16/10/2026
 
+## Trạng thái hiện hành — đã hoàn tất theo xác nhận của Khiêm
+
+**ĐÃ HOÀN TẤT / CLOSED_BY_HUMAN_CONFIRMATION — 17/10/2026 (Asia/Ho_Chi_Minh).** Xem [xác nhận trực tiếp, phạm vi đóng và bảng trạng thái hiện hành](../../tasks/plan.md). Khiêm xác nhận các plan đã xong và giao chỉ đồng bộ tài liệu, không sửa code hoặc chạy lại kiểm thử.
+
+Các trạng thái chờ duyệt/chưa hoàn tất, checkbox và bước tiếp theo trong phần bên dưới thuộc lịch sử trước xác nhận đóng; không tự mở lại plan/task từ các ghi nhận đó. Giữ nguyên bằng chứng PASS/FAIL/NOT_RUN, cờ kỹ thuật và giới hạn đã ghi nhận. Lần đồng bộ này không xác minh runtime, không ghi nhận release hoặc cấp quyền thực thi mới.
+
+## Nội dung lịch sử trước xác nhận đóng
+
+
 **SCOPED_REPAIRS_VERIFIED_LOCAL / HUMAN_ACCEPTED. LOCAL_COMPLETE=false.** Đã xử lý ba phần ưu tiên và hai lỗi focus phát hiện khi kiểm lại; không còn FAIL tái hiện trong các ca follow-up đã hoàn tất. Preview section navigation giữ HOLD riêng theo yêu cầu người dùng. Không dùng kết quả này để tự nghiệm thu toàn bộ CMS.
 
 **Human accepted — 16/10/2026.** Người dùng xác nhận trực tiếp: “Nhìn tốt rồi, nghiệm thu.” Phạm vi nghiệm thu là phần CMS UX vừa sửa và review theo hồ sơ này, gồm đủ 8 nhóm và các routine repairs follow-up. Preview navigation/control delta vẫn HOLD, chờ quyết định riêng; LOCAL_COMPLETE=false và trạng thái M3/M4 giữ nguyên. Các giới hạn kiểm thử bên dưới vẫn có hiệu lực.

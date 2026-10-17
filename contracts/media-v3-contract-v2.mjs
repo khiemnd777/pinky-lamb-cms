@@ -16,7 +16,7 @@ export const V2_MANIFEST_ORDER=Object.freeze({entries:'source, asset.id (LEGACY)
 const MiB=1024**2;
 export const V2_MEDIA_LIMITS=Object.freeze({
   IMAGE:Object.freeze({inputBytes:10*MiB,outputBytes:12*MiB,inputEdge:8192,inputPixels:40000000,outputWidth:1920,outputHeight:8192,widths:Object.freeze([320,960,1920])}),
-  PDF:Object.freeze({inputBytes:25*MiB,outputBytes:96*MiB,downloadBytes:64*MiB,pageBytes:32*MiB,pages:48,pageEdge:1600}),
+  PDF:Object.freeze({inputBytes:25*MiB,outputBytes:96*MiB,downloadBytes:64*MiB,pageBytes:64*MiB,pages:48,pageEdge:1600}),
   VIDEO:Object.freeze({inputBytes:128*MiB,outputBytes:49*MiB,videoBytes:48*MiB,posterBytes:MiB,width:1280,height:720,durationSeconds:300})
 });
 const assetIdSchema=z.string().regex(/^[A-Za-z0-9_-]{1,100}$(?![\s\S])/);

@@ -2,7 +2,8 @@ import {randomUUID} from 'node:crypto';
 import {readFileSync,lstatSync,realpathSync} from 'node:fs';
 import path from 'node:path';
 import {z} from 'zod';
-import {ROOT,validateRuntime} from '../scripts/local-guard.mjs';
+import {ROOT} from '../scripts/local-guard.mjs';
+import {validateCmsServerRuntime} from '../scripts/local-data-guard.mjs';
 import {strictSiteObject} from '../contracts/site-settings.mjs';
 import {ApiError} from '../contracts/errors.mjs';
 import {revisionSchema,hashSchema,resourceIdSchema,assertEnvelopeSize} from '../contracts/hero.mjs';
@@ -34,7 +35,7 @@ export function parseImportRequest(value){
 }
 /** Rebuild from pinned inputs, then compare both generated private artifacts. */
 export function loadTrustedBaseline(){
- validateRuntime(process.env,undefined,{server:true});
+ validateCmsServerRuntime();
  try{
   const result=mapBaselineSite(loadBaselineInputs());
   for(const [filename,value] of [['baseline-site.json',result.content],['baseline-provenance.json',result.provenance]]){

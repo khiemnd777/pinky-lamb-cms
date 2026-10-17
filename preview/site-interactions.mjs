@@ -245,6 +245,7 @@ export function enhanceSite(root = document) {
   const owner = root.nodeType === 9 ? root : root.ownerDocument;
   if (!owner?.defaultView) return;
   enhancedRoots.add(root);
+  if (owner.documentElement.hasAttribute('data-localized-qa')) { enhanceLocalizedQa(owner); return; }
   enhanceMenu(root, owner);
   enhanceProjects(root, owner);
   enhanceReel(root, owner);
@@ -255,4 +256,99 @@ export function enhanceSite(root = document) {
 if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => enhanceSite(), {once: true});
   else enhanceSite();
+}
+
+/** Opt-in P2 QA interactions; legacy site controllers above are unchanged. */
+async function enhanceLocalizedQa(document) {
+const [{LOCALE_COPY:copy},{parseLocaleURL,contextPath,localeDestination,P2_FIXTURE_POLICY}]=await Promise.all([import('./site-locale-copy.mjs'),import('./site-locale.mjs')]);
+const {location,history}=document.defaultView;
+const window=document.defaultView;
+const $ = selector => document.querySelector(selector);
+const $$ = selector => [...document.querySelectorAll(selector)];
+let context = parseLocaleURL(location.href,location.origin,P2_FIXTURE_POLICY);
+let locale = context.locale;
+let filter = context.filter;
+let pending = null;
+let returnFocus = null;
+let historyIndex = Number.isSafeInteger(history.state?.p2Index) ? history.state.p2Index : 0;
+let bypassHistoryGuard = false;
+let restoringHistory = false;
+const dirty = () => Boolean($('#brief-name').value || $('#brief-idea').value);
+function closePicker(focus = false) { $('#header-languages').hidden = true; $('#header-language').setAttribute('aria-expanded','false'); if(focus) $('#header-language').focus(); }
+function menu(open) { $('#mobile-nav').hidden = !open; $('.menu-toggle').setAttribute('aria-expanded', String(open)); $('.menu-toggle').setAttribute('aria-label',copy[locale][open ? 'menuClose' : 'menuOpen']); }
+function notice(text) { $('#context-notice').textContent = text; $('#context-notice').hidden = !text; }
+function paint() {
+ document.documentElement.lang = locale;
+ $$('[data-copy]').forEach(element => { element.textContent = copy[locale][element.dataset.copy]; });
+ $('#qa-hero').replaceChildren($(`template[data-qa-hero="${locale}"]`).content.cloneNode(true));
+ $('#route').textContent = contextPath(context,P2_FIXTURE_POLICY);
+ $('#showreel')?.addEventListener('click',() => $('#reel-dialog').showModal());
+ $('.current-locale').textContent = locale.toUpperCase();
+ $('#header-language').setAttribute('aria-label', `${copy[locale].language}: ${locale === 'en' ? 'English' : locale === 'vi' ? 'Tiếng Việt' : '日本語'}`);
+ $$('[data-locale]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.locale === locale)));
+ $$('[data-nav-label]').forEach(nav => nav.setAttribute('aria-label',copy[locale].mainNav));
+ $$('.footer-languages,.dialog-languages').forEach(group => group.setAttribute('aria-label',copy[locale].language));
+ $('.filters').setAttribute('aria-label',copy[locale].filters);
+ $('#close-project').setAttribute('aria-label',copy[locale].close);
+ $('#open-project').hidden = locale === 'ja'; $('.missing-project').hidden = locale !== 'ja';
+ $$('[data-filter]').forEach(button => { button.classList.toggle('active',button.dataset.filter === filter); button.setAttribute('aria-pressed',String(button.dataset.filter === filter)); });
+ menu($('#mobile-nav').hidden === false);
+}
+function commitLocale(nextLocale, fromHistory = false) {
+ const desired = localeDestination({...context,filter},nextLocale,P2_FIXTURE_POLICY);
+ const missing = desired.missing;
+ context = desired;
+ if($('#project-dialog').open && !context.project) $('#project-dialog').close();
+ if(context.project && !$('#project-dialog').open) $('#project-dialog').showModal();
+ locale = nextLocale; closePicker(); menu(false); notice(''); paint();
+ if(!fromHistory) { historyIndex++; history.pushState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY)); }
+ if(missing) { const url = new URL(location.href); url.hash = 'work'; history.replaceState({p2Index:historyIndex},'',url); notice(copy[locale].missingNotice); $('#work').scrollIntoView({block:'start'}); $('#context-notice').focus({preventScroll:true}); }
+}
+function requestLocale(nextLocale, source) {
+ if(nextLocale === locale) { closePicker(true); return; }
+ if(dirty()) {
+  returnFocus = source; pending = {locale:nextLocale}; closePicker();
+  if($('#project-dialog').open) { $('#project-dialog').close(); pending.reopenProject = true; }
+  $('#dirty-dialog').showModal(); $('#stay').focus(); return;
+ }
+ commitLocale(nextLocale);
+ if(!$('#project-dialog').open) $('#header-language').focus();
+}
+function stay() { const reopen = pending?.reopenProject; pending = null; $('#dirty-dialog').close(); if(reopen) $('#project-dialog').showModal(); if(returnFocus?.isConnected && !returnFocus.closest('[hidden]')) returnFocus.focus(); else if(!$('#project-dialog').open) $('#header-language').focus(); }
+$$('[data-locale]').forEach(button => button.addEventListener('click',() => requestLocale(button.dataset.locale,button)));
+$('#header-language').addEventListener('click',() => { const open = $('#header-languages').hidden; $('#header-languages').hidden = !open; $('#header-language').setAttribute('aria-expanded',String(open)); if(open) $('#header-languages button[aria-pressed=true]').focus(); });
+document.addEventListener('click',event => { if(!event.target.closest('.language-picker') && !$('#header-languages').hidden) closePicker(true); });
+document.addEventListener('keydown',event => { if(event.key === 'Escape' && !$('#header-languages').hidden) { event.preventDefault(); closePicker(true); } });
+$('.menu-toggle').addEventListener('click',() => menu($('#mobile-nav').hidden));
+$$('#mobile-nav a').forEach(link => link.addEventListener('click',() => menu(false)));
+$$('[data-filter]').forEach(button => button.addEventListener('click',() => {filter = button.dataset.filter;context.filter=filter;history.replaceState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));paint();}));
+$('#brief').addEventListener('submit',event => event.preventDefault());
+$('#stay').addEventListener('click',stay);
+$('#dirty-dialog').addEventListener('cancel',event => {event.preventDefault();stay();});
+$('#discard-switch').addEventListener('click',() => {
+ const target = pending; pending = null; $('#brief').reset(); $('#dirty-dialog').close();
+ if(target.historyDelta !== undefined) { bypassHistoryGuard = true; history.go(target.historyDelta); }
+ else { if(target.reopenProject) $('#project-dialog').showModal(); commitLocale(target.locale); if(locale !== 'ja') $('#header-language').focus(); }
+});
+function openProject() { if(locale === 'ja') {notice(copy[locale].missingNotice);$('#work').scrollIntoView({block:'start'});$('#context-notice').focus({preventScroll:true});return;} context.project='CASE1';history.replaceState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));$('#project-dialog').showModal(); }
+$('#open-project').addEventListener('click',openProject);
+function closeProject(){context.project=null;$('#project-dialog').close();history.replaceState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));}
+$('#close-project').addEventListener('click',closeProject);
+$('#project-dialog').addEventListener('cancel',event=>{event.preventDefault();closeProject();});
+$('#close-reel').addEventListener('click',() => $('#reel-dialog').close());
+document.addEventListener('click',event=>{const link=event.target.closest('a[href^="#"]');if(!link)return;event.preventDefault();context.section=link.hash.slice(1);historyIndex++;history.pushState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));document.getElementById(context.section)?.scrollIntoView();});
+window.addEventListener('beforeunload',event=>{if(dirty()){event.preventDefault();event.returnValue='';}});
+history.replaceState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));
+window.addEventListener('popstate',event => {
+ const nextIndex = Number.isInteger(event.state?.p2Index) ? event.state.p2Index : historyIndex;
+ const targetContext = parseLocaleURL(location.href,location.origin,P2_FIXTURE_POLICY); const nextLocale=targetContext.locale;
+ if(restoringHistory) {restoringHistory = false; $('#dirty-dialog').showModal(); $('#stay').focus();return;}
+ if(nextLocale !== locale && dirty() && !bypassHistoryGuard && nextIndex !== historyIndex) {
+  pending = {locale:nextLocale,historyDelta:nextIndex-historyIndex}; returnFocus = $('#header-language'); restoringHistory = true; history.go(historyIndex-nextIndex);return;
+ }
+ bypassHistoryGuard = false; historyIndex = nextIndex; context=targetContext;filter=context.filter;commitLocale(nextLocale,true);
+});
+paint();
+
+const initial=localeDestination(context,locale,P2_FIXTURE_POLICY);context=initial;if(initial.missing){notice(copy[locale].missingNotice);history.replaceState({p2Index:historyIndex},'',contextPath(context,P2_FIXTURE_POLICY));}if(context.project && locale!=='ja') $('#project-dialog').showModal();
 }

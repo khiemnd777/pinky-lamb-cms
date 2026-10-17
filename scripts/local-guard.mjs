@@ -34,7 +34,7 @@ export function validateConfig(value = config()) {
   const keys=(object,allowed)=>{if(!object || Object.keys(object).some(key=>!allowed.includes(key)))fail('unknown config key');};
   keys(value,['functions','firestore','storage','hosting','emulators']);keys(value.firestore,['rules','indexes']);keys(value.storage,['rules']);keys(value.hosting,['public','ignore','headers']);
   for(const name of ['auth','firestore','functions','hosting','storage','hub','logging'])keys(value.emulators?.[name],['host','port']);keys(value.emulators?.ui,['enabled']);
-  if(JSON.stringify(value.hosting.headers)!==JSON.stringify([{source:'/assets/**',headers:[{key:'Access-Control-Allow-Origin',value:'*'}]},{source:'/index.html',headers:[{key:'Access-Control-Allow-Origin',value:'http://127.0.0.1:5173'}]}]))fail('untrusted public headers');
+  if(JSON.stringify(value.hosting.headers)!==JSON.stringify([{source:'/assets/**',headers:[{key:'Access-Control-Allow-Origin',value:'*'}]},{source:'/index.html',headers:[{key:'Access-Control-Allow-Origin',value:'http://127.0.0.1:5273'}]}]))fail('untrusted public headers');
   for (const [name, port] of Object.entries(ENDPOINTS)) {
     if (value.emulators?.[name]?.host !== '127.0.0.1' || value.emulators?.[name]?.port !== port) fail(`invalid ${name} emulator`);
   }
@@ -543,6 +543,34 @@ export async function assertLocalLaunchAuthorized(mode){
   return true;
 }
 export function commandPlan(mode, extra = []) {
+  if(['multilingual-import','export-multilingual-site','activate-multilingual-site'].includes(mode)){
+    const scripts={'multilingual-import':'multilingual-import-local.mjs','export-multilingual-site':'export-multilingual-site-local.mjs','activate-multilingual-site':'activate-multilingual-site-local.mjs'};
+    if(extra.length!==4||extra[2]!=='--run-id'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(extra[3]))fail('invalid multilingual tooling arguments');
+    const allowed=mode==='multilingual-import'?['validate','inventory','dry-run','apply','recover']:mode==='export-multilingual-site'?['--bundle','--release','--fetch','--serve']:[ 'prepare','serve'];
+    if(!allowed.includes(extra[0])||!/^\.local\/[A-Za-z0-9_./-]+\.json$/.test(extra[1])||extra[1].split('/').some(p=>!p||p==='.'||p==='..'))fail('invalid private multilingual tooling input');
+    return {node:path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node'),args:[path.join(ROOT,'scripts',scripts[mode]),...extra]};
+  }
+
+  if(mode==='multilingual-p3'){
+    if(extra.length<4||extra[0]!=='--mode'||!['unit','api','fixture','build','export'].includes(extra[1])||extra[2]!=='--run-id'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$/.test(extra[3]))fail('invalid P3 selectors');
+    if(extra[1]==='export'){if(extra.length!==6||extra[4]!=='--bundle'||!/^\.local\/(?:test-outputs|cache)\/multilingual-001\/p3-remainder-v1\/[A-Za-z0-9_./-]+\.json$/.test(extra[5])||extra[5].split('/').some(p=>!p||p==='.'||p==='..'))fail('invalid P3 bundle');}else if(extra.length!==4)fail('unexpected P3 arguments');
+    return {node:path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node'),args:[path.join(ROOT,'scripts/multilingual-p3-local.mjs'),...extra]};
+  }
+  if(mode==='multilingual-p3-project'){
+    if(extra.length<4||extra[0]!=='--mode'||!['unit','api','browser','export','build'].includes(extra[1])||extra[2]!=='--run-id'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$/.test(extra[3]))fail('invalid P3 Project selector');
+    if(extra[1]==='export'){if(extra.length!==6||extra[4]!=='--bundle'||!/^\.local\/(?:test-outputs|cache)\/multilingual-001\/p3-rep-v1\/[A-Za-z0-9_./-]+\.json$/.test(extra[5])||extra[5].split('/').some(p=>!p||p==='.'||p==='..'))fail('invalid P3 Project bundle');}else if(extra.length!==4)fail('unexpected P3 Project arguments');
+    return {node:path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node'),args:[path.join(ROOT,'scripts/multilingual-p3-project-local.mjs'),...extra]};
+  }
+  if(mode==='multilingual-p1'){
+    if(extra.length<4||extra[0]!=='--mode'||!['unit','api','browser','export'].includes(extra[1])||extra[2]!=='--run-id'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$/.test(extra[3]))fail('invalid P1 selector');
+    if(extra[1]==='export'){if(extra.length!==6||extra[4]!=='--bundle'||!/^\.local\/(?:test-outputs|cache)\/multilingual-001\/p1-v1\/[A-Za-z0-9_./-]+\.json$/.test(extra[5])||extra[5].split('/').some(p=>!p||p==='.'||p==='..'))fail('invalid P1 bundle');}else if(extra.length!==4)fail('unexpected P1 arguments');
+    return {node:path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node'),args:[path.join(ROOT,'scripts/multilingual-p1-local.mjs'),...extra]};
+  }
+  if(mode==='multilingual-p1-v2'){
+    if(extra.length<4||extra[0]!=='--mode'||!['unit','api','browser','export'].includes(extra[1])||extra[2]!=='--run-id'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$/.test(extra[3]))fail('invalid P1 selector');
+    if(extra[1]==='export'){if(extra.length!==6||extra[4]!=='--bundle'||!/^\.local\/(?:test-outputs|cache)\/multilingual-001\/p1-v2\/[A-Za-z0-9_./-]+\.json$/.test(extra[5])||extra[5].split('/').some(p=>!p||p==='.'||p==='..'))fail('invalid P1 bundle');}else if(extra.length!==4)fail('unexpected P1 arguments');
+    return {node:path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node'),args:[path.join(ROOT,'scripts/multilingual-p1-local.mjs'),'--profile-v2',...extra]};
+  }
   if(Object.hasOwn(RUNTIME_POLICY_PHASES,mode))return runtimePolicyOperatorPlan(mode,extra);
   if(['runtime-recovery-unit','runtime-recovery-live'].includes(mode)){
     if(extra.length)fail('R1 exact selector accepts no arguments');
@@ -1231,7 +1259,9 @@ export async function localGuardMain() {
     if(mode==='runtime-recovery-live'){assertRecoveryRelease();assertRecoveryPinnedSources();}
     if(!['runtime-recovery-unit','runtime-recovery-live'].includes(mode))await assertLocalLaunchAuthorized(mode);
     if(['emulators','storage-only'].includes(mode))await assertEmulatorPortsAvailable(mode);
-    if(['media-worker','export-media'].includes(mode)){
+    if(['multilingual-import','export-multilingual-site','activate-multilingual-site','multilingual-p1','multilingual-p1-v2','multilingual-p3-project','multilingual-p3'].includes(mode)){
+      const env=childEnvironment();validateRuntime({...env,...process.env});validateRuntime(env);launch(plan.node,plan.args,env);
+    }else if(['media-worker','export-media'].includes(mode)){
       const env=mediaApplicationEnvironment(mode);
       // No prepare/reset/configstore rewrite and no adoption of retained processes.
       // Only this newly spawned canonical application receives manual signals.

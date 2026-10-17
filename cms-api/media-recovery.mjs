@@ -1,5 +1,6 @@
 import {ApiError} from '../contracts/errors.mjs';
-import {validateRuntime,installNetworkFence,PROJECT} from '../scripts/local-guard.mjs';
+import {PROJECT} from '../scripts/local-guard.mjs';
+import {validateCmsServerRuntime,installCmsNetworkFence} from '../scripts/local-data-guard.mjs';
 import {mediaV2DocumentId} from './media-upload-domain.mjs';
 import {J1_LIMITS,parseJobRecord,parseGlobalSlot,planExpireLease} from './media-jobs-domain.mjs';
 
@@ -17,7 +18,7 @@ export function createMediaRecovery(options) {
   if(!db||typeof db.collection!=='function'||typeof db.runTransaction!=='function'||typeof clock!=='function') throw new ApiError('VALIDATION_ERROR');
   const now=()=>{const time=clock();if(!Number.isSafeInteger(time)||time<0||time>J1_LIMITS.maxTimeMs) throw new ApiError('VALIDATION_ERROR');return time;};
   const guard=()=>{
-    validateRuntime(process.env,undefined,{server:true});installNetworkFence();
+    validateCmsServerRuntime();installCmsNetworkFence();
     if(db.projectId!==PROJECT) throw new ApiError('LOCAL_RUNTIME_UNAVAILABLE');
   };
   const jobs=db.collection('cmsMediaJobs'),slotRef=db.collection('cmsMediaProcessingSlots').doc('global');

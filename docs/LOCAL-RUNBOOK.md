@@ -1,5 +1,49 @@
 # Pinky Lamb CMS — local runtime and recovery runbook
 
+## LOCAL-DATA-001 v1 — runtime hiện hành (17/10/2026)
+
+Từ repository root chạy `make run`. Admin/API mở `http://127.0.0.1:5273/login`, public baseline mở `http://127.0.0.1:5010/`, worker chạy cùng lệnh. Kho dữ liệu hiện hành là `pinky-lamb-cms/.cms-data-local/` (owner-only, Git ignored): `cms.sqlite` ở SQLite WAL/FULL/fullfsync, `auth.secret`, `objects/`, `cutover.json`. `make run` chỉ kiểm tra và mở dữ liệu; không seed, import, reset hoặc restore. Ctrl+C dừng server; dữ liệu không phụ thuộc shutdown hook. Nếu chạy lại khi cùng instance đang mở, runner xác minh marker/PID birth/command/port owner, dừng graceful instance cũ rồi mở mới. Port của ứng dụng khác vẫn bị từ chối.
+
+Cutover từ các emulator demo đã thực hiện sau khi đọc hai lần toàn nguồn và đối chiếu lần cuối: 3.502 collections gồm 48 nested, 17.139 documents thực cùng 48 missing ancestors, 1 Auth user và 221 Storage objects. Bản custody private ở `.local/data-custody/local-data-001-20261017-03/`; SQLite staging ở `.local/data-staging/local-data-001-20261017-03/`; backup riêng ở `.local/data-backups/local-data-001-stage-02/`; bản restore đã đối chiếu ở `.local/data-staging/local-data-001-restored-02/`. Backup nóng sau cutover ở `.local/data-backups/local-data-001-active-01/` cũng đã restore và đối chiếu vào `.local/data-staging/local-data-001-active-restored-01/`. Manifest SHA-256 nguồn `a24f75ac56f651ac5d99fd6c3085b73f8ae127b13cc3ae08b6e7bd454ab58406`. Cutover chỉ gửi SIGINT tới PID legacy 15465 và 65804 sau xác minh birth/command/port owner; hai listener group và Firestore đã đóng. Không xóa custody, backup hay các thư mục attempt không đầy đủ.
+
+Auth emulator phiên bản hiện tại lưu `fakeHash` có thể khôi phục mật khẩu gốc; importer chỉ xử lý định dạng đã kiểm chứng trong bộ nhớ, chuyển qua Better Auth hashing rồi bỏ session migration. **Không đưa `auth-source.json` hoặc manifest custody lên Git, chia sẻ hay log:** nguồn Auth chứa credential tương đương plaintext. Tài khoản OWNER đã đăng nhập thành công qua Better Auth sau import/restart; mật khẩu hiện hữu tiếp tục dùng được. Nên đổi mật khẩu khi có luồng đổi mật khẩu được phê duyệt và kiểm tra riêng.
+
+Backup mới khi app đang chạy: tạo trước một thư mục cha private 0700 ngoài `.cms-data-local`, sau đó chạy từ CMS root bằng Node pin:
+
+```sh
+.local/cache/node/node-v22.23.3-darwin-arm64/bin/node scripts/local-data-backup.mjs backup /absolute/private-parent/new-backup
+```
+
+Restore chỉ vào đường dẫn **chưa tồn tại** và chỉ sau khi dừng app; dùng `scripts/local-data-backup.mjs restore /absolute/backup /absolute/private-parent/new-restore`, rồi kiểm manifest/hash và chuyển destination theo kế hoạch phục hồi. Không chạy restore vào `.cms-data-local` đang hoạt động. `scripts/local-data-verify.mjs <custody> <destination>` đối chiếu bản đã import với manifest nguồn. Các lệnh `local-data-custody.mjs`, `local-data-init.mjs`, `local-data-migrate.mjs`, `local-data-cutover.mjs` chỉ dành cho lần chuyển nguồn có kiểm soát; không nằm trong startup thường ngày.
+
+Đã quan sát `make run` sáu lần, các lần thay thế sau khi sửa signal làm lệnh cũ thoát mã 0; Admin/public 200, anonymous 401, OWNER session 200, các GET CMS đại diện 200, SQLite integrity `ok`, counts không đổi. Bản restore cách ly đã ACK một document và media object, sau đó process writer bị SIGKILL; cả hai còn nguyên khi mở lại, `journal_mode=wal`, `synchronous=2` (FULL), `fullfsync=1`. Mất điện thật và browser UAT chưa được quan sát. Phần dưới là hồ sơ startup/recovery lịch sử từ trước cutover, không mô tả lệnh `make run` hiện hành.
+
+## LOCAL-STARTUP-001 v3 — canonical launcher (source handoff)
+
+Human trực tiếp ghi “Duyệt `LOCAL-STARTUP-001 v3`” trong chat ngày17/10/2026. Slice này chỉ sửa source/config/docs để bàn giao tự chạy; không chạy tests/build/runtime/emulator/data hoặc Git.
+
+Từ repository root, chạy:
+
+```sh
+make run
+```
+
+Makefile dùng đúng pinned Node `pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node`. Runner chuyển cwd vào CMS, chạy `scripts/local-guard.mjs emulators`, chờ readiness rồi chạy `scripts/local-guard.mjs dev`. Logs được giữ trên terminal; runner giữ foreground. Cần có sẵn Node22.23.3, dependencies và JDK/cache emulator theo setup đã được duyệt; lệnh không cài hoặc download prerequisites.
+
+Canonical Admin hiện dùng `http://127.0.0.1:5273/login`; public Hosting dùng `http://127.0.0.1:5010/` với `public-baseline`, chưa phải multilingual release. Runner từ chối nếu bất kỳ cổng `5273/9099/8080/5001/5010/9199/4400/4500/9299/9499` đã có listener hoặc trạng thái không xác định. Runner không attach, stop hoặc restart listener hiện hữu. Không tự dừng Docker/dịch vụ khác để giải phóng cổng.
+
+Readiness chờ tối đa120s cho năm endpoint emulator và Hub4400 (sáu cổng), rồi tối đa60s cho Admin `/login` HTTP200 và anonymous `/api/cms/session` HTTP401; mỗi network probe có timeout riêng. Đây chỉ là điều kiện startup, không xác nhận authenticated login, dữ liệu retained, QA hoặc toàn CMS. Nếu readiness lỗi hoặc một guard thoát, runner trả nonzero và gửi `SIGINT` chỉ tới các guard con do chính lượt chạy tạo. `Ctrl+C`, `SIGTERM` hoặc `SIGHUP` cũng yêu cầu dừng qua các guard đó; guard forward tới child trực tiếp. Các guard được cô lập khỏi signal terminal để tránh forward lặp. Runner chờ shutdown graceful; sau15s chưa đóng chỉ báo trạng thái chưa xác minh và tiếp tục chờ, không force-kill process group/PID tìm theo cổng. `SIGKILL`/mất máy không có bảo đảm cleanup.
+
+Launcher không seed/reset/import/restore, export-on-exit hoặc gọi cloud. Generic emulators không tự nạp dữ liệu của retained runtime trước đó; login/dữ liệu cũ có thể không hiện diện. Không chạy `make run` để thay thế hoặc phục hồi retained runtime đang chạy. Preflight từ chối listener thay vì nhận quyền sở hữu dữ liệu/dịch vụ cũ. Startup không import retained data và shutdown không tạo bản lưu dữ liệu emulator; không dùng launcher cho nội dung cần lưu bền vững trước khi có workflow persistence được duyệt.
+
+V3 giữ nguyên URL descriptor QA `http://127.0.0.1:5173` trong immutable metadata và hashes; transport chỉ kiểm URL/path đã allowlist rồi fetch qua API canonical5273. Không rewrite Snapshot/envelope/QA descriptor để đổi port. M2 recovery5175 và historical receipts/locks giữ riêng.
+
+**Verification:** source/syntax checks được ghi trong handoff của task. Tests/build/startup/emulator/HTTP/data/shutdown chưa chạy trong source slice này: `NOT_RUN`; availability hiện tại `Unknown`. Người dùng có thể tự chạy để kiểm tra khi prerequisites đủ; source handoff không là runtime acceptance.
+
+**Historical admission impact:** `scripts/local-guard.mjs` và runbook này thuộc `RECOVERY_SOURCE_PATHS`. Các sửa v3 làm hash nguồn hiện tại khác source-bound R2/recovery receipts cũ; future admission có thể từ chối. Không re-pin hoặc sửa historical receipt/lock để báo PASS. Historical evidence dưới đây giữ nghĩa tại thời điểm ghi nhận; không cấp quyền recovery/startup mới.
+
+## Historical runtime and recovery records
+
 M1 và M2 đã Accepted/CLOSED. M3 đang IN_PROGRESS; chưa M3 AC/E2E, nghiệm thu toàn CMS hoặc LOCAL_COMPLETE. M3-RUNTIME-01 revision1 đã được human Approved, nhưng01Ra chỉ code/unit/lint;01Rb phải chờ independent High PASS và source-bound release receipt. Chỉ demo `demo-pinky-lamb-cms`/loopback; production, M4, import/full restore ngoài phạm vi.
 
 **Verified historical:** original CLI/Auth/Functions/Hosting đã absent; Firestore Java65804 được giữ riêng và custody Firestore có5files/94366476B. Old Auth history, nguyên nhân exit, completeness và restore của copy vẫn Unknown/NOT_RUN. Native PDF36/36 (gồm18IMAGE/VIDEO) và isolated Storage task03 là proof riêng, không authenticated CMS/E2E. Preview01Va primitive PASS nhưng01Vb resource HOLD; task04/05 product integration chưa mở.
