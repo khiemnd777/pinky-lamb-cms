@@ -1,0 +1,117 @@
+{
+  "task": "CMS-RECOVERY-001",
+  "revision": 1,
+  "status": "IN_PROGRESS_SOURCE_REPAIR03_CURRENT_HIGH_REVIEW_PENDING",
+  "approved_by": "Khiêm (direct human user, verified by Project Coordinator)",
+  "approval_evidence": {
+    "quote": "Approved CMS-RECOVERY-001 v1 — local/emulators. Triển khai và kiểm thử đúng phạm vi đã trình, bảo toàn dữ liệu M1/M2, chỉ demo-pinky-lamb-cms và localhost. Bạn chạy test tính năng thật và lập báo cáo bằng hình ảnh từ giao diện thật, tôi sẽ review bằng báo cáo đó.",
+    "source": "Current parent chat direct human message; forwarded and verified by Project Coordinator /root",
+    "first_root_observation_utc": "2026-10-13 02:38:28 UTC",
+    "server_message_timestamp": "UNKNOWN_NOT_SUPPLIED"
+  },
+  "runtime_observation": {
+    "session": "01a13321-07c9-7e82-8b00-2eded6bbe10a",
+    "turn_context_line": 8,
+    "line_sha256": "52bc8cbb02196cfb0dcea921657a443f39a3c52026715c6b3aa59f0c2dcddd35",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "provider_attestation": "NOT_CLAIMED"
+  },
+  "source_base": {
+    "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/increment-01/source-base.json",
+    "sha256": "826acb8a12b1acb670b76f6fdcc82a9caeb84f1a59b58974adae3f2b8d89ea68"
+  },
+  "source_allowlist": [
+    "pinky-lamb-cms/scripts/local-guard.mjs",
+    "pinky-lamb-cms/scripts/m2-recovery-profile.mjs",
+    "pinky-lamb-cms/scripts/m2-recovery-local.mjs",
+    "pinky-lamb-cms/infra-local/firebase.m2-recovery.json",
+    "pinky-lamb-cms/cms-recovery-api/package.json",
+    "pinky-lamb-cms/cms-recovery-api/index.mjs",
+    "pinky-lamb-cms/vite.config.mjs",
+    "pinky-lamb-cms/admin/config-local.mjs",
+    "pinky-lamb-cms/admin/auth.mjs",
+    "pinky-lamb-cms/admin/site-editor.mjs",
+    "pinky-lamb-cms/admin/review.mjs",
+    "pinky-lamb-cms/admin/source-review.mjs",
+    "pinky-lamb-cms/tests/m2-recovery.test.mjs",
+    "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+    "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md"
+  ],
+  "environment": {
+    "project": "demo-pinky-lamb-cms",
+    "host": "127.0.0.1",
+    "admin": 5175,
+    "auth": 9098,
+    "functions": 5002,
+    "hub": 4401,
+    "logging": 4501,
+    "eventarc": 9298,
+    "tasks": 9498,
+    "retained_read_only": {
+      "firestore": 8080,
+      "hosting": 5010
+    }
+  },
+  "closed_scope": "Existing M2 home-v2 login/read only; new owned Auth fixtures only after native proof and High release; preserve M1/M2 membership/history/data; no old lifecycle; no write routes; no cloud/production/M4/acceptance/Git/dependency or permission changes",
+  "increment_01": [
+    "scripts/local-guard.mjs",
+    "scripts/m2-recovery-profile.mjs",
+    "scripts/m2-recovery-local.mjs",
+    "infra-local/firebase.m2-recovery.json",
+    "tests/m2-recovery.test.mjs"
+  ],
+  "native": "NOT_RUN_NO_HIGH_RELEASE",
+  "data": "NOT_RUN",
+  "user_acceptance": "PENDING",
+  "LOCAL_COMPLETE": false,
+  "increment_01_evidence": {
+    "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/increment-01/freeze.json",
+    "sha256": "6d5391380def3fc11076f587ff2ee466aec58f006b499ce3797bbeee65116924",
+    "unit_pass": 14,
+    "unit_fail": 0,
+    "lint_exit": 0,
+    "syntax_exit_codes": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "final_source_freeze": {
+    "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/source-repair-03-freeze/freeze.json",
+    "sha256": "eae7a740f2c7a1a396889ce31fe860118517d5a1ee034191e539c747e8b5cfb5",
+    "runtime_sources": 9,
+    "ui_sources": 14,
+    "closure_sources": 39,
+    "unit_pass": 39,
+    "lint_exit": 0,
+    "build_exit": 0,
+    "native_release": false,
+    "attempt3": "NOT_RUN"
+  },
+  "source_freeze_history": [
+    {
+      "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/final-code-20261013/freeze.json",
+      "sha256": "c8b095fdd4feb32a85362407213c9eb801e20dcaab7eedd1941b202fb779f409",
+      "runtime_sources": 9,
+      "closure_sources": 39,
+      "unit_pass": 33,
+      "lint_exit": 0,
+      "build_exit": 0,
+      "native_release": false
+    },
+    {
+      "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/source-repair-02-freeze/freeze.json",
+      "sha256": "180025e1bd472cc3d17d34e687dd63ccad73efd7a643afa66dafb69ff8df5dca",
+      "runtime_sources": 9,
+      "ui_sources": 14,
+      "closure_sources": 39,
+      "unit_pass": 37,
+      "lint_exit": 0,
+      "build_exit": 0,
+      "native_release": false,
+      "attempt2": "NOT_RUN"
+    }
+  ]
+}

@@ -1,0 +1,991 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-006 v1",
+  "observedAtUtc": "2026-10-14T08:23:05.047984+00:00",
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "ea72429b4c3cd80296b7ad75139431eb944aa319",
+    "headCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+    "gitHubMainComparison": "IDENTICAL observed by connector in preceding investigation",
+    "files": [
+      {
+        "path": ".agents/references/definition-of-done.md",
+        "gitBlobSha": "8d4cb8461da02e60c803c999d95860b41e6d2dab",
+        "sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "1d58f4989171f7305eb3101c823225fbbbdfd959",
+        "sha256": "bcf76a9cd03b5991a0acd22553ed040fba8f03c58b16fa4882b38164f5dbe06d"
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "b13b967edde53bd0b99eef14b25a87074a09a0b7",
+        "sha256": "eb494aacebd62152bafdb1410b17a2b033af8ca879d2e6cba9d0665cc092e397"
+      },
+      {
+        "path": ".agents/skills/using-agent-skills/SKILL.md",
+        "gitBlobSha": "7b9effcc6a48b12a4d2b7e2baa4eb3a9a00c0c07",
+        "sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+      },
+      {
+        "path": ".claude/references/definition-of-done.md",
+        "gitBlobSha": "8d4cb8461da02e60c803c999d95860b41e6d2dab",
+        "sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "1d58f4989171f7305eb3101c823225fbbbdfd959",
+        "sha256": "bcf76a9cd03b5991a0acd22553ed040fba8f03c58b16fa4882b38164f5dbe06d"
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "b13b967edde53bd0b99eef14b25a87074a09a0b7",
+        "sha256": "eb494aacebd62152bafdb1410b17a2b033af8ca879d2e6cba9d0665cc092e397"
+      },
+      {
+        "path": ".claude/skills/using-agent-skills/SKILL.md",
+        "gitBlobSha": "7b9effcc6a48b12a4d2b7e2baa4eb3a9a00c0c07",
+        "sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+      },
+      {
+        "path": "AGENTS.md",
+        "gitBlobSha": "c0ca319942614e2141ef87ebdc7a459c797d4038",
+        "sha256": "33a055c8a7fe372c9cfe9babc4338c4de643e48a0a39f00696bd392c0502d3e8"
+      },
+      {
+        "path": "README.md",
+        "gitBlobSha": "50192e980cf64b8a063f3c620c9a9a7e0b1a89b3",
+        "sha256": "1ae43e7d041fd78b1240fa800e8f21764779365e2fb51fe5868c6b1920eb61a3"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "c11266120dc9e0dec5d88fe54e5ecc50fae5840b",
+        "sha256": "9e3e8da33e82a7337aaf06dfa67eec21b9e7d7db22b5bbfa511e698abe51e877"
+      },
+      {
+        "path": "docs/roles/coordinator.md",
+        "gitBlobSha": "219207c41dfb6d305c4f02346c1fff9a227ef7a1",
+        "sha256": "8f406eac3aaadaa173fe6c89131f4c5dbb9cfc66eaef06f65cfa929c6114f6d4"
+      },
+      {
+        "path": "docs/roles/implementer.md",
+        "gitBlobSha": "eb61fc342765df4be3de003f7954672c0f745465",
+        "sha256": "614723bc3e02240d1ae8d2e70abf7864802710a626e5dbcde4dc2a76acd14d95"
+      },
+      {
+        "path": "docs/roles/reviewer.md",
+        "gitBlobSha": "dfc3c234e217555692dc647fa6ff924e046f9b70",
+        "sha256": "0e265282a62bd2a789d93f98827d36c8b82f77ceb3ce79db2bece0280675ad6e"
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "gitBlobSha": "ead48b4f39c208366366eea191fe17e382fb0ddd",
+        "sha256": "67161d3874c46fa6b92b1893c601fef74f0ffa172ff983a80a7e4d6e1bc12b2c"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "92ddebf8be70b3589d4033c49f75799c068885a6",
+        "sha256": "606278b73ebdf12369a38d05c113f165ec8b6fff7a50371fccf7b8a855d719f8"
+      },
+      {
+        "path": "docs/tasks/TASK-004.md",
+        "gitBlobSha": "6bf5a001c8166be0f85855132363c9ce019e0224",
+        "sha256": "fd18a38238577e34bb5712fb9b36dcfbac1b8885501dcd997f0cc53ab9b25290"
+      },
+      {
+        "path": "docs/team-policy.md",
+        "gitBlobSha": "878e60ea5e83758c2340ca2fc3965b4a478b5642",
+        "sha256": "16607323712c0103ce25f2dedaa6431bfccf02145646bbbc42c6475644d2b9be"
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "gitBlobSha": "a604ac6e994944dd0a676328e7ef222944c46abe",
+        "sha256": "9fe3bf3fbbaaa1c583d824a8ede461c58b7056783af08eb5a6218e45cc2e3b99"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "bf90a27275eaa12fab1a9d52f1e8076fc32b8abf",
+        "sha256": "6cca997d8b3516268fa06e7978f65f611791d3ae752f14c296f4f01b729182bd"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "23d2d36687c192612b14bfc29f7382327a7470c9",
+        "sha256": "cb5c9cd9c98f7d89745a1cc99962d1c6f5b85faaef8cf7be186453b5cb58ac0c"
+      }
+    ]
+  },
+  "records": [
+    {
+      "path": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "type": "file",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".agents/references/accessibility-checklist.md",
+      "type": "file",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "type": "file",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": ".agents/references/observability-checklist.md",
+      "type": "file",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".agents/references/orchestration-patterns.md",
+      "type": "file",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".agents/references/performance-checklist.md",
+      "type": "file",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".agents/references/security-checklist.md",
+      "type": "file",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".agents/references/testing-patterns.md",
+      "type": "file",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".agents/skills/api-and-interface-design/SKILL.md",
+      "type": "file",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "type": "file",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".agents/skills/code-simplification/SKILL.md",
+      "type": "file",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".agents/skills/context-engineering/SKILL.md",
+      "type": "file",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "type": "file",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "type": "file",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "type": "file",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "type": "file",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "type": "file",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/SKILL.md",
+      "type": "file",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "type": "file",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "type": "file",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/SKILL.md",
+      "type": "file",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "type": "file",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".agents/skills/source-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".agents/skills/spec-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".agents/skills/technote/SKILL.md",
+      "type": "file",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "type": "file",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "type": "file",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "type": "file",
+      "sha256": "8e80a38f893020cf12fe0c0b709c7d9d22c474af250a89a6398dccc2b70d141a"
+    },
+    {
+      "path": ".claude/agents/kit-implementer.md",
+      "type": "file",
+      "sha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b"
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "type": "file",
+      "sha256": "bed4a31fa817e0f11286e4d5a313c9b18b996931235268b342b4c1f4780ff60e"
+    },
+    {
+      "path": ".claude/references/accessibility-checklist.md",
+      "type": "file",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "type": "file",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": ".claude/references/observability-checklist.md",
+      "type": "file",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".claude/references/orchestration-patterns.md",
+      "type": "file",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".claude/references/performance-checklist.md",
+      "type": "file",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".claude/references/security-checklist.md",
+      "type": "file",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".claude/references/testing-patterns.md",
+      "type": "file",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".claude/skills/api-and-interface-design/SKILL.md",
+      "type": "file",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "type": "file",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".claude/skills/code-simplification/SKILL.md",
+      "type": "file",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".claude/skills/context-engineering/SKILL.md",
+      "type": "file",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "type": "file",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "type": "file",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "type": "file",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "type": "file",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "type": "file",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/SKILL.md",
+      "type": "file",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "type": "file",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "type": "file",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/SKILL.md",
+      "type": "file",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "type": "file",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".claude/skills/source-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".claude/skills/spec-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".claude/skills/technote/SKILL.md",
+      "type": "file",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".claude/skills/test-driven-development/SKILL.md",
+      "type": "file",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "type": "file",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "type": "file",
+      "sha256": "bf9999b74d053d03de528eb4aafa9067603d77f85eeb52227398710e85666fdd"
+    },
+    {
+      "path": ".codex/agents/kit-implementer.toml",
+      "type": "file",
+      "sha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428"
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "type": "file",
+      "sha256": "66e55e7be64e5e6f1ec233680cf9df4cd0e5d9a52c64a25d7a79c4e220895f53"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-BOUNDARY-DOD-CHECKLIST-01.md",
+      "type": "file",
+      "sha256": "4c78a591b040d618fbfa0c70c882c28101a4dce0eec9f06806e0ca7e8ca4f75f"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-1-STATUS.md",
+      "type": "file",
+      "sha256": "69b77cc06f8287ef21979f48a7bf790fd5734ce0ed1e3dcdde24c57c32eca97d"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-1.md",
+      "type": "file",
+      "sha256": "85bba2519e68ac1628903ca8fcd4acc2ab6c35f3d1856491593483e8ddb044d6"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-2.md",
+      "type": "file",
+      "sha256": "cf3c90c8853c67eacdfc08e4635fe21c7ea625c8914d1dd74c94ec9429c24e99"
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "type": "file",
+      "sha256": "6484c7d7f82a83a565267bc7716b3a9b9965a2da56da710044ce54c060397da7"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "type": "file",
+      "sha256": "2b11ac4f30a1aaa29453083d986f1c74a01a8cdb64225bdda5c4daddb97f0082"
+    },
+    {
+      "path": "docs/agent-kit/evidence/AGENTS-before.md",
+      "type": "file",
+      "sha256": "e8c8d8a08b2db7e82bf7a2d8bf09639d4e5fd5b430a3ec83ba4d1e8eab552522"
+    },
+    {
+      "path": "docs/agent-kit/evidence/approval-observation.json",
+      "type": "file",
+      "sha256": "859aceeca07cadea9a014154d44334a622498fe693e00375b1da7e010143cd1a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-agent-prompt-discovery-elevated.json",
+      "type": "file",
+      "sha256": "2293c1274ba2c7561d26c22b7253076f6cb8eecfea96230007725235b15ab5e1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-agent-prompt-discovery.json",
+      "type": "file",
+      "sha256": "7195fa5b7b6041917e44dcfa178a01eb6d3d4ae989db02209fecea92a7824bbe"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-project-layer-diagnostic-final.json",
+      "type": "file",
+      "sha256": "d11a4b23a8db48f933b8bd59f310d7701f3690ef6fa8ba94c485281d455f8a6c"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-project-layer-diagnostic.json",
+      "type": "file",
+      "sha256": "052397812fea115b7e87ab955965c8358666a04d7b0d66b50dc42a7abd3a9bb7"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-skills-discovery-elevated.json",
+      "type": "file",
+      "sha256": "02ae28807583af7de778f86a59580fbfcd6bcc9d8ee94d370ed2d4605b753997"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-skills-discovery.json",
+      "type": "file",
+      "sha256": "5e47016a3a49495c3552549c7a00248400136a52e48592a3603aa9f48e688419"
+    },
+    {
+      "path": "docs/agent-kit/evidence/config-read-helper.py",
+      "type": "file",
+      "sha256": "6e02346ef5f6794800bf7f648b60f5adf0826a32b3300af63885a45522c0cf2d"
+    },
+    {
+      "path": "docs/agent-kit/evidence/high-review-observation.json",
+      "type": "file",
+      "sha256": "c57f05899debda007d30b22f18858ca2204086ff47b75db98b3fb1f5f055b7e1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/import-batches.json",
+      "type": "file",
+      "sha256": "8ead56bf7a9b73eec2220b4974a36f3b8b39f74210992149ed28840cb2c91aff"
+    },
+    {
+      "path": "docs/agent-kit/evidence/native-discovery-20261013.json",
+      "type": "file",
+      "sha256": "6a75155e88bed1e73b1a879afd27d6e36e86ee4c59dcc11ce6be1d52adb53f74"
+    },
+    {
+      "path": "docs/agent-kit/evidence/native-discovery-helper.py",
+      "type": "file",
+      "sha256": "10e69219beaa02b1c70dfafe9d2f375c79ed7a71d746bd0d9129ceebd9db014a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-089c5e93f453431abab7ed5036cf3d02.json",
+      "type": "file",
+      "sha256": "2ef7b56930edee46e8e7324cbfff5fa054c2873c9046589313f680b408ef7880"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-28bd58b1de39471dbc56cfeaeebdbe38.json",
+      "type": "file",
+      "sha256": "270d78b83555f418b56d1fc28ab6ae184cf497cac408e909d97ba01f4611e80f"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-3dd47ed7bb374fa0b44bde86c85a92c3.json",
+      "type": "file",
+      "sha256": "b87dd1b32ef615925f48686e2e066438d0633795d1c3a603d8ae930f00ff1034"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-8268636c590e4a03963244b3dc5b07ee.json",
+      "type": "file",
+      "sha256": "8a5ddf57accdd82188d033e486538116a3b36468ccd5d8fe7c4224197aef8217"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-97a8caaafb4e4c9d82ff327a1a1aecaa.json",
+      "type": "file",
+      "sha256": "6de4ddff32a4a795359734b5b62cc946c05da119f653f40c72fd7d298cfa1ed4"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-closure.json",
+      "type": "file",
+      "sha256": "53dac9d7bc14201957b19a58282e8fbf467729c731befd1190b96a08c511383a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-final.json",
+      "type": "file",
+      "sha256": "15c1366a5a8e467b93247d92cb89816d420da8a94457ba0d2f11a43b95d3903d"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02/.owned-marker",
+      "type": "file",
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/28bd58b1de39471dbc56cfeaeebdbe38/.owned-marker",
+      "type": "file",
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/28bd58b1de39471dbc56cfeaeebdbe38/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/3dd47ed7bb374fa0b44bde86c85a92c3/.owned-marker",
+      "type": "file",
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/3dd47ed7bb374fa0b44bde86c85a92c3/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/8268636c590e4a03963244b3dc5b07ee/.owned-marker",
+      "type": "file",
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/8268636c590e4a03963244b3dc5b07ee/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/97a8caaafb4e4c9d82ff327a1a1aecaa/.owned-marker",
+      "type": "file",
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/97a8caaafb4e4c9d82ff327a1a1aecaa/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/os-06fd2e7e7bd44c3ca1ba90732f9f3122/.owned-marker",
+      "type": "file",
+      "sha256": "062afc1a83e86aeae9e464453bb37845ba5bc9f126e4f4e90c4ce2e9aba6528f"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/os-06fd2e7e7bd44c3ca1ba90732f9f3122/sentinel.txt",
+      "type": "file",
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-os-20261013-06fd2e7e7bd44c3ca1ba90732f9f3122.json",
+      "type": "file",
+      "sha256": "b2ba40aba37873d45051bc9f040c24b42a37a58c74961ceb5ae7150d17b4e33b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/preservation-before.json",
+      "type": "file",
+      "sha256": "b4ed6494de823e6e77141b5644c8f93eea2bdeae0b220e7fcfe4915c5019c63b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/root-integration-observation.json",
+      "type": "file",
+      "sha256": "2df06de118d5e3a86901a72ca571f0d000bbe6100e6c6beb9b7f40fa385bfcea"
+    },
+    {
+      "path": "docs/agent-kit/evidence/scoped-delta.json",
+      "type": "file",
+      "sha256": "9bcc0ab70e62c8f1e70641002acd501bb9564e21d0f3fe3a1c38bcf29a8d68b1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/static-verification.json",
+      "type": "file",
+      "sha256": "bf5f0eb062730daa09bee14fc67499f9ec1491e2f482a5579b7c6b081a3b2111"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/config-change.json",
+      "type": "file",
+      "sha256": "0cd4bd090d4ba298e46a48e219f168d3a2f78dd2cb37a250476bdf1cf8f71742"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/current-chat-registry-lookup.json",
+      "type": "file",
+      "sha256": "e3ed80f1c783b1719bfd5ffbfe7559b69a99890d71985d35069508f2026674e8"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/ephemeral-read-surface.json",
+      "type": "file",
+      "sha256": "b5ef3bdb713fac38544f8f94a3c594846e9711c5a26431ce6ba5f59dd854a9f2"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/extractor-validation.json",
+      "type": "file",
+      "sha256": "4f75f850972d1f5d1ec857285189bd12d42d7b8a00fd37bc5f389c5f62470560"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/final-config-observation.json",
+      "type": "file",
+      "sha256": "1c765e288121a9fa428687d9063b0c2a48ad438f668eb3bbdc5a6a70cddbb152"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt2-153858588045.json",
+      "type": "file",
+      "sha256": "d72242b92df8ee9f8b7813bf358b7533366c050c76bb6ba310c4a2a660268b72"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt3-154509589242.json",
+      "type": "file",
+      "sha256": "b6bcd0eec215b52fdb1bea42850fd8d4308b513eb3bc4737670c5a157e05004a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer.json",
+      "type": "file",
+      "sha256": "7b267f19e51fd4567fd7f8977e3db59113401900d69c875698289d5e4cd44832"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-source.py",
+      "type": "file",
+      "sha256": "4f5b2bcd152cf91183fcd51e1af9ae10780d88dd66ac354f329df102f2df5438"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-v3-source.py",
+      "type": "file",
+      "sha256": "6bc817df101aebfbef96ca68dd04877930ff19b98e5e53847f33a4f2dda7d194"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-config-read-helper.py",
+      "type": "file",
+      "sha256": "8ec4ba54b1a1e17d5288cae4c6df54890155ab332487ec67f2d405ae2fc4760b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-project-layer.json",
+      "type": "file",
+      "sha256": "cfe56188557db39fff8bc3bb06aa4e8bce35b51f55872fcde4beb3d42d08c4e2"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-prompt-helper.py",
+      "type": "file",
+      "sha256": "6324424a1abd5d65ec707c313aaeef46066f35fb2a2bac6063bb2a0d388bdac9"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-prompt-projection.json",
+      "type": "file",
+      "sha256": "fa61bb31ea8716f43c41edfebfa47ad7f47918221836f59d086cef50af240a54"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/preflight.json",
+      "type": "file",
+      "sha256": "4c3243ed70ba9f29c289bccdd42bda768adba9fc335a04da8f2cb945a00a29d9"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/protocol-read-surface.json",
+      "type": "file",
+      "sha256": "bbdb0b956256ecc5ce46478925eafcdcd05b5a92c6da2fca9ffc0f730cc61052"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/root-final-review.json",
+      "type": "file",
+      "sha256": "11acf955e97d62e8596e2b7f0e8aabdd486dbcfad00bfe431e656686b46f8118"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/root-final-static-observation.json",
+      "type": "file",
+      "sha256": "63c619536a8aee1525799614ba007b17e8800436d86f4ce6ac1ed2fa75b09cad"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/source-before.json",
+      "type": "file",
+      "sha256": "ecf989227033616ba6071d7d84d700a6a03013408ebbae7890d9fe5a27c91f1b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/source-preservation-after.json",
+      "type": "file",
+      "sha256": "c54fb6cdca5119f810c4137d5995e167bd542f10bba87d4be098c60fabae7f0a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/static-after.json",
+      "type": "file",
+      "sha256": "0438ad2f2534d93fcb589413b9f7d4ddf380d0a798f696e5fc32eb47cc9f98b5"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/trust-write-helper.py",
+      "type": "file",
+      "sha256": "f3666b7ef6b972ff13a515d45287c19960e83814d0c3ec0daddbff098b32c9cb"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-004-preflight.json",
+      "type": "file",
+      "sha256": "c32abb32bf09309e6cd81dc626ccfb0cacc75bdf425522d852bf72362cc26748"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-004-results.json",
+      "type": "file",
+      "sha256": "3b9c7ab889f2ee7ed793da70c29e54c70cd0e3122a2f0f8a56b8b91b575bdf14"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-005-preflight.json",
+      "type": "file",
+      "sha256": "ab007b17ead33c66a1e309b554fd27fc93abe3222c63781ddc5c74700297e280"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-005-results.json",
+      "type": "file",
+      "sha256": "9f262f5335475b582b6136a9d3e1db1b1aea7a8cdd6c4a6becb175099448ddc6"
+    },
+    {
+      "path": "docs/agent-kit/evidence/verify-setup.py",
+      "type": "file",
+      "sha256": "ca9638f1f8757c1027e65c1ad32edeae6fa9c96c2780c31420851638303bd84b"
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "type": "file",
+      "sha256": "ef6720e8654c15b64e06b7b957128be5c0bcf6cd05399df82026541a7df2c6eb"
+    },
+    {
+      "path": "docs/agent-kit/project-context.md",
+      "type": "file",
+      "sha256": "7369b3f94dfe8db01c67aaef75b23ec6c5f3d3aaaa4d2e53fa68a0172f1945a5"
+    },
+    {
+      "path": "docs/agent-kit/project-plan.md",
+      "type": "file",
+      "sha256": "36b69003792be040577492cf75f2f150635cbe67693957fb812cdbf702cf2732"
+    },
+    {
+      "path": "docs/agent-kit/project-state.md",
+      "type": "file",
+      "sha256": "7c3160ec0f1108035b07f04359b43cd2729c38e0fe4674a5da18a4947053e3fc"
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "type": "file",
+      "sha256": "8fe07bdee0e75b8f227266b5b49cdda727dff9e66bd5b2689f4bba31dddcd222"
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "type": "file",
+      "sha256": "5a37196f9aa95ffbd554115c3aabbd979c785eb59ba011e8541ad0817af8fdee"
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "type": "file",
+      "sha256": "5d8c6a30bff0472830231f606aa69d08b9b2b819e158d7e8e295cab86cb42d40"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "type": "file",
+      "sha256": "c046dcc66faa52747cc4367a2600dea4877f28f7c20a86edfb1a5b01a976e16f"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "type": "file",
+      "sha256": "5aae58c5e8453a463071b5c078e20d47a11377b964cecc6a2015fb85959f91b3"
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest.json",
+      "type": "file",
+      "sha256": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-DISCOVERY-002.md",
+      "type": "file",
+      "sha256": "8f3e4f411d6ab60bb984787d46b06ca9c448e9176e81fff63813dcb8b178f407"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-004.md",
+      "type": "file",
+      "sha256": "93e0e05213af34d760a10b20c64fa210c7f8062d284f8d28ea711deeba477e84"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-005.md",
+      "type": "file",
+      "sha256": "5cd5ec752c7995d5c33d03d4af52bd52b0c7627baf382d96ebd64a40cf1679d7"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-PERMISSION-003.md",
+      "type": "file",
+      "sha256": "30ef776d685c243499a543ea5596fc0bb392ae031f2c8a7332184f87112d49d9"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-SETUP-001.md",
+      "type": "file",
+      "sha256": "626d016fbb33f0c902583d5aafaec1942ad1091097728d225a9781b2e2b70c75"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-TRUST-001.md",
+      "type": "file",
+      "sha256": "42f25ef2aa8b03353354128f1fe0eabd858464355bfa82c0d81700359e49ea2a"
+    },
+    {
+      "path": "docs/agent-kit/tasks/README.md",
+      "type": "file",
+      "sha256": "9e1e4aa5e495bed9b86eb846e8e9643f3e40a80b2d963cef999cafcdccea0f42"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "type": "file",
+      "sha256": "763b198c109b1ccea1d687e2f0b2c30689e08dac2967f459e7508ee18665e1e3"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "type": "file",
+      "sha256": "3e71af13a3e3c5150dcb089ded5c2115c82127faa7326d299efad9828b8d14e4"
+    },
+    {
+      "path": "docs/agent-kit/technote.md",
+      "type": "file",
+      "sha256": "d3542a879731337333bb5482e239ca5c98bf82e4777e0566902aa1f95c1ff80e"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "type": "file",
+      "sha256": "71722244561d932be2ff2f9caf2483d5c1951a2f417717e1c9bbce19a13d035e"
+    },
+    {
+      "path": "docs/agent-kit/verification-results.md",
+      "type": "file",
+      "sha256": "b77f7671368feb49a60979387f11e30e0219b333ab3fb0c510832325a90d3d82"
+    },
+    {
+      "path": "engineering/agent-kit/LICENSE",
+      "type": "file",
+      "sha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e"
+    },
+    {
+      "path": "engineering/agent-kit/review-read-only.py",
+      "type": "file",
+      "sha256": "5e49614bcd0cf123301eaf62bdf436d25b87d86874631e9d5e38103a0e02fc4f"
+    },
+    {
+      "path": "engineering/agent-kit/test_review_read_only.py",
+      "type": "file",
+      "sha256": "78e85cc890a906ffeac349946fdd5d3fffb99a1c25ea25ab18f9c33b3c24ab22"
+    },
+    {
+      "path": "engineering/agent-kit/verify-guidance-update.py",
+      "type": "file",
+      "sha256": "69a6bf8cf4954b994f7e485bfbdc30d549b18f958456e93cff20657b6169d190"
+    },
+    {
+      "path": "engineering/agent-kit/verify-read-only-filesystem.py",
+      "type": "file",
+      "sha256": "0c053fe139031a3dcf5db9752cd464aab5703786015cbc4348c290087b15a74c"
+    },
+    {
+      "path": "engineering/agent-kit/verify-review-read-only.py",
+      "type": "file",
+      "sha256": "e8007bd2ef6374e15ed3c7395cbff7fa7988b462614470060d3d3afb5f05abb9"
+    },
+    {
+      "path": "engineering/agent-kit/verify-role-update.py",
+      "type": "file",
+      "sha256": "e7eac5db9501d7922fd9262c6db3ff64da95c028aa72bea543ab2cbbef63ee5f"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "file",
+      "sha256": "05c8979147391b5a4cf9da0f8a0ebf7a51b0052e5be82ec7b7a059e44cad2541"
+    },
+    {
+      "path": "engineering/AGENT-KIT-LOCK.json",
+      "type": "file",
+      "sha256": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+    },
+    {
+      "path": "engineering/AGENT-KIT-UPDATE-004-LOCK.json",
+      "type": "file",
+      "sha256": "33c6dbd603246c635bc6441223fe664b1cbee539474ecd5ac70ff38bd9fbcd21"
+    },
+    {
+      "path": "engineering/AGENT-KIT-UPDATE-005-LOCK.json",
+      "type": "file",
+      "sha256": "974ae50e4fa876c9fc5006a525bc68516a65a3697e52218d3b577d171adf66e3"
+    },
+    {
+      "path": "engineering/SKILLS-LOCK.json",
+      "type": "file",
+      "sha256": "527c5c89fd1295df633e68a14b75fe431fac582bcc8120830fb346acf19f0dfc"
+    },
+    {
+      "path": "approvals/APPROVAL-REGISTER.json",
+      "type": "file",
+      "sha256": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+      "type": "file",
+      "sha256": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2.scope.json",
+      "type": "file",
+      "sha256": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3-REGISTER.json",
+      "type": "file",
+      "sha256": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3.scope.json",
+      "type": "file",
+      "sha256": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c"
+    },
+    {
+      "path": "approvals/CMS-001-v2.scope.json",
+      "type": "file",
+      "sha256": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30"
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v1-REGISTER.json",
+      "type": "file",
+      "sha256": "71bc0f96a0e2e66def3575df7bdf62174916f8f998dc95f18344e18f6b03b7c9"
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v2-REGISTER.json",
+      "type": "file",
+      "sha256": "3678e7a34ac832c04d357d91b5f5c2065af64bf7975dbbe4cafa81b12d5ebd83"
+    },
+    {
+      "path": "approvals/M3-CONTINUE-04-REGISTER.json",
+      "type": "file",
+      "sha256": "321b196321963acf50a092e3dc88e3a48a87e51d0c22fa7924ab67f5eb26bd00"
+    },
+    {
+      "path": "approvals/M3-PARALLEL-COORDINATION-01-REGISTER.json",
+      "type": "file",
+      "sha256": "1fc79dc4b30f3a5df0ab17b07fe170c31bbe09230a517567fa5056146767469f"
+    }
+  ],
+  "boundary": "Repository-local agent package, root instructions, existing locks and approval JSON only. No CMS/runtime/emulator/global content scan or runtime availability claim."
+}

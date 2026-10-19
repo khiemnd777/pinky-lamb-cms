@@ -1,0 +1,1966 @@
+{
+  "proposal_id": "M3-CONTINUE-04",
+  "version": 1,
+  "parent": "CMS-001 v2 / M3",
+  "status": "IN_PROGRESS",
+  "approval": {
+    "quote": "Approved CMS-001 v2 — M3-CONTINUE-04 v1, IMAGE read-only candidate, isolated local/emulators. Chỉ demo-pinky-lamb-cms và localhost; phối hợp nhánh PDF, không chồng scope.",
+    "source": "Direct human message in this chat immediately following the named proposal and PDF ownership ACK",
+    "observed_date": "2026-10-13",
+    "exact_message_timestamp": null,
+    "grants": "Staged IMAGE read-only CMS candidate and isolated local/emulator verification within the presented scope"
+  },
+  "task_document": "pinky-lamb-cms/docs/M3-CONTINUE-04.md",
+  "source_destination": "pinky-lamb-cms/.local/test-outputs/m3/continue-04/<run-id>/workspace/pinky-lamb-cms",
+  "evidence_destination": "pinky-lamb-cms/.local/test-outputs/m3/continue-04/<run-id>",
+  "actual_run": "c7e5e1e7-355a-487b-b263-ca6c070c5ea7",
+  "project": "demo-pinky-lamb-cms",
+  "host": "127.0.0.1",
+  "ports": {
+    "admin": 5183,
+    "auth": 9103,
+    "firestore": 8083,
+    "functions": 5003,
+    "storage": 9203,
+    "hosting": 5013,
+    "hub": 4403,
+    "logging": 4503,
+    "eventarc": 9303,
+    "tasks": 9503,
+    "firestoreWebSocket": 9153
+  },
+  "limits": {
+    "browserSampledSummedRssMiB": 2048,
+    "retainedMediaMiB": 64,
+    "imageDerivativeMiB": 12,
+    "serializedPreviewMiB": 192,
+    "fixtureStoredMiB": 40,
+    "activeCandidateStacks": 1,
+    "sessionPollSeconds": 5,
+    "nativeImageSampledSummedRssMiB": 768,
+    "nativeImageNodeHeapMiB": 256,
+    "nativeImageThreads": 2,
+    "nativeImageTimeoutSeconds": 30
+  },
+  "dataset_budget": {
+    "newAuthAccounts": 8,
+    "newMembers": 7,
+    "newMediaVersions": 5,
+    "newStorageObjects": 7,
+    "oldDataWrites": 0
+  },
+  "owners": {
+    "coordinator": "/root",
+    "staged_source_A_to_E_owner": "/root/m3_continue_01",
+    "staged_operator_F_owner": "/root/m3_image_operator",
+    "reviewer": "/root/m3_continue_review"
+  },
+  "canonical_app_source_writes": false,
+  "canonical_promotion": "OUT_OF_SCOPE",
+  "pdf_coordination": {
+    "thread_id": "01a135ca-5716-7c20-9920-bbd64ddcbbfa",
+    "human_authority_verified": true,
+    "ownership_ack_sent": true,
+    "excluded_source_paths": [
+      "cms-api/media-pdf.mjs",
+      "cms-api/media-pdf-runtime.mjs",
+      "tests/fixtures/media-pdf.mjs",
+      "tests/media-pdf.test.mjs",
+      "docs/M3-PARALLEL-PDF-01.md"
+    ],
+    "heavy_native_slot": "IMAGE_PARTIAL_STACK_CLOSED_A_HIGH_VERIFIED_FUTURE_B_RETRY_HOLD",
+    "reader_alias_taxonomy_dependency": {
+      "decision": "M3-TOOLS-RECOVERY-01-B1A-ALIAS-TAXONOMY-REPAIR-01 v1",
+      "authority": "HUMAN_DELEGATED_COORDINATOR_APPROVAL_READ_CURRENT_REGISTER",
+      "path": "scripts/media-pdf-package-reader.py",
+      "owner": "PDF thread01a135ca-5716-7c20-9920-bbd64ddcbbfa",
+      "image_inventory_check": "Reader absent from immutable root-after-A-preservation actualBefore155/actualAfter155, isolated source13 and frozen21; manifest6bfb8c48 unchanged",
+      "identified_overlap": "NONE_IN_CHECKED_IMAGE_INVENTORIES",
+      "guard_change": "NONE_NO_BLANKET_EXEMPTION; exact155/source13/H2/runtime guards unchanged",
+      "limits": "Read-only inventory intersection only; no wholedependency/nonoverlap/runtime/package/native proof. PDF repair/barrier stay with PDF owner, IMAGE capability/first-flow admission unchanged"
+    }
+  },
+  "verification": {
+    "openingCanonicalBaseHashes": "MATCH_PRESENTED_BASE_12_FILES",
+    "candidatePorts": "NO_LISTENER_OBSERVED_PASSIVE_CHECK_ONLY",
+    "sourceCopy": "MANIFEST_40731_COPY_HASH_PAIRS_EQUAL_54_ACTUAL_CONTAINED_LINKS_VERIFIED_882_PROTECTED_RECORDS_EQUAL_BEFORE_AFTER_COPY",
+    "pureUnit": "A14_B10_C11_D7_E6_CURRENT48_PASS_F_CAPTURE_CURRENT21_PASS_B_CUSTODY_CURRENT38_PASS_ACTUAL_HIGH_VERIFIED",
+    "syntaxLintBuild": "FOCUSED_SYNTAX_LINT_PASS_CANDIDATE_BUILD_PASS_16_OUTPUT_HASHES",
+    "nativeReadiness": "A_STACK_CLOSED_ALL11PORTS_HIGH_VERIFIED_B_V2_SOURCE_CONTROL_PURE38_HIGH_PASS_FRESH_HEAVY_RETRY_PROPOSED_RUNTIME_HOLD",
+    "dataset": "NOT_RUN_ZERO_FIXTURE_WRITES",
+    "authApiRules": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "oldDataPreservation": "AFTER_A_KNOWN10_4531_FULL_CONTENT_CREATE_UPDATE_EQUAL_CANONICAL155_ACTUAL_ROWS_EQUAL_H2_TO_H2;882_EARLIER_EXISTING_DISK_EQUAL",
+    "independentFinalReview": "A_CLOSURE_PAGINATION6_B_V2_PLAN_CORE_SOURCE_FINAL_CONTROL_AND_ACTUAL38_ALL_ACTUAL_HIGH_VERIFIED_AUTH_API_BROWSER_NOT_RUN"
+  },
+  "native_fixture_attempts": [
+    {
+      "number": 1,
+      "namespace": "operator-work/f5407d5d-31d9-4e62-8e9e-4b14d9f101ee",
+      "root_tool_session": 51032,
+      "result": "FAIL_NATIVE_ATTEMPT",
+      "child_pid": 32847,
+      "exit_code": 1,
+      "signal": null,
+      "exit_close_observed": true,
+      "remaining_owned_pids": [],
+      "sampled_summed_rss_bytes": 60211200,
+      "samples": 1,
+      "produced_webp_files": 0,
+      "source_pins_equal": true,
+      "stderr_bytes": 1316,
+      "stderr_content": "LOST_NOT_RECONSTRUCTED_EXACT_CAUSE_UNKNOWN",
+      "separate_pure_diagnostic": "CLEAN_ENV_NODE_ADDS_EXACT_CF_USER_TEXT_ENCODING_ENTRY_CONDITION_REPRODUCED_NO_SHARP"
+    },
+    {
+      "number": 2,
+      "namespace": "operator-work/11ee2dfc-f534-4a53-8b07-247c3168aa69",
+      "root_tool_session": 24189,
+      "result": "PASS_NATIVE_IMAGE_FIXTURE_ONLY",
+      "child_pid": 34877,
+      "exit_code": 0,
+      "signal": null,
+      "exit_close_observed": true,
+      "remaining_owned_pids": [],
+      "sampled_summed_rss_bytes": 432848896,
+      "samples": 167,
+      "produced_webp_files": 6,
+      "source_pins_equal": true,
+      "elapsed_ms": 8558,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0,
+      "pixels": "ACTUAL_DECODE_PREDECLARED_RGB_ORACLE_TOLERANCE_12",
+      "loaded_closure": "PINNED_NODE_SHARP_ADDON_LIBVIPS_AND_SYSTEM_PATHS_ONLY",
+      "full_media_tools": "NOT_CLAIMED",
+      "independent_review": "PASS_NATIVE_IMAGE_FIXTURE_ONLY",
+      "fixture_elapsed_ms": 8489,
+      "loader_environment_limit": "Initial exact environment verified; Sharp sets VIPSHOME after load; no complete OS I/O containment claim"
+    }
+  ],
+  "coordination_authority": {
+    "record": "approvals/M3-PARALLEL-COORDINATION-01-REGISTER.json",
+    "direct_human_delegation_turn": "01a135fe-2996-74a3-9de3-ddea02948ecc",
+    "coordinator_thread": "01a135e2-c142-7842-ae74-e1d8998bb073",
+    "kind": "VERIFIED_COORDINATOR_APPROVAL_AUTHORITY_UNDER_DIRECT_HUMAN_DELEGATION",
+    "current_image_scope": "UNCHANGED_DIRECT_HUMAN_M3_CONTINUE_04_APPROVAL",
+    "new_branch_native_permission": "NONE"
+  },
+  "image_dependency_static_evidence": {
+    "path": "pinky-lamb-cms/.local/test-outputs/m3/continue-04/c7e5e1e7-355a-487b-b263-ca6c070c5ea7/coordinator-review/image-package-static-verification.json",
+    "sha256": "1453aaa91210a25fbf6971bb1406243e7dc6db1e56d5b8aef24ee4455b177c86",
+    "status": "PASS_1797_FROZEN_PACKAGE_PINS_ORIGINAL_AND_COPY_STATIC_LINKAGE_ONLY",
+    "native_execution": "PASS_NEEDED_IMAGE_FIXTURE_ONLY_NO_FULL_MEDIA_TOOLS_OR_PDF_CLAIM",
+    "full_media_tools": "NOT_CLAIMED_PDF_TOOL_BYTES_HOLD"
+  },
+  "acceptance": null,
+  "m3_closed": false,
+  "local_complete": false,
+  "out_of_scope": [
+    "upload",
+    "rights decisions",
+    "Draft/Snapshot binding",
+    "home-v3 import",
+    "PDF/video",
+    "QA export",
+    "canonical promotion",
+    "M4",
+    "Git",
+    "production/deployment",
+    "downloads/installations",
+    "global configuration or permission policy changes"
+  ],
+  "canonical_helper_future_exception": {
+    "id": "M3-TOOLS-RECOVERY-01-H2-PRESERVATION-01",
+    "authority": "HUMAN_DELEGATED_COORDINATOR_APPROVAL",
+    "status": "CANONICAL_H2_EFFECTIVE_EXACT_TUPLE_RECONCILED",
+    "path": "pinky-lamb-cms/scripts/media-tool-audit.mjs",
+    "before_sha256": "56d122ed0226c371a72e5048996508024e133a2b09e8d05b7e5e5f6b987fc2fc",
+    "before_bytes": 32510,
+    "after_sha256": "38f0bedc69b9e006cf1e9a16ac010061691c1b2ea8a74dffbd0d4b127ab4bd7d",
+    "after_bytes": 34537,
+    "current_runtime_guard": "EXACT_PINNED_H0_H2_METADATA_GUARD_SOURCE_PURE_HIGH_PASS",
+    "effective_requires": "Explicit Coordinator promotion decision/notification and separate exact additive current-canonical metadata reconciliation before next guard comparison",
+    "invariants": [
+      "Original155 baseline/882 receipts/stagedH0/locks/dependencies remain immutable",
+      "No baseline inode pin; require read-time custody stable and separate atomic replacement attribution",
+      "Every other mismatch remains HOLD; no blanket ignore or rebaseline"
+    ],
+    "guard_amendment": "M3-IMAGE-CANDIDATE-H2-GUARD-01 Coordinator Approved staged operator/driver/private pinned metadata + ONE bounded pure POOL08; source mutation/affectedHigh review pending",
+    "metadata_path": "pinky-lamb-cms/.local/test-outputs/m3/continue-04/c7e5e1e7-355a-487b-b263-ca6c070c5ea7/evidence/anticipated-media-tool-h2-8aa9f4ff.json",
+    "metadata_sha256": "04ca20dd2aadbca44c0fcdd2f0ea050506fe0fd0227f3c27beddcc383974b2ea",
+    "metadata_bytes": 529,
+    "operator_sha256": "aecd66063b3a020af36635ee47e668dc1b74b3c779a6c1caf714f08165d33c4b",
+    "driver_sha256": "27d4dd4cf2860462f27e5d447f2f3b3f2cdad09137aecec39c73a701ad18abec",
+    "pure_result_sha256": "67b63e9319ebba85b07502dd3b7eaae0323ae4a783d545cb250326cf3ad02fd9",
+    "pure_tests": 16,
+    "actual_writer_route": "Root independently read turn_context 2026-10-13T18:05:22.105Z gpt-6.1-sol medium",
+    "canonical_effective_write": "VERIFIED_H2_34537B_SHA38f0bedc69b9e006cf1e9a16ac010061691c1b2ea8a74dffbd0d4b127ab4bd7d_STAGED_H0_UNCHANGED",
+    "review": "Affected source/control and actual pure evidence High PASS; no Required"
+  },
+  "integration_attempts": [
+    {
+      "namespace": "operator-work/8aa9f4ff-659b-427a-a38c-6534d6d61547",
+      "status": "HOLD_FIRST_INTEGRATION",
+      "phase": "STACK_STARTUP",
+      "code": "OLD_COLLECTION_READ_FAILED",
+      "before_cli_spawn": true,
+      "services_spawned": 0,
+      "fixture_writes": 0,
+      "browser_spawned": 0,
+      "source13_equal": true
+    },
+    {
+      "namespace": "operator-work/b65a5587-736e-4535-901a-8439240fbb74",
+      "root_tool_session": 21607,
+      "parent_pid": 44658,
+      "status": "HOLD_RETAINED_PARTIAL_STARTUP",
+      "code": "STARTUP_CLEANUP_HOLD",
+      "cleanup_code": "PROCESS_GROUP_CHANGED",
+      "fixture_writes": 0,
+      "admin_spawned": 0,
+      "browser_spawned": 0,
+      "cli_pid": 44682,
+      "firestore_pid": 44730,
+      "storage_pid": 44751,
+      "source13_equal": true,
+      "closure": "NOT_VERIFIED"
+    }
+  ],
+  "collector_repair": {
+    "namespace": "operator-work/b65a5587-736e-4535-901a-8439240fbb74",
+    "operator_sha256": "6fd5e756ab97648ea47a97e10139d1a6781de4653719c36923d2c4932ec1635a",
+    "driver_sha256": "c44ce68791ff9f254787289f729126ca4bc6e16c014b28e1899616fc16251751",
+    "source_review": "ACTUAL_HIGH_PASS_NO_REQUIRED",
+    "pure_tests": "6_OF_6_ACTUAL_MEDIUM_PASS_POOL10_ONE_BATCH_EXIT_CLOSE0_PIDS_GROUP_ABSENT_CAPTURE_SOURCE_PINS_VERIFIED",
+    "actual_read": {
+      "status": "PASS_KNOWN10_FULL_NON_ATOMIC_READ_BEFORE_ONLY",
+      "documents": 4531,
+      "largest_collection_documents": 1471,
+      "evidence": "operator-work/b65a5587-736e-4535-901a-8439240fbb74/root-old-collections-before.json"
+    },
+    "limits": "25 per page,100 pages per collection,response16MiB,50000 nominal document cap; effective2500 per collection; errors/duplicates/token loops refuse",
+    "official_basis": "https://docs.cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/listDocuments",
+    "pure_result_sha256": "d97994a135c9de12faa406c93380c542bded03961a9f2f141add94d923e7701a",
+    "pure_runtime": {
+      "timestamp": "2026-10-13T18:59:55.702Z",
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "turn_id": "01a136a2-b686-7a20-8351-1d290f27b716"
+    },
+    "pure_pool": "POOL10_ACTUAL_BATCH_COMPLETE_RELEASED_NO_PENDING",
+    "pure_review": "ACTUAL_HIGH_EVIDENCE_PASS_6_OF_6_CAPTURE_CONTROL_SOURCE_PINS_NO_REQUIRED"
+  },
+  "custody_recovery_proposal": {
+    "id": "M3-CONTINUE-04-CUSTODY-01",
+    "version": 1,
+    "status": "PROPOSED_AWAIT_DELEGATED_COORDINATOR_DECISION",
+    "cause": "Installed Firebase SDK Firestore detached:true creates expected separate PGID; current generic guard rejects it. Early hub readiness also needs bounded missing-listener retry.",
+    "A_existing_recovery": "Fresh exact current CLI/Java identity, UID501, source/JAR/argv/config/generation/lineage/listener check; preserve raw logs/hash/partial-state. ONE direct CLI44682 SIGINT only; await SDK shutdown, parent child close and all admitted PID/group/11ports absent within15s. No repeated signal, broad group kill, seed/reset/export PASS. Remaining or changed identity => HOLD/separate decision.",
+    "B_future_source": "Medium F owns only staged scripts/run-m3-images-local.mjs, optional own scripts/m3-image-fixtures.mjs, fresh evidence driver/tests/control; keep strict native Sharp/browser guard. Separate SDK ledger admits exact Firestore detached group by actual verified lineage+generation+UID/executable/argv/pinnedJAR/config/runtime; retain known orphans through reparenting, reject PID reuse/foreign group members/arbitrary detach; all admitted groups measured/awaited. First CLI normal stop, no blanket relaxed ownership. Retained partial-start context/control exposed on failure. Missing expected startup listeners may retry only inside current60s readiness deadline; wrong listener identity immediately HOLD.",
+    "C_gates": "Affected independent High review; meaningful actual Medium pure cases with coordinated caps/slot; exact new source/driver refreeze, native2 reuse noSharp; source/known10 before-after; only after prior tree/ports absent fresh one stack.",
+    "out_of_scope": "No old data/global policy/tool pins/SDK/dependencies/native Sharp/browsers/PDF/canonical app edits; no second active stack or limit increase.",
+    "current_preservation_evidence": "operator-work/b65a5587-736e-4535-901a-8439240fbb74/root-retained-preservation.json",
+    "B_plan_status": "HIGH_B_PLAN_01_REQUIRED_VITE_CLOSE_ACTION_AND_CLI_VS_FULL_READY_WORDING_UNDER_REVISION"
+  },
+  "custody_recovery_A": {
+    "approval": "M3-CONTINUE-04-CUSTODY-01-A v1",
+    "authority": "HUMAN_DELEGATED_COORDINATOR_APPROVAL",
+    "status": "PASS_EXACT_ONE_SIGINT_CLOSURE_HIGH_VERIFIED",
+    "signal": {
+      "pid": 44682,
+      "signal": "SIGINT",
+      "count": 1
+    },
+    "known_sdk_pids": [
+      44682,
+      44730,
+      44751
+    ],
+    "remaining_owned_pids": [],
+    "all11ports_absent": true,
+    "elapsed_seconds_at_verified_absence": 1.6375107078347355,
+    "captured_parent_child_close": {
+      "code": 0,
+      "signal": null
+    },
+    "original_managed_parent": {
+      "pid": 44658,
+      "session": 21607,
+      "exit_code": 1,
+      "signal_sent": false
+    },
+    "evidence_namespace": "operator-work/b65a5587-736e-4535-901a-8439240fbb74",
+    "receipt_label_supplement": "root-custody-A-attribution-supplement.json",
+    "old_failed_attempt_immutable": true,
+    "fixture_writes": 0,
+    "export": "UNAVAILABLE_NOT_CLAIMED",
+    "B": "HOLD_NOT_APPROVED",
+    "runtime_restart": "NOT_RUN",
+    "post_preservation_evidence": "operator-work/b65a5587-736e-4535-901a-8439240fbb74/root-after-A-preservation.json"
+  },
+  "coordination_communication": {
+    "status": "OUTGOING_REJECTED_COORDINATOR_PULLS_OWN_RECORDS_NO_RETRY_REQUIRED",
+    "action": "send_message_to_thread Coordinator01a135e2-c142-7842-ae74-e1d8998bb073 factual A handoff and B coordination",
+    "reason": "Auto-review requires direct user authorization in sending chat; native exact human message and API original direct role=user from Coordinator were rechecked but retry rejected as tool/agent context. No indirect message/workaround performed.",
+    "user_question": "Async explicit permission question pending",
+    "unaffected_work": "A+pagination6 closed/highVerified; Coordinator independently pulled evidence and approved Bv2 SOURCE/static; proceed no outgoing workaround."
+  },
+  "custody_recovery_B": {
+    "id": "M3-IMAGE-OPERATOR-CUSTODY-B-01",
+    "version": 2,
+    "status": "HEAVY_RETRY_V2_CONSUMED_STARTUP_CLEANUP_HOLD_PRIMARY_SESSION_RETAINED",
+    "supersedes": "B-only v1 with missing independent Vite shutdown action",
+    "owners": {
+      "sole_writer": "/root/m3_image_operator",
+      "staged_source": [
+        "scripts/run-m3-images-local.mjs"
+      ],
+      "new_evidence_driver": "fresh immutable operator-work UUID/first-integration.mjs",
+      "extra_owned_evidence": "compact synthetic tests/supervisor/receipts; exact filenames/hash freeze before execution"
+    },
+    "unchanged": [
+      "scripts/m3-image-fixtures.mjs generic Sharp custody",
+      "browser custody",
+      "A–E sources",
+      "local guard/profile",
+      "SDK/dependencies/JDK/tools/pins",
+      "original failed drivers/receipts"
+    ],
+    "states": [
+      "STARTING_CLI",
+      "CLI_SERVICES_VERIFIED",
+      "STARTING_VITE",
+      "FULL_STACK_READY",
+      "PARTIAL_RETAINED",
+      "VERIFIED_CLOSED"
+    ],
+    "seed_gate": "Only FULL_STACK_READY; CLI_SERVICES_VERIFIED allows independently verified Vite admission",
+    "ledger": "Freeze exact CLI/Vite plans/config/rules/runtime0700/token/demo/Node68f4/JAR pins; UID501/fullstartgeneration/unbroken firstPPID lineage/PGID/actual executable+exactargv/cwd. Firestore sole detachedSDKJVM groupSelf exact jar/options/demo8083/9153/rules; Storage exact jarserve inheritedCLIgroup; Node only existing validated discovery/worker current immutableattempt/runtime. Vite independent knownChild pinnedNode/native-loaderargv/cwd/runtime/cache/listener5183; no OS child expected under current installed pins, esbuild/newnative/foreignchild HOLD. Cache prior verified tuples across proven reparenting; never admit orphan/group/name alone; UID/PIDreuse/source/argv/generation/groupmember drift HOLD/noSignal. Existing fixed JAVA_HOME loaded executable identity only; no invented fullJDK/systembyte pin or OScontainment.",
+    "retained_control": "Publish owned context before firstCLIspawn; driver installs STATUS/STOP before startupawait; cancellation waits actual startup/SDK operations; retain partialhandles/control throughfailure, no falseCLOSED. Uncertainty callback blocks normal cleanup/export until actual settlement.",
+    "normal_shutdown": "After trackedSDK/browser completion and uncertaintyclear, existing ownedexport+canonical additive/known10preservation before eitherclose iffixturewrites. ONE direct known ViteChild SIGTERM, awaitexit+close/PID+group+5183absence; only then ONE positive CLI SIGINT, installedSDK owns Javacleanup; awaitCLIclose+alladmittedPID/groups/all11portsabsence. Shared15s deadline fromfirstsignal, no repeated/group/KILL fallback. Vite timeout/drift leavesHOLD/noCLIsignal; partial0fixture/noVite maycloseCLI directly whileexportUNAVAILABLE staysfailed.",
+    "readiness": "Original60s; proven absent expected listener/notregistered expected hub entry alone PENDING, wrongforeign/nonloopback/protocol/API500/custody errors immediateHOLD.",
+    "pure_plan": "ONE new explicitly coordinated actualMedium directchild batch: six queued pagination +SDK/Vite exacttopology/wrongtuple/foreignchild/reparent/PIDreuse/orphan/allgroups/exitclose disagreement/signalordering/timeout+partialcontrols/interrupt/readiness/noearlyseed. Reuse reviewed v4capture controls256MiBheap/isolationnone/concurrency1/30sfileparent/64KiBstreams/36scontrolcleanup. NoSDK/HTTP/native/browser; source13/newdriver/control exacthash freeze+affectedHigh beforebatch/runtime.",
+    "runtime_retry": "NOT_APPROVED/NOT_RUN; sealed B retry proposal below awaits pureHigh and separate existingheavy admission; no Sharp rerun",
+    "heavy_retry_proposal_v1": {
+      "id": "M3-IMAGE-OPERATOR-CUSTODY-B-01-HEAVY-RETRY",
+      "version": 1,
+      "status": "NOT_ADMITTED_RETURNED_FOR_EXECUTION_ACTOR_CORRECTION_SUPERSEDED_BY_V2_PROPOSAL",
+      "basis": "Approved original M3-CONTINUE-04 IMAGE scope plus exact Bv2 source/control High0 and one admitted actual38/38 High0; unchanged Bv2 operating boundaries",
+      "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4; first integration/runtime/fixture/browser/export destinations unconsumed",
+      "driver": "first-integration.mjs SHA5a479ffd76c56b78d63456436806be40867524996fc565932a7a38c2e335e7a7",
+      "source_and_helpers": "Exact21 current/frozen inputs in custody-batch-admission-v2.json SHA6bfb8c48acc8c881af0de63b94f2c549d789ccf5bdcafafd3d42baded8ae99fd; source13/operator2bf6/statusb432/lifetime929b/SDKidentitya7 unchanged",
+      "command": "Existing managed operator path: pinned Node22.23.3 --test-name-pattern=^M3-CONTINUE-04 real IMAGE first-integration.mjs; exact EV cwd, interactive owned STATUS/STOP only; no source--plan or continuation execution from this admission",
+      "node_args": [
+        "--test-name-pattern=^M3-CONTINUE-04 real IMAGE",
+        "first-integration.mjs"
+      ],
+      "routing": "ActualMedium authored frozen driver/source; Root managed integration admission/launch/evidence path only, no Root code/unit fallback or child escalation",
+      "entry_checks": "Before ONE launch revalidate old admitted groups absent/all11new profile ports unoccupied, unused runtime/fixtures/browser/export namespace, exact21/Node/JAR/SDK/rules/package and fixedJDK/browserreceipt/native2 bindings, canonical155 currentH2 plus protected disk baseline; any unapproved drift/conflict HOLD",
+      "planning_passive_source_check": "155/155 canonical semantic rows match actualAfter of root-after-A-preservation.json, including acceptedH2: regular/bytesSHA/uid/mode/nlink/noAlias. Read-only only; no fresh PS/port/DB/SDK/OS custody evidence from this check",
+      "targets": "demo-pinky-lamb-cms, literal127.0.0.1 only; existing fixed11 ports, old listeners/data untouched",
+      "flow": "Capture known10 before; start CLI60s exact ledger with Firestore detachedgroup/Storage inherited; CLI_SERVICES_VERIFIED then Vite20s with no expectedOSchild; FULL_STACK_READY only before fixtureWritePossible marker and first seed; browserEDITOR library/detail960x600/nativeWebP pixels/clear then API smoke; source+known10 preservation; retain READY parent/stack",
+      "fixture_budget": "Reuse native2 sixWebPs and its token, no Sharp/native regeneration; first dataset only8 Auth/7members/5versions/7objects<=40MiB; rightsPENDING; olddatawrites0",
+      "budgets": "Browser one normal sandbox Chrome/headless/freshprofile/onepage/loopbackfence; sampled fullownedtree2048MiB/250ms; existing64MiB retained/12MiB derivative/192MiB serialized; no budgets raised; CLI/Vite4MiB perstream bounded private capture",
+      "closure": "Await actual startup/SDK/browser settlement and uncertaintyclear; owned export/preservation if writepossible; exact one positiveViteSIGTERM and exitclose+group5183absence before one positiveCLI SIGINT installedSDK shutdown, shared15s all admittedgroups/all11portsabsence. Partial0fixture/noVite mayCLIonly; inability/HOLD retains handles/no extra signals/retry; exportUNAVAILABLE staysfailure",
+      "success_boundary": "First actual smoke only; retain READY until separate sealed continuation/matrix admission, no reseed. Broad matrix/mobile/deactivation/latebytes/decode remains NOT_RUN",
+      "failure_boundary": "ONE launch consumes admission; capture failedphase/logs/source/custody/partialhandles. No automatic repair/restart, raisedcap, reset/import/delete/reseed/foreignsignal or fallbackSharp/browser",
+      "scope": "No PDF/VIDEO/fullproducer/upload/rightsdecisions/home-v3/M4/LOCAL_COMPLETE/canonicalpromotion/Git/cloud/global/install"
+    },
+    "medium_runtime_capability": {
+      "status": "VERIFIED_DEFAULT_PS_DENIED_APP_LIFETIME_NETWORK_LISTENERS_UNKNOWN",
+      "actor": "/root/m3_image_operator",
+      "runtime": {
+        "timestamp": "2026-10-13T21:01:24.771Z",
+        "model": "gpt-6.1-sol",
+        "effort": "medium",
+        "turn_id": "01a13711-ef75-77f0-8f2f-d7b6958406e3"
+      },
+      "probe": "/bin/ps -axo 'pid=,ppid=,pgid=,rss=,lstart='; ONE read-only default-permission probe, no args/credentials",
+      "exit": 127,
+      "stderr": "zsh:1: operation not permitted: /bin/ps",
+      "primary": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T22-48-34-01a135f3-86f9-7830-ac34-d837841c9791.jsonl:2424",
+      "tool_chunk": "3e4b12",
+      "fallback": "NONE_NO_ESCALATION_NO_RETRY_NO_APP_START_OR_SIGNAL",
+      "required_capability": "Frozen operator requires this exact process table access, source-bound argv/loadedexe/listener attribution and local connections; current child cannot satisfy even first requirement",
+      "handle_api": "session_id/write_stdin available, actual app lifetime custody NOT_RUN",
+      "permission_limit": ".codex/agents/kit-implementer.toml prohibits escalation/bypass; no adapter/profile/global/policy edit authorized",
+      "root_limit": "Coordinator actualHigh/xhigh may not launch application runtime as fallback"
+    },
+    "heavy_retry_proposal_v2": {
+      "id": "M3-IMAGE-OPERATOR-CUSTODY-B-01-HEAVY-RETRY",
+      "version": 2,
+      "status": "ACTUAL_HIGH_PLAN_PASS_PRIMARY_MEDIUM_PREFLIGHT4_PASS_HEAVY_NOT_ADMITTED",
+      "supersedes": "v1 execution actor only; all frozen source/control/caps/oneattempt/operating/data boundaries unchanged",
+      "execution_actor": "Primary operator in THIS chat under observed actualgpt-6.1-sol/Medium, selected by human through existing runtime controls; external Coordinator stays decision/read/review/messages, no app execution at High/xhigh",
+      "source_owner": "Existing F Medium remains sole sourcewriter and frozen; actualHigh source/control/actual38 proof reused, no code or pure rerun",
+      "capability_gap": "Existing childMedium PS denied; primary cannot self-select actualMedium with available tools. Primary permitted PS/argv/lsof/listener/local connection access still needs actual managed preflight, not assumed from model selection",
+      "current_primary_observed": {
+        "timestamp": "2026-10-13T20:49:43.580Z",
+        "model": "gpt-6.1-sol",
+        "effort": "xhigh",
+        "turn_id": "01a13707-3c7b-74e1-a55d-a07bd44034d1",
+        "primary": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T19-57-33-01a13556-f342-7222-828f-7509812bf862.jsonl",
+        "application_execution": "NOT_ALLOWED_IN_CURRENT_ROUTE"
+      },
+      "permission_path": "Use existing PRIMARY managed approval mechanisms only after exact recorded capability/runtime admission; no child escalation, adapter/global/profile/policy change, bypass or forced approval. Denied/unknown required access HOLD before app launch; any automatic-review rejection reported honestly",
+      "preflight_phase": "Separately admitted bounded PRIMARY Medium read-only process/listener/custody and existing loopback checks; no SDK/new CLI/Vite/seed/browser/import/reset/delete/signals. Freeze exact requested commands/receipt destinations for runtime approval. If required managed checks fail, no integration launch",
+      "preflight_commands": [
+        {
+          "executable": "/bin/ps",
+          "args": [
+            "-axo",
+            "pid=,ppid=,pgid=,rss=,lstart="
+          ],
+          "purpose": "Exact required process-table capability and oldknown numericPID/groupabsence only; no all-sourcebound absence claim and no privateargv collected by this capability command"
+        },
+        {
+          "executable": "/usr/sbin/lsof",
+          "args": [
+            "-nP",
+            "-iTCP:5183",
+            "-iTCP:9103",
+            "-iTCP:8083",
+            "-iTCP:5003",
+            "-iTCP:9203",
+            "-iTCP:5013",
+            "-iTCP:4403",
+            "-iTCP:4503",
+            "-iTCP:9303",
+            "-iTCP:9503",
+            "-iTCP:9153",
+            "-sTCP:LISTEN",
+            "-Fpcfn"
+          ],
+          "purpose": "All11candidate listeners absence; exit1/empty/nostderr maymeanabsence, permissionerror/uncertaintyHOLD"
+        },
+        {
+          "executable": "/usr/sbin/lsof",
+          "args": [
+            "-a",
+            "-p",
+            "OWN_CURRENT_TOOL_PROCESS_PID",
+            "-d",
+            "cwd,txt",
+            "-Fn"
+          ],
+          "purpose": "Bind positivePID from THIS exec handle/current shell $$ in the same live call, never guessed/cachedforeignPID; record resolvedargv privately. Read-only loadedexe/cwd capability only"
+        },
+        {
+          "executable": "/usr/bin/curl",
+          "args": [
+            "-q",
+            "--noproxy",
+            "*",
+            "--proto",
+            "=http",
+            "--max-time",
+            "3",
+            "--connect-timeout",
+            "1",
+            "--max-filesize",
+            "65536",
+            "--silent",
+            "--show-error",
+            "--max-redirs",
+            "0",
+            "--output",
+            "/dev/null",
+            "--write-out",
+            "%{http_code}",
+            "http://127.0.0.1:8080/"
+          ],
+          "purpose": "-q is FIRST to disable defaultcurlrc and inherited credentials/method/URLs; fixed read-only retainedFirestore root GET/bodydiscard/no redirects/writes. Transport capability only, not CMS/API acceptance"
+        }
+      ],
+      "preflight_capture": "Existing managed tool calls, per-command bounded capture; exactcommand/exit/stderr/status/effectiveaccess recorded additively at EV/primary-medium-route-preflight.json after admission. PS/lsof readiness budget2s then anyrunninghandle is HOLD/retained, not falsecompletion; GET3s cap64KiB. No extra retry or broad/foreign/app signal; actual required source/argv/listener/SDK checks repeat inside unchanged guarded integration driver",
+      "launch_phase": "After preflightPASS and fresh recorded single heavy admission, primaryMedium executes pinnedNode22.23.3 with node_args and exactcwd below via its own exec session; sole owner retains handle until READY or knownclosure/HOLD, STATUS/STOP via same owned write_stdin only",
+      "node_args": [
+        "--test-name-pattern=^M3-CONTINUE-04 real IMAGE",
+        "first-integration.mjs"
+      ],
+      "cwd": "pinky-lamb-cms/.local/test-outputs/m3/continue-04/c7e5e1e7-355a-487b-b263-ca6c070c5ea7/operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4",
+      "driver_sha256": "5a479ffd76c56b78d63456436806be40867524996fc565932a7a38c2e335e7a7",
+      "frozen_inputs": "Exact21 manifest6bfb8c48…/source13/operator2bf6/statusb432/lifetime929b/SDKidentitya7; Node68f4/JAR/rules/package/JDK/browserreceipt/native2; unchanged v1 full entry checks incl155currentH2/protected disk/oldknown10 and priorgroups/all11portsabsence",
+      "fixture_and_runtime_bounds": "Unchanged v1: one unconsumed namespace3e055;8Auth/7members/5versions/7objects<=40MiB firstonly dataset; native2 sixWebPs/noSharp; CLI60s/Vite20s/browser2048MiB sampledfulltree normalSandbox/fixedloopback fences and existing64/12/192MiB/4MiB captures",
+      "flow_and_controls": "Unchanged v1: markerbeforeseed FULL_STACK_READY only; EDITORlibrary/detail960x600WebPpixels/clear then APIsmoke, source/known10preservation and retainedREADY. Await real SDK/browser settlement+uncertaintyclear/export ifwritepossible; one ViteTERM before one CLIINT/shared15s/allgroups/all11portsabsence; partial0fixture/noVite mayCLIonly, exportUNAVAILABLE staysfailed. Drift/unknown retains custody/no extrasignal/retry",
+      "coordinator_boundary": "PrimaryOperator hands additive evidence for directCoordinator pull; actualHigh reviews affected operating/routing plan and actual evidence only, reuse source/control/pure0. No agent/model/session identity becomes app/script operating condition",
+      "acceptance_boundary": "Firstsmoke only, broadmatrix/continuation separately sealed; no reseed/PDF/VIDEO/fullproducer/canonicalpromotion/M4/LOCAL_COMPLETE/Git/cloud/install/global",
+      "routing_plan_review": {
+        "status": "ACTUAL_HIGH_PASS_NO_REQUIRED_ROUTE01_CLOSED",
+        "timestamp": "2026-10-13T21:13:10.620Z",
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "turn_id": "01a1371c-b4b1-77d3-ae91-e67a0183e18d",
+        "primary": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T20-12-52-01a13564-f97f-7ce3-8422-97691b78eecf.jsonl",
+        "context_line": 2885,
+        "final_line": 2898,
+        "reuse": "Exact source/control/actual38 High0; affected actor/preflight/operating plan only",
+        "limits": "PrimaryMedium/access unobserved; preflight and one heavy launch need recorded admissions, no app/runtime proof or execution authority from review"
+      },
+      "primary_route_observation": {
+        "status": "FRESH_ACTUAL_PRIMARY_MEDIUM_VERIFIED_FROM_NATIVE_TURN_CONTEXT",
+        "request": "M3-IMAGE-PRIMARY-MEDIUM-ROUTE-REQUEST-01 v3",
+        "authority": "HUMAN_DELEGATED_COORDINATOR_ROUTING_UNDER_PROJECT_AGENTS",
+        "selection_mechanism": "Authorized Coordinator existing-chat model/thinking follow-up override; supersedes proposed manual human UI selection only",
+        "timestamp": "2026-10-13T21:30:17.789Z",
+        "model": "gpt-6.1-sol",
+        "effort": "medium",
+        "turn_id": "01a1372c-611b-7022-a3a0-00fc7b8212de",
+        "primary": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T19-57-33-01a13556-f342-7222-828f-7509812bf862.jsonl:6242",
+        "source_review_reuse": "Same primaryMedium actor/control/caps/source as reviewed heavy retryv2; no architectural/source change",
+        "operations": "NONE_NO_PS_LSOF_CURL_APPLICATION_TEST_HTTP_SDK_SEED_BROWSER_SIGNALS",
+        "permissions": "UNCHANGED_ACCESS_UNPROVEN; route observation does not grant capability or runtime admission",
+        "handles": "NO_CURRENT_APPLICATION_HANDLES_ADMITTED",
+        "outgoing_transport": "NO_RETRY_OR_WORKAROUND_COORDINATOR_PULLS"
+      },
+      "primary_capability_result": {
+        "admission": "M3-IMAGE-PRIMARY-MEDIUM-PREFLIGHT-01 v3",
+        "status": "PASS_FOUR_COMMAND_CAPABILITY_ONLY_ACTUAL_HIGH_PASS_NO_REQUIRED",
+        "invocations": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "receipt": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/primary-medium-route-preflight.json",
+        "receipt_bytes": 57802,
+        "receipt_sha256": "4ac4ce16a5e88d8ad4d4ad8400e5522d5e2ac9ccb5613b324cf768b086026886",
+        "receipt_custody": "EXCLUSIVE_REGULAR_UID501_MODE0600_NLINK1_NO_ALIAS",
+        "actual_primary": {
+          "model": "gpt-6.1-sol",
+          "effort": "medium",
+          "turn_id": "01a1372f-b702-70b0-b8d6-0f3b965ad12b",
+          "timestamp": "2026-10-13T21:33:56.387Z",
+          "native_line": 6289
+        },
+        "managed_mechanism": "PRIMARY per-command require_escalated normal approval requests accepted; no child escalation or global/profile/adapter/policy change",
+        "commands": [
+          {
+            "name": "PS_NUMERIC",
+            "exit": 0,
+            "stdout_bytes": 49035,
+            "stderr_bytes": 0,
+            "rows": 908,
+            "capture": "COMPLETE_NO_TRUNCATION"
+          },
+          {
+            "name": "LSOF_11_PORTS",
+            "exit": 1,
+            "stdout_bytes": 0,
+            "stderr_bytes": 0,
+            "listeners": "NONE_IN_EXACT_QUERY"
+          },
+          {
+            "name": "LSOF_OWN_PID",
+            "exit": 0,
+            "stdout_bytes": 274,
+            "stderr_bytes": 0,
+            "pid": 62435,
+            "binding": "LIVE_CURRENT_SHELL_EXEC_SAME_CALL",
+            "cwd": "EXACT_EV",
+            "txt": [
+              "/usr/sbin/lsof",
+              "/usr/lib/dyld"
+            ]
+          },
+          {
+            "name": "CURL_LOOPBACK",
+            "exit": 0,
+            "stdout_bytes": 3,
+            "stderr_bytes": 0,
+            "http_status": 200,
+            "request": "-q_FIRST_FIXED_127.0.0.1_8080_ROOT_GET_NO_PROXY_REDIRECT_BODY_DISCARD"
+          }
+        ],
+        "capture_and_closure": "All stdout <=64KiB/no truncation; stderr stable regular private0600 allzero; native exec final exits/no sessions and reported readinesswithin2s/GET3s; no active probe handles",
+        "A_group_attribution": {
+          "source": "Immutable root-custody-A-observation.json and SAME existing PS capture; filesystem read only, no new PS probe",
+          "known_pids": [
+            44658,
+            44682,
+            44730,
+            44751
+          ],
+          "known_groups": [
+            44658,
+            44682,
+            44730
+          ],
+          "matches": [],
+          "note": "Additive attribution checks all three A groups incl parent44658; original receipt summary used smaller group subset and remains immutable"
+        },
+        "app_handles": [],
+        "sdk_cli_vite_seed_browser_tests_signals": "NONE",
+        "limits": "Numeric snapshot/capability only, not all-sourcebound/atomicOS/JVM/Vite/SDK/authenticatedCMS proof; future driver repeats guards/source/preservation and needs separate heavy admission",
+        "high_review": {
+          "status": "PASS",
+          "required": 0,
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "turn_id": "01a13739-518a-7b01-b353-5825cb1135c4",
+          "timestamp": "2026-10-13T21:44:25.787Z",
+          "native_context_line": 2903,
+          "native_final_line": 2950,
+          "native_final_timestamp": "2026-10-13T21:46:56.622Z",
+          "native_session": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T20-12-52-01a13564-f97f-7ce3-8422-97691b78eecf.jsonl",
+          "limits": "Capability and numeric snapshot only; heavy runtime requires separate exact admission and fresh driver guards."
+        },
+        "next_action": "Coordinator separately records exact ONE heavy runtime admission before primaryMedium launch; no automatic SDK/app start."
+      },
+      "next_action": "ActualHigh evidence review and Coordinator direct receipt pull; separate ONE heavy runtime admission after accepted preflight, no automatic launch",
+      "actual_first_flow": {
+        "status": "HOLD_FIRST_INTEGRATION_PARTIAL_CONTROLLER_RETAINED",
+        "receipt": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/primary-heavy-first-flow-observation.json",
+        "bytes": 4939,
+        "sha256": "6271069366d7bb6285a208e4dadd42c18388919e77299bc1ffd807fbe7ac743b",
+        "session_id": 27751,
+        "parent_pid": 63828,
+        "cli_pid": 63853,
+        "admission": "M3-IMAGE-OPERATOR-CUSTODY-B-01-HEAVY-RETRY v2 ONE",
+        "usage": "CONSUMED_1_OF_1",
+        "fixtureWritePossible": false,
+        "sourceEqual": true,
+        "cli_exit_close": "0/null",
+        "cli_signals": [
+          "SIGINT"
+        ],
+        "controller": "RETAINED_HOLD",
+        "high_review": {
+          "status": "HOLD_CONFIRMED_TWO_REQUIRED",
+          "required": [
+            "CLOSE-01",
+            "OBS-01"
+          ],
+          "actual_model": "gpt-6.1-sol",
+          "actual_effort": "high",
+          "turn_id": "01a13758-3adf-7993-9b9b-1585e6b9615c",
+          "native_context_line": 2955,
+          "native_final_line": 3034,
+          "timestamp": "2026-10-13T22:24:15.418Z",
+          "findings": {
+            "CLOSE-01": "Sticky live custody failure and cached rejected stopWork; parent resolution/timerfinalization success-only. No existing graceful STOP/INT/TERM/EOF path.",
+            "OBS-01": "AggregateError initialcause/probe-stage/PID/status dropped; initialstartupcause UNKNOWN."
+          },
+          "limits": "No new probes/app/sourcechanges; freshall11ports/sourcebound/parentclosure notverified."
+        },
+        "next_action": "Existing actualHigh classification; Coordinator separate scoped recovery decision for controller/current absence. No retry or extra signal."
+      }
+    },
+    "B_PLAN_01": "CLOSED_IN_V2_EXACT_VITE_SIGTERM_THEN_CLI_SIGINT_SHARED15S_AND_CLI_FULL_READY_STATES",
+    "communication": "User permission question pending; auto-review blocks Coordinator handoff; no indirect workaround",
+    "review": {
+      "status": "ACTUAL_HIGH_PLAN_PASS_NO_REQUIRED",
+      "runtime": {
+        "timestamp": "2026-10-13T18:57:11.591Z",
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "turn_id": "01a136a0-3578-7cd1-ad26-5076f187d29e"
+      },
+      "limit": "Plan only; noViteOSchild is runtime assumption, not proven; no source/control/pure/runtime acceptance"
+    },
+    "source_approval": {
+      "id": "M3-IMAGE-OPERATOR-CUSTODY-B-01-SOURCE",
+      "version": 2,
+      "authority": "HUMAN_DELEGATED_COORDINATOR_APPROVAL",
+      "record": "approvals/M3-PARALLEL-COORDINATION-01-REGISTER.json",
+      "limits": "SOURCE/syntax/focusedlint only; actualMediumsoleF; Node tests/runtime/signals/HTTP/seed/browser separate admission"
+    },
+    "implementation_review": {
+      "stage": "operator-stage1-frozen",
+      "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4",
+      "operator_sha256": "56c75b32602db5a15c7f0412580d7feb9ab7378d84e6a60f0c48617e40f1cbfa",
+      "sdk_identity_sha256": "a7c8fbb371404baf42d78e4e7a5e2cb31392e4e27d284c7c94c52440b7dd3f69",
+      "syntax_lint": "EXIT0",
+      "source_verdict": "ACTUAL_HIGH_HOLD_REQUIRED4_ROUTINE_REPAIR_IN_PROGRESS",
+      "required": [
+        "B-SRC-01 deadline before every signal and after observations; refuse late signal/PASS",
+        "B-SRC-02 classify listeners before Hub RPC or missing-entry retry; only provenabsence PENDING",
+        "B-SRC-03 source-bound unregistered orphan detection to HOLD, never grantownership",
+        "B-SRC-04 capture Child handle/error/exit/close before fallibleledger/PID validation"
+      ],
+      "tests_runtime": "NOT_RUN_NO_ADMISSION",
+      "stage2": {
+        "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/operator-stage2-frozen",
+        "operator_sha256": "e7fd6797fa35198198fd45f0839f01ad4c3de608b9a1648e4999d17dfaead858",
+        "driver_sha256": "d72e3977416a3165f9e2e4571b1f1b3dff5859fde754edcf677da3dae2dc44cd",
+        "test_path": "sdk-custody.test.mjs",
+        "test_sha256": "1c1993afbb6fe9c73ee46ae86c0cd7fd83556e07a40f5cdb62a135daf026b2a1",
+        "control_path": "custody-pure-supervisor.mjs",
+        "control_sha256": "a57647b476a59050ff01e091cb3d77ce5ac342e8260cd1b96bcb570e0ab3ca72",
+        "sdk_identity_sha256": "a7c8fbb371404baf42d78e4e7a5e2cb31392e4e27d284c7c94c52440b7dd3f69",
+        "reported_static": "OPERATOR_TEST_SYNTAX_LINT0_DRIVER_CONTROL_FINALSTATIC_PENDING",
+        "source_review": "ACTUAL_HIGH_HOLD_B_SRC03_OPEN_PLUS_B_SRC05_06_REQUIRED",
+        "tests_runtime": "NOT_RUN_NO_ADMISSION",
+        "closed_source_findings": [
+          "B-SRC-01",
+          "B-SRC-02",
+          "B-SRC-04"
+        ],
+        "remaining_required": [
+          "B-SRC-03 sourceBoundPID missing numeric snapshot mustHOLD/coherent boundedreobserve, no skippedorphan/lateCLOSED",
+          "B-SRC-05 whole-lifetime STOPsignal for seed/browser/API/continuation; blocknewsteps+awaitactualsettlement",
+          "B-SRC-06 STATUS holds operationFailure/sourceMismatch/continuationFailure independentphysicalphase"
+        ],
+        "prior_final_manifest": "custody-batch-admission.json SHAae59dd203bca09d33680cdb6713eb875bf3fbbf72f2ee391dae4185b577af00f preserved_NOT_ADMITTED"
+      },
+      "stage3": {
+        "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/operator-stage3-frozen",
+        "operator_sha256": "2bf6ad76d87c16deced777ba53c40c6572f691be30eea8fc799f9ff382377aa2",
+        "driver_sha256": "5a479ffd76c56b78d63456436806be40867524996fc565932a7a38c2e335e7a7",
+        "driver_status_helper_sha256": "b43268f3052b112d0e175b12cde0493abdd258d90e84c8f7bc1d41ab0cba8044",
+        "lifetime_sha256": "929bf233026ce63020c87e6a2ea17ae1e1bee6035ed1ccbf3a121e7250db6ee2",
+        "sdk_identity_sha256": "a7c8fbb371404baf42d78e4e7a5e2cb31392e4e27d284c7c94c52440b7dd3f69",
+        "static": "THREE_SYNTAX_TWO_FOCUSED_LINT_EXIT0",
+        "core_review": "ACTUAL_HIGH_PASS_NO_REQUIRED",
+        "review_runtime": {
+          "timestamp": "2026-10-13T19:52:05.531Z",
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "turn_id": "01a136d2-7872-7932-b9db-5d53196bffc4"
+        },
+        "closed_source_findings": [
+          "B-SRC-03",
+          "B-SRC-05",
+          "B-SRC-06"
+        ],
+        "final_tests_control_manifest": "ACTUAL_HIGH_PASS_NO_REQUIRED",
+        "units_runtime": "NOT_RUN_NO_ADMISSION"
+      },
+      "final_pure_proposal_v2": {
+        "status": "ONE_ADMITTED_BATCH_CONSUMED_ACTUAL_PASS38_HIGH_VERIFIED_NO_REQUIRED",
+        "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-final-frozen-v2",
+        "manifest": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-batch-admission-v2.json",
+        "manifest_sha256": "6bfb8c48acc8c881af0de63b94f2c549d789ccf5bdcafafd3d42baded8ae99fd",
+        "matched_input_pins": 21,
+        "test_sha256": "074a01b25ffbcea4e3ee83eba0642d62f5fd3df4e234c9af01093059e094ad38",
+        "control_sha256": "a3ea825ce75b44fd1f27e1f2f22c957868713062c731881721fd63d44212614a",
+        "authored_cases": 38,
+        "case_count_basis": "27 literal +6 identity variants +5 STOP phases; execution counts UNKNOWN",
+        "command": "pinned Node22.23.3 custody-pure-supervisor-v2.mjs; cwd exact operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4",
+        "node_sha256": "68f4d07ca49e0500cc135c7e0a445093e228e42e126ac22306d045f0a8c2636b",
+        "child_args": [
+          "--max-old-space-size=256",
+          "--test",
+          "--experimental-test-isolation=none",
+          "--test-concurrency=1",
+          "--test-timeout=30000",
+          "sdk-custody.test.mjs"
+        ],
+        "caps": {
+          "parent_deadline_ms": 30000,
+          "cleanup_bound_ms": 36000,
+          "stream_bytes_each": 65536,
+          "heap_mib": 256,
+          "concurrency": 1
+        },
+        "import_closure": "synthetic tests/operator/profile/status helper/lifetime/unchanged fixture cancellation seam; no operationaldriver/SDK/Sharp/HTTP/PS/native calls",
+        "static": "FIVE_SYNTAX_TWO_FOCUSED_LINT_EXIT0",
+        "writer_freeze": "ACTUAL_MEDIUM_F_CONFIRMED_NO_FURTHER_ADMITTED_PATH_WRITES",
+        "writer_runtime": {
+          "timestamp": "2026-10-13T19:57:29.325Z",
+          "model": "gpt-6.1-sol",
+          "effort": "medium",
+          "turn_id": "01a136cc-c3a7-71a2-9f55-06f6cf1f54e9"
+        },
+        "final_review": {
+          "status": "ACTUAL_HIGH_PASS_NO_REQUIRED",
+          "timestamp": "2026-10-13T19:57:28.131Z",
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "turn_id": "01a136d7-6497-7672-a3c8-a88e0e360b4a",
+          "input_pins": "21/21_CURRENT_AND_FROZEN_MATCH",
+          "scope": "Affected synthetic tests/control/manifest only; stage3 corePASS reused"
+        },
+        "pagination": "6 earlierPASS excluded; no rerun",
+        "next_action": "Affected High actual evidence review then Coordinator fresh heavy retry admission; no automatic pure rerun",
+        "units_runtime": "ACTUAL_PURE38_PASS_RUNTIME_NOT_RUN",
+        "pure_admission": {
+          "id": "M3-IMAGE-OPERATOR-CUSTODY-B-01-PURE-38",
+          "version": 2,
+          "pool": "M3-PURE-POOL-15",
+          "authority": "HUMAN_DELEGATED_COORDINATOR_APPROVAL",
+          "register": "approvals/M3-PARALLEL-COORDINATION-01-REGISTER.json",
+          "recorded_at_utc": "2026-10-13T20:49:37.727548+00:00",
+          "allowed_invocations": 1,
+          "root_fresh_preadmission": "Exact decision read;21/21 sourceinputs+manifest+NodeSHA match; result/stdout/stderr absent",
+          "owner": "/root/m3_image_operator actualMedium",
+          "limits": "ONE synthetic custody38 only; failure consumes admission/no autoretry; no SDK/Sharp/PS/HTTP/seed/browser/native/operationaldriver or pagination6 rerun; heavy retry separate"
+        },
+        "actual_pure_result": {
+          "status": "PASS_BOUNDED_PURE_ACTUAL_HIGH_VERIFIED_NO_REQUIRED",
+          "invocations": 1,
+          "admission_consumed": true,
+          "result": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-batch-result-v2.json",
+          "result_sha256": "0e9ddcece6dfb481861170ebc436c236241e1dc036e53d01af8f15362e9646d4",
+          "completion": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/actual-pure38-completion.json",
+          "runtime": {
+            "timestamp": "2026-10-13T20:50:16.520Z",
+            "model": "gpt-6.1-sol",
+            "effort": "medium",
+            "turn_id": "01a13707-bd1e-7e32-ab8c-add2f00e3960"
+          },
+          "counts": {
+            "tests": 38,
+            "pass": 38,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "child_pid": 59713,
+          "parent_pid": 59704,
+          "exit": {
+            "code": 0,
+            "signal": null,
+            "at": 1791924647067
+          },
+          "close": {
+            "code": 0,
+            "signal": null,
+            "at": 1791924647067
+          },
+          "supervisor_tool_exit": 0,
+          "signals": [],
+          "remaining_owned_pids": [],
+          "pid_group_absence": "CONTROLLER_SIGNAL0_ESRCH_AFTER_CLOSE",
+          "stdout": {
+            "observed_captured_disk_bytes": 8167,
+            "sha256": "21bfd846310f0087b5e3f8fae20264a6cbeed7ff40d58c698ab48fe5579f1ab8"
+          },
+          "stderr": {
+            "observed_captured_disk_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "source_preservation": "21/21_POST_AND_ROOT_CURRENT_MATCH_FROZEN_MANIFEST",
+          "finalizer_failures": [],
+          "explicit_stream_end_events": "NOT_RECORDED",
+          "closure_attribution": "ChildProcess close after stdio closure; no separate readable end timestamp claimed",
+          "root_check": "Exact receiptSHA, actualTAPfooter, capturesbytesSHA, sourcepost/current and nativeMedium metadata independently matched",
+          "high_review": {
+            "status": "PASS_NO_REQUIRED",
+            "timestamp": "2026-10-13T20:51:51.803Z",
+            "model": "gpt-6.1-sol",
+            "effort": "high",
+            "turn_id": "01a13709-3105-7ec3-80a2-85b42ccd358b",
+            "primary": "/Users/khiemnguyen/.codex/sessions/2026/10/13/rollout-2026-10-13T20-12-52-01a13564-f97f-7ce3-8422-97691b78eecf.jsonl",
+            "turn_context_line": 2803,
+            "final_line": 2836,
+            "reuse": "Prior exact source/control High0; actual evidence only",
+            "closure_limit": "ChildProcess close/synchronouscapture/fullTAP sufficient agreed pure proof; separate readableend events/timestamps NOT_RECORDED"
+          },
+          "pool_slot": "COORDINATOR_RELEASED_MAIN38_SLOT_POOL17_CONFIRMED",
+          "limits": "Synthetic custody/control only; no actual SDK/JVM/Vite/browser/CMS/OS containment; no current oldDB rescan"
+        }
+      }
+    }
+  },
+  "custody_recovery_C_proposal_v1": {
+    "id": "M3-IMAGE-CUSTODY-RECOVERY-C-01",
+    "version": 1,
+    "status": "PROPOSED_SOURCE_PREP_AND_BOUNDED_SURVEY_ONLY_NO_EXECUTION_AUTHORITY",
+    "basis": "Actual heavyv2 failure receipt627106…; High bounded classification CLOSE-01/OBS-01. Original startupcause UNKNOWN. Parent63828/session27751 retained; no graceful closure path through unchangedcontroller proven.",
+    "actor": "Primary actualgpt-6.1-sol/Medium operational custody; existing F sole private survey sourcewriter after separate sourceprep approval; existing actualHigh affectedplan/source/evidence reviewer; externalCoordinator decisions only.",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C-271087d4-d14f-4765-85c7-54f05b8f3b7e",
+    "source_prep": {
+      "files": [
+        "custody-survey.mjs",
+        "survey-plan.json"
+      ],
+      "allowed": "Only fresh private native/filesystem/REST observation helper+exact plan; no imports of application/SDK/operator modules or livecontroller edits. Source review/freeze+separate survey admission before execution.",
+      "static_check": "ONE pinned stagedNode --check custody-survey.mjs after sourceprep approval; no tests/--plan/app/SDK/Sharp/build.",
+      "source_ownership": "F sole writer; root owns its two task records only."
+    },
+    "survey_execution_proposed": {
+      "invocations": 1,
+      "command": [
+        "PINNED_STAGED_NODE22.23.3",
+        "--max-old-space-size=128",
+        "custody-survey.mjs"
+      ],
+      "cwd": "Exact fresh C namespace; sealed helper/sourceplan SHA required before future admission",
+      "native_commands": [
+        {
+          "executable": "/bin/ps",
+          "args": [
+            "-axo",
+            "pid=,ppid=,pgid=,rss=,lstart="
+          ],
+          "count": 2,
+          "role": "Before/after numeric table; derive descendants of positiveparent63828 and exactgroups63853/63954. No signal ownership from names/groups."
+        },
+        {
+          "executable": "/bin/ps",
+          "args": [
+            "-axo",
+            "pid=,args="
+          ],
+          "count": 2,
+          "role": "Before/after sourcebound scans; parse full bounded stdout in memory, persist ONLY exactcandidate source/runtime/Node matches and survey-own tuples. No foreign argv in durable captures/report; nonmatch count/hash only."
+        },
+        {
+          "executable": "/bin/ps",
+          "args": [
+            "-p",
+            "63828",
+            "-o",
+            "pid=,ppid=,pgid=,uid=,lstart=,args="
+          ],
+          "count": 2,
+          "role": "Before/after exact liveparent UID501/fullgeneration/ppid/group/argv; must bind existing27751/pinnedNode/first-integration path/exacttestarg and fixedEVcwd."
+        },
+        {
+          "executable": "/usr/sbin/lsof",
+          "args": [
+            "-a",
+            "-p",
+            "63828",
+            "-d",
+            "cwd,txt",
+            "-Fn"
+          ],
+          "count": 2,
+          "role": "Before/after exact positiveparent cwd/loaded pinnedNode realpath; missing or alias/race HOLD."
+        },
+        {
+          "executable": "/usr/sbin/lsof",
+          "args": [
+            "-nP",
+            "-iTCP:5183",
+            "-iTCP:9103",
+            "-iTCP:8083",
+            "-iTCP:5003",
+            "-iTCP:9203",
+            "-iTCP:5013",
+            "-iTCP:4403",
+            "-iTCP:4503",
+            "-iTCP:9303",
+            "-iTCP:9503",
+            "-iTCP:9153",
+            "-sTCP:LISTEN",
+            "-Fpcfn"
+          ],
+          "count": 2,
+          "role": "Before/after exact11 candidateports, exit1empty/noerr absence only; any listener/unknown HOLD."
+        }
+      ],
+      "identity": "Primary sameowned execsession27751, observedparent63828 and frozen21/source13/Node68f4; collect positive fullgeneration before deciding any closure. Strict source/runtime/SDK/JAR argv allowlist derived frozeninputs, no orphan ownership. Survey-only helper process identified as observation tool, not application child.",
+      "caps": {
+        "native_timeout_ms_each": 2000,
+        "numeric_parent_lsof_stream_bytes_each": 65536,
+        "source_args_stream_bytes_each": 1048576,
+        "helper_heap_MiB": 128,
+        "overall_ms": 120000,
+        "requests_per_collection_max": 100,
+        "rest_page_size": 25,
+        "rest_body_bytes_max": 16777216,
+        "request_timeout_ms": 2000,
+        "no_retries": true
+      },
+      "preservation": "Before/after: exact21/source13/Node/JAR/SDK/rules/browser/native2 plus155canonicalH2/protected882 disk rows from frozen baselines. Fixed oldknown10 4531documents at retainedFirestore127.0.0.1:8080/demo-pinky-lamb-cms only, explicit ten collection allowlist from preflight; same25page/100pages/2500effective percollection tokencontext/strict payload/count/create/update/content equality. GET only, noSDKcredentials/auth/API/browser/seed/writes. Bounded response in memory, persist hashes/count/equality, no document bodies/credentials. Any oldknown10 drift/limit/error HOLD.",
+      "captures": "New0700 UID501 namespace; exclusive0600 O_NOFOLLOW/nlink1/noalias bounded captures/result/source pins, fsync+hash exactcounts/status/completeEOF/nativeexit. No overwrite of failedB/rawreceipts. Private source-PS filtering occurs before durability and user output.",
+      "permission": "Normal existing PRIMARY managed approval path only after exact admission; denied/unsettled/truncated/foreign/race HOLD, retain27751; no child/global/profile/policy changes.",
+      "signals": [],
+      "app_starts": 0
+    },
+    "closure_phase_not_authorized": {
+      "status": "SEPARATE_MATERIAL_EXCEPTION_PROPOSAL_REQUIRED_AFTER_SURVEY_HIGH_PASS",
+      "prerequisites": "AllSDK descendants/sourceboundcandidates/admittedCLI+Firestore+Storage/groups and11ports absent; parentpositivegeneration/argv/cwd/exe/current27751 binding; source/data preserved. A fresh bounded immediate guard survey and exact capture must be separately admitted before any parent termination.",
+      "candidate_method": "ONE direct /bin/kill args [-KILL,63828] ONLY positively identified controllerparent, nogroup/SDK signal; explicit newexception to v2 noKILL is required. Supported graceful alternatives inspected and unavailable in unchangedcachedHOLDcontroller. No action from thisproposal.",
+      "closure_proof": "Retain27751 and awaitactual toolcompletion, no discardedhandle. Separately admitted post numeric/sourcebound/11ports/parentabsence+source/data checks and receipt; 10s closurebound, failureHOLD/no repeatedsignal. Actualexit will preserve originalfailure, never PASS_CMS.",
+      "risks": "Abrupt controller termination prevents its normalfinalizers; only after actualSDK resources fullyclosed/privatecapturecomplete/zero fixturewrites/preservationPASS. PIDreuse/race/unknown ownership HOLD. Fullkernelatomic pidfd custody unavailable on currentmacOS; timing/identity limitation must be reviewed before exactexceptionapproval."
+    },
+    "excluded": "No livecontrollerpatch, retry/rerun/extraSTOP/CONTINUE/SDKsignal/reset/delete/reseed/cloud/Git/install/PDF/VIDEO/producerpromotion/M4/LOCAL_COMPLETE. CLOSE-01/OBS-01 application repair and subsequent heavyretry require new distinct source/task/version approval.",
+    "affected_plan_review": "PENDING_EXISTING_ACTUAL_HIGH"
+  },
+  "custody_recovery_C_source_v1": {
+    "approval": "M3-IMAGE-CUSTODY-RECOVERY-C-01-SOURCE v1",
+    "status": "FINAL_TWO_FILE_SOURCE_ACTUAL_HIGH_PASS_NO_REQUIRED_CURRENT_SYNTAX_SURVEY_NOT_RUN",
+    "high_plan": {
+      "status": "PASS",
+      "required": 0,
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_context_line": 3042,
+      "native_final_line": 3068,
+      "turn_id": "01a1375d-f3f4-7420-a6c2-957a4606a980"
+    },
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C-271087d4-d14f-4765-85c7-54f05b8f3b7e",
+    "files": [
+      "custody-survey.mjs",
+      "survey-plan.json"
+    ],
+    "source_owner": "ExistingF actualMedium afterfreshnativeverification",
+    "allowed_check": "ONE pinned stagedNode --check custody-survey.mjs",
+    "survey": "NOT_RUN_SEPARATE_ADMISSION_REQUIRED",
+    "signals": "NONE_AUTHORIZED",
+    "parent_session": 27751,
+    "parent_pid": 63828,
+    "parent_status": "RETAINED_NO_EXTRA_CONTROL_ACTIONS",
+    "next": "Coordinator separate allowance forONE syntaxcheck finalhelper andONEsurveydriver admission; primaryactualMedium retains27751 until separately settled custody. No automatic operations.",
+    "protected882_baseline_clarification": {
+      "source": "evidence/preservation-before.json unchanged",
+      "variants": [
+        "regular source: bytes/mode/nlink/sha256",
+        "regular disk: bytes/mode/nlink/mtimeNs metadata ONLY",
+        "link: rawTarget/type"
+      ],
+      "passive_current_check": "Schema-correct882 check ONLY exactH2helper differs; noRoot2/PDF5 actualrow mismatch; no extra exception authorized",
+      "limits": "Disk rows metadata-only; no oldAuthfile contenthash/read required, not wholeDB proof. Initial generic parser mistakenly expectedsha256 on metadataonlyrows, producingKeyError diagnostics; corrected independently, not evidenceofdrift."
+    },
+    "actual_source_owner": {
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "turn_id": "01a13762-f4e2-71b3-9b0f-87a7bb0c9960",
+      "native_context_line": 2437,
+      "timestamp": "2026-10-13T22:29:54.561Z"
+    },
+    "frozen_sources": [
+      {
+        "path": "custody-survey.mjs",
+        "bytes": 14786,
+        "sha256": "79437c19c09ad13b7588c4bab17d82261837f924a7c48fa92a098d054f4d7f89"
+      },
+      {
+        "path": "survey-plan.json",
+        "bytes": 29114,
+        "sha256": "0bc741ee96e92f1a5c5b2e1e1ba219b280a26266fa4e2a65a0df74150143c707"
+      }
+    ],
+    "custody": "Root verified exactlytwofiles/private0700dir/0600regularUID501nlink1/noalias/sizeSHA",
+    "syntax_check": {
+      "invocations": 1,
+      "result": "PASS",
+      "exit": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0,
+      "chunk": "16abc4",
+      "native_output_line": 2542
+    },
+    "closure": "Builtin-only source; noapplication/operator/SDKimports",
+    "high_source_review": {
+      "status": "HOLD",
+      "required": [
+        "C-SRC-01",
+        "C-SRC-02"
+      ],
+      "actual_model": "gpt-6.1-sol",
+      "actual_effort": "high",
+      "turn_id": "01a13766-1aac-7ef3-8a99-119b60fba608",
+      "native_context_line": 3073,
+      "native_final_line": 3105,
+      "timestamp": "2026-10-13T22:34:33.669Z",
+      "findings": {
+        "C-SRC-01": "Capture save errors can repeat sameexclusive name/EEXIST escapeclosecallback; finalresult save notcontained. LatchHOLD/controlfailure/nooverwritepartial.",
+        "C-SRC-02": "Actualsize-derived readcap allocates fulloversizedpin beforeexpectedcompare. Validate fixedexpectedsize BEFOREread, exactH2tuple only."
+      }
+    },
+    "proof_limit": "Sessionbindingimmutablelaunchreceipt, not independentlyobserved toolAPIsessionidentity; primary27751 stillretained/noadditionalcontrols",
+    "routine_repair": {
+      "scope": "SameF sametwofiles/minimalcapturecontainment+expectedsizebounds+planSHA",
+      "authority": "Routine repair within unchanged approvedSOURCE approach; no newfeature/caps/probes",
+      "extra_syntax_check": "NOT_AUTHORIZED_ONE_ALREADY_CONSUMED",
+      "execution": "NOT_RUN",
+      "next": "Freeze repairedpair→affectedHigh→Coordinator separate syntax/survey allowance ifrequired.",
+      "result": "C-SRC01 attemptedreceipt/finalcaptureerrorcontainment, no same-name retry; C-SRC02 expectedsizebeforeread/fixedbaselinecaps/H2only",
+      "current_syntax": "NOT_RUN_ONE_ALLOWANCE_CONSUMED_HISTORICAL_ONLY",
+      "final_diagnostic": "receiptWrittenfalse/partialReceiptCreated onlyactualfailure.created; nofalseartifactretention"
+    },
+    "prior_frozen_sources": [
+      {
+        "path": "custody-survey.mjs",
+        "bytes": 13280,
+        "sha256": "9a2118607592f41c4d252b6a2b31b81fb7e4298dcddf75d0f115fcbfbdef7dfc"
+      },
+      {
+        "path": "survey-plan.json",
+        "bytes": 27711,
+        "sha256": "16292e7a7d200b6a5f64ff1973ccdcb9f4cd579b9b22fb4a43dc5c1ea0d981b6"
+      }
+    ],
+    "repaired_owner_route": {
+      "native_context_line": 2603,
+      "timestamp": "2026-10-13T22:36:41.651Z",
+      "turn_id": "01a13769-2b19-7a41-82c2-409e4de1be94",
+      "model": "gpt-6.1-sol",
+      "effort": "medium"
+    },
+    "affected_review_after_first_repair": {
+      "native_context_line": 3110,
+      "timestamp": "2026-10-13T22:35:59.622Z",
+      "turn_id": "01a13768-86ec-7ad0-a6a0-9c0fbd946dce",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3132,
+      "native_final_timestamp": "2026-10-13T22:36:36.774Z",
+      "status": "HOLD_ONE_REMAINING_REQUIRED",
+      "closed": [
+        "C-SRC-02"
+      ],
+      "remaining": "C-SRC-01 finaldiagnostic partialReceiptRetained true wronglyassertsfileexists beforecreation; tinyobservedcreatedfieldrepairassigned",
+      "limits": "Noextra syntaxcheck/probe/test/signals"
+    },
+    "repair_freeze_history": [
+      [
+        {
+          "path": "custody-survey.mjs",
+          "bytes": 14688,
+          "sha256": "c1d1d1b491bb6c85e84ee8a4d43d8445a34b8c8b1da384ca24172b48f9468d08"
+        },
+        {
+          "path": "survey-plan.json",
+          "bytes": 28544,
+          "sha256": "84f44f19e4dfadb682b9848a812d9eb37d87971465507fa3c8b9c5c68d8649f5"
+        }
+      ]
+    ],
+    "final_high_source_review": {
+      "native_context_line": 3137,
+      "timestamp": "2026-10-13T22:37:01.927Z",
+      "turn_id": "01a13769-7a49-7140-976e-36d1b93e33f7",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3155,
+      "native_final_timestamp": "2026-10-13T22:37:22.605Z",
+      "status": "PASS",
+      "required": 0,
+      "closed": [
+        "C-SRC-01",
+        "C-SRC-02"
+      ],
+      "limits": "Sourceonly; current syntax/survey/freshabsence/preservation/signals NOT_RUN; noexecution/terminationauthority."
+    }
+  },
+  "custody_recovery_C_actual_survey_v1": {
+    "status": "HOLD_SURVEY_NATIVE_ARGV_ASSERTION_ONE_CONSUMED",
+    "admission": "M3-IMAGE-CUSTODY-RECOVERY-C-01-SURVEY v1",
+    "syntax": {
+      "invocations": 1,
+      "chunk": "2232e8",
+      "exit": 0,
+      "outputBytes": 0,
+      "session": "NONE_KNOWN_FINAL_EXIT"
+    },
+    "survey": {
+      "invocations": 1,
+      "chunk": "02ded1",
+      "callerExit": 1,
+      "session": "NONE_KNOWN_FINAL_EXIT",
+      "parentPid": 97523,
+      "elapsedMs": 64.931041,
+      "nativeCalls": 2,
+      "nativePids": [
+        97526,
+        97527
+      ],
+      "nativeClosure": "BOTH_EXIT_CLOSE0_NULL_REAL_STDOUT_STDERR_END_NO_OVERFLOW_TIMEOUT_OR_SIGNAL",
+      "failureCode": "ERR_ASSERTION",
+      "phases": [],
+      "signals": [],
+      "appStarts": 0,
+      "remaining8Calls": "NOT_RUN",
+      "RESTGET": "NOT_RUN",
+      "custody_absence_and_preservation": "NOT_VERIFIED"
+    },
+    "receipt": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/primary-c01-survey-observation.json",
+    "bytes": 3541,
+    "sha256": "c5a3e566d0f9c4e6d206f12c1c483c588373d913c6e9be0046d0cf1305a3d2ff",
+    "parent_retained": {
+      "pid": 63828,
+      "session": 27751,
+      "generation_numeric_before": "Wed Oct 14 05:15:48 2026",
+      "observed_child_numeric_before": {
+        "pid": 97525,
+        "ppid": 63828,
+        "pgid": 63828,
+        "generation": "Wed Oct 14 05:47:57 2026"
+      },
+      "child_identity": "UNKNOWN_NUMERIC_ONLY",
+      "signals_or_extra_STOP": [],
+      "closure": "NOT_VERIFIED"
+    },
+    "launcher_binding_difference": {
+      "verified": "Ownnative launchcommand uses relativeNodepath; frozenparent.argv and futureArgv use absoluteNodepath. Executablebytes stillpinned68f4; exactstringcontract differs.",
+      "heavy_launch_node": "../../workspace/pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node",
+      "survey_launch_node": "../../../workspace/pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node",
+      "cause": "HYPOTHESIS_ARGV_LITERAL_BINDING; exactoffendingPID/branchUNKNOWN becausegenericassertion+rawargvprivacyfilter",
+      "raw_argv": "NOT_DURABLE_FOREIGN_CONTENT_NOT_EXPOSED"
+    },
+    "high_review": {
+      "native_context_line": 3160,
+      "timestamp": "2026-10-13T22:48:38.639Z",
+      "turn_id": "01a13774-1bcb-7e61-bb2f-f8b7583d4998",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3186,
+      "native_final_timestamp": "2026-10-13T22:49:37.118Z",
+      "status": "HOLD_ONE_CONSUMED_CLASSIFICATION_C_ARGV_01",
+      "required": [
+        "C-ARGV-01"
+      ],
+      "verified": "Literalabsoluteplan vsrelativelaunchtexts mismatch; twoactualnativeclosures/EOF/caps+callerexit1/no signals.",
+      "unknown": "Exactassertbranch/rawPSargv andobserverchildidentity; positiveparent/lsof/11ports/REST/preservationsurvey NOT_RUN.",
+      "next": "C02 materialnewrecipe proposalHigh thenCoordinatorSOURCEdecision; noautofix/rerun."
+    },
+    "next": "ExistingHigh read-only classification + concrete bounded NEWfork/source/argv contract proposal forCoordinator decision; no autoedit/retry/probe/extraSTOP/signals."
+  },
+  "custody_recovery_C02_proposal_v1": {
+    "id": "M3-IMAGE-CUSTODY-RECOVERY-C-02",
+    "version": 1,
+    "status": "PROPOSED_PLAN_ACTUAL_HIGH_PASS_NO_REQUIRED_AWAITING_COORDINATOR_SOURCEPREP_DECISION",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C2-b679a801-3493-4b26-857f-8b7ae6ce317c",
+    "failed_C01": "Immutable helper79437c19/plan0bc741ee/3receipts/rawsourceargvprivacy; ONE consumed, no overwrite/rerun",
+    "files": [
+      "custody-survey.mjs",
+      "survey-plan.json"
+    ],
+    "owner": "ExistingF actualMedium freshnativeobserved; primaryMedium ownsretained27751; existingHigh affectedplan/source/evidence, Coordinatordecisions",
+    "required": "C-ARGV-01 literal launchbinding + finiteassertdiagnostic; numericobserverchild97525 identity UNKNOWN",
+    "parent_argv_binding": {
+      "pid": 63828,
+      "session": 27751,
+      "cwd": "ExactexistingB EV",
+      "literal": "../../workspace/pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node --test-name-pattern=^M3-CONTINUE-04 real IMAGE first-integration.mjs",
+      "method": "ONE exactliteral only across sourceargv+positiveparent query. Resolve fixed relativeNode from canonicalcwd; realpath/loadedexe/NodeSHA68f4/fullUIDgeneration/lineage strict. No arbitrarynormalization/alternativeargv. Native launchreceipt proves launchtext only; survey positivePS provides actualargv later, not assumednow."
+    },
+    "survey_command": "ABSOLUTE stagedpinnedNode22.23.3 --max-old-space-size=128 custody-survey.mjs in exactfreshC2cwd; mustmatch plan.futureArgv. No relativelauncher.",
+    "diagnostics": "Beforeparent/survey/child assertion recordfinite branch/PID/expectedhash/observedhash, no rawforeignargv/docbody/credential; impossiblecapturegets typedreceiptcreatedstatus/HOLD, no fallback/retry.",
+    "material_recipe_delta": {
+      "base": "Existingtennativecalls retained2each; parentliteral corrected. Additional bounded observerclassification REQUIREDnewdecision, not priorC01authority.",
+      "max_parent_direct_children_per_phase": 4,
+      "targeted_child_PS": {
+        "executable": "/bin/ps",
+        "args": [
+          "-p",
+          "POSITIVELY_OBSERVED_PARENT_DIRECT_CHILD_PID",
+          "-o",
+          "pid=,ppid=,pgid=,uid=,lstart=,args="
+        ],
+        "max_calls": 8,
+        "binding": "Onlyfreshnumericdirectchild of exactparent63828; UID501/parent63828/PGID63828/fullgeneration strict. Nonzero/empty alone neverabsence; no foreignPIDguess."
+      },
+      "targeted_child_lsof": {
+        "executable": "/usr/sbin/lsof",
+        "args": [
+          "-a",
+          "-p",
+          "SAME_POSITIVE_CHILD_PID",
+          "-d",
+          "cwd,txt",
+          "-Fn"
+        ],
+        "max_calls": 8,
+        "condition": "OnlyPSpositiveexactobserverargv verified; fixedparentcwd, actualloaded /bin/ps resolvedsystemexe, no arbitraryname/path. Native executablebytes baseline/systemclosure not claimed. Missing requires later numericabsence, otherwiseHOLD."
+      },
+      "post_classification_numeric": {
+        "executable": "/bin/ps",
+        "args": [
+          "-axo",
+          "pid=,ppid=,pgid=,rss=,lstart="
+        ],
+        "calls": 2,
+        "purpose": "Oneperphase; reconcile eachcandidatePID/fullgeneration and descendants/groups, no retryloop. PIDreuse/remainingunknown/newunclassifiedchild HOLD. Gonecandidate classified ABSENT_NUMERIC_NO_OWNERSHIP, no guessedobserveridentity."
+      },
+      "total_native_calls_max": 28,
+      "allowlisted_observer_argv": [
+        "/bin/ps -axo pid=,ppid=,pgid=,rss=,lstart=",
+        "/bin/ps -axo pid=,args="
+      ],
+      "allowlist_source": "Exactfrozenoperator launchOwned inspect200ms→observeImageSdkSnapshot/sourceBoundSdkPids/imageProcessRows; no lsofprobechild acceptance unless explicitly added by affectedsource+decision. Marker/name/group neverownership.",
+      "acceptance": "Unknownchild/SDK/Vite/sourcecandidate/group/listener holds survey. Positivelyverified read-onlyobserver stillalive at finalsnapshot is explicitly OBSERVER_PRESENT_CLOSURE_HOLD, never allresourcesabsent. Onlywhen finalnumericactualobserverabsence may result PASS_SURVEY_ONLY_NO_CLOSURE_AUTHORITY; no terminationpermission. Any newunclassifiedparentchild in finalsnapshot HOLD; no race/absence gloss."
+    },
+    "caps": "UNCHANGED heap128/overall120s/native2seach/sourceargv1MiB in-memoryfiltered/other64KiB/RESTGET2s-page25-100pages-16MiB/no retries; no nativekill/automaticchildcleanup. Extra28maxrecipe is separatelyproposed materialchange.",
+    "preservation": "UNCHANGED source21/source13/allfixedrefs/155canonicalH2/882explicitschemas/H2only andknown10old4531documents beforeafter. Stableexpectedsize-before-read/privatecapturecontainment preserved; failedB/C01historyuntouched.",
+    "source_checks": "ProposeONE finalpinnedNode--check newhelper aftersourceprep/High freeze; no harness/tests/moduleexecution from sourceapproval. Newsyntax/survey later separate exactadmission.",
+    "closure": "Noapp/SDK/operator imports, no applicationwrites/start/seed/browser/Sharp; Node builtins only. Newprivate0700/0600exclusivefiles, ownoutputplanstrict.",
+    "parent_termination": "NOT_APPROVED; futureONEpositiveparentSIGKILLexception stillrequires actualsurveyHighPASS+separatefreshimmediateguard/action/postpreservation/Highplan/Coordinatorrecord. Do notinclude kill orSTOP path in surveyhelper.",
+    "next": "AffectedHigh concreteplanreview thenCoordinator SOURCEprepdecision; no F sourcechanges yet. Noapproval inferred from thisproposal.",
+    "affected_high_plan_review": {
+      "native_context_line": 3191,
+      "timestamp": "2026-10-13T22:50:58.109Z",
+      "turn_id": "01a13776-3c99-7262-a265-8bae5b8c6756",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3219,
+      "native_final_timestamp": "2026-10-13T22:51:53.222Z",
+      "status": "PASS",
+      "required": 0,
+      "limits": "Planonly; child97525identityUNKNOWN/C01originalassertbranchUNKNOWN; no C02source/syntax/survey/terminationauthority."
+    }
+  },
+  "custody_recovery_C02_source_v1": {
+    "approval": "M3-IMAGE-CUSTODY-RECOVERY-C-02-SOURCE v1",
+    "status": "FINAL_TWO_FILE_C02_ACTUAL_HIGH_SOURCE_PASS_NO_REQUIRED_SYNTAX_SURVEY_NOT_RUN",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C2-b679a801-3493-4b26-857f-8b7ae6ce317c",
+    "files": [
+      "custody-survey.mjs",
+      "survey-plan.json"
+    ],
+    "sole_writer": "ExistingF afterfreshactualMedium verification",
+    "checks": "NOT_ADMITTED_SYNTAX_TEST_MODULE_PROBES_HTTP_SIGNALS_SURVEY",
+    "high_plan": {
+      "native_context_line": 3191,
+      "timestamp": "2026-10-13T22:50:58.109Z",
+      "turn_id": "01a13776-3c99-7262-a265-8bae5b8c6756",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3219,
+      "native_final_timestamp": "2026-10-13T22:51:53.222Z",
+      "status": "PASS",
+      "required": 0,
+      "limits": "Planonly; child97525identityUNKNOWN/C01originalassertbranchUNKNOWN; no C02source/syntax/survey/terminationauthority."
+    },
+    "next": "Coordinator separatelyadmit ONEfinalC02syntax +conditionalONEC02survey; sourceFSTOPPED/pinnedpair/current27751retained, noautooperations.",
+    "parent": "63828/session27751 retained/noextraactions",
+    "failed_C01": "Immutable consumedHOLD/helperplan/receipts retained",
+    "frozen_sources": [
+      {
+        "path": "custody-survey.mjs",
+        "bytes": 18609,
+        "sha256": "fb03ba7881533eb8f3beb43755ff1ab1b6eea09e48a84169b692e5d49d1acabe"
+      },
+      {
+        "path": "survey-plan.json",
+        "bytes": 29391,
+        "sha256": "211d4e85659965d883ab6f61ef8c4370579e5eaaeb4869ca5440bbe2a55b0a89"
+      }
+    ],
+    "actual_source_owner": {
+      "native_context_line": 2624,
+      "timestamp": "2026-10-13T23:05:34.970Z",
+      "turn_id": "01a13783-9ddb-7ac3-a94e-0bc2aa44745b",
+      "model": "gpt-6.1-sol",
+      "effort": "medium"
+    },
+    "custody": "Rootverified exacttwo/private0700dir/0600regularUID501nlink1noalias/pinsMATCH",
+    "source_writer": "STOPPED_FROZEN",
+    "syntax_tests_survey": "NOT_RUN_NO_ADMISSION",
+    "native_recipe": "12..28successfulcalls; base10+upTo8childPS+upTo8conditionalcwdtxtlsof+2postnumeric/max4directchildphase",
+    "actual_high_source_review": {
+      "native_context_line": 3224,
+      "timestamp": "2026-10-13T23:07:11.329Z",
+      "turn_id": "01a13785-1644-76d1-84b6-ba5f5fc7da5e",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3246,
+      "native_final_timestamp": "2026-10-13T23:07:58.268Z",
+      "status": "PASS",
+      "required": 0,
+      "closed": [
+        "C-ARGV-01_SOURCE_ONLY"
+      ],
+      "limits": "Sourceproof only; actualargv/observeridentity/absence/preservation/closure Unknown; syntax/survey/no executionor terminationauthority."
+    }
+  },
+  "custody_recovery_C02_actual_survey_v1": {
+    "status": "HOLD_NEW_UNCLASSIFIED_CHILD",
+    "usage": "CONSUMED_1_OF_1",
+    "admission": "M3-IMAGE-CUSTODY-RECOVERY-C-02-SURVEY v1",
+    "syntax": {
+      "invocations": 1,
+      "chunk": "5d0d8f",
+      "exit": 0,
+      "outputBytes": 0,
+      "session": "NONE_FINAL_CLOSED"
+    },
+    "survey": {
+      "invocations": 1,
+      "launchChunk": "4cb92f",
+      "session": 71695,
+      "completionChunk": "7791f2",
+      "callerExit": 1,
+      "callerSession": "COMPLETED_NOT_RETAINED",
+      "helperPid": 32316,
+      "nativeCalls": 7,
+      "elapsedMs": 1892.927792,
+      "failureCode": "NEW_UNCLASSIFIED_CHILD",
+      "phases": [],
+      "signals": [],
+      "appStarts": 0
+    },
+    "receipt": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/primary-c02-survey-observation.json",
+    "bytes": 7753,
+    "sha256": "d40005f1dfbda2aee9493dcf9001871708e9c048de0b67dc49a12f26bfa406dd",
+    "binding_predicates": {
+      "all_equal": true,
+      "branches": [
+        "SURVEY_ARGV",
+        "PARENT_ARGV",
+        "PARENT_QUERY_ROWS",
+        "PARENT_QUERY_SHAPE",
+        "PARENT_PID",
+        "PARENT_UID",
+        "PARENT_QUERY_ARGV",
+        "PARENT_GENERATION_VALID",
+        "PARENT_LSOF_PID",
+        "PARENT_CWD",
+        "PARENT_LOADED_EXE",
+        "PARENT_RESOLVED_NODE",
+        "PARENT_NUMERIC_TUPLE"
+      ],
+      "limits": "Beforephase snapshotonly/no lifetimeorclosureauthority"
+    },
+    "child_sequence": {
+      "before_numeric_pid": 32317,
+      "before_numeric_ppid": 63828,
+      "before_numeric_pgid": 63828,
+      "child_PS": "EXIT1_EMPTY_REAL_EOF_IDENTITY_MISSING",
+      "post_numeric_old_PID": "ABSENT_IN_POST_SNAPSHOT_NO_OWNERSHIP",
+      "post_numeric_new_child": 32354,
+      "post_numeric_new_child_identity": "UNKNOWN_NUMERIC_ONLY",
+      "result": "NEW_UNCLASSIFIED_CHILD_HOLD_NO_FURTHER_PROBES"
+    },
+    "preservation_proof": {
+      "before_disk_and_known10_GET": "Codeflow indicates completed disk()+collections() comparison before failingchildpredicate; result.phases remainedempty, returnedobservationsNOTSEALED/UNAVAILABLE; thisis sourcecontrolflowinference, not durable fullpreservationproof",
+      "after_disk_and_known10_GET": "NOT_RUN",
+      "whole_before_after_equality": "NOT_VERIFIED"
+    },
+    "parent": {
+      "pid": 63828,
+      "session": 27751,
+      "status": "RETAINED_NO_EXTRA_STOP_OR_SIGNAL",
+      "generation": "Wed Oct 14 05:15:48 2026"
+    },
+    "high_review": {
+      "native_context_line": 3251,
+      "timestamp": "2026-10-13T23:25:03.386Z",
+      "turn_id": "01a13795-71fe-71f2-be65-675c0158f02d",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3289,
+      "native_final_timestamp": "2026-10-13T23:27:11.575Z",
+      "status": "HOLD_CONSUMED_CORRECT_NEW_CHILD_SAFEGUARD_REQUIRED_CHECKPOINT",
+      "required": [
+        "C-CHECKPOINT-01"
+      ],
+      "verified": "All7native+callerclosed/EOF, positiveparentbinding andbeforeportsabsent; oldchildgone/newchildUNKNOWNHOLDcorrect. Beforedisk/collections returnedcomparison bysourcepath, returnedproofUNAVAILABLE; afterNOT_RUN.",
+      "unknown": "Actualchild32354identity/hardlifetime/wholebeforeafter/closure; no repeatedsurveyapproval."
+    },
+    "next": "ExistingHigh actualclassification +newcoherentcustody/preservationcheckpoint proposal requiringCoordinatordecision; noautofix/retry/probes/parentpauseorstop/termination."
+  },
+  "custody_recovery_C03_proposal_v1": {
+    "id": "M3-IMAGE-CUSTODY-RECOVERY-C-03",
+    "version": 1,
+    "status": "PROPOSED_COHERENT_PAUSE_SURVEY_PAIRED_RESUME_PLAN_ONLY",
+    "files": [
+      "custody-operator.mjs",
+      "operator-plan.json"
+    ],
+    "ownership": "Existing F actualMedium writes ONLY fresh twofiles after SOURCE approval; existing High plan/source/evidence. PRIMARY actualMedium owns27751 and every guard/survey/action handle. Coordinator decisions only.",
+    "basis": "C02 ONE consumed HOLD NEW_UNCLASSIFIED_CHILD, parent binding and before11ports verified; child32317 gone/new32354 UNKNOWN. Frozen inspector200ms creates observation probes, actualchildidentity unproven. C-CHECKPOINT-01 beforedisk/GET comparison returned but hashes/counts lost; after NOT_RUN.",
+    "binding": {
+      "pid": 63828,
+      "uid": 501,
+      "ppid": 56796,
+      "pgid": 63828,
+      "generation": "Wed Oct 14 05:15:48 2026",
+      "session": 27751,
+      "argv": "../../workspace/pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node --test-name-pattern=^M3-CONTINUE-04 real IMAGE first-integration.mjs",
+      "cwd": "Exact existing B EV",
+      "exe": "Absolute staged pinnedNode22.23.3/SHA68f4",
+      "guards": "No arbitraryargv/UID/generation/cwd/exe alternatives; no ownership from childname/group/source. macOS atomic PIDreuse protection unavailable; limitation remains explicit."
+    },
+    "source_scope": "Standalone Nodebuiltins operator+fixedplan; enum modes PRE_PAUSE_AND_STOP, STOPPED_SETTLE, PAUSED_SURVEY, RESUME_GUARD_AND_CONT, AFTER_RESUME. Each mode a separately launched PRIMARY-owned process. Resume mode MUST NOT depend on survey promise/process/status or its outcome. No livecontroller/app/operator/SDK imports/patch. Preserve C01/C02/B files and receipts.",
+    "checkpoint": "Persist bounded hashes/counts/status immediately after disk and EACH completed collection comparison and native/identity/child adjudication. Record partial proof on later HOLD; never rewrite created receipt. No rawforeignargv/docbody/credentials; expectedsize BEFOREreads/H2only/882metadata-only schemas preserved.",
+    "sequence": [
+      {
+        "mode": "PRE_PAUSE_AND_STOP",
+        "observations": 5,
+        "order": [
+          "Complete fullscope disk+old10GET comparison checkpoint before freshnativeguard",
+          "ONE /bin/ps -axo pid=,ppid=,pgid=,rss=,lstart=",
+          "ONE /bin/ps -axo pid=,args= (boundedfilterbeforecapture)",
+          "ONE exactelevenports /usr/sbin/lsof existingargv",
+          "ONE /usr/sbin/lsof -a -p 63828 -d cwd,txt -Fn",
+          "ONE /bin/ps -p 63828 -o pid=,ppid=,pgid=,uid=,lstart=,state=,args="
+        ],
+        "guard": "Known SDKPID/groups/sourcecandidates/all11ports absent; exactparenttuple/source/data preserved/current27751 retained. Last parent lsof+PS jointlywithin2s/action immediate same owned invocation. Unknownparent/drift/SDK/resources/error beforeaction HOLD/no STOP. Directchild unknown gets no ownership/signal.",
+        "action": {
+          "executable": "/bin/kill",
+          "args": [
+            "-STOP",
+            "63828"
+          ],
+          "count": 1
+        },
+        "authority": "NEW EXPLICIT PARENTONLY STOP EXCEPTION REQUIRED; count0 if guard fails; no retry."
+      },
+      {
+        "mode": "STOPPED_SETTLE",
+        "observations": 4,
+        "commands": [
+          "ONE exactparent PS statequery",
+          "THREE exactglobalnumeric snapshots at predetermined0/250/1000ms"
+        ],
+        "guard": "Samepositiveparent/stateT and no knownSDK/groups. Lasttwo settle snapshots have zero parentdescendants; any unknown/residue/newchild/race/error HOLD -> primary resume. No childsignal or name-basedexemption/no extra polling."
+      },
+      {
+        "mode": "PAUSED_SURVEY",
+        "observations_max": 28,
+        "recipe": "Exact C02 10base+upTo8childPS+upTo8conditionalcwdtxtlsof+2postnumeric/max4children/phase, absolute futureNode. Paused state gate; unknown/residue/observeralive/sdk/groups/listener HOLD. Source/data beforeafter with immediate checkpoints. No signal in survey-mode.",
+        "acceptance": "Only all actual native handles/EOF closed and complete checkpoint equality may surveyPASS; pause expiration/resume before settlement invalidates fullPASS, always HOLD."
+      },
+      {
+        "mode": "RESUME_GUARD_AND_CONT",
+        "observations": 2,
+        "order": [
+          "ONE exactparent cwd/txtlsof",
+          "ONE exactparent PID/UID/PPID/PGID/lstart/state/argvPS"
+        ],
+        "guard": "Fresh samepositiveparent/generation/exe/cwd and current27751. Primary starts this independent process on ANY postSTOPoutcome/helpererror/deadline; never wait High/Coordinator for resume. Lasttwo queries jointlywithin2s, nativeaction immediate. Drift/missingidentity -> no unknownsignal, explicit custodyHOLD; if ownedparent knownclosed correlate handle instead of signaling reusedPID.",
+        "action": {
+          "executable": "/bin/kill",
+          "args": [
+            "-CONT",
+            "63828"
+          ],
+          "count": 1
+        },
+        "authority": "NEW EXPLICIT PAIRED RESUME EXCEPTION REQUIRED; no repeatedCONT/KILL, no sourcepatch."
+      },
+      {
+        "mode": "AFTER_RESUME",
+        "observations": 5,
+        "commands": [
+          "ONE exactparent statequery",
+          "ONE exactparentcwdtxtlsof",
+          "ONE globalnumeric",
+          "ONE sourceargvscan",
+          "ONE elevenportlsof"
+        ],
+        "guard": "Sameparenttuple state notT; resume receipt and same27751 retained. Fullscope disk+old10GET checkpoint matches PRE/baseline. Describe resumed observationalchildren as unknown or verified, never claim all parentresources absent from resumed sample; SDK/groups/ports still absent required. Any failure HOLD/no app work."
+      }
+    ],
+    "native_budget": {
+      "observation_max": 44,
+      "derivation": "PRE5+SETTLE4+SURVEY28+RESUME2+AFTER5=44",
+      "signal_actions_max": 2,
+      "total_native_processes_max": 46,
+      "no_implicit_retry": true
+    },
+    "caps": "Existing heap128/native2s/sourceargv1MiB memoryfiltered/others64KiB/each mode120s/GET2s-page25-max100-16MiB/no retry/no native timeoutkill. Exact source21/source13/allfixedrefs/155H2/882449hashed+412metadata-only+21links/H2only/oldknown10 4531 beforepause, pausedbeforeafter andafterresume.",
+    "pause_lifetime": "PRIMARY independent custody deadline max150s from actualSTOP; attempt resume-mode on surveyoutcome or at<=130s leaving20s for guards/action. No High/Coordinator wait whilepaused; no turnend/final/modelroutechange before positiveCONT+poststate accounted or exactidentityHOLD. Tool waits<=30s. This is operator observation bound, not hard OS lease. No automaticextension.",
+    "unsettled": "Native timeout/HTTPuncertainty retains actualhandles/HOLD/no next application workload. Primary still runs independent resume guard within pairedpermission; resume of read-only parent does not authorize app/start/seed. No childkill; poll actual helper/native closure after parentresume in <=30s calls. If source/identity invalid, do notsignal unknownPID and report pausedcustodyHOLD.",
+    "outputs": "Fresh0700dir/two0600sourcefiles; frozen exclusive0600 mode-specific native/partial/fullcheckpoint/results + own primary actionDATA receipts. Honest observed vs filtered bytecounts/creation state; no oldreceipt rewrite or sharedcoord write.",
+    "approval": "PLANONLY -> affectedHighplan -> Coordinator SOURCEprep -> twofilefreeze/Highsource0 -> separate ONEsyntax and exact enum guard/STOP/settle/survey/CONT/post admission. C02surveyapproval grants none ofthese.",
+    "excluded": "SIGKILL/parenttermination NOT bundled. No SDK/group/childsignals/extraSTOP/INT/TERM/EOF/livecontrollerpatch/appstarts/seed/Vite/browser/Sharp/PDF/VIDEO/producer/CMSretry/global/Git/cloud/LOCAL_COMPLETE.",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C3-a23fff6c-6040-495a-ade9-c4f4c7ea6b02",
+    "affected_high_plan_review": "PENDING"
+  },
+  "custody_recovery_C03_proposal_v2": {
+    "id": "M3-IMAGE-CUSTODY-RECOVERY-C-03",
+    "version": 2,
+    "status": "PROPOSED_C03_V2_ACTUAL_HIGH_PLAN_PASS_NO_REQUIRED_AWAITING_COORDINATOR_SOURCEPREP",
+    "files": [
+      "custody-operator.mjs",
+      "operator-plan.json"
+    ],
+    "ownership": "Existing F actualMedium writes ONLY fresh twofiles after SOURCE approval; existing High plan/source/evidence. PRIMARY actualMedium owns27751 and every guard/survey/action handle. Coordinator decisions only.",
+    "basis": "C02 ONE consumed HOLD NEW_UNCLASSIFIED_CHILD, parent binding and before11ports verified; child32317 gone/new32354 UNKNOWN. Frozen inspector200ms creates observation probes, actualchildidentity unproven. C-CHECKPOINT-01 beforedisk/GET comparison returned but hashes/counts lost; after NOT_RUN.",
+    "binding": {
+      "pid": 63828,
+      "uid": 501,
+      "ppid": 56796,
+      "pgid": 63828,
+      "generation": "Wed Oct 14 05:15:48 2026",
+      "session": 27751,
+      "argv": "../../workspace/pinky-lamb-cms/.local/cache/node/node-v22.23.3-darwin-arm64/bin/node --test-name-pattern=^M3-CONTINUE-04 real IMAGE first-integration.mjs",
+      "cwd": "Exact existing B EV",
+      "exe": "Absolute staged pinnedNode22.23.3/SHA68f4",
+      "guards": "No arbitraryargv/UID/generation/cwd/exe alternatives; no ownership from childname/group/source. macOS atomic PIDreuse protection unavailable; limitation remains explicit."
+    },
+    "source_scope": "ExactlytwoNEWfiles custody-operator.mjs/operator-plan.json; enum entries GUARDIAN, SURVEY, EMERGENCY_RESUME. Nodebuiltins only. Guardian andsurvey are separate PRIMARY-owned nativeprocesses, notagents/chats. F solewriter afterSOURCEapproval; nooldC01/C02/B/liveparent edits.",
+    "checkpoint": "Persist bounded hashes/counts/status immediately after disk and EACH completed collection comparison and native/identity/child adjudication. Record partial proof on later HOLD; never rewrite created receipt. No rawforeignargv/docbody/credentials; expectedsize BEFOREreads/H2only/882metadata-only schemas preserved.",
+    "sequence": [
+      {
+        "mode": "GUARDIAN_PAUSE",
+        "observations": 5,
+        "order": [
+          "Complete fullscope disk+old10GET comparison checkpoint before freshnativeguard",
+          "ONE /bin/ps -axo pid=,ppid=,pgid=,rss=,lstart=",
+          "ONE /bin/ps -axo pid=,args= (boundedfilterbeforecapture)",
+          "ONE exactelevenports /usr/sbin/lsof existingargv",
+          "ONE /usr/sbin/lsof -a -p 63828 -d cwd,txt -Fn",
+          "ONE /bin/ps -p 63828 -o pid=,ppid=,pgid=,uid=,lstart=,state=,args="
+        ],
+        "guard": "Known SDKPID/groups/sourcecandidates/all11ports absent; exactparenttuple/source/data preserved/current27751 retained. Last parent lsof+PS jointlywithin2s/action immediate same owned invocation. Unknownparent/drift/SDK/resources/error beforeaction HOLD/no STOP. Directchild unknown gets no ownership/signal.",
+        "action": {
+          "executable": "/bin/kill",
+          "args": [
+            "-STOP",
+            "63828"
+          ],
+          "count": 1
+        },
+        "authority": "NEW EXPLICIT PARENTONLY STOP EXCEPTION REQUIRED; count0 if guard fails; no retry."
+      },
+      {
+        "mode": "STOPPED_SETTLE",
+        "observations": 4,
+        "commands": [
+          "ONE exactparent PS statequery",
+          "THREE exactglobalnumeric snapshots at predetermined0/250/1000ms"
+        ],
+        "guard": "Samepositiveparent/stateT and no knownSDK/groups. Lasttwo settle snapshots have zero parentdescendants; any unknown/residue/newchild/race/error HOLD -> primary resume. No childsignal or name-basedexemption/no extra polling."
+      },
+      {
+        "mode": "SEPARATE_SURVEY",
+        "observations_max": 30,
+        "recipe": "Exact C02 10base+upTo8childPS+upTo8conditionalcwdtxtlsof+2postnumeric/max4children/phase, absolute futureNode. Paused state gate; unknown/residue/observeralive/sdk/groups/listener HOLD. Source/data beforeafter with immediate checkpoints. No signal in survey-mode. AdditionalpositiveguardianPS/lsof2calls, typedsealedreadyPID/fulltuple.",
+        "acceptance": "Only all actual native handles/EOF closed and complete checkpoint equality may surveyPASS; pause expiration/resume before settlement invalidates fullPASS, always HOLD."
+      },
+      {
+        "mode": "GUARDIAN_INDEPENDENT_RESUME",
+        "observations": 2,
+        "order": [
+          "ONE exactparent cwd/txtlsof",
+          "ONE exactparent PID/UID/PPID/PGID/lstart/state/argvPS"
+        ],
+        "guard": "Guardian persistentprocessindependentofsurveypromise; fresh2queriesjointly<=2s→ONECONT onanyoutcome/deadline/EOF/INT/TERM/HUP, intentlatch/no repeats. Drift/refusalHOLD, never unknownsignal.",
+        "action": {
+          "executable": "/bin/kill",
+          "args": [
+            "-CONT",
+            "63828"
+          ],
+          "count": 1
+        },
+        "authority": "NEW EXPLICIT PAIRED RESUME EXCEPTION REQUIRED; no repeatedCONT/KILL, no sourcepatch."
+      },
+      {
+        "mode": "AFTER_RESUME",
+        "observations": 5,
+        "commands": [
+          "ONE exactparent statequery",
+          "ONE exactparentcwdtxtlsof",
+          "ONE globalnumeric",
+          "ONE sourceargvscan",
+          "ONE elevenportlsof"
+        ],
+        "guard": "Sameparenttuple state notT; resume receipt and same27751 retained. Fullscope disk+old10GET checkpoint matches PRE/baseline. Describe resumed observationalchildren as unknown or verified, never claim all parentresources absent from resumed sample; SDK/groups/ports still absent required. Any failure HOLD/no app work."
+      }
+    ],
+    "native_budget": {
+      "normal_observations": 46,
+      "normal_derivation": "Original44 plus2guardianidentity guards; normalSTOP+CONT=>48nativeprocesses.",
+      "emergency_extra_reserve": 7,
+      "observations_max": 53,
+      "signal_actions_max": 2,
+      "native_processes_max": 55,
+      "no_retry": true
+    },
+    "caps": "Native2s/sourceargv1MiBmemoryfiltered/other64KiB/heap128each/GET2s-page25-max100-16MiB/no retries/no timeoutkill. Guardian observationstage120s, custodytimer150s/resumerequest130s; survey/emergency observationstage120s. Max2auxactive/no hardRSSquota; toolwait<=30s. Safetyresumeguards areindependentof unsettledreadonlysurvey, no new appwork. Samepreservation scopes/H2-only/checkpoint limits.",
+    "pause_lifetime": "Timerinstalled beforeSTOPattempt; guardianrequestsresume<=130s with20sreserve/max150spause observationwindow. PRIMARYrequestsRESUME immediatelyonsurveyoutcome, noHighwait/modelroutechange/finalwhilepaused unlessexactunresolvablecustodyHOLDdisclosed. Bounded<=30stoolwait. No autoextension; nothardOSlease.",
+    "unsettled": "Native timeout/HTTPuncertainty retains actualhandles/HOLD/no next application workload. Primary still runs independent resume guard within pairedpermission; resume of read-only parent does not authorize app/start/seed. No childkill; poll actual helper/native closure after parentresume in <=30s calls. If source/identity invalid, do notsignal unknownPID and report pausedcustodyHOLD.",
+    "outputs": "Fresh0700dir/two0600sourcefiles; frozen exclusive0600 mode-specific native/partial/fullcheckpoint/results + own primary actionDATA receipts. Honest observed vs filtered bytecounts/creation state; no oldreceipt rewrite or sharedcoord write. ExplicitfutureDATA stop-intent.json/stop-result.json/guardian-ready.json/guardian-paused.json/resume-intent.json/resume-result.json/post-result.json withinfreshprivateNS, strictsourcefrozenallowlist. STOP/CONTintent eachcreatedexclusive+fsynced beforeaction, no oldreceipt/sourcewrites.",
+    "approval": "C03v2 PLANONLY Highaffectedplan→CoordinatorSOURCE→twofilefreeze/Highsource→separateONEsyntax+ONEguardianstartup/PAUSE+conditionalONEsurvey+soleCONT/post/emergencyconditionaladmission. NOsource/guardian/signal/run fromthisproposal; SIGKILL notbundled.",
+    "excluded": "SIGKILL/parenttermination NOT bundled. No SDK/group/childsignals/extraSTOP/INT/TERM/EOF/livecontrollerpatch/appstarts/seed/Vite/browser/Sharp/PDF/VIDEO/producer/CMSretry/global/Git/cloud/LOCAL_COMPLETE.",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C3-a413eeab-f80c-4561-9c8c-504733535b0c",
+    "affected_high_plan_review": {
+      "native_context_line": 3366,
+      "timestamp": "2026-10-13T23:45:30.066Z",
+      "turn_id": "01a137a8-29b6-7f12-a458-6021d652e3b8",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3381,
+      "native_final_timestamp": "2026-10-13T23:45:52.464Z",
+      "status": "PASS",
+      "required": 0,
+      "closed": [
+        "C03-PLAN-02",
+        "C03-PLAN-03"
+      ],
+      "limits": "Plan/sourceprepdecision only; no guardian/source/syntax/signal/operationalauthority."
+    },
+    "supersedes": "C03v1 planningonly, historicalHigh0preserved; no source/run permission fromeither.",
+    "guardian": {
+      "startup": "ONE ABSOLUTE pinnedNode --max-old-space-size=128 custody-operator.mjs GUARDIAN, fixedfreshC3cwd/PRIMARYownedTTYsession. No action onstartup. Install timer/EOF/stdioerror/INT/TERM/HUP/finalizer paths BEFORE guardian-ready receipt. Gate PAUSE on PRIMARYownedhandle/ready/pins/currentMedium/27751retained.",
+      "protocol": [
+        "PAUSE once",
+        "RESUME idempotent request",
+        "STATUS cached only"
+      ],
+      "survival": "Persistent nativeguardian independentof failedsurveyprocess/promise/modeltaskturn. Requestresume on outcome/EOF/error/INT/TERM/HUP/130sdeadline. No waitingHigh/Coordinator whilepaused. ONE resumeWork/attemptlatch. Allresume triggers firstcheck stopMayHaveBeenSent. If false, end/HOLD withoutCONT; if true, freshpositiveparent/state+STOPbinding guard required. FreshnonT withknownNoSTOPdelivery mayrecordNO_RESUME_NEEDED/noCONT; unknownexternalpausedstate notownedbylabel.",
+      "signal_owner": "Guardian soleSTOP/CONT owner; freshnativeguards, neverfailedsurveypromise. Exclusivefsynced resume-intent BEFORE literal /bin/kill -CONT63828, no repeat or deletingmarker. SoleCONT also gated byactualormaybesentSTOP binding/freshstate; no CONT beforeSTOPattempt.",
+      "capture_failure": "In-memorypositiveparentidentity may substitute only FAILEDPROOF_CAPTURE, never actionintent. Exclusiveclaim+fsync resume-intent MUST succeedBEFOREliteralCONT fork. Ifcreate/write/fsync fails, nosignal, PAUSED_CUSTODY_HOLD/breach; partial/presentmarker preserved/no delete/no retry. Capturefailure afterSTOP requestsresume, but STOPattemptbinding/freshstate/identity andmandatoryintent gates remain. If proofunavailable but allactiongatesvalid, finitePROOF_UNAVAILABLE/HOLD may accompany actualCONT; neverclaimcompleteproof.",
+      "refusal": "BeforeSTOPfailure=no pause. AfterSTOPidentitydrift/CONTrefusal/exiterror/stateT =>PAUSED_CUSTODY_HOLD/reportbreach; no repeatedsignal/profilebypass. Primarygetsnewdecision ifneeded.",
+      "fatal_limit": "Guardian survives surveyfailure/catchableevents; its own SIGKILL/OOM/kernel/hostloss notinterceptable. No hardOSlease. Emergency onlyunderstrictrecipe; otherwisecustodyUNKNOWN/HOLD.",
+      "stop_attempt_gate": "BeforeSTOP preguard mustprove sameparent state NOTT, positivefixedtuple andstablepermissions/scope. Exclusivefsynced stop-intent.json bindsPAUSErequest/guardianidentity/parentgeneration+argv/cwd/exe BEFOREliteralSTOP fork; recordactualknownSTOPresult separately. stopMayHaveBeenSent becomestrue ONLY at guardedSTOP attempt afterintentfsync. EOF/error/timer BEFOREPAUSE/STOPattempt =>finish/HOLD/NOSIGNAL, neverCONT. Resume needssealedcompleteSTOPattempt binding or equivalent exactmanagedcaller proof + freshsameparent state. No genericguardianexit trigger alone."
+    },
+    "guardian_binding": {
+      "additional_calls": 2,
+      "commands": [
+        "ONE /bin/ps -p POSITIVE_SEALED_GUARDIAN_PID -o pid=,ppid=,pgid=,uid=,lstart=,args=",
+        "ONE /usr/sbin/lsof -a -p SAME_GUARDIAN_PID -d cwd,txt -Fn"
+      ],
+      "guards": "ActualUID501/fullgeneration/exactGUARDIANargv/canonicalC3cwd/loadedNode68f4 againstsealedready+pausedreceipt/PRIMARYsession. DynamicPIDonlypositiveownedcallerreceipt. Source/native scans allowonlyexactparent/verifiedguardian/survey. No marker/groupownership.",
+      "survey_min": 14,
+      "survey_max": 30
+    },
+    "emergency_resume": {
+      "condition": "Onlyafter actualmanagedGUARDIANcallercompletion/death AND stableprivate resume-intent ABSENT. Intentpresent/partial/unknown forbidsanotherCONT. No concurrentkeeper/emergencyaction or PIDabsenceonlyinference. Additionallyrequire sealedcompletePAUSE/STOP-attempt binding (or equivalent exactmanagedcaller evidence) tothisparentgeneration/guardianowner andactualSTOPmayhavebeensent. Guardianclosure+absentresume-intent alone isNOTsufficient. FreshstateT mustcorrelate ownedSTOPattempt; prePAUSEEOF/exit givesNOsignal.",
+      "command": "AtmostONE ABSOLUTE pinnedNode --max-old-space-size=128 custody-operator.mjs EMERGENCY_RESUME, samecwd.",
+      "recipe": "Twofreshsameparentidentityguards jointly<=2s, claim sameexclusivefsyncedintent BEFOREliteralCONT. Frozenordering+realkeepercompletion+intentabsence provesno priorCONTfork. No unlink/overwrite. Thenafterresume fiveobservations+source/known10checkpoint.",
+      "budget": "Reserve extra2guard+5postobservations evenifkeeperpartialguards/post consumed; guardianORemergency CONT total<=1. Intentunknown/permissionrefusal meansHOLD/noautomaticretry.",
+      "intent_gate": "Sameexclusiveclaim+fsync mandatoryBEFORECONT; failure/partial/present=>nosignal/HOLD/breach. No intentoverride from in-memorycapture, no delete/retry. Allparentidentity/state/STOPbinding gates remain."
+    },
+    "auxiliary_custody": "Atmost2activeauxprograms guardian+survey, orkeeperknownclosed→emergency+unsettledsurvey. Eachheap128, nohardRSSquotaclaim. AllsamePRIMARYMedium owns27751/newhandles.",
+    "mandatory_lifetime": "Timerinstalled beforeSTOPattempt; guardianrequestsresume<=130s with20sreserve/max150spause observationwindow. PRIMARYrequestsRESUME immediatelyonsurveyoutcome, noHighwait/modelroutechange/finalwhilepaused unlessexactunresolvablecustodyHOLDdisclosed. Bounded<=30stoolwait. No autoextension; nothardOSlease. Atmost2activeauxprograms guardian+survey, orkeeperknownclosed→emergency+unsettledsurvey. Eachheap128, nohardRSSquotaclaim. AllsamePRIMARYMedium owns27751/newhandles."
+  },
+  "custody_recovery_C03_high_plan_v1": {
+    "native_context_line": 3294,
+    "timestamp": "2026-10-13T23:31:21.405Z",
+    "turn_id": "01a1379b-369a-78f1-8f90-fc88a5c196d9",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "native_final_line": 3326,
+    "native_final_timestamp": "2026-10-13T23:33:00.223Z",
+    "status": "PASS",
+    "required": 0,
+    "limits": "V1sourceprepplanonly; guardian-survival clarificationnowC03v2 materialdelta Highpending; no source/run permission."
+  },
+  "custody_recovery_C03_high_plan_v2_initial": {
+    "native_context_line": 3331,
+    "timestamp": "2026-10-13T23:42:09.115Z",
+    "turn_id": "01a137a5-18c0-7670-920a-9deea921e5c6",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "native_final_line": 3361,
+    "native_final_timestamp": "2026-10-13T23:43:41.886Z",
+    "status": "HOLD_TWO_REQUIRED_GATE_CLARIFICATION",
+    "required": [
+      "C03-PLAN-02",
+      "C03-PLAN-03"
+    ],
+    "repair": "Samev2 scope/count/sourcefiles; STOPattempt gate +CONTintentnoexception explicit, affectedre-reviewpending",
+    "execution": "NOT_RUN_NO_APPROVAL"
+  },
+  "custody_recovery_C03_source_v2": {
+    "approval": "M3-IMAGE-CUSTODY-RECOVERY-C-03-SOURCE v2",
+    "status": "OPERATION_ONE_HOLD_ACTUAL_HIGH_CLASSIFIED_NO_ACTION_CALLER_CLOSED_OLD_PARENT_RETAINED",
+    "namespace": "operator-work/3e0551e2-3f5f-4f78-94f7-7b59fa6219b4/custody-recovery-C3-a413eeab-f80c-4561-9c8c-504733535b0c",
+    "files": [
+      "custody-operator.mjs",
+      "operator-plan.json"
+    ],
+    "source_owner": "ExistingF freshnativeactualMedium beforewrites",
+    "high_plan": {
+      "native_context_line": 3366,
+      "timestamp": "2026-10-13T23:45:30.066Z",
+      "turn_id": "01a137a8-29b6-7f12-a458-6021d652e3b8",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3381,
+      "native_final_timestamp": "2026-10-13T23:45:52.464Z",
+      "status": "PASS",
+      "required": 0,
+      "closed": [
+        "C03-PLAN-02",
+        "C03-PLAN-03"
+      ],
+      "limits": "Plan/sourceprepdecision only; no guardian/source/syntax/signal/operationalauthority."
+    },
+    "allowed": "Statictext/JSON/stat/SHA/descriptor tracing only; NO Node--check/module/eval/guardian/probes/GET/control/processlaunch/signals",
+    "next": "Read-only bounded operation proposal; external livehandle/emergency dependency NOT_READY; no guardian/pause/survey until separately admitted",
+    "parent": "63828/27751 retained/noextraactions",
+    "history": "B/C01/C02/helperreceipts unchanged/consumedfailures preserved",
+    "gap": {
+      "owner_actual_medium": "01a137c0-40f5-7753-8fdc-1c1ea926b8be",
+      "files_written": 0,
+      "checks_or_processes": 0,
+      "guardian_generation": "Nodebuiltins cannotprovideOSlstart; twoactualPS/lsofidentitycalls currentrecipeafterPAUSE, readyneedsbeforePAUSE. No Date/processuptime/PIDlabel substitute.",
+      "external_emergency_completion": "Nodebuiltins cannotobserve managed tool callercompletion/session. ExactPRIMARYcompletionDATA receipt+futurepin/admission dependency mustremainexplicit; genericframe/selfreportcannotproof."
+    },
+    "amendment": "M3-IMAGE-CUSTODY-RECOVERY-C-03-SOURCE-READY-AMENDMENT-01 v1",
+    "ready_probe_order": "TwoexistingguardianPS/lsofstartupbeforefullready, Source+controlpathsfirst; actualOSgeneration/nativeEOF, UID/exeAT_STARTUP",
+    "budget": "46normal/53withreserve/+2signals55; survey12..28/no extrapeercalls",
+    "emergency_dependency": "NOT_READY externalPRIMARYmanagedcallercompletionDATA+outsideHigh/Coordinatorpin/admission, no selfreport/APIproof fromJSON",
+    "checks_processes_signals": "NOT_RUN_NOT_ADMITTED",
+    "frozen_sources": [
+      {
+        "path": "custody-operator.mjs",
+        "bytes": 38928,
+        "sha256": "bfab71e8e49a2b379329d0bb7f4d2607c452c6a5adc83c9811ea55ed20e503c6"
+      },
+      {
+        "path": "operator-plan.json",
+        "bytes": 38777,
+        "sha256": "f1e0acd4e4a99e6a042c712e2206a02fe808b5333ad2c8abf8f6fdb5ea023a3e"
+      }
+    ],
+    "actual_source_owner": {
+      "native_context_line": 2712,
+      "timestamp": "2026-10-14T00:42:41.111Z",
+      "turn_id": "01a137dc-8439-7741-b3ea-b960ead5c329",
+      "model": "gpt-6.1-sol",
+      "effort": "medium"
+    },
+    "custody": "Rootmatchedexacttwo/private0700namespace/0600regularUID501nlink1noalias/bytesSHA",
+    "source_owner_status": "STOPPED_FROZEN",
+    "closure": "Nodebuiltins assert/fs/crypto/path/url/child_process/http/readline; noapp/SDKimports",
+    "checks": "Syntax/tests/module/probes/GET/guardian/signals NOT_RUN",
+    "source_budget": "Perbody1MiB/256aggregatefiles/16MiB (14MiB admission+2MiB concurrencyreserve), inplanforHighreview; native46/53+2=55 unchanged",
+    "initial_frozen_sources": [
+      {
+        "path": "custody-operator.mjs",
+        "bytes": 36650,
+        "sha256": "3b28d0c2397273a098f4e11a06ee0a70dbdc2a4c2bb021acd8b63fb0194e5c3b"
+      },
+      {
+        "path": "operator-plan.json",
+        "bytes": 36964,
+        "sha256": "43e5bdb94fbd1d9b6e504b73155cb9ced51825e0a52b463df9eaa4c350489968"
+      }
+    ],
+    "initial_high_source_review": {
+      "status": "HOLD",
+      "required": [
+        "C03-SRC-01",
+        "C03-SRC-02",
+        "C03-SRC-03"
+      ],
+      "native_context_line": 3408,
+      "timestamp": "2026-10-14T00:50:01.383Z",
+      "turn_id": "01a137e3-3c08-7822-913d-f2785991b19b",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3487,
+      "native_final_timestamp": "2026-10-14T00:56:11.974Z",
+      "findings": [
+        "Fixed mode-specific immutable admission inputs needed",
+        "Safety resume capture-only failures must permit actual in-memory identity validation; mandatory fsynced CONT intent remains required",
+        "Pause clock must anchor at STOP attempt; final survey120s gate required"
+      ],
+      "limits": "Static source review only; syntax/module/native/HTTP/control/signals NOT_RUN. External live-handle/emergencycompletion NOT_READY."
+    },
+    "repair_actual_source_owner": {
+      "native_context_line": 2802,
+      "timestamp": "2026-10-14T00:58:55.950Z",
+      "turn_id": "01a137eb-642e-75f0-a7c0-fa5b0116d3b2",
+      "model": "gpt-6.1-sol",
+      "effort": "medium"
+    },
+    "repair_scope": "Same twofiles/caps. Fixed mode admission inputs; safetyresume capture-only memory proof retains HOLD, mandatory fsynced CONT intent never waived; guarded STOP-attempt sharedclock/final deadline. No execution checks.",
+    "repaired_high_source_review": {
+      "native_context_line": 3492,
+      "timestamp": "2026-10-14T01:00:54.292Z",
+      "turn_id": "01a137ed-3275-7651-9645-e04e1afb1570",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3545,
+      "native_final_timestamp": "2026-10-14T01:04:08.543Z",
+      "status": "PASS",
+      "required": 0,
+      "closed": [
+        "C03-SRC-01",
+        "C03-SRC-02",
+        "C03-SRC-03"
+      ],
+      "limits": "Affected source review only. Syntax/modules/native/HTTP/control/signals NOT_RUN. External live-handle/emergencycompletion NOT_READY until separate reviewed admission."
+    },
+    "syntax_one": {
+      "approval": "M3-IMAGE-C03-SYNTAX-ONE-01 v1",
+      "status": "PASS_SYNTAX_ONLY_ONE_CONSUMED",
+      "actual_primary": {
+        "native_context_line": 8154,
+        "timestamp": "2026-10-14T01:56:27.157Z",
+        "turn_id": "01a13820-0d73-7352-92fa-5e63bc4b4563",
+        "model": "gpt-6.1-sol",
+        "effort": "medium"
+      },
+      "caller": {
+        "chunk_id": "e57e2e",
+        "exit_code": 0,
+        "output_bytes": 0,
+        "pending_session": null
+      },
+      "pre_post": "Exact source2 bytes/SHA/0600regularUID501nlink1/noaliases/private0700 plus Node112925600B/SHA68f4 matched; namespace still exacttwofiles",
+      "limits": "Node --check only, no module/import/application/test/guardian/probes/HTTP/control/signals. No retry. Parent63828/session27751 retained."
+    },
+    "operation_one": {
+      "approval": "M3-IMAGE-C03-COHERENT-OPERATION-02-ONE v1",
+      "status": "ONE_CONSUMED_HOLD_STARTUP_NO_ACTION_EPERM_CALLER_CLOSED",
+      "actual_primary": {
+        "native_context_line": 8610,
+        "timestamp": "2026-10-14T03:09:08.926Z",
+        "turn_id": "01a13862-9b81-7a41-b19f-e90792e8a254",
+        "model": "gpt-6.1-sol",
+        "effort": "medium"
+      },
+      "caller": {
+        "chunk_id": "4dfbce",
+        "exit_code": 1,
+        "pending_session": null,
+        "tty": true,
+        "login": false,
+        "environment": "env-i PATH=/usr/bin:/bin LANG=C LC_ALL=C",
+        "mode": "GUARDIAN",
+        "observations": 1,
+        "signals": 0
+      },
+      "prepost": "52unique source2+50inputs/ref pins matched before; source2+50inputs/refs inclNode matched after",
+      "data": {
+        "guardian-admission.json": {
+          "bytes": 286,
+          "sha256": "8a7a1a098041786de313e9983d364d66386e565fa1897c0ec78351b0351219ce"
+        }
+      },
+      "startup_disk_proof": {
+        "pins": 51,
+        "canonical": 155,
+        "protectedRows": 882,
+        "sha256": "cbb08c30d2566b3976e226c0d53760e25d029e682475ec9f52e622c0d19b228c",
+        "checkpoint_files": [
+          "GUARDIAN-checkpoint-0001.json",
+          "GUARDIAN-checkpoint-0002.json"
+        ]
+      },
+      "result": {
+        "file": "GUARDIAN-result.json",
+        "bytes": 1066,
+        "sha256": "4ba9f627d7f368e1947fd3e64e4a36eefcb2be356ad0e7aa6cccc3594ceceeac",
+        "failureCode": "EPERM",
+        "unsettled": []
+      },
+      "absent": "READY/PAUSED/STOPintent/STOPattempt/STOPresult/CONTintent/CONTresult/primaryhandles/surveyadmission; no native receipt",
+      "limits": "No pause/survey/signal/EOF/retry/profilechange. Old10GET/fullbeforeafter NOT_RUN. Actual native spawn-failure classification Highpending. Parent63828/session27751 retained; no heavy release/JPEG transfer/PDF changes.",
+      "actual_high_classification": {
+        "native_context_line": 3599,
+        "timestamp": "2026-10-14T03:10:41.143Z",
+        "turn_id": "01a13864-03cc-7cc2-908b-b838a56ac23a",
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "native_final_line": 3650,
+        "native_final_timestamp": "2026-10-14T03:15:45.149Z",
+        "status": "HOLD_ONE_CONSUMED_STARTUP_SYNCHRONOUS_FIRST_SPAWN_EPERM",
+        "cause_boundary": "First positive selfPID /bin/ps spawn failed before native handle registration; unsettledempty/no receipt NOT nativeclosure proof. Default managedpath differs prior C01/C02 require_escalated; exactrejecting layer Unknown, noauto_reviewrejection.",
+        "next": "Separate bounded pinnedNode childPS capability diagnostic proposal/admission before new guardian attempt; no usednamespace retry/sourcechange/profilepolicychange."
+      }
+    }
+  },
+  "custody_recovery_C03_ready_clarification_v1": {
+    "id": "M3-IMAGE-C03-READY-BINDING-CLARIFICATION-01",
+    "version": 1,
+    "status": "PROPOSED_READY_ORDER_CLARIFICATION_ACTUAL_HIGH_PASS_NO_REQUIRED_AWAITING_COORDINATOR_SOURCE_AMENDMENT",
+    "parent_approval": "C03SOURCEv2 only, pendingCoordinator amendment beforewrites",
+    "selected_option": "Move exacttwo guardianPS/lsof calls from SEPARATE_SURVEY to guardianstartup BEFOREready. No newcalls/files/caps; fixedsamePIDpositiveprocess.pid/UID501/argv/cwd/loadedNode/fullOSgeneration.",
+    "startup_order": "Register EOF/error/INT/TERM/HUP/finalizer andtimerlogic first; exactselfPS+lsof actualnativeidentity; only knownclosed/EOF/size+pinmatch then sealedguardian-ready fulltuple. Failure/unsettled/no nativepermission→noREADY/noPAUSE/noSTOP/noCONT, retainhandles/HOLD. No builtin-derivedlstart claim.",
+    "count_graph": "Startup2 +PRE5 +SETTLE4 +SURVEY28 +RESUME2 +AFTER5 =46normalobservations; emergencyreserve7 gives53, STOP+CONT<=2 total55. Previouslypeer2afterPAUSE removed, SURVEYback12..28; no implicit additional peerPS/lsof calls.",
+    "survey_peer_proof": "Use sealedstartup actualPS/lsofcaptures/fulltuple/sourcepinnedready+PRIMARYowned liveguardianhandle, cross-checkguardianPID/generation/exactargv in existingnumeric/sourceframes. Label loadedexe/UID observedATSTARTUP, notfreshpostPAUSElsof. Missing/drift/deadguardianHOLD; no marker/naming/PIDabsenceownership. Guardian ownsprivateoutput/source andSourcefrozenentry.",
+    "external_emergency_receipt": "EMERGENCY remainsNOT_READY/conditional until exactPRIMARY-generated managedcaller completion DATA boundguardianPID/generation/session/actualtoolcompletion/exit/stopattempt andimmutablebytesSHA isprovided underfutureexactemergencyadmission. Operatorstrictschema/hash/path/custody validates externalinput butdoesnot independentlyquery orprove toolAPI; actualHigh/Coordinator review/pin outsideoperatorrequired beforeemergency. No genericboolean/sessionlabel orselfreportedPIDabsence accepts CONT. If unavailable duringfatalwindow, PAUSED_CUSTODY_HOLD/breach, notfakeguardiansurvival/fallback.",
+    "source_scope": "SameexacttwoNEWC3files/sameSOURCEownerMedium; staticprep only after affectedHighPLAN0+Coordinator clarification. Fstopped/beforewrites/no Nodecheck or probes.",
+    "limits": "Movingproofowner/order isexplicitchange; startupidentityfreshness isnotindependentpostpausepeerloadedexeproof. AllactionSTOP/CONTgates/mandatoryintent/noexceptions/fatallease/PIDrace limits remain. Parent27751retained; no signal now.",
+    "next": "ExistingHigh affectedplan review→Coordinator exactscope amendment, thenFsourceprep.",
+    "actual_high_plan_review": {
+      "native_context_line": 3386,
+      "timestamp": "2026-10-14T00:15:31.441Z",
+      "turn_id": "01a137c3-a64b-7c50-ab34-b00538ab9241",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "native_final_line": 3403,
+      "native_final_timestamp": "2026-10-14T00:16:20.694Z",
+      "status": "PASS",
+      "required": 0,
+      "limits": "Planonly; actualstartup/ready/survey/signalproofNOT_RUN. Coordinatoramendment requiredbeforeSourcewrites."
+    }
+  }
+}

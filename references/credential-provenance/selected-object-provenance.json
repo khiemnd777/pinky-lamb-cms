@@ -1,0 +1,924 @@
+{
+  "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+  "page_numbering": "1-based",
+  "objects": [
+    {
+      "name": "sony-ult-2025",
+      "handoff_path": "references/credential-selected/sony-ult-2025.png",
+      "page": 6,
+      "pdf_xref": 80,
+      "image_index_on_page": 4,
+      "pixel_dimensions": {
+        "width": 839,
+        "height": 396
+      },
+      "pdf_bbox_points": [
+        23.492000579833984,
+        210.0699920654297,
+        436.4420166015625,
+        404.8699951171875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-80.png"
+    },
+    {
+      "name": "diag-awareness-2022",
+      "handoff_path": "references/credential-selected/diag-awareness-2022.jpeg",
+      "page": 7,
+      "pdf_xref": 86,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 683,
+        "height": 428
+      },
+      "pdf_bbox_points": [
+        79.25499725341797,
+        188.55001831054688,
+        380.80499267578125,
+        377.52001953125
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-86.jpeg"
+    },
+    {
+      "name": "varna-elite-2023",
+      "handoff_path": "references/credential-selected/varna-elite-2023.jpeg",
+      "page": 9,
+      "pdf_xref": 114,
+      "image_index_on_page": 5,
+      "pixel_dimensions": {
+        "width": 708,
+        "height": 473
+      },
+      "pdf_bbox_points": [
+        316.260009765625,
+        67.3900146484375,
+        597.219970703125,
+        254.79000854492188
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-114.jpeg"
+    },
+    {
+      "name": "skechers-campaign",
+      "handoff_path": "references/credential-selected/skechers-campaign.jpeg",
+      "page": 10,
+      "pdf_xref": 128,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 574,
+        "height": 756
+      },
+      "pdf_bbox_points": [
+        15.277999877929688,
+        14.310028076171875,
+        253.93800354003906,
+        328.6400146484375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-128.jpeg"
+    },
+    {
+      "name": "dongtam-tvc-2022",
+      "handoff_path": "references/credential-selected/dongtam-tvc-2022.jpeg",
+      "page": 12,
+      "pdf_xref": 147,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 919,
+        "height": 409
+      },
+      "pdf_bbox_points": [
+        20.72800064086914,
+        193.83001708984375,
+        587.0880126953125,
+        445.8900146484375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-147.jpeg"
+    },
+    {
+      "name": "baemin-shopping",
+      "handoff_path": "references/credential-selected/baemin-shopping.jpeg",
+      "page": 16,
+      "pdf_xref": 172,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 859,
+        "height": 1125
+      },
+      "pdf_bbox_points": [
+        0.0,
+        -6.103515625e-05,
+        412.32000732421875,
+        539.9999389648438
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-172.jpeg"
+    },
+    {
+      "name": "petrosetco-party-2026",
+      "handoff_path": "references/credential-selected/petrosetco-party-2026.jpeg",
+      "page": 20,
+      "pdf_xref": 214,
+      "image_index_on_page": 4,
+      "pixel_dimensions": {
+        "width": 1011,
+        "height": 476
+      },
+      "pdf_bbox_points": [
+        24.48699951171875,
+        243.08999633789062,
+        388.7170104980469,
+        414.5899963378906
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-214.jpeg"
+    },
+    {
+      "name": "wayfair-summit-2026",
+      "handoff_path": "references/credential-selected/wayfair-summit-2026.jpeg",
+      "page": 21,
+      "pdf_xref": 219,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 1104,
+        "height": 575
+      },
+      "pdf_bbox_points": [
+        98.91500091552734,
+        16.150009155273438,
+        496.4049987792969,
+        223.35000610351562
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-219.jpeg"
+    },
+    {
+      "name": "wayfair-team-2026",
+      "handoff_path": "references/credential-selected/wayfair-team-2026.jpeg",
+      "page": 21,
+      "pdf_xref": 220,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 954,
+        "height": 575
+      },
+      "pdf_bbox_points": [
+        514.7999877929688,
+        16.150009155273438,
+        858.260009765625,
+        223.35000610351562
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-220.jpeg"
+    },
+    {
+      "name": "wayfair-registration-2026",
+      "handoff_path": "references/credential-selected/wayfair-registration-2026.jpeg",
+      "page": 21,
+      "pdf_xref": 222,
+      "image_index_on_page": 4,
+      "pixel_dimensions": {
+        "width": 1248,
+        "height": 558
+      },
+      "pdf_bbox_points": [
+        98.91500091552734,
+        230.58999633789062,
+        548.344970703125,
+        431.7799987792969
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-222.jpeg"
+    },
+    {
+      "name": "vifa-opening-2026",
+      "handoff_path": "references/credential-selected/vifa-opening-2026.jpeg",
+      "page": 22,
+      "pdf_xref": 225,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 1211,
+        "height": 597
+      },
+      "pdf_bbox_points": [
+        379.6600036621094,
+        19.550003051757812,
+        815.7099609375,
+        234.80999755859375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-225.jpeg"
+    },
+    {
+      "name": "vifa-fair-2026",
+      "handoff_path": "references/credential-selected/vifa-fair-2026.jpeg",
+      "page": 22,
+      "pdf_xref": 226,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 897,
+        "height": 597
+      },
+      "pdf_bbox_points": [
+        47.06999969482422,
+        19.550003051757812,
+        370.0400085449219,
+        234.80999755859375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-226.jpeg"
+    },
+    {
+      "name": "psd-dell-microsoft-2025",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-2025.jpeg",
+      "page": 23,
+      "pdf_xref": 236,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "pdf_bbox_points": [
+        342.44000244140625,
+        13.1099853515625,
+        660.6199951171875,
+        225.26998901367188
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-236.jpeg"
+    },
+    {
+      "name": "samsung-psd-2024",
+      "handoff_path": "references/credential-selected/samsung-psd-2024.jpeg",
+      "page": 27,
+      "pdf_xref": 271,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 1106,
+        "height": 709
+      },
+      "pdf_bbox_points": [
+        486.6600036621094,
+        214.24600219726562,
+        848.4400024414062,
+        446.2460021972656
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-271.jpeg"
+    },
+    {
+      "name": "aqua-conference-2023",
+      "handoff_path": "references/credential-selected/aqua-conference-2023.jpeg",
+      "page": 30,
+      "pdf_xref": 291,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 1346,
+        "height": 519
+      },
+      "pdf_bbox_points": [
+        453.510009765625,
+        55.42999267578125,
+        893.8300170898438,
+        225.32998657226562
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-291.jpeg"
+    },
+    {
+      "name": "piano-forte-opus-1",
+      "handoff_path": "references/credential-selected/piano-forte-opus-1.jpeg",
+      "page": 32,
+      "pdf_xref": 305,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 603,
+        "height": 403
+      },
+      "pdf_bbox_points": [
+        332.0899963378906,
+        40.67999267578125,
+        608.7999877929688,
+        225.6099853515625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-305.jpeg"
+    },
+    {
+      "name": "nhatrang-festival-2019",
+      "handoff_path": "references/credential-selected/nhatrang-festival-2019.png",
+      "page": 35,
+      "pdf_xref": 338,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 1115,
+        "height": 743
+      },
+      "pdf_bbox_points": [
+        400.9800109863281,
+        89.75997924804688,
+        864.6199951171875,
+        398.72998046875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-338.jpeg"
+    },
+    {
+      "name": "stage-production-design",
+      "handoff_path": "references/credential-selected/stage-production-design.jpeg",
+      "page": 42,
+      "pdf_xref": 403,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 1280,
+        "height": 581
+      },
+      "pdf_bbox_points": [
+        87.96299743652344,
+        115.11000061035156,
+        500.52301025390625,
+        302.30999755859375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-403.jpeg"
+    },
+    {
+      "name": "product-photography-red",
+      "handoff_path": "references/credential-selected/product-photography-red.jpeg",
+      "page": 44,
+      "pdf_xref": 418,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 544,
+        "height": 816
+      },
+      "pdf_bbox_points": [
+        138.80999755859375,
+        95.76300048828125,
+        371.97998046875,
+        445.5130310058594
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-418.jpeg"
+    },
+    {
+      "name": "food-photography",
+      "handoff_path": "references/credential-selected/food-photography.jpeg",
+      "page": 44,
+      "pdf_xref": 420,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 544,
+        "height": 816
+      },
+      "pdf_bbox_points": [
+        616.6300048828125,
+        96.43499755859375,
+        848.0900268554688,
+        443.625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-420.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 6,
+      "pdf_xref": 75,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        879.1599731445312,
+        51.223995208740234,
+        933.0849609375,
+        105.14999389648438
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 7,
+      "pdf_xref": 75,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        743.97998046875,
+        26.227005004882812,
+        810.1929931640625,
+        92.44000244140625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 8,
+      "pdf_xref": 75,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        244.02999877929688,
+        20.896987915039062,
+        310.24298095703125,
+        87.1099853515625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 9,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        880.27001953125,
+        27.033992767333984,
+        934.196044921875,
+        80.95999145507812
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 10,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        663.3699951171875,
+        35.85600280761719,
+        732.7340087890625,
+        105.22000122070312
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 11,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        876.5900268554688,
+        27.033992767333984,
+        930.5150146484375,
+        80.95999145507812
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 12,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        758.8800048828125,
+        47.40699768066406,
+        825.093017578125,
+        113.6199951171875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 14,
+      "pdf_xref": 75,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        880.27001953125,
+        27.033992767333984,
+        934.196044921875,
+        80.95999145507812
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 15,
+      "pdf_xref": 75,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        880.27001953125,
+        27.033992767333984,
+        934.196044921875,
+        80.95999145507812
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 16,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        886.9400024414062,
+        24.21401596069336,
+        940.8660278320312,
+        78.1400146484375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 17,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        886.9400024414062,
+        24.21401596069336,
+        940.8660278320312,
+        78.1400146484375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "pinky-lamb-logo-badge",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "page": 18,
+      "pdf_xref": 75,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "pdf_bbox_points": [
+        677.3300170898438,
+        45.10700988769531,
+        743.5430297851562,
+        111.32000732421875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75.jpeg"
+    },
+    {
+      "name": "client-wayfair",
+      "handoff_path": "references/credential-selected/client-wayfair.png",
+      "page": 5,
+      "pdf_xref": 33,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 717,
+        "height": 196
+      },
+      "pdf_bbox_points": [
+        411.0299987792969,
+        106.30001068115234,
+        669.2000122070312,
+        176.92001342773438
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-33.png"
+    },
+    {
+      "name": "client-sony",
+      "handoff_path": "references/credential-selected/client-sony.png",
+      "page": 5,
+      "pdf_xref": 35,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 592,
+        "height": 104
+      },
+      "pdf_bbox_points": [
+        443.29998779296875,
+        210.40098571777344,
+        636.9400024414062,
+        244.489990234375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-35.png"
+    },
+    {
+      "name": "client-samsung",
+      "handoff_path": "references/credential-selected/client-samsung.png",
+      "page": 5,
+      "pdf_xref": 39,
+      "image_index_on_page": 5,
+      "pixel_dimensions": {
+        "width": 800,
+        "height": 480
+      },
+      "pdf_bbox_points": [
+        150.02999877929688,
+        167.00999450683594,
+        363.82000732421875,
+        295.2799987792969
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-39.png"
+    },
+    {
+      "name": "client-samsung",
+      "handoff_path": "references/credential-selected/client-samsung.png",
+      "page": 14,
+      "pdf_xref": 39,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 800,
+        "height": 480
+      },
+      "pdf_bbox_points": [
+        665.9400024414062,
+        13.705001831054688,
+        808.469970703125,
+        99.22000122070312
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-39.png"
+    },
+    {
+      "name": "client-aqua",
+      "handoff_path": "references/credential-selected/client-aqua.png",
+      "page": 5,
+      "pdf_xref": 37,
+      "image_index_on_page": 4,
+      "pixel_dimensions": {
+        "width": 592,
+        "height": 150
+      },
+      "pdf_bbox_points": [
+        716.4099731445312,
+        206.22799682617188,
+        883.8399658203125,
+        248.66000366210938
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-37.png"
+    },
+    {
+      "name": "client-manulife",
+      "handoff_path": "references/credential-selected/client-manulife.png",
+      "page": 5,
+      "pdf_xref": 41,
+      "image_index_on_page": 6,
+      "pixel_dimensions": {
+        "width": 480,
+        "height": 92
+      },
+      "pdf_bbox_points": [
+        150.02999877929688,
+        290.5790100097656,
+        366.510009765625,
+        331.71002197265625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-41.png"
+    },
+    {
+      "name": "client-manulife",
+      "handoff_path": "references/credential-selected/client-manulife.png",
+      "page": 13,
+      "pdf_xref": 41,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 480,
+        "height": 92
+      },
+      "pdf_bbox_points": [
+        579.4600219726562,
+        61.803985595703125,
+        734.8599853515625,
+        91.32998657226562
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-41.png"
+    },
+    {
+      "name": "client-guardian",
+      "handoff_path": "references/credential-selected/client-guardian.jpeg",
+      "page": 5,
+      "pdf_xref": 43,
+      "image_index_on_page": 7,
+      "pixel_dimensions": {
+        "width": 400,
+        "height": 142
+      },
+      "pdf_bbox_points": [
+        447.7900085449219,
+        278.489013671875,
+        632.4400024414062,
+        343.80999755859375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-43.jpeg"
+    },
+    {
+      "name": "client-guardian",
+      "handoff_path": "references/credential-selected/client-guardian.jpeg",
+      "page": 15,
+      "pdf_xref": 43,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 400,
+        "height": 142
+      },
+      "pdf_bbox_points": [
+        698.6400146484375,
+        36.21600341796875,
+        808.6400146484375,
+        75.1300048828125
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-43.jpeg"
+    },
+    {
+      "name": "client-diag",
+      "handoff_path": "references/credential-selected/client-diag.png",
+      "page": 5,
+      "pdf_xref": 44,
+      "image_index_on_page": 8,
+      "pixel_dimensions": {
+        "width": 208,
+        "height": 182
+      },
+      "pdf_bbox_points": [
+        740.780029296875,
+        291.489990234375,
+        859.4800415039062,
+        395.3499755859375
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-44.png"
+    },
+    {
+      "name": "client-diag",
+      "handoff_path": "references/credential-selected/client-diag.png",
+      "page": 7,
+      "pdf_xref": 44,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 208,
+        "height": 182
+      },
+      "pdf_bbox_points": [
+        545.9000244140625,
+        37.11299133300781,
+        647.260009765625,
+        125.79998779296875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-44.png"
+    },
+    {
+      "name": "client-diag",
+      "handoff_path": "references/credential-selected/client-diag.png",
+      "page": 8,
+      "pdf_xref": 44,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 208,
+        "height": 182
+      },
+      "pdf_bbox_points": [
+        45.944000244140625,
+        31.772994995117188,
+        147.3040008544922,
+        120.45999145507812
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-44.png"
+    },
+    {
+      "name": "samsung-flip2-2019",
+      "handoff_path": "references/credential-selected/samsung-flip2-2019.jpeg",
+      "page": 14,
+      "pdf_xref": 163,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 769,
+        "height": 478
+      },
+      "pdf_bbox_points": [
+        322.9599914550781,
+        87.80001831054688,
+        636.5699462890625,
+        282.7300109863281
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-163.jpeg"
+    },
+    {
+      "name": "varna-elite-collage-2023",
+      "handoff_path": "references/credential-selected/varna-elite-collage-2023.jpeg",
+      "page": 9,
+      "pdf_xref": 111,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 614,
+        "height": 636
+      },
+      "pdf_bbox_points": [
+        55.04899978637695,
+        61.029998779296875,
+        312.43902587890625,
+        327.260009765625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-111.jpeg"
+    },
+    {
+      "name": "varna-elite-lifestyle-2023",
+      "handoff_path": "references/credential-selected/varna-elite-lifestyle-2023.jpeg",
+      "page": 9,
+      "pdf_xref": 116,
+      "image_index_on_page": 7,
+      "pixel_dimensions": {
+        "width": 650,
+        "height": 434
+      },
+      "pdf_bbox_points": [
+        54.56800079345703,
+        306.58599853515625,
+        312.43798828125,
+        478.58599853515625
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-116.jpeg"
+    },
+    {
+      "name": "petrosetco-guests-2026",
+      "handoff_path": "references/credential-selected/petrosetco-guests-2026.jpeg",
+      "page": 20,
+      "pdf_xref": 212,
+      "image_index_on_page": 2,
+      "pixel_dimensions": {
+        "width": 887,
+        "height": 591
+      },
+      "pdf_bbox_points": [
+        24.48699951171875,
+        16.149993896484375,
+        343.9570007324219,
+        229.1199951171875
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-212.jpeg"
+    },
+    {
+      "name": "petrosetco-fireworks-2026",
+      "handoff_path": "references/credential-selected/petrosetco-fireworks-2026.jpeg",
+      "page": 20,
+      "pdf_xref": 213,
+      "image_index_on_page": 3,
+      "pixel_dimensions": {
+        "width": 739,
+        "height": 1109
+      },
+      "pdf_bbox_points": [
+        671.8400268554688,
+        16.149993896484375,
+        938.0800170898438,
+        415.5400085449219
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-213.jpeg"
+    },
+    {
+      "name": "psd-dell-microsoft-stage-2025",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-stage-2025.jpeg",
+      "page": 23,
+      "pdf_xref": 234,
+      "image_index_on_page": 1,
+      "pixel_dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "pdf_bbox_points": [
+        19.101999282836914,
+        13.1099853515625,
+        337.281982421875,
+        225.26998901367188
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-234.jpeg"
+    },
+    {
+      "name": "psd-dell-microsoft-guests-2025",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-guests-2025.jpeg",
+      "page": 23,
+      "pdf_xref": 238,
+      "image_index_on_page": 5,
+      "pixel_dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "pdf_bbox_points": [
+        342.44000244140625,
+        236.8800048828125,
+        660.6199951171875,
+        449.0400085449219
+      ],
+      "historical_raw_path": "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-238.jpeg"
+    }
+  ]
+}

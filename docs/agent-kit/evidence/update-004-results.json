@@ -1,0 +1,400 @@
+{
+  "task": "AGENT-KIT-UPDATE-004",
+  "version": "v1",
+  "option": 1,
+  "state": "GUIDANCE_INTEGRATED_GLOBAL_PRESERVATION_HOLD",
+  "overallVerification": "FAIL_GLOBAL_CONFIG_PRESERVATION",
+  "observedAtUtc": "2026-10-13T08:32:55.832739+00:00",
+  "approvalSource": "Direct human user message in current chat",
+  "exactApproval": "Approved AGENT-KIT-UPDATE-004 v1 — phương án 1: cập nhật cả hai nhóm guidance. Giữ nguyên mã CMS, dữ liệu emulator, global config và các approval hiện hành; giữ AGENT-PERMISSION-003 CLOSED và thử ghi trực tiếp hai child NOT_RUN.",
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "base": "22c2a20359072dcb510f3329b97161b16f947fb2",
+    "head": "51b1c810a9920be7fe3957ce454fc25fedf7b155",
+    "sourceFilesVerified": 14,
+    "sourceFiles": [
+      {
+        "sourcePath": "AGENTS.md",
+        "gitBlobSha1": "223158357fe1a2641a9b80a67c76d734e9ae9f3c",
+        "sha256": "ba6e2f882d9411d898a3c8016dc1659e6fa65b813dc9298d5601cdd40e87842a",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/AGENTS.md"
+      },
+      {
+        "sourcePath": "README.md",
+        "gitBlobSha1": "727a6108cff5ae2cda8c75d0cd31791b1d4d31b3",
+        "sha256": "2fae421c3c188d065a760356beb7b9d2c57f171ff0c03880f305662e55b20fa7",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/README.md"
+      },
+      {
+        "sourcePath": "docs/agent-coordination-templates.md",
+        "gitBlobSha1": "9e4b294dc0400a1b7359e81feee7c03a570bb279",
+        "sha256": "efa6f5e9a3832deecb4491d84f52784b33f56917e57c27946780775e8c32983f",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/agent-coordination-templates.md"
+      },
+      {
+        "sourcePath": "docs/roles/coordinator.md",
+        "gitBlobSha1": "f8323ae78982060ff4ef358d3bfa1c49f8a4063b",
+        "sha256": "e8f92c6f38db25f59fc50a1ed8130ff1b08095addd984967a2bd419dca63e387",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/coordinator.md"
+      },
+      {
+        "sourcePath": "docs/roles/explorer.md",
+        "gitBlobSha1": "ef15d22bfbfef4347a187dc3c649c20854b0c781",
+        "sha256": "71f70743d0feb825e07c94c85d6dd2adb64e8c1edf35dcd41272e4cd2481b65c",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/explorer.md"
+      },
+      {
+        "sourcePath": "docs/roles/implementer.md",
+        "gitBlobSha1": "dc4ed19c77cf729862f5a25f28ee4923f01745bd",
+        "sha256": "c2eae7a7c54a43518faaed01800c3ec8b1ed1eba3073ffa671965ce9388126d9",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/implementer.md"
+      },
+      {
+        "sourcePath": "docs/roles/reviewer.md",
+        "gitBlobSha1": "bee61ab4a348b6a5522d7c8f0effd93dd1785cd9",
+        "sha256": "ab615d5b120db46fa0088730e3dd4140fa148c6e4bf74db1d96ecc204bbec39a",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/reviewer.md"
+      },
+      {
+        "sourcePath": "docs/skills-catalog.md",
+        "gitBlobSha1": "d4e00e4a8f3be6817e8a68da123cb764033a1630",
+        "sha256": "a5465626a11f3ebb755adc0bd2bfee09ac71f79fa16e3ca263f7036529395ccb",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/skills-catalog.md"
+      },
+      {
+        "sourcePath": "docs/skills-manifest.json",
+        "gitBlobSha1": "c8f0435c8a6db2d4da96f8fa7d88f8137087d838",
+        "sha256": "efba60b37d20a66067fbbfffeca0c322529cd6f7d9e13e85fac7104dd6426c88",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/skills-manifest.json"
+      },
+      {
+        "sourcePath": "docs/team-policy.md",
+        "gitBlobSha1": "d00839998f896f603bf6dea59de9b7cbbe5d03c3",
+        "sha256": "a0d9659ed342d21461ffdc8ac641482dbe0a9f9c3b09eb007bea7db2f7cf12ca",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/team-policy.md"
+      },
+      {
+        "sourcePath": "docs/team-workflow.md",
+        "gitBlobSha1": "3c35b38358e193668e2d0f390667e1bbfd544ccc",
+        "sha256": "a176507aa54fa1066bbb4eb825862023dddc4edf70b6db06a1ef290fe073a26a",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/team-workflow.md"
+      },
+      {
+        "sourcePath": "docs/technote.md",
+        "gitBlobSha1": "3d7f8f85f0ed765ba570f83111fb5db5cb10730e",
+        "sha256": "9355f5fc4fa48517d19505d816573c3b3dfd76a94bf72382593c2d0c72f8f823",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/technote.md"
+      },
+      {
+        "sourcePath": "docs/verification-guide.md",
+        "gitBlobSha1": "955b831e007cba06f326b55a884961ea3d2fe447",
+        "sha256": "42c6e70e7eceb3c91887a323471f47a0e04cae7b0f9c36c9dbd3ae00cee4145b",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/verification-guide.md"
+      },
+      {
+        "sourcePath": "docs/verification-results.md",
+        "gitBlobSha1": "cad03f23a5074a3e0662d22c3601aed3a2beceed",
+        "sha256": "12a76ab043bcd7b97cf68842eb073799cb327409690af13d44229259d45d3f81",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/verification-results.md"
+      }
+    ],
+    "nativeScriptsExecuted": false,
+    "remoteWrites": false
+  },
+  "baseline": {
+    "path": "docs/agent-kit/evidence/update-004-preflight.json",
+    "sha256": "c32abb32bf09309e6cd81dc626ccfb0cacc75bdf425522d852bf72362cc26748",
+    "preExistingHistoricalCmsDifferences": [
+      "pinky-lamb-cms/admin/auth.mjs",
+      "pinky-lamb-cms/admin/config-local.mjs",
+      "pinky-lamb-cms/admin/review.mjs",
+      "pinky-lamb-cms/admin/site-editor.mjs",
+      "pinky-lamb-cms/admin/source-review.mjs",
+      "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+      "pinky-lamb-cms/scripts/local-guard.mjs",
+      "pinky-lamb-cms/vite.config.mjs"
+    ],
+    "historicalGlobalConfigAlreadyDiffers": true
+  },
+  "frozenDelivery": {
+    "lockPath": "engineering/AGENT-KIT-UPDATE-004-LOCK.json",
+    "lockSha256": "33c6dbd603246c635bc6441223fe664b1cbee539474ecd5ac70ff38bd9fbcd21",
+    "checkerPath": "engineering/agent-kit/verify-guidance-update.py",
+    "checkerSha256": "69a6bf8cf4954b994f7e485bfbdc30d549b18f958456e93cff20657b6169d190",
+    "guidanceAmendments": [
+      {
+        "path": "docs/agent-kit/technote.md",
+        "fromSha256": "5c16dec163354016773850c743891b9b4ac806c9e70a1b6a34ac5417158f6002",
+        "toSha256": "d3542a879731337333bb5482e239ca5c98bf82e4777e0566902aa1f95c1ff80e"
+      },
+      {
+        "path": "docs/agent-kit/team-policy.md",
+        "fromSha256": "171ec923ffb18868eb9ffa212869974a6b69a308083a0f4d39423f26dcff66b1",
+        "toSha256": "eb099b185d4b0273f0a07a62a38a5510c62257149dd467e6b3156ecb9e86e7cb"
+      },
+      {
+        "path": "docs/agent-kit/team-workflow.md",
+        "fromSha256": "2559b315ce8103c76993f4a5180ccaae85cb1e8054f816fe0885094427c8190e",
+        "toSha256": "3e71af13a3e3c5150dcb089ded5c2115c82127faa7326d299efad9828b8d14e4"
+      },
+      {
+        "path": "docs/agent-kit/agent-coordination-templates.md",
+        "fromSha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97",
+        "toSha256": "ce547974c6911c0d7f51ae9005fe41a00df0447880676646f1eea2f6ef38b652"
+      },
+      {
+        "path": "docs/agent-kit/skills-catalog.md",
+        "fromSha256": "8efb6489be48eb6cbcfdc60deba237da675a71164af8d14651e7bfffa46245f7",
+        "toSha256": "5aae58c5e8453a463071b5c078e20d47a11377b964cecc6a2015fb85959f91b3"
+      },
+      {
+        "path": "docs/agent-kit/roles/coordinator.md",
+        "fromSha256": "c88ea26b2d3a664770d02db70584b35442d8bf8599d950f169a79e3d43ed0d56",
+        "toSha256": "8fe07bdee0e75b8f227266b5b49cdda727dff9e66bd5b2689f4bba31dddcd222"
+      },
+      {
+        "path": "docs/agent-kit/roles/explorer.md",
+        "fromSha256": "1f2b1592b8107e784b5f5598f3b515879b0b6387a51b7cb3a899d395f28655cf",
+        "toSha256": "ea503477bd5b2ef3982de5ecced8ccd0d64f2cde7eb1ab135ada92d8e22aad90"
+      },
+      {
+        "path": "docs/agent-kit/roles/implementer.md",
+        "fromSha256": "42d6547c23227e3ae9f0c51e1d976b15830d413c3b56ed643eacdccaf3f420df",
+        "toSha256": "5d8c6a30bff0472830231f606aa69d08b9b2b819e158d7e8e295cab86cb42d40"
+      },
+      {
+        "path": "docs/agent-kit/roles/reviewer.md",
+        "fromSha256": "370a7acb1d3a2d93a947595663b32a240007c97319ffb36830e417fcbabea3d5",
+        "toSha256": "2751a2920f6c80b5985060e885358ba9358fbd21b567bd67c15822a7b7a10755"
+      },
+      {
+        "path": "docs/agent-kit/verification-guide.md",
+        "fromSha256": "dbc7f88baaeff722a5d7e59108852fe14bf409100ba1139d992e0688965a6eec",
+        "toSha256": "4cabd27549c0f1aade8cd7afc1a12c00253b76e82c2a33796a86b1c25677ca59"
+      }
+    ]
+  },
+  "implementation": {
+    "agent": "agent_update",
+    "selectedRoute": {
+      "model": "gpt-6.1-sol",
+      "effort": "medium"
+    },
+    "independentObservedRoute": "UNKNOWN_UNAVAILABLE",
+    "workerReportedNegativeChecks": {
+      "result": "PASS",
+      "count": 13,
+      "method": "IN_MEMORY_ONLY_NO_FIXTURE_WRITES"
+    },
+    "workerFinalChecker": {
+      "exitCode": 1,
+      "result": "FAIL_GLOBAL_CONFIG_ONLY",
+      "exactPackageFiles": 150
+    }
+  },
+  "independentReview": {
+    "agent": "update_review",
+    "selectedRoute": {
+      "model": "gpt-6.1-sol",
+      "effort": "high"
+    },
+    "question": "Approved digest amendments and exact package inventory, guidance compatibility and preservation/evidence boundary",
+    "initialFindings": [
+      "P1 arbitrary valid amendment toHash accepted",
+      "P1 extra runtime package configuration not rejected"
+    ],
+    "repairResult": "BOTH_RESOLVED_NO_REMAINING_SCOPED_FINDING",
+    "guidanceReview": "REUSED_VALID_UNCHANGED_10_GUIDANCE_HASHES",
+    "validFor": {
+      "checkerSha256": "69a6bf8cf4954b994f7e485bfbdc30d549b18f958456e93cff20657b6169d190",
+      "lockSha256": "33c6dbd603246c635bc6441223fe664b1cbee539474ecd5ac70ff38bd9fbcd21",
+      "baselineSha256": "c32abb32bf09309e6cd81dc626ccfb0cacc75bdf425522d852bf72362cc26748"
+    },
+    "newNativeOrFixtureProbes": "NOT_RUN"
+  },
+  "globalConfigObservation": {
+    "observedAtUtc": "2026-10-13T08:22:40.615321+00:00",
+    "baselineObservedAtUtc": "2026-10-13T08:08:36.495115+00:00",
+    "expectedGlobalConfigSha256": "f6014c91ef460b47c001be3af93fd6b1fca7af1d597207fca68c009ede3715c0",
+    "configCandidates": [
+      {
+        "name": "config.toml",
+        "sha256": "d41f95dcd44bcff33c154a94dbbf22b8d7c27f4e9cd4ecadba6cb092d0bf6abd",
+        "matchesUpdatePreflight": false,
+        "bytes": 11542,
+        "mode": "0o600",
+        "mtimeUtc": "2026-10-13T08:12:38.370559+00:00",
+        "ctimeUtc": "2026-10-13T08:12:38.370635+00:00"
+      }
+    ],
+    "rawContentsSaved": false,
+    "userStatement": "tao không có thay đổi cài đặt Codex.",
+    "actorOrCause": "UNKNOWN"
+  },
+  "currentApprovalInventory": [
+    {
+      "path": "approvals/APPROVAL-REGISTER.json",
+      "sha256": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-11T08:00:53.517482+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+      "sha256": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-11T15:35:08.781048+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2.scope.json",
+      "sha256": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-11T07:53:25.501142+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3-REGISTER.json",
+      "sha256": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-12T12:41:05.338315+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3.scope.json",
+      "sha256": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-11T15:55:43.505291+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-001-v2.scope.json",
+      "sha256": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-10T14:33:26+00:00",
+      "coveredByFrozenBaseline": true
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v1-REGISTER.json",
+      "sha256": "71bc0f96a0e2e66def3575df7bdf62174916f8f998dc95f18344e18f6b03b7c9",
+      "mode": "0o600",
+      "mtimeUtc": "2026-10-13T04:33:02.502639+00:00",
+      "coveredByFrozenBaseline": false
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v2-REGISTER.json",
+      "sha256": "7cdc77c78770230649a5960d9d8a296715cf67a5dcf0617983b4b8aae64e4fdf",
+      "mode": "0o644",
+      "mtimeUtc": "2026-10-13T07:54:20.802549+00:00",
+      "coveredByFrozenBaseline": false
+    }
+  ],
+  "cmsActions": "NONE",
+  "globalConfigWriteCommands": "NONE",
+  "existingApprovalWrites": "NONE",
+  "gitMutations": "NONE",
+  "nativeScenarioExecution": "NOT_RUN",
+  "twoMachineCompatibility": "NOT_RUN",
+  "permission003": {
+    "state": "CLOSED",
+    "kit-explorerDirectWrite": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT",
+    "kit-reviewerDirectWrite": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT"
+  },
+  "rootFinalChecker": {
+    "command": "python3 -B engineering/agent-kit/verify-guidance-update.py",
+    "exitCode": 1,
+    "observation": {
+      "status": "FAIL",
+      "errors": [
+        "Current global config hash/mode differs"
+      ],
+      "approvedGuidanceAmendments": 10,
+      "manifestHashes": 74,
+      "destinationHashes": 75,
+      "protectedHashes": 136,
+      "exactPackageFiles": 151,
+      "skillCounts": [
+        17,
+        17
+      ],
+      "mirrorPairs": 27,
+      "adaptersParsed": 6,
+      "unchangedOriginalEngineeringMirrorFiles": 52,
+      "markdownLinksChecked": 322,
+      "currentSourceRecords": 3942,
+      "currentEmulatorRecords": 746,
+      "currentCmsSourceFiles": 3323,
+      "globalConfig": "FAIL_CURRENT_BASELINE_DIFFERS",
+      "permissionTask": "CLOSED",
+      "childWriteAttempts": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT",
+      "historicalStaticPreflight": "FAIL_PREEXISTING_SOURCE_SNAPSHOT_DIFFERENCES",
+      "preExistingCmsDifferences": 8,
+      "nativeScenarios": "NOT_RUN",
+      "runtimeRoute": "UNKNOWN_UNOBSERVED"
+    }
+  },
+  "finalSupplementalObservation": {
+    "observedAtUtc": "2026-10-13T08:33:34.898734+00:00",
+    "currentApprovalChecks": [
+      {
+        "path": "approvals/APPROVAL-REGISTER.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-001-v2-M2.scope.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-001-v2-M3-REGISTER.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-001-v2-M3.scope.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-001-v2.scope.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-RECOVERY-001-v1-REGISTER.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      },
+      {
+        "path": "approvals/CMS-RECOVERY-001-v2-REGISTER.json",
+        "sha256MatchesRecorded": true,
+        "modeMatchesRecorded": true,
+        "observedMtimeBeforeUpdatePreflight": true
+      }
+    ],
+    "approvalFileCount": 8,
+    "globalConfigSha256": "d41f95dcd44bcff33c154a94dbbf22b8d7c27f4e9cd4ecadba6cb092d0bf6abd",
+    "globalConfigMode": "0o600",
+    "expectedGlobalConfigSha256": "f6014c91ef460b47c001be3af93fd6b1fca7af1d597207fca68c009ede3715c0",
+    "globalConfigMatch": false,
+    "rawContentsSaved": false,
+    "permission003": "CLOSED",
+    "directChildWrites": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT"
+  },
+  "finalDisposition": "GUIDANCE_IMPLEMENTATION_AND_SOURCE_REVIEW_COMPLETE_GLOBAL_PRESERVATION_HOLD",
+  "unresolvedCondition": "Global config differs from the frozen update preflight. User denies changing settings; writer/cause Unknown. No global write/restore/rebaseline is authorized.",
+  "rootIntegrationReview": "Original permission closure, current CMS recovery observations and prior report sections preserved. Final receipt retains overall FAIL; no native behavior or human acceptance inferred."
+}

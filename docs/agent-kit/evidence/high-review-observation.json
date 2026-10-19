@@ -1,0 +1,43 @@
+{
+  "task": "AGENT-SETUP-001 v1",
+  "observationAtUtc": "2026-10-12T15:05:11.368468+00:00",
+  "provenance": "Root relayed independent setup_review FINAL and root command observations; no reviewer log mutation by child",
+  "independentHighReview": {
+    "status": "PASS_NO_ACTIONABLE_PACKAGE_FINDINGS",
+    "manifestHashes": 74,
+    "destinationHashes": 75,
+    "unchangedSourceFiles": 52,
+    "mirrorPairs": 27,
+    "realNonarchivalMarkdownLinks": 180,
+    "preservedSourceRecords": 3942,
+    "emulatorEvidence": "Typed/hash evidence inspected, no data contents reread",
+    "observedSenderTimestamp": "UNKNOWN_NOT_ASSERTED"
+  },
+  "rootStaticValidation": {
+    "command": "python3 docs/agent-kit/evidence/verify-setup.py",
+    "exitCode": 0,
+    "observedAtUtc": "2026-10-12T15:02:41.483248+00:00",
+    "status": "PASS",
+    "skills": [
+      17,
+      17
+    ],
+    "mirrorPairs": 27,
+    "adapters": 6,
+    "unchangedOriginalBytesFiles": 52,
+    "links": 210,
+    "preservedSourceRecords": 3942,
+    "emulatorRecords": 746,
+    "errors": []
+  },
+  "rootNativeDiagnosticObservation": {
+    "atUtc": "2026-10-12T15:02:46.112886+00:00",
+    "status": "READ_PASS",
+    "projectLayer": ".codex",
+    "disabledReason": "Project trust required; private/global paths redacted",
+    "effectiveKitAgents": [],
+    "modelTurn": "NOT_RUN",
+    "configWriteOperations": "NONE",
+    "ownedProcessExitCode": 0
+  }
+}

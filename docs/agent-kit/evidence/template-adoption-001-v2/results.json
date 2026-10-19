@@ -1,0 +1,55 @@
+{
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "status": "IMPLEMENTATION_COMPLETE_PACKAGE_STATIC_SOURCE_REVIEW_VERIFIED",
+  "observedUtc": "2026-10-15T05:33:51.002309+00:00",
+  "sourceCommit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+  "previousAdoptedCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+  "approvedScopeComplete": true,
+  "package": {
+    "result": "PASS",
+    "baselineRecords": 183,
+    "protectedCmsSourceRecords": 656,
+    "candidatePaths": 19,
+    "maintainedFiles": 78,
+    "mirrorPairs": 28,
+    "skillsPerRoot": 17,
+    "originalUpstreamFiles": 20,
+    "adaptedUpstreamFiles": 6,
+    "localLinks": 75,
+    "boundary": "Package/static/source only; native/CMS/data/emulator/global/production NOT_RUN"
+  },
+  "sourceReview": "PASS_SOURCE_PACKAGE; no blocking finding",
+  "workerSyntheticCases": 13,
+  "workerSyntheticResult": "PASS; initial failure preserved in source-checks.json",
+  "reviewedAppliedHashesMatched": 19,
+  "preservation": {
+    "result": "PASS",
+    "observedUtc": "2026-10-15T05:32:09.910682+00:00",
+    "reviewedHashesMatched": 19,
+    "protectedCmsStaticSourceRecords": 656,
+    "changed": [],
+    "missing": [],
+    "liveDataInventory": "NOT_RUN",
+    "boundary": "Static source preservation; no CMS/data/emulator/global action"
+  },
+  "checklists": {
+    "generic": "docs/agent-kit/template-application-acceptance.md",
+    "cms": "docs/agent-kit/cms-template-acceptance.md",
+    "currentCmsAuthority": "pinky-lamb-cms/tasks/CMS-UX-002.md"
+  },
+  "unchanged": [
+    "CMS code/data/emulator operations",
+    "original manifests/locks/checkers/receipts",
+    "native agent definitions/model routing/permissions/global configuration",
+    "13other skills and prior DoD/using-agent-skills bytes",
+    "M3/M4/LOCAL_COMPLETE disposition"
+  ],
+  "notRun": [
+    "native V31/application behavior",
+    "CMS tests/build/HTTP/browser",
+    "live data/emulator/global inventory",
+    "human CMS acceptance",
+    "Git/deploy"
+  ],
+  "remainingApprovedActions": []
+}

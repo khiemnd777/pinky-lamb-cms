@@ -1,0 +1,24 @@
+{
+  "observedAtUtc": "2026-10-12T15:00:03.811285+00:00",
+  "command": "codex debug prompt-input (no prompt, no model turn)",
+  "exitCode": 0,
+  "rawPromptPersisted": false,
+  "stderrBytesNoContentsPersisted": 0,
+  "nativeAgents": [
+    {
+      "name": "kit-explorer",
+      "presentInNativeRoleSection": false
+    },
+    {
+      "name": "kit-implementer",
+      "presentInNativeRoleSection": false
+    },
+    {
+      "name": "kit-reviewer",
+      "presentInNativeRoleSection": false
+    }
+  ],
+  "runtimeModelPermissions": "NOT_RUN",
+  "definitionDiscovery": "INPUT_RENDER_ONLY_NOT_NATIVE_DISCOVERY",
+  "nativeRoleSectionsFound": 1
+}

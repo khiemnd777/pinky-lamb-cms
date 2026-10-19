@@ -1,14 +1,23 @@
+# Local development and tool caches
 node_modules/
-.local/
-.cms-data-local/
-.preview-output/
-admin-dist/
-test-results/
+.firebase/
+__pycache__/
+*.pyc
+.DS_Store
+firebase-debug*.log
+ui-debug.log
+npm-debug.log*
 playwright-report/
-*.log
+test-results/
+coverage/
+
+# Local credentials and environment
 .env
 .env.*
+!.env.example
+credentials/
+secrets/
+*service-account*.json
+*serviceAccount*.json
 *.pem
 *.key
-*.p12
-.DS_Store

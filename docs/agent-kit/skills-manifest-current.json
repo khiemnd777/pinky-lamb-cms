@@ -1,0 +1,2808 @@
+{
+  "schema_version": 1,
+  "kit_version": "AGENT-KIT-UPDATE-007-current-project-entrypoints",
+  "release_status": "LOCAL_INSTRUCTION_SOURCE_UPDATE_NATIVE_BEHAVIOR_NOT_RUN_EXISTING_DOMAIN_DIGEST_MISMATCH",
+  "upstream": {
+    "repository": "https://github.com/addyosmani/agent-skills",
+    "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+    "unchanged_file_count": 3,
+    "license": "MIT",
+    "file_count": 26,
+    "adapted_file_count": 23
+  },
+  "canonical_root": ".agents",
+  "mirror_root": ".claude",
+  "skills": [
+    {
+      "name": "api-and-interface-design",
+      "canonical": ".agents/skills/api-and-interface-design/SKILL.md",
+      "mirror": ".claude/skills/api-and-interface-design/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "code-review-and-quality",
+      "canonical": ".agents/skills/code-review-and-quality/SKILL.md",
+      "mirror": ".claude/skills/code-review-and-quality/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "code-simplification",
+      "canonical": ".agents/skills/code-simplification/SKILL.md",
+      "mirror": ".claude/skills/code-simplification/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "context-engineering",
+      "canonical": ".agents/skills/context-engineering/SKILL.md",
+      "mirror": ".claude/skills/context-engineering/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "canonical": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "mirror": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "documentation-and-adrs",
+      "canonical": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "mirror": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "canonical": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "mirror": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "incremental-implementation",
+      "canonical": ".agents/skills/incremental-implementation/SKILL.md",
+      "mirror": ".claude/skills/incremental-implementation/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "canonical": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "mirror": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "performance-optimization",
+      "canonical": ".agents/skills/performance-optimization/SKILL.md",
+      "mirror": ".claude/skills/performance-optimization/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "planning-and-task-breakdown",
+      "canonical": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "mirror": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "security-and-hardening",
+      "canonical": ".agents/skills/security-and-hardening/SKILL.md",
+      "mirror": ".claude/skills/security-and-hardening/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "source-driven-development",
+      "canonical": ".agents/skills/source-driven-development/SKILL.md",
+      "mirror": ".claude/skills/source-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "spec-driven-development",
+      "canonical": ".agents/skills/spec-driven-development/SKILL.md",
+      "mirror": ".claude/skills/spec-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "technote",
+      "canonical": ".agents/skills/technote/SKILL.md",
+      "mirror": ".claude/skills/technote/SKILL.md",
+      "source": "agent-kit"
+    },
+    {
+      "name": "test-driven-development",
+      "canonical": ".agents/skills/test-driven-development/SKILL.md",
+      "mirror": ".claude/skills/test-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "using-agent-skills",
+      "canonical": ".agents/skills/using-agent-skills/SKILL.md",
+      "mirror": ".claude/skills/using-agent-skills/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    }
+  ],
+  "mirror_pairs": [
+    {
+      "canonical": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "mirror": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "canonical": ".agents/references/accessibility-checklist.md",
+      "mirror": ".claude/references/accessibility-checklist.md",
+      "sha256": "475e47052f3dcf44c6c23dbc7091c9391589324290164b1d344961d85a2f278b"
+    },
+    {
+      "canonical": ".agents/references/definition-of-done.md",
+      "mirror": ".claude/references/definition-of-done.md",
+      "sha256": "58fbffa51131d986589d5f97ae67ad4c77298afadbbdbb73d17b9362c56e97fa"
+    },
+    {
+      "canonical": ".agents/references/observability-checklist.md",
+      "mirror": ".claude/references/observability-checklist.md",
+      "sha256": "c6975012d5c1f2cbf2cdda31dcaa3df707c50e5fa809a01b9f5ce989f4a377cd"
+    },
+    {
+      "canonical": ".agents/references/orchestration-patterns.md",
+      "mirror": ".claude/references/orchestration-patterns.md",
+      "sha256": "3118e756a6927c0a0a8c142809e24a54ea54d041c9ce3667892d5374c3fc1d61"
+    },
+    {
+      "canonical": ".agents/references/performance-checklist.md",
+      "mirror": ".claude/references/performance-checklist.md",
+      "sha256": "f1a26ad9b64cad23ddb9555be5e2bcd7c073532273e40b3cd912e02cda502436"
+    },
+    {
+      "canonical": ".agents/references/security-checklist.md",
+      "mirror": ".claude/references/security-checklist.md",
+      "sha256": "435f6c29435d15bc91c7884c34836044f60b825f330ba3352461b4d0321eb542"
+    },
+    {
+      "canonical": ".agents/references/template-application.md",
+      "mirror": ".claude/references/template-application.md",
+      "sha256": "fa56786e1a23ce1c3b1624eda53cb47352c37dab0d7790d9b58792e314a5f752"
+    },
+    {
+      "canonical": ".agents/references/testing-patterns.md",
+      "mirror": ".claude/references/testing-patterns.md",
+      "sha256": "520090f09240faa67b955b5497c5a07e5bbf19ed6d23a7c8eb64776bef47c873"
+    },
+    {
+      "canonical": ".agents/skills/api-and-interface-design/SKILL.md",
+      "mirror": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sha256": "de11eb43a84c5c5a2920ca35834ee7b8ffe72fb90c1c4a856aabb25d5ac17dc1"
+    },
+    {
+      "canonical": ".agents/skills/code-review-and-quality/SKILL.md",
+      "mirror": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "bdf0b94cf8d405d180f427a7ae7e69a79e805512a81d406ef03e5b74301987b3"
+    },
+    {
+      "canonical": ".agents/skills/code-simplification/SKILL.md",
+      "mirror": ".claude/skills/code-simplification/SKILL.md",
+      "sha256": "977afca1ea261d16362e2002bacbe2c94013b6013811d4d903f53238cd164d39"
+    },
+    {
+      "canonical": ".agents/skills/context-engineering/SKILL.md",
+      "mirror": ".claude/skills/context-engineering/SKILL.md",
+      "sha256": "fe8ba3d657732977b2b2a6340b4334de691c680cda11066b79f9874ab06b58d8"
+    },
+    {
+      "canonical": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "mirror": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "e3c1176159a74eb209d41178098e3c1ab3fb7ba5f18dead74eb119cc262e6332"
+    },
+    {
+      "canonical": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "mirror": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "edccc961314fd558b202774511cd7303564162ff9a6e028f9a4ad0fbf4550100"
+    },
+    {
+      "canonical": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "mirror": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2"
+    },
+    {
+      "canonical": ".agents/skills/incremental-implementation/SKILL.md",
+      "mirror": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "269be4484154c40826cf705f158ed3796fdee0e243fc269fd58d4481f42e3853"
+    },
+    {
+      "canonical": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "mirror": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "9d1a810a962ab902e095179929c5c49e8cd91f8ce6499ea2809a3d3fd476f221"
+    },
+    {
+      "canonical": ".agents/skills/performance-optimization/SKILL.md",
+      "mirror": ".claude/skills/performance-optimization/SKILL.md",
+      "sha256": "88f8471a1590647d59729409ddebd47658f7a3d6ffc305681dafe24c31eeb1fd"
+    },
+    {
+      "canonical": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "mirror": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "canonical": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "mirror": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "bde29b53a2a48c30ddb9560df983a3412b5721c45deb0f895987dc9f03f13a31"
+    },
+    {
+      "canonical": ".agents/skills/security-and-hardening/SKILL.md",
+      "mirror": ".claude/skills/security-and-hardening/SKILL.md",
+      "sha256": "e083266433e7993721df8bc0065d455ac152ff790abced0085a00e8652fc5b5f"
+    },
+    {
+      "canonical": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "mirror": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "canonical": ".agents/skills/source-driven-development/SKILL.md",
+      "mirror": ".claude/skills/source-driven-development/SKILL.md",
+      "sha256": "5f18f7cb457aa554fca53f5c4ab96c5639704f899685c5153e1af7b1b040f65f"
+    },
+    {
+      "canonical": ".agents/skills/spec-driven-development/SKILL.md",
+      "mirror": ".claude/skills/spec-driven-development/SKILL.md",
+      "sha256": "a54885c2d4ada51a2a0903da695d7b7402e67fddeda927bb2643eacc5b2b233d"
+    },
+    {
+      "canonical": ".agents/skills/technote/SKILL.md",
+      "mirror": ".claude/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "canonical": ".agents/skills/test-driven-development/SKILL.md",
+      "mirror": ".claude/skills/test-driven-development/SKILL.md",
+      "sha256": "bab2fab66d795f5b299fe4e6651d225e228147c3c70ecfd3cf9557cf515e13cb"
+    },
+    {
+      "canonical": ".agents/skills/using-agent-skills/SKILL.md",
+      "mirror": ".claude/skills/using-agent-skills/SKILL.md",
+      "sha256": "7ba0636cf1cc548d0f939856ad728fc297ebe8aca6d3da6a11e3b9250d1584e8"
+    }
+  ],
+  "native_agents": [
+    {
+      "name": "kit-explorer",
+      "role_source": "docs/agent-kit/roles/explorer.md",
+      "codex": ".codex/agents/kit-explorer.toml",
+      "claude": ".claude/agents/kit-explorer.md",
+      "model_policy": "Retain Codex gpt-6.1-sol High explorer/reviewer and Medium implementer; Claude inherit; missing observed runtime identity does not block authorized work"
+    },
+    {
+      "name": "kit-implementer",
+      "role_source": "docs/agent-kit/roles/implementer.md",
+      "codex": ".codex/agents/kit-implementer.toml",
+      "claude": ".claude/agents/kit-implementer.md",
+      "model_policy": "Retain Codex gpt-6.1-sol High explorer/reviewer and Medium implementer; Claude inherit; missing observed runtime identity does not block authorized work"
+    },
+    {
+      "name": "kit-reviewer",
+      "role_source": "docs/agent-kit/roles/reviewer.md",
+      "codex": ".codex/agents/kit-reviewer.toml",
+      "claude": ".claude/agents/kit-reviewer.md",
+      "model_policy": "Retain Codex gpt-6.1-sol High explorer/reviewer and Medium implementer; Claude inherit; missing observed runtime identity does not block authorized work"
+    }
+  ],
+  "files": [
+    {
+      "path": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "LICENSE",
+        "git_blob_sha": "d67778ada6b9cda6227e9130da182c13e73c8b2e"
+      }
+    },
+    {
+      "path": ".agents/references/accessibility-checklist.md",
+      "sha256": "475e47052f3dcf44c6c23dbc7091c9391589324290164b1d344961d85a2f278b",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/accessibility-checklist.md",
+        "git_blob_sha": "c8c61e5f3d5a010a0d0ecb918bfaffe6c76fca78"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+          "after_sha256": "475e47052f3dcf44c6c23dbc7091c9391589324290164b1d344961d85a2f278b",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/accessibility-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "sha256": "58fbffa51131d986589d5f97ae67ad4c77298afadbbdbb73d17b9362c56e97fa",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/definition-of-done.md",
+        "git_blob_sha": "35e39f9e15f6dd0ff4725a6e5cbce7f2aa69064a"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03",
+          "after_sha256": "939102dbe55570cf27d434c97afca0fafce7281bb68ff533ea41c886dd25b5e5",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "939102dbe55570cf27d434c97afca0fafce7281bb68ff533ea41c886dd25b5e5",
+          "after_sha256": "58fbffa51131d986589d5f97ae67ad4c77298afadbbdbb73d17b9362c56e97fa",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/definition-of-done.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved AGENT-KIT-UPDATE-006 v1: proportionate verification, focused repair planning, bounded coordination; relocate policy links to docs/agent-kit/",
+            "approval": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+            "source_sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/observability-checklist.md",
+      "sha256": "c6975012d5c1f2cbf2cdda31dcaa3df707c50e5fa809a01b9f5ce989f4a377cd",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/observability-checklist.md",
+        "git_blob_sha": "ad40d7aa3fca5d2091fa45be234c14aee22c3588"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+          "after_sha256": "c6975012d5c1f2cbf2cdda31dcaa3df707c50e5fa809a01b9f5ce989f4a377cd",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/observability-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/orchestration-patterns.md",
+      "sha256": "3118e756a6927c0a0a8c142809e24a54ea54d041c9ce3667892d5374c3fc1d61",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/orchestration-patterns.md",
+        "git_blob_sha": "09cddd31d52a95be1d9bca814547d184b9945e44"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+          "after_sha256": "3118e756a6927c0a0a8c142809e24a54ea54d041c9ce3667892d5374c3fc1d61",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/orchestration-patterns.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/performance-checklist.md",
+      "sha256": "f1a26ad9b64cad23ddb9555be5e2bcd7c073532273e40b3cd912e02cda502436",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/performance-checklist.md",
+        "git_blob_sha": "ba9744fe60dbe4f04f3f907029638d923158d7a2"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+          "after_sha256": "f1a26ad9b64cad23ddb9555be5e2bcd7c073532273e40b3cd912e02cda502436",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/performance-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/security-checklist.md",
+      "sha256": "435f6c29435d15bc91c7884c34836044f60b825f330ba3352461b4d0321eb542",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/security-checklist.md",
+        "git_blob_sha": "fc5e29b92c183fa69e0952b61a99761dc48b4c0b"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+          "after_sha256": "435f6c29435d15bc91c7884c34836044f60b825f330ba3352461b4d0321eb542",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/security-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/template-application.md",
+      "sha256": "fa56786e1a23ce1c3b1624eda53cb47352c37dab0d7790d9b58792e314a5f752",
+      "origin": {
+        "repository": "https://github.com/khiemnd777/agent-kit",
+        "commit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "upstream_path": ".agents/references/template-application.md",
+        "git_blob_sha": "814418a0c87005acccd68d7e2471ccff5c25ee0f"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved project document-link relocation only",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0",
+          "after_sha256": "7a2fe817e95f3a622aa768396403a36476a0c494c206463ef232c8bb2d64ebc2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "7a2fe817e95f3a622aa768396403a36476a0c494c206463ef232c8bb2d64ebc2",
+          "after_sha256": "fa56786e1a23ce1c3b1624eda53cb47352c37dab0d7790d9b58792e314a5f752",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/template-application.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/references/testing-patterns.md",
+      "sha256": "520090f09240faa67b955b5497c5a07e5bbf19ed6d23a7c8eb64776bef47c873",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/testing-patterns.md",
+        "git_blob_sha": "bc96e271ad241ca567f06d21c6ecc001455b80f1"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+          "after_sha256": "520090f09240faa67b955b5497c5a07e5bbf19ed6d23a7c8eb64776bef47c873",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/references/testing-patterns.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/api-and-interface-design/SKILL.md",
+      "sha256": "de11eb43a84c5c5a2920ca35834ee7b8ffe72fb90c1c4a856aabb25d5ac17dc1",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/api-and-interface-design/SKILL.md",
+        "git_blob_sha": "3e2e37f8f4fba2c66f9f1599eaf01a55ae3f3e33"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+          "after_sha256": "3c1e2f56dd9da1bf14d6a24417b37d77ea7ff868dbe3535254d042ab878b042f",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3c1e2f56dd9da1bf14d6a24417b37d77ea7ff868dbe3535254d042ab878b042f",
+          "after_sha256": "de11eb43a84c5c5a2920ca35834ee7b8ffe72fb90c1c4a856aabb25d5ac17dc1",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/api-and-interface-design/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sha256": "bdf0b94cf8d405d180f427a7ae7e69a79e805512a81d406ef03e5b74301987b3",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/code-review-and-quality/SKILL.md",
+        "git_blob_sha": "08209ff2208d2883d48d945f7754c428b77f8d87"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity and evidence boundary; Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97",
+          "after_sha256": "fc96c82b3621869a3cab229249c2fd95c370560c6eccb971506241234b45cc4f",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "fc96c82b3621869a3cab229249c2fd95c370560c6eccb971506241234b45cc4f",
+          "after_sha256": "bdf0b94cf8d405d180f427a7ae7e69a79e805512a81d406ef03e5b74301987b3",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/code-review-and-quality/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/code-simplification/SKILL.md",
+      "sha256": "977afca1ea261d16362e2002bacbe2c94013b6013811d4d903f53238cd164d39",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/code-simplification/SKILL.md",
+        "git_blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "after_sha256": "45b8c3c5ad6c43f44fa30d00fdceb1cb8017f29d8365105c2f55e86ddacc73ef",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "45b8c3c5ad6c43f44fa30d00fdceb1cb8017f29d8365105c2f55e86ddacc73ef",
+          "after_sha256": "977afca1ea261d16362e2002bacbe2c94013b6013811d4d903f53238cd164d39",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/code-simplification/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".agents/skills/context-engineering/SKILL.md",
+      "sha256": "fe8ba3d657732977b2b2a6340b4334de691c680cda11066b79f9874ab06b58d8",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/context-engineering/SKILL.md",
+        "git_blob_sha": "fb8bb5f85128302b231d301c1201da1e223f6869"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+          "after_sha256": "f735c044c383a7c50515e76261939af411048abe9c793b0311cb73fd3c4520f4",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f735c044c383a7c50515e76261939af411048abe9c793b0311cb73fd3c4520f4",
+          "after_sha256": "fe8ba3d657732977b2b2a6340b4334de691c680cda11066b79f9874ab06b58d8",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/context-engineering/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "e3c1176159a74eb209d41178098e3c1ab3fb7ba5f18dead74eb119cc262e6332",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/debugging-and-error-recovery/SKILL.md",
+        "git_blob_sha": "356da20365a7cd6825b4ffad14be39280c92cdfc"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+          "after_sha256": "c808c76d290bd44d90d736e4d38c824cbfdf4010edb9403901fb504997175ba6",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "c808c76d290bd44d90d736e4d38c824cbfdf4010edb9403901fb504997175ba6",
+          "after_sha256": "e3c1176159a74eb209d41178098e3c1ab3fb7ba5f18dead74eb119cc262e6332",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "edccc961314fd558b202774511cd7303564162ff9a6e028f9a4ad0fbf4550100",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/documentation-and-adrs/SKILL.md",
+        "git_blob_sha": "e37c38f30d76263c77aacdb7dcbacceb1218bc80"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+          "after_sha256": "45728d7201835bc7ee8a6f4bc002dbd4ec49ffa8beca60c972562efd53027dd2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "45728d7201835bc7ee8a6f4bc002dbd4ec49ffa8beca60c972562efd53027dd2",
+          "after_sha256": "edccc961314fd558b202774511cd7303564162ff9a6e028f9a4ad0fbf4550100",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/documentation-and-adrs/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      }
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/frontend-ui-engineering/SKILL.md",
+        "git_blob_sha": "eaf0fa163876a5274674f42ea208742c50f27119"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity and evidence boundary; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc",
+          "after_sha256": "3753eeb53916c92223521b7e996e437a031ee66418b32356332f1b1bbecc5108",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3753eeb53916c92223521b7e996e437a031ee66418b32356332f1b1bbecc5108",
+          "after_sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "sha256": "269be4484154c40826cf705f158ed3796fdee0e243fc269fd58d4481f42e3853",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/incremental-implementation/SKILL.md",
+        "git_blob_sha": "9c4f49bc841adb3c0f98baaa9eabd435a5b64ef9"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348",
+          "after_sha256": "d109315be1a0eb5ed6a5dc75fb461300923d80798bc2445cdfd8e0ee4f479614",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "d109315be1a0eb5ed6a5dc75fb461300923d80798bc2445cdfd8e0ee4f479614",
+          "after_sha256": "269be4484154c40826cf705f158ed3796fdee0e243fc269fd58d4481f42e3853",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/incremental-implementation/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "9d1a810a962ab902e095179929c5c49e8cd91f8ce6499ea2809a3d3fd476f221",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/observability-and-instrumentation/SKILL.md",
+        "git_blob_sha": "84d9cb373467fe0e15236e190833ecc90f840c38"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "after_sha256": "f538df0deb0f4cdb62a4cd968bf96120d5486117d9ab4d45a0f9809b2f3d27e9",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f538df0deb0f4cdb62a4cd968bf96120d5486117d9ab4d45a0f9809b2f3d27e9",
+          "after_sha256": "9d1a810a962ab902e095179929c5c49e8cd91f8ce6499ea2809a3d3fd476f221",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      }
+    },
+    {
+      "path": ".agents/skills/performance-optimization/SKILL.md",
+      "sha256": "88f8471a1590647d59729409ddebd47658f7a3d6ffc305681dafe24c31eeb1fd",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/performance-optimization/SKILL.md",
+        "git_blob_sha": "498735724035f468737bd118f9c60676a013d544"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+          "after_sha256": "84ac8e0acd1cfd543174ef18b30fbbe7cc2fac9abbb313b48650fce57a354eb4",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "84ac8e0acd1cfd543174ef18b30fbbe7cc2fac9abbb313b48650fce57a354eb4",
+          "after_sha256": "88f8471a1590647d59729409ddebd47658f7a3d6ffc305681dafe24c31eeb1fd",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/performance-optimization/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      }
+    },
+    {
+      "path": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/performance-optimization/references/optimization-patterns.md",
+        "git_blob_sha": "63e27bcc7a051c3dc23c164f146f374e119874cc"
+      }
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "bde29b53a2a48c30ddb9560df983a3412b5721c45deb0f895987dc9f03f13a31",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/planning-and-task-breakdown/SKILL.md",
+        "git_blob_sha": "296249b64334bcfd1aeaefd27b9e3e5494e38ec0"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee",
+          "after_sha256": "8e22c29b1bfe49c82d480169b28c1512fcc7948a607cba204901f3fac0aa4b39",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "8e22c29b1bfe49c82d480169b28c1512fcc7948a607cba204901f3fac0aa4b39",
+          "after_sha256": "bde29b53a2a48c30ddb9560df983a3412b5721c45deb0f895987dc9f03f13a31",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/SKILL.md",
+      "sha256": "e083266433e7993721df8bc0065d455ac152ff790abced0085a00e8652fc5b5f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/security-and-hardening/SKILL.md",
+        "git_blob_sha": "e80e1e9a4f5b2989308c376d4ea0d333fe2c26ef"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+          "after_sha256": "2c988c0504893e3b8c6d2884309f353c2233b5995483456c2ea84e650890e0bc",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "2c988c0504893e3b8c6d2884309f353c2233b5995483456c2ea84e650890e0bc",
+          "after_sha256": "e083266433e7993721df8bc0065d455ac152ff790abced0085a00e8652fc5b5f",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/security-and-hardening/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      }
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/security-and-hardening/references/hardening-patterns.md",
+        "git_blob_sha": "9af2604409af9a085bad0b14a269a89a74d34084"
+      }
+    },
+    {
+      "path": ".agents/skills/source-driven-development/SKILL.md",
+      "sha256": "5f18f7cb457aa554fca53f5c4ab96c5639704f899685c5153e1af7b1b040f65f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/source-driven-development/SKILL.md",
+        "git_blob_sha": "2704f0e130bc4659951aa552373914b2d63d18c9"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+          "after_sha256": "2d0848f592e5f15393a9077db75c8ec3c43cb561a8fbcc7ebc4f4b7b9cad20b3",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "2d0848f592e5f15393a9077db75c8ec3c43cb561a8fbcc7ebc4f4b7b9cad20b3",
+          "after_sha256": "5f18f7cb457aa554fca53f5c4ab96c5639704f899685c5153e1af7b1b040f65f",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/source-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".agents/skills/spec-driven-development/SKILL.md",
+      "sha256": "a54885c2d4ada51a2a0903da695d7b7402e67fddeda927bb2643eacc5b2b233d",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/spec-driven-development/SKILL.md",
+        "git_blob_sha": "f54426bec00bcda5f700ab3368eed7203306830f"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+          "after_sha256": "24d0374ba069cd56f8cb0c600b699d480dd6918963792d77e8d0727765a30751",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "24d0374ba069cd56f8cb0c600b699d480dd6918963792d77e8d0727765a30751",
+          "after_sha256": "a54885c2d4ada51a2a0903da695d7b7402e67fddeda927bb2643eacc5b2b233d",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/spec-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".agents/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      }
+    },
+    {
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "sha256": "bab2fab66d795f5b299fe4e6651d225e228147c3c70ecfd3cf9557cf515e13cb",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/test-driven-development/SKILL.md",
+        "git_blob_sha": "8898bcbba4c4f6acca473ece95e82105bd9cfea0"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+          "after_sha256": "3309183d2d50a83b8804598f1a8107005dbcb50e0ff6f2a32befe0591e254e7c",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3309183d2d50a83b8804598f1a8107005dbcb50e0ff6f2a32befe0591e254e7c",
+          "after_sha256": "bab2fab66d795f5b299fe4e6651d225e228147c3c70ecfd3cf9557cf515e13cb",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/test-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "sha256": "7ba0636cf1cc548d0f939856ad728fc297ebe8aca6d3da6a11e3b9250d1584e8",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/using-agent-skills/SKILL.md",
+        "git_blob_sha": "d56ac03ab057036c1bdcc9127c88952758ee2f0d"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb",
+          "after_sha256": "4c69cb3b2ac5bb3b58fb0a48c2681f7f0d781c7f99d49cb556b5ccf7d6c29ea0",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "4c69cb3b2ac5bb3b58fb0a48c2681f7f0d781c7f99d49cb556b5ccf7d6c29ea0",
+          "after_sha256": "7ba0636cf1cc548d0f939856ad728fc297ebe8aca6d3da6a11e3b9250d1584e8",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".agents/skills/using-agent-skills/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved AGENT-KIT-UPDATE-006 v1: proportionate verification, focused repair planning, bounded coordination; relocate policy links to docs/agent-kit/",
+            "approval": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+            "source_sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "LICENSE",
+        "git_blob_sha": "d67778ada6b9cda6227e9130da182c13e73c8b2e"
+      }
+    },
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "sha256": "762e57ff62917fbc44655e440a76610d2aac4bc729f46a26c9998de36e927e66",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "8e80a38f893020cf12fe0c0b709c7d9d22c474af250a89a6398dccc2b70d141a",
+          "after_sha256": "762e57ff62917fbc44655e440a76610d2aac4bc729f46a26c9998de36e927e66",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/agents/kit-explorer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/agents/kit-implementer.md",
+      "sha256": "fa1fab903b0a3d66c8ea88857212cd2a8c2ecb7844cb6b8fe5880dd85585d657",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b",
+          "after_sha256": "fa1fab903b0a3d66c8ea88857212cd2a8c2ecb7844cb6b8fe5880dd85585d657",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/agents/kit-implementer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "sha256": "b32d2ba2291388303a1edaa740267a8f2fd021cb2c65e52955e83787fd35f232",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "bed4a31fa817e0f11286e4d5a313c9b18b996931235268b342b4c1f4780ff60e",
+          "after_sha256": "b32d2ba2291388303a1edaa740267a8f2fd021cb2c65e52955e83787fd35f232",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/agents/kit-reviewer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/accessibility-checklist.md",
+      "sha256": "475e47052f3dcf44c6c23dbc7091c9391589324290164b1d344961d85a2f278b",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/accessibility-checklist.md",
+        "git_blob_sha": "c8c61e5f3d5a010a0d0ecb918bfaffe6c76fca78"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+          "after_sha256": "475e47052f3dcf44c6c23dbc7091c9391589324290164b1d344961d85a2f278b",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/accessibility-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "sha256": "58fbffa51131d986589d5f97ae67ad4c77298afadbbdbb73d17b9362c56e97fa",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/definition-of-done.md",
+        "git_blob_sha": "35e39f9e15f6dd0ff4725a6e5cbce7f2aa69064a"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03",
+          "after_sha256": "939102dbe55570cf27d434c97afca0fafce7281bb68ff533ea41c886dd25b5e5",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "939102dbe55570cf27d434c97afca0fafce7281bb68ff533ea41c886dd25b5e5",
+          "after_sha256": "58fbffa51131d986589d5f97ae67ad4c77298afadbbdbb73d17b9362c56e97fa",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/definition-of-done.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved AGENT-KIT-UPDATE-006 v1: proportionate verification, focused repair planning, bounded coordination; relocate policy links to docs/agent-kit/",
+            "approval": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+            "source_sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/observability-checklist.md",
+      "sha256": "c6975012d5c1f2cbf2cdda31dcaa3df707c50e5fa809a01b9f5ce989f4a377cd",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/observability-checklist.md",
+        "git_blob_sha": "ad40d7aa3fca5d2091fa45be234c14aee22c3588"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+          "after_sha256": "c6975012d5c1f2cbf2cdda31dcaa3df707c50e5fa809a01b9f5ce989f4a377cd",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/observability-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/orchestration-patterns.md",
+      "sha256": "3118e756a6927c0a0a8c142809e24a54ea54d041c9ce3667892d5374c3fc1d61",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/orchestration-patterns.md",
+        "git_blob_sha": "09cddd31d52a95be1d9bca814547d184b9945e44"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+          "after_sha256": "3118e756a6927c0a0a8c142809e24a54ea54d041c9ce3667892d5374c3fc1d61",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/orchestration-patterns.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/performance-checklist.md",
+      "sha256": "f1a26ad9b64cad23ddb9555be5e2bcd7c073532273e40b3cd912e02cda502436",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/performance-checklist.md",
+        "git_blob_sha": "ba9744fe60dbe4f04f3f907029638d923158d7a2"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+          "after_sha256": "f1a26ad9b64cad23ddb9555be5e2bcd7c073532273e40b3cd912e02cda502436",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/performance-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/security-checklist.md",
+      "sha256": "435f6c29435d15bc91c7884c34836044f60b825f330ba3352461b4d0321eb542",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/security-checklist.md",
+        "git_blob_sha": "fc5e29b92c183fa69e0952b61a99761dc48b4c0b"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+          "after_sha256": "435f6c29435d15bc91c7884c34836044f60b825f330ba3352461b4d0321eb542",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/security-checklist.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/template-application.md",
+      "sha256": "fa56786e1a23ce1c3b1624eda53cb47352c37dab0d7790d9b58792e314a5f752",
+      "origin": {
+        "repository": "https://github.com/khiemnd777/agent-kit",
+        "commit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "upstream_path": ".agents/references/template-application.md",
+        "git_blob_sha": "814418a0c87005acccd68d7e2471ccff5c25ee0f"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved project document-link relocation only",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0",
+          "after_sha256": "7a2fe817e95f3a622aa768396403a36476a0c494c206463ef232c8bb2d64ebc2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "7a2fe817e95f3a622aa768396403a36476a0c494c206463ef232c8bb2d64ebc2",
+          "after_sha256": "fa56786e1a23ce1c3b1624eda53cb47352c37dab0d7790d9b58792e314a5f752",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/template-application.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/references/testing-patterns.md",
+      "sha256": "520090f09240faa67b955b5497c5a07e5bbf19ed6d23a7c8eb64776bef47c873",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "references/testing-patterns.md",
+        "git_blob_sha": "bc96e271ad241ca567f06d21c6ecc001455b80f1"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+          "after_sha256": "520090f09240faa67b955b5497c5a07e5bbf19ed6d23a7c8eb64776bef47c873",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/references/testing-patterns.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sha256": "de11eb43a84c5c5a2920ca35834ee7b8ffe72fb90c1c4a856aabb25d5ac17dc1",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/api-and-interface-design/SKILL.md",
+        "git_blob_sha": "3e2e37f8f4fba2c66f9f1599eaf01a55ae3f3e33"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+          "after_sha256": "3c1e2f56dd9da1bf14d6a24417b37d77ea7ff868dbe3535254d042ab878b042f",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3c1e2f56dd9da1bf14d6a24417b37d77ea7ff868dbe3535254d042ab878b042f",
+          "after_sha256": "de11eb43a84c5c5a2920ca35834ee7b8ffe72fb90c1c4a856aabb25d5ac17dc1",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/api-and-interface-design/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "bdf0b94cf8d405d180f427a7ae7e69a79e805512a81d406ef03e5b74301987b3",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/code-review-and-quality/SKILL.md",
+        "git_blob_sha": "08209ff2208d2883d48d945f7754c428b77f8d87"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity and evidence boundary; Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97",
+          "after_sha256": "fc96c82b3621869a3cab229249c2fd95c370560c6eccb971506241234b45cc4f",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "fc96c82b3621869a3cab229249c2fd95c370560c6eccb971506241234b45cc4f",
+          "after_sha256": "bdf0b94cf8d405d180f427a7ae7e69a79e805512a81d406ef03e5b74301987b3",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/code-review-and-quality/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/skills/code-simplification/SKILL.md",
+      "sha256": "977afca1ea261d16362e2002bacbe2c94013b6013811d4d903f53238cd164d39",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/code-simplification/SKILL.md",
+        "git_blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "after_sha256": "45b8c3c5ad6c43f44fa30d00fdceb1cb8017f29d8365105c2f55e86ddacc73ef",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "45b8c3c5ad6c43f44fa30d00fdceb1cb8017f29d8365105c2f55e86ddacc73ef",
+          "after_sha256": "977afca1ea261d16362e2002bacbe2c94013b6013811d4d903f53238cd164d39",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/code-simplification/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".claude/skills/context-engineering/SKILL.md",
+      "sha256": "fe8ba3d657732977b2b2a6340b4334de691c680cda11066b79f9874ab06b58d8",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/context-engineering/SKILL.md",
+        "git_blob_sha": "fb8bb5f85128302b231d301c1201da1e223f6869"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+          "after_sha256": "f735c044c383a7c50515e76261939af411048abe9c793b0311cb73fd3c4520f4",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f735c044c383a7c50515e76261939af411048abe9c793b0311cb73fd3c4520f4",
+          "after_sha256": "fe8ba3d657732977b2b2a6340b4334de691c680cda11066b79f9874ab06b58d8",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/context-engineering/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "e3c1176159a74eb209d41178098e3c1ab3fb7ba5f18dead74eb119cc262e6332",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/debugging-and-error-recovery/SKILL.md",
+        "git_blob_sha": "356da20365a7cd6825b4ffad14be39280c92cdfc"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+          "after_sha256": "c808c76d290bd44d90d736e4d38c824cbfdf4010edb9403901fb504997175ba6",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "c808c76d290bd44d90d736e4d38c824cbfdf4010edb9403901fb504997175ba6",
+          "after_sha256": "e3c1176159a74eb209d41178098e3c1ab3fb7ba5f18dead74eb119cc262e6332",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "edccc961314fd558b202774511cd7303564162ff9a6e028f9a4ad0fbf4550100",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/documentation-and-adrs/SKILL.md",
+        "git_blob_sha": "e37c38f30d76263c77aacdb7dcbacceb1218bc80"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+          "after_sha256": "45728d7201835bc7ee8a6f4bc002dbd4ec49ffa8beca60c972562efd53027dd2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "45728d7201835bc7ee8a6f4bc002dbd4ec49ffa8beca60c972562efd53027dd2",
+          "after_sha256": "edccc961314fd558b202774511cd7303564162ff9a6e028f9a4ad0fbf4550100",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/documentation-and-adrs/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      }
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/frontend-ui-engineering/SKILL.md",
+        "git_blob_sha": "eaf0fa163876a5274674f42ea208742c50f27119"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity and evidence boundary; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc",
+          "after_sha256": "3753eeb53916c92223521b7e996e437a031ee66418b32356332f1b1bbecc5108",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3753eeb53916c92223521b7e996e437a031ee66418b32356332f1b1bbecc5108",
+          "after_sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "269be4484154c40826cf705f158ed3796fdee0e243fc269fd58d4481f42e3853",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/incremental-implementation/SKILL.md",
+        "git_blob_sha": "9c4f49bc841adb3c0f98baaa9eabd435a5b64ef9"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348",
+          "after_sha256": "d109315be1a0eb5ed6a5dc75fb461300923d80798bc2445cdfd8e0ee4f479614",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "d109315be1a0eb5ed6a5dc75fb461300923d80798bc2445cdfd8e0ee4f479614",
+          "after_sha256": "269be4484154c40826cf705f158ed3796fdee0e243fc269fd58d4481f42e3853",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/incremental-implementation/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "9d1a810a962ab902e095179929c5c49e8cd91f8ce6499ea2809a3d3fd476f221",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/observability-and-instrumentation/SKILL.md",
+        "git_blob_sha": "84d9cb373467fe0e15236e190833ecc90f840c38"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "after_sha256": "f538df0deb0f4cdb62a4cd968bf96120d5486117d9ab4d45a0f9809b2f3d27e9",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f538df0deb0f4cdb62a4cd968bf96120d5486117d9ab4d45a0f9809b2f3d27e9",
+          "after_sha256": "9d1a810a962ab902e095179929c5c49e8cd91f8ce6499ea2809a3d3fd476f221",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      }
+    },
+    {
+      "path": ".claude/skills/performance-optimization/SKILL.md",
+      "sha256": "88f8471a1590647d59729409ddebd47658f7a3d6ffc305681dafe24c31eeb1fd",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/performance-optimization/SKILL.md",
+        "git_blob_sha": "498735724035f468737bd118f9c60676a013d544"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+          "after_sha256": "84ac8e0acd1cfd543174ef18b30fbbe7cc2fac9abbb313b48650fce57a354eb4",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "84ac8e0acd1cfd543174ef18b30fbbe7cc2fac9abbb313b48650fce57a354eb4",
+          "after_sha256": "88f8471a1590647d59729409ddebd47658f7a3d6ffc305681dafe24c31eeb1fd",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/performance-optimization/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions"
+      }
+    },
+    {
+      "path": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/performance-optimization/references/optimization-patterns.md",
+        "git_blob_sha": "63e27bcc7a051c3dc23c164f146f374e119874cc"
+      }
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "bde29b53a2a48c30ddb9560df983a3412b5721c45deb0f895987dc9f03f13a31",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/planning-and-task-breakdown/SKILL.md",
+        "git_blob_sha": "296249b64334bcfd1aeaefd27b9e3e5494e38ec0"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; KIT-TEMPLATE-APPLICATION-001 v1: representative rendered template fidelity; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee",
+          "after_sha256": "8e22c29b1bfe49c82d480169b28c1512fcc7948a607cba204901f3fac0aa4b39",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "8e22c29b1bfe49c82d480169b28c1512fcc7948a607cba204901f3fac0aa4b39",
+          "after_sha256": "bde29b53a2a48c30ddb9560df983a3412b5721c45deb0f895987dc9f03f13a31",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+            "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+            "source_sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/SKILL.md",
+      "sha256": "e083266433e7993721df8bc0065d455ac152ff790abced0085a00e8652fc5b5f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/security-and-hardening/SKILL.md",
+        "git_blob_sha": "e80e1e9a4f5b2989308c376d4ea0d333fe2c26ef"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+          "after_sha256": "2c988c0504893e3b8c6d2884309f353c2233b5995483456c2ea84e650890e0bc",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "2c988c0504893e3b8c6d2884309f353c2233b5995483456c2ea84e650890e0bc",
+          "after_sha256": "e083266433e7993721df8bc0065d455ac152ff790abced0085a00e8652fc5b5f",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/security-and-hardening/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing; Approved TASK-007 seven-finding correction: scoped local security/UI/documentation checks, valid accessibility tooling, classified performance failures, no props-depth refactor and preserved required test assertions; Approved TASK-007 two-conflict correction: consistent project-policy Lax/Strict cookie checks and inherited alert severity/routing conventions"
+      }
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/security-and-hardening/references/hardening-patterns.md",
+        "git_blob_sha": "9af2604409af9a085bad0b14a269a89a74d34084"
+      }
+    },
+    {
+      "path": ".claude/skills/source-driven-development/SKILL.md",
+      "sha256": "5f18f7cb457aa554fca53f5c4ab96c5639704f899685c5153e1af7b1b040f65f",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/source-driven-development/SKILL.md",
+        "git_blob_sha": "2704f0e130bc4659951aa552373914b2d63d18c9"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+          "after_sha256": "2d0848f592e5f15393a9077db75c8ec3c43cb561a8fbcc7ebc4f4b7b9cad20b3",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "2d0848f592e5f15393a9077db75c8ec3c43cb561a8fbcc7ebc4f4b7b9cad20b3",
+          "after_sha256": "5f18f7cb457aa554fca53f5c4ab96c5639704f899685c5153e1af7b1b040f65f",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/source-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids; Approved TASK-007 eight-finding correction: tooling progress stop, scoped research/security/performance/telemetry, no line-count or Git prerequisite and no missing-skill routing"
+      }
+    },
+    {
+      "path": ".claude/skills/spec-driven-development/SKILL.md",
+      "sha256": "a54885c2d4ada51a2a0903da695d7b7402e67fddeda927bb2643eacc5b2b233d",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/spec-driven-development/SKILL.md",
+        "git_blob_sha": "f54426bec00bcda5f700ab3368eed7203306830f"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+          "after_sha256": "24d0374ba069cd56f8cb0c600b699d480dd6918963792d77e8d0727765a30751",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "24d0374ba069cd56f8cb0c600b699d480dd6918963792d77e8d0727765a30751",
+          "after_sha256": "a54885c2d4ada51a2a0903da695d7b7402e67fddeda927bb2643eacc5b2b233d",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/spec-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".claude/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      }
+    },
+    {
+      "path": ".claude/skills/test-driven-development/SKILL.md",
+      "sha256": "bab2fab66d795f5b299fe4e6651d225e228147c3c70ecfd3cf9557cf515e13cb",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/test-driven-development/SKILL.md",
+        "git_blob_sha": "8898bcbba4c4f6acca473ece95e82105bd9cfea0"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+          "after_sha256": "3309183d2d50a83b8804598f1a8107005dbcb50e0ff6f2a32befe0591e254e7c",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "3309183d2d50a83b8804598f1a8107005dbcb50e0ff6f2a32befe0591e254e7c",
+          "after_sha256": "bab2fab66d795f5b299fe4e6651d225e228147c3c70ecfd3cf9557cf515e13cb",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/test-driven-development/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ],
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved KIT-HARNESS-BOUNDARIES-001 v1: four feature/infrastructure boundaries, scoped checks, evidence reuse and no per-phase reapproval; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      }
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "sha256": "7ba0636cf1cc548d0f939856ad728fc297ebe8aca6d3da6a11e3b9250d1584e8",
+      "origin": {
+        "repository": "https://github.com/addyosmani/agent-skills",
+        "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+        "upstream_path": "skills/using-agent-skills/SKILL.md",
+        "git_blob_sha": "d56ac03ab057036c1bdcc9127c88952758ee2f0d"
+      },
+      "adaptation": {
+        "source": "agent-kit contributors",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved P2.1: proportionate verification, focused repair planning and bounded coordination; Approved KIT-CONTINUOUS-WORKFLOW-001 v1: single continuous workflow, developer-owned feedback/repairs, completed-change review/CI and scoped technical aids"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb",
+          "after_sha256": "4c69cb3b2ac5bb3b58fb0a48c2681f7f0d781c7f99d49cb556b5ccf7d6c29ea0",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "4c69cb3b2ac5bb3b58fb0a48c2681f7f0d781c7f99d49cb556b5ccf7d6c29ea0",
+          "after_sha256": "7ba0636cf1cc548d0f939856ad728fc297ebe8aca6d3da6a11e3b9250d1584e8",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".claude/skills/using-agent-skills/SKILL.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained",
+          "previous_adaptation": {
+            "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+            "record": "docs/agent-kit/skills-catalog.md",
+            "reason": "Approved AGENT-KIT-UPDATE-006 v1: proportionate verification, focused repair planning, bounded coordination; relocate policy links to docs/agent-kit/",
+            "approval": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+            "source_sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+          }
+        }
+      ]
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "sha256": "3f40a3eab43253bb3b76861fb6c9895a72fd2de229011a5a06773d3a7b341a0a",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "bf9999b74d053d03de528eb4aafa9067603d77f85eeb52227398710e85666fdd",
+          "after_sha256": "3f40a3eab43253bb3b76861fb6c9895a72fd2de229011a5a06773d3a7b341a0a",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".codex/agents/kit-explorer.toml",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".codex/agents/kit-implementer.toml",
+      "sha256": "5abd17bcf988069e120649b9177f94b6f7f51fcac6d405eb8c44c5a4d9a5d58b",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+          "after_sha256": "5abd17bcf988069e120649b9177f94b6f7f51fcac6d405eb8c44c5a4d9a5d58b",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".codex/agents/kit-implementer.toml",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "sha256": "6477f1057aba20d78d033a6400fa417234bedb034132c4a30fae3358ac0dc4d4",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "66e55e7be64e5e6f1ec233680cf9df4cd0e5d9a52c64a25d7a79c4e220895f53",
+          "after_sha256": "6477f1057aba20d78d033a6400fa417234bedb034132c4a30fae3358ac0dc4d4",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": ".codex/agents/kit-reviewer.toml",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "309565cd6c3409852ec9d843d2422038f6332c69aaee97d825da84e122c1fb62",
+      "origin": {
+        "source": "Pinky Lamb repository-local instructions; prior bytes retained in the amendment baseline",
+        "record": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "29d5786e7ebd06f04ca2c842b363ead83ac1317bc12b51c9793d9e598255f190",
+          "after_sha256": "cc449c019df11e49591e27a344dd0210d73af6b48c63ce39dd110315f72faf76",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "cc449c019df11e49591e27a344dd0210d73af6b48c63ce39dd110315f72faf76",
+          "after_sha256": "4cf8a29157c4539c50e44cd9314e721ac9c0f1833271b140dfabef6145ef4e38",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "AGENTS.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "4cf8a29157c4539c50e44cd9314e721ac9c0f1833271b140dfabef6145ef4e38",
+          "after_sha256": "309565cd6c3409852ec9d843d2422038f6332c69aaee97d825da84e122c1fb62",
+          "reason": "Align active entrypoints with human-confirmed project closure and the retained non-blocking model routing"
+        }
+      ]
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      }
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "f8f7519f6b8a6b3435c0c17835e6687c6c2f6c2cb5f976d8d5ddb7784791f677",
+      "origin": {
+        "source": "Pinky Lamb repository-local instructions; prior bytes retained in the amendment baseline",
+        "record": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "f963761e4f535681be14825697e527d2dd78aaa6af89f511a5d9531c532e184a",
+          "after_sha256": "288b534611bc21596df5ed6f87f12dcc5b13850be8d8e77c4a83cf9430fbff9c",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "288b534611bc21596df5ed6f87f12dcc5b13850be8d8e77c4a83cf9430fbff9c",
+          "after_sha256": "f8f7519f6b8a6b3435c0c17835e6687c6c2f6c2cb5f976d8d5ddb7784791f677",
+          "reason": "Align active entrypoints with human-confirmed project closure and the retained non-blocking model routing"
+        }
+      ]
+    },
+    {
+      "path": "docs/ENGINEERING-WORKFLOW.md",
+      "sha256": "cc5e325abafe3fffef402e63e277fc975d84ae7bd41e937812bf1a1841cf5197",
+      "origin": {
+        "source": "Pinky Lamb repository-local instructions; prior bytes retained in the amendment baseline",
+        "record": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "51dfa8f35b76ed4963ff3c6928b288d5ef469a0d9d21d4332b3318045ccc65f0",
+          "after_sha256": "d7ebb8a6ff7fa78d26a28b1db352bb4d85eb229f2c9dea90f9bff09e6d762e23",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "d7ebb8a6ff7fa78d26a28b1db352bb4d85eb229f2c9dea90f9bff09e6d762e23",
+          "after_sha256": "cc5e325abafe3fffef402e63e277fc975d84ae7bd41e937812bf1a1841cf5197",
+          "reason": "Align active entrypoints with human-confirmed project closure and the retained non-blocking model routing"
+        }
+      ]
+    },
+    {
+      "path": "docs/QA-AND-DOD.md",
+      "sha256": "b11e4f4f0a6cb131ac08995cc2a2ecef25d387527f2b43a10830331a41e68def",
+      "origin": {
+        "source": "Pinky Lamb repository-local instructions; prior bytes retained in the amendment baseline",
+        "record": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "b3febad0c9d5d72f5033162d22324bb2aa30dd9d909b7047ca3ecd1deb84931f",
+          "after_sha256": "b11e4f4f0a6cb131ac08995cc2a2ecef25d387527f2b43a10830331a41e68def",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "sha256": "de0646acd9bf861847f9ed7803084d93d59ad5db71116bbb0ef1b9cc99310182",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "6484c7d7f82a83a565267bc7716b3a9b9965a2da56da710044ce54c060397da7",
+          "after_sha256": "de0646acd9bf861847f9ed7803084d93d59ad5db71116bbb0ef1b9cc99310182",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/agent-compatibility.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "sha256": "fb689ac7b09d86e05ab23cec7a7ccb801652960b5c9e0c235df21542ff5ecedf",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "3c53a7b26b6d5d4bd2c1a0322dd61bd53d44d0859282527e724fb612298c4c6a"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "402c6c9f4f55995e113d74ab53022e5ac410c39fc5bc219eed8dc8677f1c1906",
+          "after_sha256": "f546697784c9b11662fb3b471d2be3df4de737daa513492981d67547072601c2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "f546697784c9b11662fb3b471d2be3df4de737daa513492981d67547072601c2",
+          "after_sha256": "fb689ac7b09d86e05ab23cec7a7ccb801652960b5c9e0c235df21542ff5ecedf",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/agent-coordination-templates.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/cms-template-acceptance.md",
+      "sha256": "cf6fec168566b14d5481954b60606ee6cc89d8e16103a3ece1641f810821dadb",
+      "origin": {
+        "source": "Pinky Lamb project-specific mapping",
+        "record": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "22c35ed316947b0febc6d8a6f5cd513ad3cff5f391393c562328b877c9296fde",
+          "after_sha256": "10fac0d25f2dfa7ea0855acc51735871c3f4f0f10c68407100c7d9bdf58cd66a",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "10fac0d25f2dfa7ea0855acc51735871c3f4f0f10c68407100c7d9bdf58cd66a",
+          "after_sha256": "cf6fec168566b14d5481954b60606ee6cc89d8e16103a3ece1641f810821dadb",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": null,
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "sha256": "23bca03c93a9ed1162e3a9a7ada0ef894dc9f249aa1822d1982d56cd5602ba51",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "ef6720e8654c15b64e06b7b957128be5c0bcf6cd05399df82026541a7df2c6eb",
+          "after_sha256": "23bca03c93a9ed1162e3a9a7ada0ef894dc9f249aa1822d1982d56cd5602ba51",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/model-routing.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "sha256": "cf0c0acd8f624f70a9fe32adc7c82b4223b6d2691c4a2f738cf3e7dad7bebfc5",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+        "record": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+        "reason": "Approved selective guidance delta retaining Pinky Lamb overlays"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "635f513c7a6c0d9dd8c27edb9d34581681a82a9cc4ffc5809491920b2c38392a",
+          "after_sha256": "cf0c0acd8f624f70a9fe32adc7c82b4223b6d2691c4a2f738cf3e7dad7bebfc5",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/roles/coordinator.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "sha256": "7ce93a9451d5f8334d214d383a8d63ce2f42b7339167640dfea8296deea1d3d9",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "5a37196f9aa95ffbd554115c3aabbd979c785eb59ba011e8541ad0817af8fdee",
+          "after_sha256": "7ce93a9451d5f8334d214d383a8d63ce2f42b7339167640dfea8296deea1d3d9",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/roles/explorer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "sha256": "3b61a8bd9aa8d4ab81039b836641ab0d4b04f48a45df99e264ec045d0422e453",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+        "record": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+        "reason": "Approved selective guidance delta retaining Pinky Lamb overlays"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "9bde5376f932abeb4c8caca022bfab3921a5cd6b8e4502a488ee68050346a921",
+          "after_sha256": "3b61a8bd9aa8d4ab81039b836641ab0d4b04f48a45df99e264ec045d0422e453",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/roles/implementer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "sha256": "d547d177cc8bab8a5e8ae454c8b2f566810f1c0b42783e02bd2b7cdc34e9794b",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+        "record": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+        "reason": "Approved selective guidance delta retaining Pinky Lamb overlays"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "ee6e5b3e17c672596971ab57522c36ac54b730436862d215a2fa58e1985a8d87",
+          "after_sha256": "d547d177cc8bab8a5e8ae454c8b2f566810f1c0b42783e02bd2b7cdc34e9794b",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/roles/reviewer.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "sha256": "5a41c1f5f93e256534051c39ea1988307221751ae4cadd1053627e7adf23bbdc",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "c4aeedb0c5d5b6ca3b7cf302bb8e4f29da12157a92e185d511bf27db743c2545"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "4b840a1f948c31926afaeda8937aadfe8880fa1f2f8bb740a7d85a5a7a0d3392",
+          "after_sha256": "efbf4a580c2f509e0e8b757eac11e1944eddf5eb10a8b2843a928b426c81c7d2",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "efbf4a580c2f509e0e8b757eac11e1944eddf5eb10a8b2843a928b426c81c7d2",
+          "after_sha256": "5a41c1f5f93e256534051c39ea1988307221751ae4cadd1053627e7adf23bbdc",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/skills-catalog.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "sha256": "414d008af19dc148eeb3e3f0f87e22ec1562c73aa4235160d1ddea526e7d675e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+        "record": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+        "reason": "Approved selective guidance delta retaining Pinky Lamb overlays"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "a2a7527dc97eca6293814c664b9b2def49d13a2834592aa5e9e15d7df9468d07",
+          "after_sha256": "318ee27b08c8581707f463353c6cd20cc8e5c1be8b14db6df90ac66c0c9e8a61",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "318ee27b08c8581707f463353c6cd20cc8e5c1be8b14db6df90ac66c0c9e8a61",
+          "after_sha256": "20453736e374ba5c3d101c64fec10b9faadbf57bf3d7e743288ebc4a94f6262a",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/team-policy.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "20453736e374ba5c3d101c64fec10b9faadbf57bf3d7e743288ebc4a94f6262a",
+          "after_sha256": "414d008af19dc148eeb3e3f0f87e22ec1562c73aa4235160d1ddea526e7d675e",
+          "reason": "Align active entrypoints with human-confirmed project closure and the retained non-blocking model routing"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "sha256": "58798e006b9bd624792e6ca41a8055592d2e71c6d15c858854cfd026d2aac0e7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "55b5e851751db91ed46314f9c41a1260bc59f4fbeb7ccf352ff9f8f15708cff7"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "6ebef36700db51d40d2d40afebfb5a8a0de242ec14feca8286e47287d6c35c31",
+          "after_sha256": "a5ba5ac2ad2f16967235f1cca38a331486691d8a053ada176890385f80afa552",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "a5ba5ac2ad2f16967235f1cca38a331486691d8a053ada176890385f80afa552",
+          "after_sha256": "58798e006b9bd624792e6ca41a8055592d2e71c6d15c858854cfd026d2aac0e7",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/team-workflow.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/technote.md",
+      "sha256": "25b3e6ea1686b58bdc7aa22e442d0ae934b7693f48bfa3517967039ab59bbe84",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "d3542a879731337333bb5482e239ca5c98bf82e4777e0566902aa1f95c1ff80e",
+          "after_sha256": "25b3e6ea1686b58bdc7aa22e442d0ae934b7693f48bfa3517967039ab59bbe84",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/technote.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/template-application-acceptance.md",
+      "sha256": "2c5c1bf38bf78995c624002303e12c371018a501d3cb1748bd91b37c60f7b9b6",
+      "origin": {
+        "repository": "https://github.com/khiemnd777/agent-kit",
+        "commit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "upstream_path": "docs/template-application-acceptance.md",
+        "git_blob_sha": "11f3cb932aec8cb4d36a0cba71c07480b9bef5a7"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved project document-link relocation only",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "e11d640c7b9150120c10098d7c97f18a2d055b0d8ff9f9cf1b211435885069c4"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "10863f2317d04f29220f705b4007950a786c24151c63f0311eb3bddc18bb7ce5",
+          "after_sha256": "844a066c7013697472ae02cf84dcbc856964568ce08680de820847a228cfb06c",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "844a066c7013697472ae02cf84dcbc856964568ce08680de820847a228cfb06c",
+          "after_sha256": "2c5c1bf38bf78995c624002303e12c371018a501d3cb1748bd91b37c60f7b9b6",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/template-application-acceptance.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "sha256": "8e5d352b8f161ab7cee3a7de461d2bff265689f3359f6aee41efc6a9032e7ca2",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      },
+      "adaptation": {
+        "source": "https://github.com/khiemnd777/agent-kit@919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+        "record": "docs/agent-kit/skills-catalog.md",
+        "reason": "Approved PINKY-TEMPLATE-ADOPTION-001 v2: approved-template fidelity; retain Pinky Lamb overlays and relocate project links",
+        "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+        "source_sha256": "02f9a80234caf7bfa6d6e77e2dcf194ca39829451b8fc35bb1a699427c68c1e5"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+          "date": "2026-10-16",
+          "before_sha256": "82f4501c8953d5e70ad37d2b5b976653ed3d12ec23cb2257cc35562bca7e3e30",
+          "after_sha256": "032ea93ee1ee5c9d90ab67354c28f3e11d9dd4d4edd436e832723b8556963af5",
+          "reason": "Directly approved repository-local bounded verification correction; original upstream origin/adaptation retained"
+        },
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "032ea93ee1ee5c9d90ab67354c28f3e11d9dd4d4edd436e832723b8556963af5",
+          "after_sha256": "8e5d352b8f161ab7cee3a7de461d2bff265689f3359f6aee41efc6a9032e7ca2",
+          "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+          "source_path": "docs/verification-guide.md",
+          "reason": "Continuous workflow adoption with project path/authority/routing adaptations; original origins retained"
+        }
+      ]
+    },
+    {
+      "path": "engineering/agent-kit/LICENSE",
+      "sha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+        "historical_manifest": "docs/agent-kit/skills-manifest.json"
+      }
+    },
+    {
+      "path": "PROMPT-CODEX-GPT-6.1-SOL-HIGH.md",
+      "sha256": "508f584dd7e5984e8e68dc314fbb60eedb3bff67b3c269d8c996fefcbf81c139",
+      "origin": {
+        "source": "Pinky Lamb project-local continuation/authority documentation"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "51238ef9be3fa8b4bbee623072682965d7c40c999ffed116a6319129a58f98d7",
+          "after_sha256": "508f584dd7e5984e8e68dc314fbb60eedb3bff67b3c269d8c996fefcbf81c139",
+          "reason": "Track active project entrypoints that previously continued the historical M1 setup"
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "sha256": "31f84ae084bd006010a892398ca28c365995ff702924f5039fb10a99e612a080",
+      "origin": {
+        "source": "Pinky Lamb project-local continuation/authority documentation"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "b0fe3fb31b500caea99ab638e684984348147fcd609e93799d93453f55bad6f6",
+          "after_sha256": "31f84ae084bd006010a892398ca28c365995ff702924f5039fb10a99e612a080",
+          "reason": "Track active project entrypoints that previously continued the historical M1 setup"
+        }
+      ]
+    },
+    {
+      "path": "docs/APPROVAL-PROTOCOL.md",
+      "sha256": "608deb984d10e6bd451b0860cb40ece2c3cbd32f8379f8177b83556fcb99e2ae",
+      "origin": {
+        "source": "Pinky Lamb project-local continuation/authority documentation"
+      },
+      "local_amendments": [
+        {
+          "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+          "date": "2026-10-17",
+          "before_sha256": "d2fa05f7c28680d90a220e11ebf49aa4868f6de6684bef87c7e55bc799e36ba5",
+          "after_sha256": "608deb984d10e6bd451b0860cb40ece2c3cbd32f8379f8177b83556fcb99e2ae",
+          "reason": "Track active project entrypoints that previously continued the historical M1 setup"
+        }
+      ]
+    }
+  ],
+  "excluded_mutable_paths": [
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/skills-manifest-current.json",
+    "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+    "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+    "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+    "docs/agent-kit/tasks/README.md",
+    "docs/agent-kit/verification-results.md"
+  ],
+  "integrity_note": "Current maintained inventory: 82 files, 28 mirror pairs, 17 skills. Local amendments retain per-file before/after hashes and original origin/adaptation fields. Historical locks/checkers/receipts refer to their own revisions; do not rebaseline or run them as gates for this instruction amendment. Static source consistency is not native behavior or CMS acceptance.",
+  "historical_manifest": {
+    "path": "docs/agent-kit/skills-manifest.json",
+    "sha256": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19"
+  },
+  "adaptation_source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+    "authority_task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+    "previous": {
+      "repository": "https://github.com/khiemnd777/agent-kit",
+      "commit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+      "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+      "previous_commit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c"
+    }
+  },
+  "previous_kit_version": "AGENT-KIT-UPDATE-007-continuous-workflow",
+  "local_amendments": [
+    {
+      "task": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md",
+      "approval_source": "Direct human message in this chat on 2026-10-16; exact text retained in task",
+      "previous_effective_manifest_sha256": "88dec2dc4e5b103a8476318b3af985760a6d0bd749c0e3e528d55222dc39f245",
+      "changed_maintained_paths": [
+        ".agents/references/definition-of-done.md",
+        ".agents/references/template-application.md",
+        ".agents/skills/api-and-interface-design/SKILL.md",
+        ".agents/skills/code-review-and-quality/SKILL.md",
+        ".agents/skills/code-simplification/SKILL.md",
+        ".agents/skills/context-engineering/SKILL.md",
+        ".agents/skills/debugging-and-error-recovery/SKILL.md",
+        ".agents/skills/documentation-and-adrs/SKILL.md",
+        ".agents/skills/frontend-ui-engineering/SKILL.md",
+        ".agents/skills/incremental-implementation/SKILL.md",
+        ".agents/skills/observability-and-instrumentation/SKILL.md",
+        ".agents/skills/performance-optimization/SKILL.md",
+        ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        ".agents/skills/security-and-hardening/SKILL.md",
+        ".agents/skills/source-driven-development/SKILL.md",
+        ".agents/skills/spec-driven-development/SKILL.md",
+        ".agents/skills/test-driven-development/SKILL.md",
+        ".agents/skills/using-agent-skills/SKILL.md",
+        ".claude/references/definition-of-done.md",
+        ".claude/references/template-application.md",
+        ".claude/skills/api-and-interface-design/SKILL.md",
+        ".claude/skills/code-review-and-quality/SKILL.md",
+        ".claude/skills/code-simplification/SKILL.md",
+        ".claude/skills/context-engineering/SKILL.md",
+        ".claude/skills/debugging-and-error-recovery/SKILL.md",
+        ".claude/skills/documentation-and-adrs/SKILL.md",
+        ".claude/skills/frontend-ui-engineering/SKILL.md",
+        ".claude/skills/incremental-implementation/SKILL.md",
+        ".claude/skills/observability-and-instrumentation/SKILL.md",
+        ".claude/skills/performance-optimization/SKILL.md",
+        ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        ".claude/skills/security-and-hardening/SKILL.md",
+        ".claude/skills/source-driven-development/SKILL.md",
+        ".claude/skills/spec-driven-development/SKILL.md",
+        ".claude/skills/test-driven-development/SKILL.md",
+        ".claude/skills/using-agent-skills/SKILL.md",
+        "AGENTS.md",
+        "START-HERE.md",
+        "docs/ENGINEERING-WORKFLOW.md",
+        "docs/QA-AND-DOD.md",
+        "docs/agent-kit/agent-coordination-templates.md",
+        "docs/agent-kit/cms-template-acceptance.md",
+        "docs/agent-kit/skills-catalog.md",
+        "docs/agent-kit/team-policy.md",
+        "docs/agent-kit/team-workflow.md",
+        "docs/agent-kit/template-application-acceptance.md",
+        "docs/agent-kit/verification-guide.md"
+      ],
+      "added_inventory_paths": [
+        "AGENTS.md",
+        "START-HERE.md",
+        "docs/ENGINEERING-WORKFLOW.md",
+        "docs/QA-AND-DOD.md"
+      ],
+      "checks": "Focused source review, mirror equality, local references/frontmatter and current digests only; no harness/runtime/CMS checks",
+      "historical_boundary": "Original manifests, locks, vendor and receipts unchanged; upstream metadata identifies original sources, not current adapted bytes"
+    },
+    {
+      "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+      "approval_source": "Direct human update request and explicit High/Medium runtime-proof decision in this chat on 2026-10-17; exact text retained in task",
+      "source_repository": "https://github.com/khiemnd777/agent-kit",
+      "source_commit": "4f5c3bc7dcb2d052e8fd28699f118a22eb1f82c5",
+      "previous_effective_manifest_sha256": "fc2f04c21cef0c4dce562a5bec5c773545fdc81c64b5313606b5b41a37e4891d",
+      "changed_maintained_paths": [
+        ".agents/references/accessibility-checklist.md",
+        ".agents/references/definition-of-done.md",
+        ".agents/references/observability-checklist.md",
+        ".agents/references/orchestration-patterns.md",
+        ".agents/references/performance-checklist.md",
+        ".agents/references/security-checklist.md",
+        ".agents/references/template-application.md",
+        ".agents/references/testing-patterns.md",
+        ".agents/skills/api-and-interface-design/SKILL.md",
+        ".agents/skills/code-review-and-quality/SKILL.md",
+        ".agents/skills/code-simplification/SKILL.md",
+        ".agents/skills/context-engineering/SKILL.md",
+        ".agents/skills/debugging-and-error-recovery/SKILL.md",
+        ".agents/skills/documentation-and-adrs/SKILL.md",
+        ".agents/skills/frontend-ui-engineering/SKILL.md",
+        ".agents/skills/incremental-implementation/SKILL.md",
+        ".agents/skills/observability-and-instrumentation/SKILL.md",
+        ".agents/skills/performance-optimization/SKILL.md",
+        ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        ".agents/skills/security-and-hardening/SKILL.md",
+        ".agents/skills/source-driven-development/SKILL.md",
+        ".agents/skills/spec-driven-development/SKILL.md",
+        ".agents/skills/test-driven-development/SKILL.md",
+        ".agents/skills/using-agent-skills/SKILL.md",
+        ".claude/agents/kit-explorer.md",
+        ".claude/agents/kit-implementer.md",
+        ".claude/agents/kit-reviewer.md",
+        ".claude/references/accessibility-checklist.md",
+        ".claude/references/definition-of-done.md",
+        ".claude/references/observability-checklist.md",
+        ".claude/references/orchestration-patterns.md",
+        ".claude/references/performance-checklist.md",
+        ".claude/references/security-checklist.md",
+        ".claude/references/template-application.md",
+        ".claude/references/testing-patterns.md",
+        ".claude/skills/api-and-interface-design/SKILL.md",
+        ".claude/skills/code-review-and-quality/SKILL.md",
+        ".claude/skills/code-simplification/SKILL.md",
+        ".claude/skills/context-engineering/SKILL.md",
+        ".claude/skills/debugging-and-error-recovery/SKILL.md",
+        ".claude/skills/documentation-and-adrs/SKILL.md",
+        ".claude/skills/frontend-ui-engineering/SKILL.md",
+        ".claude/skills/incremental-implementation/SKILL.md",
+        ".claude/skills/observability-and-instrumentation/SKILL.md",
+        ".claude/skills/performance-optimization/SKILL.md",
+        ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        ".claude/skills/security-and-hardening/SKILL.md",
+        ".claude/skills/source-driven-development/SKILL.md",
+        ".claude/skills/spec-driven-development/SKILL.md",
+        ".claude/skills/test-driven-development/SKILL.md",
+        ".claude/skills/using-agent-skills/SKILL.md",
+        ".codex/agents/kit-explorer.toml",
+        ".codex/agents/kit-implementer.toml",
+        ".codex/agents/kit-reviewer.toml",
+        "AGENTS.md",
+        "docs/agent-kit/agent-compatibility.md",
+        "docs/agent-kit/agent-coordination-templates.md",
+        "docs/agent-kit/cms-template-acceptance.md",
+        "docs/agent-kit/model-routing.md",
+        "docs/agent-kit/roles/coordinator.md",
+        "docs/agent-kit/roles/explorer.md",
+        "docs/agent-kit/roles/implementer.md",
+        "docs/agent-kit/roles/reviewer.md",
+        "docs/agent-kit/skills-catalog.md",
+        "docs/agent-kit/team-policy.md",
+        "docs/agent-kit/team-workflow.md",
+        "docs/agent-kit/technote.md",
+        "docs/agent-kit/template-application-acceptance.md",
+        "docs/agent-kit/verification-guide.md"
+      ],
+      "preexisting_digest_mismatches": [
+        "docs/QA-AND-DOD.md"
+      ],
+      "historical_boundary": "Original manifests/locks/vendor/evidence/tasks and all CMS sources/data/approvals retained; no native/runtime/harness/global/Git action"
+    },
+    {
+      "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+      "approval_source": "Direct human update request on 2026-10-17; exact text retained in task follow-up",
+      "previous_effective_manifest_sha256": "f3d686bd3302b23c1e8d51a60e51bbbe8acd2a90070e1d2da932371636a84808",
+      "changed_maintained_paths": [
+        "AGENTS.md",
+        "START-HERE.md",
+        "docs/ENGINEERING-WORKFLOW.md",
+        "docs/agent-kit/team-policy.md"
+      ],
+      "added_inventory_paths": [
+        "PROMPT-CODEX-GPT-6.1-SOL-HIGH.md",
+        "README.md",
+        "docs/APPROVAL-PROTOCOL.md"
+      ],
+      "current_status_source": "tasks/plan.md",
+      "preexisting_digest_mismatches": [
+        "docs/QA-AND-DOD.md"
+      ],
+      "historical_boundary": "New human-confirmed closure records and original task/evidence/native/skill/data sources preserved; no runtime/harness/Git action"
+    }
+  ],
+  "entrypoint_alignment": {
+    "task": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-007.md",
+    "date": "2026-10-17",
+    "human_request": "bên PinkyLamb mới cập nhật lại trạng thái mới nhất của dự án, review và update",
+    "current_status_source": "tasks/plan.md",
+    "current_status_source_sha256": "33304332649e9f7ceec69f61694633ab1c32bf0e02b760229b80557fbf16c483",
+    "closure": "CLOSED_BY_HUMAN_CONFIRMATION for the plans listed by the human-confirmed record; no new runtime/release proof"
+  }
+}

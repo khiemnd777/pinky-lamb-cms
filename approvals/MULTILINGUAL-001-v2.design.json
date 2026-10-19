@@ -1,0 +1,173 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "proposal_version": 2,
+  "date": "2026-10-16",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "status": "P0_COMPLETE_P1_V2_IN_PROGRESS_A2_SCOPED_VERIFIED",
+  "implementation_authorized": true,
+  "human_design_approval": {
+    "quote": "Đây mới là UI UX mà tao cần. tao duyệt mockup này, mày rework lại plan P0 -> P7 theo mockup này.",
+    "source": "Direct user message in current chat",
+    "date": "2026-10-16",
+    "scope": "Approve delivered Hero/CMS HTML mockup as design baseline; rework project plan P0 through P7",
+    "does_not_authorize": [
+      "Product implementation or resume of rejected P1 UI",
+      "Automatic design approval of other screens not shown",
+      "Editorial acceptance of sample translations",
+      "Retained-data migration",
+      "Hosting5010 activation",
+      "M3/M4 closure or production"
+    ]
+  },
+  "approved_design_files": [
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.html",
+      "sha256": "4ddbd2b856676920eeaebce5a90815f7a995909ad00e6fb0838898a56c182ded"
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.css",
+      "sha256": "39dba8aa16cf2e4f5010b292d84e0f0aa63d5f21419b9b5b0ba86e13bf32d77b"
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.js",
+      "sha256": "b1a3b1f68fac1e4ec84ff33e80815c3f38e77539f783789b4bfd31fa4b320689"
+    }
+  ],
+  "design_notes": "mockups/MULTILINGUAL-P1-REDESIGN-v1.md",
+  "historical_prototype_verification": "mockups/review/multilingual-p1-v1/verification.json",
+  "plan": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+  "tasks": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+  "historical_p1_scope": "approvals/MULTILINGUAL-001-P1-v1.scope.json",
+  "scope_rules": {
+    "direct_template_scope": "Hero localized workspace, saved preview, expanded Hero EN/VI/JA, desktop/mobile interaction hierarchy",
+    "new_screen_designs": "HTML design review before product implementation of switch/list/review/migration flows not covered by approved mockup",
+    "prototype_removals": "See UI contract in v2 plan; fake role/data/save/scenario controls must not become product implementation",
+    "design_amendments": "Preserve approved source hashes; record additions and direct approval separately",
+    "next_implementation_bundle": "Concrete P1 v2 bundle ready; direct implementation approval still required. No new UI source-entry addendum."
+  },
+  "phase_execution": {
+    "P0": "COMPLETE_DOCUMENTATION_CONTRACT_AND_BUNDLE",
+    "P1": "APPROVED_IN_PROGRESS",
+    "P2": "DESIGN_REVIEW_ONLY_IMPLEMENTATION_NOT_APPROVED",
+    "P3": "NOT_AUTHORIZED_UNDER_V2",
+    "P4": "NOT_AUTHORIZED_UNDER_V2",
+    "P5": "NOT_AUTHORIZED_UNDER_V2",
+    "P6": "NOT_AUTHORIZED_UNDER_V2",
+    "P7": "NOT_AUTHORIZED_UNDER_V2"
+  },
+  "verification": {
+    "document_static": "PASS_LOCAL_LINKS_DESIGN_DIGESTS_PHASE_TASK_IDS_AUTHORITY_AND_PRESERVATION",
+    "product_tests": "NOT_RUN_P0_DOCUMENTATION_ONLY",
+    "runtime_browser_http": "NOT_RUN_P0_DOCUMENTATION_ONLY",
+    "emulator_data_writes": 0,
+    "product_source_writes": 0,
+    "mockup_source_writes": 0,
+    "human_product_acceptance": "NOT_GRANTED",
+    "human_translation_acceptance": "PENDING",
+    "checked_local_links": 138,
+    "unique_tasks": 37,
+    "tasks_by_phase": {
+      "P0": 4,
+      "P1": 7,
+      "P2": 4,
+      "P3": 5,
+      "P4": 5,
+      "P5": 4,
+      "P6": 4,
+      "P7": 4
+    },
+    "approved_mockup_file_hashes_unchanged": 3,
+    "original_p1_approval_snapshots_verified": 3,
+    "existing_product_template_asset_hashes_unchanged": 27,
+    "latest_p0_bundle_static": {
+      "status": "PASS_DOCUMENTATION_ONLY",
+      "local_links": 127,
+      "exact_implementation_paths": 32,
+      "new_product_test_paths_absent": 4,
+      "tasks": 12,
+      "acceptance_criteria": 14,
+      "approved_mockup_hashes_unchanged": 3,
+      "historical_p1_approval_snapshots_verified": 3,
+      "previous_source_template_asset_hashes_unchanged": 27,
+      "application_tests": "NOT_RUN",
+      "browser_http_runtime": "NOT_RUN",
+      "product_mockup_data_writes": 0,
+      "ui_decision": "NEW_APPROVED_UI_REPLACES_OLD_FORM; SOURCE_READ_ONLY; NO_EXTRA_SOURCE_ENTRY"
+    }
+  },
+  "current_document_versions": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P0-v2.md",
+      "sha256": "22a813f1a3c7158bb18de2c3bfc34b95584517e5b79cc0676988ac342ab535ac"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v2.md",
+      "sha256": "6f634e050037494fb3ca97ef04a54d1756de119e0f06b90db44bd46c74f20d21"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v2.md",
+      "sha256": "50d70c02f0df0478a923af7b7cf84326b1b878e83a22f2eacf7a19aff0b716de"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+      "sha256": "c9bbb453a99e0a55984833d97eb901f514d0ff03973b055bdad1dbcdddd03e57"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+      "sha256": "addda3968b5acfa52a304b17ec789e200034ecd4aa718d9b4f0c5f43335aa541"
+    },
+    {
+      "path": "mockups/MULTILINGUAL-P1-REDESIGN-v1.md",
+      "sha256": "e79b2415582bc256f703f04fa449341b8d12ddc80267716b07558e96b13cef0f"
+    }
+  ],
+  "plan_approval": {
+    "quote": "Approved MULTILINGUAL-001 v2. Hoàn tất P0 và trình scope/tasks/AC cụ thể cho P1 v2 để tao duyệt triển khai. Bám đúng mockup đã duyệt, không tự đổi UI/UX.",
+    "source": "Direct user message in current chat",
+    "date": "2026-10-16",
+    "document_versions_at_approval": [
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+        "sha256": "be97fb2d0bc36649e802dbf9b9c784da7657442c1cb2460e2bda5f7d63c35535"
+      },
+      {
+        "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+        "sha256": "e47969af0fb22f6a0792fb4b33728c72b546c4a171a6a0d2f828dad01a578ebb"
+      },
+      {
+        "path": "mockups/MULTILINGUAL-P1-REDESIGN-v1.md",
+        "sha256": "bc1c926151c2df39b366b1b8fd37ae4d939af58723a7ceb2c71988b647fa018a"
+      }
+    ],
+    "scope": "P0 completion and prepare P1 implementation bundle; no product implementation"
+  },
+  "ui_scope_clarification": {
+    "source": "Direct user correction in current chat",
+    "excerpt": "tao đã nói theo mockup mới, mày lại cố gắng giữ cái cũ để adapt",
+    "effect": "Remove prior old-form preservation question/blocker; follow new UI only. No application implementation permission."
+  },
+  "p0_contract": "pinky-lamb-cms/docs/MULTILINGUAL-001-P0-v2.md",
+  "p1_bundle": "approvals/MULTILINGUAL-001-P1-v2.scope.json",
+  "implementation_scope_record": "approvals/MULTILINGUAL-001-P1-v2.scope.json",
+  "current_execution": {
+    "scope": "approvals/MULTILINGUAL-001-P1-v2.scope.json",
+    "summary": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v2/execution-summary.json",
+    "source": "CODE_COMPLETE_32PINS",
+    "preview": "PASS_SCOPED_PRIVATE_FIXTURE_AND_ACTUAL_QA2_EXPORT",
+    "A2": "SOURCE_FIXTURE_VERIFIED_P1_OPEN_AUTH_TAB_B_CLEANUP",
+    "P1_closed": false,
+    "successful_v2_commits": 8,
+    "live_core": "10PASS8RESTORED_COMMITS",
+    "live_logout_A": "PASS",
+    "live_logout_B": "UNPROVEN",
+    "P2_preparation": {
+      "scope": "approvals/MULTILINGUAL-001-P2-v1.scope.json",
+      "status": "CODE_COMPLETE_VERIFIED_LOCAL_SCOPED_REVIEW_READY",
+      "application_implementation_authorized": true,
+      "boundary": "P2 local QA exact10paths only; P3-P7 not authorized; P1 remains open",
+      "summary": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p2-v1/implementation-20261016/execution-summary.json",
+      "human_acceptance": "PENDING"
+    },
+    "P3_P7_implementation_authorized": false
+  }
+}

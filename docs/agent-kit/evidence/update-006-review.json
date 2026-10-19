@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-006 v1",
+  "recordedAtUtc": "2026-10-14T08:36:59.340324+00:00",
+  "writer": "root Coordinator",
+  "reviewer": "review_update_006 independent kit-reviewer",
+  "result": "PASS_SOURCE_PACKAGE_REVIEW",
+  "selectedRoute": "kit-reviewer GPT-6.1 Sol High from supplied tool role",
+  "independentlyObservedProviderRoute": "Unknown",
+  "candidateHashes": {
+    "docs/agent-kit/evidence/update-006-preflight.json": "3adc447e15c575907c8b6f407f08d2016bb3eb0662b4d4f5d742973ee9a5392d",
+    "docs/agent-kit/skills-manifest-current.json": "eccf0e842008f92b9dc68774982ef1d64841eb7131cb64862d93f45e9afbf8b5",
+    "engineering/AGENT-KIT-UPDATE-006-LOCK.json": "020816dcda68c7eed40fe38225f07f5485c3339567bbaa8563706cc3ca6078df",
+    "engineering/agent-kit/verify-proportionate-update.py": "e51ee049debb608ce5df191dcdaf0b353bcbf9574bba5a97d0b33affa574c2f4"
+  },
+  "canonicalLockWithoutCheckerSha256": "69cdae6bc3f625a33c5919b03d076791de30da4e33556be0ea9dd0e792191eed",
+  "finding": {
+    "severity": "Required / Medium",
+    "condition": "Four effective mirror_pairs retained historical digests while current bytes and file records were updated",
+    "resolution": "Four effective pair digests corrected; checker compares pair hashes with canonical/mirror bytes and both effective file records",
+    "state": "RESOLVED_VERIFIED"
+  },
+  "sourceChecks": {
+    "pinnedSourceGitBlobs": 21,
+    "canonicalSourceOnlyPolicyRelocations": 4,
+    "guidanceOverlayReview": 8
+  },
+  "checkerCommand": "python3 -B engineering/agent-kit/verify-proportionate-update.py",
+  "checkerResult": "PASS",
+  "independentNegativeEvidence": {
+    "originalSha256": "fca9999ae1823f1661377875822ab17ea023f06cae9b0987ae4e6401681ac3af",
+    "observations": [
+      {
+        "name": "clean",
+        "result": "PASS",
+        "baselineRecords": 174,
+        "amendments": 17,
+        "maintainedFiles": 74,
+        "mirrorPairs": 27,
+        "skillsPerRoot": 17,
+        "originalUpstreamFiles": 22,
+        "adaptedUpstreamFiles": 4,
+        "localLinks": 92,
+        "boundary": "Package/static only; CMS/runtime/emulator/global/native/production NOT_RUN"
+      },
+      {
+        "name": "adapted_file_tamper",
+        "result": "FAIL",
+        "errors": [
+          "Package/preservation hash mismatch: .agents/skills/using-agent-skills/SKILL.md",
+          "Effective file hash mismatch: .agents/skills/using-agent-skills/SKILL.md",
+          "Mirror bytes mismatch: .claude/skills/using-agent-skills/SKILL.md",
+          "Mirror pair digest mismatch: .claude/skills/using-agent-skills/SKILL.md"
+        ]
+      },
+      {
+        "name": "historical_receipt_tamper",
+        "result": "FAIL",
+        "errors": [
+          "Package/preservation hash mismatch: docs/agent-kit/skills-manifest.json",
+          "Extra data: line 810 column 1 (char 35716)"
+        ]
+      },
+      {
+        "name": "preflight_tamper",
+        "result": "FAIL",
+        "errors": [
+          "Frozen preflight mismatch"
+        ]
+      },
+      {
+        "name": "manifest_tamper",
+        "result": "FAIL",
+        "errors": [
+          "Effective manifest hash mismatch"
+        ]
+      },
+      {
+        "name": "checker_tamper",
+        "result": "FAIL",
+        "errors": [
+          "Checker digest mismatch"
+        ]
+      },
+      {
+        "name": "unexpected_inventory",
+        "result": "FAIL",
+        "errors": [
+          "Unapproved package files: docs/agent-kit/unapproved-review-fixture.md"
+        ]
+      },
+      {
+        "name": "symlink",
+        "result": "FAIL",
+        "errors": [
+          "Symlink path: docs/agent-kit/skills-catalog.md"
+        ]
+      },
+      {
+        "name": "lock_rebaseline",
+        "result": "FAIL",
+        "errors": [
+          "Unapproved lock/candidate mismatch"
+        ]
+      },
+      {
+        "name": "stale_pair_digest",
+        "result": "FAIL_EXPECTED",
+        "errors": [
+          "Mirror pair digest mismatch: .claude/references/definition-of-done.md",
+          "Mirror pair/file metadata mismatch: .agents/references/definition-of-done.md",
+          "Mirror pair/file metadata mismatch: .claude/references/definition-of-done.md"
+        ]
+      },
+      {
+        "name": "pair_file_record_mismatch",
+        "result": "FAIL_EXPECTED",
+        "errors": [
+          "Mirror pair/file metadata mismatch: .agents/references/definition-of-done.md"
+        ]
+      },
+      {
+        "name": "mirror_content_mismatch",
+        "result": "FAIL_EXPECTED",
+        "errors": [
+          "Mirror pair digest mismatch: .claude/references/definition-of-done.md"
+        ]
+      },
+      {
+        "name": "in_memory_stale_pair_after_outer_anchors",
+        "result": "FAIL",
+        "errors": [
+          "Mirror pair digest mismatch: .claude/references/definition-of-done.md",
+          "Mirror pair/file metadata mismatch: .agents/references/definition-of-done.md",
+          "Mirror pair/file metadata mismatch: .claude/references/definition-of-done.md"
+        ]
+      },
+      {
+        "name": "restored",
+        "result": "PASS",
+        "baselineRecords": 174,
+        "amendments": 17,
+        "maintainedFiles": 74,
+        "mirrorPairs": 27,
+        "skillsPerRoot": 17,
+        "originalUpstreamFiles": 22,
+        "adaptedUpstreamFiles": 4,
+        "localLinks": 92,
+        "boundary": "Package/static only; CMS/runtime/emulator/global/native/production NOT_RUN"
+      }
+    ]
+  },
+  "reviewValidity": "Applies to frozen candidate hashes, approved scope and preflight. Mutable factual task/indices/receipt updates do not invalidate source conclusions; relevant package/input changes require affected review.",
+  "limits": [
+    "CMS/runtime/emulator/global/native behavior/Git/deploy NOT_RUN, outside scope",
+    "No live data preservation or runtime availability claim",
+    "Bundled quick_validate.py not rerun by reviewer; parent records missing yaml and equivalent metadata checks"
+  ]
+}

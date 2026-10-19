@@ -1,0 +1,18 @@
+{
+  "observedUtc": "2026-10-15T05:34:32.823328+00:00",
+  "command": "python3 -B engineering/agent-kit/verify-template-adoption.py",
+  "exitCode": 0,
+  "output": {
+    "result": "PASS",
+    "baselineRecords": 183,
+    "protectedCmsSourceRecords": 656,
+    "candidatePaths": 19,
+    "maintainedFiles": 78,
+    "mirrorPairs": 28,
+    "skillsPerRoot": 17,
+    "originalUpstreamFiles": 20,
+    "adaptedUpstreamFiles": 6,
+    "localLinks": 75,
+    "boundary": "Package/static/source only; native/CMS/data/emulator/global/production NOT_RUN"
+  }
+}

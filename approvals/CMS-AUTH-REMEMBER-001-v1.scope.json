@@ -1,0 +1,162 @@
+{
+  "proposal_id": "CMS-AUTH-REMEMBER-001",
+  "version": 1,
+  "status": "APPROVED_RUNTIME_VERIFIED_SCOPED",
+  "implementation_authorized": true,
+  "requested_by_user": "trước khi đi tiếp vào muốn mày sửa phần đăng nhập, \"tự dộng nhớ đăng nhập cho lần sau\" tao không muốn phải đăng nhập liên tục, liên tục rất mất thời gian.",
+  "source": "direct user message in current chat",
+  "required_human_quote": "Approved CMS-AUTH-REMEMBER-001 v1 — nhớ đăng nhập local và profile test riêng",
+  "canonical_task": "pinky-lamb-cms/tasks/CMS-AUTH-REMEMBER-001.md",
+  "document": "pinky-lamb-cms/docs/CMS-AUTH-REMEMBER-001-v1.md",
+  "application_files": [
+    {
+      "path": "pinky-lamb-cms/admin/auth.mjs",
+      "sha256": "27483c22a875e678f0668bfbdca1b5bd799a974478fdb30440da2cbedf91b4ac",
+      "size_bytes": 22565,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+      "sha256": "72016f2ae528e8edd9ca4730d366987e1e49e2b41a66e0bdb71ba73112cfac13",
+      "size_bytes": 6679,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+      "sha256": "b449ed0ac5a68edded34dc39b77fb3bfa7921b077b08fec920b45cd51c12e004",
+      "size_bytes": 5683,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+      "sha256": "6eaed97f20847c92845c05c278fcdfac028f1e09bd560170903dd6d1434e95a9",
+      "size_bytes": 5909,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.test.mjs",
+      "sha256": "e61c441fdbd730517977f951642e38a2d4d4b170cc639112ba1fd8de6c61ce7a",
+      "size_bytes": 7903,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+      "sha256": "2c547a25c96371e022c754c55e53dd0e483eb52a2cda91fcee4c9c10b3c90e81",
+      "size_bytes": 5408,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+      "sha256": "20b79e30267eca3c6f6629d3d5c5e309f974cd12b0775dd7db74ba3a83a61716",
+      "size_bytes": 78359,
+      "action": "EDIT"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/auth-session.mjs",
+      "action": "CREATE",
+      "before": "ABSENT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/auth-session.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/auth-session-ui.local.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT"
+    }
+  ],
+  "readonly_dependencies": [
+    {
+      "path": "pinky-lamb-cms/cms-api/authorization.mjs",
+      "sha256": "98a0165cd72d3b30c63488fb48edf185e3d99a9f71c5710bc597da9212ff6032",
+      "size_bytes": 2905
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/routes.mjs",
+      "sha256": "4b9ebce94d9fa56d4afb93565ab95a8679046902407a341195c9731cca63019b",
+      "size_bytes": 24326
+    },
+    {
+      "path": "pinky-lamb-cms/admin/config-local.mjs",
+      "sha256": "434b8008627a83d8b4c2d91c15b929d48ccf0e9204611e4568b5231af4dead4c",
+      "size_bytes": 776
+    },
+    {
+      "path": "pinky-lamb-cms/admin/index.html",
+      "sha256": "51c1411a68fbb077716dde3513dbc91e96180d7187a1bed7bcd1a022b0130ec8",
+      "size_bytes": 5683
+    },
+    {
+      "path": "pinky-lamb-cms/package.json",
+      "sha256": "22a542cfe3f5484c4cdcad5b10734725326398ec5649b7cc9ae4565dbb41ba04",
+      "size_bytes": 1386
+    },
+    {
+      "path": "pinky-lamb-cms/package-lock.json",
+      "sha256": "43a9dab5038690e07783a5b142a51f08d12e8af18c46e4a76cb2a0fe1fa35406",
+      "size_bytes": 448013
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firebase.json",
+      "sha256": "6f2f37059514d183f741ef8e00e423e452a083dcc91e63b2ac778932f6607505",
+      "size_bytes": 1499
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firestore.rules",
+      "sha256": "c26d81412146f210eafc466649f636a7902d68834ddce44f49f6725c9809a268",
+      "size_bytes": 229
+    }
+  ],
+  "runtime": {
+    "project": "demo-pinky-lamb-cms",
+    "cms_origin": "http://127.0.0.1:5173",
+    "auth_emulator": "http://127.0.0.1:9099",
+    "cms_writes": 0,
+    "account_or_role_mutations": false,
+    "emulator_lifecycle": false,
+    "vite_restart": false,
+    "persistent_test_profile": "pinky-lamb-cms/.local/cache/multilingual-001/browser-profile",
+    "profile_sharing": "one owned test profile across authorized P3–P7 owner runs, never Edge user profile",
+    "profile_mode": "0700 parent; ignored .local; browser/Firebase SDK-managed session persistence; no credential or storageState export",
+    "output_root": "pinky-lamb-cms/.local/test-outputs/cms-auth-remember-001/v1/",
+    "tests": "controlled unit/browser/profile reopen before one normal demo login when needed; no actual account creation"
+  },
+  "behavior": [
+    "Remember Firebase SDK LOCAL session by default on same browser/profile/origin",
+    "Keep Auth identity on temporary session API/network failure while blocking private UI until authorization succeeds",
+    "Clear remembered session on explicit logout, invalid/revoked Auth or denied membership",
+    "Reuse owned browser profile and separate finish-private-UI cleanup from explicit logout test",
+    "No passwords stored by application; SDK may persist refresh/session tokens as required for remembered login"
+  ],
+  "does_not_authorize": [
+    "P3 remainder implementation",
+    "cross-profile token copying",
+    "real Firebase/cloud/billing/IAM",
+    "Auth/ACL bypass or suppressing401/403",
+    "saving passwords, logging tokens or exporting storageState",
+    "M3/M4/LOCAL_COMPLETE/production"
+  ],
+  "prepared_at": "2026-10-16T12:08:31.101794+00:00",
+  "document_pin": {
+    "sha256": "5a0028f170ac426b4bc1cad49d24517f02f9f823d0576ad70a84b263bf6e4bcf",
+    "size_bytes": 7095
+  },
+  "human_approval": {
+    "quote": "Approved CMS-AUTH-REMEMBER-001 v1 — nhớ đăng nhập local và profile test riêng",
+    "source": "direct user message in current chat",
+    "recorded_at": "2026-10-16T12:10:26.122576+00:00",
+    "preapproval_snapshot": "pinky-lamb-cms/.local/test-outputs/cms-auth-remember-001/v1/approved-20261016"
+  },
+  "execution": {
+    "canonical_task": "pinky-lamb-cms/tasks/CMS-AUTH-REMEMBER-001.md",
+    "verification_receipt": "pinky-lamb-cms/.local/test-outputs/cms-auth-remember-001/v1/verification-20261016-v1.json",
+    "source_complete": true,
+    "runtime": "VERIFIED_SCOPED: normal OWNER refresh/newtab/close-reopen; no second login; profile retained",
+    "human_acceptance": "PENDING",
+    "cms_writes": 0,
+    "actual_login_requests": 1,
+    "final_owner_state": "CLOSED_AUTH_PRESERVED"
+  }
+}

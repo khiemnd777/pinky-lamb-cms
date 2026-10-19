@@ -1,0 +1,1619 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-DISCOVERY-002",
+  "version": 1,
+  "observedAtUtc": "2026-10-12T23:39:43.406200+00:00",
+  "clientDate": "2026-10-13",
+  "clientTimezone": "Asia/Ho_Chi_Minh",
+  "approvalQuote": "Approved AGENT-DISCOVERY-002 v1 — tạo chat Codex mới trong project Pinky Lamb và kiểm tra 3 native agents theo phương án 1. Giữ nguyên mã CMS, dữ liệu emulator và các approval hiện hành.",
+  "approvalSource": "Direct human message in coordinating chat; no CMS approval is extended",
+  "status": "DISCOVERY_PASS_STARTUP_VERIFIED_PERMISSIONS_PARTIAL",
+  "freshThread": {
+    "threadId": "01a13279-4edf-7233-9c22-512d97d628c3",
+    "hostId": "local",
+    "title": "AGENT-DISCOVERY-002 — native agents",
+    "projectId": "2475354c-fe8b-4589-817e-b3c46b1f350b",
+    "cwdMatches": true,
+    "runtimeVersion": "0.162.0-alpha.17.2",
+    "nativeOriginator": "Codex Desktop",
+    "requestedModel": "gpt-6.1-sol",
+    "requestedEffort": "high",
+    "observedModel": "gpt-6.1-sol",
+    "observedEffort": "high",
+    "turnStatus": "completed",
+    "turnError": null
+  },
+  "roles": [
+    {
+      "selector": "kit-explorer",
+      "written": "VERIFIED_UNCHANGED_ADAPTER",
+      "discovered": "PASS_NATIVE_EXACT_SELECTOR_CHILD_ROLE",
+      "invoked": "PASS_NATIVE_CHILD_COMPLETED",
+      "verified": "PASS_ACK_ONLY_STARTUP",
+      "childThreadId": "01a13279-a450-72e3-81f0-0baa35fef4b4",
+      "taskName": "/root/discovery_002_explorer",
+      "namespace": "collaboration",
+      "forkTurns": "none",
+      "modelEffortExplicitlyOverridden": false,
+      "nativeModel": "gpt-6.1-sol",
+      "nativeEffort": "high",
+      "nativeRouteEvidence": "Native turn_context configured metadata; not provider attestation",
+      "nativeRole": "kit-explorer",
+      "exactAdapterInstructionsObserved": true,
+      "adapterSha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      "adapterInstructionSha256": "e7cc2d32ee89349272a438877a3b7b624e31c674641f6672fda706764c3cdd32",
+      "nativeSourceFilePathEmitted": false,
+      "nativeSandboxType": "workspace-write",
+      "readOnlyPolicyExpected": true,
+      "readOnlyPolicySatisfiedInRecordedMetadata": false,
+      "nativeChildToolCallsObserved": 0,
+      "ACK": true,
+      "behaviorVerification": "Application/permission-enforcement tests NOT_RUN"
+    },
+    {
+      "selector": "kit-implementer",
+      "written": "VERIFIED_UNCHANGED_ADAPTER",
+      "discovered": "PASS_NATIVE_EXACT_SELECTOR_CHILD_ROLE",
+      "invoked": "PASS_NATIVE_CHILD_COMPLETED",
+      "verified": "PASS_ACK_ONLY_STARTUP",
+      "childThreadId": "01a13279-acb7-7512-9838-1f48b039148e",
+      "taskName": "/root/discovery_002_implementer",
+      "namespace": "collaboration",
+      "forkTurns": "none",
+      "modelEffortExplicitlyOverridden": false,
+      "nativeModel": "gpt-6.1-sol",
+      "nativeEffort": "medium",
+      "nativeRouteEvidence": "Native turn_context configured metadata; not provider attestation",
+      "nativeRole": "kit-implementer",
+      "exactAdapterInstructionsObserved": true,
+      "adapterSha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      "adapterInstructionSha256": "da16c66f34e1f1915e171af78318dbb84cea3f221a383f57bdc19fa1b80fdb74",
+      "nativeSourceFilePathEmitted": false,
+      "nativeSandboxType": "workspace-write",
+      "readOnlyPolicyExpected": false,
+      "readOnlyPolicySatisfiedInRecordedMetadata": "NOT_REQUIRED_FOR_ACK_ROLE",
+      "nativeChildToolCallsObserved": 0,
+      "ACK": true,
+      "behaviorVerification": "Application/permission-enforcement tests NOT_RUN"
+    },
+    {
+      "selector": "kit-reviewer",
+      "written": "VERIFIED_UNCHANGED_ADAPTER",
+      "discovered": "PASS_NATIVE_EXACT_SELECTOR_CHILD_ROLE",
+      "invoked": "PASS_NATIVE_CHILD_COMPLETED",
+      "verified": "PASS_ACK_ONLY_STARTUP",
+      "childThreadId": "01a13279-b5a2-70d1-877e-fe6131dcb39b",
+      "taskName": "/root/discovery_002_reviewer",
+      "namespace": "collaboration",
+      "forkTurns": "none",
+      "modelEffortExplicitlyOverridden": false,
+      "nativeModel": "gpt-6.1-sol",
+      "nativeEffort": "high",
+      "nativeRouteEvidence": "Native turn_context configured metadata; not provider attestation",
+      "nativeRole": "kit-reviewer",
+      "exactAdapterInstructionsObserved": true,
+      "adapterSha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "adapterInstructionSha256": "72d2fff58026a2b20af1d910595463dd0cbfcdb49bf2a7f4ce333ce772159f37",
+      "nativeSourceFilePathEmitted": false,
+      "nativeSandboxType": "workspace-write",
+      "readOnlyPolicyExpected": true,
+      "readOnlyPolicySatisfiedInRecordedMetadata": false,
+      "nativeChildToolCallsObserved": 0,
+      "ACK": true,
+      "behaviorVerification": "Application/permission-enforcement tests NOT_RUN"
+    }
+  ],
+  "sourceEvidence": {
+    "origin": "Only these four newly owned native rollout files and app read_thread/wait_threads",
+    "rawRolloutsConfigCredentialsPersisted": false,
+    "nativeRoleAndRouteMetadata": [
+      {
+        "threadId": "01a13279-4edf-7233-9c22-512d97d628c3",
+        "ownedNativeRollout": true,
+        "rolloutSha256": "4dc674031372c8b8f0b5f627ff87fa5c8c0f34cffdfb8b5c23c9cc42f59e9b6c",
+        "sessionMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:14.099Z",
+            "cwdMatches": true,
+            "source": "vscode",
+            "cliVersion": "0.162.0-alpha.17.2",
+            "originator": "Codex Desktop",
+            "agentRole": null,
+            "keys": [
+              "creator_user_id",
+              "creator_account_id",
+              "session_id",
+              "id",
+              "timestamp",
+              "cwd",
+              "runtime_workspace_roots",
+              "originator",
+              "cli_version",
+              "source",
+              "thread_source",
+              "model_provider",
+              "base_instructions",
+              "history_mode",
+              "context_window"
+            ]
+          }
+        ],
+        "turnMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:15.805Z",
+            "turnId": "01a13279-520c-7193-a643-87556decb807",
+            "model": "gpt-6.1-sol",
+            "effort": "high",
+            "reasoningEffort": null,
+            "approvalPolicy": "on-request",
+            "sandboxType": "workspace-write",
+            "cwdMatches": true,
+            "keys": [
+              "turn_id",
+              "root_turn_id",
+              "disabled_plugin_ids",
+              "cwd",
+              "workspace_roots",
+              "current_date",
+              "timezone",
+              "approval_policy",
+              "approvals_reviewer",
+              "sandbox_policy",
+              "permission_profile",
+              "file_system_sandbox_policy",
+              "model",
+              "comp_hash",
+              "personality",
+              "collaboration_mode",
+              "multi_agent_version",
+              "realtime_active",
+              "effort",
+              "summary"
+            ]
+          }
+        ],
+        "spawnCalls": [
+          {
+            "callId": "call_77c3b747f7ea4b879cd6195952f96aab",
+            "namespace": "collaboration",
+            "selector": "kit-explorer",
+            "taskName": "discovery_002_explorer",
+            "forkTurns": "none",
+            "explicitModelPresent": false,
+            "explicitEffortPresent": false
+          },
+          {
+            "callId": "call_01bb2e131c68467a82703cc0e85f8fed",
+            "namespace": "collaboration",
+            "selector": "kit-implementer",
+            "taskName": "discovery_002_implementer",
+            "forkTurns": "none",
+            "explicitModelPresent": false,
+            "explicitEffortPresent": false
+          },
+          {
+            "callId": "call_e50dcccd1851481c9e00fd2f875f1cfa",
+            "namespace": "collaboration",
+            "selector": "kit-reviewer",
+            "taskName": "discovery_002_reviewer",
+            "forkTurns": "none",
+            "explicitModelPresent": false,
+            "explicitEffortPresent": false
+          }
+        ],
+        "spawnOutputs": [
+          {
+            "callId": "call_77c3b747f7ea4b879cd6195952f96aab",
+            "outputType": "str",
+            "objectKeys": [
+              "task_name"
+            ],
+            "taskName": "/root/discovery_002_explorer",
+            "agentId": null,
+            "error": null
+          },
+          {
+            "callId": "call_01bb2e131c68467a82703cc0e85f8fed",
+            "outputType": "str",
+            "objectKeys": [
+              "task_name"
+            ],
+            "taskName": "/root/discovery_002_implementer",
+            "agentId": null,
+            "error": null
+          },
+          {
+            "callId": "call_e50dcccd1851481c9e00fd2f875f1cfa",
+            "outputType": "str",
+            "objectKeys": [
+              "task_name"
+            ],
+            "taskName": "/root/discovery_002_reviewer",
+            "agentId": null,
+            "error": null
+          }
+        ],
+        "toolCalls": [
+          {
+            "name": "spawn_agent",
+            "namespace": "collaboration"
+          },
+          {
+            "name": "spawn_agent",
+            "namespace": "collaboration"
+          },
+          {
+            "name": "spawn_agent",
+            "namespace": "collaboration"
+          },
+          {
+            "name": "list_agents",
+            "namespace": "collaboration"
+          },
+          {
+            "name": "wait_agent",
+            "namespace": "collaboration"
+          },
+          {
+            "name": "list_agents",
+            "namespace": "collaboration"
+          }
+        ],
+        "finalMessages": [
+          {
+            "exactAck": false
+          }
+        ]
+      },
+      {
+        "threadId": "01a13279-a450-72e3-81f0-0baa35fef4b4",
+        "ownedNativeRollout": true,
+        "rolloutSha256": "ad315526817dd33ada5ae4e568e616a5609604e32ebfcf0c33b7c35d850640c5",
+        "sessionMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:35.253Z",
+            "cwdMatches": true,
+            "source": {
+              "subagent": {
+                "thread_spawn": {
+                  "parent_thread_id": "01a13279-4edf-7233-9c22-512d97d628c3",
+                  "depth": 1,
+                  "agent_path": "/root/discovery_002_explorer",
+                  "agent_nickname": "Faraday",
+                  "agent_role": "kit-explorer"
+                }
+              }
+            },
+            "cliVersion": "0.162.0-alpha.17.2",
+            "originator": "Codex Desktop",
+            "agentRole": "kit-explorer",
+            "keys": [
+              "creator_user_id",
+              "creator_account_id",
+              "session_id",
+              "id",
+              "parent_thread_id",
+              "timestamp",
+              "cwd",
+              "runtime_workspace_roots",
+              "originator",
+              "cli_version",
+              "source",
+              "thread_source",
+              "agent_nickname",
+              "agent_role",
+              "agent_path",
+              "model_provider",
+              "base_instructions",
+              "history_mode",
+              "multi_agent_version",
+              "context_window"
+            ]
+          }
+        ],
+        "turnMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:37.164Z",
+            "turnId": "01a13279-a4a6-7933-9ce5-24edcf4f13b1",
+            "model": "gpt-6.1-sol",
+            "effort": "high",
+            "reasoningEffort": null,
+            "approvalPolicy": "on-request",
+            "sandboxType": "workspace-write",
+            "cwdMatches": true,
+            "keys": [
+              "turn_id",
+              "root_turn_id",
+              "disabled_plugin_ids",
+              "cwd",
+              "workspace_roots",
+              "current_date",
+              "timezone",
+              "approval_policy",
+              "approvals_reviewer",
+              "sandbox_policy",
+              "permission_profile",
+              "file_system_sandbox_policy",
+              "model",
+              "comp_hash",
+              "personality",
+              "collaboration_mode",
+              "multi_agent_version",
+              "realtime_active",
+              "effort",
+              "summary"
+            ]
+          }
+        ],
+        "spawnCalls": [],
+        "spawnOutputs": [],
+        "toolCalls": [],
+        "finalMessages": [
+          {
+            "exactAck": true
+          }
+        ]
+      },
+      {
+        "threadId": "01a13279-acb7-7512-9838-1f48b039148e",
+        "ownedNativeRollout": true,
+        "rolloutSha256": "7ceae71bd255258534c9b54f49f8ca7a4ee29d0d60e8540f7e930b58ce7b13f9",
+        "sessionMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:37.399Z",
+            "cwdMatches": true,
+            "source": {
+              "subagent": {
+                "thread_spawn": {
+                  "parent_thread_id": "01a13279-4edf-7233-9c22-512d97d628c3",
+                  "depth": 1,
+                  "agent_path": "/root/discovery_002_implementer",
+                  "agent_nickname": "Pascal",
+                  "agent_role": "kit-implementer"
+                }
+              }
+            },
+            "cliVersion": "0.162.0-alpha.17.2",
+            "originator": "Codex Desktop",
+            "agentRole": "kit-implementer",
+            "keys": [
+              "creator_user_id",
+              "creator_account_id",
+              "session_id",
+              "id",
+              "parent_thread_id",
+              "timestamp",
+              "cwd",
+              "runtime_workspace_roots",
+              "originator",
+              "cli_version",
+              "source",
+              "thread_source",
+              "agent_nickname",
+              "agent_role",
+              "agent_path",
+              "model_provider",
+              "base_instructions",
+              "history_mode",
+              "multi_agent_version",
+              "context_window"
+            ]
+          }
+        ],
+        "turnMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:39.436Z",
+            "turnId": "01a13279-ad09-7a73-9038-8caa520bde10",
+            "model": "gpt-6.1-sol",
+            "effort": "medium",
+            "reasoningEffort": null,
+            "approvalPolicy": "on-request",
+            "sandboxType": "workspace-write",
+            "cwdMatches": true,
+            "keys": [
+              "turn_id",
+              "root_turn_id",
+              "disabled_plugin_ids",
+              "cwd",
+              "workspace_roots",
+              "current_date",
+              "timezone",
+              "approval_policy",
+              "approvals_reviewer",
+              "sandbox_policy",
+              "permission_profile",
+              "file_system_sandbox_policy",
+              "model",
+              "comp_hash",
+              "personality",
+              "collaboration_mode",
+              "multi_agent_version",
+              "realtime_active",
+              "effort",
+              "summary"
+            ]
+          }
+        ],
+        "spawnCalls": [],
+        "spawnOutputs": [],
+        "toolCalls": [],
+        "finalMessages": [
+          {
+            "exactAck": true
+          }
+        ]
+      },
+      {
+        "threadId": "01a13279-b5a2-70d1-877e-fe6131dcb39b",
+        "ownedNativeRollout": true,
+        "rolloutSha256": "f21b26063b5c476a7f7bc7f4b6d42f8de1a55ca1cf0281cb4e54741e3a1fa5ca",
+        "sessionMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:39.680Z",
+            "cwdMatches": true,
+            "source": {
+              "subagent": {
+                "thread_spawn": {
+                  "parent_thread_id": "01a13279-4edf-7233-9c22-512d97d628c3",
+                  "depth": 1,
+                  "agent_path": "/root/discovery_002_reviewer",
+                  "agent_nickname": "Hegel",
+                  "agent_role": "kit-reviewer"
+                }
+              }
+            },
+            "cliVersion": "0.162.0-alpha.17.2",
+            "originator": "Codex Desktop",
+            "agentRole": "kit-reviewer",
+            "keys": [
+              "creator_user_id",
+              "creator_account_id",
+              "session_id",
+              "id",
+              "parent_thread_id",
+              "timestamp",
+              "cwd",
+              "runtime_workspace_roots",
+              "originator",
+              "cli_version",
+              "source",
+              "thread_source",
+              "agent_nickname",
+              "agent_role",
+              "agent_path",
+              "model_provider",
+              "base_instructions",
+              "history_mode",
+              "multi_agent_version",
+              "context_window"
+            ]
+          }
+        ],
+        "turnMetadata": [
+          {
+            "timestamp": "2026-10-12T23:36:41.597Z",
+            "turnId": "01a13279-b5f3-74c1-8064-ac0b6cb2f640",
+            "model": "gpt-6.1-sol",
+            "effort": "high",
+            "reasoningEffort": null,
+            "approvalPolicy": "on-request",
+            "sandboxType": "workspace-write",
+            "cwdMatches": true,
+            "keys": [
+              "turn_id",
+              "root_turn_id",
+              "disabled_plugin_ids",
+              "cwd",
+              "workspace_roots",
+              "current_date",
+              "timezone",
+              "approval_policy",
+              "approvals_reviewer",
+              "sandbox_policy",
+              "permission_profile",
+              "file_system_sandbox_policy",
+              "model",
+              "comp_hash",
+              "personality",
+              "collaboration_mode",
+              "multi_agent_version",
+              "realtime_active",
+              "effort",
+              "summary"
+            ]
+          }
+        ],
+        "spawnCalls": [],
+        "spawnOutputs": [],
+        "toolCalls": [],
+        "finalMessages": [
+          {
+            "exactAck": true
+          }
+        ]
+      }
+    ],
+    "instructionContentMatches": [
+      {
+        "role": "kit-explorer",
+        "threadId": "01a13279-a450-72e3-81f0-0baa35fef4b4",
+        "adapterSha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+        "nativeDeveloperMessageCount": 3,
+        "exactAdapterInstructionContentObserved": true,
+        "adapterInstructionSha256": "e7cc2d32ee89349272a438877a3b7b624e31c674641f6672fda706764c3cdd32",
+        "sourceFilePathEmittedByNative": false
+      },
+      {
+        "role": "kit-implementer",
+        "threadId": "01a13279-acb7-7512-9838-1f48b039148e",
+        "adapterSha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+        "nativeDeveloperMessageCount": 3,
+        "exactAdapterInstructionContentObserved": true,
+        "adapterInstructionSha256": "da16c66f34e1f1915e171af78318dbb84cea3f221a383f57bdc19fa1b80fdb74",
+        "sourceFilePathEmittedByNative": false
+      },
+      {
+        "role": "kit-reviewer",
+        "threadId": "01a13279-b5a2-70d1-877e-fe6131dcb39b",
+        "adapterSha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+        "nativeDeveloperMessageCount": 3,
+        "exactAdapterInstructionContentObserved": true,
+        "adapterInstructionSha256": "72d2fff58026a2b20af1d910595463dd0cbfcdb49bf2a7f4ce333ce772159f37",
+        "sourceFilePathEmittedByNative": false
+      }
+    ],
+    "permissionMetadataRedacted": [
+      {
+        "threadId": "01a13279-4edf-7233-9c22-512d97d628c3",
+        "nativeSandbox": {
+          "type": "workspace-write",
+          "writable_roots": [
+            "[OTHER_ABSOLUTE_PATH]",
+            "[OTHER_ABSOLUTE_PATH]"
+          ],
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "nativeFileSystemPolicy": {
+          "kind": "restricted",
+          "entries": [
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "root"
+                }
+              },
+              "access": "read"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "slash_tmp"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "tmpdir"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.git"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.aws"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            }
+          ]
+        },
+        "nativePermissionProfile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "slash_tmp"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "tmpdir"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.git"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.aws"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              }
+            ]
+          },
+          "network": "restricted"
+        }
+      },
+      {
+        "threadId": "01a13279-a450-72e3-81f0-0baa35fef4b4",
+        "nativeSandbox": {
+          "type": "workspace-write",
+          "writable_roots": [
+            "[OTHER_ABSOLUTE_PATH]",
+            "[OTHER_ABSOLUTE_PATH]"
+          ],
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "nativeFileSystemPolicy": {
+          "kind": "restricted",
+          "entries": [
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "root"
+                }
+              },
+              "access": "read"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "slash_tmp"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "tmpdir"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.git"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.aws"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            }
+          ]
+        },
+        "nativePermissionProfile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "slash_tmp"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "tmpdir"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.git"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.aws"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              }
+            ]
+          },
+          "network": "restricted"
+        }
+      },
+      {
+        "threadId": "01a13279-acb7-7512-9838-1f48b039148e",
+        "nativeSandbox": {
+          "type": "workspace-write",
+          "writable_roots": [
+            "[OTHER_ABSOLUTE_PATH]",
+            "[OTHER_ABSOLUTE_PATH]"
+          ],
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "nativeFileSystemPolicy": {
+          "kind": "restricted",
+          "entries": [
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "root"
+                }
+              },
+              "access": "read"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "slash_tmp"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "tmpdir"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.git"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.aws"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            }
+          ]
+        },
+        "nativePermissionProfile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "slash_tmp"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "tmpdir"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.git"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.aws"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              }
+            ]
+          },
+          "network": "restricted"
+        }
+      },
+      {
+        "threadId": "01a13279-b5a2-70d1-877e-fe6131dcb39b",
+        "nativeSandbox": {
+          "type": "workspace-write",
+          "writable_roots": [
+            "[OTHER_ABSOLUTE_PATH]",
+            "[OTHER_ABSOLUTE_PATH]"
+          ],
+          "network_access": false,
+          "exclude_tmpdir_env_var": false,
+          "exclude_slash_tmp": false
+        },
+        "nativeFileSystemPolicy": {
+          "kind": "restricted",
+          "entries": [
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "root"
+                }
+              },
+              "access": "read"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "slash_tmp"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "special",
+                "value": {
+                  "kind": "tmpdir"
+                }
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[OTHER_ABSOLUTE_PATH]"
+              },
+              "access": "write"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.git"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.aws"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.agents"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            },
+            {
+              "path": {
+                "type": "path",
+                "path": "[PROJECT_ROOT]/.codex"
+              },
+              "access": "read",
+              "missing_path_behavior": "skip"
+            }
+          ]
+        },
+        "nativePermissionProfile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "slash_tmp"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "tmpdir"
+                  }
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[OTHER_ABSOLUTE_PATH]"
+                },
+                "access": "write"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.git"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.aws"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.agents"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              },
+              {
+                "path": {
+                  "type": "path",
+                  "path": "[PROJECT_ROOT]/.codex"
+                },
+                "access": "read",
+                "missing_path_behavior": "skip"
+              }
+            ]
+          },
+          "network": "restricted"
+        }
+      }
+    ],
+    "modelProseIsNativeProof": false
+  },
+  "preservation": {
+    "status": "PASS",
+    "globalConfigUnchanged": true,
+    "globalConfigSha256": "ed81b2ba9a3d91971470fc5506b1bc2355f9784ad349e2c843926436e7f42c3f",
+    "globalConfigMode": "0o600",
+    "exactProjectTrust": "trusted",
+    "approvalAdapterCoreHashesUnchanged": true,
+    "protectedHashesBeforeAndAfter": {
+      "approvals/APPROVAL-REGISTER.json": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3",
+      "approvals/CMS-001-v2-M2-REGISTER.json": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618",
+      "approvals/CMS-001-v2-M2.scope.json": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4",
+      "approvals/CMS-001-v2-M3-REGISTER.json": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326",
+      "approvals/CMS-001-v2-M3.scope.json": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c",
+      "approvals/CMS-001-v2.scope.json": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30",
+      ".codex/agents/kit-explorer.toml": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      ".codex/agents/kit-implementer.toml": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      ".codex/agents/kit-reviewer.toml": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "engineering/AGENT-KIT-LOCK.json": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+    },
+    "unexpectedProtectedChanges": [],
+    "staticCommand": "python3 docs/agent-kit/evidence/verify-setup.py",
+    "postNativeCommandExitCode": 0,
+    "postNativeObservedAtUtc": "2026-10-12T23:38:32.481139+00:00",
+    "postNativeStatus": "PASS",
+    "sourceRecordsPreserved": 3942,
+    "emulatorRecordsPreserved": 746,
+    "sourceScopeLimit": "Original inventory excludes node_modules/generated trees and .local except all emulator-data; no broader transient/cache proof claimed"
+  },
+  "limits": {
+    "providerExecutionIdentity": "UNVERIFIED_NO_PROVIDER_ATTESTATION",
+    "effectivePermissionEnforcement": "NOT_RUN; recorded parent/children policy grants project write access",
+    "explorerReviewerReadOnlyPolicy": "NOT_MET_IN_RECORDED_RUNTIME_POLICY",
+    "applicationBehavior": "NOT_RUN",
+    "ClaudeDiscovery": "NOT_RUN",
+    "oldChatRegistryRefresh": "NOT_RUN; fresh desktop success does not repair the old chat in place",
+    "historicalCliUnclassifiedOutputCause": "UNKNOWN"
+  },
+  "interpretation": "Fresh desktop chat resolves exact native discovery with unchanged adapters/trust/configuration. Result supports retained old-session registry hypothesis, but does not prove every cause of historical CLI/current-chat limitations. No further registration/version/policy change is authorized by option 1.",
+  "appApiObservations": {
+    "source": "Actual app read_thread and wait_threads calls inspected by coordinating root",
+    "parent": {
+      "threadId": "01a13279-4edf-7233-9c22-512d97d628c3",
+      "hostId": "local",
+      "status": "completed",
+      "error": null,
+      "durationMs": 45113
+    },
+    "children": [
+      {
+        "threadId": "01a13279-a450-72e3-81f0-0baa35fef4b4",
+        "cwdMatches": true,
+        "threadStatus": {
+          "type": "idle"
+        },
+        "turnId": "01a13279-a4a6-7933-9ce5-24edcf4f13b1",
+        "turnStatus": "completed",
+        "error": null,
+        "durationMs": 4496,
+        "finalMessage": "ACK",
+        "toolItemsObserved": 0
+      },
+      {
+        "threadId": "01a13279-acb7-7512-9838-1f48b039148e",
+        "cwdMatches": true,
+        "threadStatus": {
+          "type": "idle"
+        },
+        "turnId": "01a13279-ad09-7a73-9038-8caa520bde10",
+        "turnStatus": "completed",
+        "error": null,
+        "durationMs": 4640,
+        "finalMessage": "ACK",
+        "toolItemsObserved": 0
+      },
+      {
+        "threadId": "01a13279-b5a2-70d1-877e-fe6131dcb39b",
+        "cwdMatches": true,
+        "threadStatus": {
+          "type": "idle"
+        },
+        "turnId": "01a13279-b5f3-74c1-8064-ac0b6cb2f640",
+        "turnStatus": "completed",
+        "error": null,
+        "durationMs": 4015,
+        "finalMessage": "ACK",
+        "toolItemsObserved": 0
+      }
+    ]
+  },
+  "finalStaticCheck": {
+    "command": "python3 docs/agent-kit/evidence/verify-setup.py",
+    "exitCode": 0,
+    "result": {
+      "status": "PASS",
+      "observedAtUtc": "2026-10-12T23:41:13.498865+00:00",
+      "skillCounts": [
+        17,
+        17
+      ],
+      "mirrorPairs": 27,
+      "nativeAdaptersParsed": 6,
+      "unchangedOriginalEngineeringMirrorFiles": 52,
+      "markdownLinksChecked": 258,
+      "sourceRecordsPreservedExcludingAGENTS": 3942,
+      "emulatorRecordsPreserved": 746,
+      "AGENTS": "Original body preserved; scoped append only",
+      "quickValidate": "NOT_RUN missing PyYAML; required metadata separately checked with Ruby Psych/Python tomllib",
+      "nativeInvocation": "NOT_RUN",
+      "errors": []
+    },
+    "nativeInvocationFieldMeaning": "The immutable static verifier performs no native invocation; this field does not override the three actual desktop ACK probes."
+  },
+  "rootReview": {
+    "status": "PASS_WITH_RECORDED_PERMISSION_LIMIT",
+    "scope": "Approved option 1 discovery/ACK checks, configured route/instruction match, preservation and bounded documentation integration",
+    "independentReviewer": false,
+    "fullRuntimeCompletionClaimed": false
+  }
+}

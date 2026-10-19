@@ -1,0 +1,229 @@
+{
+  "status": "HOLD_UNEXPECTED_NATIVE_ACTIVITY",
+  "observedAtUtc": "2026-10-13T00:28:47.123260+00:00",
+  "controllerSha256": "f016ebb90b97b7d15a690152f59b7e1439e481ba1e2e1bf6943aecfa0d395b22",
+  "configWrites": "NONE",
+  "actors": [
+    {
+      "role": "parent",
+      "nativeId": "01a132a9-6fb0-7861-9dcf-bc43f61d4ef8",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "67c235cf69d83646be3662d07d4c0095f6af33755831f4b074560dbe9db81204"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132a9-89a5-7033-b13b-8620f0c49213",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "ede036879adffb85248ec6151a7fd7f5695cc02c4f55e460cb53cf7820fc5a79"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132a9-92bb-7a32-91b9-62b9c11a6a5b",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "08e9142b80ee7d7610fab83c201d9bd79ff8a7778dad70087b0dc54b4192da41"
+    }
+  ],
+  "nativeCommands": [],
+  "runId": "8268636c590e4a03963244b3dc5b07ee",
+  "fixtureRelativePath": "docs/agent-kit/evidence/permission-003-fixture/8268636c590e4a03963244b3dc5b07ee",
+  "fixtureOwnerWritable": true,
+  "fixtureModes": [
+    "0o700",
+    "0o600"
+  ],
+  "scope": "App-server read-only parent fixture; exec launcher verified separately",
+  "nativeParentId": "01a132a9-6fb0-7861-9dcf-bc43f61d4ef8",
+  "startupConfiguredRoute": {
+    "model": "gpt-6.1-sol",
+    "effort": "high"
+  },
+  "nativeParentRolloutRelative": "2026/10/13/rollout-2026-10-13T07-28-47-01a132a9-6fb0-7861-9dcf-bc43f61d4ef8.jsonl",
+  "requestedSandboxObserved": {
+    "type": "readOnly",
+    "networkAccess": false
+  },
+  "parentApprovalDefaults": {
+    "policy": "on-request",
+    "reviewer": "auto_review"
+  },
+  "reason": "Owned turn stopped: unexpected tool/request or deadline",
+  "cleanup": {
+    "status": "ABNORMAL_OR_INTERRUPTED",
+    "actions": [],
+    "errors": [
+      "TimeoutError"
+    ],
+    "exitCode": 0
+  },
+  "ownedClientExitCode": 0,
+  "stderrBytesNoContentsSaved": 3694,
+  "sentinelUnchanged": true,
+  "createdFileAbsent": true,
+  "unexpectedNativeActivity": [
+    "unexpected native call type:custom_tool_call"
+  ],
+  "selectedSpawnOutputs": [
+    {
+      "namespace": "collaboration",
+      "name": "spawn_agent",
+      "role": "kit-explorer",
+      "callId": "call_9bb95b3a900346a8a2d66027c59115f8",
+      "outputSha256": "b5221a0813fb2e7f9dfd9e04a80eb797a1fd09f38d3ac4bf0cd1082f11bd2736"
+    },
+    {
+      "namespace": "collaboration",
+      "name": "spawn_agent",
+      "role": "kit-reviewer",
+      "callId": "call_9c4325b9062046d3813eb095ba28731d",
+      "outputSha256": "a6c322f6373df5dacbe6df6b24fdb3209179edcc784583a7d6fad000fcb9a0fc"
+    }
+  ],
+  "ownedSubAgentActivity": [
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132a9-89a5-7033-b13b-8620f0c49213",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "started",
+      "callId": "call_9bb95b3a900346a8a2d66027c59115f8"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132a9-89a5-7033-b13b-8620f0c49213",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "started",
+      "callId": "call_9bb95b3a900346a8a2d66027c59115f8"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132a9-92bb-7a32-91b9-62b9c11a6a5b",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "started",
+      "callId": "call_9c4325b9062046d3813eb095ba28731d"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132a9-92bb-7a32-91b9-62b9c11a6a5b",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "started",
+      "callId": "call_9c4325b9062046d3813eb095ba28731d"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132a9-89a5-7033-b13b-8620f0c49213",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132a9-8a00-7a02-8db2-6e53f6630b2a"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132a9-89a5-7033-b13b-8620f0c49213",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132a9-8a00-7a02-8db2-6e53f6630b2a"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132a9-92bb-7a32-91b9-62b9c11a6a5b",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132a9-9306-7ad2-90b2-37378cd4877a"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132a9-92bb-7a32-91b9-62b9c11a6a5b",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132a9-9306-7ad2-90b2-37378cd4877a"
+    }
+  ]
+}

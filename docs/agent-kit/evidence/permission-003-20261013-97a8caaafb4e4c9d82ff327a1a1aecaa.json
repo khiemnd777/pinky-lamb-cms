@@ -1,0 +1,56 @@
+{
+  "status": "HOLD_UNEXPECTED_NATIVE_ACTIVITY",
+  "observedAtUtc": "2026-10-13T00:25:46.801256+00:00",
+  "controllerSha256": "d1b3f010ad08e0ec1e8f0faa4c4ab0b83ff57dfafb7bee65b281f512f4d5d7d6",
+  "configWrites": "NONE",
+  "actors": [],
+  "nativeCommands": [],
+  "runId": "97a8caaafb4e4c9d82ff327a1a1aecaa",
+  "fixtureRelativePath": "docs/agent-kit/evidence/permission-003-fixture/97a8caaafb4e4c9d82ff327a1a1aecaa",
+  "fixtureOwnerWritable": true,
+  "fixtureModes": [
+    "0o700",
+    "0o600"
+  ],
+  "scope": "App-server read-only parent fixture; exec launcher verified separately",
+  "nativeParentId": "01a132a6-af6c-7823-b17b-9790266209fe",
+  "startupConfiguredRoute": {
+    "model": "gpt-6.1-sol",
+    "effort": "high"
+  },
+  "nativeParentRolloutRelative": "2026/10/13/rollout-2026-10-13T07-25-47-01a132a6-af6c-7823-b17b-9790266209fe.jsonl",
+  "requestedSandboxObserved": {
+    "type": "readOnly",
+    "networkAccess": false
+  },
+  "parentApprovalDefaults": {
+    "policy": "on-request",
+    "reviewer": "auto_review"
+  },
+  "reason": "Owned turn stopped: unexpected tool/request or deadline",
+  "cleanup": {
+    "status": "ABNORMAL_OR_INTERRUPTED",
+    "actions": [],
+    "errors": [
+      "TimeoutError"
+    ],
+    "exitCode": 0
+  },
+  "ownedClientExitCode": 0,
+  "stderrBytesNoContentsSaved": 2884,
+  "sentinelUnchanged": true,
+  "createdFileAbsent": true,
+  "unexpectedNativeActivity": [
+    "unexpected item:subAgentActivity",
+    "unexpected item:subAgentActivity"
+  ],
+  "selectedSpawnOutputs": [
+    {
+      "namespace": "collaboration",
+      "name": "spawn_agent",
+      "role": "kit-explorer",
+      "callId": "call_cd670e9ef47a486bbe45300387b74276",
+      "outputSha256": "b5221a0813fb2e7f9dfd9e04a80eb797a1fd09f38d3ac4bf0cd1082f11bd2736"
+    }
+  ]
+}

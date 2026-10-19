@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": 1,
+  "setup": "AGENT-SETUP-001 v1",
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "commit": "22c2a20359072dcb510f3329b97161b16f947fb2",
+    "regularFileCount": 84,
+    "archiveSha256": "b10b7d0664ec227c322d113ce1286868f5ca710f6bb2f78b61704492e11dc465"
+  },
+  "newEngineeringUpstream": {
+    "repository": "https://github.com/addyosmani/agent-skills",
+    "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+    "unchanged_file_count": 26,
+    "license": "MIT"
+  },
+  "historicalVendorLock": "engineering/SKILLS-LOCK.json",
+  "historicalVendorPin": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
+  "sourceFiles": [
+    {
+      "sourcePath": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "sourceSha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "destination": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "classification": "original",
+      "destinationSha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/accessibility-checklist.md",
+      "sourceSha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "destination": ".agents/references/accessibility-checklist.md",
+      "classification": "original",
+      "destinationSha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/definition-of-done.md",
+      "sourceSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "destination": ".agents/references/definition-of-done.md",
+      "classification": "original",
+      "destinationSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/observability-checklist.md",
+      "sourceSha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "destination": ".agents/references/observability-checklist.md",
+      "classification": "original",
+      "destinationSha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/orchestration-patterns.md",
+      "sourceSha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "destination": ".agents/references/orchestration-patterns.md",
+      "classification": "original",
+      "destinationSha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/performance-checklist.md",
+      "sourceSha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "destination": ".agents/references/performance-checklist.md",
+      "classification": "original",
+      "destinationSha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/security-checklist.md",
+      "sourceSha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "destination": ".agents/references/security-checklist.md",
+      "classification": "original",
+      "destinationSha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/references/testing-patterns.md",
+      "sourceSha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "destination": ".agents/references/testing-patterns.md",
+      "classification": "original",
+      "destinationSha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/api-and-interface-design/SKILL.md",
+      "sourceSha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "destination": ".agents/skills/api-and-interface-design/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sourceSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "destination": ".agents/skills/code-review-and-quality/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/code-simplification/SKILL.md",
+      "sourceSha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "destination": ".agents/skills/code-simplification/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/context-engineering/SKILL.md",
+      "sourceSha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "destination": ".agents/skills/context-engineering/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "sourceSha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "destination": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "sourceSha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "destination": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sourceSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "destination": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/incremental-implementation/SKILL.md",
+      "sourceSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "destination": ".agents/skills/incremental-implementation/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "sourceSha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "destination": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/performance-optimization/SKILL.md",
+      "sourceSha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "destination": ".agents/skills/performance-optimization/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "sourceSha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "destination": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "classification": "original",
+      "destinationSha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sourceSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "destination": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/security-and-hardening/SKILL.md",
+      "sourceSha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "destination": ".agents/skills/security-and-hardening/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "sourceSha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "destination": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "classification": "original",
+      "destinationSha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/source-driven-development/SKILL.md",
+      "sourceSha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "destination": ".agents/skills/source-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/spec-driven-development/SKILL.md",
+      "sourceSha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "destination": ".agents/skills/spec-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/technote/SKILL.md",
+      "sourceSha256": "247699731082b9a0c7bcbdf16509df942df67337f73ed9764b679a5b4fe878e1",
+      "destination": ".agents/skills/technote/SKILL.md",
+      "classification": "derived_link_only",
+      "destinationSha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".agents/skills/test-driven-development/SKILL.md",
+      "sourceSha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "destination": ".agents/skills/test-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".agents/skills/using-agent-skills/SKILL.md",
+      "sourceSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "destination": ".agents/skills/using-agent-skills/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sourceSha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "destination": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "classification": "original",
+      "destinationSha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/agents/kit-explorer.md",
+      "sourceSha256": "915c02eca56afc86ee90050c8c49d2c3c39b3b12bd605fdadfe41e2361e059c3",
+      "destination": ".claude/agents/kit-explorer.md",
+      "classification": "derived",
+      "destinationSha256": "2deb9c3ce2e3fa0b8a6bff8bf11eb944116757ab6a6324d102f314101e257739",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".claude/agents/kit-implementer.md",
+      "sourceSha256": "4996d99145dc19858096ee2a0f3e39d33b8178b4bf49667d7a91b0ebbf892207",
+      "destination": ".claude/agents/kit-implementer.md",
+      "classification": "derived",
+      "destinationSha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".claude/agents/kit-reviewer.md",
+      "sourceSha256": "79c09efde5388290d4e8dcb895701c1b872b6ca02bd6b43956cb6d83ef2e0af9",
+      "destination": ".claude/agents/kit-reviewer.md",
+      "classification": "derived",
+      "destinationSha256": "154237d54143bbade7e7417b75b971d23c7e0ab4a638905ec5b415fc6d43b4f3",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".claude/references/accessibility-checklist.md",
+      "sourceSha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "destination": ".claude/references/accessibility-checklist.md",
+      "classification": "original",
+      "destinationSha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/definition-of-done.md",
+      "sourceSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "destination": ".claude/references/definition-of-done.md",
+      "classification": "original",
+      "destinationSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/observability-checklist.md",
+      "sourceSha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "destination": ".claude/references/observability-checklist.md",
+      "classification": "original",
+      "destinationSha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/orchestration-patterns.md",
+      "sourceSha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "destination": ".claude/references/orchestration-patterns.md",
+      "classification": "original",
+      "destinationSha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/performance-checklist.md",
+      "sourceSha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "destination": ".claude/references/performance-checklist.md",
+      "classification": "original",
+      "destinationSha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/security-checklist.md",
+      "sourceSha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "destination": ".claude/references/security-checklist.md",
+      "classification": "original",
+      "destinationSha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/references/testing-patterns.md",
+      "sourceSha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "destination": ".claude/references/testing-patterns.md",
+      "classification": "original",
+      "destinationSha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sourceSha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "destination": ".claude/skills/api-and-interface-design/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sourceSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "destination": ".claude/skills/code-review-and-quality/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/code-simplification/SKILL.md",
+      "sourceSha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "destination": ".claude/skills/code-simplification/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/context-engineering/SKILL.md",
+      "sourceSha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "destination": ".claude/skills/context-engineering/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sourceSha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "destination": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sourceSha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "destination": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sourceSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "destination": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/incremental-implementation/SKILL.md",
+      "sourceSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "destination": ".claude/skills/incremental-implementation/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sourceSha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "destination": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/performance-optimization/SKILL.md",
+      "sourceSha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "destination": ".claude/skills/performance-optimization/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sourceSha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "destination": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "classification": "original",
+      "destinationSha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sourceSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "destination": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/security-and-hardening/SKILL.md",
+      "sourceSha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "destination": ".claude/skills/security-and-hardening/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sourceSha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "destination": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "classification": "original",
+      "destinationSha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/source-driven-development/SKILL.md",
+      "sourceSha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "destination": ".claude/skills/source-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/spec-driven-development/SKILL.md",
+      "sourceSha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "destination": ".claude/skills/spec-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/technote/SKILL.md",
+      "sourceSha256": "247699731082b9a0c7bcbdf16509df942df67337f73ed9764b679a5b4fe878e1",
+      "destination": ".claude/skills/technote/SKILL.md",
+      "classification": "derived_link_only",
+      "destinationSha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".claude/skills/test-driven-development/SKILL.md",
+      "sourceSha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "destination": ".claude/skills/test-driven-development/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".claude/skills/using-agent-skills/SKILL.md",
+      "sourceSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "destination": ".claude/skills/using-agent-skills/SKILL.md",
+      "classification": "original",
+      "destinationSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": ".codex/agents/kit-explorer.toml",
+      "sourceSha256": "93e64baa6d9a090b95442b947d18cd98b9142a4417501e36192e14dbc432e063",
+      "destination": ".codex/agents/kit-explorer.toml",
+      "classification": "derived",
+      "destinationSha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".codex/agents/kit-implementer.toml",
+      "sourceSha256": "41f6b5cabda3e8abe790f8aeaaa6e5e648e20f3c232b6fe68e95a22a6fbd9ddc",
+      "destination": ".codex/agents/kit-implementer.toml",
+      "classification": "derived",
+      "destinationSha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".codex/agents/kit-reviewer.toml",
+      "sourceSha256": "c0b0ffcaae2b8a170c5333d87c2047c1c9ea25aa93686bd8b6dcb318460b7210",
+      "destination": ".codex/agents/kit-reviewer.toml",
+      "classification": "derived",
+      "destinationSha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": ".gitignore",
+      "sourceSha256": "7185430f631e1b5c7393b5d8fca63e4d0cb416820fa41a5507ebc57d08f0eb7c",
+      "destination": null,
+      "classification": "not_imported_preserve_existing_root"
+    },
+    {
+      "sourcePath": "AGENTS.md",
+      "sourceSha256": "d26e6552291238849d3a5e01cdef54b82cedec6976da2d00c3506e999f0fa9c8",
+      "destination": "AGENTS.md",
+      "classification": "scoped_append_preserve_original",
+      "destinationSha256": "fcf28a565c1b4449a59f846ac661a7e945475efcc8bc83fadafb6b638eaad03c",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "CLAUDE.md",
+      "sourceSha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "destination": "CLAUDE.md",
+      "classification": "original",
+      "destinationSha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": "CONTRIBUTING.md",
+      "sourceSha256": "febfc98914b9434983ec004d9068e8fa0f19a33f45a626add4e97afd59b1246b",
+      "destination": null,
+      "classification": "not_imported_preserve_existing_root"
+    },
+    {
+      "sourcePath": "LICENSE",
+      "sourceSha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e",
+      "destination": "engineering/agent-kit/LICENSE",
+      "classification": "original",
+      "destinationSha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": "README.md",
+      "sourceSha256": "704c40551e65d791f5dc490712c3a060aa0f2d8363b30a891a8719bf561d2b11",
+      "destination": null,
+      "classification": "not_imported_preserve_existing_root"
+    },
+    {
+      "sourcePath": "docs/agent-compatibility.md",
+      "sourceSha256": "cff4e6f0e676bc49ac9a21855207c4e3563c062969198aa0ccbf1623b4e99191",
+      "destination": "docs/agent-kit/agent-compatibility.md",
+      "classification": "derived",
+      "destinationSha256": "ef2bd056132f44e6029109c472759a46923d8a9e52ef8d6c3ab168a1f4a18caf",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/agent-coordination-templates.md",
+      "sourceSha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97",
+      "destination": "docs/agent-kit/agent-coordination-templates.md",
+      "classification": "derived",
+      "destinationSha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": "docs/model-routing.md",
+      "sourceSha256": "1f45447a862382fed31cc58f7df9e513348390253b4b864aaa97ef6241b8b5bb",
+      "destination": "docs/agent-kit/model-routing.md",
+      "classification": "derived",
+      "destinationSha256": "a3c7c2340cbbc8d5bbbbecf581878038b9e7c67eec320df5c2bd1ca7d1196ccb",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/project-context.md",
+      "sourceSha256": "4a1999906ef372adec51ff83a82591a1a987b7ad77dc0954015ed77f23ec2f45",
+      "destination": "docs/agent-kit/project-context.md",
+      "classification": "derived",
+      "destinationSha256": "c5b4817b452607b984eb955081d67a5a5971f7fdc7b5faf319f743a030ff2cc4",
+      "byteIdentical": false,
+      "mutableDestination": true,
+      "destinationSha256Role": "Timestamped adoption snapshot only; excluded from ongoing integrity by exact allowlist",
+      "destinationSnapshotObservedAtUtc": "2026-10-12T15:05:46.362880+00:00"
+    },
+    {
+      "sourcePath": "docs/project-plan.md",
+      "sourceSha256": "546571579ab9258786339208e3bd7cd53807f45d14fe4fd55a70d50965a25d4f",
+      "destination": "docs/agent-kit/project-plan.md",
+      "classification": "derived",
+      "destinationSha256": "b0d950b1bceb3fcfd30afa15c9fcdf30f016605f63be6bae4a410703bc7513f8",
+      "byteIdentical": false,
+      "mutableDestination": true,
+      "destinationSha256Role": "Timestamped adoption snapshot only; excluded from ongoing integrity by exact allowlist",
+      "destinationSnapshotObservedAtUtc": "2026-10-12T15:05:46.362880+00:00"
+    },
+    {
+      "sourcePath": "docs/project-state.md",
+      "sourceSha256": "933c4e051f98df2beb575fa83eada0f96976e8f228936cafddb897e8502bfe5f",
+      "destination": "docs/agent-kit/project-state.md",
+      "classification": "derived",
+      "destinationSha256": "b7e7797e771f242c4f156e85a173168c0613fa4f7ffdec6da4f814b0c4fd5208",
+      "byteIdentical": false,
+      "mutableDestination": true,
+      "destinationSha256Role": "Timestamped adoption snapshot only; excluded from ongoing integrity by exact allowlist",
+      "destinationSnapshotObservedAtUtc": "2026-10-12T15:05:46.362880+00:00"
+    },
+    {
+      "sourcePath": "docs/roles/coordinator.md",
+      "sourceSha256": "7308f5994f5af0747962dd7d2143933f14c9739e48a2a71ee89f081c06dbfedd",
+      "destination": "docs/agent-kit/roles/coordinator.md",
+      "classification": "derived",
+      "destinationSha256": "c88ea26b2d3a664770d02db70584b35442d8bf8599d950f169a79e3d43ed0d56",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/roles/explorer.md",
+      "sourceSha256": "97ce4c69a938698a215c738bbbc8919b1a2995beccf3fd1965bfc02bf9cd4cf0",
+      "destination": "docs/agent-kit/roles/explorer.md",
+      "classification": "derived",
+      "destinationSha256": "1f2b1592b8107e784b5f5598f3b515879b0b6387a51b7cb3a899d395f28655cf",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/roles/implementer.md",
+      "sourceSha256": "eb2c2693aca4aebbf8b96705b60c08c23a3572d7765af778d462f903b4489018",
+      "destination": "docs/agent-kit/roles/implementer.md",
+      "classification": "derived",
+      "destinationSha256": "42d6547c23227e3ae9f0c51e1d976b15830d413c3b56ed643eacdccaf3f420df",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/roles/reviewer.md",
+      "sourceSha256": "b1a267784fb4922666096516b1eedf21fbac06010b27cb2e665b256fdb7dd350",
+      "destination": "docs/agent-kit/roles/reviewer.md",
+      "classification": "derived",
+      "destinationSha256": "370a7acb1d3a2d93a947595663b32a240007c97319ffb36830e417fcbabea3d5",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/skills-catalog.md",
+      "sourceSha256": "f096b72e2feaf97d431cd20f0441b164cd6f2dd5af506b5f60c4851e3e7cf7f1",
+      "destination": "docs/agent-kit/skills-catalog.md",
+      "classification": "derived",
+      "destinationSha256": "8efb6489be48eb6cbcfdc60deba237da675a71164af8d14651e7bfffa46245f7",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/skills-manifest.json",
+      "sourceSha256": "ebaa493da75dcf7fe4e6951ee6570362b71eb4d7a5d2a3305aed7cd35b2b4ccb",
+      "destination": "docs/agent-kit/skills-manifest.json",
+      "classification": "derived",
+      "destinationSha256": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/tasks/README.md",
+      "sourceSha256": "9e1e4aa5e495bed9b86eb846e8e9643f3e40a80b2d963cef999cafcdccea0f42",
+      "destination": "docs/agent-kit/tasks/README.md",
+      "classification": "derived",
+      "destinationSha256": "9e1e4aa5e495bed9b86eb846e8e9643f3e40a80b2d963cef999cafcdccea0f42",
+      "byteIdentical": true
+    },
+    {
+      "sourcePath": "docs/team-policy.md",
+      "sourceSha256": "fff291e5ffb739ba964838c7b0e0caa277b3ae07b7a8f231b186b5c3e5f7488e",
+      "destination": "docs/agent-kit/team-policy.md",
+      "classification": "derived",
+      "destinationSha256": "171ec923ffb18868eb9ffa212869974a6b69a308083a0f4d39423f26dcff66b1",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/team-workflow.md",
+      "sourceSha256": "ba9ecf84d08ad10cb4cd831b670d227df7acb622a01a486d308ec7d7793fa123",
+      "destination": "docs/agent-kit/team-workflow.md",
+      "classification": "derived",
+      "destinationSha256": "2559b315ce8103c76993f4a5180ccaae85cb1e8054f816fe0885094427c8190e",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/technote.md",
+      "sourceSha256": "98a35db5e4f526eb5b1f21f47e281e7f0e25644fe01af84b4b56c37a1db64f8d",
+      "destination": "docs/agent-kit/technote.md",
+      "classification": "derived",
+      "destinationSha256": "5c16dec163354016773850c743891b9b4ac806c9e70a1b6a34ac5417158f6002",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/verification-guide.md",
+      "sourceSha256": "287aa348872ff2edea85fd18f0d47b8baf5ff975f759397853669a034c9015ec",
+      "destination": "docs/agent-kit/verification-guide.md",
+      "classification": "derived",
+      "destinationSha256": "dbc7f88baaeff722a5d7e59108852fe14bf409100ba1139d992e0688965a6eec",
+      "byteIdentical": false
+    },
+    {
+      "sourcePath": "docs/verification-results.md",
+      "sourceSha256": "536ecdbf9073370b388a2fef3fc594fad199b4f101ce8f084977961838e5819a",
+      "destination": "docs/agent-kit/verification-results.md",
+      "classification": "derived",
+      "destinationSha256": "4e7cf17cf792c6fd188aa625dc3203721f131d90175890a07681360d78f7fae1",
+      "byteIdentical": false,
+      "mutableDestination": true,
+      "destinationSha256Role": "Timestamped adoption snapshot only; excluded from ongoing integrity by exact allowlist",
+      "destinationSnapshotObservedAtUtc": "2026-10-12T15:05:46.362880+00:00"
+    }
+  ],
+  "destinationFiles": [
+    {
+      "path": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".agents/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": ".agents/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".agents/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".agents/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".agents/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".agents/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".agents/skills/api-and-interface-design/SKILL.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".agents/skills/code-simplification/SKILL.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".agents/skills/context-engineering/SKILL.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/SKILL.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/SKILL.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".agents/skills/source-driven-development/SKILL.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".agents/skills/spec-driven-development/SKILL.md",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".agents/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "sha256": "2deb9c3ce2e3fa0b8a6bff8bf11eb944116757ab6a6324d102f314101e257739"
+    },
+    {
+      "path": ".claude/agents/kit-implementer.md",
+      "sha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b"
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "sha256": "154237d54143bbade7e7417b75b971d23c7e0ab4a638905ec5b415fc6d43b4f3"
+    },
+    {
+      "path": ".claude/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": ".claude/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".claude/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".claude/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".claude/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".claude/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".claude/skills/code-simplification/SKILL.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".claude/skills/context-engineering/SKILL.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/SKILL.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/SKILL.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".claude/skills/source-driven-development/SKILL.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".claude/skills/spec-driven-development/SKILL.md",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".claude/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".claude/skills/test-driven-development/SKILL.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "sha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff"
+    },
+    {
+      "path": ".codex/agents/kit-implementer.toml",
+      "sha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428"
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "sha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "sha256": "ef2bd056132f44e6029109c472759a46923d8a9e52ef8d6c3ab168a1f4a18caf"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "sha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97"
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "sha256": "a3c7c2340cbbc8d5bbbbecf581878038b9e7c67eec320df5c2bd1ca7d1196ccb"
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "sha256": "c88ea26b2d3a664770d02db70584b35442d8bf8599d950f169a79e3d43ed0d56"
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "sha256": "1f2b1592b8107e784b5f5598f3b515879b0b6387a51b7cb3a899d395f28655cf"
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "sha256": "42d6547c23227e3ae9f0c51e1d976b15830d413c3b56ed643eacdccaf3f420df"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "sha256": "370a7acb1d3a2d93a947595663b32a240007c97319ffb36830e417fcbabea3d5"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "sha256": "8efb6489be48eb6cbcfdc60deba237da675a71164af8d14651e7bfffa46245f7"
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest.json",
+      "sha256": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "sha256": "171ec923ffb18868eb9ffa212869974a6b69a308083a0f4d39423f26dcff66b1"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "sha256": "2559b315ce8103c76993f4a5180ccaae85cb1e8054f816fe0885094427c8190e"
+    },
+    {
+      "path": "docs/agent-kit/technote.md",
+      "sha256": "5c16dec163354016773850c743891b9b4ac806c9e70a1b6a34ac5417158f6002"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "sha256": "dbc7f88baaeff722a5d7e59108852fe14bf409100ba1139d992e0688965a6eec"
+    },
+    {
+      "path": "engineering/agent-kit/LICENSE",
+      "sha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e"
+    }
+  ],
+  "mutableIndicesAndEvidence": "Owned task, project indices and evidence separately reviewed; lock integrity is not runtime proof",
+  "nativeBehavior": "NOT_RUN",
+  "nativeSkillDiscovery": "Codex skills/list PASS 17 repo enabled; project .codex layer disabled for trust; native definitions/behavior not proven; Claude unavailable",
+  "mutableDestinationPaths": [
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/verification-results.md"
+  ]
+}

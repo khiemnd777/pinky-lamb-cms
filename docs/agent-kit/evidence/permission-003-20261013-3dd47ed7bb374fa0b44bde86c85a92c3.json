@@ -1,0 +1,47 @@
+{
+  "status": "HOLD_ABNORMAL_CLEANUP",
+  "observedAtUtc": "2026-10-13T00:19:29.230173+00:00",
+  "controllerSha256": "cbed78d14d636612608e0da0141d6bb23835a181d0bc678369e3f51aeb33ca9d",
+  "configWrites": "NONE",
+  "actors": [],
+  "nativeCommands": [],
+  "runId": "3dd47ed7bb374fa0b44bde86c85a92c3",
+  "fixtureRelativePath": "docs/agent-kit/evidence/permission-003-fixture/3dd47ed7bb374fa0b44bde86c85a92c3",
+  "fixtureOwnerWritable": true,
+  "fixtureModes": [
+    "0o700",
+    "0o600"
+  ],
+  "scope": "App-server read-only parent fixture; exec launcher verified separately",
+  "nativeParentId": "01a132a0-ec9d-76e3-a056-3cffaeda35a8",
+  "startupConfiguredRoute": {
+    "model": "gpt-6.1-sol",
+    "effort": "high"
+  },
+  "nativeParentRolloutRelative": "2026/10/13/rollout-2026-10-13T07-19-29-01a132a0-ec9d-76e3-a056-3cffaeda35a8.jsonl",
+  "requestedSandboxObserved": {
+    "type": "readOnly",
+    "networkAccess": false
+  },
+  "parentApprovalDefaults": {
+    "policy": "on-request",
+    "reviewer": "auto_review"
+  },
+  "reason": "RuntimeError",
+  "cleanup": {
+    "status": "ABNORMAL_OR_INTERRUPTED",
+    "actions": [],
+    "errors": [
+      "KeyError"
+    ],
+    "exitCode": 0
+  },
+  "ownedClientExitCode": 0,
+  "stderrBytesNoContentsSaved": 5984,
+  "sentinelUnchanged": true,
+  "createdFileAbsent": true,
+  "unexpectedNativeActivity": [
+    "unexpected native tool:collaboration.spawn_agent"
+  ],
+  "selectedSpawnOutputs": []
+}

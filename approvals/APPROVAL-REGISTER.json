@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "proposal_id": "CMS-001",
+  "proposal_version": 2,
+  "status": "CLOSED",
+  "approved_by": "Khiêm (user in current Codex chat)",
+  "approved_at": "2026-10-11T05:35:26Z",
+  "approved_scope": "CMS-001 v2 — M1 local/emulators; exact frozen scope and 12 tasks only",
+  "proposal_sha256": "d9a5b04f332f9c554a674686e6ed90d1c678f94bc741f6e8575b8a1dfb6ec597",
+  "proposal_hash_status": "FROZEN_FOR_REVIEW",
+  "milestone": "M1",
+  "requested_scope": "local/emulators Auth + roles + Hero vertical slice + private preview + tests",
+  "note": "Direct human Accepted M1 recorded. M1 milestone closed; existing execution evidence preserved. Whole CMS local acceptance remains unset; M2 has separate approval.",
+  "canonical_scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211",
+  "spec_sha256": "605136a3d01b455ea9d82e256cf10945b977df62b0de1306f34940e016983087",
+  "plan_sha256": "33b9d6f7b005acc36b2c7c7cde836dcc1e84270dce7beb497fe0451247176ab9",
+  "tasks_sha256": "53e531ee4a1d710be762d184372a6544ed84a795256a3c62a293a7c7334ff51b",
+  "scope_file": "approvals/CMS-001-v2.scope.json",
+  "scope_hash_algorithm": "SHA-256 of sorted-key compact UTF-8 JSON",
+  "local_acceptance": null,
+  "production_scope": "DEFERRED_EXCLUDED",
+  "approval_evidence": {
+    "quote": "Approved CMS-001 v2 — M1 local/emulators",
+    "source": "Direct human user message in this Codex chat, immediately after M1 scope presentation",
+    "recorded_at_utc": "2026-10-11T05:35:26Z",
+    "timestamp_basis": "Observation time of first clock read after receiving the approval; not a server message timestamp",
+    "approval_kind": "ENGINEERING_APPROVED",
+    "proposal_version": 2,
+    "milestone": "M1",
+    "scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211"
+  },
+  "execution_record": {
+    "status": "CLOSED",
+    "current_task": "CMS-M1-10",
+    "cms_complete": false,
+    "local_acceptance": null,
+    "selected_agents": [
+      {
+        "task": "m1_architect",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "purpose": "Task00 architecture and later technical review"
+      },
+      {
+        "task": "m1_worker",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "purpose": "Approved implementation and tests"
+      },
+      {
+        "task": "m1_contract_worker",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "purpose": "Task02 contracts and independent browser tests"
+      }
+    ],
+    "observed_tooling": {
+      "node": "22.23.3 isolated",
+      "npm": "10.9.9 isolated",
+      "java": "24.0.1; actual Firestore emulator startup verified"
+    },
+    "baseline_copy_evidence": "pinky-lamb-cms/.local/cache/baseline-copy-sha256.json",
+    "checks_not_run": [],
+    "task_status": {
+      "CMS-M1-00": "DONE_CONTRACTS_REVIEWED",
+      "CMS-M1-01a": "DONE_FROZEN_INSTALL_AND_AUDIT_TRIAGE",
+      "CMS-M1-01b": "DONE_HIGH_REVIEW_PASS_WITH_RECORDED_RUNTIME_SMOKE",
+      "CMS-M1-02": "DONE_8_UNIT_GROUPS_AND_FOCUSED_LINT_PASS",
+      "CMS-M1-03": "DONE_10_AUTH_RULES_API_GROUPS_PASS",
+      "CMS-M1-04": "DONE_11_INDEPENDENT_BROWSER_TESTS_AND_BUILD_PASS",
+      "Checkpoint A": "PASS_HIGH_REVIEW_NOTE_SAVED",
+      "CMS-M1-05": "DONE_8_DRAFT_API_GROUPS_PLUS_12_GUARD_10_ACL_PASS",
+      "CMS-M1-06": "DONE_12_INDEPENDENT_BROWSER_GROUPS_HIGH_SOURCE_AND_VISUAL_REVIEW_PASS",
+      "CMS-M1-07": "DONE_6_RENDERER_12_GUARD_AND_16_BROWSER_PLUS_5_FOCUSED_PREVIEW_KEYBOARD_PASS",
+      "Checkpoint B": "PASS_HIGH_REVIEW_NOTE_SAVED",
+      "CMS-M1-08": "DONE_HIGH_BACKEND_GUARD_SOURCE_REVIEW_14_GUARD_8_DRAFT_12_REVIEW_PASS_UI_ORACLES_IN_09",
+      "CMS-M1-09": "DONE_9_INDEPENDENT_AND_FULL_95_TESTS_LINT_BUILD_PASS",
+      "CMS-M1-10": "DONE_HIGH_REVIEW_PASS_WITH_RECORDED_LIMITS"
+    },
+    "contract_files": [
+      "pinky-lamb-cms/docs/SPEC-cms-identity.md",
+      "pinky-lamb-cms/docs/SPEC-cms-content.md",
+      "pinky-lamb-cms/docs/ADR-001.md"
+    ],
+    "dependency_audit": {
+      "critical": 0,
+      "high": 3,
+      "moderate": 2,
+      "status": "RESIDUAL_ADVISORIES_TRIAGED_SETUP_GUARD_MITIGATIONS_VERIFIED_NOT_CLEAN",
+      "evidence": "pinky-lamb-cms/.local/cache/npm-audit-final.json",
+      "lockfile_sha256": "6f116655a61641393ecad84c64eff7e72c7c81a3aa9d7f957d9cb8f81ee023ea"
+    },
+    "setup_checks": {
+      "guard_tests": "12/12 PASS",
+      "api_smoke": "503 expected before authorization implementation",
+      "hosting": "GET HTML/font 200 with byte-identical SHA-256",
+      "vite_private_sources": "7/7 HTTP403",
+      "listener_hosts": "127.0.0.1 only; required Auth9099 Firestore8080 Functions5001 Hosting5010 plus local auxiliaries",
+      "evidence": "pinky-lamb-cms/.local/cache/"
+    },
+    "dependency_order_note": "Initial task02 RED test created before corrected Hosting smoke; implementation was held immediately. Task02 released after actual GET 200/SHA proof.",
+    "phase_checks": {
+      "task03_combined": "30/30 groups PASS:10 Auth/Rules/API +12guard +8contract",
+      "task03_lint": "focused PASS",
+      "task03_evidence": "pinky-lamb-cms/.local/cache/task03-combined.tap",
+      "browser_binary": "Isolated Chromium156.0.8078.4 launch with chromiumSandbox:true; task04actualbrowser11/11PASS",
+      "task05": "30/30 groups PASS:12guard +10ACL +8draft",
+      "task05_evidence": "pinky-lamb-cms/.local/cache/task05-final.tap",
+      "task05_evidence_sha256": "e78fb0aabf3a80c4bfaefd6a2232a9ac01c5aa6d8e63c954384e384a109a1a28",
+      "task06": "12/12 independent browser groups PASS, focused lint and build PASS; High source/desktop/mobile/conflict-image review PASS",
+      "task06_evidence": "pinky-lamb-cms/.local/cache/task06-browser.log",
+      "task06_network": "290 loopback responses, blocked and unexpected errors0; private persistent storage0",
+      "task06_teardown": "Original synthetic content restored using supported PATCH/CAS; revision and audit history retained",
+      "task07": {
+        "pureRendererGroups": 6,
+        "guardGroups": 12,
+        "fullBrowserGroups": 16,
+        "finalFocusedPreviewKeyboardGroups": 5,
+        "latestSafeProofs": 17,
+        "latestLoopbackResponses": 846,
+        "blocked": 0,
+        "unexpectedErrors": 0,
+        "note": "Full16 then final strengthened5, not a single17-case rerun; High source/artifact/visual review PASS",
+        "evidence": "pinky-lamb-cms/.local/cache/task07-browser-evidence-index.json",
+        "checkpoint_sha256": "605a87a6e8be20c69eb88d4cea91e851f1dcb3c1f629f02c2c073b4aedcc7652"
+      },
+      "task08": {
+        "guardGroups": 14,
+        "draftGroups": 8,
+        "snapshotReviewGroups": 12,
+        "status": "PASS_ACTUAL_LINT_BUILD_SERVICE_GUARD_TESTS_HIGH_STATIC_REVIEW",
+        "evidence": "pinky-lamb-cms/.local/cache/task08-final-checks.log",
+        "evidence_sha256": "33d4d3cde6c8870b7b3232de2777d1b32b1a9ac94ca982fb7f4465d7b554a8f5",
+        "corruption_oracle_rerun": "pinky-lamb-cms/.local/cache/task08-corruption-oracle.tap",
+        "corruption_oracle_sha256": "3a264bc23e383163133b76931adf2056d457469debdd689a6d1be054e0e79f3a",
+        "auth_generation_repair": "pinky-lamb-cms/.local/cache/task08-auth-race-repair.log",
+        "remaining": "Independent task09/full37 UI, retry, parsed-body race and independent hash/sourceRef oracles PASS",
+        "history": "Supported CAS restores original synthetic content; legitimate revision/audit/immutable snapshot/review history retained"
+      },
+      "task09": {
+        "status": "PASS_FRESH_9_AND_FINAL_37_BROWSER",
+        "focused_browser_groups": 9,
+        "focused_evidence": "pinky-lamb-cms/.local/cache/task09-browser-main-final.log",
+        "focused_evidence_sha256": "950f43e3021ca7a0d455cf8fac36c16ee1cc111edc2173c92e6a36adabbb9b9b",
+        "latest_evidence_jsons": 9,
+        "latest_response_records": 641,
+        "blocked": 0,
+        "unexpected_errors": 0,
+        "origins": [
+          "127.0.0.1:4173",
+          "127.0.0.1:5010",
+          "127.0.0.1:5173",
+          "127.0.0.1:9099"
+        ],
+        "export": "Offline synthetic QA only;40 public files with public path/hash/version manifest;not publication or editorial approval",
+        "mobile_refinement": "Baseline decorative orbit395px at390; fixed main#main adapter containment yields390px without cropping content or changing baseline/shared renderer/template/CSP",
+        "matrix_evidence": "pinky-lamb-cms/.local/cache/task09-containment-matrix.json",
+        "exporter_sha256": "b4f5c7a4e2e1543d05d8ac8debf67c95ad9705415abdbd3d02b35386a901060e",
+        "preview_adapter_sha256": "1e1f038c2735d9b3cc2ebdffcfb13c716c2c343f89be4e4911d968f1380a1260",
+        "test_sha256": "b60aae6b2824062a07ecbad7301b3fe4e0d521ef2b71a79d97afca43093fe694"
+      }
+    },
+    "checkpoint_a": "pinky-lamb-cms/docs/CHECKPOINT-A.md",
+    "browser_auth_evidence": {
+      "tests": "11/11 PASS",
+      "responses": "220 loopback only",
+      "unexpected_js_console_errors": 0,
+      "private_persistent_storage": 0,
+      "sdk_heartbeat_metadata_db": 1,
+      "evidence": "pinky-lamb-cms/.local/test-outputs/login/"
+    },
+    "task05_06_dependency_refinement": "Implement05 interfaces, bootstrap approved06 legacy catalog, complete05 real API tests, then06 editor UI. Necessary catalog dependency; same scope/path/task ownership.",
+    "task05_runtime_refinements": [
+      "Private storage-only contentJson codec preserves nested heading lines unsupported by Firestore arrays; public/domain content shape and canonical hash unchanged.",
+      "Bounded01b guard/index repair adapts only exact source/hash-bound CLI15.33.0 cmsApi HTTP runtime JSON transport to raw64KiB; own Auth/content-type/UTF8/JSON/schema checks retained. Direct Auth/discovery parser unchanged.",
+      "Exact installed CLI extensionless runtime argv resolved to reviewed .js source; fresh emulator8/8 API groups pass. No node_modules/global edits.",
+      "03 and05 pending-handler test expectations updated only when corresponding approved implementations become available."
+    ],
+    "checkpoint_b": "pinky-lamb-cms/docs/CHECKPOINT-B.md",
+    "preservation_before08": "pinky-lamb-cms/.local/cache/preservation-before08.json",
+    "final_gate": {
+      "status": "PASS_ACTUAL_SEQUENTIAL",
+      "completed_at_utc": "2026-10-11T07:18:50.853Z",
+      "lint_exit_code": 0,
+      "unit": {
+        "passed": 28,
+        "failed": 0,
+        "skipped": 0
+      },
+      "emulator_integration": {
+        "passed": 30,
+        "failed": 0,
+        "skipped": 0
+      },
+      "build_exit_code": 0,
+      "browser": {
+        "passed": 37,
+        "failed": 0,
+        "skipped": 0,
+        "login": 11,
+        "hero_preview": 17,
+        "workflow_export": 9
+      },
+      "summary": "pinky-lamb-cms/.local/cache/m1-final-gates-summary.json",
+      "summary_sha256": "09d58a5cca0c9cb44dc34183ed4af4e711c7ba8918e778ba706d15eb98c2f7b7",
+      "combined_log": "pinky-lamb-cms/.local/cache/m1-final-gates.log",
+      "combined_log_sha256": "0a0a576b680ea592954b68f2a95060563a95d461b300f563dc8d277ca43e97eb",
+      "execution": "Isolated Node22.23.3 executes exact package script target node scripts/local-guard.mjs <mode>; serialized integration and one browser worker"
+    },
+    "m1_review": "pinky-lamb-cms/docs/M1-REVIEW.md",
+    "project_state": "pinky-lamb-cms/docs/PROJECT-STATE.md",
+    "last_observed_at_utc": "2026-10-11T07:27:14.633832+00:00",
+    "milestone_closed": true,
+    "high_review_result": "PASS_M1_LOCAL_REVIEW_READY",
+    "preservation_final": "pinky-lamb-cms/.local/cache/preservation-final.json",
+    "deferred_checks": [
+      "Full CMS M2–M4 and user local acceptance",
+      "Safari/iOS and physical mobile",
+      "Mail client/clipboard end-to-end",
+      "Full backup/restore and publication/rollback (M4)",
+      "Cloud/production excluded from this package"
+    ],
+    "visible_snapshot_evidence": {
+      "status": "PASS_HIGH_VISUAL_REVIEW",
+      "proof": "pinky-lamb-cms/.local/cache/task09-visible-snapshot-proof.json",
+      "sha256": "26baac22454b99c681a5034236d4d979dbe2d7064843ce98b5afad1ff035c23b",
+      "loopback_records": 57,
+      "blocked": 0,
+      "unexpected_errors": 0,
+      "editorial_mutations": 0,
+      "note": "Normal painted CMS desktop/mobile plus same-child full captures; parent capture layout restored, srcdoc/sandbox/dimensions unchanged. Earlier offscreen blank captures not paint proof; initial compositor-timing cause remains an inference."
+    },
+    "milestone_acceptance": {
+      "quote": "Accepted CMS-001 v2 — M1 local/emulators. Approved CMS-001 v2 — M2 local/emulators. Triển khai và kiểm thử đúng phạm vi M2 đã trình.",
+      "source": "Direct human message in current Codex chat",
+      "recorded_at_utc": "2026-10-11T08:00:53.516097+00:00",
+      "timestamp_basis": "Approval observation/audit time; not server message timestamp",
+      "proposal_id": "CMS-001",
+      "proposal_version": 2,
+      "milestone": "M1",
+      "bundle_revision": 1,
+      "scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211",
+      "acceptance_kind": "MILESTONE_ACCEPTED_ONLY"
+    }
+  },
+  "milestone_acceptance": {
+    "quote": "Accepted CMS-001 v2 — M1 local/emulators. Approved CMS-001 v2 — M2 local/emulators. Triển khai và kiểm thử đúng phạm vi M2 đã trình.",
+    "source": "Direct human message in current Codex chat",
+    "recorded_at_utc": "2026-10-11T08:00:53.516097+00:00",
+    "timestamp_basis": "Approval observation/audit time; not server message timestamp",
+    "proposal_id": "CMS-001",
+    "proposal_version": 2,
+    "milestone": "M1",
+    "bundle_revision": 1,
+    "scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211",
+    "acceptance_kind": "MILESTONE_ACCEPTED_ONLY"
+  }
+}

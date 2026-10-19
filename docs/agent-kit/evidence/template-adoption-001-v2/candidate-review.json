@@ -1,0 +1,8 @@
+{
+  "result": "ROOT_ACCEPTED_REVIEWED_CANDIDATE_FOR_INTEGRATION",
+  "hashesVerified": 19,
+  "sourceReview": "source-review.json",
+  "applyHelperSha256": "324e776013bd190763b017d424244d90e361a43d131ae845846acc980e9dd00a",
+  "applyHelperAction": "Only exact19reviewedpaths; precondition frozenbaseline/approval/source hashes and non-symlink paths; no CMS mutation",
+  "integration": "Not yet applied"
+}

@@ -1,0 +1,79 @@
+{
+  "observedAtUtc": "2026-10-12T15:22:18.991686+00:00",
+  "command": "codex debug prompt-input (no prompt/no model turn)",
+  "exitCode": 0,
+  "rawPromptPersisted": false,
+  "stderrBytesNoContentsPersisted": 0,
+  "nativeRoleSectionsFound": 1,
+  "toolSchemaCandidateCount": 0,
+  "nativeAgents": [
+    {
+      "name": "kit-explorer",
+      "presentInNativeRoleSection": false,
+      "presentInSpawnToolSchema": false,
+      "descriptionExactMatchInNativeSection": false,
+      "sourcePathExplicitInNativeSection": false,
+      "sourcePathExplicitInSpawnToolSchema": false
+    },
+    {
+      "name": "kit-implementer",
+      "presentInNativeRoleSection": false,
+      "presentInSpawnToolSchema": false,
+      "descriptionExactMatchInNativeSection": false,
+      "sourcePathExplicitInNativeSection": false,
+      "sourcePathExplicitInSpawnToolSchema": false
+    },
+    {
+      "name": "kit-reviewer",
+      "presentInNativeRoleSection": false,
+      "presentInSpawnToolSchema": false,
+      "descriptionExactMatchInNativeSection": false,
+      "sourcePathExplicitInNativeSection": false,
+      "sourcePathExplicitInSpawnToolSchema": false
+    }
+  ],
+  "inputStructureOnly": [
+    {
+      "path": "root.[0]",
+      "keys": [
+        "content",
+        "id",
+        "internal_chat_message_metadata_passthrough",
+        "role",
+        "type"
+      ]
+    },
+    {
+      "path": "root.[1]",
+      "keys": [
+        "content",
+        "id",
+        "internal_chat_message_metadata_passthrough",
+        "role",
+        "type"
+      ]
+    },
+    {
+      "path": "root.[2]",
+      "keys": [
+        "content",
+        "id",
+        "internal_chat_message_metadata_passthrough",
+        "role",
+        "type"
+      ]
+    },
+    {
+      "path": "root.[3]",
+      "keys": [
+        "content",
+        "id",
+        "internal_chat_message_metadata_passthrough",
+        "role",
+        "type"
+      ]
+    }
+  ],
+  "invocationModelPermissionBehavior": "NOT_RUN",
+  "definitionDiscovery": "NOT_OBSERVED_IN_NATIVE_ROLE_OR_TOOL_METADATA"
+}

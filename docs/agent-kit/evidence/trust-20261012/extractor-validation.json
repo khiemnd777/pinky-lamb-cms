@@ -1,0 +1,33 @@
+{
+  "observedAtUtc": "2026-10-12T15:44:55.395150+00:00",
+  "controllerSha256": "6bc817df101aebfbef96ca68dd04877930ff19b98e5e53847f33a4f2dda7d194",
+  "nativeSchema": "FunctionCallOutputBody string or content array input_text; function_call/output call_id association",
+  "syntheticChecks": [
+    {
+      "case": "JSON string native agent_id",
+      "status": "PASS"
+    },
+    {
+      "case": "input_text array registry error",
+      "status": "PASS"
+    },
+    {
+      "case": "normalized object nested result",
+      "status": "PASS"
+    },
+    {
+      "case": "plain native error private-path redaction",
+      "status": "PASS"
+    },
+    {
+      "case": "unrelated call_id ignored",
+      "status": "PASS"
+    },
+    {
+      "case": "selected call_id accepted and duplicate ignored",
+      "status": "PASS"
+    }
+  ],
+  "pyCompile": "PASS",
+  "nativeProbeExecutedByWorker": false
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PROTOTYPE_RENDERED_SELF_REVIEWED_AWAITING_HUMAN_DESIGN_REVIEW",
+  "source_files": {
+    "mockups/multilingual-p1-redesign-v1.html": "4ddbd2b856676920eeaebce5a90815f7a995909ad00e6fb0838898a56c182ded",
+    "mockups/multilingual-p1-redesign-v1.css": "39dba8aa16cf2e4f5010b292d84e0f0aa63d5f21419b9b5b0ba86e13bf32d77b",
+    "mockups/multilingual-p1-redesign-v1.js": "b1a3b1f68fac1e4ec84ff33e80815c3f38e77539f783789b4bfd31fa4b320689"
+  },
+  "preserved_existing_files": 27,
+  "changed_existing_product_template_assets": [],
+  "js_syntax": "PASS",
+  "unique_html_ids": "PASS",
+  "browser": "Codex In-app Browser",
+  "viewports": {
+    "desktop": [
+      1440,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "rendered_hero_locales": [
+    "en",
+    "vi",
+    "ja"
+  ],
+  "prototype_interactions_observed": [
+    "locale selection",
+    "saved preview stays unchanged for unsaved edits",
+    "stay and Escape preserve text",
+    "discard and switch",
+    "simulate save and switch",
+    "error preserves input",
+    "conflict preserves input",
+    "read-only fields and save disabled",
+    "empty translation shows no saved version; editing shows unsaved",
+    "selected title accent formatting saved",
+    "mobile editor/preview panels"
+  ],
+  "console_errors_observed": 0,
+  "limits": [
+    "Synthetic in-memory prototype only, no CMS/API integration tested",
+    "Human design acceptance pending",
+    "Illustrative translations not editorially accepted",
+    "No production/public website switch implemented"
+  ],
+  "screenshots": [
+    "cms-desktop.jpg",
+    "cms-mobile.jpg",
+    "hero-en-desktop.jpg",
+    "hero-vi-desktop.jpg",
+    "hero-ja-desktop.jpg",
+    "hero-en-mobile.jpg",
+    "hero-vi-mobile.jpg",
+    "hero-ja-mobile.jpg"
+  ]
+}

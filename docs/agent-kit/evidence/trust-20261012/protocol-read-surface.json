@@ -1,0 +1,12 @@
+{
+  "observedAtUtc": "2026-10-12T15:23:12.646906+00:00",
+  "command": "codex app-server generate-json-schema --experimental --out SETUP_OWNED_TEMP",
+  "schemaSha256": "fd400e7c7daed7e3103e08093e7b1576439fe5ebc39a494f8e2696656e5a3cbe",
+  "methodCount": 170,
+  "definitionListReadMethods": [],
+  "agentRelatedReadMethods": [
+    "externalAgentConfig/detect",
+    "externalAgentConfig/import/readHistories"
+  ],
+  "scope": "Installed read RPC schema only; no model turn/config update"
+}

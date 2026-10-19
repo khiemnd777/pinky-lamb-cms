@@ -1,0 +1,808 @@
+{
+  "schema_version": 1,
+  "kit_version": "AGENT-SETUP-001-v1",
+  "release_status": "PROJECT_ADOPTION_PACKAGE_ONLY_NATIVE_BEHAVIOR_NOT_RUN",
+  "upstream": {
+    "repository": "https://github.com/addyosmani/agent-skills",
+    "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+    "unchanged_file_count": 26,
+    "license": "MIT"
+  },
+  "canonical_root": ".agents",
+  "mirror_root": ".claude",
+  "skills": [
+    {
+      "name": "api-and-interface-design",
+      "canonical": ".agents/skills/api-and-interface-design/SKILL.md",
+      "mirror": ".claude/skills/api-and-interface-design/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "code-review-and-quality",
+      "canonical": ".agents/skills/code-review-and-quality/SKILL.md",
+      "mirror": ".claude/skills/code-review-and-quality/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "code-simplification",
+      "canonical": ".agents/skills/code-simplification/SKILL.md",
+      "mirror": ".claude/skills/code-simplification/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "context-engineering",
+      "canonical": ".agents/skills/context-engineering/SKILL.md",
+      "mirror": ".claude/skills/context-engineering/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "canonical": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "mirror": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "documentation-and-adrs",
+      "canonical": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "mirror": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "canonical": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "mirror": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "incremental-implementation",
+      "canonical": ".agents/skills/incremental-implementation/SKILL.md",
+      "mirror": ".claude/skills/incremental-implementation/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "canonical": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "mirror": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "performance-optimization",
+      "canonical": ".agents/skills/performance-optimization/SKILL.md",
+      "mirror": ".claude/skills/performance-optimization/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "planning-and-task-breakdown",
+      "canonical": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "mirror": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "security-and-hardening",
+      "canonical": ".agents/skills/security-and-hardening/SKILL.md",
+      "mirror": ".claude/skills/security-and-hardening/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "source-driven-development",
+      "canonical": ".agents/skills/source-driven-development/SKILL.md",
+      "mirror": ".claude/skills/source-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "spec-driven-development",
+      "canonical": ".agents/skills/spec-driven-development/SKILL.md",
+      "mirror": ".claude/skills/spec-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "technote",
+      "canonical": ".agents/skills/technote/SKILL.md",
+      "mirror": ".claude/skills/technote/SKILL.md",
+      "source": "agent-kit"
+    },
+    {
+      "name": "test-driven-development",
+      "canonical": ".agents/skills/test-driven-development/SKILL.md",
+      "mirror": ".claude/skills/test-driven-development/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    },
+    {
+      "name": "using-agent-skills",
+      "canonical": ".agents/skills/using-agent-skills/SKILL.md",
+      "mirror": ".claude/skills/using-agent-skills/SKILL.md",
+      "source": "addyosmani/agent-skills"
+    }
+  ],
+  "mirror_pairs": [
+    {
+      "canonical": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "mirror": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "canonical": ".agents/references/accessibility-checklist.md",
+      "mirror": ".claude/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "canonical": ".agents/references/definition-of-done.md",
+      "mirror": ".claude/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "canonical": ".agents/references/observability-checklist.md",
+      "mirror": ".claude/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "canonical": ".agents/references/orchestration-patterns.md",
+      "mirror": ".claude/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "canonical": ".agents/references/performance-checklist.md",
+      "mirror": ".claude/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "canonical": ".agents/references/security-checklist.md",
+      "mirror": ".claude/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "canonical": ".agents/references/testing-patterns.md",
+      "mirror": ".claude/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "canonical": ".agents/skills/api-and-interface-design/SKILL.md",
+      "mirror": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "canonical": ".agents/skills/code-review-and-quality/SKILL.md",
+      "mirror": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "canonical": ".agents/skills/code-simplification/SKILL.md",
+      "mirror": ".claude/skills/code-simplification/SKILL.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "canonical": ".agents/skills/context-engineering/SKILL.md",
+      "mirror": ".claude/skills/context-engineering/SKILL.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "canonical": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "mirror": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "canonical": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "mirror": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "canonical": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "mirror": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "canonical": ".agents/skills/incremental-implementation/SKILL.md",
+      "mirror": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "canonical": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "mirror": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "canonical": ".agents/skills/performance-optimization/SKILL.md",
+      "mirror": ".claude/skills/performance-optimization/SKILL.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "canonical": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "mirror": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "canonical": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "mirror": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "canonical": ".agents/skills/security-and-hardening/SKILL.md",
+      "mirror": ".claude/skills/security-and-hardening/SKILL.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "canonical": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "mirror": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "canonical": ".agents/skills/source-driven-development/SKILL.md",
+      "mirror": ".claude/skills/source-driven-development/SKILL.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "canonical": ".agents/skills/spec-driven-development/SKILL.md",
+      "mirror": ".claude/skills/spec-driven-development/SKILL.md",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "canonical": ".agents/skills/technote/SKILL.md",
+      "mirror": ".claude/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "canonical": ".agents/skills/test-driven-development/SKILL.md",
+      "mirror": ".claude/skills/test-driven-development/SKILL.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "canonical": ".agents/skills/using-agent-skills/SKILL.md",
+      "mirror": ".claude/skills/using-agent-skills/SKILL.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    }
+  ],
+  "native_agents": [
+    {
+      "name": "kit-explorer",
+      "role_source": "docs/agent-kit/roles/explorer.md",
+      "codex": ".codex/agents/kit-explorer.toml",
+      "claude": ".claude/agents/kit-explorer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    },
+    {
+      "name": "kit-implementer",
+      "role_source": "docs/agent-kit/roles/implementer.md",
+      "codex": ".codex/agents/kit-implementer.toml",
+      "claude": ".claude/agents/kit-implementer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    },
+    {
+      "name": "kit-reviewer",
+      "role_source": "docs/agent-kit/roles/reviewer.md",
+      "codex": ".codex/agents/kit-reviewer.toml",
+      "claude": ".claude/agents/kit-reviewer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    }
+  ],
+  "files": [
+    {
+      "path": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/api-and-interface-design/SKILL.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/code-simplification/SKILL.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/context-engineering/SKILL.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/performance-optimization/SKILL.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/SKILL.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/source-driven-development/SKILL.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/spec-driven-development/SKILL.md",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "sha256": "2deb9c3ce2e3fa0b8a6bff8bf11eb944116757ab6a6324d102f314101e257739",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/agents/kit-implementer.md",
+      "sha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "sha256": "154237d54143bbade7e7417b75b971d23c7e0ab4a638905ec5b415fc6d43b4f3",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/api-and-interface-design/SKILL.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/code-simplification/SKILL.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/context-engineering/SKILL.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/performance-optimization/SKILL.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/SKILL.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/source-driven-development/SKILL.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/spec-driven-development/SKILL.md",
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/technote/SKILL.md",
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/test-driven-development/SKILL.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "sha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".codex/agents/kit-implementer.toml",
+      "sha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "sha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "sha256": "ef2bd056132f44e6029109c472759a46923d8a9e52ef8d6c3ab168a1f4a18caf",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "sha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "sha256": "a3c7c2340cbbc8d5bbbbecf581878038b9e7c67eec320df5c2bd1ca7d1196ccb",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "sha256": "c88ea26b2d3a664770d02db70584b35442d8bf8599d950f169a79e3d43ed0d56",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "sha256": "1f2b1592b8107e784b5f5598f3b515879b0b6387a51b7cb3a899d395f28655cf",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "sha256": "42d6547c23227e3ae9f0c51e1d976b15830d413c3b56ed643eacdccaf3f420df",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "sha256": "370a7acb1d3a2d93a947595663b32a240007c97319ffb36830e417fcbabea3d5",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "sha256": "8efb6489be48eb6cbcfdc60deba237da675a71164af8d14651e7bfffa46245f7",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "sha256": "171ec923ffb18868eb9ffa212869974a6b69a308083a0f4d39423f26dcff66b1",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "sha256": "2559b315ce8103c76993f4a5180ccaae85cb1e8054f816fe0885094427c8190e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/technote.md",
+      "sha256": "5c16dec163354016773850c743891b9b4ac806c9e70a1b6a34ac5417158f6002",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "sha256": "dbc7f88baaeff722a5d7e59108852fe14bf409100ba1139d992e0688965a6eec",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    },
+    {
+      "path": "engineering/agent-kit/LICENSE",
+      "sha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e",
+      "origin": {
+        "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json"
+      }
+    }
+  ],
+  "excluded_mutable_paths": [
+    "AGENTS.md",
+    "docs/agent-kit/evidence/",
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/skills-manifest.json",
+    "docs/agent-kit/tasks/AGENT-SETUP-001.md",
+    "docs/agent-kit/verification-results.md"
+  ],
+  "integrity_note": "SHA-256 checks detect differences; hashes and parsed fields do not prove runtime behavior."
+}

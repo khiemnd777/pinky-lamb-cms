@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-006 v1",
+  "state": "IMPLEMENTATION_COMPLETE_PACKAGE_STATIC_SOURCE_REVIEW_VERIFIED",
+  "approval": {
+    "source": "direct human message in this chat, 14/10/2026 Asia/Ho_Chi_Minh",
+    "quote": "Approved AGENT-KIT-UPDATE-006 v1. Áp dụng cập nhật repository-local theo đề xuất."
+  },
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "ea72429b4c3cd80296b7ad75139431eb944aa319",
+    "headCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+    "sourceGitBlobsVerified": 21
+  },
+  "candidateHashes": {
+    "docs/agent-kit/evidence/update-006-preflight.json": "3adc447e15c575907c8b6f407f08d2016bb3eb0662b4d4f5d742973ee9a5392d",
+    "docs/agent-kit/skills-manifest-current.json": "eccf0e842008f92b9dc68774982ef1d64841eb7131cb64862d93f45e9afbf8b5",
+    "engineering/AGENT-KIT-UPDATE-006-LOCK.json": "020816dcda68c7eed40fe38225f07f5485c3339567bbaa8563706cc3ca6078df",
+    "engineering/agent-kit/verify-proportionate-update.py": "e51ee049debb608ce5df191dcdaf0b353bcbf9574bba5a97d0b33affa574c2f4",
+    "docs/agent-kit/evidence/update-006-review.json": "bc966dcb557b3d02a04f4093fa80a5c8d95cbfac11bfead589edcba588c8b834"
+  },
+  "rootCheck": {
+    "command": "python3 -B engineering/agent-kit/verify-proportionate-update.py",
+    "exitCode": 0,
+    "output": {
+      "result": "PASS",
+      "baselineRecords": 174,
+      "amendments": 17,
+      "maintainedFiles": 74,
+      "mirrorPairs": 27,
+      "skillsPerRoot": 17,
+      "originalUpstreamFiles": 22,
+      "adaptedUpstreamFiles": 4,
+      "localLinks": 92,
+      "boundary": "Package/static only; CMS/runtime/emulator/global/native/production NOT_RUN"
+    }
+  },
+  "protectedCanonicalApply": {
+    "files": 4,
+    "command": "python3 -B /private/tmp/pinky-lamb-update-006-g2prmhvi/apply-canonical.py",
+    "exitCode": 0,
+    "helperSha256": "0d98a58d372e3c43db6db0f76db86b1118f859e95c23624e09c100301d76288c",
+    "mechanism": "ordinary require_escalated auto_review after root reviewed exact before/after hashes and source-plus-link relocation; no chmod or policy changes"
+  },
+  "review": {
+    "path": "docs/agent-kit/evidence/update-006-review.json",
+    "result": "PASS_SOURCE_PACKAGE_REVIEW",
+    "finding": "Four stale effective mirror pair hashes RESOLVED_VERIFIED"
+  },
+  "skillsMetadata": {
+    "bundledQuickValidate": {
+      "result": "NOT_RUN_DEPENDENCY_BLOCKED",
+      "attempts": 3,
+      "reason": "ModuleNotFoundError: No module named 'yaml'",
+      "dependencyInstalled": false
+    },
+    "equivalentChecks": {
+      "result": "PASS",
+      "attribution": "Worker Ruby/Psych safe YAML parse and metadata 3/3; checker independently verifies names/descriptions, inventory, links and mirrors"
+    }
+  },
+  "routing": {
+    "implementerSelection": "tool role kit-implementer / GPT-6.1 Sol Medium",
+    "reviewerSelection": "tool role kit-reviewer / GPT-6.1 Sol High",
+    "independentlyObservedProviderMetadata": "Unknown"
+  },
+  "history": {
+    "update004": "GUIDANCE_INTEGRATED_GLOBAL_PRESERVATION_HOLD retained",
+    "permission003": "CLOSED retained; direct child probes NOT_RUN retained",
+    "originalManifestLocksCheckersReceipts": "Frozen current package hashes preserved"
+  },
+  "limits": [
+    "Repository package/static/source only",
+    "CMS/runtime/emulator/global/native behavior/V26-V30/two-machine/Git/deploy NOT_RUN, outside scope",
+    "No live data preservation, availability, effective-permission or human product acceptance claim",
+    "Source review reused for unchanged candidate; factual mutable integration checks recorded separately"
+  ],
+  "workerNegativeEvidence": {
+    "attribution": "Reported and executed by Medium-selected implementation worker; separately reviewed/checked by root and independent reviewer",
+    "observations": {
+      "syntax": "PASS_AST_PARSE",
+      "results": [
+        {
+          "case": "clean-copy",
+          "exitCode": 0,
+          "observation": {
+            "result": "PASS",
+            "baselineRecords": 174,
+            "amendments": 17,
+            "maintainedFiles": 74,
+            "mirrorPairs": 27,
+            "skillsPerRoot": 17,
+            "originalUpstreamFiles": 22,
+            "adaptedUpstreamFiles": 4,
+            "localLinks": 92,
+            "boundary": "Package/static only; CMS/runtime/emulator/global/native/production NOT_RUN"
+          }
+        },
+        {
+          "case": "changed-mirror",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Package/preservation hash mismatch: .claude/skills/using-agent-skills/SKILL.md",
+              "Effective file hash mismatch: .claude/skills/using-agent-skills/SKILL.md",
+              "Mirror bytes mismatch: .claude/skills/using-agent-skills/SKILL.md",
+              "Mirror pair digest mismatch: .claude/skills/using-agent-skills/SKILL.md"
+            ]
+          }
+        },
+        {
+          "case": "changed-lock-hash",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Unapproved lock/candidate mismatch"
+            ]
+          }
+        },
+        {
+          "case": "changed-provenance",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Effective manifest hash mismatch"
+            ]
+          }
+        },
+        {
+          "case": "extra-codex-file",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Unapproved package files: .codex/unapproved-config.toml"
+            ]
+          }
+        },
+        {
+          "case": "extra-package-file",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Unapproved package files: .agents/skills/unapproved/SKILL.md",
+              "Skill inventory mismatch: .agents/skills"
+            ]
+          }
+        },
+        {
+          "case": "changed-before-chain",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Frozen preflight mismatch"
+            ]
+          }
+        },
+        {
+          "case": "pair-validator-stale-digest",
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Mirror pair digest mismatch: .claude/skills/using-agent-skills/SKILL.md",
+              "Mirror pair/file metadata mismatch: .agents/skills/using-agent-skills/SKILL.md",
+              "Mirror pair/file metadata mismatch: .claude/skills/using-agent-skills/SKILL.md"
+            ]
+          },
+          "method": "direct same validator function; outer manifest/lock anchors remain enforced"
+        },
+        {
+          "case": "changed-pair-metadata",
+          "exitCode": 1,
+          "observation": {
+            "result": "FAIL",
+            "errors": [
+              "Effective manifest hash mismatch"
+            ]
+          }
+        },
+        {
+          "case": "restored-copy",
+          "exitCode": 0,
+          "observation": {
+            "result": "PASS",
+            "baselineRecords": 174,
+            "amendments": 17,
+            "maintainedFiles": 74,
+            "mirrorPairs": 27,
+            "skillsPerRoot": 17,
+            "originalUpstreamFiles": 22,
+            "adaptedUpstreamFiles": 4,
+            "localLinks": 92,
+            "boundary": "Package/static only; CMS/runtime/emulator/global/native/production NOT_RUN"
+          }
+        }
+      ]
+    }
+  },
+  "factualIntegration": {
+    "result": "PASS",
+    "checkedAtUtc": "2026-10-14T08:40:26.156546+00:00",
+    "mutableDocumentsChecked": 5,
+    "localLinks": 124,
+    "candidateHashesPreserved": true,
+    "existingFilesModified": 21,
+    "newApprovedFiles": 7,
+    "modifiedPaths": [
+      ".agents/references/definition-of-done.md",
+      ".agents/skills/incremental-implementation/SKILL.md",
+      ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      ".agents/skills/using-agent-skills/SKILL.md",
+      ".claude/references/definition-of-done.md",
+      ".claude/skills/incremental-implementation/SKILL.md",
+      ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      ".claude/skills/using-agent-skills/SKILL.md",
+      "docs/agent-kit/agent-coordination-templates.md",
+      "docs/agent-kit/project-context.md",
+      "docs/agent-kit/project-plan.md",
+      "docs/agent-kit/project-state.md",
+      "docs/agent-kit/roles/coordinator.md",
+      "docs/agent-kit/roles/implementer.md",
+      "docs/agent-kit/roles/reviewer.md",
+      "docs/agent-kit/skills-catalog.md",
+      "docs/agent-kit/team-policy.md",
+      "docs/agent-kit/team-workflow.md",
+      "docs/agent-kit/verification-guide.md",
+      "docs/agent-kit/verification-results.md",
+      "AGENTS.md"
+    ],
+    "boundary": "Exact approved package/root-record delta and factual links only; no CMS/live-data/global scan"
+  }
+}

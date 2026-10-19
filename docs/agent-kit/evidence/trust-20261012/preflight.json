@@ -1,0 +1,20 @@
+{
+  "task": "AGENT-TRUST-001",
+  "approvalQuote": "Approved thiết lập project trust cho Pinky Lamb và kiểm tra lại discovery của 3 native agents. Giữ nguyên mã CMS, dữ liệu emulator và các approval hiện hành.",
+  "approvalSource": "Direct human approval relayed in parent NEW_TASK",
+  "approvalObservationAtUtc": "2026-10-12T15:20:43.987117+00:00",
+  "senderTime": "UNKNOWN_NOT_ASSERTED",
+  "scope": "Exact Pinky Lamb project trust + read-only native definition discovery",
+  "owner": "agent_setup actual Medium implementation route; root High review",
+  "config": {
+    "path": "USER_CONFIG_REDACTED",
+    "sha256": "dc3a5ac6bcceadc615aa39175041175806387219441b5c5df984f9a1849e1013",
+    "bytes": 11385,
+    "mode": "0o600"
+  },
+  "sourceDataPreflight": "verify-setup.py PASS17+17/27pairs/6adapters/217links/3942protected/746data",
+  "dotCodex": "Only three reviewed standalone adapter TOMLs; no config/hooks/exec policies",
+  "coreLockSha256": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466",
+  "preservationLimit": "Original node_modules/generated directories and entire .local excluded except ALL emulator-data separately typed/hashed",
+  "rawConfigPersisted": false
+}

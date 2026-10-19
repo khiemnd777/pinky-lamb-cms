@@ -1,0 +1,631 @@
+{
+  "schema_version": 1,
+  "proposal_id": "CMS-001",
+  "proposal_version": 2,
+  "milestone": "M2",
+  "bundle_revision": 1,
+  "status": "CLOSED",
+  "requested_scope": "Full-site CMS M2 per detailed bundle; demo/local emulators only",
+  "approved_by": "Khiêm (direct human user in current Codex chat)",
+  "approved_at": "2026-10-11T08:00:53.516097+00:00",
+  "approval_evidence": {
+    "quote": "Accepted CMS-001 v2 — M1 local/emulators. Approved CMS-001 v2 — M2 local/emulators. Triển khai và kiểm thử đúng phạm vi M2 đã trình.",
+    "source": "Direct human message in current Codex chat",
+    "recorded_at_utc": "2026-10-11T08:00:53.516097+00:00",
+    "timestamp_basis": "Approval observation/audit time; not server message timestamp",
+    "proposal_id": "CMS-001",
+    "proposal_version": 2,
+    "milestone": "M2",
+    "bundle_revision": 1,
+    "scope_sha256": "55c53b57dbce2cbce57c355dc4580a499683c854f43378990908c7e344cf4dc4"
+  },
+  "approved_scope": "CMS-001 v2 — M2 local/emulators; exact frozen bundle revision 1, 23 tasks, AC01–15 only",
+  "planning_request_evidence": {
+    "quote": "Lập và trình phạm vi, kế hoạch M2 theo CMS-001 v2 để tôi duyệt. Giữ local/emulators và chỉ triển khai sau Approved riêng.",
+    "source": "Direct human message in current Codex chat",
+    "recorded_at_utc": "2026-10-11T07:49:23.903456+00:00",
+    "timestamp_basis": "Planning observation time, not server message timestamp",
+    "authorization": "READ_SPEC_PLAN_DOCUMENT_REVIEW_ONLY"
+  },
+  "dependency_gate": {
+    "m1_register": "approvals/APPROVAL-REGISTER.json",
+    "m1_observed_status": "CLOSED",
+    "m1_user_acceptance_evidence": {
+      "quote": "Accepted CMS-001 v2 — M1 local/emulators. Approved CMS-001 v2 — M2 local/emulators. Triển khai và kiểm thử đúng phạm vi M2 đã trình.",
+      "source": "Direct human message in current Codex chat",
+      "recorded_at_utc": "2026-10-11T08:00:53.516097+00:00",
+      "timestamp_basis": "Approval observation/audit time; not server message timestamp",
+      "proposal_id": "CMS-001",
+      "proposal_version": 2,
+      "milestone": "M1",
+      "bundle_revision": 1,
+      "scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211",
+      "acceptance_kind": "MILESTONE_ACCEPTED_ONLY"
+    },
+    "m1_accepted": true
+  },
+  "scope_file": "approvals/CMS-001-v2-M2.scope.json",
+  "canonical_scope_sha256": "55c53b57dbce2cbce57c355dc4580a499683c854f43378990908c7e344cf4dc4",
+  "scope_hash_algorithm": "SHA-256 of sorted-key compact UTF-8 JSON",
+  "proposal_file": "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md",
+  "proposal_sha256": "5d4bdccfba26a902dfd21b604eeb5bc05d47588f17a7fe07488fe9e5e323ecd3",
+  "plan_file": "pinky-lamb-cms/tasks/M2-plan.md",
+  "plan_sha256": "e51a02944dbd73e5309eeabc195a8b95bbcd1caefe290ecf92094eb512290f2d",
+  "proposal_hash_status": "FROZEN_FOR_REVIEW",
+  "execution_record": {
+    "status": "CLOSED",
+    "current_task": null,
+    "task_status": {
+      "CMS-M2-00": "DONE_HIGH_BASE_AND_DIRECT_HUMAN_APPROVAL_VERIFIED",
+      "CMS-M2-00b": "DONE_MEDIUM_21_GUARD_35_M1_UNIT_4_PRIVACY_LINT_BUILD_HIGH_PASS",
+      "CMS-M2-01a": "DONE_MEDIUM_23_UNIT_LINT_PASS_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-01b": "DONE_MEDIUM_23_UNIT_LINT_PASS_INDEPENDENT_HIGH_CHECKPOINT_A_PASS",
+      "CMS-M2-02": "DONE_MEDIUM_15_UNIT_LINT_BUILD_4_PRIVACY_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-03": "DONE_MEDIUM_12_REAL_INTEGRATION_LINT_30_M1_COMPAT_HIGH_CHECKPOINT_B_PASS",
+      "CMS-M2-04": "DONE_MEDIUM_13_REAL_INTEGRATION_LINT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-05a": "DONE_MEDIUM_14_REAL_INTEGRATION_LINT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-05b": "DONE_MEDIUM_21_REAL_SERVICE_HTTP_LINT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-06": "DONE_MEDIUM_16_REAL_V2_M1_SCALAR_REPAIR_LINT_INDEPENDENT_HIGH_CHECKPOINT_C_PASS",
+      "CMS-M2-07": "DONE_MEDIUM_37_REAL_SERVICE_HTTP_LINT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-08": "DONE_MEDIUM_20_UNIT_SEMANTICS_AND_SHARED_MENU_RECHECK_HIGH_PASS",
+      "CMS-M2-09": "DONE_MEDIUM_12_BROWSER_20_RENDERER_LINT_ROOT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-10": "DONE_MEDIUM_18_UNIT_35_M1_UNIT_5_REAL_ARTIFACT_BROWSER_LINT_HIGH_CHECKPOINT_E_PASS",
+      "CMS-M2-11": "DONE_MEDIUM_11_GENERATED_BEHAVIOR_37_M1_BROWSER_LINT_BUILD_ROOT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-12": "DONE_MEDIUM_15_BROWSER_LINT_BUILD_ROOT_122_HASHES_HIGH_66_ARCHIVE_PASS",
+      "CMS-M2-13": "DONE_MEDIUM_17_BROWSER_LINT_BUILD_ROOT_378_HASHES_HIGH_264_ARCHIVE_CHECKPOINT_F_PASS",
+      "CMS-M2-14": "DONE_MEDIUM_19_BROWSER_LINT_BUILD_ROOT_148_HASHES_HIGH_54_ARCHIVE_PASS",
+      "CMS-M2-15": "DONE_MEDIUM_18_BROWSER_LINT_BUILD_ROOT_292_HASHES_HIGH_123_ARCHIVE_CHECKPOINT_G_PASS",
+      "CMS-M2-16": "DONE_MEDIUM_25_UNIT_23_REAL_INTEGRATION_LINT_ROOT_143_HASHES_HIGH_88_ARCHIVE_PASS",
+      "CMS-M2-17": "DONE_MEDIUM_15_UNIT_9_BROWSER_LINT_ROOT_HIGH_1180_HASHES_470_ARCHIVE_CHECKPOINT_H_PASS",
+      "CMS-M2-18": "DONE_MEDIUM_153_UNIT_121_INTEGRATION_131_BROWSER_LINT_BUILD_ROOT_INDEPENDENT_HIGH_PASS",
+      "CMS-M2-19": "DONE_HIGH_FINAL_AUDIT_DOCUMENTATION_ROOT_AND_INDEPENDENT_HIGH_PASS"
+    },
+    "milestone_closed": true,
+    "cms_complete": false,
+    "local_acceptance": null,
+    "checks": "ALL23_TASKS_AND_CHECKPOINTS_A_THROUGH_H_PASS;FINAL153_UNIT121_INTEGRATION131_BROWSER_LINT_BUILD_PASS;AC01_TO15_TECHNICAL_PASS_WITH_DISCLOSED_LIMITS",
+    "milestone_acceptance": {
+      "quote": "Accepted CMS-001 v2 — M2 local/emulators. Lập và trình phạm vi, kế hoạch M3 theo CMS-001 v2 để tôi duyệt. Giữ local/emulators và chỉ triển khai sau Approved riêng.",
+      "source": "Direct human message in current Codex chat",
+      "recorded_at_utc": "2026-10-11T15:35:08.780585+00:00",
+      "timestamp_basis": "Acceptance observation time; not server message timestamp",
+      "proposal_id": "CMS-001",
+      "proposal_version": 2,
+      "milestone": "M2",
+      "bundle_revision": 1,
+      "scope_sha256": "55c53b57dbce2cbce57c355dc4580a499683c854f43378990908c7e344cf4dc4",
+      "acceptance_kind": "MILESTONE_ACCEPTED_ONLY"
+    },
+    "base_audit": {
+      "observed_at_utc": "2026-10-11T08:00:53.516097+00:00",
+      "status": "PASS_STATIC_BASE_AND_FROZEN_DIGESTS",
+      "counts": {
+        "M1-source": 52,
+        "frozen-root": 18,
+        "frozen-M2-bundle": 3,
+        "baseline": 93,
+        "vendor": 212,
+        "readonly_public_copy": 40
+      },
+      "m1_register_before_acceptance_sha256": "1395c5e8cfd879cda10144861c4e25c15f14d1fc3d7aa4ed68bfb57c44aead9c",
+      "m1_register_after_acceptance_sha256": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3",
+      "scope_canonical_sha256": "55c53b57dbce2cbce57c355dc4580a499683c854f43378990908c7e344cf4dc4",
+      "failures": [],
+      "m1_register_pre_acceptance_evidence": "pinky-lamb-cms/.local/cache/m2/m1-register-pre-acceptance.json",
+      "m1_register_allowed_delta_paths": [
+        "/execution_record/milestone_acceptance",
+        "/execution_record/milestone_closed",
+        "/execution_record/status",
+        "/milestone_acceptance",
+        "/note",
+        "/status"
+      ],
+      "independent_high_review": "PASS_READ_ONLY_M1_DELTA_SCOPE_AND_BUNDLE"
+    },
+    "selected_agents": [
+      {
+        "task": "m1_worker",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "purpose": "Source implementation bounded tasks"
+      },
+      {
+        "task": "m1_contract_worker",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "purpose": "Owned tests/independent QA"
+      },
+      {
+        "task": "m1_architect",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "purpose": "Read-only independent checkpoints"
+      }
+    ],
+    "evidence": {
+      "CMS-M2-00b": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task00b-evidence-index.json",
+        "index_sha256": "1a8d8baa4db1899544ea3734eadfa7167d2102219bccfc4b4803221a17b80f89",
+        "status": "FINAL_PASS_WITH_HIGH_REVIEW",
+        "commands": [
+          {
+            "command": "node scripts/local-guard.mjs unit --task CMS-M2-00b",
+            "exit": 0,
+            "passed": 21,
+            "skipped": 0,
+            "durationMs": 2040.657792
+          },
+          {
+            "command": "node scripts/local-guard.mjs unit --task M1",
+            "exit": 0,
+            "passed": 35,
+            "skipped": 0,
+            "durationMs": 2097.388959
+          },
+          {
+            "command": "node scripts/local-guard.mjs lint",
+            "exit": 0
+          },
+          {
+            "command": "node scripts/local-guard.mjs build",
+            "exit": 0,
+            "emittedFiles": 10
+          },
+          {
+            "command": "node scripts/local-guard.mjs e2e --task CMS-M2-00b",
+            "exit": 0,
+            "passed": 4,
+            "durationSeconds": 1.3,
+            "escalation": "approved loopback Chromium after sandbox EPERM"
+          }
+        ],
+        "source_inventory": [
+          {
+            "path": "tests/local-guard.test.mjs",
+            "sha256": "5f1c0360e89dc3cafff75c6f1857341a23da8edbbaabb1b5c801809f241f7363"
+          },
+          {
+            "path": "tests/site-private-files.local.test.mjs",
+            "sha256": "b3a5770d1d66dc8cf3bd182844d81a8ab4a129e962515374448f19d22816d99d"
+          },
+          {
+            "path": "scripts/local-guard.mjs",
+            "sha256": "efb0bde0b8fed965d7b0790beba81f023ffe58841c992da8f4d9274182474a96"
+          },
+          {
+            "path": "vite.config.mjs",
+            "sha256": "b0b997893efe1cd72f191a37b150c80109710645f2be01f1ffd2f7592b0490b3"
+          },
+          {
+            "path": "eslint.config.mjs",
+            "sha256": "4410c2bb832414a163631eb3ab9f7b47e9b9f965c2732480a84a81a1b58f8e7b"
+          }
+        ],
+        "privacy": {
+          "http403": 22,
+          "loopbackRequests": 59,
+          "outboundBlocked": 0,
+          "privateValueChecks": 32,
+          "newPrivateMappingFilesPresent": false,
+          "resolverPrivateFilenameOrResolvedAliasDenials": 24,
+          "resolverSyntheticSecretFilenameOrAliasDenials": 6,
+          "realSecretFilesReadOrCreated": 0
+        },
+        "limits": [
+          "New baseline JSON absent; rerun privacy after task02",
+          "No claim of full M2 default or editor/runtime yet"
+        ]
+      },
+      "CMS-M2-01a": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task01a-evidence-index.json",
+        "index_sha256": "203df6a4417eea8c359987c4c4649173063b532721f77c20f91fd79c04d50c03",
+        "status": "FINAL_23_UNIT_LINT_ABOUT_AND_CLIENTS_CORRECTIONS_INDEPENDENT_HIGH_PASS",
+        "limits": "Fullsite refs/typed patches/codec/future-envelope caps next01b; independent Checkpoint A after01b"
+      },
+      "CMS-M2-01b": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task01b-evidence-index.json",
+        "index_sha256": "f9e24f148a682e6731a27eff68fe71e900b7119476b70502a0aa0f42e330cc76",
+        "status": "FINAL_23_UNIT_LINT_INDEPENDENT_HIGH_CHECKPOINT_A_PASS",
+        "limits": "Checkpoint A PASS for contracts/privacy runners only; future API/source proofs/full rendering/runtime NOT_RUN"
+      },
+      "CMS-M2-02": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task02-evidence-index.json",
+        "index_sha256": "f0ed5e60c760d148b42fd3a42bee16a7383e794ae29d887a63a8866172ec33e0",
+        "status": "FINAL_15_UNIT_LINT_BUILD_4_PRIVACY_INDEPENDENT_HIGH_PASS",
+        "baselineManifestHash": "65fb8d571118ee0cbf8a2e26295219d763691c1af08c82d03d5b3909a7b8535b",
+        "baselineContentHash": "9f226967f64059c4c6a0ae10d1768999a046d94aae839a9e488c0dfe9a248d33",
+        "reportHash": "7b32f334708f58336566be32376d42c7fa8f6923d03b4974f185cd2057fa7b84",
+        "limits": "No Auth/Draft/import effects; API/full renderer/UI still pending. Historical00b four overwritten generated outputs archived via task02-preprivacy-index."
+      },
+      "CMS-M2-03": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task03-evidence-index.json",
+        "index_sha256": "fad67f61ced498bd14c2d1aa2856a34fcc18236c1a0ad5b0b23079ec68698331",
+        "status": "FINAL_12_REAL_INTEGRATION_LINT_30_M1_COMPAT_HIGH_CHECKPOINT_B_PASS",
+        "limits": "Refresh-token revocation NOT_RUN; inactive member/disabled Auth covered. Save/Snapshot/source review/UI/export NOT_RUN."
+      },
+      "CMS-M2-04": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task04-evidence-index.json",
+        "index_sha256": "944826f62665ce1af7a6af5c36febd66ddc940b3373140cc9ab1c3d305abed03",
+        "status": "FINAL_13_REAL_INTEGRATION_LINT_INDEPENDENT_HIGH_PASS",
+        "limits": "No separate04 M1compat rerun; explicit06/final18 matrix still required. Snapshot/source review/UI/export pending."
+      },
+      "CMS-M2-06": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task06-evidence-index.json",
+        "index_sha256": "cc61c5a181df9e6c14f03e6b89eaf15e57851853b1ca389eeaa6faa92d4cd6b5",
+        "status": "FINAL_16_REAL_INTEGRATION_ARCHIVED_M1_LINT_INDEPENDENT_HIGH_PASS",
+        "limits": "Valid source/terminal v2 review workflows remain05/07; refresh-token revocation/browser/finalfullmatrix NOT_RUN."
+      },
+      "CMS-M2-05a": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task05a-evidence-index.json",
+        "index_sha256": "451c5ac88cc6e9166b9f92a570e972efb3848a39ad15671e1636103d517af588",
+        "status": "FINAL_14_PASS_ROOT_AND_INDEPENDENT_HIGH_32_HASHES_PASS",
+        "limits": "Service-only; no HTTP source wire/valid terminal Review; adjacent06 scalar message fix beforeCheckpointC"
+      },
+      "CMS-M2-06-scalar": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task06-scalar-evidence-index.json",
+        "index_sha256": "32507c40892feed37e1dfded5dbf5f80e0803e1485c18100f026c6ddc436c618",
+        "status": "FINAL_16_PASS_ROOT_AND_INDEPENDENT_HIGH_30_HASHES_AND_9_ARCHIVE_PASS",
+        "limits": "Original06nineoutputsarchived; no valid terminal07workflow yet; 05a not redundantly repeated"
+      },
+      "CMS-M2-05b": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task05b-evidence-index.json",
+        "index_sha256": "388daa143774567fb90a2bfee6c768c0a175f9ccedd8b77b62c88edb47c5be4e",
+        "status": "FINAL_21_PASS_74_HTTP_ROOT_AND_INDEPENDENT_HIGH_26_HASHES_13_ARCHIVE_PASS",
+        "limits": "TerminalReview/sourceReplayAfterTerminal next07; fullrenderer/editor/browser NOT_RUN"
+      },
+      "CMS-M2-07": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task07-evidence-index.json",
+        "index_sha256": "9f737cad455ea8d0f07feaff73506f2f0bf3306acc76f218fc50b52012c63686",
+        "status": "FINAL_37_PASS_111_HTTP_ROOT_AND_INDEPENDENT_HIGH_44_HASHES_13_ARCHIVE_PASS",
+        "limits": "BrowserReviewUI/renderer/export/refreshLifecycle remain laterM2; CheckpointD pending08; no milestone acceptance"
+      },
+      "CMS-M2-08": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task08-render-semantics-evidence-index.json",
+        "index_sha256": "4a99ac58d956967ad4b8fe51f36e05bc6c0383c640e0026fea814022aa7fc517",
+        "historical_index_sha256": "e13b24ab6dc0b76adcb743053dbda9d891e155d8d97abaec47577b14deb198f3",
+        "archive_index_sha256": "b7282e89169cadcdab459adc4148973743d080d039b4ab4930aa13c3ca2dad34",
+        "status": "FINAL_20_PASS_LINT_ROOT_AND_INDEPENDENT_HIGH_20_HASHES_24_ARCHIVE_CHECKPOINT_D_PASS",
+        "limits": "Structural renderer unit only; actual browser09/17, export10, editor11-15 and fullmatrix18 pending",
+        "superseding_shared_menu_recheck": "CMS-M2-09 aee219b0 index; final sections c09118c3; original indices/archive retained"
+      },
+      "CMS-M2-09": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task09-menu-reachability-evidence-index.json",
+        "index_sha256": "aee219b0c56fa897e10319aa54485441879f6f39d6b195cfc9899a94adf2cb4e",
+        "status": "FINAL_20_RENDERER_12_BROWSER_LINT_ROOT_100_HASHES_91_NEW_ARCHIVES_INDEPENDENT_HIGH_181_LISTED_ARCHIVES_PASS",
+        "limits": "Synthetic literal renderer harness only; real exporter10/authenticated preview15/fullmatrix17-18 pending; Chromium only; native OS mail/clipboard NOT_RUN"
+      },
+      "CMS-M2-10": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task10-evidence-index.json",
+        "index_sha256": "61422cd0b3c1f2e771d8179c30c0023376f01b126a17e955cf527691807850da",
+        "status": "FINAL_18_UNIT_35_M1_UNIT_5_ACTUAL_ARTIFACT_BROWSER_LINT_ROOT_HIGH_162_HASHES_3_ARCHIVE_PASS",
+        "limits": "Named synthetic envelope is not human editorial approval; offline proof not authenticated DB import identity; per-file atomic only. Authenticated v2 editor/workflow17-18 and physical/browser/OS matrix pending."
+      },
+      "CMS-M2-11": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task11-evidence-index.json",
+        "index_sha256": "36e8134faa05af516ed7594aef80989acb7e73ede3b4f0d5993dbcf39a93ca1b",
+        "status": "FINAL_11_GENERATED_BEHAVIOR_37_M1_BROWSER_LINT_BUILD_ROOT_207_HASHES_INDEPENDENT_HIGH_76_ARCHIVE_82_OUTPUT_PINS_PASS",
+        "limits": "Controlled missing/import responses, no new actual import11; partial record UI and whole-site preview15 pending. Generated console NOT_CAPTURED. Historical M1 generated byte retention gap explicit; synthetic note recovery via prior immutable Snapshot is not exact captured pre-task equality."
+      },
+      "CMS-M2-12": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task12-evidence-index.json",
+        "index_sha256": "3f494f2818c644d0bebc96c6a31bcb99e50bdf3923af75e47555a057ab37d3aa",
+        "status": "FINAL_15_BROWSER_LINT_BUILD_ROOT_122_HASHES_INDEPENDENT_HIGH_66_ARCHIVE_PASS",
+        "limits": "Canonical existing edits protected HTTP; ADD/cap uses unique actual Auth/services/TX bridge, not HTTP endpoint proof. Upper320/1440 only; full forms/workflow/final matrix pending."
+      },
+      "CMS-M2-13": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task13-evidence-index.json",
+        "index_sha256": "acb5486d430d7e821c2f4e8fc12fd3f85e58f977e930c4ce88f795e38c9c7979",
+        "status": "FINAL_17_BROWSER_LINT_BUILD_ROOT_378_HASHES_INDEPENDENT_HIGH_264_ARCHIVE_PASS",
+        "limits": "Canonical existing edits protected HTTP; ADD/caps via actual Auth/services/Firestore bridge, not endpoint transport proof. Deep fields/navigation geometry at320/1024/1440 verified. Scoped CSS11 correction reviewed; no full M1 rerun13; whole-site workflow and full matrix pending."
+      },
+      "CMS-M2-14": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task14-evidence-index.json",
+        "index_sha256": "1a63a4ea65735961889e20ec89ce6b20e1e67093414efbc4250ebd5f062d1ce7",
+        "status": "FINAL_19_BROWSER_LINT_BUILD_ROOT_148_HASHES_INDEPENDENT_HIGH_54_ARCHIVE_PASS",
+        "limits": "Canonical protected HTTP edits restored exactly; namespaced array-cap test actual Auth/service/TX bridge, not endpoint proof. Sole PDF/VIDEO catalog; alternate identity NOT_RUN. Deep320/1024/1440 reviewed; full workflow/artifact/combined matrix pending."
+      },
+      "CMS-M2-15": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task15-evidence-index.json",
+        "index_sha256": "1a27fa8789f365ee0f3923b9cdfa3a9518c0465485c24f4cfbddaa33e936be8f",
+        "status": "FINAL_18_BROWSER_LINT_BUILD_ROOT_292_HASHES_INDEPENDENT_HIGH_123_ARCHIVE_PASS",
+        "limits": "Two defaultAuth/Firestore namespace fixtures are bridges, not endpoint transport proof. Two actual tokenfree QA downloads and offline exports verified; served new artifacts17 pending. Painted outer native scroll viewports are clipped, not complete child visual proof; approved-review PNGs are deep source fields, not top decision panel. Full combined matrix18 pending; no human source truth or milestone acceptance inferred."
+      },
+      "CMS-M2-16": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task16-evidence-index.json",
+        "index_sha256": "191a63a4684547ff30980b0ee218dca28e4c1a2c07cb21db834b20cf669b69ba",
+        "status": "FINAL_25_UNIT_23_INTEGRATION_LINT_ROOT_143_HASHES_INDEPENDENT_HIGH_88_ARCHIVE_PASS",
+        "guard_unit_passed": 25,
+        "integration_passed": 23,
+        "skipped": 0,
+        "direct_sdk_permission_denied_operations": 330,
+        "recorded_api_responses": 128,
+        "preservation": "23 final owned identities inactive/disabled; canonical nine collections and shared members/drafts exact unchanged; own transaction namespace/history retained",
+        "limits": "Pinned provider normalizes duplicate Authorization to first credential; direct raw duplicates401; Publisher-first cannot elevate. Auth emulator old refresh after fresh reauthentication may inherit new auth_time. No production parity or duplicate-wire401 claim. Original failures/diagnostics/recursive harness failure retained. Full matrix pending17/18."
+      },
+      "CMS-M2-17": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task17-evidence-index.json",
+        "index_sha256": "023203535c7ff405e8e82e09b886ef8080117eb38c0e916e1b59eff13fd116bf",
+        "status": "FINAL_15_UNIT_9_BROWSER_LINT_ROOT_AND_INDEPENDENT_HIGH_1180_PINS_470_ARCHIVE_PASS",
+        "skipped": 0,
+        "recorded_loopback_responses": 1719,
+        "screenshots": 64,
+        "source_checks_written": 29,
+        "approved_envelope_proofs": 6,
+        "limits": "Chromium only; five outer authenticated CMS widths vs native private child390/1440; qualified auxiliary captures. Namespaced max/hidden actual Auth/TX service factories, not HTTP bridge. Historical task11 byte/recovery gap and task16 provider limits remain. Full18 pending; no human source truth/rights or acceptance inferred."
+      },
+      "CMS-M2-18-first-run": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task18-first-run-evidence-index.json",
+        "index_sha256": "8d1a054bb6d810216b157197171aa55880cef8216f536f217f1a3c5519583872",
+        "status": "CORE_PASS_BROWSER130_PASS1_QA_RACE_FAILURE_RETAINED_FINAL_RUN_PENDING",
+        "audit_fresh": true,
+        "audit_counts": {
+          "critical": 0,
+          "high": 3,
+          "moderate": 2
+        },
+        "audit_at_utc": "2026-10-11T14:54:24.188Z",
+        "preservation": "3184 preexisting nonDraft docs/members/canonicalcontent exact; only supportedCAS Draft metadata revisions advance"
+      },
+      "CMS-M2-18": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task18-evidence-index.json",
+        "index_sha256": "4443ac3a93529a2ad832c0976747e25759366522a8404e80db2bff10f9f89de1",
+        "status": "FINAL_153_UNIT_121_INTEGRATION_131_BROWSER_LINT_BUILD_ROOT_AND_INDEPENDENT_HIGH_1171_PINS_577_ARCHIVES_PASS",
+        "skipped": 0,
+        "recorded_main_responses": 17622,
+        "additional_artifact_responses": 549,
+        "audit_fresh": true,
+        "audit_counts": {
+          "critical": 0,
+          "high": 3,
+          "moderate": 2
+        },
+        "audit_at_utc": "2026-10-11T14:54:24.188Z",
+        "execution_versions": "Unit/integration/build under original f66; application unchanged. Fresh lint/browser131 after sole b873 eventual-close oracle. No claim earlier core reran under b873.",
+        "preservation": "3184 and3908 preexisting nonDraft docs unchanged; members/Draft content exact; CAS metadata revisions advance159/778; history retained. Owned4173 closed.",
+        "limits": "Chromium/provider/qualified PRIVATE/historical11byte and four pre-first-browser privacyJSON gaps/nativeOS/factualtruth remain; per-file atomic only. Human M2 acceptance and LOCAL_COMPLETE unset."
+      },
+      "CMS-M2-19": {
+        "index": "pinky-lamb-cms/.local/cache/m2/task19-final-audit.json",
+        "index_sha256": "06d0a6051de47770f69542b67241da4f455fa199b7b57ca61c62650d810d9456",
+        "status": "FINAL_AC01_TO15_ROOT_AND_INDEPENDENT_HIGH_SOURCE_PRESERVATION_DOCUMENT_PASS",
+        "counts": {
+          "source_union": 109,
+          "actual_source_with_frozen_planning": 112,
+          "m1_base": 52,
+          "new_m2": 57,
+          "m1_unaffected_exact": 34,
+          "frozen_root": 18,
+          "frozen_m2_bundle": 3,
+          "baseline": 93,
+          "vendor": 212,
+          "readonly_public": 40,
+          "task18_current_evidence_pins": 1171,
+          "post18_app_public_freeze_exact": 135
+        },
+        "review_receipt_sha256": "aa0ab475339b33303670289f3917ad16e346f6d1794b85556fa32374a9f267f2",
+        "limits": "Technical REVIEW_READY only; human M2 acceptance unset. Audit0Critical3High2Moderate and historical/provider/PRIVATE/nativeOS/source-truth limits disclosed; M3/M4 require own plan/Approved. No LOCAL_COMPLETE/production."
+      }
+    },
+    "checkpoints": {
+      "A": {
+        "status": "PASS",
+        "scope": "00b/01a/01b contracts/privacy runner only; API/source proofs/full renderer/runtime NOT_RUN",
+        "index_sha256": "f9e24f148a682e6731a27eff68fe71e900b7119476b70502a0aa0f42e330cc76",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "All current-task findings closed"
+      },
+      "B": {
+        "status": "PASS",
+        "scope": "02 mapping+03 actual importer/currentACL/replay/immutable evidence/M1 compatibility; no later M2 flow claim",
+        "index_sha256": "fad67f61ced498bd14c2d1aa2856a34fcc18236c1a0ad5b0b23079ec68698331",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "All current-task findings closed; full document no-write oracles verified"
+      },
+      "C": "PASS_INDEPENDENT_HIGH_04_06_SCALAR_05A_IMMUTABLE_TRUST_TAXONOMY_ACL_PROOFS",
+      "D": {
+        "status": "PASS",
+        "scope": "07 compatible terminal proof/source workflow +08 renderer literal/public projection/private CSP/static semantics; later browser/export/editor not yet verified",
+        "reviewer": "Independent High m1_architect + root High",
+        "index_sha256": "4a99ac58d956967ad4b8fe51f36e05bc6c0383c640e0026fea814022aa7fc517",
+        "findings": "All current-task findings closed"
+      },
+      "E": {
+        "status": "PASS",
+        "scope": "09 progressive literal public/private harness +10 actual offline proof/owned exporter and served byte-exact artifact; v1 exporter preserved",
+        "index_sha256": "61422cd0b3c1f2e771d8179c30c0023376f01b126a17e955cf527691807850da",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "All current-task findings closed; actual served artifact gap resolved"
+      },
+      "F": {
+        "status": "PASS",
+        "scope": "11 foundation +12 Settings/Clients +13 Work/Services; truthful partial Save/replay, pending-input guards, typed fields, binding selection without source verification, featured order and deep-form navigation; later sections/workflow pending",
+        "index_sha256": "acb5486d430d7e821c2f4e8fc12fd3f85e58f977e930c4ce88f795e38c9c7979",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "All current-task findings closed; final nested-nav natural-flow regression verified; intermediate RED/QA corrections archived"
+      },
+      "G": {
+        "status": "PASS",
+        "scope": "14 complete remaining typed sections +15 immutable saved Draft/Snapshot selection, human source-view mechanism, source paging/terminal proof download and async lifecycle; source truth/rights remain human responsibility",
+        "index_sha256": "1a27fa8789f365ee0f3923b9cdfa3a9518c0465485c24f4cfbddaa33e936be8f",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "Current findings closed; literal hidden facts/source/proof details, creative pin relation and approved right-pane metadata/layout repaired; fixture/oracle failures and mixed initial UI probe qualified separately"
+      },
+      "H": {
+        "status": "PASS",
+        "scope": "16 security/guard matrix +17 independent full workflow/source/hash/manifest/artifact/privacy/native UI oracles; bounded08Contact/nav geometry regression",
+        "index_sha256": "023203535c7ff405e8e82e09b886ef8080117eb38c0e916e1b59eff13fd116bf",
+        "reviewer": "Independent High m1_architect + root High",
+        "findings": "No open current-scope finding. Independent root1180files/470archive copies/threecanonicalenvelopes/threeartifacttrees verified; five-width normal decision/proof and qualified private/public visuals reviewed. Final settled-End delta preserves strict bounds."
+      }
+    },
+    "bounded_reopen_auth11": {
+      "status": "DONE_SOURCE_FROZEN_TASK15_16_RUNTIME_ROOT_AND_INDEPENDENT_HIGH_PASS",
+      "file": "admin/auth.mjs",
+      "reason": "Approved task15 source workflow requires exact source POST and bound paginated GET routes; current task11 allowlist lacks both",
+      "constraints": "Add exact method/path/query allowlist only; no permission grant, legacy broadening, generation/no-store changes or simultaneous QA runner",
+      "scope": "Existing approved M2 task11 file union; separate one-file batch before task15 five-file slice",
+      "index": "pinky-lamb-cms/.local/cache/m2/task15-auth-prerequisite-evidence-index.json",
+      "index_sha256": "fd97fcd40208d63756d14fabd09841a3f9807501c2bcb2e219b7da530d4651fe",
+      "source_sha256": "13a13a39947283d23856b3d06935f2f5ba218b99a0d784d454703cce12f41251"
+    },
+    "bounded_reopen_renderer08": {
+      "status": "DONE_SOURCE_FROZEN_TASK17_RUNTIME_ROOT_AND_INDEPENDENT_HIGH_PASS",
+      "file": "preview/site-sections.mjs",
+      "scope": "Existing Approved M2 task08 renderer path; one-file source batch only after task17 QA runner idle",
+      "finding": "Contact catalog-native image height persists when width constrained by63px avatar parent; root inspected normal private screenshots390/768/1440 showing vertically stretched mascot over address and form",
+      "evidence_directory": "pinky-lamb-cms/.local/test-outputs/m2/17-e2e-1791726311556-e061d06d",
+      "constraints": "Preserve baseline/artwork/template/proof semantics; fit Contact image proportionally in PRIVATE and QA_EXPORT JS-off; independent QA geometry/captures before gateH",
+      "source_sha256": "04eb271832b12edd7fac6e25baf49b04de8295354842ee2be4a88a5d49626fba",
+      "repair": "Contact-only composed55px fit/max-height/object-fit:contain and desktop-nav-only30dvh native scroll, PRIVATE focus; generic otherimages/outerheader/mobile retained",
+      "header_attribution": "Actual719.6875px sticky header and694.6875px nav under valid maximum copy; nativeEnter/wheel+mouse was reachable, prior locator-center timeout is QA positioning, not proved action-denial",
+      "archives": [
+        {
+          "index": "pinky-lamb-cms/.local/cache/m2/task08-contact-fit-pre-repair/relocation-index.json",
+          "sha256": "6c178f90c387155bc387b6940015ab923f006a83ade92d2b7779cfd75d4a12ee"
+        },
+        {
+          "index": "pinky-lamb-cms/.local/cache/m2/task08-desktop-nav-fit-pre-repair/relocation-index.json",
+          "sha256": "3f0c713e6a1a1de5d091b1053c4b04ada2ed74519a345bbc38443c4a9bc770ea"
+        }
+      ]
+    },
+    "bounded_reopen_qa17": {
+      "status": "DONE_ONE_FILE_ORACLE_REPAIR_ROOT_INDEPENDENT_HIGH_PASS_FINAL18_BROWSER131_PASS",
+      "file": "tests/m2.e2e.test.mjs",
+      "reason": "Fresh fullbrowser130PASS1FAIL: immediate paused query preceded queued native close handler; five actualnativecycles confirm4.2–7.4ms to pause/restoration, no handler failure",
+      "source_unchanged": true,
+      "original_test_sha256": "f66a6c52700cbe2a1f3a444827424d41f577c6abbea9c15ab96828314b2fa2b1",
+      "new_test_sha256": "b87381c3a04f8d824605e02314b31f9d2659a54d069ec4f79019ef2b6447aed3",
+      "repair": "Only immediate paused expectation becomes bounded expect.poll for identical paused===true; no timeout increase or source/otherassertion change",
+      "index": "pinky-lamb-cms/.local/cache/m2/task18-reel-oracle-evidence-index.json",
+      "index_sha256": "56b7e3f83737e54e72a4c7f4126f7c17e4090625545616d6f74e53222de83195",
+      "original_copy_index": "pinky-lamb-cms/.local/cache/m2/task18-reel-oracle-pre-repair/relocation-index.json",
+      "original_copy_index_sha256": "d371b605e0b99bbdd444632004816fada6a825f299880299cb8821fbaaa2d1b0",
+      "diagnostic_index": "pinky-lamb-cms/.local/cache/m2/task18-reel-close-diagnostic-evidence-index.json",
+      "diagnostic_index_sha256": "23073992b704ee265185815527b4891996f14d08851bee31c9ef26323060ae76",
+      "limits": "Original17/H evidence remains bound to f66; final18browser now uses b873. No human/editorial approval or production claim."
+    },
+    "final_document_review": {
+      "status": "PASS",
+      "reviewer": "Independent actual High /root/m1_architect + root High",
+      "receipt": "pinky-lamb-cms/.local/cache/m2/task19-independent-review.json",
+      "receipt_sha256": "aa0ab475339b33303670289f3917ad16e346f6d1794b85556fa32374a9f267f2",
+      "scope": "Exact task19 five-doc/ledger handoff; frozen/source/evidence/document audit; no app/runtime changes",
+      "findings": []
+    },
+    "acceptance_criteria": [
+      {
+        "id": "M2-AC01",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC02",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC03",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC04",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC05",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC06",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC07",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC08",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC09",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC10",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC11",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC12",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC13",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC14",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      },
+      {
+        "id": "M2-AC15",
+        "status": "PASS_TECHNICAL_WITH_DISCLOSED_LIMITS",
+        "reference": "pinky-lamb-cms/docs/QA-M2.md"
+      }
+    ],
+    "technical_ready_at_utc": "2026-10-11T15:25:41.852290+00:00",
+    "next_action": "Await direct human M2 acceptance after local review. M3/M4 require separate plan and Approved."
+  },
+  "technical_planning_review": {
+    "status": "PASS_PLANNING_ONLY",
+    "path": "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md",
+    "sha256": "a27111520288d3d78d21a0378592ce92e1486977ca4946bc7058ec0d04c902a8",
+    "scope": "Document/source/digest/path review only; no engineering approval/runtime checks"
+  },
+  "production_scope": "EXCLUDED_NOT_PLANNED",
+  "freeze_observed_at_utc": "2026-10-11T07:53:25.500755+00:00",
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md",
+      "sha256": "5d4bdccfba26a902dfd21b604eeb5bc05d47588f17a7fe07488fe9e5e323ecd3"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/M2-plan.md",
+      "sha256": "e51a02944dbd73e5309eeabc195a8b95bbcd1caefe290ecf92094eb512290f2d"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md",
+      "sha256": "a27111520288d3d78d21a0378592ce92e1486977ca4946bc7058ec0d04c902a8"
+    }
+  ],
+  "milestone_acceptance": {
+    "quote": "Accepted CMS-001 v2 — M2 local/emulators. Lập và trình phạm vi, kế hoạch M3 theo CMS-001 v2 để tôi duyệt. Giữ local/emulators và chỉ triển khai sau Approved riêng.",
+    "source": "Direct human message in current Codex chat",
+    "recorded_at_utc": "2026-10-11T15:35:08.780585+00:00",
+    "timestamp_basis": "Acceptance observation time; not server message timestamp",
+    "proposal_id": "CMS-001",
+    "proposal_version": 2,
+    "milestone": "M2",
+    "bundle_revision": 1,
+    "scope_sha256": "55c53b57dbce2cbce57c355dc4580a499683c854f43378990908c7e344cf4dc4",
+    "acceptance_kind": "MILESTONE_ACCEPTED_ONLY"
+  },
+  "note": "M2 accepted/Closed by direct human only. Technical23tasks/AC/gates/evidence/approval history preserved. M3 requested for planning only; no implementation authority. Whole CMS acceptance remains unset."
+}

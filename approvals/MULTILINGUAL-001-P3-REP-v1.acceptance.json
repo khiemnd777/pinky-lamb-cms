@@ -1,0 +1,51 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "slice": "P3-REP",
+  "version": 1,
+  "status": "ACCEPTED_SCOPED",
+  "human_acceptance": {
+    "quote": "Duyệt nghiệm thu",
+    "source": "direct user message in current chat, replying to P3-REP scoped handoff",
+    "recorded_at": "2026-10-16T11:21:23.447158+00:00",
+    "recorded_at_local": "2026-10-16T18:21:23.447158+07:00"
+  },
+  "scope": "Delivered Wayfair Project representative, approved D3-PROJECT UI and local functionality for en/vi/ja; not entire P3 or website release",
+  "canonical_tasks": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+  "source_complete": true,
+  "runtime": "VERIFIED_LOCAL_SCOPED",
+  "evidence": [
+    {
+      "path": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-rep-v1/final-20261016-v1/summary.json",
+      "sha256": "1c9c055af9fae35035ca464ac168a76526f34ab8cf94fb341d6c925a87676e49"
+    },
+    {
+      "path": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-rep-v1/final-20261016-v1/final-readonly-20261016-v3.json",
+      "sha256": "90d93803d54786adf53e73f082085137d0ef4bef870ce3d07c580c6be1d5c9e0"
+    },
+    {
+      "path": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-rep-v1/live-readonly-20261016-v3/verification.private.json",
+      "sha256": "df217c57e654c91adf27a7e00bf5314f8a3320bfb1099dd2804de4e1e127edfe"
+    }
+  ],
+  "source_paths_verified_unchanged": 26,
+  "retained_successful_commits": 6,
+  "retained_document_writes": 12,
+  "retained_candidates": {
+    "home-v3--wayfair--en": 4,
+    "home-v3--wayfair--vi": 1,
+    "home-v3--wayfair--ja": 1
+  },
+  "carried_limits": [
+    "Actual EDITOR/REVIEWER/PUBLISHER sessions NOT_RUN; applicable proof belongs to P5",
+    "Physical touch/IME and session revocation scenarios NOT_RUN",
+    "Historical harness failures and aborted refresh remain preserved"
+  ],
+  "does_not_grant": [
+    "Editorial snapshot/release eligibility under P5",
+    "Service/sections or P4-P7 implementation",
+    "P6 retained import or P7 activation :5010",
+    "P1/P2, M3/M4 or LOCAL_COMPLETE closure",
+    "Git, deployment or production actions"
+  ],
+  "further_implementation_requires_new_approval": true
+}

@@ -1,0 +1,505 @@
+{
+  "id": "MULTILINGUAL-001-P7-TEMPLATE-v1",
+  "status": "SOURCE_IDENTITY_LOCKED",
+  "recorded_at": "2026-10-16T07:59:51.943361+00:00",
+  "authority": "Approved website template retained by direct user instruction; P7-T01..T10; approved Hero v2 and P2 switch scope only",
+  "baseline_version": "static website 2026-10-10; all 39 dist files byte-identical to local Hosting public-baseline",
+  "baseline": [
+    {
+      "path": "dist/app.js",
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32",
+      "size_bytes": 13918
+    },
+    {
+      "path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+      "size_bytes": 17349548
+    },
+    {
+      "path": "dist/assets/abril-fatface-400.woff",
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357",
+      "size_bytes": 26712
+    },
+    {
+      "path": "dist/assets/brand-diagonal.webp",
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+      "size_bytes": 12540
+    },
+    {
+      "path": "dist/assets/client-aqua.webp",
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+      "size_bytes": 17434
+    },
+    {
+      "path": "dist/assets/client-manulife.webp",
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+      "size_bytes": 6046
+    },
+    {
+      "path": "dist/assets/client-samsung.webp",
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+      "size_bytes": 26684
+    },
+    {
+      "path": "dist/assets/client-sony.webp",
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+      "size_bytes": 4806
+    },
+    {
+      "path": "dist/assets/client-wayfair.webp",
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+      "size_bytes": 12618
+    },
+    {
+      "path": "dist/assets/diag-awareness-2022.webp",
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+      "size_bytes": 32040
+    },
+    {
+      "path": "dist/assets/favicon.png",
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+      "size_bytes": 6186
+    },
+    {
+      "path": "dist/assets/montserrat-400.woff",
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1",
+      "size_bytes": 84072
+    },
+    {
+      "path": "dist/assets/montserrat-600.woff",
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f",
+      "size_bytes": 84976
+    },
+    {
+      "path": "dist/assets/montserrat-700.woff",
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03",
+      "size_bytes": 85620
+    },
+    {
+      "path": "dist/assets/montserrat-800.woff",
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1",
+      "size_bytes": 86676
+    },
+    {
+      "path": "dist/assets/petrosetco-fireworks-2026.webp",
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+      "size_bytes": 92836
+    },
+    {
+      "path": "dist/assets/petrosetco-guests-2026.webp",
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+      "size_bytes": 122614
+    },
+    {
+      "path": "dist/assets/petrosetco-party-2026.webp",
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+      "size_bytes": 115474
+    },
+    {
+      "path": "dist/assets/pinky-hero.webp",
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "size_bytes": 51282
+    },
+    {
+      "path": "dist/assets/pinky-logo.webp",
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+      "size_bytes": 28046
+    },
+    {
+      "path": "dist/assets/pinky-mascot.webp",
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+      "size_bytes": 61562
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-2025.webp",
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+      "size_bytes": 108712
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+      "size_bytes": 64474
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+      "size_bytes": 78392
+    },
+    {
+      "path": "dist/assets/samsung-flip2-2019.webp",
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+      "size_bytes": 34148
+    },
+    {
+      "path": "dist/assets/showreel-2025.mp4",
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "size_bytes": 11403830
+    },
+    {
+      "path": "dist/assets/showreel-poster.webp",
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "size_bytes": 54698
+    },
+    {
+      "path": "dist/assets/sony-ult-2025.webp",
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+      "size_bytes": 56578
+    },
+    {
+      "path": "dist/assets/varna-elite-2023.webp",
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+      "size_bytes": 39670
+    },
+    {
+      "path": "dist/assets/varna-elite-collage-2023.webp",
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+      "size_bytes": 54590
+    },
+    {
+      "path": "dist/assets/varna-elite-lifestyle-2023.webp",
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+      "size_bytes": 35632
+    },
+    {
+      "path": "dist/assets/vifa-fair-2026.webp",
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+      "size_bytes": 117020
+    },
+    {
+      "path": "dist/assets/vifa-opening-2026.webp",
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+      "size_bytes": 182808
+    },
+    {
+      "path": "dist/assets/wayfair-registration-2026.webp",
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+      "size_bytes": 112116
+    },
+    {
+      "path": "dist/assets/wayfair-summit-2026.webp",
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+      "size_bytes": 47196
+    },
+    {
+      "path": "dist/assets/wayfair-team-2026.webp",
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+      "size_bytes": 61756
+    },
+    {
+      "path": "dist/content.js",
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63",
+      "size_bytes": 7705
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de",
+      "size_bytes": 18385
+    },
+    {
+      "path": "dist/styles.css",
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e",
+      "size_bytes": 44637
+    }
+  ],
+  "hosting_reference": [
+    {
+      "path": "pinky-lamb-cms/public-baseline/FONT-NOTICES.txt",
+      "sha256": "a6851476c9681331829c76cfce22722c1d0f582e97a0e12e8aebbb719dfe2eff",
+      "size_bytes": 333
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/app.js",
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32",
+      "size_bytes": 13918
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/Pinky-Lamb-Credential-2026.pdf",
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+      "size_bytes": 17349548
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/abril-fatface-400.woff",
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357",
+      "size_bytes": 26712
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/brand-diagonal.webp",
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+      "size_bytes": 12540
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-aqua.webp",
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+      "size_bytes": 17434
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-manulife.webp",
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+      "size_bytes": 6046
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-samsung.webp",
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+      "size_bytes": 26684
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-sony.webp",
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+      "size_bytes": 4806
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-wayfair.webp",
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+      "size_bytes": 12618
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/diag-awareness-2022.webp",
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+      "size_bytes": 32040
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/favicon.png",
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+      "size_bytes": 6186
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-400.woff",
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1",
+      "size_bytes": 84072
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-600.woff",
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f",
+      "size_bytes": 84976
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-700.woff",
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03",
+      "size_bytes": 85620
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-800.woff",
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1",
+      "size_bytes": 86676
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-fireworks-2026.webp",
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+      "size_bytes": 92836
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-guests-2026.webp",
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+      "size_bytes": 122614
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-party-2026.webp",
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+      "size_bytes": 115474
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-hero.webp",
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "size_bytes": 51282
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-logo.webp",
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+      "size_bytes": 28046
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-mascot.webp",
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+      "size_bytes": 61562
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-2025.webp",
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+      "size_bytes": 108712
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-guests-2025.webp",
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+      "size_bytes": 64474
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-stage-2025.webp",
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+      "size_bytes": 78392
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/samsung-flip2-2019.webp",
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+      "size_bytes": 34148
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/showreel-2025.mp4",
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "size_bytes": 11403830
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/showreel-poster.webp",
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "size_bytes": 54698
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/sony-ult-2025.webp",
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+      "size_bytes": 56578
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-2023.webp",
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+      "size_bytes": 39670
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-collage-2023.webp",
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+      "size_bytes": 54590
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-lifestyle-2023.webp",
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+      "size_bytes": 35632
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/vifa-fair-2026.webp",
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+      "size_bytes": 117020
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/vifa-opening-2026.webp",
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+      "size_bytes": 182808
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-registration-2026.webp",
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+      "size_bytes": 112116
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-summit-2026.webp",
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+      "size_bytes": 47196
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-team-2026.webp",
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+      "size_bytes": 61756
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/content.js",
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63",
+      "size_bytes": 7705
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/index.html",
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de",
+      "size_bytes": 18385
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/styles.css",
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e",
+      "size_bytes": 44637
+    }
+  ],
+  "hosting_only_files": [
+    "FONT-NOTICES.txt"
+  ],
+  "approved_deltas": [
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.html",
+      "sha256": "4ddbd2b856676920eeaebce5a90815f7a995909ad00e6fb0838898a56c182ded",
+      "size_bytes": 13971
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.css",
+      "sha256": "39dba8aa16cf2e4f5010b292d84e0f0aa63d5f21419b9b5b0ba86e13bf32d77b",
+      "size_bytes": 18964
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.js",
+      "sha256": "b1a3b1f68fac1e4ec84ff33e80815c3f38e77539f783789b4bfd31fa4b320689",
+      "size_bytes": 14646
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.html",
+      "sha256": "d985c68f91e3fbc1c3aa088519887c904444a2eab39fa53d4c8d29aaf7e840b8",
+      "size_bytes": 9615
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.css",
+      "sha256": "79da8be13d6ad5e0c8cd17689b6b0063dd9c845d6140beac2210dceb8c9463c9",
+      "size_bytes": 12955
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.js",
+      "sha256": "0ecb675bc7858da13974c16463a70be70ee1069dd9a458a58b5e84414397d417",
+      "size_bytes": 15146
+    }
+  ],
+  "delta_authorities": [
+    {
+      "path": "approvals/MULTILINGUAL-001-v2.design.json",
+      "sha256": "8733d9bf5c88ae6b520d13f0263a127b634c69ab43ef84253ee6b20334c9dc5c",
+      "size_bytes": 7654
+    },
+    {
+      "path": "approvals/MULTILINGUAL-001-P2-v1.scope.json",
+      "sha256": "871aed1b921d43442803013821df92e182c5a4b1502d8f7d2edd94715588d569",
+      "size_bytes": 4192
+    }
+  ],
+  "design_reference": {
+    "path": "DESIGN.md",
+    "sha256": "408bd9897c3409230690597f14e21a42c686f32a344c9ad7934c86337ce51743",
+    "size_bytes": 19530
+  },
+  "observed_consumers_not_template_authority": [
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-renderer.mjs",
+      "sha256": "22c2dc81129486377dc66f088eb0ec4366b93fe3ffcb0feafe837cc69690b5e8",
+      "size_bytes": 8710
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-presentation.mjs",
+      "sha256": "53b3568443f63dd93b804464f8ceb35853605d04c32fb27660c9e022f780fbd8",
+      "size_bytes": 2983
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-sections.mjs",
+      "sha256": "ead10cbf484c6553fe4c688c4b87d7322bfdb78544f0d73f195e91bafe4fd9dc",
+      "size_bytes": 22991
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.mjs",
+      "sha256": "4de158f3307d28ad347389412eeac3ea691807c3e2b912665837cc7ad065f54b",
+      "size_bytes": 20562
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-media-renderer.mjs",
+      "sha256": "bc867e69e9eafde848c7904ef5314494111aad115beef584c7fb7b4c6e93e704",
+      "size_bytes": 13018
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale.mjs",
+      "sha256": "472b23051a00ad847b8c5df22cea132ccb438de596e1ab5dcd6953a7fa03f52e",
+      "size_bytes": 2384
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale-copy.mjs",
+      "sha256": "4ff8f79cc6636e3b43ea39a3ac845d5cb33537a9f17c8f1c069d7935010c339f",
+      "size_bytes": 7006
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-public-data.mjs",
+      "sha256": "77eb0a7b9e64595061b24f8b9bdcc04885f6a09e8346cddf51b7ab6d8dcbd70a",
+      "size_bytes": 3406
+    }
+  ],
+  "mapping_document": "pinky-lamb-cms/docs/MULTILINGUAL-001-P7-TEMPLATE-v1.md",
+  "application_changes_authorized": false,
+  "p2_shell_is_full_template": false,
+  "baseline_file_count": 39,
+  "baseline_inventory_sha256": "f00d523b1c4a3cfc8d84eacee73df955018c19a6e2e89d14ac35fdf2fee7512c"
+}

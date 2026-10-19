@@ -1,0 +1,33 @@
+{
+  "observedAtUtc": "2026-10-12T15:35:52.694572+00:00",
+  "selector": "kit-explorer",
+  "scope": "Root-controlled fresh ephemeral startup lookup only",
+  "rawPromptGlobalConfigPersisted": false,
+  "globalConfigurationWrites": "NONE",
+  "ephemeralRequested": true,
+  "requestedParentModel": "gpt-6.1-sol",
+  "requestedParentEffort": "high",
+  "promptSha256": "13fe0edf961d133c87939a1aeb871e0d7df9732d71d11817d8f9913fc54ba473",
+  "nativeAgentEvidence": [],
+  "rawNativeCalls": [],
+  "toolTypesObserved": [
+    "userMessage"
+  ],
+  "modelTextIsDiscoveryProof": false,
+  "threadEphemeralObserved": true,
+  "parentConfiguredModel": "gpt-6.1-sol",
+  "parentConfiguredReasoningEffort": "high",
+  "parentConfiguredModelIsExecutionProof": false,
+  "nativeProjectAgentInstructionSourcePaths": [],
+  "interruptionReason": "UNEXPECTED_TOOL_OR_REQUEST",
+  "childrenMetadata": [],
+  "violations": [
+    "UNEXPECTED_ITEM_TYPE:userMessage",
+    "UNEXPECTED_ITEM_TYPE:userMessage"
+  ],
+  "status": "NO_REGISTRY_TOOL_EVENT_PROOF",
+  "parentTurnStatus": "interrupted",
+  "parentTurnErrorCode": null,
+  "ownedProcessExitCode": 0,
+  "stderrBytesNoContentsPersisted": 3112
+}

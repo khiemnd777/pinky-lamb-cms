@@ -1,0 +1,26 @@
+{
+  "observationAtUtc": "2026-10-12T15:49:56.223855+00:00",
+  "source": "Root relayed actual independent final read-only command/config observations",
+  "command": "python3 docs/agent-kit/evidence/verify-setup.py",
+  "exitCode": 0,
+  "commandObservedAtUtc": "2026-10-12T15:48:10.249021+00:00",
+  "status": "PASS",
+  "skills": [
+    17,
+    17
+  ],
+  "pairs": 27,
+  "adapters": 6,
+  "unchangedEngineeringMirrorFiles": 52,
+  "markdownLinks": 235,
+  "oldProtectedRecords": 3942,
+  "emulatorRecords": 746,
+  "errors": [],
+  "globalConfigObservation": {
+    "targetProject": "PROJECT_ROOT",
+    "trust": "trusted",
+    "sha256": "ed81b2ba9a3d91971470fc5506b1bc2355f9784ad349e2c843926436e7f42c3f",
+    "mode": "0o600"
+  },
+  "staticNativeInvocationFieldMeaning": "Static verifier scope only; does not supersede actual startup lookup receipts"
+}

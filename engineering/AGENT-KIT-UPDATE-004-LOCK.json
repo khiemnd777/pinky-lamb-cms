@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-004 v1",
+  "approvalSource": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-004.md",
+  "baseFiles": {
+    "engineering/AGENT-KIT-LOCK.json": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466",
+    "engineering/SKILLS-LOCK.json": "527c5c89fd1295df633e68a14b75fe431fac582bcc8120830fb346acf19f0dfc",
+    "docs/agent-kit/skills-manifest.json": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19",
+    "docs/agent-kit/evidence/verify-setup.py": "ca9638f1f8757c1027e65c1ad32edeae6fa9c96c2780c31420851638303bd84b"
+  },
+  "baseline": {
+    "path": "docs/agent-kit/evidence/update-004-preflight.json",
+    "sha256": "c32abb32bf09309e6cd81dc626ccfb0cacc75bdf425522d852bf72362cc26748"
+  },
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "22c2a20359072dcb510f3329b97161b16f947fb2",
+    "headCommit": "51b1c810a9920be7fe3957ce454fc25fedf7b155",
+    "compareUrl": "https://github.com/khiemnd777/agent-kit/compare/22c2a20359072dcb510f3329b97161b16f947fb2...51b1c810a9920be7fe3957ce454fc25fedf7b155",
+    "commits": [
+      "8b70cd4ba02b63a8ef8c723564ee32df2c4147f5",
+      "51b1c810a9920be7fe3957ce454fc25fedf7b155"
+    ],
+    "fetchedPayloadSha256": "f7a2981c7b2fde1eb022c7871693c63922c381793b64af49c94703235123e586",
+    "gitBlobVerification": "PASS_14_UTF8_GIT_BLOBS",
+    "fetchedFiles": [
+      {
+        "path": "AGENTS.md",
+        "gitBlobSha": "223158357fe1a2641a9b80a67c76d734e9ae9f3c",
+        "contentSha256": "ba6e2f882d9411d898a3c8016dc1659e6fa65b813dc9298d5601cdd40e87842a",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/AGENTS.md"
+      },
+      {
+        "path": "README.md",
+        "gitBlobSha": "727a6108cff5ae2cda8c75d0cd31791b1d4d31b3",
+        "contentSha256": "2fae421c3c188d065a760356beb7b9d2c57f171ff0c03880f305662e55b20fa7",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/README.md"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "9e4b294dc0400a1b7359e81feee7c03a570bb279",
+        "contentSha256": "efa6f5e9a3832deecb4491d84f52784b33f56917e57c27946780775e8c32983f",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/agent-coordination-templates.md"
+      },
+      {
+        "path": "docs/roles/coordinator.md",
+        "gitBlobSha": "f8323ae78982060ff4ef358d3bfa1c49f8a4063b",
+        "contentSha256": "e8f92c6f38db25f59fc50a1ed8130ff1b08095addd984967a2bd419dca63e387",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/coordinator.md"
+      },
+      {
+        "path": "docs/roles/explorer.md",
+        "gitBlobSha": "ef15d22bfbfef4347a187dc3c649c20854b0c781",
+        "contentSha256": "71f70743d0feb825e07c94c85d6dd2adb64e8c1edf35dcd41272e4cd2481b65c",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/explorer.md"
+      },
+      {
+        "path": "docs/roles/implementer.md",
+        "gitBlobSha": "dc4ed19c77cf729862f5a25f28ee4923f01745bd",
+        "contentSha256": "c2eae7a7c54a43518faaed01800c3ec8b1ed1eba3073ffa671965ce9388126d9",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/implementer.md"
+      },
+      {
+        "path": "docs/roles/reviewer.md",
+        "gitBlobSha": "bee61ab4a348b6a5522d7c8f0effd93dd1785cd9",
+        "contentSha256": "ab615d5b120db46fa0088730e3dd4140fa148c6e4bf74db1d96ecc204bbec39a",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/roles/reviewer.md"
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "gitBlobSha": "d4e00e4a8f3be6817e8a68da123cb764033a1630",
+        "contentSha256": "a5465626a11f3ebb755adc0bd2bfee09ac71f79fa16e3ca263f7036529395ccb",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/skills-catalog.md"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "c8f0435c8a6db2d4da96f8fa7d88f8137087d838",
+        "contentSha256": "efba60b37d20a66067fbbfffeca0c322529cd6f7d9e13e85fac7104dd6426c88",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/skills-manifest.json"
+      },
+      {
+        "path": "docs/team-policy.md",
+        "gitBlobSha": "d00839998f896f603bf6dea59de9b7cbbe5d03c3",
+        "contentSha256": "a0d9659ed342d21461ffdc8ac641482dbe0a9f9c3b09eb007bea7db2f7cf12ca",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/team-policy.md"
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "gitBlobSha": "3c35b38358e193668e2d0f390667e1bbfd544ccc",
+        "contentSha256": "a176507aa54fa1066bbb4eb825862023dddc4edf70b6db06a1ef290fe073a26a",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/team-workflow.md"
+      },
+      {
+        "path": "docs/technote.md",
+        "gitBlobSha": "3d7f8f85f0ed765ba570f83111fb5db5cb10730e",
+        "contentSha256": "9355f5fc4fa48517d19505d816573c3b3dfd76a94bf72382593c2d0c72f8f823",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/technote.md"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "955b831e007cba06f326b55a884961ea3d2fe447",
+        "contentSha256": "42c6e70e7eceb3c91887a323471f47a0e04cae7b0f9c36c9dbd3ae00cee4145b",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/verification-guide.md"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "cad03f23a5074a3e0662d22c3601aed3a2beceed",
+        "contentSha256": "12a76ab043bcd7b97cf68842eb073799cb327409690af13d44229259d45d3f81",
+        "displayUrl": "https://github.com/khiemnd777/agent-kit/blob/51b1c810a9920be7fe3957ce454fc25fedf7b155/docs/verification-results.md"
+      }
+    ]
+  },
+  "amendments": [
+    {
+      "path": "docs/agent-kit/technote.md",
+      "fromSha256": "5c16dec163354016773850c743891b9b4ac806c9e70a1b6a34ac5417158f6002",
+      "toSha256": "d3542a879731337333bb5482e239ca5c98bf82e4777e0566902aa1f95c1ff80e"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "fromSha256": "171ec923ffb18868eb9ffa212869974a6b69a308083a0f4d39423f26dcff66b1",
+      "toSha256": "eb099b185d4b0273f0a07a62a38a5510c62257149dd467e6b3156ecb9e86e7cb"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "fromSha256": "2559b315ce8103c76993f4a5180ccaae85cb1e8054f816fe0885094427c8190e",
+      "toSha256": "3e71af13a3e3c5150dcb089ded5c2115c82127faa7326d299efad9828b8d14e4"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "fromSha256": "5907237a727e9d42328916efb884212efdf79ac8c96d0ec136381b80da881c97",
+      "toSha256": "ce547974c6911c0d7f51ae9005fe41a00df0447880676646f1eea2f6ef38b652"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "fromSha256": "8efb6489be48eb6cbcfdc60deba237da675a71164af8d14651e7bfffa46245f7",
+      "toSha256": "5aae58c5e8453a463071b5c078e20d47a11377b964cecc6a2015fb85959f91b3"
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "fromSha256": "c88ea26b2d3a664770d02db70584b35442d8bf8599d950f169a79e3d43ed0d56",
+      "toSha256": "8fe07bdee0e75b8f227266b5b49cdda727dff9e66bd5b2689f4bba31dddcd222"
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "fromSha256": "1f2b1592b8107e784b5f5598f3b515879b0b6387a51b7cb3a899d395f28655cf",
+      "toSha256": "ea503477bd5b2ef3982de5ecced8ccd0d64f2cde7eb1ab135ada92d8e22aad90"
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "fromSha256": "42d6547c23227e3ae9f0c51e1d976b15830d413c3b56ed643eacdccaf3f420df",
+      "toSha256": "5d8c6a30bff0472830231f606aa69d08b9b2b819e158d7e8e295cab86cb42d40"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "fromSha256": "370a7acb1d3a2d93a947595663b32a240007c97319ffb36830e417fcbabea3d5",
+      "toSha256": "2751a2920f6c80b5985060e885358ba9358fbd21b567bd67c15822a7b7a10755"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "fromSha256": "dbc7f88baaeff722a5d7e59108852fe14bf409100ba1139d992e0688965a6eec",
+      "toSha256": "4cabd27549c0f1aade8cd7afc1a12c00253b76e82c2a33796a86b1c25677ca59"
+    }
+  ],
+  "checker": {
+    "path": "engineering/agent-kit/verify-guidance-update.py",
+    "sha256": "69a6bf8cf4954b994f7e485bfbdc30d549b18f958456e93cff20657b6169d190"
+  },
+  "evidenceBoundary": "Guidance/package/CURRENT preservation only. Historical FAIL8 retained. Native behavior, fixtures, child direct write probes and two-machine NOT_RUN; observed runtime Unknown. Upstream approvals/PASS are not project evidence."
+}

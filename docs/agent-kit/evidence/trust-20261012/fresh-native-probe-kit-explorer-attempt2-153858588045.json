@@ -1,0 +1,39 @@
+{
+  "observedAtUtc": "2026-10-12T15:38:45.311920+00:00",
+  "selector": "kit-explorer",
+  "scope": "Root-controlled fresh ephemeral startup lookup only",
+  "rawPromptGlobalConfigPersisted": false,
+  "globalConfigurationWrites": "NONE",
+  "ephemeralRequested": true,
+  "attempt": "attempt2",
+  "controllerSourceSha256": "4f5b2bcd152cf91183fcd51e1af9ae10780d88dd66ac354f329df102f2df5438",
+  "controllerVersion": "userMessage-nontool-fix-plus-RPCerror-categories",
+  "requestedParentModel": "gpt-6.1-sol",
+  "requestedParentEffort": "high",
+  "promptSha256": "13fe0edf961d133c87939a1aeb871e0d7df9732d71d11817d8f9913fc54ba473",
+  "nativeAgentEvidence": [],
+  "rawNativeCalls": [
+    {
+      "name": "spawn_agent",
+      "agentType": "kit-explorer"
+    }
+  ],
+  "toolTypesObserved": [
+    "agentMessage",
+    "reasoning",
+    "userMessage"
+  ],
+  "modelTextIsDiscoveryProof": false,
+  "threadEphemeralObserved": true,
+  "parentConfiguredModel": "gpt-6.1-sol",
+  "parentConfiguredReasoningEffort": "high",
+  "parentConfiguredModelIsExecutionProof": false,
+  "nativeProjectAgentInstructionSourcePaths": [],
+  "parentTurnStatus": "completed",
+  "parentTurnErrorCode": null,
+  "childrenMetadata": [],
+  "violations": [],
+  "status": "OBSERVED_NATIVE_EVENTS",
+  "ownedProcessExitCode": 0,
+  "stderrBytesNoContentsPersisted": 3440
+}

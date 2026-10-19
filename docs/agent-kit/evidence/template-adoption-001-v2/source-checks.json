@@ -1,0 +1,527 @@
+{
+  "workerSourceChecks": {
+    "result": "PASS",
+    "checks": [
+      {
+        "path": ".agents/references/template-application.md",
+        "sourceSha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c",
+        "matchesPin": true
+      },
+      {
+        "path": ".agents/skills/code-review-and-quality/SKILL.md",
+        "sourceSha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a",
+        "matchesPin": true
+      },
+      {
+        "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+        "sourceSha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0",
+        "matchesPin": true
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "sourceSha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65",
+        "matchesPin": true
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "sourceSha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8",
+        "matchesPin": true
+      },
+      {
+        "path": ".claude/references/template-application.md",
+        "sourceSha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c",
+        "matchesPin": true
+      },
+      {
+        "path": ".claude/skills/code-review-and-quality/SKILL.md",
+        "sourceSha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a",
+        "matchesPin": true
+      },
+      {
+        "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+        "sourceSha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0",
+        "matchesPin": true
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "sourceSha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65",
+        "matchesPin": true
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "sourceSha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "sourceSha256": "3c53a7b26b6d5d4bd2c1a0322dd61bd53d44d0859282527e724fb612298c4c6a",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "sourceSha256": "c4aeedb0c5d5b6ca3b7cf302bb8e4f29da12157a92e185d511bf27db743c2545",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "sourceSha256": "bc1074b5121407325292dade47644950c08d4f20235ed040537ea8903f14e0f4",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/tasks/TASK-005.md",
+        "sourceSha256": "8323d7edd53a8a513afae8a63119e8acb4f8db90a70820e3b817b7e5398088df",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "sourceSha256": "55b5e851751db91ed46314f9c41a1260bc59f4fbeb7ccf352ff9f8f15708cff7",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/template-application-acceptance.md",
+        "sourceSha256": "e11d640c7b9150120c10098d7c97f18a2d055b0d8ff9f9cf1b211435885069c4",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "sourceSha256": "02f9a80234caf7bfa6d6e77e2dcf194ca39829451b8fc35bb1a699427c68c1e5",
+        "matchesPin": true
+      },
+      {
+        "path": "docs/verification-results.md",
+        "sourceSha256": "1f461a9dde889ed645510bfaa7869686988fee2ea5d9011e69a3b13e34fdd19d",
+        "matchesPin": true
+      },
+      {
+        "path": ".agents/references/template-application.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".agents/skills/code-review-and-quality/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".claude/references/template-application.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".claude/skills/code-review-and-quality/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": "docs/agent-kit/template-application-acceptance.md",
+        "exactSourcePlusSingleLinkRelocation": true
+      },
+      {
+        "path": "engineering/agent-kit/verify-template-adoption.py",
+        "pythonAst": "PASS"
+      }
+    ]
+  },
+  "workerInitialFailure": {
+    "result": "FAIL",
+    "cases": [
+      {
+        "name": "clean positive",
+        "expected": "PASS",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "FAIL"
+      },
+      {
+        "name": "tampered candidate",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: .agents/skills/frontend-ui-engineering/SKILL.md",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Effective file hash mismatch: .agents/skills/frontend-ui-engineering/SKILL.md",
+            "Mirror bytes/pair digest mismatch: .claude/skills/frontend-ui-engineering/SKILL.md",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "tampered mirror bytes",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: .claude/skills/code-review-and-quality/SKILL.md",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Effective file hash mismatch: .claude/skills/code-review-and-quality/SKILL.md",
+            "Mirror bytes/pair digest mismatch: .claude/skills/code-review-and-quality/SKILL.md",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "historical manifest modified",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Historical/package preservation mismatch: docs/agent-kit/skills-manifest.json",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Extra data: line 809 column 1 (char 35715)"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "protected CMS source modified",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Protected CMS/static source mismatch: DESIGN.md",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "unexpected package file",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved package files: .agents/unexpected.txt, engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "symlink package file",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Package symlink: .agents/outside-link",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Broken local link: .agents/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .agents/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .agents/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/code-review-and-quality/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/frontend-ui-engineering/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md#verification-scope-and-completion",
+            "Broken local link: .claude/skills/incremental-implementation/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/team-policy.md",
+            "Broken local link: .claude/skills/planning-and-task-breakdown/SKILL.md -> ../../../docs/agent-kit/agent-kit/template-application-acceptance.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "missing frozen baseline",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "[Errno 2] No such file or directory: '/private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/fixture/docs/agent-kit/evidence/template-adoption-001-v2/preflight.json'"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "lock traversal rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved lock/candidate mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "source pin rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved lock/candidate mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "mirror metadata envelope rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: docs/agent-kit/skills-manifest-current.json",
+            "Unapproved package files: engineering/agent-kit/__pycache__/verify-template-adoption.cpython-313.pyc",
+            "Effective manifest hash mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "baseline symlink rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Symlink path: .agents/references/security-checklist.md"
+          ]
+        },
+        "testResult": "PASS"
+      }
+    ]
+  },
+  "workerSyntheticFinal": {
+    "result": "PASS",
+    "cases": [
+      {
+        "name": "clean positive",
+        "expected": "PASS",
+        "actual": {
+          "result": "PASS",
+          "baselineRecords": 183,
+          "protectedCmsSourceRecords": 656,
+          "candidatePaths": 19,
+          "maintainedFiles": 78,
+          "mirrorPairs": 28,
+          "skillsPerRoot": 17,
+          "originalUpstreamFiles": 20,
+          "adaptedUpstreamFiles": 6,
+          "localLinks": 75,
+          "boundary": "Package/static/source only; native/CMS/data/emulator/global/production NOT_RUN"
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "tampered candidate",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: .agents/skills/frontend-ui-engineering/SKILL.md",
+            "Effective file hash mismatch: .agents/skills/frontend-ui-engineering/SKILL.md",
+            "Mirror bytes/pair digest mismatch: .claude/skills/frontend-ui-engineering/SKILL.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "tampered mirror bytes",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: .claude/skills/code-review-and-quality/SKILL.md",
+            "Effective file hash mismatch: .claude/skills/code-review-and-quality/SKILL.md",
+            "Mirror bytes/pair digest mismatch: .claude/skills/code-review-and-quality/SKILL.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "historical manifest modified",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Historical/package preservation mismatch: docs/agent-kit/skills-manifest.json",
+            "Extra data: line 809 column 1 (char 35715)"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "protected CMS source modified",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Protected CMS/static source mismatch: DESIGN.md"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "unexpected package file",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved package files: .agents/unexpected.txt"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "symlink package file",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Package symlink: .agents/outside-link"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "missing frozen baseline",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "[Errno 2] No such file or directory: '/private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/fixture/docs/agent-kit/evidence/template-adoption-001-v2/preflight.json'"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "lock traversal rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved lock/candidate mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "source pin rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Unapproved lock/candidate mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "mirror metadata envelope rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Candidate hash mismatch: docs/agent-kit/skills-manifest-current.json",
+            "Effective manifest hash mismatch"
+          ]
+        },
+        "testResult": "PASS"
+      },
+      {
+        "name": "mirror pair metadata semantic guard",
+        "expected": "3errors",
+        "actual": [
+          "Mirror bytes/pair digest mismatch: .claude/ADDY-AGENT-SKILLS-LICENSE",
+          "Mirror pair/file digest mismatch: .agents/ADDY-AGENT-SKILLS-LICENSE",
+          "Mirror pair/file digest mismatch: .claude/ADDY-AGENT-SKILLS-LICENSE"
+        ],
+        "testResult": "PASS"
+      },
+      {
+        "name": "baseline symlink rejected",
+        "expected": "FAIL",
+        "actual": {
+          "result": "FAIL",
+          "errors": [
+            "Symlink path: .agents/references/security-checklist.md"
+          ]
+        },
+        "testResult": "PASS"
+      }
+    ]
+  },
+  "boundary": "Package/static/source only; no CMS/runtime/data/emulator/global execution"
+}

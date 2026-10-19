@@ -1,0 +1,29 @@
+{
+  "observationAtUtc": "2026-10-12T15:52:12.891331+00:00",
+  "source": "Direct root final read-only review/technical acceptance message",
+  "rootReviewTimestamp": "UNKNOWN_NOT_ASSERTED",
+  "reviewStatus": "PASS_NO_ACTIONABLE_FINDING",
+  "acceptedStatus": "TRUST_VERIFIED_NATIVE_DISCOVERY_PARTIAL",
+  "scopeReviewed": [
+    "Owned trust task",
+    "Three mutable indices/report",
+    "Relevant native/config receipts",
+    "Final preservation receipt"
+  ],
+  "trust": "PASS exact project; one parsed field, unrelated bytes/fields and0600 mode preserved",
+  "currentChatRegistry": "FAIL all three exact native selectors with unknown agent_type; existing-chat scope only",
+  "freshExplorer": "UNVERIFIED: matched native request/output, output unclassified, no owned child/role/source observed",
+  "freshReviewerImplementer": "NOT_RUN no positive route established",
+  "probeHistory": "Attempt1 harness userMessage bug; attempt2 request-only; attempt3 matched-output telemetry, not discovery PASS",
+  "roleInvocationAndSourceIdentity": "UNVERIFIED; other model/enforcement/product behavior NOT_RUN",
+  "sourceData": "Final observed package/source/data checks PASS; core lock unchanged; exact746 emulator records retained",
+  "excludedClaims": [
+    "Native discovery PASS",
+    "Missing definition proof",
+    "Reload fixes it",
+    "CMS acceptance",
+    "LOCAL_COMPLETE",
+    "Production"
+  ],
+  "furtherProbe": "STOPPED_NO_MORE_TESTS_OR_PROBES"
+}

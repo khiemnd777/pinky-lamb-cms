@@ -1,0 +1,712 @@
+{
+  "proposal_id": "CMS-001",
+  "proposal_version": 2,
+  "milestone": "M1",
+  "status": "AWAITING_APPROVAL",
+  "environment": [
+    "local",
+    "emulators"
+  ],
+  "isolated_root": "pinky-lamb-cms/",
+  "demo_project_id": "demo-pinky-lamb-cms",
+  "task_ids": [
+    "CMS-M1-00",
+    "CMS-M1-01a",
+    "CMS-M1-01b",
+    "CMS-M1-02",
+    "CMS-M1-03",
+    "CMS-M1-04",
+    "CMS-M1-05",
+    "CMS-M1-06",
+    "CMS-M1-07",
+    "CMS-M1-08",
+    "CMS-M1-09",
+    "CMS-M1-10"
+  ],
+  "baseline_original_checkout_read_only": "/workspace/sites/pinky-lamb-agency",
+  "baseline_source_commit": "739fbe1752fdda64e328f4b46cecd292059b05b1",
+  "baseline_kind": "export_without_git",
+  "scope": [
+    "Auth Email/Password emulator + membership/roles fixtures",
+    "Hero/SEO contract/edit/revision save",
+    "legacy asset catalog selection",
+    "authenticated private preview",
+    "immutable submit/review",
+    "local static QA export + focused tests",
+    "local dependency/config/guard setup within paths",
+    "fixes needed to meet acceptance within still-open approved M1 scope"
+  ],
+  "excluded_actions": [
+    "cloud/live writes",
+    "real accounts/PII",
+    "Blaze/billing/IAM provisioning",
+    "cloud Storage/Functions/publisher",
+    "public preview or production deployment",
+    "full-site migration",
+    "backend lead/email",
+    "active Codex/plugin config setup",
+    "M2+ implementation"
+  ],
+  "acceptance_reference": "docs/CMS-PROPOSAL-CMS-001-v2.md §3 + tasks/todo.md task acceptance",
+  "document_hash_freeze_status": "FROZEN_FOR_REVIEW",
+  "allowed_source_paths_relative_to_isolated_root": [
+    ".gitignore",
+    "admin/admin.css",
+    "admin/auth.mjs",
+    "admin/config-local.mjs",
+    "admin/hero-editor.mjs",
+    "admin/index.html",
+    "admin/media-picker.mjs",
+    "admin/preview.mjs",
+    "admin/review.mjs",
+    "cms-api/authorization.mjs",
+    "cms-api/drafts.mjs",
+    "cms-api/index.mjs",
+    "cms-api/package.json",
+    "cms-api/reviews.mjs",
+    "cms-api/routes.mjs",
+    "cms-api/snapshots.mjs",
+    "contracts/draft.mjs",
+    "contracts/errors.mjs",
+    "contracts/hero.mjs",
+    "contracts/legacy-assets.json",
+    "docs/ADR-001.md",
+    "docs/CHECKPOINT-A.md",
+    "docs/CHECKPOINT-B.md",
+    "docs/DEPENDENCIES.md",
+    "docs/LOCAL-RUNBOOK.md",
+    "docs/M1-REVIEW.md",
+    "docs/PROJECT-STATE.md",
+    "docs/QA-M1.md",
+    "docs/SPEC-cms-content.md",
+    "docs/SPEC-cms-identity.md",
+    "eslint.config.mjs",
+    "infra-local/firebase.json",
+    "infra-local/firestore.rules",
+    "package-lock.json",
+    "package.json",
+    "preview/hero-renderer.mjs",
+    "preview/preview.css",
+    "scripts/export-local.mjs",
+    "scripts/local-guard.mjs",
+    "scripts/seed-emulators.mjs",
+    "tests/acl.rules.test.mjs",
+    "tests/drafts.integration.test.mjs",
+    "tests/fixtures/approved-hero.json",
+    "tests/fixtures/malicious-hero.json",
+    "tests/hero-contract.test.mjs",
+    "tests/hero-editor.local.test.mjs",
+    "tests/hero-renderer.test.mjs",
+    "tests/local-guard.test.mjs",
+    "tests/login.local.test.mjs",
+    "tests/m1.e2e.test.mjs",
+    "tests/review.integration.test.mjs",
+    "vite.config.mjs"
+  ],
+  "generated_output_allowlist_relative_to_isolated_root": [
+    "node_modules/",
+    "cms-api/node_modules/",
+    ".local/",
+    ".preview-output/",
+    "admin-dist/",
+    "test-results/",
+    "playwright-report/"
+  ],
+  "read_only_paths_relative_to_isolated_root": [
+    "public-baseline/"
+  ],
+  "setup_downloads": "Official docs and audited dependencies/lockfile/bootstrap/install downloads allowed in M1 setup; local package cache under .local/npm-cache/; no Firebase cloud runtime APIs; official JDK21/emulator/Playwright browser binaries under .local tooling/cache dirs allowed as setup",
+  "runtime_network_policy": "All Firebase app/API/SDK runtime requests to demo-pinky-lamb-cms and loopback emulators only; fail closed if any required Auth/Firestore/Functions/Hosting emulator missing",
+  "stack": {
+    "language": "vanilla JavaScript ESM .mjs + JSDoc",
+    "validator": "Zod",
+    "admin_tooling": "Vite",
+    "node": "22 >=22.12; exact patch pin in CMS-M1-01a",
+    "package_manager": "npm exact version pin in CMS-M1-01a; one workspace/root lockfile",
+    "api": "Firebase v2 HTTP onRequest cmsApi in Functions emulator; REST /api/cms via Vite loopback proxy",
+    "unit_runner": "Node built-in node --test",
+    "runtime_packages": [
+      "firebase",
+      "firebase-admin",
+      "firebase-functions",
+      "zod"
+    ],
+    "development_packages": [
+      "vite",
+      "firebase-tools",
+      "@firebase/rules-unit-testing",
+      "@playwright/test",
+      "eslint"
+    ],
+    "java": "JDK21+; recommend21LTS; java -version and exact patch/CLI emulator compatibility recorded in CMS-M1-01a",
+    "functions_package": "cms-api/package.json npm root workspace member; main/type=module/engines Node22/runtime dependencies; sole root lockfile",
+    "lint": "ESLint config eslint.config.mjs in CMS-M1-02; ESM/browser/Node contexts"
+  },
+  "self_review_policy": "M1 deny for every role including OWNER; override is roadmap requiring new policy approval",
+  "acceptance": [
+    "Allowed fixture member login; deny anonymous/unknown/inactive/unverified and privilege escalation",
+    "Hero/SEO schema/save/reopen/revision conflict/idempotency validation tests",
+    "Private authenticated desktop/mobile keyboard-safe preview; XSS blocked/encoded; one h1/static metadata local export",
+    "Immutable snapshot/review exact hash; edit-after-submit immutable; self-review denied all roles",
+    "Only demo+loopback Firebase runtime; missing emulator/real-project guards fail closed",
+    "Original repo/public baseline unchanged; unit/Rules/API/browser evidence and limits reported",
+    "Reproducible local runbook/version lock/focused tests + High review; no production readiness claim"
+  ],
+  "baseline_initialization_setup_permission": {
+    "operation": "ONE_TIME_BYTE_IDENTICAL_COPY_OR_READ_ONLY_REFERENCE",
+    "source": "bundled dist/39 files plus FONT-NOTICES.txt if needed",
+    "destination": "public-baseline/",
+    "verification": "Verify SHA-256 for every copied file, then read-only; no baseline/source rewrite permission",
+    "original_checkout": "Unchanged; never write original repo"
+  },
+  "documents": [
+    {
+      "path": "docs/CMS-PROPOSAL-CMS-001-v2.md",
+      "sha256": "d9a5b04f332f9c554a674686e6ed90d1c678f94bc741f6e8575b8a1dfb6ec597"
+    },
+    {
+      "path": "docs/CMS-ARCHITECTURE.md",
+      "sha256": "605136a3d01b455ea9d82e256cf10945b977df62b0de1306f34940e016983087"
+    },
+    {
+      "path": "tasks/plan.md",
+      "sha256": "33b9d6f7b005acc36b2c7c7cde836dcc1e84270dce7beb497fe0451247176ab9"
+    },
+    {
+      "path": "tasks/todo.md",
+      "sha256": "53e531ee4a1d710be762d184372a6544ed84a795256a3c62a293a7c7334ff51b"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "e8c8d8a08b2db7e82bf7a2d8bf09639d4e5fd5b430a3ec83ba4d1e8eab552522"
+    },
+    {
+      "path": "docs/APPROVAL-PROTOCOL.md",
+      "sha256": "d2fa05f7c28680d90a220e11ebf49aa4868f6de6684bef87c7e55bc799e36ba5"
+    },
+    {
+      "path": "docs/ENGINEERING-WORKFLOW.md",
+      "sha256": "51dfa8f35b76ed4963ff3c6928b288d5ef469a0d9d21d4332b3318045ccc65f0"
+    },
+    {
+      "path": "engineering/SKILLS-LOCK.json",
+      "sha256": "527c5c89fd1295df633e68a14b75fe431fac582bcc8120830fb346acf19f0dfc"
+    },
+    {
+      "path": "docs/QA-AND-DOD.md",
+      "sha256": "b3febad0c9d5d72f5033162d22324bb2aa30dd9d909b7047ca3ecd1deb84931f"
+    },
+    {
+      "path": "PROMPT-CODEX-GPT-6.1-SOL-HIGH.md",
+      "sha256": "51238ef9be3fa8b4bbee623072682965d7c40c999ffed116a6319129a58f98d7"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "f963761e4f535681be14825697e527d2dd78aaa6af89f511a5d9531c532e184a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b0fe3fb31b500caea99ab638e684984348147fcd609e93799d93453f55bad6f6"
+    },
+    {
+      "path": "docs/IMPLEMENTATION-PLAN.md",
+      "sha256": "f72ee32fc6980d0c28f1495fb8bb56ef4de3df36931a77e889bcc30fc3756fdf"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "a0318c31163614d777eb8799dd5f64dc5757e26c9536feab221281b2c55374c7"
+    },
+    {
+      "path": "docs/HANDOFF-REVIEW.md",
+      "sha256": "47dbc7ee3eaa64842486ff52fe60611ead258348853bd018a48ee78e143341f5"
+    },
+    {
+      "path": "docs/PROJECT-STATE.md",
+      "sha256": "a4da36940c038f785a35ced106eac9eb87d750fc547b76a320c0c369e042e9b5"
+    },
+    {
+      "path": "docs/HANDOFF-NOTES.md",
+      "sha256": "8ff5eb25abc0addab50d0a54387f28f3afbb318091a9ecc0f358ab798c652f37"
+    },
+    {
+      "path": "DESIGN.md",
+      "sha256": "408bd9897c3409230690597f14e21a42c686f32a344c9ad7934c86337ce51743"
+    }
+  ],
+  "baseline_preserved_file_inventory": [
+    {
+      "path": "dist/app.js",
+      "size_bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "size_bytes": 17349548,
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce"
+    },
+    {
+      "path": "dist/assets/abril-fatface-400.woff",
+      "size_bytes": 26712,
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357"
+    },
+    {
+      "path": "dist/assets/brand-diagonal.webp",
+      "size_bytes": 12540,
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a"
+    },
+    {
+      "path": "dist/assets/client-aqua.webp",
+      "size_bytes": 17434,
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35"
+    },
+    {
+      "path": "dist/assets/client-manulife.webp",
+      "size_bytes": 6046,
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb"
+    },
+    {
+      "path": "dist/assets/client-samsung.webp",
+      "size_bytes": 26684,
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36"
+    },
+    {
+      "path": "dist/assets/client-sony.webp",
+      "size_bytes": 4806,
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f"
+    },
+    {
+      "path": "dist/assets/client-wayfair.webp",
+      "size_bytes": 12618,
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8"
+    },
+    {
+      "path": "dist/assets/diag-awareness-2022.webp",
+      "size_bytes": 32040,
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025"
+    },
+    {
+      "path": "dist/assets/favicon.png",
+      "size_bytes": 6186,
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc"
+    },
+    {
+      "path": "dist/assets/montserrat-400.woff",
+      "size_bytes": 84072,
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1"
+    },
+    {
+      "path": "dist/assets/montserrat-600.woff",
+      "size_bytes": 84976,
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f"
+    },
+    {
+      "path": "dist/assets/montserrat-700.woff",
+      "size_bytes": 85620,
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03"
+    },
+    {
+      "path": "dist/assets/montserrat-800.woff",
+      "size_bytes": 86676,
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1"
+    },
+    {
+      "path": "dist/assets/petrosetco-fireworks-2026.webp",
+      "size_bytes": 92836,
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7"
+    },
+    {
+      "path": "dist/assets/petrosetco-guests-2026.webp",
+      "size_bytes": 122614,
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968"
+    },
+    {
+      "path": "dist/assets/petrosetco-party-2026.webp",
+      "size_bytes": 115474,
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733"
+    },
+    {
+      "path": "dist/assets/pinky-hero.webp",
+      "size_bytes": 51282,
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63"
+    },
+    {
+      "path": "dist/assets/pinky-logo.webp",
+      "size_bytes": 28046,
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd"
+    },
+    {
+      "path": "dist/assets/pinky-mascot.webp",
+      "size_bytes": 61562,
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00"
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-2025.webp",
+      "size_bytes": 108712,
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4"
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "size_bytes": 64474,
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50"
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "size_bytes": 78392,
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f"
+    },
+    {
+      "path": "dist/assets/samsung-flip2-2019.webp",
+      "size_bytes": 34148,
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a"
+    },
+    {
+      "path": "dist/assets/showreel-2025.mp4",
+      "size_bytes": 11403830,
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92"
+    },
+    {
+      "path": "dist/assets/showreel-poster.webp",
+      "size_bytes": 54698,
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4"
+    },
+    {
+      "path": "dist/assets/sony-ult-2025.webp",
+      "size_bytes": 56578,
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a"
+    },
+    {
+      "path": "dist/assets/varna-elite-2023.webp",
+      "size_bytes": 39670,
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316"
+    },
+    {
+      "path": "dist/assets/varna-elite-collage-2023.webp",
+      "size_bytes": 54590,
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78"
+    },
+    {
+      "path": "dist/assets/varna-elite-lifestyle-2023.webp",
+      "size_bytes": 35632,
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49"
+    },
+    {
+      "path": "dist/assets/vifa-fair-2026.webp",
+      "size_bytes": 117020,
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450"
+    },
+    {
+      "path": "dist/assets/vifa-opening-2026.webp",
+      "size_bytes": 182808,
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa"
+    },
+    {
+      "path": "dist/assets/wayfair-registration-2026.webp",
+      "size_bytes": 112116,
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248"
+    },
+    {
+      "path": "dist/assets/wayfair-summit-2026.webp",
+      "size_bytes": 47196,
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4"
+    },
+    {
+      "path": "dist/assets/wayfair-team-2026.webp",
+      "size_bytes": 61756,
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06"
+    },
+    {
+      "path": "dist/content.js",
+      "size_bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "dist/index.html",
+      "size_bytes": 18385,
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de"
+    },
+    {
+      "path": "dist/styles.css",
+      "size_bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "references/asset-manifest.json",
+      "size_bytes": 127496,
+      "sha256": "fd439907da1ea852be8ba578567f654a006d449d536f7ecbb90aa3114ff83c8e"
+    },
+    {
+      "path": "references/brand/brand-palette-crystal-blossom-master-v15.png",
+      "size_bytes": 879177,
+      "sha256": "4a7bbd2266c6d29bae97b12dd77d3cba626c2a2a05da9dc261b43fa9003f2a7e"
+    },
+    {
+      "path": "references/brand/contact-us-guideline-v2.png",
+      "size_bytes": 1466750,
+      "sha256": "97254de39461da5480535eda86ffdfca8a504790c4447ff9b8a86838c6e23903"
+    },
+    {
+      "path": "references/brand/cover-reference-v5-fresh-coral.png",
+      "size_bytes": 1740836,
+      "sha256": "8810967117c64b89c6974fdd69c8095fa327b07693dc61b90978db44f9ccba48"
+    },
+    {
+      "path": "references/brand/minimal-crystal-blossom-diagonal-v11.png",
+      "size_bytes": 1202623,
+      "sha256": "f3c9d0ee6b5d93090f57cdf2cd474b2c37c2c203d54392e7a4a43bcad921f3b3"
+    },
+    {
+      "path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "size_bytes": 58730,
+      "sha256": "01e6813183a2b64df32215673bfcb02b095d4bd76f4e628f5894b35a32e27da1"
+    },
+    {
+      "path": "references/brand/pinky-lamb-mascot-supplied.png",
+      "size_bytes": 105345,
+      "sha256": "123c45ca0124c94e82fbc26824aa0daa980ffd3666a0f1cc1541e50182d1f4f1"
+    },
+    {
+      "path": "references/credential-provenance/README.md",
+      "size_bytes": 2876,
+      "sha256": "047855d8703f9d8d153b5d37d811c53af95559041b443fca288b70c0b48312b7"
+    },
+    {
+      "path": "references/credential-provenance/credential-extracted.txt",
+      "size_bytes": 5196,
+      "sha256": "d6bc75591be849a5b47ec3e518d186c26cc0535782890dd55f2d6ac3bede262f"
+    },
+    {
+      "path": "references/credential-provenance/path-map.json",
+      "size_bytes": 19686,
+      "sha256": "c2aac669b032894a4bbf39ccdd752c0886b2e6f0f1c317708c0a225f6f37efc6"
+    },
+    {
+      "path": "references/credential-provenance/selected-manifest.original.json",
+      "size_bytes": 10244,
+      "sha256": "ae9cde79bdaeb3c7286b9f94f7ec677a74ad4530984d7b3f67a82269cfb3fac0"
+    },
+    {
+      "path": "references/credential-provenance/selected-object-provenance.json",
+      "size_bytes": 26965,
+      "sha256": "b5e1eb9690a7c91a8df1511d0bcfcc2c7be705d9d13c8a09511e4335469b5b3f"
+    },
+    {
+      "path": "references/credential-selected/aqua-conference-2023.jpeg",
+      "size_bytes": 171013,
+      "sha256": "21f529fdcd4d061f4629a723663c9cc54419573436d38d377300d4de37eb52c8"
+    },
+    {
+      "path": "references/credential-selected/baemin-shopping.jpeg",
+      "size_bytes": 81922,
+      "sha256": "e7f9f0e794db4ffa2548d3264033cec4d666d65e6c3e2e9cfe707b235ed8bdb7"
+    },
+    {
+      "path": "references/credential-selected/client-aqua.png",
+      "size_bytes": 22524,
+      "sha256": "1b8c3d4c0129f263e04d42e090f1ff0911d488acea4ffe5386055b7b8b76f149"
+    },
+    {
+      "path": "references/credential-selected/client-diag.png",
+      "size_bytes": 8205,
+      "sha256": "82439ac81c6e0467f8b317b384cd846318f4d4eeff26a2ae887d4de75bb0c511"
+    },
+    {
+      "path": "references/credential-selected/client-guardian.jpeg",
+      "size_bytes": 6715,
+      "sha256": "2980a782dfa2b3063306867fb66e77b3b6b01ac067b3e2117478b543ef1426d6"
+    },
+    {
+      "path": "references/credential-selected/client-manulife.png",
+      "size_bytes": 9153,
+      "sha256": "edb4e3666f366b306400d0497571ee47669998402d4232e4cce5961ab2873b85"
+    },
+    {
+      "path": "references/credential-selected/client-samsung.png",
+      "size_bytes": 41759,
+      "sha256": "20909f6d2c3b6590a57a5c2b6da0f6435dda551a3d876637df088f28feac29f9"
+    },
+    {
+      "path": "references/credential-selected/client-sony.png",
+      "size_bytes": 9248,
+      "sha256": "85c1a913596d11a4eb0c844067da44ee61b2bbb150d6bf728802b99d8e195329"
+    },
+    {
+      "path": "references/credential-selected/client-wayfair.png",
+      "size_bytes": 15909,
+      "sha256": "63f3b3f211396a541efad30663c02c50b34b0c698f54b158158718023897a533"
+    },
+    {
+      "path": "references/credential-selected/diag-awareness-2022.jpeg",
+      "size_bytes": 39213,
+      "sha256": "a95cfcf910cb8d0c513262ebedf24f9c89747a4c0c31563c0b610b226c4e9043"
+    },
+    {
+      "path": "references/credential-selected/dongtam-tvc-2022.jpeg",
+      "size_bytes": 66967,
+      "sha256": "2804d300450c74c4d4e84278761c64429c322b6b67a5ddee5ef2ef7e728ec9e7"
+    },
+    {
+      "path": "references/credential-selected/food-photography.jpeg",
+      "size_bytes": 71024,
+      "sha256": "4b54bdf2b7c2f3520d58b3ad7b6c2aa7a3792d0a3b4b71b8b2f3e34eb5d0dfc2"
+    },
+    {
+      "path": "references/credential-selected/nhatrang-festival-2019.png",
+      "size_bytes": 1941389,
+      "sha256": "ec5fd89789431aeac9929f59607b501e2bd8ff4f9c9cbf9738cdf61792926ce7"
+    },
+    {
+      "path": "references/credential-selected/petrosetco-fireworks-2026.jpeg",
+      "size_bytes": 101906,
+      "sha256": "f2c24f584dd309ef536c854b6a4d9ce5eedc4feba9f2398439c56f9d6757b5e3"
+    },
+    {
+      "path": "references/credential-selected/petrosetco-guests-2026.jpeg",
+      "size_bytes": 115090,
+      "sha256": "7a4fdfad3454b1eca6328b087dfc1d48c47c9f82207e981c07f6b190d415b21a"
+    },
+    {
+      "path": "references/credential-selected/petrosetco-party-2026.jpeg",
+      "size_bytes": 110336,
+      "sha256": "3995fd969a13061065a243d7235a72889f3ef1e2648016f0c3d0092d0bcd19d6"
+    },
+    {
+      "path": "references/credential-selected/piano-forte-opus-1.jpeg",
+      "size_bytes": 39081,
+      "sha256": "65dcbfa5ea00affeff15791b8d1a718b37d8d4f51e7fa57d6d6aa309c78d0425"
+    },
+    {
+      "path": "references/credential-selected/product-photography-red.jpeg",
+      "size_bytes": 36145,
+      "sha256": "5e3acf89daecc786c495bddfa345e92317ec196699afc61f211fff0b01a50f75"
+    },
+    {
+      "path": "references/credential-selected/psd-dell-microsoft-2025.jpeg",
+      "size_bytes": 101368,
+      "sha256": "686d47b37bbd077cfacc856d4ca61abf9ca91582b337e5ce64f13e951a8e4bd2"
+    },
+    {
+      "path": "references/credential-selected/psd-dell-microsoft-guests-2025.jpeg",
+      "size_bytes": 69748,
+      "sha256": "ef73e4544bd3c31304643a852d45589d4862ca1e66da3970cd2b6bc205d534fe"
+    },
+    {
+      "path": "references/credential-selected/psd-dell-microsoft-stage-2025.jpeg",
+      "size_bytes": 78447,
+      "sha256": "76a468c4409e34ecd1e85396bc6e934ab8648234c37d8e2561e96ee62be45f9e"
+    },
+    {
+      "path": "references/credential-selected/samsung-flip2-2019.jpeg",
+      "size_bytes": 41123,
+      "sha256": "60fed7863dc4783f1535fc80e5f65d3bb1c4c4d427f4659b92085c965e223fc9"
+    },
+    {
+      "path": "references/credential-selected/samsung-psd-2024.jpeg",
+      "size_bytes": 117547,
+      "sha256": "f90d2304a6c41b3c3732e25f60ed9a18d9db857a5fd72b7e06b0e224e37efad9"
+    },
+    {
+      "path": "references/credential-selected/skechers-campaign.jpeg",
+      "size_bytes": 59152,
+      "sha256": "6e83676ebbc1663d33038dd3dce785b517653b46253f98a7974e874e4362ba68"
+    },
+    {
+      "path": "references/credential-selected/sony-ult-2025.png",
+      "size_bytes": 140807,
+      "sha256": "88c9e80d9c097fe6e2006b789743ed10ae41265f30b5761e7e0d28dc97d31097"
+    },
+    {
+      "path": "references/credential-selected/stage-production-design.jpeg",
+      "size_bytes": 106837,
+      "sha256": "5795a0d979addf81af9b29ef452703d7e5044b884ee4b878066943026c2543c5"
+    },
+    {
+      "path": "references/credential-selected/varna-elite-2023.jpeg",
+      "size_bytes": 43615,
+      "sha256": "419505fafc66a638af94cb4884f6ec7584e8fd8d6e91d357054b960c26abafd3"
+    },
+    {
+      "path": "references/credential-selected/varna-elite-collage-2023.jpeg",
+      "size_bytes": 60186,
+      "sha256": "0d134a2eca1c4996788062dd48d7be85d3579dcac51ff85a3aa42d8ded708b03"
+    },
+    {
+      "path": "references/credential-selected/varna-elite-lifestyle-2023.jpeg",
+      "size_bytes": 38377,
+      "sha256": "1e2d32a096169673dfa6ca8fa5e90f4adad0cd44d3c1ff37bc1062518b2f394e"
+    },
+    {
+      "path": "references/credential-selected/vifa-fair-2026.jpeg",
+      "size_bytes": 109829,
+      "sha256": "5249da2e0117574d01da71bf993d3e099be054f38b5788158057a8fbff663a4f"
+    },
+    {
+      "path": "references/credential-selected/vifa-opening-2026.jpeg",
+      "size_bytes": 168972,
+      "sha256": "6027d0398bbee139fec97c3e5257852ce567b813d4677716c41ddd8fcbb2fc87"
+    },
+    {
+      "path": "references/credential-selected/wayfair-registration-2026.jpeg",
+      "size_bytes": 115776,
+      "sha256": "1fbdcf668376c6bddaad28b8e33ac33c57ce6e59cae3906707adeb44cfe725fd"
+    },
+    {
+      "path": "references/credential-selected/wayfair-summit-2026.jpeg",
+      "size_bytes": 57038,
+      "sha256": "b4c3396cca38c5eba7aafd86c8c15387df1e8c1180c91e48108a7be6368c165e"
+    },
+    {
+      "path": "references/credential-selected/wayfair-team-2026.jpeg",
+      "size_bytes": 70465,
+      "sha256": "75674e83e9a451c585d63f3004b7b91b6d26f65e8dd94a5bb4dae7b533cacb85"
+    },
+    {
+      "path": "references/video/showreel-2025-original.mp4",
+      "size_bytes": 89956684,
+      "sha256": "f58c8dba0e2aa0b856f7a23d8637da089cf1fb1dd5b0c2bba3a11f0d68af2d7b"
+    },
+    {
+      "path": "references/video/showreel-frame-38s.jpg",
+      "size_bytes": 147844,
+      "sha256": "8561f3e48fb2f19000f948b35dd39a629de9241cf4d957ae2d9c76ec5ff6134c"
+    },
+    {
+      "path": "references/video/showreel-frame-43s.jpg",
+      "size_bytes": 174095,
+      "sha256": "374882a09a1010eac568d6ae7f4d0bb593dcb6cc13ecbca7c08491294a256a45"
+    },
+    {
+      "path": "references/video/showreel-frame-48s.jpg",
+      "size_bytes": 202667,
+      "sha256": "1a4a6bf6e9c1d7e23aaae4e6654525d7eaf076dcc2403cf39c49cdc8a883e972"
+    },
+    {
+      "path": "references/video/showreel-frame-55s.jpg",
+      "size_bytes": 167746,
+      "sha256": "27515f41db22012c96edb09c231a50f33f7ac9808f3aa9c8ab33850bb4511bbc"
+    },
+    {
+      "path": "firebase.json",
+      "size_bytes": 812,
+      "sha256": "9e35bc66462fac43141da983163a51119796d3ff31e78421b17a5ed682684acc"
+    },
+    {
+      "path": "source-content.json",
+      "size_bytes": 13782,
+      "sha256": "ef34d3263d709dd18eb88ed19fbb65d49153a98f7797c2ed1ecdf5d16a46bbaa"
+    },
+    {
+      "path": "FONT-NOTICES.txt",
+      "size_bytes": 333,
+      "sha256": "a6851476c9681331829c76cfce22722c1d0f582e97a0e12e8aebbb719dfe2eff"
+    }
+  ],
+  "baseline_preserved_inventory_sha256": "b2ea33156026b0cacbed95c9dd2818dfd1765f2095e373bda24ac6c5b490dd24",
+  "baseline_preserved_file_count": 93,
+  "baseline_public_file_count": 39,
+  "engineering_source_commit": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
+  "engineering_source_inventory_sha256": "6aea5b345ce447b63bbe8977faba4f980ebf562777b6c54bda375e983b381c04",
+  "freeze_at_utc": "2026-10-11T04:33:27.001175+00:00",
+  "package_scope": "Full CMS LOCAL only; M1 approval request preserves original first-slice scope; M2–M4 separate approval required",
+  "local_completion": "Whole CMS local acceptance criteria, not M1; technical LOCAL_COMPLETE then user local acceptance",
+  "production_scope": "DEFERRED_EXCLUDED"
+}

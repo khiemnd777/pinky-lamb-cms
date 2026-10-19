@@ -1,0 +1,11 @@
+{
+  "observedAtUtc": "2026-10-12T15:50:35.584487+00:00",
+  "configPath": "USER_CONFIG_REDACTED",
+  "sha256": "ed81b2ba9a3d91971470fc5506b1bc2355f9784ad349e2c843926436e7f42c3f",
+  "mode": "0o600",
+  "targetProject": "PROJECT_ROOT",
+  "trustLevel": "trusted",
+  "equalsVerifiedWriteHash": true,
+  "modeMatchesVerifiedWrite": true,
+  "rawConfigPersisted": false
+}

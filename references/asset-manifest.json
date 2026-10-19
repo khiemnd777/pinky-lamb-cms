@@ -1,0 +1,2755 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-10",
+  "path_base": "handoff root (pinky-lamb/)",
+  "scope": "Copied reference assets and existing runtime assets. Manifest does not include itself or files outside references/dist-assets.",
+  "source_folder_url": "https://drive.google.com/drive/folders/1JOINBjiM8DsXvqddNYNko5LiMySc5UWz",
+  "summary_by_category": {
+    "supplied_original": {
+      "count": 6,
+      "size_bytes": 95351415
+    },
+    "video_frame_derivative": {
+      "count": 4,
+      "size_bytes": 692352
+    },
+    "credential_image_extraction": {
+      "count": 35,
+      "size_bytes": 4325616
+    },
+    "provenance_document": {
+      "count": 5,
+      "size_bytes": 64967
+    },
+    "supplied_original_reused": {
+      "count": 1,
+      "size_bytes": 17349548
+    },
+    "runtime_font": {
+      "count": 5,
+      "size_bytes": 368056
+    },
+    "runtime_derivative": {
+      "count": 29,
+      "size_bytes": 13041788
+    }
+  },
+  "copied_reference_payload": {
+    "count": 50,
+    "size_bytes": 100434350,
+    "scope": "All entries in references/, including copied files and generated provenance metadata; asset-manifest.json itself is excluded."
+  },
+  "known_missing": [
+    {
+      "asset": "Main Logo standalone original",
+      "drive_file_id": "13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4",
+      "url": "https://drive.google.com/file/d/13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4/view",
+      "status": "Not located in inspected scratch, /workspace or /tmp. Existing runtime derivative retained without claiming it is the original.",
+      "existing_runtime_path": "dist/assets/pinky-logo.webp"
+    }
+  ],
+  "assets": [
+    {
+      "id": "references__brand__cover-reference-v5-fresh-coral.png",
+      "handoff_path": "references/brand/cover-reference-v5-fresh-coral.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/cover.png",
+      "original_filename": "cover.png",
+      "size_bytes": 1740836,
+      "sha256": "8810967117c64b89c6974fdd69c8095fa327b07693dc61b90978db44f9ccba48",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "image_mode": "RGBA",
+      "category": "supplied_original",
+      "role": "Primary brand composition and sampled color reference; image includes baked-in text.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Cover Reference Style v5 Fresh Coral",
+        "drive_file_id": "1TbX5buTN3GMdjwb0vP6jq6qltmMqoPTd",
+        "url": "https://drive.google.com/file/d/1TbX5buTN3GMdjwb0vP6jq6qltmMqoPTd/view",
+        "folder_url": "https://drive.google.com/drive/folders/1JOINBjiM8DsXvqddNYNko5LiMySc5UWz",
+        "metadata_evidence": "Original project README.md, supplied-source section"
+      },
+      "source_reliability": [
+        "Existing downloaded file preserved without changes.",
+        "Drive identity is recorded in the original project README; remote bytes were not downloaded again during packaging.",
+        "The original download filename is not retained; original_filename records the available scratch basename."
+      ]
+    },
+    {
+      "id": "references__brand__brand-palette-crystal-blossom-master-v15.png",
+      "handoff_path": "references/brand/brand-palette-crystal-blossom-master-v15.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/palette.png",
+      "original_filename": "palette.png",
+      "size_bytes": 879177,
+      "sha256": "4a7bbd2266c6d29bae97b12dd77d3cba626c2a2a05da9dc261b43fa9003f2a7e",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "image_mode": "RGB",
+      "category": "supplied_original",
+      "role": "Decorative Crystal Blossom background; no official HEX swatches are printed.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Brand Palette Crystal Blossom Master v15",
+        "drive_file_id": "1WY3W9tNdQPdyLMvyDMT3f9dPOt5YlGEg",
+        "url": "https://drive.google.com/file/d/1WY3W9tNdQPdyLMvyDMT3f9dPOt5YlGEg/view",
+        "folder_url": "https://drive.google.com/drive/folders/1JOINBjiM8DsXvqddNYNko5LiMySc5UWz",
+        "metadata_evidence": "Original project README.md, supplied-source section"
+      },
+      "source_reliability": [
+        "Existing downloaded file preserved without changes.",
+        "Drive identity is recorded in the original project README; remote bytes were not downloaded again during packaging.",
+        "The original download filename is not retained; original_filename records the available scratch basename."
+      ]
+    },
+    {
+      "id": "references__brand__minimal-crystal-blossom-diagonal-v11.png",
+      "handoff_path": "references/brand/minimal-crystal-blossom-diagonal-v11.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/diagonal.png",
+      "original_filename": "diagonal.png",
+      "size_bytes": 1202623,
+      "sha256": "f3c9d0ee6b5d93090f57cdf2cd474b2c37c2c203d54392e7a4a43bcad921f3b3",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "image_mode": "RGB",
+      "category": "supplied_original",
+      "role": "Sparse diagonal decorative background with a clear central area.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Minimal Crystal Blossom Diagonal v11",
+        "drive_file_id": "1_6BuolAr6jCkyTFdX5sdSN_mwjoJuYWX",
+        "url": "https://drive.google.com/file/d/1_6BuolAr6jCkyTFdX5sdSN_mwjoJuYWX/view",
+        "folder_url": "https://drive.google.com/drive/folders/1JOINBjiM8DsXvqddNYNko5LiMySc5UWz",
+        "metadata_evidence": "Original project README.md, supplied-source section"
+      },
+      "source_reliability": [
+        "Existing downloaded file preserved without changes.",
+        "Drive identity is recorded in the original project README; remote bytes were not downloaded again during packaging.",
+        "The original download filename is not retained; original_filename records the available scratch basename."
+      ]
+    },
+    {
+      "id": "references__brand__contact-us-guideline-v2.png",
+      "handoff_path": "references/brand/contact-us-guideline-v2.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/contact.png",
+      "original_filename": "contact.png",
+      "size_bytes": 1466750,
+      "sha256": "97254de39461da5480535eda86ffdfca8a504790c4447ff9b8a86838c6e23903",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "image_mode": "RGB",
+      "category": "supplied_original",
+      "role": "Contact details and contact-section visual reference; includes baked-in text.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Contact Us Guideline v2",
+        "drive_file_id": "1UqyfQW0z1qjgzqMaaXb4Y5elMo-sX2r4",
+        "url": "https://drive.google.com/file/d/1UqyfQW0z1qjgzqMaaXb4Y5elMo-sX2r4/view",
+        "folder_url": "https://drive.google.com/drive/folders/1JOINBjiM8DsXvqddNYNko5LiMySc5UWz",
+        "metadata_evidence": "Original project README.md, supplied-source section"
+      },
+      "source_reliability": [
+        "Existing downloaded file preserved without changes.",
+        "Drive identity is recorded in the original project README; remote bytes were not downloaded again during packaging.",
+        "The original download filename is not retained; original_filename records the available scratch basename."
+      ]
+    },
+    {
+      "id": "references__brand__pinky-lamb-mascot-supplied.png",
+      "handoff_path": "references/brand/pinky-lamb-mascot-supplied.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/upload/B02EC828-23B0-4B82-9786-EA852E0AC140.png",
+      "original_filename": "B02EC828-23B0-4B82-9786-EA852E0AC140.png",
+      "size_bytes": 105345,
+      "sha256": "123c45ca0124c94e82fbc26824aa0daa980ffd3666a0f1cc1541e50182d1f4f1",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 969,
+        "height": 905
+      },
+      "image_mode": "RGBA",
+      "category": "supplied_original",
+      "role": "Supplied flat lamb mascot with transparency; preserve shape, white wool, pink outlines, face, and supplied shadow.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "user_attachment",
+        "library_file_id": "libfile_c2ebed1f0d1481919b8063223dc3e788",
+        "file_citation_id": "file_00000000af488209b8928fb414be3bba",
+        "uploaded_filename": "B02EC828-23B0-4B82-9786-EA852E0AC140.png"
+      },
+      "source_reliability": [
+        "Exact user-uploaded PNG is available and copied byte-for-byte.",
+        "This flat mascot is distinct from the 3D mascot baked into the cover."
+      ]
+    },
+    {
+      "id": "references__video__showreel-2025-original.mp4",
+      "handoff_path": "references/video/showreel-2025-original.mp4",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/showreel-original.mp4",
+      "original_filename": "showreel-original.mp4",
+      "size_bytes": 89956684,
+      "sha256": "f58c8dba0e2aa0b856f7a23d8637da089cf1fb1dd5b0c2bba3a11f0d68af2d7b",
+      "mime_type": "video/mp4",
+      "category": "supplied_original",
+      "role": "Original full-resolution showreel for future encodes; do not serve this file as the default web video.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section"
+      },
+      "source_reliability": [
+        "Existing downloaded video preserved byte-for-byte.",
+        "2025 is part of the source title, not an independently verified filming date."
+      ],
+      "media_metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "65.333333",
+          "size": "89956684"
+        }
+      }
+    },
+    {
+      "id": "references__video__showreel-frame-38s.jpg",
+      "handoff_path": "references/video/showreel-frame-38s.jpg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-38.jpg",
+      "original_filename": "poster-38.jpg",
+      "size_bytes": 147844,
+      "sha256": "8561f3e48fb2f19000f948b35dd39a629de9241cf4d957ae2d9c76ec5ff6134c",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "image_mode": "RGB",
+      "category": "video_frame_derivative",
+      "role": "Selected website poster: event production personnel operating a control desk.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section",
+        "source_handoff_path": "references/video/showreel-2025-original.mp4",
+        "frame_time_seconds": 38,
+        "time_evidence": "Existing frame filename and prior selected poster notes"
+      },
+      "source_reliability": [
+        "Existing JPEG frame from source video; copied without further processing.",
+        "This is a frame extraction derivative, not an independently supplied photograph."
+      ]
+    },
+    {
+      "id": "references__video__showreel-frame-43s.jpg",
+      "handoff_path": "references/video/showreel-frame-43s.jpg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-43.jpg",
+      "original_filename": "poster-43.jpg",
+      "size_bytes": 174095,
+      "sha256": "374882a09a1010eac568d6ae7f4d0bb593dcb6cc13ecbca7c08491294a256a45",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "image_mode": "RGB",
+      "category": "video_frame_derivative",
+      "role": "Alternative poster: Pinky Lamb event team at work.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section",
+        "source_handoff_path": "references/video/showreel-2025-original.mp4",
+        "frame_time_seconds": 43,
+        "time_evidence": "Existing frame filename and prior selected poster notes"
+      },
+      "source_reliability": [
+        "Existing JPEG frame from source video; copied without further processing.",
+        "This is a frame extraction derivative, not an independently supplied photograph."
+      ]
+    },
+    {
+      "id": "references__video__showreel-frame-48s.jpg",
+      "handoff_path": "references/video/showreel-frame-48s.jpg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-48.jpg",
+      "original_filename": "poster-48.jpg",
+      "size_bytes": 202667,
+      "sha256": "1a4a6bf6e9c1d7e23aaae4e6654525d7eaf076dcc2403cf39c49cdc8a883e972",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "image_mode": "RGB",
+      "category": "video_frame_derivative",
+      "role": "Alternative poster: event stage preparation.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section",
+        "source_handoff_path": "references/video/showreel-2025-original.mp4",
+        "frame_time_seconds": 48,
+        "time_evidence": "Existing frame filename and prior selected poster notes"
+      },
+      "source_reliability": [
+        "Existing JPEG frame from source video; copied without further processing.",
+        "This is a frame extraction derivative, not an independently supplied photograph."
+      ]
+    },
+    {
+      "id": "references__video__showreel-frame-55s.jpg",
+      "handoff_path": "references/video/showreel-frame-55s.jpg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-55.jpg",
+      "original_filename": "poster-55.jpg",
+      "size_bytes": 167746,
+      "sha256": "27515f41db22012c96edb09c231a50f33f7ac9808f3aa9c8ab33850bb4511bbc",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "image_mode": "RGB",
+      "category": "video_frame_derivative",
+      "role": "Alternative poster: event celebration scene.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "supplied_drive_asset",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section",
+        "source_handoff_path": "references/video/showreel-2025-original.mp4",
+        "frame_time_seconds": 55,
+        "time_evidence": "Existing frame filename and prior selected poster notes"
+      },
+      "source_reliability": [
+        "Existing JPEG frame from source video; copied without further processing.",
+        "This is a frame extraction derivative, not an independently supplied photograph."
+      ]
+    },
+    {
+      "id": "references__credential-selected__sony-ult-2025.png",
+      "handoff_path": "references/credential-selected/sony-ult-2025.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/sony-ult-2025.png",
+      "original_filename": "sony-ult-2025.png",
+      "size_bytes": 140807,
+      "sha256": "88c9e80d9c097fe6e2006b789743ed10ae41265f30b5761e7e0d28dc97d31097",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 839,
+        "height": 396
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "SONY Karaoke ULT Speakers 2025; concept and idea; video production",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 6,
+        "pdf_xref": 80,
+        "all_recorded_pages": [
+          6
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-80.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__diag-awareness-2022.jpeg",
+      "handoff_path": "references/credential-selected/diag-awareness-2022.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/diag-awareness-2022.jpeg",
+      "original_filename": "diag-awareness-2022.jpeg",
+      "size_bytes": 39213,
+      "sha256": "a95cfcf910cb8d0c513262ebedf24f9c89747a4c0c31563c0b610b226c4e9043",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 683,
+        "height": 428
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Diag Brand Awareness Strategy 2022; character marketing, corporate video, PR, social, KOLs/KOCs",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 7,
+        "pdf_xref": 86,
+        "all_recorded_pages": [
+          7
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-86.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__varna-elite-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-2023.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-2023.jpeg",
+      "original_filename": "varna-elite-2023.jpeg",
+      "size_bytes": 43615,
+      "sha256": "419505fafc66a638af94cb4884f6ec7584e8fd8d6e91d357054b960c26abafd3",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 708,
+        "height": 473
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Nutifood VARNA ELITE Thanh Xuân Hoàng Kim 2023; concept, KOLs, photoshoot, social",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 9,
+        "pdf_xref": 114,
+        "all_recorded_pages": [
+          9
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-114.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__skechers-campaign.jpeg",
+      "handoff_path": "references/credential-selected/skechers-campaign.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/skechers-campaign.jpeg",
+      "original_filename": "skechers-campaign.jpeg",
+      "size_bytes": 59152,
+      "sha256": "6e83676ebbc1663d33038dd3dce785b517653b46253f98a7974e874e4362ba68",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 574,
+        "height": 756
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Skechers community and digital campaign; TVC, KV/PR, Facebook, talent booking",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 10,
+        "pdf_xref": 128,
+        "all_recorded_pages": [
+          10
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-128.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__dongtam-tvc-2022.jpeg",
+      "handoff_path": "references/credential-selected/dongtam-tvc-2022.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/dongtam-tvc-2022.jpeg",
+      "original_filename": "dongtam-tvc-2022.jpeg",
+      "size_bytes": 66967,
+      "sha256": "2804d300450c74c4d4e84278761c64429c322b6b67a5ddee5ef2ef7e728ec9e7",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 919,
+        "height": 409
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "DongTam Cement Tiles TVC 2022; concept and video production",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 12,
+        "pdf_xref": 147,
+        "all_recorded_pages": [
+          12
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-147.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__baemin-shopping.jpeg",
+      "handoff_path": "references/credential-selected/baemin-shopping.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/baemin-shopping.jpeg",
+      "original_filename": "baemin-shopping.jpeg",
+      "size_bytes": 81922,
+      "sha256": "e7f9f0e794db4ffa2548d3264033cec4d666d65e6c3e2e9cfe707b235ed8bdb7",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 859,
+        "height": 1125
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "BAEMIN case study artwork, no detailed project scope on page 16",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 16,
+        "pdf_xref": 172,
+        "all_recorded_pages": [
+          16
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-172.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__petrosetco-party-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-party-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-party-2026.jpeg",
+      "original_filename": "petrosetco-party-2026.jpeg",
+      "size_bytes": 110336,
+      "sha256": "3995fd969a13061065a243d7235a72889f3ef1e2648016f0c3d0092d0bcd19d6",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1011,
+        "height": 476
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Petrosetco Distribution New Year Party 2026",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 20,
+        "pdf_xref": 214,
+        "all_recorded_pages": [
+          20
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-214.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__wayfair-summit-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-summit-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-summit-2026.jpeg",
+      "original_filename": "wayfair-summit-2026.jpeg",
+      "size_bytes": 57038,
+      "sha256": "b4c3396cca38c5eba7aafd86c8c15387df1e8c1180c91e48108a7be6368c165e",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1104,
+        "height": 575
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 21,
+        "pdf_xref": 219,
+        "all_recorded_pages": [
+          21
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-219.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__wayfair-team-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-team-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-team-2026.jpeg",
+      "original_filename": "wayfair-team-2026.jpeg",
+      "size_bytes": 70465,
+      "sha256": "75674e83e9a451c585d63f3004b7b91b6d26f65e8dd94a5bb4dae7b533cacb85",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 954,
+        "height": 575
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 21,
+        "pdf_xref": 220,
+        "all_recorded_pages": [
+          21
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-220.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__wayfair-registration-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-registration-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-registration-2026.jpeg",
+      "original_filename": "wayfair-registration-2026.jpeg",
+      "size_bytes": 115776,
+      "sha256": "1fbdcf668376c6bddaad28b8e33ac33c57ce6e59cae3906707adeb44cfe725fd",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1248,
+        "height": 558
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 21,
+        "pdf_xref": 222,
+        "all_recorded_pages": [
+          21
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-222.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__vifa-opening-2026.jpeg",
+      "handoff_path": "references/credential-selected/vifa-opening-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/vifa-opening-2026.jpeg",
+      "original_filename": "vifa-opening-2026.jpeg",
+      "size_bytes": 168972,
+      "sha256": "6027d0398bbee139fec97c3e5257852ce567b813d4677716c41ddd8fcbb2fc87",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1211,
+        "height": 597
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Vietnam International Furniture & Home Accessories 2026; opening ceremony and registration services",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 22,
+        "pdf_xref": 225,
+        "all_recorded_pages": [
+          22
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-225.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__vifa-fair-2026.jpeg",
+      "handoff_path": "references/credential-selected/vifa-fair-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/vifa-fair-2026.jpeg",
+      "original_filename": "vifa-fair-2026.jpeg",
+      "size_bytes": 109829,
+      "sha256": "5249da2e0117574d01da71bf993d3e099be054f38b5788158057a8fbff663a4f",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 897,
+        "height": 597
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Vietnam International Furniture & Home Accessories 2026",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 22,
+        "pdf_xref": 226,
+        "all_recorded_pages": [
+          22
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-226.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__psd-dell-microsoft-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-2025.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-2025.jpeg",
+      "original_filename": "psd-dell-microsoft-2025.jpeg",
+      "size_bytes": 101368,
+      "sha256": "686d47b37bbd077cfacc856d4ca61abf9ca91582b337e5ce64f13e951a8e4bd2",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "PSD – Dell – Microsoft Partner Year End Party 2025",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 23,
+        "pdf_xref": 236,
+        "all_recorded_pages": [
+          23
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-236.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__samsung-psd-2024.jpeg",
+      "handoff_path": "references/credential-selected/samsung-psd-2024.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/samsung-psd-2024.jpeg",
+      "original_filename": "samsung-psd-2024.jpeg",
+      "size_bytes": 117547,
+      "sha256": "f90d2304a6c41b3c3732e25f60ed9a18d9db857a5fd72b7e06b0e224e37efad9",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1106,
+        "height": 709
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Samsung & PSD Signing Ceremony of Strategic Partnership 2024",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 27,
+        "pdf_xref": 271,
+        "all_recorded_pages": [
+          27
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-271.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__aqua-conference-2023.jpeg",
+      "handoff_path": "references/credential-selected/aqua-conference-2023.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/aqua-conference-2023.jpeg",
+      "original_filename": "aqua-conference-2023.jpeg",
+      "size_bytes": 171013,
+      "sha256": "21f529fdcd4d061f4629a723663c9cc54419573436d38d377300d4de37eb52c8",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1346,
+        "height": 519
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "AQUA CAC Customer Conference 2023; event & media management",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 30,
+        "pdf_xref": 291,
+        "all_recorded_pages": [
+          30
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-291.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__piano-forte-opus-1.jpeg",
+      "handoff_path": "references/credential-selected/piano-forte-opus-1.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/piano-forte-opus-1.jpeg",
+      "original_filename": "piano-forte-opus-1.jpeg",
+      "size_bytes": 39081,
+      "sha256": "65dcbfa5ea00affeff15791b8d1a718b37d8d4f51e7fa57d6d6aa309c78d0425",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 603,
+        "height": 403
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Piano concert: Piano Forte Opus 1: Through the Ages",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 32,
+        "pdf_xref": 305,
+        "all_recorded_pages": [
+          32
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-305.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__nhatrang-festival-2019.png",
+      "handoff_path": "references/credential-selected/nhatrang-festival-2019.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/nhatrang-festival-2019.png",
+      "original_filename": "nhatrang-festival-2019.png",
+      "size_bytes": 1941389,
+      "sha256": "ec5fd89789431aeac9929f59607b501e2bd8ff4f9c9cbf9738cdf61792926ce7",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1115,
+        "height": 743
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "National Tourism Year Announcement & Nha Trang New Year Festival 2019",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 35,
+        "pdf_xref": 338,
+        "all_recorded_pages": [
+          35
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-338-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__stage-production-design.jpeg",
+      "handoff_path": "references/credential-selected/stage-production-design.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/stage-production-design.jpeg",
+      "original_filename": "stage-production-design.jpeg",
+      "size_bytes": 106837,
+      "sha256": "5795a0d979addf81af9b29ef452703d7e5044b884ee4b878066943026c2543c5",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 1280,
+        "height": 581
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Production Design & Construction examples",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 42,
+        "pdf_xref": 403,
+        "all_recorded_pages": [
+          42
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-403.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__product-photography-red.jpeg",
+      "handoff_path": "references/credential-selected/product-photography-red.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/product-photography-red.jpeg",
+      "original_filename": "product-photography-red.jpeg",
+      "size_bytes": 36145,
+      "sha256": "5e3acf89daecc786c495bddfa345e92317ec196699afc61f211fff0b01a50f75",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 544,
+        "height": 816
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Commercial photography: product food and beverage",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 44,
+        "pdf_xref": 418,
+        "all_recorded_pages": [
+          44
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-418.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__food-photography.jpeg",
+      "handoff_path": "references/credential-selected/food-photography.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/food-photography.jpeg",
+      "original_filename": "food-photography.jpeg",
+      "size_bytes": 71024,
+      "sha256": "4b54bdf2b7c2f3520d58b3ad7b6c2aa7a3792d0a3b4b71b8b2f3e34eb5d0dfc2",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 544,
+        "height": 816
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Commercial photography: food and beverage",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 44,
+        "pdf_xref": 420,
+        "all_recorded_pages": [
+          44
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-420.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__brand__pinky-lamb-logo-badge-credential-page06.png",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/pinky-lamb-logo-badge.png",
+      "original_filename": "pinky-lamb-logo-badge.png",
+      "size_bytes": 58730,
+      "sha256": "01e6813183a2b64df32215673bfcb02b095d4bd76f4e628f5894b35a32e27da1",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 202,
+        "height": 202
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Small 202×202 round Pinky Lamb badge extracted from credential; not the separate Drive Main Logo.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 6,
+        "pdf_xref": 75,
+        "all_recorded_pages": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-75-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-wayfair.png",
+      "handoff_path": "references/credential-selected/client-wayfair.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-wayfair.png",
+      "original_filename": "client-wayfair.png",
+      "size_bytes": 15909,
+      "sha256": "63f3b3f211396a541efad30663c02c50b34b0c698f54b158158718023897a533",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 717,
+        "height": 196
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 33,
+        "all_recorded_pages": [
+          5
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-33-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-sony.png",
+      "handoff_path": "references/credential-selected/client-sony.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-sony.png",
+      "original_filename": "client-sony.png",
+      "size_bytes": 9248,
+      "sha256": "85c1a913596d11a4eb0c844067da44ee61b2bbb150d6bf728802b99d8e195329",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 592,
+        "height": 104
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 35,
+        "all_recorded_pages": [
+          5
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-35-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-samsung.png",
+      "handoff_path": "references/credential-selected/client-samsung.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-samsung.png",
+      "original_filename": "client-samsung.png",
+      "size_bytes": 41759,
+      "sha256": "20909f6d2c3b6590a57a5c2b6da0f6435dda551a3d876637df088f28feac29f9",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 800,
+        "height": 480
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 39,
+        "all_recorded_pages": [
+          5,
+          14
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-39-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-aqua.png",
+      "handoff_path": "references/credential-selected/client-aqua.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-aqua.png",
+      "original_filename": "client-aqua.png",
+      "size_bytes": 22524,
+      "sha256": "1b8c3d4c0129f263e04d42e090f1ff0911d488acea4ffe5386055b7b8b76f149",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 592,
+        "height": 150
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 37,
+        "all_recorded_pages": [
+          5
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-37-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-manulife.png",
+      "handoff_path": "references/credential-selected/client-manulife.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-manulife.png",
+      "original_filename": "client-manulife.png",
+      "size_bytes": 9153,
+      "sha256": "edb4e3666f366b306400d0497571ee47669998402d4232e4cce5961ab2873b85",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 480,
+        "height": 92
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 41,
+        "all_recorded_pages": [
+          5,
+          13
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-41-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-guardian.jpeg",
+      "handoff_path": "references/credential-selected/client-guardian.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-guardian.jpeg",
+      "original_filename": "client-guardian.jpeg",
+      "size_bytes": 6715,
+      "sha256": "2980a782dfa2b3063306867fb66e77b3b6b01ac067b3e2117478b543ef1426d6",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 400,
+        "height": 142
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 43,
+        "all_recorded_pages": [
+          5,
+          15
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-43.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__client-diag.png",
+      "handoff_path": "references/credential-selected/client-diag.png",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-diag.png",
+      "original_filename": "client-diag.png",
+      "size_bytes": 8205,
+      "sha256": "82439ac81c6e0467f8b317b384cd846318f4d4eeff26a2ae887d4de75bb0c511",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 208,
+        "height": 182
+      },
+      "image_mode": "RGBA",
+      "category": "credential_image_extraction",
+      "role": "Client logo on PDF page 5",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 5,
+        "pdf_xref": 44,
+        "all_recorded_pages": [
+          5,
+          7,
+          8
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-44-alpha.png"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests.",
+        "The previous PDF extraction restored the embedded alpha mask; this PNG is an alpha-restored derivative."
+      ]
+    },
+    {
+      "id": "references__credential-selected__samsung-flip2-2019.jpeg",
+      "handoff_path": "references/credential-selected/samsung-flip2-2019.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/samsung-flip2-2019.jpeg",
+      "original_filename": "samsung-flip2-2019.jpeg",
+      "size_bytes": 41123,
+      "sha256": "60fed7863dc4783f1535fc80e5f65d3bb1c4c4d427f4659b92085c965e223fc9",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 769,
+        "height": 478
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Samsung Flip 2 viral for Teacher’s Day, 20 Nov 2019",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 14,
+        "pdf_xref": 163,
+        "all_recorded_pages": [
+          14
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-163.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__varna-elite-collage-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-collage-2023.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-collage-2023.jpeg",
+      "original_filename": "varna-elite-collage-2023.jpeg",
+      "size_bytes": 60186,
+      "sha256": "0d134a2eca1c4996788062dd48d7be85d3579dcac51ff85a3aa42d8ded708b03",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 614,
+        "height": 636
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "VARNA ELITE Thanh Xuân Hoàng Kim 2023 campaign photographs",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 9,
+        "pdf_xref": 111,
+        "all_recorded_pages": [
+          9
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-111.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__varna-elite-lifestyle-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-lifestyle-2023.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-lifestyle-2023.jpeg",
+      "original_filename": "varna-elite-lifestyle-2023.jpeg",
+      "size_bytes": 38377,
+      "sha256": "1e2d32a096169673dfa6ca8fa5e90f4adad0cd44d3c1ff37bc1062518b2f394e",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 650,
+        "height": 434
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "VARNA ELITE Thanh Xuân Hoàng Kim 2023 campaign photograph",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 9,
+        "pdf_xref": 116,
+        "all_recorded_pages": [
+          9
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-116.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__petrosetco-guests-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-guests-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-guests-2026.jpeg",
+      "original_filename": "petrosetco-guests-2026.jpeg",
+      "size_bytes": 115090,
+      "sha256": "7a4fdfad3454b1eca6328b087dfc1d48c47c9f82207e981c07f6b190d415b21a",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 887,
+        "height": 591
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Petrosetco Distribution New Year Party 2026 guests",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 20,
+        "pdf_xref": 212,
+        "all_recorded_pages": [
+          20
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-212.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__petrosetco-fireworks-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-fireworks-2026.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-fireworks-2026.jpeg",
+      "original_filename": "petrosetco-fireworks-2026.jpeg",
+      "size_bytes": 101906,
+      "sha256": "f2c24f584dd309ef536c854b6a4d9ce5eedc4feba9f2398439c56f9d6757b5e3",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 739,
+        "height": 1109
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "Petrosetco Distribution New Year Party 2026 fireworks",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 20,
+        "pdf_xref": 213,
+        "all_recorded_pages": [
+          20
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-213.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__psd-dell-microsoft-stage-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-stage-2025.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-stage-2025.jpeg",
+      "original_filename": "psd-dell-microsoft-stage-2025.jpeg",
+      "size_bytes": 78447,
+      "sha256": "76a468c4409e34ecd1e85396bc6e934ab8648234c37d8e2561e96ee62be45f9e",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "PSD – Dell – Microsoft Partner Year End Party 2025 stage",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 23,
+        "pdf_xref": 234,
+        "all_recorded_pages": [
+          23
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-234.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-selected__psd-dell-microsoft-guests-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-guests-2025.jpeg",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-guests-2025.jpeg",
+      "original_filename": "psd-dell-microsoft-guests-2025.jpeg",
+      "size_bytes": 69748,
+      "sha256": "ef73e4544bd3c31304643a852d45589d4862ca1e66da3970cd2b6bc205d534fe",
+      "mime_type": "image/jpeg",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "credential_image_extraction",
+      "role": "PSD – Dell – Microsoft Partner Year End Party 2025 guests",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison",
+        "page": 23,
+        "pdf_xref": 238,
+        "all_recorded_pages": [
+          23
+        ],
+        "matching_raw_paths": [
+          "/workspace/scratch/5188ecdc77a1/credential-assets/raw/asset-238.jpeg"
+        ]
+      },
+      "source_reliability": [
+        "Full pixel dimensions of the selected extracted PDF image are preserved; no resize, crop, or re-encoding was performed for this package.",
+        "This is an embedded PDF asset, not a camera original or editable design master.",
+        "Selected bytes match the raw extraction output; page/xref and dimensions agree with both saved manifests."
+      ]
+    },
+    {
+      "id": "references__credential-provenance__credential-extracted.txt",
+      "handoff_path": "references/credential-provenance/credential-extracted.txt",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/extracted.txt",
+      "original_filename": "extracted.txt",
+      "size_bytes": 5196,
+      "sha256": "d6bc75591be849a5b47ec3e518d186c26cc0535782890dd55f2d6ac3bede262f",
+      "mime_type": "text/plain",
+      "category": "provenance_document",
+      "role": "Original text-layer extraction with page markers.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "credential_text_extraction",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf"
+      },
+      "source_reliability": [
+        "Copied byte-for-byte from the saved extraction.",
+        "Rasterized headings, logos, and some text are absent from the PDF text layer; blank page sections do not mean the original PDF page is blank."
+      ]
+    },
+    {
+      "id": "references__credential-provenance__selected-manifest.original.json",
+      "handoff_path": "references/credential-provenance/selected-manifest.original.json",
+      "original_scratch_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/manifest.json",
+      "original_filename": "manifest.json",
+      "size_bytes": 10244,
+      "sha256": "ae9cde79bdaeb3c7286b9f94f7ec677a74ad4530984d7b3f67a82269cfb3fac0",
+      "mime_type": "application/json",
+      "category": "provenance_document",
+      "role": "Original selected-image manifest retained as evidence.",
+      "packaging": "copied_byte_for_byte",
+      "source": {
+        "kind": "original_local_manifest",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf"
+      },
+      "source_reliability": [
+        "Copied byte-for-byte; absolute path values are historical source locations, not portable links.",
+        "Use path-map.json or references/asset-manifest.json for valid packaged locations."
+      ]
+    },
+    {
+      "id": "dist__assets__Pinky-Lamb-Credential-2026.pdf",
+      "handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "original_filename": "Pinky-Lamb-Credential-2026.pdf",
+      "size_bytes": 17349548,
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+      "mime_type": "application/pdf",
+      "category": "supplied_original_reused",
+      "role": "Complete supplied 48-page credential; sole PDF copy in the handoff.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "supplied_credential_pdf",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made.",
+        "SHA-256 matches the downloaded credential-assets PDF byte-for-byte."
+      ]
+    },
+    {
+      "id": "dist__assets__abril-fatface-400.woff",
+      "handoff_path": "dist/assets/abril-fatface-400.woff",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/abril-fatface-400.woff",
+      "original_filename": "abril-fatface-400.woff",
+      "size_bytes": 26712,
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357",
+      "mime_type": "font/woff",
+      "category": "runtime_font",
+      "role": "Local website font; reuse with existing FONT-NOTICES.txt.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "website_font",
+        "family": "Abril Fatface",
+        "weight": 400,
+        "license_notice_handoff_path": "FONT-NOTICES.txt",
+        "metadata_evidence": "Filename and FONT-NOTICES.txt; fonts are implementation choices, not asserted official brand fonts."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__brand-diagonal.webp",
+      "handoff_path": "dist/assets/brand-diagonal.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/brand-diagonal.webp",
+      "original_filename": "brand-diagonal.webp",
+      "size_bytes": 12540,
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready diagonal brand background.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_encoding",
+        "source_handoff_path": "references/brand/minimal-crystal-blossom-diagonal-v11.png"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__client-aqua.webp",
+      "handoff_path": "dist/assets/client-aqua.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-aqua.webp",
+      "original_filename": "client-aqua.webp",
+      "size_bytes": 17434,
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 590,
+        "height": 144
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Client logo on PDF page 5",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/client-aqua.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__client-manulife.webp",
+      "handoff_path": "dist/assets/client-manulife.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-manulife.webp",
+      "original_filename": "client-manulife.webp",
+      "size_bytes": 6046,
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 480,
+        "height": 92
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Client logo on PDF page 5",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/client-manulife.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__client-samsung.webp",
+      "handoff_path": "dist/assets/client-samsung.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-samsung.webp",
+      "original_filename": "client-samsung.webp",
+      "size_bytes": 26684,
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 793,
+        "height": 126
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Client logo on PDF page 5",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/client-samsung.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__client-sony.webp",
+      "handoff_path": "dist/assets/client-sony.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-sony.webp",
+      "original_filename": "client-sony.webp",
+      "size_bytes": 4806,
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 592,
+        "height": 104
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Client logo on PDF page 5",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/client-sony.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__client-wayfair.webp",
+      "handoff_path": "dist/assets/client-wayfair.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-wayfair.webp",
+      "original_filename": "client-wayfair.webp",
+      "size_bytes": 12618,
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 635,
+        "height": 146
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Client logo on PDF page 5",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/client-wayfair.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__diag-awareness-2022.webp",
+      "handoff_path": "dist/assets/diag-awareness-2022.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/diag-awareness-2022.webp",
+      "original_filename": "diag-awareness-2022.webp",
+      "size_bytes": 32040,
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 683,
+        "height": 428
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Diag Brand Awareness Strategy 2022; character marketing, corporate video, PR, social, KOLs/KOCs",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/diag-awareness-2022.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__favicon.png",
+      "handoff_path": "dist/assets/favicon.png",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/favicon.png",
+      "original_filename": "favicon.png",
+      "size_bytes": 6186,
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 64,
+        "height": 64
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Existing website favicon.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_logo_derivative",
+        "drive_file_id": "13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4",
+        "url": "https://drive.google.com/file/d/13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4/view",
+        "metadata_evidence": "Original project README; original standalone logo not located in this local inventory."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made.",
+        "Main Logo origin is recorded in the original README. The separate downloaded source logo is not present in the inspected local directories; this runtime derivative is not relabeled as that original."
+      ]
+    },
+    {
+      "id": "dist__assets__montserrat-400.woff",
+      "handoff_path": "dist/assets/montserrat-400.woff",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-400.woff",
+      "original_filename": "montserrat-400.woff",
+      "size_bytes": 84072,
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1",
+      "mime_type": "font/woff",
+      "category": "runtime_font",
+      "role": "Local website font; reuse with existing FONT-NOTICES.txt.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "website_font",
+        "family": "Montserrat",
+        "weight": 400,
+        "license_notice_handoff_path": "FONT-NOTICES.txt",
+        "metadata_evidence": "Filename and FONT-NOTICES.txt; fonts are implementation choices, not asserted official brand fonts."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__montserrat-600.woff",
+      "handoff_path": "dist/assets/montserrat-600.woff",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-600.woff",
+      "original_filename": "montserrat-600.woff",
+      "size_bytes": 84976,
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f",
+      "mime_type": "font/woff",
+      "category": "runtime_font",
+      "role": "Local website font; reuse with existing FONT-NOTICES.txt.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "website_font",
+        "family": "Montserrat",
+        "weight": 600,
+        "license_notice_handoff_path": "FONT-NOTICES.txt",
+        "metadata_evidence": "Filename and FONT-NOTICES.txt; fonts are implementation choices, not asserted official brand fonts."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__montserrat-700.woff",
+      "handoff_path": "dist/assets/montserrat-700.woff",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-700.woff",
+      "original_filename": "montserrat-700.woff",
+      "size_bytes": 85620,
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03",
+      "mime_type": "font/woff",
+      "category": "runtime_font",
+      "role": "Local website font; reuse with existing FONT-NOTICES.txt.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "website_font",
+        "family": "Montserrat",
+        "weight": 700,
+        "license_notice_handoff_path": "FONT-NOTICES.txt",
+        "metadata_evidence": "Filename and FONT-NOTICES.txt; fonts are implementation choices, not asserted official brand fonts."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__montserrat-800.woff",
+      "handoff_path": "dist/assets/montserrat-800.woff",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-800.woff",
+      "original_filename": "montserrat-800.woff",
+      "size_bytes": 86676,
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1",
+      "mime_type": "font/woff",
+      "category": "runtime_font",
+      "role": "Local website font; reuse with existing FONT-NOTICES.txt.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "website_font",
+        "family": "Montserrat",
+        "weight": 800,
+        "license_notice_handoff_path": "FONT-NOTICES.txt",
+        "metadata_evidence": "Filename and FONT-NOTICES.txt; fonts are implementation choices, not asserted official brand fonts."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__petrosetco-fireworks-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-fireworks-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-fireworks-2026.webp",
+      "original_filename": "petrosetco-fireworks-2026.webp",
+      "size_bytes": 92836,
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 733,
+        "height": 1100
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Petrosetco Distribution New Year Party 2026 fireworks",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/petrosetco-fireworks-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__petrosetco-guests-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-guests-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-guests-2026.webp",
+      "original_filename": "petrosetco-guests-2026.webp",
+      "size_bytes": 122614,
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 887,
+        "height": 591
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Petrosetco Distribution New Year Party 2026 guests",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/petrosetco-guests-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__petrosetco-party-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-party-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-party-2026.webp",
+      "original_filename": "petrosetco-party-2026.webp",
+      "size_bytes": 115474,
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1011,
+        "height": 476
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Petrosetco Distribution New Year Party 2026",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/petrosetco-party-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__pinky-hero.webp",
+      "handoff_path": "dist/assets/pinky-hero.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-hero.webp",
+      "original_filename": "pinky-hero.webp",
+      "size_bytes": 51282,
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 830,
+        "height": 900
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Existing website hero crop of supplied cover artwork.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_crop",
+        "source_handoff_path": "references/brand/cover-reference-v5-fresh-coral.png"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__pinky-logo.webp",
+      "handoff_path": "dist/assets/pinky-logo.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-logo.webp",
+      "original_filename": "pinky-logo.webp",
+      "size_bytes": 28046,
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 400,
+        "height": 400
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Existing website logo derivative.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_logo_derivative",
+        "drive_file_id": "13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4",
+        "url": "https://drive.google.com/file/d/13UpkNmdCuq_GzuWsQsrEbDMKSmQDOvk4/view",
+        "metadata_evidence": "Original project README; original standalone logo not located in this local inventory."
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made.",
+        "Main Logo origin is recorded in the original README. The separate downloaded source logo is not present in the inspected local directories; this runtime derivative is not relabeled as that original."
+      ]
+    },
+    {
+      "id": "dist__assets__pinky-mascot.webp",
+      "handoff_path": "dist/assets/pinky-mascot.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-mascot.webp",
+      "original_filename": "pinky-mascot.webp",
+      "size_bytes": 61562,
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 969,
+        "height": 905
+      },
+      "image_mode": "RGBA",
+      "category": "runtime_derivative",
+      "role": "Web-ready version of supplied flat mascot.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_encoding",
+        "source_handoff_path": "references/brand/pinky-lamb-mascot-supplied.png"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__psd-dell-microsoft-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-2025.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-2025.webp",
+      "original_filename": "psd-dell-microsoft-2025.webp",
+      "size_bytes": 108712,
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of PSD – Dell – Microsoft Partner Year End Party 2025",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/psd-dell-microsoft-2025.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__psd-dell-microsoft-guests-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "original_filename": "psd-dell-microsoft-guests-2025.webp",
+      "size_bytes": 64474,
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of PSD – Dell – Microsoft Partner Year End Party 2025 guests",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/psd-dell-microsoft-guests-2025.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__psd-dell-microsoft-stage-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "original_filename": "psd-dell-microsoft-stage-2025.webp",
+      "size_bytes": 78392,
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 883,
+        "height": 589
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of PSD – Dell – Microsoft Partner Year End Party 2025 stage",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/psd-dell-microsoft-stage-2025.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__samsung-flip2-2019.webp",
+      "handoff_path": "dist/assets/samsung-flip2-2019.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/samsung-flip2-2019.webp",
+      "original_filename": "samsung-flip2-2019.webp",
+      "size_bytes": 34148,
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 769,
+        "height": 478
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Samsung Flip 2 viral for Teacher’s Day, 20 Nov 2019",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/samsung-flip2-2019.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__showreel-2025.mp4",
+      "handoff_path": "dist/assets/showreel-2025.mp4",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/showreel-2025.mp4",
+      "original_filename": "showreel-2025.mp4",
+      "size_bytes": 11403830,
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "mime_type": "video/mp4",
+      "category": "runtime_derivative",
+      "role": "Full website showreel encoded at 720p H.264/AAC.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_video_transcode",
+        "title": "Pinky Lamb clip 2025",
+        "drive_file_id": "1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b",
+        "url": "https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view",
+        "metadata_evidence": "Original project README.md, supplied-source section",
+        "source_handoff_path": "references/video/showreel-2025-original.mp4"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__showreel-poster.webp",
+      "handoff_path": "dist/assets/showreel-poster.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/showreel-poster.webp",
+      "original_filename": "showreel-poster.webp",
+      "size_bytes": 54698,
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1440,
+        "height": 810
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready poster at 38 seconds.",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "web_encoding",
+        "source_handoff_path": "references/video/showreel-frame-38s.jpg"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__sony-ult-2025.webp",
+      "handoff_path": "dist/assets/sony-ult-2025.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/sony-ult-2025.webp",
+      "original_filename": "sony-ult-2025.webp",
+      "size_bytes": 56578,
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 839,
+        "height": 396
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of SONY Karaoke ULT Speakers 2025; concept and idea; video production",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/sony-ult-2025.png",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__varna-elite-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-2023.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-2023.webp",
+      "original_filename": "varna-elite-2023.webp",
+      "size_bytes": 39670,
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 708,
+        "height": 473
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Nutifood VARNA ELITE Thanh Xuân Hoàng Kim 2023; concept, KOLs, photoshoot, social",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/varna-elite-2023.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__varna-elite-collage-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-collage-2023.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-collage-2023.webp",
+      "original_filename": "varna-elite-collage-2023.webp",
+      "size_bytes": 54590,
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 614,
+        "height": 636
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of VARNA ELITE Thanh Xuân Hoàng Kim 2023 campaign photographs",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/varna-elite-collage-2023.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__varna-elite-lifestyle-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-lifestyle-2023.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-lifestyle-2023.webp",
+      "original_filename": "varna-elite-lifestyle-2023.webp",
+      "size_bytes": 35632,
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 650,
+        "height": 434
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of VARNA ELITE Thanh Xuân Hoàng Kim 2023 campaign photograph",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/varna-elite-lifestyle-2023.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__vifa-fair-2026.webp",
+      "handoff_path": "dist/assets/vifa-fair-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/vifa-fair-2026.webp",
+      "original_filename": "vifa-fair-2026.webp",
+      "size_bytes": 117020,
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 897,
+        "height": 597
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Vietnam International Furniture & Home Accessories 2026",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/vifa-fair-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__vifa-opening-2026.webp",
+      "handoff_path": "dist/assets/vifa-opening-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/vifa-opening-2026.webp",
+      "original_filename": "vifa-opening-2026.webp",
+      "size_bytes": 182808,
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1211,
+        "height": 597
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Vietnam International Furniture & Home Accessories 2026; opening ceremony and registration services",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/vifa-opening-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__wayfair-registration-2026.webp",
+      "handoff_path": "dist/assets/wayfair-registration-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-registration-2026.webp",
+      "original_filename": "wayfair-registration-2026.webp",
+      "size_bytes": 112116,
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1248,
+        "height": 558
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/wayfair-registration-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__wayfair-summit-2026.webp",
+      "handoff_path": "dist/assets/wayfair-summit-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-summit-2026.webp",
+      "original_filename": "wayfair-summit-2026.webp",
+      "size_bytes": 47196,
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 1104,
+        "height": 575
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/wayfair-summit-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "dist__assets__wayfair-team-2026.webp",
+      "handoff_path": "dist/assets/wayfair-team-2026.webp",
+      "original_scratch_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-team-2026.webp",
+      "original_filename": "wayfair-team-2026.webp",
+      "size_bytes": 61756,
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+      "mime_type": "image/webp",
+      "dimensions": {
+        "width": 954,
+        "height": 575
+      },
+      "image_mode": "RGB",
+      "category": "runtime_derivative",
+      "role": "Web-ready derivative of Wayfair Global Selling Vietnam Summit 2026",
+      "packaging": "reused_in_dist",
+      "source": {
+        "kind": "credential_pdf_extraction",
+        "title": "Pinky Lamb Credential 2026",
+        "drive_file_id": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+        "url": "https://drive.google.com/file/d/10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb/view",
+        "source_handoff_path": "references/credential-selected/wayfair-team-2026.jpeg",
+        "metadata_evidence": "selected/manifest.json and image-manifest.json; raw-file SHA-256 comparison"
+      },
+      "source_reliability": [
+        "Existing dist file is reused; no second copy was made."
+      ]
+    },
+    {
+      "id": "references__credential-provenance__path-map.json",
+      "handoff_path": "references/credential-provenance/path-map.json",
+      "original_scratch_path": null,
+      "original_filename": null,
+      "size_bytes": 19686,
+      "sha256": "c2aac669b032894a4bbf39ccdd752c0886b2e6f0f1c317708c0a225f6f37efc6",
+      "mime_type": "application/json",
+      "category": "provenance_document",
+      "role": "Portable mapping from historical source paths to handoff locations.",
+      "packaging": "generated_metadata",
+      "source": {
+        "kind": "packaging_metadata",
+        "derived_from": [
+          "references/credential-provenance/selected-manifest.original.json",
+          "references/asset-manifest.json"
+        ]
+      },
+      "source_reliability": [
+        "Generated from the saved file manifests and verified current bytes; explanatory metadata only."
+      ]
+    },
+    {
+      "id": "references__credential-provenance__selected-object-provenance.json",
+      "handoff_path": "references/credential-provenance/selected-object-provenance.json",
+      "original_scratch_path": null,
+      "original_filename": null,
+      "size_bytes": 26965,
+      "sha256": "b5e1eb9690a7c91a8df1511d0bcfcc2c7be705d9d13c8a09511e4335469b5b3f",
+      "mime_type": "application/json",
+      "category": "provenance_document",
+      "role": "PDF page, xref, dimensions and bounding boxes for selected images only.",
+      "packaging": "generated_metadata",
+      "source": {
+        "kind": "packaging_metadata",
+        "derived_from": [
+          "references/credential-provenance/selected-manifest.original.json",
+          "references/asset-manifest.json"
+        ]
+      },
+      "source_reliability": [
+        "Generated from the saved file manifests and verified current bytes; explanatory metadata only."
+      ]
+    },
+    {
+      "id": "references__credential-provenance__README.md",
+      "handoff_path": "references/credential-provenance/README.md",
+      "original_scratch_path": null,
+      "original_filename": null,
+      "size_bytes": 2876,
+      "sha256": "047855d8703f9d8d153b5d37d811c53af95559041b443fca288b70c0b48312b7",
+      "mime_type": "text/markdown",
+      "category": "provenance_document",
+      "role": "Explanation of historical mappings, original versus derivative categories, and package exclusions.",
+      "packaging": "generated_metadata",
+      "source": {
+        "kind": "packaging_metadata",
+        "derived_from": [
+          "references/credential-provenance/selected-manifest.original.json",
+          "references/asset-manifest.json"
+        ]
+      },
+      "source_reliability": [
+        "Generated from the saved file manifests and verified current bytes; explanatory metadata only."
+      ]
+    }
+  ]
+}

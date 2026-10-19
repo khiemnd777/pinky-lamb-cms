@@ -1,0 +1,5148 @@
+{
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "observedUtc": "2026-10-15T05:20:05.345755+00:00",
+  "packageRoots": [
+    ".agents",
+    ".claude",
+    ".codex",
+    "docs/agent-kit",
+    "engineering/agent-kit"
+  ],
+  "records": [
+    {
+      "path": ".agents/ADDY-AGENT-SKILLS-LICENSE",
+      "type": "file",
+      "bytes": 1068,
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".agents/references/accessibility-checklist.md",
+      "type": "file",
+      "bytes": 5206,
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "type": "file",
+      "bytes": 4928,
+      "sha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03"
+    },
+    {
+      "path": ".agents/references/observability-checklist.md",
+      "type": "file",
+      "bytes": 5129,
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".agents/references/orchestration-patterns.md",
+      "type": "file",
+      "bytes": 18201,
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".agents/references/performance-checklist.md",
+      "type": "file",
+      "bytes": 13139,
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".agents/references/security-checklist.md",
+      "type": "file",
+      "bytes": 14360,
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".agents/references/testing-patterns.md",
+      "type": "file",
+      "bytes": 7460,
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".agents/skills/api-and-interface-design/SKILL.md",
+      "type": "file",
+      "bytes": 14886,
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "type": "file",
+      "bytes": 20976,
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".agents/skills/code-simplification/SKILL.md",
+      "type": "file",
+      "bytes": 13545,
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".agents/skills/context-engineering/SKILL.md",
+      "type": "file",
+      "bytes": 15486,
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md",
+      "type": "file",
+      "bytes": 10913,
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md",
+      "type": "file",
+      "bytes": 9859,
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "type": "file",
+      "bytes": 11712,
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "type": "file",
+      "bytes": 10078,
+      "sha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b"
+    },
+    {
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md",
+      "type": "file",
+      "bytes": 13948,
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/SKILL.md",
+      "type": "file",
+      "bytes": 16678,
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".agents/skills/performance-optimization/references/optimization-patterns.md",
+      "type": "file",
+      "bytes": 9692,
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "type": "file",
+      "bytes": 12150,
+      "sha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/SKILL.md",
+      "type": "file",
+      "bytes": 17559,
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+      "type": "file",
+      "bytes": 13036,
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".agents/skills/source-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 10038,
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".agents/skills/spec-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 13096,
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".agents/skills/technote/SKILL.md",
+      "type": "file",
+      "bytes": 1106,
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".agents/skills/test-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 16517,
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "type": "file",
+      "bytes": 11870,
+      "sha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb"
+    },
+    {
+      "path": ".claude/ADDY-AGENT-SKILLS-LICENSE",
+      "type": "file",
+      "bytes": 1068,
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "type": "file",
+      "bytes": 2004,
+      "sha256": "8e80a38f893020cf12fe0c0b709c7d9d22c474af250a89a6398dccc2b70d141a"
+    },
+    {
+      "path": ".claude/agents/kit-implementer.md",
+      "type": "file",
+      "bytes": 1710,
+      "sha256": "c4b20c1017452b46c5c4b5c7047443459d0116927a0587df68cdaeccc49ef37b"
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "type": "file",
+      "bytes": 2003,
+      "sha256": "bed4a31fa817e0f11286e4d5a313c9b18b996931235268b342b4c1f4780ff60e"
+    },
+    {
+      "path": ".claude/references/accessibility-checklist.md",
+      "type": "file",
+      "bytes": 5206,
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "type": "file",
+      "bytes": 4928,
+      "sha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03"
+    },
+    {
+      "path": ".claude/references/observability-checklist.md",
+      "type": "file",
+      "bytes": 5129,
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": ".claude/references/orchestration-patterns.md",
+      "type": "file",
+      "bytes": 18201,
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": ".claude/references/performance-checklist.md",
+      "type": "file",
+      "bytes": 13139,
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": ".claude/references/security-checklist.md",
+      "type": "file",
+      "bytes": 14360,
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": ".claude/references/testing-patterns.md",
+      "type": "file",
+      "bytes": 7460,
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": ".claude/skills/api-and-interface-design/SKILL.md",
+      "type": "file",
+      "bytes": 14886,
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "type": "file",
+      "bytes": 20976,
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": ".claude/skills/code-simplification/SKILL.md",
+      "type": "file",
+      "bytes": 13545,
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": ".claude/skills/context-engineering/SKILL.md",
+      "type": "file",
+      "bytes": 15486,
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": ".claude/skills/debugging-and-error-recovery/SKILL.md",
+      "type": "file",
+      "bytes": 10913,
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": ".claude/skills/documentation-and-adrs/SKILL.md",
+      "type": "file",
+      "bytes": 9859,
+      "sha256": "359b22460045583b0233ec3f80223459c4096b0fa513f5c29ade9c3985207d65"
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "type": "file",
+      "bytes": 11712,
+      "sha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e"
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "type": "file",
+      "bytes": 10078,
+      "sha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b"
+    },
+    {
+      "path": ".claude/skills/observability-and-instrumentation/SKILL.md",
+      "type": "file",
+      "bytes": 13948,
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/SKILL.md",
+      "type": "file",
+      "bytes": 16678,
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": ".claude/skills/performance-optimization/references/optimization-patterns.md",
+      "type": "file",
+      "bytes": 9692,
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "type": "file",
+      "bytes": 12150,
+      "sha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/SKILL.md",
+      "type": "file",
+      "bytes": 17559,
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+      "type": "file",
+      "bytes": 13036,
+      "sha256": "d8ba58cad151aeca4804e48fc768240af0dd6b0ecddd07fbf24a1562140ba97a"
+    },
+    {
+      "path": ".claude/skills/source-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 10038,
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": ".claude/skills/spec-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 13096,
+      "sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef"
+    },
+    {
+      "path": ".claude/skills/technote/SKILL.md",
+      "type": "file",
+      "bytes": 1106,
+      "sha256": "a4bfb996a2bda1f0e8754e64b0191c1b83c962f54fb1a1137147d3ae8bec7046"
+    },
+    {
+      "path": ".claude/skills/test-driven-development/SKILL.md",
+      "type": "file",
+      "bytes": 16517,
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "type": "file",
+      "bytes": 11870,
+      "sha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb"
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "type": "file",
+      "bytes": 1941,
+      "sha256": "bf9999b74d053d03de528eb4aafa9067603d77f85eeb52227398710e85666fdd"
+    },
+    {
+      "path": ".codex/agents/kit-implementer.toml",
+      "type": "file",
+      "bytes": 1651,
+      "sha256": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428"
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "type": "file",
+      "bytes": 1940,
+      "sha256": "66e55e7be64e5e6f1ec233680cf9df4cd0e5d9a52c64a25d7a79c4e220895f53"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "file",
+      "bytes": 9887,
+      "sha256": "29d5786e7ebd06f04ca2c842b363ead83ac1317bc12b51c9793d9e598255f190"
+    },
+    {
+      "path": "CLAUDE.md",
+      "type": "file",
+      "bytes": 11,
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "approvals/APPROVAL-REGISTER.json",
+      "type": "file",
+      "bytes": 13817,
+      "sha256": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+      "type": "file",
+      "bytes": 37177,
+      "sha256": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M2.scope.json",
+      "type": "file",
+      "bytes": 38553,
+      "sha256": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3-REGISTER.json",
+      "type": "file",
+      "bytes": 83821,
+      "sha256": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326"
+    },
+    {
+      "path": "approvals/CMS-001-v2-M3.scope.json",
+      "type": "file",
+      "bytes": 165558,
+      "sha256": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c"
+    },
+    {
+      "path": "approvals/CMS-001-v2.scope.json",
+      "type": "file",
+      "bytes": 26573,
+      "sha256": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30"
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v1-REGISTER.json",
+      "type": "file",
+      "bytes": 4446,
+      "sha256": "71bc0f96a0e2e66def3575df7bdf62174916f8f998dc95f18344e18f6b03b7c9"
+    },
+    {
+      "path": "approvals/CMS-RECOVERY-001-v2-REGISTER.json",
+      "type": "file",
+      "bytes": 28933,
+      "sha256": "3678e7a34ac832c04d357d91b5f5c2065af64bf7975dbbe4cafa81b12d5ebd83"
+    },
+    {
+      "path": "approvals/M3-CONTINUE-04-REGISTER.json",
+      "type": "file",
+      "bytes": 116888,
+      "sha256": "321b196321963acf50a092e3dc88e3a48a87e51d0c22fa7924ab67f5eb26bd00"
+    },
+    {
+      "path": "approvals/M3-PARALLEL-COORDINATION-01-REGISTER.json",
+      "type": "file",
+      "bytes": 1067778,
+      "sha256": "1fc79dc4b30f3a5df0ab17b07fe170c31bbe09230a517567fa5056146767469f"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-BOUNDARY-DOD-CHECKLIST-01.md",
+      "type": "file",
+      "bytes": 12601,
+      "sha256": "4c78a591b040d618fbfa0c70c882c28101a4dce0eec9f06806e0ca7e8ca4f75f"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-1-STATUS.md",
+      "type": "file",
+      "bytes": 11220,
+      "sha256": "69b77cc06f8287ef21979f48a7bf790fd5734ce0ed1e3dcdde24c57c32eca97d"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-1.md",
+      "type": "file",
+      "bytes": 3658,
+      "sha256": "85bba2519e68ac1628903ca8fcd4acc2ab6c35f3d1856491593483e8ddb044d6"
+    },
+    {
+      "path": "docs/agent-kit/ad-hoc/M3-FAST-CODE-HANDOFF-01-COORDINATOR-2.md",
+      "type": "file",
+      "bytes": 18608,
+      "sha256": "cf3c90c8853c67eacdfc08e4635fe21c7ea625c8914d1dd74c94ec9429c24e99"
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "type": "file",
+      "bytes": 5205,
+      "sha256": "6484c7d7f82a83a565267bc7716b3a9b9965a2da56da710044ce54c060397da7"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "type": "file",
+      "bytes": 7673,
+      "sha256": "7c64baa8609ccd075473fb523421d43acc4658fc363cc0be82e4a198266c45df"
+    },
+    {
+      "path": "docs/agent-kit/evidence/AGENTS-before.md",
+      "type": "file",
+      "bytes": 3621,
+      "sha256": "e8c8d8a08b2db7e82bf7a2d8bf09639d4e5fd5b430a3ec83ba4d1e8eab552522"
+    },
+    {
+      "path": "docs/agent-kit/evidence/approval-observation.json",
+      "type": "file",
+      "bytes": 978,
+      "sha256": "859aceeca07cadea9a014154d44334a622498fe693e00375b1da7e010143cd1a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-agent-prompt-discovery-elevated.json",
+      "type": "file",
+      "bytes": 634,
+      "sha256": "2293c1274ba2c7561d26c22b7253076f6cb8eecfea96230007725235b15ab5e1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-agent-prompt-discovery.json",
+      "type": "file",
+      "bytes": 693,
+      "sha256": "7195fa5b7b6041917e44dcfa178a01eb6d3d4ae989db02209fecea92a7824bbe"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-project-layer-diagnostic-final.json",
+      "type": "file",
+      "bytes": 760,
+      "sha256": "d11a4b23a8db48f933b8bd59f310d7701f3690ef6fa8ba94c485281d455f8a6c"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-project-layer-diagnostic.json",
+      "type": "file",
+      "bytes": 480,
+      "sha256": "052397812fea115b7e87ab955965c8358666a04d7b0d66b50dc42a7abd3a9bb7"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-skills-discovery-elevated.json",
+      "type": "file",
+      "bytes": 3371,
+      "sha256": "02ae28807583af7de778f86a59580fbfcd6bcc9d8ee94d370ed2d4605b753997"
+    },
+    {
+      "path": "docs/agent-kit/evidence/codex-skills-discovery.json",
+      "type": "file",
+      "bytes": 474,
+      "sha256": "5e47016a3a49495c3552549c7a00248400136a52e48592a3603aa9f48e688419"
+    },
+    {
+      "path": "docs/agent-kit/evidence/config-read-helper.py",
+      "type": "file",
+      "bytes": 3303,
+      "sha256": "6e02346ef5f6794800bf7f648b60f5adf0826a32b3300af63885a45522c0cf2d"
+    },
+    {
+      "path": "docs/agent-kit/evidence/high-review-observation.json",
+      "type": "file",
+      "bytes": 1404,
+      "sha256": "c57f05899debda007d30b22f18858ca2204086ff47b75db98b3fb1f5f055b7e1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/import-batches.json",
+      "type": "file",
+      "bytes": 7805,
+      "sha256": "8ead56bf7a9b73eec2220b4974a36f3b8b39f74210992149ed28840cb2c91aff"
+    },
+    {
+      "path": "docs/agent-kit/evidence/native-discovery-20261013.json",
+      "type": "file",
+      "bytes": 50559,
+      "sha256": "6a75155e88bed1e73b1a879afd27d6e36e86ee4c59dcc11ce6be1d52adb53f74"
+    },
+    {
+      "path": "docs/agent-kit/evidence/native-discovery-helper.py",
+      "type": "file",
+      "bytes": 4436,
+      "sha256": "10e69219beaa02b1c70dfafe9d2f375c79ed7a71d746bd0d9129ceebd9db014a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-089c5e93f453431abab7ed5036cf3d02.json",
+      "type": "file",
+      "bytes": 11413,
+      "sha256": "2ef7b56930edee46e8e7324cbfff5fa054c2873c9046589313f680b408ef7880"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-28bd58b1de39471dbc56cfeaeebdbe38.json",
+      "type": "file",
+      "bytes": 7508,
+      "sha256": "270d78b83555f418b56d1fc28ab6ae184cf497cac408e909d97ba01f4611e80f"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-3dd47ed7bb374fa0b44bde86c85a92c3.json",
+      "type": "file",
+      "bytes": 1428,
+      "sha256": "b87dd1b32ef615925f48686e2e066438d0633795d1c3a603d8ae930f00ff1034"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-8268636c590e4a03963244b3dc5b07ee.json",
+      "type": "file",
+      "bytes": 7178,
+      "sha256": "8a5ddf57accdd82188d033e486538116a3b36468ccd5d8fe7c4224197aef8217"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-97a8caaafb4e4c9d82ff327a1a1aecaa.json",
+      "type": "file",
+      "bytes": 1765,
+      "sha256": "6de4ddff32a4a795359734b5b62cc946c05da119f653f40c72fd7d298cfa1ed4"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-closure.json",
+      "type": "file",
+      "bytes": 6778,
+      "sha256": "53dac9d7bc14201957b19a58282e8fbf467729c731befd1190b96a08c511383a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-final.json",
+      "type": "file",
+      "bytes": 16425,
+      "sha256": "15c1366a5a8e467b93247d92cb89816d420da8a94457ba0d2f11a43b95d3903d"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02/.owned-marker",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/28bd58b1de39471dbc56cfeaeebdbe38/.owned-marker",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/28bd58b1de39471dbc56cfeaeebdbe38/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/3dd47ed7bb374fa0b44bde86c85a92c3/.owned-marker",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/3dd47ed7bb374fa0b44bde86c85a92c3/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/8268636c590e4a03963244b3dc5b07ee/.owned-marker",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/8268636c590e4a03963244b3dc5b07ee/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/97a8caaafb4e4c9d82ff327a1a1aecaa/.owned-marker",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "b25ebb39e58c55ff2280eeea4ebe762c8593d12c805101367ef2daac5dfe3981"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/97a8caaafb4e4c9d82ff327a1a1aecaa/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/os-06fd2e7e7bd44c3ca1ba90732f9f3122/.owned-marker",
+      "type": "file",
+      "bytes": 47,
+      "sha256": "062afc1a83e86aeae9e464453bb37845ba5bc9f126e4f4e90c4ce2e9aba6528f"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-fixture/os-06fd2e7e7bd44c3ca1ba90732f9f3122/sentinel.txt",
+      "type": "file",
+      "bytes": 26,
+      "sha256": "1ee1737cfaaa33c710cded4c601ba884edebbe7fafacf252c8d67a9bc4167b39"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-os-20261013-06fd2e7e7bd44c3ca1ba90732f9f3122.json",
+      "type": "file",
+      "bytes": 1602,
+      "sha256": "b2ba40aba37873d45051bc9f040c24b42a37a58c74961ceb5ae7150d17b4e33b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/preservation-before.json",
+      "type": "file",
+      "bytes": 1227519,
+      "sha256": "b4ed6494de823e6e77141b5644c8f93eea2bdeae0b220e7fcfe4915c5019c63b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/root-integration-observation.json",
+      "type": "file",
+      "bytes": 762,
+      "sha256": "2df06de118d5e3a86901a72ca571f0d000bbe6100e6c6beb9b7f40fa385bfcea"
+    },
+    {
+      "path": "docs/agent-kit/evidence/scoped-delta.json",
+      "type": "file",
+      "bytes": 7424,
+      "sha256": "9bcc0ab70e62c8f1e70641002acd501bb9564e21d0f3fe3a1c38bcf29a8d68b1"
+    },
+    {
+      "path": "docs/agent-kit/evidence/static-verification.json",
+      "type": "file",
+      "bytes": 513,
+      "sha256": "bf5f0eb062730daa09bee14fc67499f9ec1491e2f482a5579b7c6b081a3b2111"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/config-change.json",
+      "type": "file",
+      "bytes": 932,
+      "sha256": "0cd4bd090d4ba298e46a48e219f168d3a2f78dd2cb37a250476bdf1cf8f71742"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/current-chat-registry-lookup.json",
+      "type": "file",
+      "bytes": 1216,
+      "sha256": "e3ed80f1c783b1719bfd5ffbfe7559b69a99890d71985d35069508f2026674e8"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/ephemeral-read-surface.json",
+      "type": "file",
+      "bytes": 649,
+      "sha256": "b5ef3bdb713fac38544f8f94a3c594846e9711c5a26431ce6ba5f59dd854a9f2"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/extractor-validation.json",
+      "type": "file",
+      "bytes": 885,
+      "sha256": "4f75f850972d1f5d1ec857285189bd12d42d7b8a00fd37bc5f389c5f62470560"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/final-config-observation.json",
+      "type": "file",
+      "bytes": 361,
+      "sha256": "1c765e288121a9fa428687d9063b0c2a48ad438f668eb3bbdc5a6a70cddbb152"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt2-153858588045.json",
+      "type": "file",
+      "bytes": 1321,
+      "sha256": "d72242b92df8ee9f8b7813bf358b7533366c050c76bb6ba310c4a2a660268b72"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt3-154509589242.json",
+      "type": "file",
+      "bytes": 1700,
+      "sha256": "b6bcd0eec215b52fdb1bea42850fd8d4308b513eb3bc4737670c5a157e05004a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer.json",
+      "type": "file",
+      "bytes": 1154,
+      "sha256": "7b267f19e51fd4567fd7f8977e3db59113401900d69c875698289d5e4cd44832"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-source.py",
+      "type": "file",
+      "bytes": 9818,
+      "sha256": "4f5b2bcd152cf91183fcd51e1af9ae10780d88dd66ac354f329df102f2df5438"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-v3-source.py",
+      "type": "file",
+      "bytes": 13397,
+      "sha256": "6bc817df101aebfbef96ca68dd04877930ff19b98e5e53847f33a4f2dda7d194"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-config-read-helper.py",
+      "type": "file",
+      "bytes": 3302,
+      "sha256": "8ec4ba54b1a1e17d5288cae4c6df54890155ab332487ec67f2d405ae2fc4760b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-project-layer.json",
+      "type": "file",
+      "bytes": 649,
+      "sha256": "cfe56188557db39fff8bc3bb06aa4e8bce35b51f55872fcde4beb3d42d08c4e2"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-prompt-helper.py",
+      "type": "file",
+      "bytes": 2714,
+      "sha256": "6324424a1abd5d65ec707c313aaeef46066f35fb2a2bac6063bb2a0d388bdac9"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/native-prompt-projection.json",
+      "type": "file",
+      "bytes": 2024,
+      "sha256": "fa61bb31ea8716f43c41edfebfa47ad7f47918221836f59d086cef50af240a54"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/preflight.json",
+      "type": "file",
+      "bytes": 1216,
+      "sha256": "4c3243ed70ba9f29c289bccdd42bda768adba9fc335a04da8f2cb945a00a29d9"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/protocol-read-surface.json",
+      "type": "file",
+      "bytes": 484,
+      "sha256": "bbdb0b956256ecc5ce46478925eafcdcd05b5a92c6da2fca9ffc0f730cc61052"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/root-final-review.json",
+      "type": "file",
+      "bytes": 1446,
+      "sha256": "11acf955e97d62e8596e2b7f0e8aabdd486dbcfad00bfe431e656686b46f8118"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/root-final-static-observation.json",
+      "type": "file",
+      "bytes": 839,
+      "sha256": "63c619536a8aee1525799614ba007b17e8800436d86f4ce6ac1ed2fa75b09cad"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/source-before.json",
+      "type": "file",
+      "bytes": 1255520,
+      "sha256": "ecf989227033616ba6071d7d84d700a6a03013408ebbae7890d9fe5a27c91f1b"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/source-preservation-after.json",
+      "type": "file",
+      "bytes": 2202,
+      "sha256": "c54fb6cdca5119f810c4137d5995e167bd542f10bba87d4be098c60fabae7f0a"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/static-after.json",
+      "type": "file",
+      "bytes": 513,
+      "sha256": "0438ad2f2534d93fcb589413b9f7d4ddf380d0a798f696e5fc32eb47cc9f98b5"
+    },
+    {
+      "path": "docs/agent-kit/evidence/trust-20261012/trust-write-helper.py",
+      "type": "file",
+      "bytes": 6017,
+      "sha256": "f3666b7ef6b972ff13a515d45287c19960e83814d0c3ec0daddbff098b32c9cb"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-004-preflight.json",
+      "type": "file",
+      "bytes": 2174763,
+      "sha256": "c32abb32bf09309e6cd81dc626ccfb0cacc75bdf425522d852bf72362cc26748"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-004-results.json",
+      "type": "file",
+      "bytes": 17595,
+      "sha256": "3b9c7ab889f2ee7ed793da70c29e54c70cd0e3122a2f0f8a56b8b91b575bdf14"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-005-preflight.json",
+      "type": "file",
+      "bytes": 2197782,
+      "sha256": "ab007b17ead33c66a1e309b554fd27fc93abe3222c63781ddc5c74700297e280"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-005-results.json",
+      "type": "file",
+      "bytes": 19949,
+      "sha256": "9f262f5335475b582b6136a9d3e1db1b1aea7a8cdd6c4a6becb175099448ddc6"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-006-preflight.json",
+      "type": "file",
+      "bytes": 37919,
+      "sha256": "3adc447e15c575907c8b6f407f08d2016bb3eb0662b4d4f5d742973ee9a5392d"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-006-results.json",
+      "type": "file",
+      "bytes": 9008,
+      "sha256": "450beb7e88055e068f7c0b5d85ffa10dfc86431804c79e35b8d48a017bb10037"
+    },
+    {
+      "path": "docs/agent-kit/evidence/update-006-review.json",
+      "type": "file",
+      "bytes": 5963,
+      "sha256": "bc966dcb557b3d02a04f4093fa80a5c8d95cbfac11bfead589edcba588c8b834"
+    },
+    {
+      "path": "docs/agent-kit/evidence/verify-setup.py",
+      "type": "file",
+      "bytes": 6470,
+      "sha256": "ca9638f1f8757c1027e65c1ad32edeae6fa9c96c2780c31420851638303bd84b"
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "type": "file",
+      "bytes": 4373,
+      "sha256": "ef6720e8654c15b64e06b7b957128be5c0bcf6cd05399df82026541a7df2c6eb"
+    },
+    {
+      "path": "docs/agent-kit/project-context.md",
+      "type": "file",
+      "bytes": 3704,
+      "sha256": "7870203c522ccd61822d998739c72b56983593805ac1f14a306a1cd535632ef7"
+    },
+    {
+      "path": "docs/agent-kit/project-plan.md",
+      "type": "file",
+      "bytes": 10403,
+      "sha256": "c21ada3e08d5578496c1101fac71a3ea135eacfcaaa2d8d8bb4ae1c72de367fb"
+    },
+    {
+      "path": "docs/agent-kit/project-state.md",
+      "type": "file",
+      "bytes": 20565,
+      "sha256": "55da2dd6eda5906cab66c5cd9d5cce2e7d87e4770aef136d73c895d94dd4b3e5"
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "type": "file",
+      "bytes": 5387,
+      "sha256": "635f513c7a6c0d9dd8c27edb9d34581681a82a9cc4ffc5809491920b2c38392a"
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "type": "file",
+      "bytes": 3230,
+      "sha256": "5a37196f9aa95ffbd554115c3aabbd979c785eb59ba011e8541ad0817af8fdee"
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "type": "file",
+      "bytes": 4336,
+      "sha256": "9bde5376f932abeb4c8caca022bfab3921a5cd6b8e4502a488ee68050346a921"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "type": "file",
+      "bytes": 4728,
+      "sha256": "ee6e5b3e17c672596971ab57522c36ac54b730436862d215a2fa58e1985a8d87"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "type": "file",
+      "bytes": 4384,
+      "sha256": "9c0d7fb5704023a1f5b444e41cd3cb510529d606f14e4738f3f976a4a7e79f53"
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest-current.json",
+      "type": "file",
+      "bytes": 51227,
+      "sha256": "eccf0e842008f92b9dc68774982ef1d64841eb7131cb64862d93f45e9afbf8b5"
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest.json",
+      "type": "file",
+      "bytes": 35715,
+      "sha256": "b66104d6039acfe2509a3088cc1285bd370fd5f9a7dfc8678829c503f315ab19"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-DISCOVERY-002.md",
+      "type": "file",
+      "bytes": 5477,
+      "sha256": "8f3e4f411d6ab60bb984787d46b06ca9c448e9176e81fff63813dcb8b178f407"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-004.md",
+      "type": "file",
+      "bytes": 10277,
+      "sha256": "93e0e05213af34d760a10b20c64fa210c7f8062d284f8d28ea711deeba477e84"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-005.md",
+      "type": "file",
+      "bytes": 9719,
+      "sha256": "5cd5ec752c7995d5c33d03d4af52bd52b0c7627baf382d96ebd64a40cf1679d7"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+      "type": "file",
+      "bytes": 8643,
+      "sha256": "abcc62e882e9efe2c41202ac028309f4c42bd7954970f038c44d72bcf5e59739"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-PERMISSION-003.md",
+      "type": "file",
+      "bytes": 11998,
+      "sha256": "30ef776d685c243499a543ea5596fc0bb392ae031f2c8a7332184f87112d49d9"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-SETUP-001.md",
+      "type": "file",
+      "bytes": 5670,
+      "sha256": "626d016fbb33f0c902583d5aafaec1942ad1091097728d225a9781b2e2b70c75"
+    },
+    {
+      "path": "docs/agent-kit/tasks/AGENT-TRUST-001.md",
+      "type": "file",
+      "bytes": 6270,
+      "sha256": "42f25ef2aa8b03353354128f1fe0eabd858464355bfa82c0d81700359e49ea2a"
+    },
+    {
+      "path": "docs/agent-kit/tasks/README.md",
+      "type": "file",
+      "bytes": 963,
+      "sha256": "9e1e4aa5e495bed9b86eb846e8e9643f3e40a80b2d963cef999cafcdccea0f42"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "type": "file",
+      "bytes": 15725,
+      "sha256": "a2a7527dc97eca6293814c664b9b2def49d13a2834592aa5e9e15d7df9468d07"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "type": "file",
+      "bytes": 10049,
+      "sha256": "b80351b1ecfc35b099429bfbd6635b84d544e99f3dcd148454205887fdfa8a8a"
+    },
+    {
+      "path": "docs/agent-kit/technote.md",
+      "type": "file",
+      "bytes": 12539,
+      "sha256": "d3542a879731337333bb5482e239ca5c98bf82e4777e0566902aa1f95c1ff80e"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "type": "file",
+      "bytes": 24032,
+      "sha256": "3fc7e8930c6b26be9393b8c33bc942b359cf4321f6ec5307d78bfdd04a007a6f"
+    },
+    {
+      "path": "docs/agent-kit/verification-results.md",
+      "type": "file",
+      "bytes": 27512,
+      "sha256": "876f74e06139413c2b07e098032c915df65299dd7248f378179dd5abb4989e0e"
+    },
+    {
+      "path": "engineering/AGENT-KIT-LOCK.json",
+      "type": "file",
+      "bytes": 46368,
+      "sha256": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+    },
+    {
+      "path": "engineering/AGENT-KIT-UPDATE-004-LOCK.json",
+      "type": "file",
+      "bytes": 9129,
+      "sha256": "33c6dbd603246c635bc6441223fe664b1cbee539474ecd5ac70ff38bd9fbcd21"
+    },
+    {
+      "path": "engineering/AGENT-KIT-UPDATE-005-LOCK.json",
+      "type": "file",
+      "bytes": 10163,
+      "sha256": "974ae50e4fa876c9fc5006a525bc68516a65a3697e52218d3b577d171adf66e3"
+    },
+    {
+      "path": "engineering/AGENT-KIT-UPDATE-006-LOCK.json",
+      "type": "file",
+      "bytes": 10805,
+      "sha256": "020816dcda68c7eed40fe38225f07f5485c3339567bbaa8563706cc3ca6078df"
+    },
+    {
+      "path": "engineering/SKILLS-LOCK.json",
+      "type": "file",
+      "bytes": 53085,
+      "sha256": "527c5c89fd1295df633e68a14b75fe431fac582bcc8120830fb346acf19f0dfc"
+    },
+    {
+      "path": "engineering/agent-kit/LICENSE",
+      "type": "file",
+      "bytes": 1079,
+      "sha256": "75a171545431065872aff744db85559cea6f3dc6d3b033298919b943269aa17e"
+    },
+    {
+      "path": "engineering/agent-kit/review-read-only.py",
+      "type": "file",
+      "bytes": 2001,
+      "sha256": "5e49614bcd0cf123301eaf62bdf436d25b87d86874631e9d5e38103a0e02fc4f"
+    },
+    {
+      "path": "engineering/agent-kit/test_review_read_only.py",
+      "type": "file",
+      "bytes": 25332,
+      "sha256": "78e85cc890a906ffeac349946fdd5d3fffb99a1c25ea25ab18f9c33b3c24ab22"
+    },
+    {
+      "path": "engineering/agent-kit/verify-guidance-update.py",
+      "type": "file",
+      "bytes": 21642,
+      "sha256": "69a6bf8cf4954b994f7e485bfbdc30d549b18f958456e93cff20657b6169d190"
+    },
+    {
+      "path": "engineering/agent-kit/verify-proportionate-update.py",
+      "type": "file",
+      "bytes": 9759,
+      "sha256": "e51ee049debb608ce5df191dcdaf0b353bcbf9574bba5a97d0b33affa574c2f4"
+    },
+    {
+      "path": "engineering/agent-kit/verify-read-only-filesystem.py",
+      "type": "file",
+      "bytes": 5997,
+      "sha256": "0c053fe139031a3dcf5db9752cd464aab5703786015cbc4348c290087b15a74c"
+    },
+    {
+      "path": "engineering/agent-kit/verify-review-read-only.py",
+      "type": "file",
+      "bytes": 49379,
+      "sha256": "e8007bd2ef6374e15ed3c7395cbff7fa7988b462614470060d3d3afb5f05abb9"
+    },
+    {
+      "path": "engineering/agent-kit/verify-role-update.py",
+      "type": "file",
+      "bytes": 15733,
+      "sha256": "e7eac5db9501d7922fd9262c6db3ff64da95c028aa72bea543ab2cbbef63ee5f"
+    },
+    {
+      "path": "firebase.json",
+      "type": "file",
+      "bytes": 812,
+      "sha256": "9e35bc66462fac43141da983163a51119796d3ff31e78421b17a5ed682684acc"
+    }
+  ],
+  "protectedCmsSourceRecords": [
+    {
+      "path": "DESIGN.md",
+      "type": "file",
+      "bytes": 19530,
+      "sha256": "408bd9897c3409230690597f14e21a42c686f32a344c9ad7934c86337ce51743"
+    },
+    {
+      "path": "START-HERE.md",
+      "type": "file",
+      "bytes": 3046,
+      "sha256": "f963761e4f535681be14825697e527d2dd78aaa6af89f511a5d9531c532e184a"
+    },
+    {
+      "path": "docs/PROJECT-STATE.md",
+      "type": "file",
+      "bytes": 11891,
+      "sha256": "a4da36940c038f785a35ced106eac9eb87d750fc547b76a320c0c369e042e9b5"
+    },
+    {
+      "path": "mockups/toan-website-v1.html",
+      "type": "file",
+      "bytes": 2856947,
+      "sha256": "a7dc480fa8bd7a0faa6d75f022f3578fc4d4b617290131791d0d60fb10f36256"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/00c1ace0-5195-4583-ad42-bb82b8a087c9/index.html",
+      "type": "file",
+      "bytes": 47438,
+      "sha256": "758c9279433c86fab34bd85a563181504c9f140036e92fd83bc29592758c5e34"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/00c1ace0-5195-4583-ad42-bb82b8a087c9/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "ab9226706f8d926029993067a691f1ef9f82849d7e4932024b968309fde57307"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/00c1ace0-5195-4583-ad42-bb82b8a087c9/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/00c1ace0-5195-4583-ad42-bb82b8a087c9/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/00c1ace0-5195-4583-ad42-bb82b8a087c9/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/06dbea84-4783-424b-a16e-00fc0800dae0/index.html",
+      "type": "file",
+      "bytes": 97965,
+      "sha256": "7a816f0cdc2352d36bfbe0c8cad97ad59975aead16b8d2ad3f6f7efd0ae8b04a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/06dbea84-4783-424b-a16e-00fc0800dae0/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "6c193976be204b3c5108c7f0dead3f9d980e402ca7f62cd0cc34e10c3b6dd6ac"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/06dbea84-4783-424b-a16e-00fc0800dae0/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/06dbea84-4783-424b-a16e-00fc0800dae0/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/06dbea84-4783-424b-a16e-00fc0800dae0/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/0da59bb6-5e87-4832-a170-951b7a5fc189/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/0da59bb6-5e87-4832-a170-951b7a5fc189/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/0da59bb6-5e87-4832-a170-951b7a5fc189/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/0da59bb6-5e87-4832-a170-951b7a5fc189/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/0da59bb6-5e87-4832-a170-951b7a5fc189/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/10b8dfa0-d78f-4096-818d-dc3f2a6f820e/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/10b8dfa0-d78f-4096-818d-dc3f2a6f820e/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/10b8dfa0-d78f-4096-818d-dc3f2a6f820e/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/10b8dfa0-d78f-4096-818d-dc3f2a6f820e/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/10b8dfa0-d78f-4096-818d-dc3f2a6f820e/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/14aec5dd-88e4-46d4-a33a-29a3142d489c/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/14aec5dd-88e4-46d4-a33a-29a3142d489c/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/14aec5dd-88e4-46d4-a33a-29a3142d489c/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/14aec5dd-88e4-46d4-a33a-29a3142d489c/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/14aec5dd-88e4-46d4-a33a-29a3142d489c/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/1735bdbf-19da-4cdc-a79d-100305086eab/index.html",
+      "type": "file",
+      "bytes": 11356,
+      "sha256": "d6690fc61562558bddcba52935ede1462d9a952e1c10afeb4d1fa1d243b41e81"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/1735bdbf-19da-4cdc-a79d-100305086eab/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "84e9b078cad7b551b8a222dce42f362e6eda0c37a1b4814cbb2f2383991659d0"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/1735bdbf-19da-4cdc-a79d-100305086eab/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/1735bdbf-19da-4cdc-a79d-100305086eab/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/1735bdbf-19da-4cdc-a79d-100305086eab/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/215bd33c-6674-4201-bdaa-c9b7476845de/index.html",
+      "type": "file",
+      "bytes": 98109,
+      "sha256": "c1272490028786a0106789373ea45078b0788a861c8272d1acb83673d30d7cab"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/215bd33c-6674-4201-bdaa-c9b7476845de/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "da4e5ae85ad4be1998c98e56aa1f81ff7058dc25705a9409630bb5d80047c146"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/215bd33c-6674-4201-bdaa-c9b7476845de/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/215bd33c-6674-4201-bdaa-c9b7476845de/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/215bd33c-6674-4201-bdaa-c9b7476845de/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3389e00d-c75c-442a-9817-0355f969f580/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3389e00d-c75c-442a-9817-0355f969f580/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3389e00d-c75c-442a-9817-0355f969f580/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3389e00d-c75c-442a-9817-0355f969f580/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3389e00d-c75c-442a-9817-0355f969f580/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/34cb7c93-8330-4eb7-a21b-9571fa0a0a32/index.html",
+      "type": "file",
+      "bytes": 97965,
+      "sha256": "7a816f0cdc2352d36bfbe0c8cad97ad59975aead16b8d2ad3f6f7efd0ae8b04a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/34cb7c93-8330-4eb7-a21b-9571fa0a0a32/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "6c193976be204b3c5108c7f0dead3f9d980e402ca7f62cd0cc34e10c3b6dd6ac"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/34cb7c93-8330-4eb7-a21b-9571fa0a0a32/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/34cb7c93-8330-4eb7-a21b-9571fa0a0a32/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/34cb7c93-8330-4eb7-a21b-9571fa0a0a32/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3649532a-772d-4a63-9769-b02b8e4d2282/index.html",
+      "type": "file",
+      "bytes": 47294,
+      "sha256": "e991bdd224682adac85631c2f5fa3cacb77f11465e234fd26ea3b7b34acec6a0"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3649532a-772d-4a63-9769-b02b8e4d2282/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "fc63ef27f89cb5d08b3950941d8e3f0b8e82910118d333deaeeb53a032c9f114"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3649532a-772d-4a63-9769-b02b8e4d2282/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3649532a-772d-4a63-9769-b02b8e4d2282/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/3649532a-772d-4a63-9769-b02b8e4d2282/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/59c0cda1-1c86-4ebe-adbf-7ba05850ac6d/index.html",
+      "type": "file",
+      "bytes": 46691,
+      "sha256": "d77f76d2a77a88b799fedb1b3b9f9af2939f3a383fa1e80049e3643eb7db3523"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/59c0cda1-1c86-4ebe-adbf-7ba05850ac6d/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "ec415f2a90d7d03c1a029f0de45b0320c34cb7071f492034b88e16e0a03cd4e5"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/59c0cda1-1c86-4ebe-adbf-7ba05850ac6d/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/59c0cda1-1c86-4ebe-adbf-7ba05850ac6d/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/59c0cda1-1c86-4ebe-adbf-7ba05850ac6d/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/62266726-4505-4b6c-91e5-800464d69cc0/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/62266726-4505-4b6c-91e5-800464d69cc0/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/62266726-4505-4b6c-91e5-800464d69cc0/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/62266726-4505-4b6c-91e5-800464d69cc0/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/62266726-4505-4b6c-91e5-800464d69cc0/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/65da41a6-781b-41f1-9132-115d5321ba1c/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/65da41a6-781b-41f1-9132-115d5321ba1c/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/65da41a6-781b-41f1-9132-115d5321ba1c/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/65da41a6-781b-41f1-9132-115d5321ba1c/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/65da41a6-781b-41f1-9132-115d5321ba1c/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7557b8a4-6c19-4db2-9396-70907db6ec9b/index.html",
+      "type": "file",
+      "bytes": 11356,
+      "sha256": "d6690fc61562558bddcba52935ede1462d9a952e1c10afeb4d1fa1d243b41e81"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7557b8a4-6c19-4db2-9396-70907db6ec9b/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "84e9b078cad7b551b8a222dce42f362e6eda0c37a1b4814cbb2f2383991659d0"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7557b8a4-6c19-4db2-9396-70907db6ec9b/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7557b8a4-6c19-4db2-9396-70907db6ec9b/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7557b8a4-6c19-4db2-9396-70907db6ec9b/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/798b5d9b-c2fe-4046-9b0a-886acf6d9fe2/index.html",
+      "type": "file",
+      "bytes": 47438,
+      "sha256": "758c9279433c86fab34bd85a563181504c9f140036e92fd83bc29592758c5e34"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/798b5d9b-c2fe-4046-9b0a-886acf6d9fe2/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "ab9226706f8d926029993067a691f1ef9f82849d7e4932024b968309fde57307"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/798b5d9b-c2fe-4046-9b0a-886acf6d9fe2/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/798b5d9b-c2fe-4046-9b0a-886acf6d9fe2/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/798b5d9b-c2fe-4046-9b0a-886acf6d9fe2/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7cb70587-2fc2-4043-92df-6b7f2ea1c8f1/index.html",
+      "type": "file",
+      "bytes": 98109,
+      "sha256": "c1272490028786a0106789373ea45078b0788a861c8272d1acb83673d30d7cab"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7cb70587-2fc2-4043-92df-6b7f2ea1c8f1/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "da4e5ae85ad4be1998c98e56aa1f81ff7058dc25705a9409630bb5d80047c146"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7cb70587-2fc2-4043-92df-6b7f2ea1c8f1/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7cb70587-2fc2-4043-92df-6b7f2ea1c8f1/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/7cb70587-2fc2-4043-92df-6b7f2ea1c8f1/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/83efc492-03e1-4bdd-82c8-504db14102f1/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/83efc492-03e1-4bdd-82c8-504db14102f1/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/83efc492-03e1-4bdd-82c8-504db14102f1/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/83efc492-03e1-4bdd-82c8-504db14102f1/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/83efc492-03e1-4bdd-82c8-504db14102f1/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/92ac7a61-7e4c-4d8d-9266-f503892cc829/index.html",
+      "type": "file",
+      "bytes": 98109,
+      "sha256": "c1272490028786a0106789373ea45078b0788a861c8272d1acb83673d30d7cab"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/92ac7a61-7e4c-4d8d-9266-f503892cc829/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "da4e5ae85ad4be1998c98e56aa1f81ff7058dc25705a9409630bb5d80047c146"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/92ac7a61-7e4c-4d8d-9266-f503892cc829/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/92ac7a61-7e4c-4d8d-9266-f503892cc829/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/92ac7a61-7e4c-4d8d-9266-f503892cc829/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5ba6b8e-b3e2-47e5-a601-307b8f078b49/index.html",
+      "type": "file",
+      "bytes": 11356,
+      "sha256": "d6690fc61562558bddcba52935ede1462d9a952e1c10afeb4d1fa1d243b41e81"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5ba6b8e-b3e2-47e5-a601-307b8f078b49/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "84e9b078cad7b551b8a222dce42f362e6eda0c37a1b4814cbb2f2383991659d0"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5ba6b8e-b3e2-47e5-a601-307b8f078b49/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5ba6b8e-b3e2-47e5-a601-307b8f078b49/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5ba6b8e-b3e2-47e5-a601-307b8f078b49/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5cb6400-c580-49c4-b5f7-c68525dd63cf/index.html",
+      "type": "file",
+      "bytes": 47294,
+      "sha256": "e991bdd224682adac85631c2f5fa3cacb77f11465e234fd26ea3b7b34acec6a0"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5cb6400-c580-49c4-b5f7-c68525dd63cf/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "fc63ef27f89cb5d08b3950941d8e3f0b8e82910118d333deaeeb53a032c9f114"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5cb6400-c580-49c4-b5f7-c68525dd63cf/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5cb6400-c580-49c4-b5f7-c68525dd63cf/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/a5cb6400-c580-49c4-b5f7-c68525dd63cf/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/c7813f2c-14cf-410c-ad2f-9a22ab582f7d/index.html",
+      "type": "file",
+      "bytes": 46968,
+      "sha256": "19b4cae89bf668abf03fa08b7dbf378539103b8721e26f469e62626a712cd668"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/c7813f2c-14cf-410c-ad2f-9a22ab582f7d/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "72e6f6323ad160899a2469ca61f9cd86214e7f58d6271aa7dd6cce979768dc46"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/c7813f2c-14cf-410c-ad2f-9a22ab582f7d/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/c7813f2c-14cf-410c-ad2f-9a22ab582f7d/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/c7813f2c-14cf-410c-ad2f-9a22ab582f7d/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/d864b5cc-b02e-4fbd-b473-328047875a4a/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/d864b5cc-b02e-4fbd-b473-328047875a4a/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/d864b5cc-b02e-4fbd-b473-328047875a4a/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/d864b5cc-b02e-4fbd-b473-328047875a4a/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/d864b5cc-b02e-4fbd-b473-328047875a4a/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/e774f905-8f3d-432e-ac75-b448d07b7d5f/index.html",
+      "type": "file",
+      "bytes": 98109,
+      "sha256": "c1272490028786a0106789373ea45078b0788a861c8272d1acb83673d30d7cab"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/e774f905-8f3d-432e-ac75-b448d07b7d5f/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "da4e5ae85ad4be1998c98e56aa1f81ff7058dc25705a9409630bb5d80047c146"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/e774f905-8f3d-432e-ac75-b448d07b7d5f/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/e774f905-8f3d-432e-ac75-b448d07b7d5f/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/e774f905-8f3d-432e-ac75-b448d07b7d5f/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ea8605c8-8500-4733-84db-a630794da288/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ea8605c8-8500-4733-84db-a630794da288/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ea8605c8-8500-4733-84db-a630794da288/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ea8605c8-8500-4733-84db-a630794da288/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ea8605c8-8500-4733-84db-a630794da288/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f15a2e1c-11c7-4e66-91d0-0c5a7fd5d9ee/index.html",
+      "type": "file",
+      "bytes": 98109,
+      "sha256": "c1272490028786a0106789373ea45078b0788a861c8272d1acb83673d30d7cab"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f15a2e1c-11c7-4e66-91d0-0c5a7fd5d9ee/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "da4e5ae85ad4be1998c98e56aa1f81ff7058dc25705a9409630bb5d80047c146"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f15a2e1c-11c7-4e66-91d0-0c5a7fd5d9ee/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f15a2e1c-11c7-4e66-91d0-0c5a7fd5d9ee/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f15a2e1c-11c7-4e66-91d0-0c5a7fd5d9ee/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f47d8bf0-a94f-449d-8ae7-ab480245406f/index.html",
+      "type": "file",
+      "bytes": 47112,
+      "sha256": "057edd0a5fee64a464e2f1f455de1f03cfc9d1ca6c3bda25fb2084d669c2ddf9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f47d8bf0-a94f-449d-8ae7-ab480245406f/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "994fbeb315988ecf93abccfcd870df4a49babbb06b46f2f1bd3466bdb9e24980"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f47d8bf0-a94f-449d-8ae7-ab480245406f/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f47d8bf0-a94f-449d-8ae7-ab480245406f/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/f47d8bf0-a94f-449d-8ae7-ab480245406f/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ff457f6c-1181-40f3-9200-96c60fa611d8/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ff457f6c-1181-40f3-9200-96c60fa611d8/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ff457f6c-1181-40f3-9200-96c60fa611d8/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ff457f6c-1181-40f3-9200-96c60fa611d8/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/ff457f6c-1181-40f3-9200-96c60fa611d8/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0b4e467e-85b5-41fb-836e-aa1361d62ad1/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0b4e467e-85b5-41fb-836e-aa1361d62ad1/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0b4e467e-85b5-41fb-836e-aa1361d62ad1/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0b4e467e-85b5-41fb-836e-aa1361d62ad1/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0b4e467e-85b5-41fb-836e-aa1361d62ad1/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0e2ff4af-996c-4f92-9d1d-61ca05e799b2/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0e2ff4af-996c-4f92-9d1d-61ca05e799b2/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0e2ff4af-996c-4f92-9d1d-61ca05e799b2/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0e2ff4af-996c-4f92-9d1d-61ca05e799b2/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-0e2ff4af-996c-4f92-9d1d-61ca05e799b2/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2840c9cc-6ade-4e0d-95c3-6d9c785ae105/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2840c9cc-6ade-4e0d-95c3-6d9c785ae105/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2840c9cc-6ade-4e0d-95c3-6d9c785ae105/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2840c9cc-6ade-4e0d-95c3-6d9c785ae105/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2840c9cc-6ade-4e0d-95c3-6d9c785ae105/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2e44cd19-49a7-4131-8752-c390e38ab5ea/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2e44cd19-49a7-4131-8752-c390e38ab5ea/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2e44cd19-49a7-4131-8752-c390e38ab5ea/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2e44cd19-49a7-4131-8752-c390e38ab5ea/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-2e44cd19-49a7-4131-8752-c390e38ab5ea/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-3da0ca4e-995f-48d4-9061-b8dfabeb47a0/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-3da0ca4e-995f-48d4-9061-b8dfabeb47a0/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-3da0ca4e-995f-48d4-9061-b8dfabeb47a0/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-3da0ca4e-995f-48d4-9061-b8dfabeb47a0/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-3da0ca4e-995f-48d4-9061-b8dfabeb47a0/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-61fd6cf4-ca62-4555-9f12-e7730a6f1337/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-61fd6cf4-ca62-4555-9f12-e7730a6f1337/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-61fd6cf4-ca62-4555-9f12-e7730a6f1337/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-61fd6cf4-ca62-4555-9f12-e7730a6f1337/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-61fd6cf4-ca62-4555-9f12-e7730a6f1337/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-695a8dd6-4ccd-4bb3-8a2b-f60aa52ef5af/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-695a8dd6-4ccd-4bb3-8a2b-f60aa52ef5af/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-695a8dd6-4ccd-4bb3-8a2b-f60aa52ef5af/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-695a8dd6-4ccd-4bb3-8a2b-f60aa52ef5af/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-695a8dd6-4ccd-4bb3-8a2b-f60aa52ef5af/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6af5b81f-4186-44c7-9746-a4913626a0ef/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6af5b81f-4186-44c7-9746-a4913626a0ef/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6af5b81f-4186-44c7-9746-a4913626a0ef/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6af5b81f-4186-44c7-9746-a4913626a0ef/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6af5b81f-4186-44c7-9746-a4913626a0ef/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6f92e002-933e-41ee-ac33-fc91dc025cd0/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6f92e002-933e-41ee-ac33-fc91dc025cd0/qa-manifest.json",
+      "type": "file",
+      "bytes": 4786,
+      "sha256": "f8e7c7f513c011c1672c570963b7b55ca842c71b3ccebc11ad33b702d9fe188a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6f92e002-933e-41ee-ac33-fc91dc025cd0/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6f92e002-933e-41ee-ac33-fc91dc025cd0/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-6f92e002-933e-41ee-ac33-fc91dc025cd0/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7705dc05-164b-48f5-b50e-02363bb27e58/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7705dc05-164b-48f5-b50e-02363bb27e58/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7705dc05-164b-48f5-b50e-02363bb27e58/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7705dc05-164b-48f5-b50e-02363bb27e58/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7705dc05-164b-48f5-b50e-02363bb27e58/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78a19842-7364-4336-a29c-27b719692e20/index.html",
+      "type": "file",
+      "bytes": 45270,
+      "sha256": "840e3ffd7f41bbd0cbf942162c9e8bd97087c021da9074530bb73ba0843294c3"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78a19842-7364-4336-a29c-27b719692e20/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "f3af7cb5d9183ca1827ef50a42f6aec336414f694f1a793093369cf391ed0ffa"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78a19842-7364-4336-a29c-27b719692e20/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78a19842-7364-4336-a29c-27b719692e20/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78a19842-7364-4336-a29c-27b719692e20/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78b63331-9668-423d-a265-03ac545ddda8/index.html",
+      "type": "file",
+      "bytes": 45126,
+      "sha256": "481fc08c73707c0556391851b9d108a4129d098c11bda439f7910babba5980c3"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78b63331-9668-423d-a265-03ac545ddda8/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "95974ad69b032080927be02daa7e6eb8ec426109a5173e8ff6db8c78cde40065"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78b63331-9668-423d-a265-03ac545ddda8/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78b63331-9668-423d-a265-03ac545ddda8/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-78b63331-9668-423d-a265-03ac545ddda8/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7bd4dd9e-c4d4-4fa2-b44a-514c7c841bc0/index.html",
+      "type": "file",
+      "bytes": 47225,
+      "sha256": "6d60b575bc0313ed37744b3bbf7780a5d1496b73a0f562ba4c3c0a70be836a59"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7bd4dd9e-c4d4-4fa2-b44a-514c7c841bc0/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "4701133c89ae3a3ca9b94490153cb2608f302d1e33f8d0383091e762303f7293"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7bd4dd9e-c4d4-4fa2-b44a-514c7c841bc0/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7bd4dd9e-c4d4-4fa2-b44a-514c7c841bc0/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-7bd4dd9e-c4d4-4fa2-b44a-514c7c841bc0/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-80a79c04-ccb1-42db-b68e-c62ab6551ee2/index.html",
+      "type": "file",
+      "bytes": 19,
+      "sha256": "0d949c60ccc04beb306035ea5f40aaf6acf0d75ce1afc212bd792d237d0f940e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-80a79c04-ccb1-42db-b68e-c62ab6551ee2/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-80a79c04-ccb1-42db-b68e-c62ab6551ee2/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-80a79c04-ccb1-42db-b68e-c62ab6551ee2/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-80a79c04-ccb1-42db-b68e-c62ab6551ee2/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-81cab086-318c-46d6-8915-4bbf2abf1d45/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-81cab086-318c-46d6-8915-4bbf2abf1d45/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-81cab086-318c-46d6-8915-4bbf2abf1d45/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-81cab086-318c-46d6-8915-4bbf2abf1d45/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-81cab086-318c-46d6-8915-4bbf2abf1d45/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8346b1cf-32c3-4d99-a8ab-2f1c6f98227a/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8346b1cf-32c3-4d99-a8ab-2f1c6f98227a/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8346b1cf-32c3-4d99-a8ab-2f1c6f98227a/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8346b1cf-32c3-4d99-a8ab-2f1c6f98227a/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8346b1cf-32c3-4d99-a8ab-2f1c6f98227a/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-883532ab-2e25-40be-a258-89bff7894947/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-883532ab-2e25-40be-a258-89bff7894947/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-883532ab-2e25-40be-a258-89bff7894947/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-883532ab-2e25-40be-a258-89bff7894947/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-883532ab-2e25-40be-a258-89bff7894947/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8fcc1155-3a9e-4f00-b4e0-511e9275c494/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8fcc1155-3a9e-4f00-b4e0-511e9275c494/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8fcc1155-3a9e-4f00-b4e0-511e9275c494/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8fcc1155-3a9e-4f00-b4e0-511e9275c494/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-8fcc1155-3a9e-4f00-b4e0-511e9275c494/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-946a9add-0fd6-4eef-a29f-e9b0d034dac9/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-946a9add-0fd6-4eef-a29f-e9b0d034dac9/qa-manifest.json",
+      "type": "file",
+      "bytes": 4786,
+      "sha256": "4a1ab1bfffb8ed87c19e6e0dbc76c93302dde4cfd661aa82b8a7bf0ece4c4a66"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-946a9add-0fd6-4eef-a29f-e9b0d034dac9/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-946a9add-0fd6-4eef-a29f-e9b0d034dac9/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-946a9add-0fd6-4eef-a29f-e9b0d034dac9/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-9db5d466-e86d-44f9-83c3-5cd49bfc73f4/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-9db5d466-e86d-44f9-83c3-5cd49bfc73f4/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-9db5d466-e86d-44f9-83c3-5cd49bfc73f4/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-9db5d466-e86d-44f9-83c3-5cd49bfc73f4/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-9db5d466-e86d-44f9-83c3-5cd49bfc73f4/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b0a2cda3-30e6-4e85-a4ba-dfa11255033e/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b0a2cda3-30e6-4e85-a4ba-dfa11255033e/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b0a2cda3-30e6-4e85-a4ba-dfa11255033e/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b0a2cda3-30e6-4e85-a4ba-dfa11255033e/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b0a2cda3-30e6-4e85-a4ba-dfa11255033e/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b3c1f36f-7bec-41f4-9598-d6997bec1ee7/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b3c1f36f-7bec-41f4-9598-d6997bec1ee7/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b3c1f36f-7bec-41f4-9598-d6997bec1ee7/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b3c1f36f-7bec-41f4-9598-d6997bec1ee7/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b3c1f36f-7bec-41f4-9598-d6997bec1ee7/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b7b4508a-dbf3-4fe8-961e-240f2b45417d/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b7b4508a-dbf3-4fe8-961e-240f2b45417d/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b7b4508a-dbf3-4fe8-961e-240f2b45417d/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b7b4508a-dbf3-4fe8-961e-240f2b45417d/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-b7b4508a-dbf3-4fe8-961e-240f2b45417d/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c4631647-7bc2-4a17-bb79-d5fbf2305983/index.html",
+      "type": "file",
+      "bytes": 45270,
+      "sha256": "840e3ffd7f41bbd0cbf942162c9e8bd97087c021da9074530bb73ba0843294c3"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c4631647-7bc2-4a17-bb79-d5fbf2305983/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "f3af7cb5d9183ca1827ef50a42f6aec336414f694f1a793093369cf391ed0ffa"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c4631647-7bc2-4a17-bb79-d5fbf2305983/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c4631647-7bc2-4a17-bb79-d5fbf2305983/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c4631647-7bc2-4a17-bb79-d5fbf2305983/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c6e14e0b-24af-4bfc-a437-237cee949a64/index.html",
+      "type": "file",
+      "bytes": 19,
+      "sha256": "0d949c60ccc04beb306035ea5f40aaf6acf0d75ce1afc212bd792d237d0f940e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c6e14e0b-24af-4bfc-a437-237cee949a64/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c6e14e0b-24af-4bfc-a437-237cee949a64/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c6e14e0b-24af-4bfc-a437-237cee949a64/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-c6e14e0b-24af-4bfc-a437-237cee949a64/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d3c8f9b2-dcdb-4a06-9e78-227c2990c687/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d3c8f9b2-dcdb-4a06-9e78-227c2990c687/qa-manifest.json",
+      "type": "file",
+      "bytes": 4786,
+      "sha256": "f8e7c7f513c011c1672c570963b7b55ca842c71b3ccebc11ad33b702d9fe188a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d3c8f9b2-dcdb-4a06-9e78-227c2990c687/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d3c8f9b2-dcdb-4a06-9e78-227c2990c687/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d3c8f9b2-dcdb-4a06-9e78-227c2990c687/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d4ed37bc-a136-4c22-a732-5448c34476b1/index.html",
+      "type": "file",
+      "bytes": 47369,
+      "sha256": "c940c898879817f657fb70755948befe29445cd8ba2a95bd2a76aafcb8c0f165"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d4ed37bc-a136-4c22-a732-5448c34476b1/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "5276053484fb541e065fdf2cfa1c0f328dcfb490781f1896912ccbc624ecaf56"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d4ed37bc-a136-4c22-a732-5448c34476b1/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d4ed37bc-a136-4c22-a732-5448c34476b1/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d4ed37bc-a136-4c22-a732-5448c34476b1/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d58a3fc8-72d3-4825-8bbb-963413769512/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d58a3fc8-72d3-4825-8bbb-963413769512/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d58a3fc8-72d3-4825-8bbb-963413769512/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d58a3fc8-72d3-4825-8bbb-963413769512/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-d58a3fc8-72d3-4825-8bbb-963413769512/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-e0be325e-eb0e-4e31-a43e-edf24976d2ce/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-e0be325e-eb0e-4e31-a43e-edf24976d2ce/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-e0be325e-eb0e-4e31-a43e-edf24976d2ce/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-e0be325e-eb0e-4e31-a43e-edf24976d2ce/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-e0be325e-eb0e-4e31-a43e-edf24976d2ce/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-eece6487-3f8b-4129-9f45-865a80c248ad/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-eece6487-3f8b-4129-9f45-865a80c248ad/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-eece6487-3f8b-4129-9f45-865a80c248ad/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-eece6487-3f8b-4129-9f45-865a80c248ad/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-eece6487-3f8b-4129-9f45-865a80c248ad/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f37c96aa-abd0-41ff-b565-5bcec7d615c2/index.html",
+      "type": "file",
+      "bytes": 47479,
+      "sha256": "751f9ea02ac621967b0a697503dd19e8554331395c85525860ce3b81ea281f45"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f37c96aa-abd0-41ff-b565-5bcec7d615c2/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f37c96aa-abd0-41ff-b565-5bcec7d615c2/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f37c96aa-abd0-41ff-b565-5bcec7d615c2/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f37c96aa-abd0-41ff-b565-5bcec7d615c2/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f9fe822a-7e19-480d-9efc-4df40d9987b1/index.html",
+      "type": "file",
+      "bytes": 47369,
+      "sha256": "c940c898879817f657fb70755948befe29445cd8ba2a95bd2a76aafcb8c0f165"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f9fe822a-7e19-480d-9efc-4df40d9987b1/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "5276053484fb541e065fdf2cfa1c0f328dcfb490781f1896912ccbc624ecaf56"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f9fe822a-7e19-480d-9efc-4df40d9987b1/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f9fe822a-7e19-480d-9efc-4df40d9987b1/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-f9fe822a-7e19-480d-9efc-4df40d9987b1/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-fb22c789-6fd8-4905-b33e-d7ef98d2c71c/index.html",
+      "type": "file",
+      "bytes": 19,
+      "sha256": "0d949c60ccc04beb306035ea5f40aaf6acf0d75ce1afc212bd792d237d0f940e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-fb22c789-6fd8-4905-b33e-d7ef98d2c71c/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "19a12ce70b2d73f4558feee8eaf6ca7823aa5ef5e7aa990079fadd9398c9d1e9"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-fb22c789-6fd8-4905-b33e-d7ef98d2c71c/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-fb22c789-6fd8-4905-b33e-d7ef98d2c71c/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-fb22c789-6fd8-4905-b33e-d7ef98d2c71c/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-7df27127-67c9-410e-b75e-f54b61387544/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-7df27127-67c9-410e-b75e-f54b61387544/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-7df27127-67c9-410e-b75e-f54b61387544/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-7df27127-67c9-410e-b75e-f54b61387544/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-7df27127-67c9-410e-b75e-f54b61387544/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-e16e39ac-5a46-4985-aa27-a7476987a3ce/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-e16e39ac-5a46-4985-aa27-a7476987a3ce/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-e16e39ac-5a46-4985-aa27-a7476987a3ce/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-e16e39ac-5a46-4985-aa27-a7476987a3ce/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/qa10-served-e16e39ac-5a46-4985-aa27-a7476987a3ce/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/synthetic-approved-site/index.html",
+      "type": "file",
+      "bytes": 47335,
+      "sha256": "17554928ed5323f0c1aa24b43443ee1a82c83be99d059bf4a89319d04ff34aea"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/synthetic-approved-site/qa-manifest.json",
+      "type": "file",
+      "bytes": 5829,
+      "sha256": "85e1890fbd3eb81238170d91a166970f1413c70539175f659df70d7f78eb3a7e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/synthetic-approved-site/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/synthetic-approved-site/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m2/synthetic-approved-site/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m3/task04-2d830fcf-3432-4477-98ce-2b4669fcccfa/sentinel.json",
+      "type": "file",
+      "bytes": 39,
+      "sha256": "99ae6304ae850260840e14b91cf67a68135cde3ecf17bb9ceaa11d693f0d6737"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m3/task04-8d602aec-981c-413b-b023-b3ab9727df5b/sentinel.json",
+      "type": "file",
+      "bytes": 39,
+      "sha256": "99ae6304ae850260840e14b91cf67a68135cde3ecf17bb9ceaa11d693f0d6737"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m3/task04-d8751289-4526-47ca-a984-6122e5f61cb1/sentinel.json",
+      "type": "file",
+      "bytes": 39,
+      "sha256": "99ae6304ae850260840e14b91cf67a68135cde3ecf17bb9ceaa11d693f0d6737"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/m3/task04-f367032e-a8b3-44a0-bdf0-d6c941635aa2/sentinel.json",
+      "type": "file",
+      "bytes": 39,
+      "sha256": "99ae6304ae850260840e14b91cf67a68135cde3ecf17bb9ceaa11d693f0d6737"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/task10-v1-compat/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/task10-v1-compat/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/task10-v1-compat/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/task10-v1-compat/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/task10-v1-compat/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/hardlink/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/hardlink/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/hardlink/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/hardlink/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/hardlink/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-088cab85-4546-4488-8972-aab792883566/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-0b285b3f-33d1-4bc9-b577-5d5b3d2dcad9/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-0b285b3f-33d1-4bc9-b577-5d5b3d2dcad9/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-0b285b3f-33d1-4bc9-b577-5d5b3d2dcad9/index.html",
+      "type": "file",
+      "bytes": 18436,
+      "sha256": "7a792ef68c174e6b014d32267ee3e531892a76cdb9a30e0a51c46891e150b1db"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-0b285b3f-33d1-4bc9-b577-5d5b3d2dcad9/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "34d1737cab1f042506a38c8d3ddf84cae46cf934ad81fc06dace290d072a6abb"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-0b285b3f-33d1-4bc9-b577-5d5b3d2dcad9/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/hardlink/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/hardlink/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/hardlink/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/hardlink/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/hardlink/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-29664387-484a-4fe5-a28b-40e8d4828344/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/hardlink/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/hardlink/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/hardlink/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/hardlink/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/hardlink/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-3a66a655-0ce0-4839-b005-d8ba1c73e084/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/hardlink/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/hardlink/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/hardlink/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/hardlink/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/hardlink/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-cf8de3f2-0b49-4baf-ac3e-c5b92f65d81a/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/hardlink/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/hardlink/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/hardlink/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/hardlink/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/hardlink/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/index.html",
+      "type": "file",
+      "bytes": 18460,
+      "sha256": "3f31b7d0fb850d847d8ec65b6fca51a9cbb14ac04958398ffac077801d248895"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/qa-manifest.json",
+      "type": "file",
+      "bytes": 5693,
+      "sha256": "af6a133a7751b1bfb507da3a0bcff5e1044c1f55fefeab1c5709d3e71fe3b77a"
+    },
+    {
+      "path": "pinky-lamb-cms/.preview-output/test09-ec5477b9-9dd5-460d-ab48-67f01e5b9937/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/admin.css",
+      "type": "file",
+      "bytes": 22903,
+      "sha256": "cbdc2b60d7aa8c695b6f89a0c8913fbcd278a5c22068a9b90586cefb2cd44e4f"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/auth.mjs",
+      "type": "file",
+      "bytes": 21848,
+      "sha256": "3989d5ee54824f6dcfb1555dbdd8cc7cdc3e7aee1e07585a3417cc94ed87f89c"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/cms-icons.mjs",
+      "type": "file",
+      "bytes": 1596,
+      "sha256": "cc48e04cee95466e4070aa0d0a64d2cb10f139a973517518db45ebde7716e16f"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/cms-shell.mjs",
+      "type": "file",
+      "bytes": 11008,
+      "sha256": "a995c9cdc794a87eb7a111850e2c3e29d0b5aebfff587c47cba64d1ee01fa61a"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/config-local.mjs",
+      "type": "file",
+      "bytes": 776,
+      "sha256": "434b8008627a83d8b4c2d91c15b929d48ccf0e9204611e4568b5231af4dead4c"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-editor.mjs",
+      "type": "file",
+      "bytes": 20229,
+      "sha256": "c5901e81a114f33abc0f828c6e7c3d4324418dd556ced5f038cbde36b87eefcb"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/index.html",
+      "type": "file",
+      "bytes": 4762,
+      "sha256": "4c7d56c8df5b06b357ca31d16545d08dabf458ea3480ccf95fff4da34c102d5f"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-file-preview.mjs",
+      "type": "file",
+      "bytes": 14211,
+      "sha256": "5388d3c88c58e508a9f85afcfede4aed71240b505712e5034e6d92f6eb88f731"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-image-preview.mjs",
+      "type": "file",
+      "bytes": 5528,
+      "sha256": "c50145aed419bf67259f52edd458d7bb336b4799dfe9a2f300e3daf1206c751d"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-library.mjs",
+      "type": "file",
+      "bytes": 10145,
+      "sha256": "55c00dc4353f6535211b26a19edc5cb1073c2420cd55ee4bdf21a832f90079c1"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-picker.mjs",
+      "type": "file",
+      "bytes": 2748,
+      "sha256": "84798ae25f5121a81171ed033dc145676016e7377eab9041cd965f9f300a1ffd"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-slot-picker.mjs",
+      "type": "file",
+      "bytes": 8040,
+      "sha256": "faa855df75bed27a59e92902f8f1e8f254d92619226b05fe792983f255dab00c"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-upload.mjs",
+      "type": "file",
+      "bytes": 11239,
+      "sha256": "a4cb9ec328c7302f913d82340f377eab362cd61f61a31da820755feaf2d65a16"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/pinky-select.css",
+      "type": "file",
+      "bytes": 1941,
+      "sha256": "ab4acf4110b60a9d45408d1f8de97400a323546809523c06f0f5735b264c2131"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/pinky-select.mjs",
+      "type": "file",
+      "bytes": 13665,
+      "sha256": "676c99ae0e25ecc9bfd69fa3ab4f621b622deaa0e95c4f7ec4baccb14b45b336"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/preview.mjs",
+      "type": "file",
+      "bytes": 11272,
+      "sha256": "7972fffbaa09eb2448ec1939fe500ebc2f07e3685df2e1b01f4079fa3cf8bcf6"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/review.mjs",
+      "type": "file",
+      "bytes": 23590,
+      "sha256": "cf555327fe26712245f93d0a2d4e28bc4c61877aa84361c1ec19579b83ef595c"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-about-ip-editor.mjs",
+      "type": "file",
+      "bytes": 13832,
+      "sha256": "999d093986322f2df0de509ad22a05071b696c819149301a7f143338c0566c2c"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-collection-ui.mjs",
+      "type": "file",
+      "bytes": 18463,
+      "sha256": "99f1f1506063e5dcee29ff85e1d7f25b630caafcd5cb1dd40af368b42d1df01d"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-contact-footer-editor.mjs",
+      "type": "file",
+      "bytes": 9443,
+      "sha256": "4aedabb31f0b3de65f1d47aa4a8ee978432f39457941c65807242cb4ef9753f8"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-editor.mjs",
+      "type": "file",
+      "bytes": 21585,
+      "sha256": "0e07f465e14c828e48bc17502654e9a7178d9235d2768e959f214b14fceb7834"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-fields.mjs",
+      "type": "file",
+      "bytes": 10040,
+      "sha256": "8ce4d1cde281393fa1c6cd02d1140a1c7228477c9ba1af1605a6ac570f53cae4"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-form-ui.mjs",
+      "type": "file",
+      "bytes": 4499,
+      "sha256": "7cc6184520fe3a8159e5a65317278b4fb94e99b55b00a01db6b652dc885d18d6"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-legacy-history.mjs",
+      "type": "file",
+      "bytes": 1883,
+      "sha256": "c5f367b79b43f0d44228e1f54e1c8ac25b1027ebeb4e172b4de19a6ba2b3df79"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-media-editor.mjs",
+      "type": "file",
+      "bytes": 35143,
+      "sha256": "881d3fa0a94bf0c2d46c96d3a9551c2c2da839c5e72af54f6732ff343c594e65"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-media-preview.mjs",
+      "type": "file",
+      "bytes": 22717,
+      "sha256": "eec3781c37f98d617a798819100bb8ec4c69a1d37dd4f6083ef498741166cc34"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-services-editor.mjs",
+      "type": "file",
+      "bytes": 10147,
+      "sha256": "aa601d7fd17a6e42cd2f561852651449bbc2f70a97f9cd0ff1e8d8126f68a757"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-settings-editor.mjs",
+      "type": "file",
+      "bytes": 32151,
+      "sha256": "c367eb226e1729100ede897cb89f9499e7e7d46365d9fcdd2054a6055f27aa70"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-ux.css",
+      "type": "file",
+      "bytes": 17407,
+      "sha256": "5a96ad88cf25334ba4dbc61c985b88c0f418f33653e697d34da06d544cbb03b5"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-work-editor.mjs",
+      "type": "file",
+      "bytes": 13412,
+      "sha256": "db6c439b29ef7114578528d1109b48e26019ab0881935ab49c456ca6805c59ed"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/source-review.mjs",
+      "type": "file",
+      "bytes": 22230,
+      "sha256": "c1692c9c48e7bbf130e1e6f22ffee653a018be99e8cfc505df3f764f5315f94c"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/authorization.mjs",
+      "type": "file",
+      "bytes": 2905,
+      "sha256": "98a0165cd72d3b30c63488fb48edf185e3d99a9f71c5710bc597da9212ff6032"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/drafts.mjs",
+      "type": "file",
+      "bytes": 7726,
+      "sha256": "a5133511a2c3aad217d1fceaf24f30aeb27818f937b73d19eef966d9de99eed7"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/import-site.mjs",
+      "type": "file",
+      "bytes": 13389,
+      "sha256": "ab2d5855ad8d123c58e7240e969b97e037457e7193f485faad05c3b4dd0ae613"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/index.mjs",
+      "type": "file",
+      "bytes": 3614,
+      "sha256": "161a70bf895bb1d4ed9140b2873fd77b324df7d17c7a2a85688854a89d942a3f"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-archive.mjs",
+      "type": "file",
+      "bytes": 6598,
+      "sha256": "23a3062d2e482634f07e107cfe2c9ef9a728cc396ef30521fbf15f8733e790f4"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-cache.mjs",
+      "type": "file",
+      "bytes": 22147,
+      "sha256": "c8052237de9a9980f028887075cd2d07fd3a89198646e0a00401e8434b25febd"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-images-runtime.mjs",
+      "type": "file",
+      "bytes": 13349,
+      "sha256": "8f18b76f1d98a9deeba2d21f3ca2c08d4d0d137c0db1a78f85cd08d7a578fa45"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-images.mjs",
+      "type": "file",
+      "bytes": 19973,
+      "sha256": "74be2f72849bb3f5553e84fcb408073d841d67bff0eadc59fd0e5e2c30e9b95b"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-jobs-domain.mjs",
+      "type": "file",
+      "bytes": 29691,
+      "sha256": "3a15ff4db22c2805a349963537bb798ea04efde64396600d590607b385dd7279"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-library.mjs",
+      "type": "file",
+      "bytes": 3792,
+      "sha256": "f7d28c9b8564568c70601cdf262478ff1e1fbed4965e22d232735fd0d2c46681"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-pdf-runtime.mjs",
+      "type": "file",
+      "bytes": 19527,
+      "sha256": "696b633dd06df2c23a0a2093fbf0d81a477895d5e18f6b941fd6af8862d1f60d"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-pdf.mjs",
+      "type": "file",
+      "bytes": 14408,
+      "sha256": "3929c7a25459422740a13ddadfd67836430a4d20099e5914ceb1edf2c2bc2ea9"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-processing-profile.mjs",
+      "type": "file",
+      "bytes": 3633,
+      "sha256": "f9e0036b9fa2b3934c039e09c8c368d37f784d919daba23c2abb1d055ef55fcd"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-quota-domain.mjs",
+      "type": "file",
+      "bytes": 21049,
+      "sha256": "2b626e35cd7beb5b706ca5ab1db8fdb1ad4ad5c5d432e5054ff9a61b72f7bc16"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-reads.mjs",
+      "type": "file",
+      "bytes": 6106,
+      "sha256": "b984e41a92ebcb04c56ccbe347c2efab789e8af424c3f967dae6510c0701c811"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-recovery.mjs",
+      "type": "file",
+      "bytes": 4106,
+      "sha256": "ef0eb0a4e28267b41c2f439b314763eb3e9509542ebe03c653fc208dd81a681c"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-domain.mjs",
+      "type": "file",
+      "bytes": 52183,
+      "sha256": "1abc0b43f8fe2d9cfe6aa7c17d5345cc8dfd00949a39e1a4581217207fa76316"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-service.mjs",
+      "type": "file",
+      "bytes": 29164,
+      "sha256": "f8a2e1a7a4928d1cdf2cff67a6f6dc571138ab0b926c86ea2305a0d9ffdedee8"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-storage.mjs",
+      "type": "file",
+      "bytes": 6772,
+      "sha256": "5e5cf7483ee0b8fe89ae61ca9438c0328a3897dc2d10cee1583e78cfed73fd9e"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video-job.mjs",
+      "type": "file",
+      "bytes": 7878,
+      "sha256": "f2197500cba0a4ecf7def5d276dbb655836820c3977d3b125e26541acc6e37aa"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video-runtime.mjs",
+      "type": "file",
+      "bytes": 19046,
+      "sha256": "5c4402a3e7d072b9c6cec6092d42a0ede045e3b591226c4abdc4575df6a3bfe0"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video.mjs",
+      "type": "file",
+      "bytes": 20642,
+      "sha256": "7bc872e249f87d4cb1e8e2dd11d1c85b3322200a02b197e984cd451bc6341a19"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-worker.mjs",
+      "type": "file",
+      "bytes": 34271,
+      "sha256": "e61ebed0b705eed8f0a19d54f6656933e81feead15a6224b1fc278796574d74a"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/package.json",
+      "type": "file",
+      "bytes": 321,
+      "sha256": "b3bf0fea1373289d9af020e01b9ca8aa8daecbff65ab8295283bd8705cb16bef"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/reviews.mjs",
+      "type": "file",
+      "bytes": 6877,
+      "sha256": "f2690154fca39d5c0fa033ce61030f88e0b9cc21ca5c1c921480769fc36de696"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/routes.mjs",
+      "type": "file",
+      "bytes": 21719,
+      "sha256": "0e9db15f8aa85668630e48259714daa49ffb095e1aabca338022c313d95ae83a"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-drafts.mjs",
+      "type": "file",
+      "bytes": 6878,
+      "sha256": "7257ef5a34eed30402376b2044e10c06eae92bf84da82f2ada00f13410dd0848"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-reviews.mjs",
+      "type": "file",
+      "bytes": 9780,
+      "sha256": "9e87e7547252403bd76e20635bfb5a27d44711de43aa04be544818b86cedb6c5"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-snapshots.mjs",
+      "type": "file",
+      "bytes": 14591,
+      "sha256": "c9474e55afa1693efe4104530c9d585c9956109e94b1d978205bacba0ec50fab"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-context.mjs",
+      "type": "file",
+      "bytes": 6766,
+      "sha256": "44432865bfb5a52a16a43edbb2c9b34d50bbeab4d7d80ab3c20441e56da0b3f5"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-drafts.mjs",
+      "type": "file",
+      "bytes": 13104,
+      "sha256": "e5f0e21e1139e85481cccc96dfae36dc124c24188f6ea6e95c36673a9f948e51"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-media-provider.mjs",
+      "type": "file",
+      "bytes": 9439,
+      "sha256": "42a455f8ba23782f6e035ad55abc76adec32e7fb92e2345c9d44a34b89f8ba0f"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-media-reads.mjs",
+      "type": "file",
+      "bytes": 8675,
+      "sha256": "d61ab2690e3fc8efbc8ae71f583fee41d6afe36469ece4930a83cacb1927db0d"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-reviews.mjs",
+      "type": "file",
+      "bytes": 4663,
+      "sha256": "14667421c67e6ea2d1b9dd07d55ddc491566c3a9e137ba6812be82b6946027ad"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-snapshots.mjs",
+      "type": "file",
+      "bytes": 6976,
+      "sha256": "8a17726fbdf77c6899f49e7c132a582e20ea7364431edf4cdb044344cec7444d"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-source-checks.mjs",
+      "type": "file",
+      "bytes": 6708,
+      "sha256": "d31203b7f65ac19cafbce1c995b8422a870824974797049bc2e747b609a1334a"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/snapshots.mjs",
+      "type": "file",
+      "bytes": 12936,
+      "sha256": "8355ef382ef954473f01613e9a2bf16879e0bb0a874fa004dc7c9211984fc387"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/source-checks.mjs",
+      "type": "file",
+      "bytes": 12281,
+      "sha256": "d4ee1329c2ee1b5ed32c2321861f3f58c0336d6db6610f93554ff046647cd171"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-recovery-api/index.mjs",
+      "type": "file",
+      "bytes": 2150,
+      "sha256": "268e120282a42a04ff7fbd06f9d5dd817cbea8ef543ce75e543f2d8295aaecc3"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-recovery-api/package.json",
+      "type": "file",
+      "bytes": 231,
+      "sha256": "aa88bb793567caf91209d9e9dbad247defcb6d6e6247b482347f00d525dd0b14"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/baseline-provenance.json",
+      "type": "file",
+      "bytes": 105368,
+      "sha256": "35cdbbecd2693909ec0da732df97fbfe9d580cd6b9d52e999e8d578382710adb"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/baseline-site.json",
+      "type": "file",
+      "bytes": 26065,
+      "sha256": "951dc4f9e9d6f2f3bc062d51401efc3f5cda93bcb699a427c2ca19cdec72d776"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/content-version.mjs",
+      "type": "file",
+      "bytes": 1639,
+      "sha256": "1841db2df81c45e7c3be971c10e94436183c887bce29d422635333a20485c688"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/draft.mjs",
+      "type": "file",
+      "bytes": 2510,
+      "sha256": "aa37c802395ef120191dec488c55f95c8336be21df7ebdb3652a9b8dc5e445f3"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/errors.mjs",
+      "type": "file",
+      "bytes": 3335,
+      "sha256": "d228be75a9bb6d80b4353c50d537a2b31915d48da1b9387052e77e8bd92bc436"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/hero.mjs",
+      "type": "file",
+      "bytes": 5062,
+      "sha256": "8ac039cdd35098c3d26dd81e7e27c3023e8d8cf2151dbd365d1b550e183eceb9"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/legacy-assets.json",
+      "type": "file",
+      "bytes": 20137,
+      "sha256": "26ae46ffbd72bb6a4d3f001f9e7e5601f25eb29db93360a86ec91549f1016b5e"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-pdf-recovery-inputs.json",
+      "type": "file",
+      "bytes": 8979,
+      "sha256": "78bbef256ac0714bfee2e4020286d4809211627b78efa7392743b1b27bb56f54"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-processing-r0-static-v2.mjs",
+      "type": "file",
+      "bytes": 100188,
+      "sha256": "5e3468e42f1ef208c3145d50129b66e866ba6224300959ab02496a370e371c47"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-read-public.mjs",
+      "type": "file",
+      "bytes": 7456,
+      "sha256": "d4b94d95d93258a9d29b8da05769a8b533c558815ec6c7bc10cafcd55891e21c"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-rights.mjs",
+      "type": "file",
+      "bytes": 12586,
+      "sha256": "d90c1c27aede2043b24ec1a0d31df6c1a16aba3098547c3b485c5758ef0a21ba"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-tool-lock.json",
+      "type": "file",
+      "bytes": 28875,
+      "sha256": "2c049b8684ba07916855f009b1a52af77650a118e96090fadc45453f4eb18081"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-upload.mjs",
+      "type": "file",
+      "bytes": 11717,
+      "sha256": "f206d8aaf6d77b14d42b55278b817e7264a040d830c500f66286493c2f042c2d"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-attestations.mjs",
+      "type": "file",
+      "bytes": 13220,
+      "sha256": "e24cbb33df598beaf127d0edd57e481755ddbffc942b619861f6c9a860bd30e9"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-authority-v2.mjs",
+      "type": "file",
+      "bytes": 15733,
+      "sha256": "3b5de54b791621107d0f3371de4f9a517a5c537025f23f16d51b6dbb093bb988"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-authority.mjs",
+      "type": "file",
+      "bytes": 17630,
+      "sha256": "579eb978e5dc76bf93234e259cb84c08ebb3137bde4e63cd64062e3bc22cf59d"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-content.mjs",
+      "type": "file",
+      "bytes": 18073,
+      "sha256": "8828ebdd34245007561da9e670947c22598d12239f7431b99f04fd9cfb98e671"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-contract-v2.mjs",
+      "type": "file",
+      "bytes": 12707,
+      "sha256": "dd057063e30f774cf3e93e5d3bea282bf74146baa36d0b78507e3f2e202aa770"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-contract.mjs",
+      "type": "file",
+      "bytes": 11288,
+      "sha256": "37aa05c9f5f66ce8d3940964e05a289a44a733f255f2313cd098a4a14d03d00d"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-metadata-v2.mjs",
+      "type": "file",
+      "bytes": 3847,
+      "sha256": "27a85dec64550258370163103f6ad555db76da8da6748a872efab29c915bfec6"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-metadata.mjs",
+      "type": "file",
+      "bytes": 5167,
+      "sha256": "b03b246ad3c79d9dc919685a4a89a72205ce147b8ad20139014b351b47b01a9c"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-records-v2.mjs",
+      "type": "file",
+      "bytes": 17897,
+      "sha256": "09f3b66edb4e7a2d2622e461f71ccb4a756ba6ecddf436129c7d6d73299da7d1"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-records.mjs",
+      "type": "file",
+      "bytes": 19320,
+      "sha256": "d1b870044ce4abd44ed6b35a20d2d7beab7d6ca17f7cb6aeb21f402f9101b6d7"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-toolset-v2.mjs",
+      "type": "file",
+      "bytes": 48618,
+      "sha256": "72c564f85d9f4ab9a8ef205177030f707307a4fd9e336bc68f8d5c1508a6447a"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-toolset.mjs",
+      "type": "file",
+      "bytes": 27631,
+      "sha256": "85d9c11b3d29ea2f88879ca59117ff775844647719d56f55b407a3c613839e3c"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media.mjs",
+      "type": "file",
+      "bytes": 5407,
+      "sha256": "3c098ed4206ba441c6fa6d5a0a1132ff9ca868acb471ea72a9979fe0d0f2b1e1"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-draft.mjs",
+      "type": "file",
+      "bytes": 14243,
+      "sha256": "f09fb678b7800accb396f11c44ee9892470756ee162dbfa0bd68c24d1beb2584"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-records.mjs",
+      "type": "file",
+      "bytes": 1818,
+      "sha256": "4e9454acf0f7f9392a7b48c4a3b7855663cd01d41dc2066d1f170b0e53a5adc0"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-settings.mjs",
+      "type": "file",
+      "bytes": 11175,
+      "sha256": "3863305e7d0a312e8d69c7c7cc4fa24dda54259fc843672bc171147212012091"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site.mjs",
+      "type": "file",
+      "bytes": 18383,
+      "sha256": "d4c4afbe203df6875911ffd27fb01c9e97e703a9f2b6fc01f7906c8f66d19305"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/source-checks.mjs",
+      "type": "file",
+      "bytes": 10763,
+      "sha256": "e15f83903dc76a559a842cf350a79c756383b405898ecd5c38ab095b602ad3f6"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/ADR-001.md",
+      "type": "file",
+      "bytes": 12813,
+      "sha256": "9044d1d72a8a9a9b17599b9383669e542862f7ab6f5cf8f33d72cae251c95738"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/CHECKPOINT-A.md",
+      "type": "file",
+      "bytes": 9168,
+      "sha256": "7e1af1dd9f6d55bcf6d72aac85ef492fe7337ecdb02cd71d6d8b32f315bdbaaf"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/CHECKPOINT-B.md",
+      "type": "file",
+      "bytes": 9810,
+      "sha256": "605a87a6e8be20c69eb88d4cea91e851f1dcb3c1f629f02c2c073b4aedcc7652"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md",
+      "type": "file",
+      "bytes": 41060,
+      "sha256": "5d4bdccfba26a902dfd21b604eeb5bc05d47588f17a7fe07488fe9e5e323ecd3"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/CMS-001-v2-M3-PROPOSAL.md",
+      "type": "file",
+      "bytes": 32611,
+      "sha256": "c3997da91abb86f5c1294dce47123ee402fdb574f5e171ff6be3ceed1596c351"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/CMS-RECOVERY-001-REVIEW.md",
+      "type": "file",
+      "bytes": 19799,
+      "sha256": "e198d37cb8ee2f4253f8b8ec67921dbde234e7beb25c85b797a95525c0586d10"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/DEPENDENCIES.md",
+      "type": "file",
+      "bytes": 14739,
+      "sha256": "c8db1a2b5a2ada2015eaa00835c2b9ddcb87beb96fbeec4ac363626b11ee6c52"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+      "type": "file",
+      "bytes": 40299,
+      "sha256": "f2a1fb4a570bb6d20bae1d81f535fa81d5e8baf84b5758f51ee0b52b8b000513"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M1-REVIEW.md",
+      "type": "file",
+      "bytes": 10052,
+      "sha256": "5fd013e87bcdf1387044798a0cf02aae4f8759fd469071cb54ca19e8cc1af251"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M2-IMPORT-MAP.md",
+      "type": "file",
+      "bytes": 59847,
+      "sha256": "870d68e7b9c22c7cb7426e8927c7cfdd5c7c7f4a88689933fd9581dcd9601510"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md",
+      "type": "file",
+      "bytes": 5699,
+      "sha256": "a27111520288d3d78d21a0378592ce92e1486977ca4946bc7058ec0d04c902a8"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M2-REVIEW.md",
+      "type": "file",
+      "bytes": 87715,
+      "sha256": "93b05510fbfe41af1099fd953fdf0f8608121113fa141986bc20b31e077dceff"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-CODE-HANDOFF-01.md",
+      "type": "file",
+      "bytes": 9645,
+      "sha256": "023679b8249d9572c1ed59bf8d9860a9028c77d3ebfbfccd2842428d9994ef82"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-CONTINUE-04.md",
+      "type": "file",
+      "bytes": 71389,
+      "sha256": "f5aca31241a9442910533073c9f4d7d4c4d7438ab2a492e800c0ea9c6848beb3"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-DEPENDENCIES.md",
+      "type": "file",
+      "bytes": 22498,
+      "sha256": "9d7a0f63783e381dce14c492c8cefb435f744b152d62fc57c42d0b5e40ea035b"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-OVERNIGHT-HANDOFF.md",
+      "type": "file",
+      "bytes": 4891,
+      "sha256": "c138d0dcccc43536f8c01e1b5ff67944e8b8bd48cff05080024c09b630abac0a"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-COORDINATION-01.md",
+      "type": "file",
+      "bytes": 50599,
+      "sha256": "69db3eceaee253c42c09740de4ecbe38fd620d8a02c27091d77defc106c9d8a2"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-IMAGE-01.md",
+      "type": "file",
+      "bytes": 98791,
+      "sha256": "446b033d45385ea8e33537e05ca46eedf50a0eb8ab8a3f64f86af648b149f374"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-PDF-01.md",
+      "type": "file",
+      "bytes": 12568,
+      "sha256": "4ed96b73727495b68118ee90db3ef8f2457be9c2478dc5c0e9728f56948195df"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-QA-01-RUNBOOK.md",
+      "type": "file",
+      "bytes": 12274,
+      "sha256": "216b1079b03ad23cc0de835d77ef658418be4c641235c0b45e8b770ae455bcc5"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-QA-01.md",
+      "type": "file",
+      "bytes": 21191,
+      "sha256": "eb0f758e1944d133cc31de15175544d69a0051935e8098f5baa29e8ceac00bf7"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-RIGHTS-01.md",
+      "type": "file",
+      "bytes": 60068,
+      "sha256": "e51e2f715f0de27dc82b503e16aea39f3a339a065646083166cc84b5a6a2f13b"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-V3-01.md",
+      "type": "file",
+      "bytes": 61249,
+      "sha256": "0a74299f97bca4e2630b7c8a769e2e1b679febcb7a2c32f6b47f4a22c8f2d700"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PARALLEL-VIDEO-01.md",
+      "type": "file",
+      "bytes": 49709,
+      "sha256": "57272abd41c4b0468af97b098b6a6c5010bffd2fa20dd6654966a284e0c63286"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PLANNING-REVIEW.md",
+      "type": "file",
+      "bytes": 4990,
+      "sha256": "7ae0822a8248623567b069fdc158e99c354dd53182da8e62d3f2b3e9661bc043"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-REVIEW.md",
+      "type": "file",
+      "bytes": 83162,
+      "sha256": "c5155661a3fec9d42188905b5b6abc191016336f60d92a2ab42d706d41f84a4e"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-RIGHTS-REMOVAL-QA-01.md",
+      "type": "file",
+      "bytes": 4902,
+      "sha256": "cdafbc58022510928fd5f3833441e84cf17a82db2781acc349f700200d5c5984"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-RIGHTS-WORKFLOW-REMOVAL-01.md",
+      "type": "file",
+      "bytes": 10551,
+      "sha256": "a35ca4d81b461dfe2565963fcca591ed45e83c2aa7d4fd5fdf213a671f650cb8"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-TOOLS-RECOVERY-01-B-v3.md",
+      "type": "file",
+      "bytes": 11270,
+      "sha256": "343f4a38d379534f57a7555fc0e4e51550e8799d757d58a0feefed0aaa83dc3c"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-TOOLS-RECOVERY-01.md",
+      "type": "file",
+      "bytes": 29749,
+      "sha256": "3899498080b9a69caaed803ddc305af705084c14319428d0e497b38bc4735ef9"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/PROJECT-STATE.md",
+      "type": "file",
+      "bytes": 3199,
+      "sha256": "8d2f2e3a492da59c0d8062da1842677e192f82ee08e906fdee3485062821c0f4"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/QA-M1.md",
+      "type": "file",
+      "bytes": 8810,
+      "sha256": "bba773918394543e25772a5bd179fa202bb6d940f48aeb2e9c8daa39a05022d5"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/QA-M2.md",
+      "type": "file",
+      "bytes": 12517,
+      "sha256": "f54ac20a97648cf3c8cf00025809b2a525b83ec32bf1f15722923239ec71187f"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/SPEC-cms-content.md",
+      "type": "file",
+      "bytes": 39338,
+      "sha256": "786d54aae0110cc752ae933b62b9b3cf7dd827999c7cffed4ff0b9f552329f2e"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/SPEC-cms-identity.md",
+      "type": "file",
+      "bytes": 19544,
+      "sha256": "cd84de58e4b8d5e48d1e0bea86e442ccffaf2ad4472a84ce3b57aa7fc0727de1"
+    },
+    {
+      "path": "pinky-lamb-cms/eslint.config.mjs",
+      "type": "file",
+      "bytes": 2956,
+      "sha256": "6b11afdc1d54b93d9119598c0bab319a9d8f492cbdd2a70a7e2ffb34cae48f3f"
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firebase.json",
+      "type": "file",
+      "bytes": 1499,
+      "sha256": "6f2f37059514d183f741ef8e00e423e452a083dcc91e63b2ac778932f6607505"
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firebase.m2-recovery.json",
+      "type": "file",
+      "bytes": 506,
+      "sha256": "55706c43a7dbfcfa23d8ee1539b02c7922365d179bedb0ed094e39d9029fc088"
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firestore.indexes.json",
+      "type": "file",
+      "bytes": 44,
+      "sha256": "6742255415c36daf631b52f233039190af819205cc41fa58d07dd7d9e180c2b9"
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firestore.rules",
+      "type": "file",
+      "bytes": 229,
+      "sha256": "c26d81412146f210eafc466649f636a7902d68834ddce44f49f6725c9809a268"
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/storage.rules",
+      "type": "file",
+      "bytes": 191,
+      "sha256": "d40a0afd90869f2a8c14bce3be4de65ffc0d4567583b8a6acae2ad6d0b8c79db"
+    },
+    {
+      "path": "pinky-lamb-cms/package-lock.json",
+      "type": "file",
+      "bytes": 448013,
+      "sha256": "43a9dab5038690e07783a5b142a51f08d12e8af18c46e4a76cb2a0fe1fa35406"
+    },
+    {
+      "path": "pinky-lamb-cms/package.json",
+      "type": "file",
+      "bytes": 1386,
+      "sha256": "22a542cfe3f5484c4cdcad5b10734725326398ec5649b7cc9ae4565dbb41ba04"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-renderer.mjs",
+      "type": "file",
+      "bytes": 9372,
+      "sha256": "36d5cc9bda0b4f65c4d6846c2e9ee7025c9219991aa8b2eac77bc3e3c1b7fbe2"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/preview.css",
+      "type": "file",
+      "bytes": 2953,
+      "sha256": "c010d103e10829a20b17bad3b22ef4d0c17d5673ddd3218086d54695c94ee99e"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.css",
+      "type": "file",
+      "bytes": 1583,
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.mjs",
+      "type": "file",
+      "bytes": 12205,
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-media-renderer.mjs",
+      "type": "file",
+      "bytes": 13018,
+      "sha256": "bc867e69e9eafde848c7904ef5314494111aad115beef584c7fb7b4c6e93e704"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-public-data.mjs",
+      "type": "file",
+      "bytes": 3406,
+      "sha256": "77eb0a7b9e64595061b24f8b9bdcc04885f6a09e8346cddf51b7ab6d8dcbd70a"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-renderer.mjs",
+      "type": "file",
+      "bytes": 3202,
+      "sha256": "b2bb6d284c182e2d90fe6e7bbbdf8aa116dcf90e5fbe57b1f390a5b699de1928"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-sections.mjs",
+      "type": "file",
+      "bytes": 19415,
+      "sha256": "04eb271832b12edd7fac6e25baf49b04de8295354842ee2be4a88a5d49626fba"
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/app.js",
+      "type": "file",
+      "bytes": 13918,
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32"
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/content.js",
+      "type": "file",
+      "bytes": 7705,
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63"
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/index.html",
+      "type": "file",
+      "bytes": 18385,
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de"
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/styles.css",
+      "type": "file",
+      "bytes": 44637,
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-local.mjs",
+      "type": "file",
+      "bytes": 13085,
+      "sha256": "8f334a08ee41b5f94590523094344bb4a0eca3280cc3ba3d754e281f2854d011"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-site-local.mjs",
+      "type": "file",
+      "bytes": 9681,
+      "sha256": "5f7ae6f108730385065d932a39237e948805d18b9c00b176362102500bc6e81e"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-site-media-local.mjs",
+      "type": "file",
+      "bytes": 13113,
+      "sha256": "d0123c6874a65ed94a201c9ed3a40c7bace33c335e1aad5bf0c3581a8a3a1df6"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+      "type": "file",
+      "bytes": 129387,
+      "sha256": "985e419a1a1c0f40faf51582cd443305a591c188d64762e24121d408fba9217a"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/m2-recovery-local.mjs",
+      "type": "file",
+      "bytes": 68958,
+      "sha256": "e1bf8b05e1391610a9b9f8c81b09525183243b74908c2ac6163edc266f3edcd6"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/m2-recovery-profile.mjs",
+      "type": "file",
+      "bytes": 36905,
+      "sha256": "77089f8ce60c82da62d3976d43fc3f128e816acd336e8e1a349747c9e872eea0"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/map-baseline-site.mjs",
+      "type": "file",
+      "bytes": 32901,
+      "sha256": "b640c40dce496adc5861c1fca3d010615ffa058cfb1a15500d52291c31344338"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-pdf-package-reader.py",
+      "type": "file",
+      "bytes": 13977,
+      "sha256": "d93de7b8baa691d92c258255da9a3f9ede34d643db14c68f1a30d801711fa36a"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-pdf-recovery.mjs",
+      "type": "file",
+      "bytes": 7491,
+      "sha256": "962134f90f9d16204aec321c091da736158b340c737f650430e2c897330029ea"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-tool-audit.mjs",
+      "type": "file",
+      "bytes": 34537,
+      "sha256": "38f0bedc69b9e006cf1e9a16ac010061691c1b2ea8a74dffbd0d4b127ab4bd7d"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-worker-local.mjs",
+      "type": "file",
+      "bytes": 2483,
+      "sha256": "26ea911ccf50307002ec8a2737b5eba6b419fb5bbcbb057e18c2f7c67e9cb31a"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+      "type": "file",
+      "bytes": 50716,
+      "sha256": "ede470eca79b5a67d0664ff5b2fd3a8c21ef3e5ed59baf6977943e39192b7a67"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/seed-emulators.mjs",
+      "type": "file",
+      "bytes": 3771,
+      "sha256": "183a3f874e89634036e5b1fa3f2b2290e7b87810fa2c8ea4ed04c2506190fa42"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/verify-ffmpeg-source.mjs",
+      "type": "file",
+      "bytes": 9361,
+      "sha256": "05b7cb6e49ba1c9bfa3cabe450c128857b9f5530043cc3ba9c9a8af908232255"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/CMS-UX-002.md",
+      "type": "file",
+      "bytes": 12757,
+      "sha256": "bdcadc0b799fa8e561b32e94620073f76fd5caeb1c062be4c8711cbcf5d35ed0"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/HOME-V3-RECOVERY-001.md",
+      "type": "file",
+      "bytes": 10985,
+      "sha256": "70de157c3d5d6582a3aed26907b6d5949d097fbef9033a8dc3a5924dce8c9f44"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/M2-plan.md",
+      "type": "file",
+      "bytes": 19732,
+      "sha256": "e51a02944dbd73e5309eeabc195a8b95bbcd1caefe290ecf92094eb512290f2d"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/M3-plan.md",
+      "type": "file",
+      "bytes": 32637,
+      "sha256": "469a3bf1bf8028abf179b0064abd83117acb0b6ef93314f36e771d1eafba83f8"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/UI-APPLY-001.md",
+      "type": "file",
+      "bytes": 33285,
+      "sha256": "0441ad629477dc6cc15d954015b4ffdb5194043bd1e26182654fafda45f0551a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/acl.rules.test.mjs",
+      "type": "file",
+      "bytes": 12875,
+      "sha256": "cb1cd83d5749c154fd5a7826261332dcb8058dc1c2812ffcf81caf3b1e832f92"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-collections.test.mjs",
+      "type": "file",
+      "bytes": 17602,
+      "sha256": "7bb220d840f8ab9ebfc03c1ac236c57fd8463d6692e33e4f281debaaef30c8ff"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-forms.test.mjs",
+      "type": "file",
+      "bytes": 6395,
+      "sha256": "7c2e9be97dfa13fdeaa981a363d406897ba15ec8fbffd091294a90980cbd3973"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-manifest.test.mjs",
+      "type": "file",
+      "bytes": 4346,
+      "sha256": "6a3057e1de3985bbac2ac66981b0a96f961cea894cc066a35e3a1daaae0c7672"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-preview-queue.test.mjs",
+      "type": "file",
+      "bytes": 3163,
+      "sha256": "de677f337927fe3031b575be0766c2881b648c70865503f9f4ff01bfb027491f"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-shell.test.mjs",
+      "type": "file",
+      "bytes": 10631,
+      "sha256": "ca9c772fd06b16d228d39486622c9effa632f31d5353454d4ec1dd6e9307106b"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-v3-session.test.mjs",
+      "type": "file",
+      "bytes": 5184,
+      "sha256": "47ffc1bd5358a955e15e248b5fef42bbbe7686047db3df3b9abfa9e58c95020f"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-v3-workflow.test.mjs",
+      "type": "file",
+      "bytes": 9035,
+      "sha256": "73e20112cdbc0ece3b731ab94c341984321d2c9b18a7d3376e34f1c58f0ef5b8"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/drafts.integration.test.mjs",
+      "type": "file",
+      "bytes": 13722,
+      "sha256": "c45a459d9a77f5ea518094e3408697574b8e6306c3bae09bde872d7866b83f55"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/ffmpeg-source-verification.test.mjs",
+      "type": "file",
+      "bytes": 6714,
+      "sha256": "ce50873285e76808051c2d5e926fab2bf0838d66a8c0b96caf3e808c9ec13e71"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/approved-hero.json",
+      "type": "file",
+      "bytes": 5409,
+      "sha256": "364f4c393753a8505694efd7f454bfa8740e3c7ba2d51fe5252450397364fd3d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/approved-site.json",
+      "type": "file",
+      "bytes": 59681,
+      "sha256": "88023385223c78b50cd7b4cc521064ec7a40ef032e5e1c38e6e2c20820f4520a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m2-malicious.json",
+      "type": "file",
+      "bytes": 312,
+      "sha256": "31ef8412b8e86e0024bab3803e31b88bc5e969178e352c89de1e5642684d62cc"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m2-tamper.json",
+      "type": "file",
+      "bytes": 237,
+      "sha256": "7ffa165668032273d9a26142a46aeda45b189db106fd9140e448a97102a9e0b0"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m3-no-rights-approval.json",
+      "type": "file",
+      "bytes": 1821,
+      "sha256": "b6239f8d5430c0c7b16e5df9205712af3f9d2ca6036803ce8ea69846f2992dd8"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m3-parallel-qa-matrix.json",
+      "type": "file",
+      "bytes": 25484,
+      "sha256": "3901301aeb17f06d211ba74daf9f2e9f8209d3320b0db80c86114fb669a826e9"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/malicious-hero.json",
+      "type": "file",
+      "bytes": 930,
+      "sha256": "670749fb60c69935911ec5a9873862c6254b4c758421939cd1a63b0f100e5f67"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-images.mjs",
+      "type": "file",
+      "bytes": 4419,
+      "sha256": "76ef6714fe85327930dec2a5d72841015004b98a74d10b76840ac83ceb999a7d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-pdf.mjs",
+      "type": "file",
+      "bytes": 5091,
+      "sha256": "cfc80073d4ae0f008bd3b22fc93bf7ebc20531c6d123fabc3ce50df12aa0a124"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-attestations.json",
+      "type": "file",
+      "bytes": 207256,
+      "sha256": "e2b1ddbe70afa10570b5cb38cf2465b27d2af9e76dce21ae356c0f02367a18c0"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-authority.json",
+      "type": "file",
+      "bytes": 1647837,
+      "sha256": "a26ae361c8ece635722d15bf275b5ca5a1a511f4df748745470292477ea5e808"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-content.json",
+      "type": "file",
+      "bytes": 169426,
+      "sha256": "7074842d92a314bedbf97c4991f97b19a1a4a3972b73c3d36e8bb1cfe1875038"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-contract-v2.json",
+      "type": "file",
+      "bytes": 56830,
+      "sha256": "e5ffe521db451dc9eae67c7f409596f56893fcd587cd9e26124ea690b5d1406e"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-contract.json",
+      "type": "file",
+      "bytes": 25177,
+      "sha256": "d4219f98d6f9cb8ea95333a01431dbaef05cebbe499cdf749bf180679acb1049"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-metadata-v2.json",
+      "type": "file",
+      "bytes": 6182,
+      "sha256": "a7f4dc85f4db86f14d69ab70b2ab8fe44c6e05cc7ddb68c048ae76253de64b76"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-metadata.json",
+      "type": "file",
+      "bytes": 987,
+      "sha256": "56f8d680d65f9695946d43e25fdc0098b76355ce21392580d84b27233ea53a0d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-records.json",
+      "type": "file",
+      "bytes": 2464568,
+      "sha256": "78eebd221800e33bd1a398887d1a64fb2e1873c5a2befe572681789f84ae7936"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-toolset.json",
+      "type": "file",
+      "bytes": 1542862,
+      "sha256": "6ec4a0fc4dc691965d0e5ca8b9d31235fc9778c176ba9be8e4555103a9509725"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-video.mjs",
+      "type": "file",
+      "bytes": 5739,
+      "sha256": "2a8fafe4749c69c189240107d445808bb51e65e64669402c7308449dd77b1e2a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/m3-parallel-qa-oracle.mjs",
+      "type": "file",
+      "bytes": 5429,
+      "sha256": "2d1130af4f5a01052f3b5ae6712fee75d0ba432296ab9981cb201439cb418eef"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/pinky-select-ui.mjs",
+      "type": "file",
+      "bytes": 4462,
+      "sha256": "d068eabd9ce041e63a9d8bae678fbcae0836dc6a2a1ac13536e37933e3b9473c"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-contract.test.mjs",
+      "type": "file",
+      "bytes": 7174,
+      "sha256": "593d3715f333e4e3902f54a2427e7bf400db700091a6e37f6dccec66a3358fff"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-editor.local.test.mjs",
+      "type": "file",
+      "bytes": 37106,
+      "sha256": "1e274c9b63742198ab1c893dd5a456393c02234fae37d35cea77d0dfb1c0a315"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-renderer.test.mjs",
+      "type": "file",
+      "bytes": 5041,
+      "sha256": "91e7a407a2d8cc455eb57664788907b40ea4df645fc92a59c9b99104a37bb581"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/home-v3-recovery-api.test.mjs",
+      "type": "file",
+      "bytes": 11267,
+      "sha256": "340cf50df02ee3f0627331439947baa5e1e03e0bc522df90914314025abcf31d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/home-v3-recovery-ui.test.mjs",
+      "type": "file",
+      "bytes": 7304,
+      "sha256": "12397fea2f4ef37341f3eebe3185bb32ec5a607ba05d55d0de45323c65ac869c"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/local-guard.test.mjs",
+      "type": "file",
+      "bytes": 33990,
+      "sha256": "147540d18c407729dca04cdc6b9dcb917888c7744d3f14b0cbfa44bf11c41e98"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/login.local.test.mjs",
+      "type": "file",
+      "bytes": 10554,
+      "sha256": "9aed9f42e1df620196194a472cd5274215274b480f75685bbaa1b4bb7121c928"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m1-compat.integration.test.mjs",
+      "type": "file",
+      "bytes": 13958,
+      "sha256": "11ed1604651f44cf9f58dea389984d288a1a1682fca18ee491c2dee140c3407c"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m1.e2e.test.mjs",
+      "type": "file",
+      "bytes": 35912,
+      "sha256": "62d8fa8ca0f2ed65ff7ad396eeb9f48285e7c8183c30db580a67505587aebdd8"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+      "type": "file",
+      "bytes": 78359,
+      "sha256": "20b79e30267eca3c6f6629d3d5c5e309f974cd12b0775dd7db74ba3a83a61716"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2-recovery.test.mjs",
+      "type": "file",
+      "bytes": 46930,
+      "sha256": "75848ce9d9713b87cfdbdcdb90ded1ed627cb2d3713ac70721a4d79253b36d7e"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2.e2e.test.mjs",
+      "type": "file",
+      "bytes": 54763,
+      "sha256": "f3a27bbcc4bf1e165bd831cbf2729d8365848f341bdad951f9d48a2f7f8de2af"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m3-no-rights-approval.test.mjs",
+      "type": "file",
+      "bytes": 3795,
+      "sha256": "ad55ea9828faca83937ac1e23e7fc66ec30a710a724e006e1c556bf603fa6446"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m3-parallel-qa-oracle.test.mjs",
+      "type": "file",
+      "bytes": 6788,
+      "sha256": "de16d44eea0dfd1aee7a31a7525d06da8dc6a54f8b289baa279b73eaeb9ec3ba"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-images.test.mjs",
+      "type": "file",
+      "bytes": 26649,
+      "sha256": "27ee501a25d126e4fd2d44701b5e4258dae62850f3c1455a41dd6795ea9e4087"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-pdf-package-reader.test.py",
+      "type": "file",
+      "bytes": 11665,
+      "sha256": "a24dc1e3c6e3ac4dfbfb2b2df9dd562c3f023da550e0349b319dc7260ed303d5"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-pdf.test.mjs",
+      "type": "file",
+      "bytes": 9063,
+      "sha256": "39caf18dd9e01f3399d8d73b022d0fedaf98790f4b45b062166433d8f890f0d5"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-images.local.test.mjs",
+      "type": "file",
+      "bytes": 19289,
+      "sha256": "0dcf49618b00c567eea75a2618b4bc8d58d076b09744dbbcccc1c64e6b4aceed"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-parent.local.test.mjs",
+      "type": "file",
+      "bytes": 27904,
+      "sha256": "9441568e00f623ddd237d7d9b1012032eabbde3ec8190bb41faad5ed140103da"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-transport.local.test.mjs",
+      "type": "file",
+      "bytes": 42268,
+      "sha256": "44a4786d1cf2ed718c42c28a3ea49686f8864267dcf980c1640963dc6eca0c3c"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-private-files.local.test.mjs",
+      "type": "file",
+      "bytes": 25548,
+      "sha256": "a87a8b20d6233486fceee0c4ed799e365ea406fefb004bfe275e250f270fdad3"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-rights-contract.test.mjs",
+      "type": "file",
+      "bytes": 11965,
+      "sha256": "c32d78b97169ab332df6df3f3f78a984d4429d0e58d6bffa400185080c8e66e4"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-rights-policy.test.mjs",
+      "type": "file",
+      "bytes": 16957,
+      "sha256": "2bd123d0662ebca5f226fb4b81193913e86e033b3dd1949de341d550b370f7b3"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-tool-scopes.test.mjs",
+      "type": "file",
+      "bytes": 9284,
+      "sha256": "aee4900252d3f110903288f43c97ac106525f6a0f86e48232b873b1c31db359d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-tools.local.test.mjs",
+      "type": "file",
+      "bytes": 47111,
+      "sha256": "5514079826f3a63c9c71cdce39c6dae412733c7733ab4359998804d855620e6f"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-attestations.test.mjs",
+      "type": "file",
+      "bytes": 14265,
+      "sha256": "3fa65dda4cee097155cce2cd7bd2b610f146b1fa582e20f75876dbc49fc58507"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-authority-v2.test.mjs",
+      "type": "file",
+      "bytes": 3511,
+      "sha256": "3137bf645b3352c2f1d6512a7c0ce14e6b8be81aa8b0bd19f69a6f6081dabd7f"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-authority.test.mjs",
+      "type": "file",
+      "bytes": 15273,
+      "sha256": "57987a29185432ee95a88430a7ae712f7ef1054a68da2fb33e062b8c1ef87b45"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-content.test.mjs",
+      "type": "file",
+      "bytes": 10537,
+      "sha256": "eb0b0ee3160ef5b1e82ae779f34e9a3071eabe77093a5679dac71dff5bb333c1"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-contract-v2.test.mjs",
+      "type": "file",
+      "bytes": 14027,
+      "sha256": "7c235282dd214a3c6e6f44d2961b2c17c1082dd6bd593deb5fd43763fb733856"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-contract.test.mjs",
+      "type": "file",
+      "bytes": 14473,
+      "sha256": "4863cb881f27043b842c61f305142511df4a7c570c913fcd2896e17c1f68e895"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-metadata-v2.test.mjs",
+      "type": "file",
+      "bytes": 7362,
+      "sha256": "dc59a874876e46f5e1eaf33c579e0f1f32bb75f7f1eddaedc33e8b4b03208383"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-metadata.test.mjs",
+      "type": "file",
+      "bytes": 9422,
+      "sha256": "6754ff6947ba379f4db86d2e3ea4291bf3407b34f2312377d10a22ba0dcbfa79"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-records-v2.test.mjs",
+      "type": "file",
+      "bytes": 3037,
+      "sha256": "27a158ae73df70713d6e71033c75b2c314eeb1ea278e20bb876471ef33717b5f"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-records.test.mjs",
+      "type": "file",
+      "bytes": 18412,
+      "sha256": "866ce7a0c708598f2cbc9f73ba3b330732382f30ab14b3f23a1e9182b4a42665"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-toolset.test.mjs",
+      "type": "file",
+      "bytes": 9495,
+      "sha256": "c289c034f1f8be6408a6b4de1f0043bbea3d1268d49cc298a27c269a3a5a5244"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-video.test.mjs",
+      "type": "file",
+      "bytes": 19625,
+      "sha256": "43555394fdd76d033d65a54c141efa093fcd8b453082f0556046caa24ff5de3a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/review.integration.test.mjs",
+      "type": "file",
+      "bytes": 19769,
+      "sha256": "f21d88818c6ba66b6789c3f7a55ec8d45eceeaf2228b09a82f52594ba2fcc492"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+      "type": "file",
+      "bytes": 63326,
+      "sha256": "3cba02a7c5462b52ee811b656f88a0f57d78e5efbf6ca4655fde3972f8afa32a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-abuse.integration.test.mjs",
+      "type": "file",
+      "bytes": 15462,
+      "sha256": "b039319f9613fb4c29af433d8c70eb811f6799a09dc188346f61e381c3a15dac"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-contract.test.mjs",
+      "type": "file",
+      "bytes": 38174,
+      "sha256": "18c5efefe6aed918ace3ff433912a901930fe31b20e7d6a9ab5c374c02d6e61b"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-drafts.integration.test.mjs",
+      "type": "file",
+      "bytes": 20226,
+      "sha256": "23bfcdca24a535a951a6d9df64bb3da4d1ec59bb5c1ac9626da5062bdb81d1b0"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-export.test.mjs",
+      "type": "file",
+      "bytes": 17094,
+      "sha256": "11157e17fdc7ba89e54a2bf0e9c963f598bb22b0d5fdbe8559f1dcd1291c3e1a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-hash.test.mjs",
+      "type": "file",
+      "bytes": 2803,
+      "sha256": "7e42bb450c4befc834feab469bccdb19bcac922f616045fd72f7e72f045ecac4"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-import-map.test.mjs",
+      "type": "file",
+      "bytes": 18699,
+      "sha256": "e5e0ebc2bae7a3317a253650f157fbba89e69cb207041db35bde886da1260fe9"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-import.integration.test.mjs",
+      "type": "file",
+      "bytes": 19965,
+      "sha256": "09d038401427f3f23e16b37fc43833871897f6bdbc3e59ee39778eadbf37e6fe"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-manifest.test.mjs",
+      "type": "file",
+      "bytes": 4191,
+      "sha256": "6f951aa8076d5b7a594a056c0ce9b414a406ecaadb56476165f1a9d6b40026a5"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-private-files.local.test.mjs",
+      "type": "file",
+      "bytes": 6610,
+      "sha256": "b3a5770d1d66dc8cf3bd182844d81a8ab4a129e962515374448f19d22816d99d"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-public.local.test.mjs",
+      "type": "file",
+      "bytes": 23693,
+      "sha256": "95f2953af561beacdca9366d00d9f470f7b2a5decb3d75e02442c72659f39c55"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-records.local.test.mjs",
+      "type": "file",
+      "bytes": 48746,
+      "sha256": "9d8a15fe9c3aaf1d5d6271603428192bd32b7edcf660a58fb6242a4e96abbe6e"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-records.test.mjs",
+      "type": "file",
+      "bytes": 9621,
+      "sha256": "72396dba13d0b397debc874a6ac43b27ea329eb4baa18cf77e53f93ea933a493"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-renderer.test.mjs",
+      "type": "file",
+      "bytes": 23689,
+      "sha256": "2c5c5a181a4931ae683cd05aaa35e397262f845fba9bebe7b280aa6e714bcd0a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-reviews.integration.test.mjs",
+      "type": "file",
+      "bytes": 31843,
+      "sha256": "ad4ccb4c696b00b9d2cd10f60a76edf4e2b44bcbe9e0880d136c7a58ba5cd12c"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-sections.local.test.mjs",
+      "type": "file",
+      "bytes": 49370,
+      "sha256": "c201db12eeb9b14535f98abe34dfff5d2e84c8a19344f3d648069279d69b2045"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-settings.local.test.mjs",
+      "type": "file",
+      "bytes": 36547,
+      "sha256": "84cf5bead5a90febd6884a708e8957c3e62d2242f2b4979e9fc39f7a4ecc5ba9"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-settings.test.mjs",
+      "type": "file",
+      "bytes": 16010,
+      "sha256": "1daf828e54fa0f7168181be074bdda8b2a58018ff18882c94af967a92eee8752"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-snapshots.integration.test.mjs",
+      "type": "file",
+      "bytes": 19796,
+      "sha256": "17ea24215b68c8ecf5e3b556ef26cc1a03129d8713a0809ca8eeba43b15ae383"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-source-coverage.test.mjs",
+      "type": "file",
+      "bytes": 7624,
+      "sha256": "becbe789345663f8cf9fbd22a2a59f3bb0f844ffbf39d2b8330fa48fcb14f3a0"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-workflow.local.test.mjs",
+      "type": "file",
+      "bytes": 58479,
+      "sha256": "fa7b00317b19104645278894501eaaf1f94ac4612fcc31bfeff41a97b159c2e6"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/source-checks.integration.test.mjs",
+      "type": "file",
+      "bytes": 41321,
+      "sha256": "32e9c498e779bdfda063980c3e5844a42f2a2f39d4a55329a84d8c34d7e3fb63"
+    },
+    {
+      "path": "pinky-lamb-cms/vite.config.mjs",
+      "type": "file",
+      "bytes": 10758,
+      "sha256": "98e389b287a74b90982e2b75c221da412709c37a68b11afacab85ef2f18a1197"
+    }
+  ],
+  "coverage": "Repository package and CMS/static source only. No live emulator/data/global inventory.",
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+    "headCommit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+    "files": [
+      {
+        "path": ".agents/references/template-application.md",
+        "gitBlobSha": "814418a0c87005acccd68d7e2471ccff5c25ee0f",
+        "sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      {
+        "path": ".agents/skills/code-review-and-quality/SKILL.md",
+        "gitBlobSha": "c3b0bf8a8b86656771da16b8b11e2aa7efd4dba1",
+        "sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+      },
+      {
+        "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+        "gitBlobSha": "864bea089904a19c42ee15457d0c2392aa4a99fd",
+        "sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "b3a2f2de90bc43affea9b33c491eeb48f62b98b8",
+        "sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "dabefdc7e71c10298e670e48c4a6cd9d01255e7b",
+        "sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+      },
+      {
+        "path": ".claude/references/template-application.md",
+        "gitBlobSha": "814418a0c87005acccd68d7e2471ccff5c25ee0f",
+        "sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      {
+        "path": ".claude/skills/code-review-and-quality/SKILL.md",
+        "gitBlobSha": "c3b0bf8a8b86656771da16b8b11e2aa7efd4dba1",
+        "sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+      },
+      {
+        "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+        "gitBlobSha": "864bea089904a19c42ee15457d0c2392aa4a99fd",
+        "sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "b3a2f2de90bc43affea9b33c491eeb48f62b98b8",
+        "sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "dabefdc7e71c10298e670e48c4a6cd9d01255e7b",
+        "sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "b4c3f7a6c3cd24be36692ae3bafc5da4862fce3b",
+        "sha256": "3c53a7b26b6d5d4bd2c1a0322dd61bd53d44d0859282527e724fb612298c4c6a"
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "gitBlobSha": "efc83600fdbfade45c1b44625e64286a7fa6c5c1",
+        "sha256": "c4aeedb0c5d5b6ca3b7cf302bb8e4f29da12157a92e185d511bf27db743c2545"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "77363d6ea1dc77277ae4adfca204ecce928befd0",
+        "sha256": "bc1074b5121407325292dade47644950c08d4f20235ed040537ea8903f14e0f4"
+      },
+      {
+        "path": "docs/tasks/TASK-005.md",
+        "gitBlobSha": "788b6379943943d1891ecc4ac8b9b459eb73aba5",
+        "sha256": "8323d7edd53a8a513afae8a63119e8acb4f8db90a70820e3b817b7e5398088df"
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "gitBlobSha": "a4659b280bb47c595830da8ccce818dca6edd5dc",
+        "sha256": "55b5e851751db91ed46314f9c41a1260bc59f4fbeb7ccf352ff9f8f15708cff7"
+      },
+      {
+        "path": "docs/template-application-acceptance.md",
+        "gitBlobSha": "11f3cb932aec8cb4d36a0cba71c07480b9bef5a7",
+        "sha256": "e11d640c7b9150120c10098d7c97f18a2d055b0d8ff9f9cf1b211435885069c4"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "038f9b28c9905f68fe32b1d0f83f967b4598c19e",
+        "sha256": "02f9a80234caf7bfa6d6e77e2dcf194ca39829451b8fc35bb1a699427c68c1e5"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "684a151a283730588f706a898c42ac046a2bb402",
+        "sha256": "1f461a9dde889ed645510bfaa7869686988fee2ea5d9011e69a3b13e34fdd19d"
+      }
+    ]
+  },
+  "staging": "/private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6"
+}

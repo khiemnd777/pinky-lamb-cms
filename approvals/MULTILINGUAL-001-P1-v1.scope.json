@@ -1,0 +1,413 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "proposal_version": 1,
+  "slice": "P1",
+  "slice_version": 1,
+  "date": "2026-10-16",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "status": "IN_PROGRESS",
+  "design_status": "DESIGN_ACCEPTED",
+  "implementation_authorized": true,
+  "implementation_approval": {
+    "quote": "Approved MULTILINGUAL-001 v1 — P1 Hero local/emulators theo bundle đã trình. Triển khai và kiểm thử đúng phạm vi P1.",
+    "source": "Direct user message in current chat",
+    "date": "2026-10-16",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "approved_document_digests": [
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+        "sha256": "46addabf229de3c45515f99d41875c711f2a14509c88fa45f0681c9df3ed4a61"
+      },
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+        "sha256": "0af353880330ed403d454e324a5fab94f67ff485688533990220651894ae408d"
+      },
+      {
+        "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+        "sha256": "9790924ce5ec480f225a2aa3676789fe7c02bca304e77627f430b6f95eed957c"
+      }
+    ],
+    "approved_manifest_sha256": "e70dff0f9579400b2a46b3a96818abc851f782f1217a4ff331252db3719f1011",
+    "snapshot_directory": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/approval-bundle-20261016",
+    "scope": "P1 only; no public switch, 5010 activation, migration or editorial approval",
+    "snapshot_files": [
+      {
+        "document": "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+        "snapshot_file": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/approval-bundle-20261016/MULTILINGUAL-001-v1.md",
+        "sha256": "46addabf229de3c45515f99d41875c711f2a14509c88fa45f0681c9df3ed4a61"
+      },
+      {
+        "document": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+        "snapshot_file": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/approval-bundle-20261016/MULTILINGUAL-001-P1-v1.md",
+        "sha256": "0af353880330ed403d454e324a5fab94f67ff485688533990220651894ae408d"
+      },
+      {
+        "document": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+        "snapshot_file": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/approval-bundle-20261016/tasks/MULTILINGUAL-001-P1-v1.md",
+        "sha256": "9790924ce5ec480f225a2aa3676789fe7c02bca304e77627f430b6f95eed957c"
+      }
+    ]
+  },
+  "human_design_and_documentation_authorization": {
+    "quote": "Đồng ý phương án v1. Lưu kế hoạch vào tài liệu dự án và lập phạm vi, tasks, tiêu chí nghiệm thu P1 để tôi duyệt trước khi triển khai.",
+    "source": "Direct user message in current chat",
+    "observed_date": "2026-10-16",
+    "scope": "Accept overall design v1; save project documents and prepare P1 for approval; no implementation authorization"
+  },
+  "required_future_approval_quote": "Approved MULTILINGUAL-001 v1 — P1 Hero local/emulators theo bundle đã trình.",
+  "authority": {
+    "scope_and_acceptance": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+    "task_checklist": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+    "overall_design": "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+    "coordinator": "root / Project Coordinator",
+    "contract_owner": "p1_implementation for T01 contract; root coordinates material decisions",
+    "implementation_owner": "p1_implementation / native kit-implementer; sole source writer"
+  },
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+      "sha256": "46addabf229de3c45515f99d41875c711f2a14509c88fa45f0681c9df3ed4a61"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+      "sha256": "0af353880330ed403d454e324a5fab94f67ff485688533990220651894ae408d"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+      "sha256": "9790924ce5ec480f225a2aa3676789fe7c02bca304e77627f430b6f95eed957c"
+    }
+  ],
+  "index": {
+    "path": "docs/agent-kit/project-plan.md",
+    "sha256": "5f923155c8c380bd8a20420c697590bbaca232a6cbc1ff40179bdc869464c540",
+    "change": "Single additive planning entry; historical index content retained"
+  },
+  "base": {
+    "kind": "FILESYSTEM_SHA256",
+    "git_metadata_present": false,
+    "protected_record_count": 350,
+    "protected_snapshot_sha256": "eefd44b6525ce366deed33ff9fe681c8812b012c3ef1a5d0fa624205350e4f08",
+    "runtime_data_inventory": "NOT_RUN",
+    "source_status": "Revalidate affected source digests and material drift before implementation; no reset to old snapshot"
+  },
+  "proposed_implementation_allowlist": [
+    {
+      "path": "pinky-lamb-cms/contracts/hero-localization.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/hero-localization-records.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/hero-localization-context.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/hero-localizations.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/routes.mjs",
+      "state": "EXISTING",
+      "sha256": "0e9db15f8aa85668630e48259714daa49ffb095e1aabca338022c313d95ae83a"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-editor.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-editor.css",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-media-editor.mjs",
+      "state": "EXISTING",
+      "sha256": "2c8b949ff72c82397cd2f09afa2f089344c2cbf794a5c9d76f073ed9ef5d97ce"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-renderer.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-copy.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-preview.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-hero-localization-local.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-p1-local.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+      "state": "EXISTING",
+      "sha256": "985e419a1a1c0f40faf51582cd443305a591c188d64762e24121d408fba9217a"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-contract.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-api.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-routes.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-editor.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-ui.local.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-preview.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-renderer.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-export.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-runner.test.mjs",
+      "state": "NEW_NOT_CREATED",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/admin/auth.mjs",
+      "state": "EXISTING",
+      "sha256": "3989d5ee54824f6dcfb1555dbdd8cc7cdc3e7aee1e07585a3417cc94ed87f89c",
+      "authorization": "MULTILINGUAL-001 P1-A1 v1"
+    }
+  ],
+  "future_coordination_write_allowlist": [
+    "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+    "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+    "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+    "docs/agent-kit/project-plan.md",
+    "approvals/MULTILINGUAL-001-P1-v1.scope.json"
+  ],
+  "proposed_data_scope": {
+    "project_id": "demo-pinky-lamb-cms",
+    "runtime_observed": "UNKNOWN_NOT_RECHECKED",
+    "read_only": [
+      "home-v3 trusted draft/import/source/media context",
+      "existing demo member/session authorization",
+      "public-safe referenced assets"
+    ],
+    "new_draft_documents": [
+      "cmsLocalizedHeroDrafts/home-v3--en",
+      "cmsLocalizedHeroDrafts/home-v3--vi",
+      "cmsLocalizedHeroDrafts/home-v3--ja"
+    ],
+    "new_operations_collection": "cmsLocalizedHeroOperations",
+    "new_operation_id_prefix": "ml001-p1-",
+    "before_write_requirement": "All three target drafts absent; if any exists preserve it and resolve ownership before writes",
+    "existing_records_mutable": false,
+    "auth_or_role_mutations": false,
+    "automatic_draft_or_audit_cleanup": false,
+    "fixture_content": "Synthetic test draft content only; retain final new P1 drafts for review; not editorial approval"
+  },
+  "proposed_runtime_scope": {
+    "cms_frontend_and_api": "http://127.0.0.1:5173",
+    "qa_output_server": "http://127.0.0.1:4173",
+    "vite_lifecycle": "After approval only, guarded start/restart of verified canonical project Vite; preserve process ownership and retained data",
+    "qa_server_lifecycle": "Start if free; stop only process created by P1",
+    "emulator_and_hosting_restart": false,
+    "hosting_5010_write_or_activation": false,
+    "exports_root": "pinky-lamb-cms/.local/exports/multilingual-001/p1-v1/<run-id>/",
+    "evidence_root": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/<run-id>/",
+    "cache_root": "pinky-lamb-cms/.local/cache/multilingual-001/p1-v1/",
+    "downloads_installs_or_new_dependencies": false,
+    "guard_bypass": false
+  },
+  "exclusions": [
+    "P2 public switch and locale URLs",
+    "P3/P4 non-Hero content and full SEO",
+    "P5 editorial workflow and approval",
+    "P6 migration or reimport",
+    "P7 serving output at 5010",
+    "M3/M4 state change or LOCAL_COMPLETE",
+    "dist/public-baseline/root firebase.json writes",
+    "historical CMS ledgers/checksums changes",
+    "global settings/policy/sandbox changes",
+    "Git mutations or deploy",
+    "real Firebase credentials/cloud/billing/IAM",
+    "unowned process signals"
+  ],
+  "acceptance_criteria": [
+    "P1-AC01",
+    "P1-AC02",
+    "P1-AC03",
+    "P1-AC04",
+    "P1-AC05",
+    "P1-AC06",
+    "P1-AC07",
+    "P1-AC08",
+    "P1-AC09",
+    "P1-AC10",
+    "P1-AC11"
+  ],
+  "tasks": [
+    "T00",
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08"
+  ],
+  "verification": {
+    "document_static": "PASS",
+    "protected_source_preservation": "PASS_346_RECORDS_OUTSIDE_ALLOWLIST_UNCHANGED",
+    "application_tests": "PASS_38_PURE_TESTS_SCOPED_LINT_AND_PRODUCT_BUILD_2077_MODULES",
+    "runtime_http_browser": "PASS_MIXED_BROWSER_SUITE_17_INCLUDING_ONE_SERIAL_OWNER_CASE_OTHER_ROLES_NOT_RUN",
+    "emulator_data_inventory": "PASS_RETAINED_HASHES_EN_ORIGINAL_HASH_REVISION5_VI_JA_REVISION1_OPS7_PLUS4_EN",
+    "human_p1_acceptance": "REJECTED_UI_UX_DESIGN_REPLAN_REQUESTED",
+    "human_translation_acceptance": "PENDING",
+    "production": "OUT_OF_SCOPE",
+    "independent_source_review": "PASS_SOURCE_AND_SCOPED_FINAL_EVIDENCE_ROLE_LIMITS_RETAINED"
+  },
+  "notes": [
+    "This manifest records the P1+A1 allowlist and direct human approval quotes; it is not an application/runtime dependency or a separate source of authorization.",
+    "Document authority is Vietnamese P1 scope; if manifest and scope differ, resolve before implementation.",
+    "No self-digest is embedded; document hashes exclude this manifest.",
+    "Final mixed browser suite17/17 PASS including one serial OWNER case; AC04 other-role runtime NOT_RUN (human confirmed OWNER only), human/language acceptance pending. Full P1 remains IN_PROGRESS; no added account/role or P2-P7 authority.",
+    "Current human review rejects P1 UI/UX and requires design before implementation. Previous functional/source/runtime PASS receipts remain scoped technical evidence; historical P1+A1 approval does not authorize the revised design.",
+    "Latest design approval is recorded separately in MULTILINGUAL-001-v2.design.json. Existing product UI rejection and old approval snapshots/evidence are preserved; v2 plan does not resume v1 implementation."
+  ],
+  "planning_verification_result": {
+    "status": "PASS",
+    "documents_checked": 3,
+    "index_addition_only": true,
+    "local_links_checked": 53,
+    "tasks": 9,
+    "acceptance_criteria": 11,
+    "proposed_implementation_paths": 23,
+    "existing_product_files_in_allowlist": 3,
+    "protected_records_compared": 350,
+    "protected_records_changed": 0,
+    "new_application_files": 0,
+    "errors": [],
+    "method": "Python standard-library JSON parse, document hashes, local links, AC/task/allowlist cross-check, index additive check, source hash/link comparison; no application execution",
+    "scope_limit": "No live data inventory, HTTP, browser, build, application tests or process actions; not runtime proof",
+    "observed_date": "2026-10-16"
+  },
+  "amendments": [
+    {
+      "id": "MULTILINGUAL-001 P1-A1",
+      "version": 1,
+      "status": "APPROVED",
+      "additional_file": {
+        "path": "pinky-lamb-cms/admin/auth.mjs",
+        "sha256": "3989d5ee54824f6dcfb1555dbdd8cc7cdc3e7aee1e07585a3417cc94ed87f89c"
+      },
+      "change": "Exact localized Hero GET/PUT and QA GET route admission in existing authenticated transport, using existing P1 tests; no other auth/transport/control changes",
+      "reason": "Current apiFetch closed allowlist rejects new Hero routes; original proposed allowlist omitted its owner",
+      "implementation_authorized": true,
+      "approval": {
+        "quote": "Approved MULTILINGUAL-001 P1-A1 v1",
+        "source": "Direct user reply to P1-A1 scope question in current chat",
+        "date": "2026-10-16",
+        "timezone": "Asia/Ho_Chi_Minh"
+      }
+    }
+  ],
+  "execution_preflight": {
+    "status": "PASS_SOURCE_AND_MINIMAL_LIVE_READ_ONLY",
+    "source_bundle_digests": "MATCH_AT_START",
+    "target_documents_absent": true,
+    "base_home_v3_revision": 0,
+    "observations": {
+      "cms_anonymous_session_http": 401,
+      "hosting_5010_http": 200,
+      "existing_browser_role": "OWNER",
+      "retained_collection_counts": {
+        "cmsDrafts": 3,
+        "cmsSiteV3Imports": 1,
+        "cmsSnapshotsV3": 0,
+        "cmsReviewStatesV3": 0,
+        "cmsReviewsV3": 0
+      },
+      "data_writes": 0
+    },
+    "evidence_directory": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/preflight/",
+    "runtime_route": {
+      "implementer_tool_selected": "kit-implementer / gpt-6.1-sol / medium",
+      "independent_provider_telemetry": "Unknown"
+    },
+    "scope_limit": "Read-only inventory is not feature save/ACL proof; source/public-safe media readiness still verified by actual caller flow"
+  },
+  "execution_status": "HISTORICAL_UI_REJECTED_P0_V2_COMPLETE_P1_V2_AWAITING_APPROVAL",
+  "execution_summary": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/execution-summary.json",
+  "source_result_manifest": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v1/source-checks-final-after-auth.json",
+  "current_document_versions": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v1.md",
+      "sha256": "25617c3adb2bce7355a8ca36f579c75561a0862fc210fc67f2f5005269875fb3"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v1.md",
+      "sha256": "aca0af0d7b63bbb130636f6ca2674b28d25881fa9fcb2197d26a57cfda2117a5"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P1-v1.md",
+      "sha256": "1f82669ebaa345614dd3ea44ed59e4e97d4198a6111355b88aa314f7496f8732"
+    }
+  ],
+  "evidence_snapshot_layout_correction": {
+    "reason": "Initial snapshot flattened docs and tasks with the same basename; task copy was skipped, not a document/source change. Scope snapshot retained unchanged.",
+    "action": "Recovered exact original task bytes by reversing recorded documentation-only updates; required original preapproval SHA256 exact match before writing task subdirectory.",
+    "original_digests_changed": false,
+    "all_three_snapshot_hashes_verified": true,
+    "date": "2026-10-16"
+  },
+  "implementation_hold": {
+    "date": "2026-10-16",
+    "source": "Direct human UI review in current chat",
+    "status": "AWAITING_REVISED_IMPLEMENTATION_APPROVAL",
+    "affected_work": "Product implementation and write-test continuation for affected P1 UI/UX",
+    "allowed_next_work": "Read-only inspection, design proposals and planning documentation",
+    "resume_condition": "Approve concrete P1 v2 bundle; new mockup replaces old UI, no old-form preservation gate",
+    "active_child_work": "NONE",
+    "design_update": "Human approved delivered HTML mockup and requested P0-P7 plan rework on 2026-10-16; no product implementation authorization"
+  },
+  "current_design_record": "approvals/MULTILINGUAL-001-v2.design.json",
+  "current_plan": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+  "current_p1_bundle": "approvals/MULTILINGUAL-001-P1-v2.scope.json"
+}

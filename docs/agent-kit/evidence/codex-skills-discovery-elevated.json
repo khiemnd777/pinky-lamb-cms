@@ -1,0 +1,123 @@
+{
+  "observedAtUtc": "2026-10-12T15:00:01.486633+00:00",
+  "clientVersion": "0.162.0-alpha.17.2",
+  "commands": [
+    "codex app-server --listen stdio://",
+    "initialize",
+    "initialized",
+    "skills/list {cwds:[PROJECT_ROOT],forceReload:true}"
+  ],
+  "modelTurn": "NOT_RUN",
+  "helperConfigWriteOperations": "NONE; not a measured global-config integrity claim",
+  "initialize": "PASS",
+  "status": "PASS",
+  "projectSkills": [
+    {
+      "name": "api-and-interface-design",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/api-and-interface-design/SKILL.md"
+    },
+    {
+      "name": "code-review-and-quality",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/code-review-and-quality/SKILL.md"
+    },
+    {
+      "name": "code-simplification",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/code-simplification/SKILL.md"
+    },
+    {
+      "name": "context-engineering",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/context-engineering/SKILL.md"
+    },
+    {
+      "name": "debugging-and-error-recovery",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/debugging-and-error-recovery/SKILL.md"
+    },
+    {
+      "name": "documentation-and-adrs",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/documentation-and-adrs/SKILL.md"
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md"
+    },
+    {
+      "name": "incremental-implementation",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/incremental-implementation/SKILL.md"
+    },
+    {
+      "name": "observability-and-instrumentation",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/observability-and-instrumentation/SKILL.md"
+    },
+    {
+      "name": "performance-optimization",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/performance-optimization/SKILL.md"
+    },
+    {
+      "name": "planning-and-task-breakdown",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md"
+    },
+    {
+      "name": "security-and-hardening",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/security-and-hardening/SKILL.md"
+    },
+    {
+      "name": "source-driven-development",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/source-driven-development/SKILL.md"
+    },
+    {
+      "name": "spec-driven-development",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/spec-driven-development/SKILL.md"
+    },
+    {
+      "name": "technote",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/technote/SKILL.md"
+    },
+    {
+      "name": "test-driven-development",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/test-driven-development/SKILL.md"
+    },
+    {
+      "name": "using-agent-skills",
+      "scope": "repo",
+      "enabled": true,
+      "path": ".agents/skills/using-agent-skills/SKILL.md"
+    }
+  ],
+  "projectErrors": [],
+  "nonProjectSkillsRedacted": 41,
+  "responseErrorCode": null,
+  "processExitCode": 0,
+  "stderrLineCountNoContentsPersisted": 2
+}

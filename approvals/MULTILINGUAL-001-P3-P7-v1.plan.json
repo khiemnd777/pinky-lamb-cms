@@ -1,0 +1,178 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "base_plan_version": 2,
+  "detail": "P3-P7",
+  "detail_version": 1,
+  "status": "PLAN_APPROVED_DESIGN_AND_P3_BUNDLE_REVIEW_READY",
+  "authorization": "PLAN_AND_DOCUMENTATION_MOCKUP_PREPARATION_ONLY",
+  "human_request": "Lập kế hoạch chi tiết để triển khai xuyên suốt từ P3-7",
+  "human_plan_approval": {
+    "quote": "Approved MULTILINGUAL-001 — kế hoạch chi tiết P3–P7 v1.",
+    "source": "direct user message in current chat",
+    "recorded_at": "2026-10-16T07:57:54.426889+00:00",
+    "approved_documents": [
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+        "sha256": "3ec264c5bc9d7af484084109431d9d604d2985a908f98553cc09cbf9ee29eacf"
+      },
+      {
+        "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+        "sha256": "d14b66690ad3a93ef184aa4695abaffb48c24e2f8b7216d551a6dcd044de81a7"
+      }
+    ],
+    "first_turn_constraints": "P7-00a + D3/D4/D5 HTML + concrete P3 representative bundle; no application source or retained CMS writes"
+  },
+  "implementation_authorized": false,
+  "application_allowlist": "P3 Project-only exact26paths proposed in separate scope; implementation not approved",
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+      "sha256": "3ec264c5bc9d7af484084109431d9d604d2985a908f98553cc09cbf9ee29eacf"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+      "sha256": "d14b66690ad3a93ef184aa4695abaffb48c24e2f8b7216d551a6dcd044de81a7"
+    }
+  ],
+  "tasks": {
+    "count": 52,
+    "by_phase": {
+      "P3": 13,
+      "P4": 12,
+      "P5": 9,
+      "P6": 8,
+      "P7": 10
+    },
+    "ids": [
+      "P3-01a",
+      "P3-01b",
+      "P3-01c",
+      "P3-02a",
+      "P3-02b",
+      "P3-02c",
+      "P3-03a",
+      "P3-03b",
+      "P3-03c",
+      "P3-04a",
+      "P3-04b",
+      "P3-05a",
+      "P3-05b",
+      "P4-01a",
+      "P4-01b",
+      "P4-02a",
+      "P4-02b",
+      "P4-02c",
+      "P4-03a",
+      "P4-03b",
+      "P4-03c",
+      "P4-04a",
+      "P4-04b",
+      "P4-04c",
+      "P4-05a",
+      "P5-01a",
+      "P5-01b",
+      "P5-02a",
+      "P5-02b",
+      "P5-02c",
+      "P5-03a",
+      "P5-03b",
+      "P5-04a",
+      "P5-04b",
+      "P6-01a",
+      "P6-01b",
+      "P6-02a",
+      "P6-02b",
+      "P6-03a",
+      "P6-03b",
+      "P6-04a",
+      "P6-04b",
+      "P7-00a",
+      "P7-01a",
+      "P7-01b",
+      "P7-01c",
+      "P7-02a",
+      "P7-03a",
+      "P7-02b",
+      "P7-03b",
+      "P7-04a",
+      "P7-04b"
+    ]
+  },
+  "design": {
+    "reuse": "Approved Hero/P2 mockups and interaction contract",
+    "new_html": "D3-PROJECT/D3-SERVICE/D4-GROUPS/D5-REVIEW prepared and browser checked; human approval pending"
+  },
+  "planning_outputs": {
+    "canonical_plan": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+    "canonical_tasks": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+    "evidence": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-p7-plan-v1/20261016"
+  },
+  "runtime_this_turn": {
+    "application_writes": 0,
+    "retained_writes": 0,
+    "application_tests_build": false,
+    "readonly_public_template_HTTP": true,
+    "mockup_browser_QA": true,
+    "mockup_syntax_check": true,
+    "Auth_changes": false,
+    "emulator_lifecycle": false,
+    "hosting5010_activation": false,
+    "Git_deploy_cloud": false
+  },
+  "separate_authorities": [
+    "Phase engineering exact bundle approval",
+    "P6 selected retained-data import approval",
+    "P7 Hosting-only activation approval",
+    "Editorial and human product acceptance"
+  ],
+  "current_evidence_boundary": "P1 acceptance remains open; P2 review-ready, human acceptance pending; no M3/M4/LOCAL_COMPLETE changes",
+  "verification": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-design-v1/preparation-20261016/verification.json",
+  "dependency_graph": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-p7-plan-v1/template-guard-20261016/dependencies.json",
+  "template_preservation": {
+    "source": "Direct user clarification 2026-10-16",
+    "quote": "P7 rất quan trọng, đó là template đã được duyệt, tao không muốn mày phá nó, phải tuẩn thủ UI UX đó và adapt data kỹ lưỡng.",
+    "contract": "canonical plan §10.10 P7-T01…T10",
+    "rule": "Preserve approved website template; adapt validated locale data to it. Freeze template identity and mappings before P3/P4 consumers. No redesign, synthetic full-site substitute, silent truncation or whole-section hiding for missing data. Any design delta needs concrete prior human review.",
+    "implementation_authorized": false
+  },
+  "preparation_evidence": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-design-v1/preparation-20261016",
+  "current_documents": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-v2.md",
+      "sha256": "19d91dde1e888c06fadad2edfa870b5a937093cec3f804015e3ca11ffd7ab612",
+      "size_bytes": 69162
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+      "sha256": "2316d233bf5de0aacc830535d9e150c27849a9eae268634177ffa66e800d6b83",
+      "size_bytes": 41365
+    }
+  ],
+  "preparation_outputs": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P7-TEMPLATE-v1.md",
+      "sha256": "45b2ed7f3c5eac2119e013a1f8868cf6979cf139617270aa035551077b3f1d4e",
+      "size_bytes": 12196
+    },
+    {
+      "path": "approvals/MULTILINGUAL-001-P7-template-v1.pins.json",
+      "sha256": "d63e5539b74936f205ae8c0071fee9d6a710698d7b65ad150fe8f850591de291",
+      "size_bytes": 18692
+    },
+    {
+      "path": "approvals/MULTILINGUAL-001-D3-D5-v1.design.json",
+      "sha256": "495c7cc3facd75791ff57749ce55817167d71d3f725c25a38b705b23a250a713",
+      "size_bytes": 2863
+    },
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P3-REP-v1.md",
+      "sha256": "27bc4c92fd2a5db2d47577dc4ef1aa04e31155f60163f136687e877be9cd3507",
+      "size_bytes": 19175
+    },
+    {
+      "path": "approvals/MULTILINGUAL-001-P3-REP-v1.scope.json",
+      "sha256": "742d92ad08d400320ecab3c986e1fe500527219aa78e103e6f383479fcf266da",
+      "size_bytes": 12766
+    }
+  ]
+}

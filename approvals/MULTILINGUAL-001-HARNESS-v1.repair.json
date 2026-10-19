@@ -1,0 +1,89 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "slice": "HARNESS",
+  "version": 1,
+  "status": "COMPLETE_VERIFIED_UNIT_FIXTURE_AND_STARTUP",
+  "human_authorization": {
+    "quote": "Vậy sửa cách kiểm thử đó trước, rồi lập bundle cho toàn bộ P3 còn lại để tao duyệt. Tao không muốn mất thời gian đăng nhập lặp lại vì lỗi harness của mày nữa. Tao không muốn mày lập lại lỗi này cho các P4-P7.",
+    "source": "direct user message in current chat",
+    "recorded_at": "2026-10-16T11:42:15.070081+00:00"
+  },
+  "canonical_tasks": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+  "source_pins": [
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+      "sha256": "72016f2ae528e8edd9ca4730d366987e1e49e2b41a66e0bdb71ba73112cfac13",
+      "size_bytes": 6679
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+      "sha256": "b449ed0ac5a68edded34dc39b77fb3bfa7921b077b08fec920b45cd51c12e004",
+      "size_bytes": 5683
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+      "sha256": "6eaed97f20847c92845c05c278fcdfac028f1e09bd560170903dd6d1434e95a9",
+      "size_bytes": 5909
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.test.mjs",
+      "sha256": "e61c441fdbd730517977f951642e38a2d4d4b170cc639112ba1fd8de6c61ce7a",
+      "size_bytes": 7903
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+      "sha256": "2c547a25c96371e022c754c55e53dd0e483eb52a2cda91fcee4c9c10b3c90e81",
+      "size_bytes": 5408
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-ui.local.test.mjs",
+      "sha256": "0043c4f2bddd8693bb824ccf198f65aa76f0131cd79ea42cc966f8c2c5859c70",
+      "size_bytes": 20718
+    }
+  ],
+  "verification": {
+    "unit_passed": 10,
+    "lint_files_passed": 6,
+    "managed_browser_fixture_passed": 1,
+    "source_reload_same_browser_context_page_state": true,
+    "synthetic_write_calls": 1,
+    "cms_writes": 0,
+    "actual_auth_reuse": "NOT_RUN",
+    "startup_readiness": "PASS_ANONYMOUS_API_MODULE_PAGE_TITLE_AND_ALIVE_STATUS_EXPLICIT_CLOSE_NO_LOGIN",
+    "protected_files_unchanged": 357,
+    "accepted_application_source_unchanged": 25,
+    "cli_readonly_reload": "PASS_READY_SAME_LIVE_PAGE_CONTEXT_RELOAD_STATUS_CLOSE_NO_LOGIN"
+  },
+  "evidence_root": "pinky-lamb-cms/.local/test-outputs/multilingual-001/harness-repair-v1/worker-checks-20261016-1138",
+  "logs": [
+    "lint-reload-fix.log",
+    "unit-reload-fix.log",
+    "browser-reload-fix-managed.log",
+    "cli-reload-readiness.log"
+  ],
+  "startup_evidence": "pinky-lamb-cms/.local/test-outputs/multilingual-001/harness-repair-v1/cli-readiness-20261016-v1/checkpoint-0001.private.json",
+  "scope": "Test harness only. Legacy PW-owned LIVE entry retired; existing fixture UI and unit/API CAS/retry coverage retained. P3-REP accepted application unchanged.",
+  "limits": [
+    "Actual Auth reuse observed only in next approved live run; no login requested for correction",
+    "Real browser/process crash, actual Auth expiry or revocation can require normal re-login",
+    "Current CLI only Project read-only; P3–P7 write consumers require their own approved bundles"
+  ],
+  "testing_policy": "pinky-lamb-cms/docs/MULTILINGUAL-001-TESTING-v2.md",
+  "observed_implementation_runtime": {
+    "session_id": "01a14479-b930-7391-8ce3-06883fbc50fb",
+    "turn_contexts": [
+      {
+        "model": "gpt-6.1-sol",
+        "effort": "medium"
+      },
+      {
+        "model": "gpt-6.1-sol",
+        "effort": "medium"
+      },
+      {
+        "model": "gpt-6.1-sol",
+        "effort": "medium"
+      }
+    ]
+  }
+}

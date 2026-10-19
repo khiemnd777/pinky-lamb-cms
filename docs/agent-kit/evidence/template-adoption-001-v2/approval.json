@@ -1,0 +1,8 @@
+{
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "source": "Direct human message in this chat",
+  "text": "Approved PINKY-TEMPLATE-ADOPTION-001 v2 — adopt commit 919ce6b, cập nhật package và checklist CMS; package/static/source review only. Giữ nguyên code CMS, dữ liệu và emulators.",
+  "sourceCommit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+  "boundary": "Repository-local package/checklist and package/static/source review only; no CMS/data/emulator/global/Git/deploy actions",
+  "observedUtc": "2026-10-15T05:20:05.345755+00:00"
+}

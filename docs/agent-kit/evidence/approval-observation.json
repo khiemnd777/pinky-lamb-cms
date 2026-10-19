@@ -1,0 +1,15 @@
+{
+  "task": "AGENT-SETUP-001",
+  "version": "v1",
+  "quote": "Approved AGENT-SETUP-001 v1 — Codex + Claude Code. Triển khai và kiểm tra discovery đúng phạm vi đã trình, giữ nguyên mã CMS, dữ liệu emulator và các approval hiện hành.",
+  "source": "Direct human message quoted by coordinating parent task; delegated approved setup contract",
+  "approver": "human user",
+  "observationAtUtc": "2026-10-12T14:52:15.606811+00:00",
+  "senderTimestamp": "UNKNOWN_NOT_ASSERTED",
+  "taskOwner": "agent_setup",
+  "projectCoordinator": "root",
+  "routingRequested": "gpt-6.1-sol / medium",
+  "routingObservation": "Spawned dedicated Medium implementation worker by parent; no self-report of resolved provider metadata",
+  "allowed": "Repository-local agent setup and safe source download/discovery only",
+  "excluded": "CMS changes/runtime/tests/build/HTTP/emulator/lifecycle; Git init/commit/push; global settings/plugins/credentials/security policy changes"
+}

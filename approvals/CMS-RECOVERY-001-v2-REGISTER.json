@@ -1,0 +1,488 @@
+{
+  "task": "CMS-RECOVERY-001",
+  "revision": 2,
+  "status": "TECHNICAL_PASS_AWAITING_USER_REVIEW",
+  "disk_custody_amendment": {
+    "status": "APPROVED_DIRECT_HUMAN",
+    "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/disk-custody-fix/approval.json",
+    "quote": "Approved CMS-RECOVERY-001 v2 \u2014 s\u1eeda \u0111\u00fang l\u1ed7i diskCustody, cho ph\u00e9p th\u00eam \u0111\u00fang m\u1ed9t l\u1ea7n ch\u1ea1y emulator. B\u1ea3o to\u00e0n M1/M2, ch\u1ec9 demo-pinky-lamb-cms v\u00e0 localhost. Test \u0111\u0103ng nh\u1eadp, xem M2 th\u1eadt v\u00e0 b\u00e1o c\u00e1o b\u1eb1ng \u1ea3nh giao di\u1ec7n th\u1eadt.",
+    "previous_launches": 1,
+    "additional_authorized": 1,
+    "cumulative_maximum": 2,
+    "additional_consumed": 1,
+    "phase": "DISK_FIX_NATIVE_BEFORE_AFTER_PRIVACY_PASS_UI_BOOTSTRAP_HOLD",
+    "attempt2": {
+      "run_token": "_vF9sDOU_CWCviFzs9bcFw",
+      "cli_pid": 35660,
+      "worker_pid": 35886,
+      "parent_tool_session": 51276,
+      "admitted_at_utc": "2026-10-13T07:00:44.373Z",
+      "native_status": "PASS_NATIVE_CONTROL_ONLY",
+      "native_proof_sha256": "cf06208dc98ebff6efee96a197395ada04b2340200142510003093ee78f50b55",
+      "lifecycle": "RETAINED; NO_EXTRA_LAUNCH_OR_SIGNAL"
+    },
+    "source_freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/disk-custody-fix/final-source-freeze-r2/freeze.json",
+    "source_freeze_sha256": "1a52be14ba82696371a8062260c5e768c2985e318bd0c675cbaeea7ccef8e417",
+    "source_high_review_utc": "2026-10-13T06:56:08.104779Z",
+    "native_release": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/disk-custody-fix/native-control-release.json",
+    "native_release_sha256": "a48adf7c1e66ff4da2834153c4f24db463dd8a0c44fc50fb96e84b35d8c62728",
+    "tests": "49_RUNTIME_PASS;11_UI_SAFE_PASS;LINT_SYNTAX_BUILD_PASS;AUTHENTICATED_UI_NOT_RUN",
+    "disk_contract": "PASS_747_ENTRIES_84182_BYTES_EXACT20_NOFOLLOW_LINKS;KNOWN10_COLLECTIONS_BEFORE_AFTER_EQUAL",
+    "closed_attempt1": {
+      "completion": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/epoch/complete-1.json",
+      "sha256": "328699a9d62cc6ad664fd4b78d3721a5a0cd361eaaa56de371aac60024fc7881",
+      "high_review": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/disk-custody-fix/closure-high-review.json",
+      "high_review_sha256": "4b4b43f734c95f685e6a4885bb492655d3bcca4105e484beb490866ce2fd58ba",
+      "old_M1_M2_processes": "UNCHANGED",
+      "individual_CLI_exit": "NOT_EXPOSED_SEPARATELY",
+      "parent_tool_exit": 0
+    },
+    "old_admissions_and_evidence": "IMMUTABLE"
+  },
+  "approved_by": "Khi\u00eam (direct human user in this chat)",
+  "approval_evidence": {
+    "quote": "Approved CMS-RECOVERY-001 v2 \u2014 local/emulators. S\u1eeda tr\u1ecdn l\u1ed7i startup, ch\u1ec9 m\u1ed9t l\u1ea7n ch\u1ea1y m\u1edbi, b\u1ea3o to\u00e0n M1/M2. Ki\u1ec3m th\u1eed \u0111\u0103ng nh\u1eadp v\u00e0 xem M2 th\u1eadt, r\u1ed3i b\u00e1o c\u00e1o b\u1eb1ng \u1ea3nh giao di\u1ec7n th\u1eadt cho tao review.",
+    "source": "Direct human message in current parent chat following the in-chat v2 scope and explanation",
+    "root_recorded_at_utc": "2026-10-13T05:00:21Z",
+    "server_message_timestamp": "UNKNOWN_NOT_SUPPLIED"
+  },
+  "source_base": {
+    "v1_freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/source-repair-03-freeze/freeze.json",
+    "sha256": "eae7a740f2c7a1a396889ce31fe860118517d5a1ee034191e539c747e8b5cfb5",
+    "ui_test_sha256": "b2b7ab7d7fd673c3692d8d24decfa584f3b5e6c3ec1a988a0b887397e15d5f6d",
+    "runbook_sha256": "7377e9e3f70288471d748eba4da3425cde7a7b91cde7627db01808e4a64bd0f3"
+  },
+  "source_allowlist": [
+    "pinky-lamb-cms/scripts/m2-recovery-local.mjs",
+    "pinky-lamb-cms/scripts/m2-recovery-profile.mjs",
+    "pinky-lamb-cms/tests/m2-recovery.test.mjs",
+    "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+    "pinky-lamb-cms/cms-recovery-api/index.mjs",
+    "pinky-lamb-cms/vite.config.mjs",
+    "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md"
+  ],
+  "record_scope": [
+    "approvals/CMS-RECOVERY-001-v2-REGISTER.json",
+    "pinky-lamb-cms/docs/CMS-RECOVERY-001-REVIEW.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/project-plan.md",
+    "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/",
+    "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/"
+  ],
+  "environment": {
+    "project": "demo-pinky-lamb-cms",
+    "host": "127.0.0.1",
+    "admin": 5175,
+    "auth": 9098,
+    "functions": 5002,
+    "hub": 4401,
+    "logging": 4501,
+    "eventarc": 9298,
+    "tasks": 9498,
+    "retained_read_only": {
+      "firestore": 8080,
+      "hosting": 5010
+    }
+  },
+  "v1_disposition": "Execution stopped by human before v2; v1 records are historical and remain unchanged. Three native admissions consumed. Native3 original HOLD preserved; startup completion does not prove login/M2.",
+  "transition": {
+    "existing_run_token": "PArUFDRcyWIRpo09S4nlIQ",
+    "last_observed_cli_pid": 9391,
+    "status": "CLOSED_SAFE_NO_PENDING_OR_LIVE_CHILDREN",
+    "maximum_signals": 1,
+    "signal": "SIGINT_ONLY_TO_FRESHLY_VERIFIED_OWNED_RECOVERY_CLI_AFTER_HIGH_CUSTODY_REVIEW",
+    "old_emulator_lifecycle": "FORBIDDEN"
+  },
+  "native_budget": {
+    "namespace": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/epoch",
+    "maximum_new_cli_launches": 3,
+    "original_authorized_maximum": 1,
+    "additional_direct_human_authorization": 2,
+    "consumed": 3,
+    "v1_budget_reset": false,
+    "failure_policy": "PRESERVE_STATE_NO_SLOT4_NO_REPLAY;ONE_ADDITIONAL_FOR_FOCUSED_VITE_FIX"
+  },
+  "scope": "Repair complete startup orchestration and version-bound evidence in the seven allowed files; preserve current recovery custody and all old M1/M2 services/data; read-only M2 home-v2 login/content/legacy preview/snapshots; seven synthetic Auth fixtures only in the new recovery Auth emulator; actual desktop/mobile screenshots and local PNG/HTML report with hashes.",
+  "execution_order": [
+    "Fresh current-runtime ownership and private fulfilled Auth custody; High review; one normal SIGINT of owned recovery CLI; verify safe close without touching old services",
+    "Medium startup orchestration and full-order regressions; aligned v2 one-attempt metadata; lint/build; High source review before source-bound freeze",
+    "One new v2 native launch; actual ownership/worker/API/401/405 controls; no active source hotpatch",
+    "Actual BEFORE inventory of the ten known M1/M2 collections and disk; seven new recovery Auth fixtures; privacy/CSP before authenticated UI; real four-role login and three authorization refusal cases; M2 read/preview/reload/logout/relogin",
+    "Actual AFTER inventory and disk comparison; inspect genuine screenshots; High final review; hand off local URL/private fixture file/PNG/HTML/hash manifest for human review"
+  ],
+  "stop_conditions": "Wrong project/source/PID/ownership, unknown account or writer, malformed completed startup evidence, timeout, protected data delta, or failure of the single new native launch. No bypass driver, admission deletion, extra retry or gate weakening.",
+  "routing": {
+    "coding_tests_operations": "ACTUAL_GPT_6_1_SOL_MEDIUM_REQUIRED",
+    "review_audit": "ACTUAL_GPT_6_1_SOL_HIGH_REQUIRED"
+  },
+  "final_source_freeze": {
+    "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/final-source-freeze-r2/freeze.json",
+    "sha256": "c52d09c9491291cb8c6c8e9dfca7e99f9d60ad7e19c2ef4412248ce3c09374c4",
+    "arrays_sha256": "dff6d0dddb40d943ed35aa0c1a30c57be7ad3bd389cade5ac0afe43404206e02",
+    "high_review": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/source-high-review.json",
+    "source_verdict": "PASS_CODE_UNIT_ONLY_AND_PASS_SOURCE_PRIVACY_SOURCE_ONLY",
+    "reviewed_at_utc": "2026-10-13T05:31:28.022234Z"
+  },
+  "unit": {
+    "runtime": "50_PASS",
+    "ui_safe": "14_PASS",
+    "lint_syntax_build": "PASS_SCOPE_RELEVANT",
+    "runtime_source_unchanged_since50": "VERIFIED"
+  },
+  "native": {
+    "status": "PASS_NATIVE_CONTROL_ONLY",
+    "current_run_token": "MmtxDts_heZ1w9hpluyruQ",
+    "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/MmtxDts_heZ1w9hpluyruQ/native-controls.json",
+    "cumulative_consumed": 3,
+    "maximum": 3,
+    "latest_additional_used": 1,
+    "new_restart": false
+  },
+  "native_runtime": {
+    "run_token": "MmtxDts_heZ1w9hpluyruQ",
+    "cli_pid": 94803,
+    "worker_pid": 95035,
+    "parent_pid": 94746,
+    "parent_tool_session": 65577,
+    "admitted_at_utc": "2026-10-13T10:31:47.804Z",
+    "native_proof_sha256": "6df99039b92648a192c3a024e66a149a16ed356a571aad911d63d6111ec58ff1",
+    "source_writes": "STOPPED",
+    "lifecycle": "RETAINED_NO_EXTRA_START_SIGNAL",
+    "cumulative_launches": 3,
+    "remaining_authorized_launches": 0
+  },
+  "preflight_correction": "Initial command was refused before admission/spawn because root release metadata supplied owners array instead of {observed_at_utc,owners}. Bad gate/refusal preserved; metadata-only correction and passive validation passed before the sole CLI launch. No source change or extra CLI.",
+  "data_preservation": {
+    "status": "PASS_KNOWN10_AND_DISK_BEFORE_AFTER_EQUAL",
+    "collections": 10,
+    "documents": 4531,
+    "logicalHash": "2dbe5af095209f4df546371a54e6cbb4e9dbd4ce13c79418d8f68251a0447040",
+    "diskHash": "0891eda97f3d99942e6875fe6345af72875b380a23cec49d26ef9642efb93832",
+    "diskEntries": 747,
+    "historicalNoFollowLinks": 20,
+    "after": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/MmtxDts_heZ1w9hpluyruQ/browser-after-inventory-4283.json",
+    "after_sha256": "ee07ba015eeb6650cc3ec911b166ed2351750f35f339adf67d859d2702513433",
+    "scope": "Known10 M1/M2 collections and diskcustody; not wholeDBbackup/atomic/globalwriterabsence"
+  },
+  "data_hold": "HISTORICAL_RESOLVED_IN_FOCUSED_APPROVED_REPAIR",
+  "independent_new_auth_custody": {
+    "result": "PASS_OWNED_EMPTY_AUTH_PRIVATE_CUSTODY_ONLY; ACTUAL_HIGH_REVIEW_2026_10_13_05_47_18Z",
+    "users": 0,
+    "tenants": 0,
+    "files": 3,
+    "bytes": 255,
+    "stable_two_tree_interval_ms": 1001,
+    "writer_fulfilled": true,
+    "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/awCdMpT2JHUTLvxwQPnUtw/ops-custody-freeze-5a690a7a-db80-4576-bd4f-121f16a5fc7b/evidence-index.json",
+    "sha256": "8cd13bb0757bf1ed3e85ce25790dd8d53d286657526d1d40b6626f8d71ae26b6",
+    "signal_or_restart": "NOT_AUTHORIZED_OR_PERFORMED_FOR_CURRENT_RUNTIME",
+    "status": "HISTORICAL_ATTEMPT1_EMPTY_CUSTODY;CURRENT_ATTEMPT2_HAS_SEVEN_EXPECTED_FIXTURES"
+  },
+  "ui_oracle_correction": {
+    "source_only_verdict": "PASS_CODE_UNIT_ONLY_UI_ORACLE_CORRECTION; NO_UI_RELEASE",
+    "freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/ui-manifest-oracle-fix-r3/freeze.json",
+    "sha256": "050e900d196f25d7e7f420c89b8998c345973ba23e7392440159ac3952b1112e",
+    "loaded_core9_closure39": "UNCHANGED",
+    "ui_safe_tests": "PASS_10; EXACT_499_BYTE_PRODUCER_PACKET",
+    "record_phase": "HISTORICAL_R3_UI_ONLY_CORRECTION_BEFORE_R4_CAP_CORRECTION"
+  },
+  "next_material_scope": "USER_REVIEW_CURRENT_LOCAL_REPORT;NO_NEW_CMS_MILESTONE_OR_NATIVE_START_AUTHORIZED",
+  "login_m2_browser": {
+    "status": "PASS_REAL_BROWSER_FEATURE_CHECKS",
+    "positiveRoles": [
+      "OWNER",
+      "EDITOR",
+      "REVIEWER",
+      "PUBLISHER"
+    ],
+    "negativeFixtures": 3,
+    "draftRevision": 778,
+    "existingSnapshotPerRole": 1,
+    "sourceChecksPerRole": 2,
+    "genuineCmsImages": 39,
+    "rawResults": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/ui/ui-2026-10-13T12-08-57-019Z-ae886e35a9f9/results.json",
+    "actualRawStatus": "PASS_UI_PENDING_PRESERVATION_UNCHANGED_FINAL_AFTER_REVIEW_RESOLVES",
+    "scope": "Read-only local recovery view",
+    "errors": 0,
+    "privateStorage": 0,
+    "benignSdkHeartbeatRecords": 1
+  },
+  "final_high_review": {
+    "status": "PASS_REAL_M2_READ_ONLY_RECOVERY_AND_KNOWN_DATA_PRESERVATION",
+    "reviewed_at_utc": "2026-10-13T12:13:14.679817Z",
+    "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/final-high-review.json",
+    "sha256": "dcf8c30f9a44bd75fc3edf4f91cdbaeeb14ad0ff08b817cc8ae4adc04ded08a4"
+  },
+  "report": {
+    "status": "PASS_REAL_IMAGES_AND_COMPACT_FINAL_REPORT_ROOT_HIGH_VERIFIED",
+    "rawHtml": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/ui/ui-2026-10-13T12-08-57-019Z-ae886e35a9f9/report.html",
+    "manifest": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/ui/ui-2026-10-13T12-08-57-019Z-ae886e35a9f9/manifest.json",
+    "manifest_sha256": "cf038d01dcdef14f389da365c1690aa26c79d71e8fe83efe6cb6bbec0d100f63",
+    "compactHtml": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-vite-fix-20261013/report.html",
+    "compactPng": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-vite-fix-20261013/report.png",
+    "compactEvidence": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-vite-fix-20261013/evidence.json",
+    "compactManifest": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-vite-fix-20261013/manifest.json",
+    "compactManifest_sha256": "926c505702750ba36e3abd489bc3fe0fd2c20ee42c15abfa3ebdb09ab9075887",
+    "rootVisualInspection": "PASS_READABLE_REAL_ORIGINAL_IMAGES_AND_CLIP_DATE_LIMITS_DISCLOSED",
+    "finalFactualHighReview": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/final-report-high-review.json",
+    "finalFactualHighReview_sha256": "6e15ea16242bdfe2ef144aae0ffa83c722a583a2dfd982ee9610ef1c104fb0c2",
+    "reviewed_at_utc": "2026-10-13T12:22:29.546363Z"
+  },
+  "diagnostic_report": {
+    "path": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-disk-fix-ui-hold-20261013-r2/report.html",
+    "sha256": "b456f671ce6daa1ab15165a1e55c65aa0a10ddf8d5abe3442429aeaf7acc7305",
+    "manifest_sha256": "257f98463aae2aeba6d27fb3f83b0e70cebd9ff9734e581123486bb0a50bbb6a",
+    "files": 6,
+    "goal": "NOT_ACHIEVED",
+    "product_images": "ACTUAL_ANONYMOUS_SHELL_AND_MODULE_ERROR_ONLY",
+    "root_image_inspection": "INSPECTED_ALL_THREE_ORIGINAL_PNG;DESKTOP_ERROR_CAPTURED_AFTER500;REAL_ERROR_OVERFLOW_UNCROPPED",
+    "high_report_review": "PASS_FACTUAL_DIAGNOSTIC_REPORT_ONLY_2026_10_13_07_52_20Z",
+    "hash_mismatches": 0
+  },
+  "latest_process_metadata": {
+    "status": "PASS_ACTUAL_SCOPED_PS_AND_LISTENERS_SNAPSHOT",
+    "cli_pid": 35660,
+    "worker_pid": 35886,
+    "native_tool_session": 51276,
+    "vite_pid": 40015,
+    "vite_tool_session": 18951,
+    "signal_or_restart": "NONE_AFTER_ATTEMPT2",
+    "capability_policy": "Ordinary per-command approval allowed bounded process/browser operations;no global policy/sandbox config change",
+    "old_M1_M2_lifecycle": "OLD15465_15525_65804_START_IDENTITIES_AND_LISTENERS_UNCHANGED",
+    "last_successful_observation_utc": "2026-10-13T07:47:11.846944+00:00",
+    "current_liveness": "KNOWN_SIX_ACTORS_ALIVE_AT_CAPTURE;NOT_FUTURE_LIVENESS_GUARANTEE",
+    "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/disk-custody-fix/ops/desktop-error-2b82bad6-48c1-4bbb-bb8e-3570ad014afc/process-snapshot.json",
+    "sha256": "d0558ae64a5a558dc21e998f480c44b3d46acf74968831cfe483869b00909acd"
+  },
+  "user_acceptance": "PENDING",
+  "M3_acceptance": "NOT_GRANTED",
+  "LOCAL_COMPLETE": false,
+  "excluded": "M3 media gates, M4, cloud/production/deploy, real Firebase credentials/login/billing/Blaze, dependencies/global config, Git, old Auth reseed/update and M1/M2 writes",
+  "historical_before_focused_disk_fix": {
+    "unit": "PASS_46_RUNTIME_AND_10_UI_SAFE; LIVE_UI_NOT_RUN",
+    "native": "PASS_NATIVE_CONTROL_ONLY_ACTUAL_HIGH_REVIEW_2026_10_13_05_36_08Z",
+    "native_runtime": {
+      "run_token": "awCdMpT2JHUTLvxwQPnUtw",
+      "cli_pid": 24639,
+      "parent_tool_session": 12998,
+      "admitted_at_utc": "2026-10-13T05:34:08.087Z",
+      "new_launches": 1
+    },
+    "data_preservation": "HOLD_BEFORE_DISK_CUSTODY_CONTRACT; NO_COMPLETED_BEFORE_OR_AFTER_RECEIPT; NOT_PROOF_OF_DATA_LOSS",
+    "next_material_scope": "Planning-only four-file DATA-CUSTODY amendment and exactly one explicit replacement CLI after reviewed custody/normal close; requires fresh direct human Approved. Current v2 budget remains 1/1 and is not reset.",
+    "login_m2_browser": "NOT_RUN",
+    "final_high_review": {
+      "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/awCdMpT2JHUTLvxwQPnUtw/final-high-review.json",
+      "sha256": "02d3310f16a9f5459786332127a907b77803ae9d02570f15e58f9170ff5c8fb9",
+      "verdict": "DEPENDENT_DATA_UI_HOLD"
+    },
+    "report": "DIAGNOSTIC_HTML_READY_FACTUAL_SOURCE_REVIEW_PASS; CMS_SCREENSHOTS_NOT_RUN; DIAGNOSTIC_PNG_NOT_RUN_CHROMIUM_CLOSED_BEFORE_PAGE",
+    "diagnostic_report": {
+      "path": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/hold-20261013-055017/report.html",
+      "sha256": "bc4e848e297b71699aa2baad5cf040239c8c8fb7ef34c1202a3d3976e157ddbb",
+      "manifest_sha256": "a3357cd15e746fbb7bbead5eae137d1d8ce6e463240c6c22943ce41e7aabedfa",
+      "verified_manifest_files": 6,
+      "hash_mismatches": 0,
+      "goal": "NOT_ACHIEVED",
+      "product_images": "NOT_RUN",
+      "high_report_review": "PASS_FACTUAL_DIAGNOSTIC_SOURCE_ONLY_2026_10_13_05_56_16Z",
+      "visual_qa": "NOT_RUN_NO_PNG"
+    },
+    "latest_process_metadata": {
+      "status": "NOT_RUN_OS_DENIED_PS_DEFAULT_LANE",
+      "last_successful_observation_utc": "2026-10-13T05:45:01.160Z",
+      "current_liveness": "UNKNOWN_AFTER_LAST_CAPTURE; no signal or restart performed",
+      "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/ops-final-retained/2f9afe63-5608-44d4-8717-4463bbfc38a4/snapshot.json",
+      "sha256": "e96d5a8c6adfd2c781d56864c2744d8ba42c80692a84b9bd729e0eeda208bd16",
+      "capability_policy": "No escalation, sandbox change, install or workaround; verify process/browser capabilities before any proposed replacement launch"
+    },
+    "data_hold": {
+      "reason": "disk custody nonregular state",
+      "source": "pinky-lamb-cms/scripts/m2-recovery-local.mjs:327",
+      "verified_contract_mismatch": "Whole emulator-data recursive scanner rejects all symlinks; 20 preserved M3 negative fixture links are present and must remain unchanged",
+      "first_throw_path": "UNKNOWN_NOT_CAPTURED",
+      "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/awCdMpT2JHUTLvxwQPnUtw/ops-inventory-hold-4c22bcf2-8861-4161-87fe-deacea175e07/evidence-index.json",
+      "sha256": "5eefcc25d026ba8dc7bbf5a10003a928399989e2834a3dda9d4795aa3cf4d507",
+      "old_data_fixture_actions": "NO_FOLLOW_NO_DELETE_NO_RESEED_NO_WRITE",
+      "implementation": "STOPPED_DEPENDENT_DATA_UI; no core hotpatch, extra CLI or bypass"
+    }
+  },
+  "current_preservation_evidence": {
+    "before": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/_vF9sDOU_CWCviFzs9bcFw/before-inventory.json",
+    "before_sha256": "f55dbd6eede08ae41d780a4a637d8b05f4ea9209097077fa5a552e26e4fc6d1c",
+    "after": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/_vF9sDOU_CWCviFzs9bcFw/browser-after-inventory-43481.json",
+    "after_sha256": "e03fa593ca9db28316063f878f29189108321a4509cb8d8549782077b3e90ed8",
+    "logical_hash": "2dbe5af095209f4df546371a54e6cbb4e9dbd4ce13c79418d8f68251a0447040",
+    "disk_hash": "0891eda97f3d99942e6875fe6345af72875b380a23cec49d26ef9642efb93832",
+    "scope": "known10 collections;non-atomic;747disk entries;exact20 nofollow historical links;no old data writes/reseed"
+  },
+  "ui_before_cap_correction": {
+    "status": "PASS_CODE_UNIT_ONLY",
+    "freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/ui-before-cap-fix-r4/freeze.json",
+    "sha256": "a0a35ed11ed8180126e9d25a3ec7d9d4060a3b4b7f6ed878152596760ef08399",
+    "high_review_utc": "2026-10-13T07:39:23.634991Z",
+    "tests": "11_SAFE_PASS;BEFORE16MiB;NATIVE_PRIVACY_HIGH2MiB",
+    "core9_closure39": "UNCHANGED",
+    "old_browser_privacy_release": "PRESERVED_NOT_RELABELED_OR_REBOUND",
+    "authenticated_ui": "NOT_RUN"
+  },
+  "ui_bootstrap_hold": {
+    "error": "Private/server import forbidden in browser graph",
+    "actual_module": "contracts/site-records.mjs:1:17;bare import zod",
+    "guard": "vite.config.mjs:31",
+    "http500": [
+      "auth.mjs",
+      "contracts/hero.mjs",
+      "preview/site-public-data.mjs"
+    ],
+    "source_and_metadata": "recovery cacheDir under private .local runroot;optimized firebase/app,firebase/auth,zod metadata present;private import/file guards reject private path",
+    "raw_resolved_id_trace": "NOT_CAPTURED",
+    "diagnostic_manifest": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/diagnostic-ui-c7f59001-30e0-4e70-94a0-e068c27d6068/manifest.json",
+    "sha256": "18d9c72c6ac52199f8aab6a9092fd48b9d9e3e982eee04206e6f9b6954c3643a",
+    "source_writes": "STOPPED",
+    "third_launch_or_hotpatch": "NOT_AUTHORIZED_NOT_PERFORMED",
+    "additional_actual_module": "preview/site-public-data.mjs:1:17;bare import zod;new desktop screenshot afterHTTP500",
+    "desktop_error_manifest": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/diagnostic-desktop-error-ded61fa2-6b3a-4bb2-9dca-0d8374ba11b9/manifest.json",
+    "desktop_error_manifest_sha256": "1b701b77459289b3c419407cdbcc53e477b01a13d7e92a033702f1b032cab9a4",
+    "status": "HISTORICAL_RESOLVED_VITE_500_BY_APPROVED_FIX_REAL_DEV_BROWSER_PASS",
+    "current_blocker": false
+  },
+  "updated_at_utc": "2026-10-13T12:19:37.413808+00:00",
+  "historical_diagnostic_reports": [
+    {
+      "path": "pinky-lamb-cms/.local/test-outputs/cms-recovery-001/v2/final-disk-fix-ui-hold-20261013/report.html",
+      "sha256": "5e396dedb8ac8168a973b84980378cebcb0da4523410c4ab4e31807b5a3f44e4",
+      "manifest_sha256": "71698d02126c8dbc5611392641bbafc5d598f4e04599c38c31896fde65327bde",
+      "files": 5,
+      "goal": "NOT_ACHIEVED",
+      "product_images": "ACTUAL_ANONYMOUS_SHELL_AND_MODULE_ERROR_ONLY",
+      "root_image_inspection": "INSPECTED_ORIGINAL_DESKTOP_AND_MOBILE_PNG;MOBILE_REAL_ERROR_OVERFLOW",
+      "high_report_review": "PENDING"
+    }
+  ],
+  "historical_native_budget_before_vite_fix": {
+    "namespace": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/epoch",
+    "maximum_new_cli_launches": 2,
+    "original_authorized_maximum": 1,
+    "additional_direct_human_authorization": 1,
+    "consumed": 2,
+    "v1_budget_reset": false,
+    "failure_policy": "HOLD_PRESERVE_STATE_NO_THIRD_LAUNCH_NO_REPLAY"
+  },
+  "vite_fix_amendment": {
+    "status": "APPROVED_DIRECT_HUMAN",
+    "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/approval.json",
+    "sha256": "861136c7418320c6675f0ae519a3eaacca651204a1ad43f06ef2741332c19b0b",
+    "source_base": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/approved-base.json",
+    "base_sha256": "6845d1263951b85b99efb6290d60d90d9e7ad65ed81d4da6aeb9e9ede7fccd54",
+    "additional_authorized": 1,
+    "additional_consumed": 1,
+    "cumulative_limit": 3,
+    "phase": "TECHNICAL_PASS_FOCUSED_VITE_AND_REAL_M2_UI",
+    "current_run_token": "MmtxDts_heZ1w9hpluyruQ",
+    "closed_attempt2": {
+      "completion": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/epoch/complete-2.json",
+      "sha256": "92ef972817563f341a80f08703f122d34be5b7b3f89c72c6cd2a71f61ac77701",
+      "high_review": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/closure-high-review.json",
+      "high_sha256": "1a02b017e7f1641f2ddf979f7036bcffd0a69c485c3874a5a6c02cfd87661156",
+      "disposition": "PASS_PROCESSES_CLOSED_PRIVATE_EXPORT_PRESERVED_ONLY"
+    },
+    "source_high_review": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/source-high-review.json",
+    "source_high_review_sha256": "ecde893e57d1cf3ae81b69d765069d0b06d4127ed4bda627ed8193c7270ce676",
+    "source_freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/final-source-freeze/freeze.json",
+    "source_freeze_sha256": "83a404f36a40e723c4635e42adda00c26dde68dafd506a0e7eb9e8c0862bcbc3",
+    "runtime_unit": "50_PASS",
+    "ui_safe": "14_PASS",
+    "dev_graph": "108_PUBLIC200_7_PRIVATE403_IMPORT_DENY",
+    "browser_bootstrap": "129_SCRIPT200_NO_ERRORS_ANONYMOUS_ONLY",
+    "native_release": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/native-control-release.json",
+    "native_release_sha256": "c1eb4635ede63e00061b9161ea9f05ecf11be40dd6977b1f45c4efd3c05f1791",
+    "attempt3": {
+      "run_token": "MmtxDts_heZ1w9hpluyruQ",
+      "cli_pid": 94803,
+      "worker_pid": 95035,
+      "parent_pid": 94746,
+      "parent_tool_session": 65577,
+      "admitted_at_utc": "2026-10-13T10:31:47.804Z",
+      "native_proof_sha256": "6df99039b92648a192c3a024e66a149a16ed356a571aad911d63d6111ec58ff1",
+      "source_writes": "STOPPED",
+      "lifecycle": "RETAINED_NO_EXTRA_START_SIGNAL"
+    },
+    "historical_attempt2_observations": {
+      "known_cli_reparented": "SAME_GENERATION_PPID1;OLD_NATIVE_PROOF_IMMUTABLE",
+      "vite": "OLD_VITE_ABSENT_NO_SIGNAL"
+    },
+    "first_ui_metadata_failure": {
+      "phase": "PRE_BROWSER",
+      "cause": "COORDINATOR_OMITTED_PUBLIC_FIXTURE_ROSTER",
+      "terminal": "PRESERVED_HISTORY_SAME_INODE_ROTATION_HIGH_REVIEWED",
+      "release": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/ui-metadata-retry-release.json"
+    },
+    "second_ui_attempt": {
+      "run_id": "ui-2026-10-13T10-59-12-094Z-342c2056dc42",
+      "status": "HOLD_UI_FAILURE_BEFORE_AUTH_POST",
+      "authenticated_roles": 0,
+      "cms_screenshots": 0,
+      "after_preservation": "PASS_KNOWN10_4531_DOCUMENTS_AND_DISK_MATCH",
+      "observed_readiness_race": "ANONYMOUS_DOMCONTENTLOADED_NO_SUBMIT_HANDLER_THEN_REAL_HANDLER_AFTER537MS",
+      "prior_console_error_cause": "UNKNOWN_RAW_TEXT_NOT_RETAINED",
+      "repair_scope": "UI_TEST_ONLY_NO_CORE9_CHANGE_NO_EXTRA_NATIVE"
+    },
+    "current_ui_source_freeze": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/ui-snapshot-oracle-fix/freeze.json",
+    "login_m2": "ACTUAL_4_ROLES_3_REFUSALS_PASS",
+    "final_high_review": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/vite-fix/final-high-review.json",
+    "final_high_sha256": "dcf8c30f9a44bd75fc3edf4f91cdbaeeb14ad0ff08b817cc8ae4adc04ded08a4"
+  },
+  "historical_native_runtimes": [
+    {
+      "run_token": "_vF9sDOU_CWCviFzs9bcFw",
+      "cli_pid": 35660,
+      "worker_pid": 35886,
+      "parent_tool_session": 51276,
+      "admitted_at_utc": "2026-10-13T07:00:44.373Z",
+      "native_status": "PASS_NATIVE_CONTROL_ONLY",
+      "native_proof_sha256": "cf06208dc98ebff6efee96a197395ada04b2340200142510003093ee78f50b55",
+      "lifecycle": "CLOSED_ACTUAL_PROCESS_ABSENCE;CLI_EXIT_CAUSE_UNKNOWN",
+      "cumulative_launches": 2,
+      "remaining_authorized_launches": 1
+    }
+  ],
+  "current_observed_at_utc": "2026-10-13T12:22:29.546363Z",
+  "historical_before_vite_goal_pass": {
+    "status": "IN_PROGRESS_APPROVED_FOCUSED_VITE_FIX",
+    "unit": "PASS_49_RUNTIME_AND_11_UI_SAFE;NOT_E2E",
+    "native": "PASS_NATIVE_CONTROL_ONLY_SLOT3_ACTUAL_HIGH_2026_10_13_10_34_38Z",
+    "data_preservation": "PASS_BOUNDED_KNOWN10_COLLECTIONS_4531_DOCS_AND_747_DISK_ENTRIES_BEFORE_VS_FAILED_ADMISSION_FINALLY_AFTER;NOT_WHOLE_DB_BACKUP",
+    "data_hold": {
+      "reason": "disk custody nonregular state",
+      "source": "pinky-lamb-cms/scripts/m2-recovery-local.mjs:327",
+      "verified_contract_mismatch": "Whole emulator-data recursive scanner rejects all symlinks; 20 preserved M3 negative fixture links are present and must remain unchanged",
+      "first_throw_path": "UNKNOWN_NOT_CAPTURED",
+      "evidence": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/awCdMpT2JHUTLvxwQPnUtw/ops-inventory-hold-4c22bcf2-8861-4161-87fe-deacea175e07/evidence-index.json",
+      "sha256": "5eefcc25d026ba8dc7bbf5a10003a928399989e2834a3dda9d4795aa3cf4d507",
+      "old_data_fixture_actions": "NO_FOLLOW_NO_DELETE_NO_RESEED_NO_WRITE",
+      "implementation": "STOPPED_DEPENDENT_DATA_UI; no core hotpatch, extra CLI or bypass",
+      "status": "HISTORICAL_RESOLVED_BY_APPROVED_FOCUSED_DISK_FIX",
+      "current_blocker": false,
+      "historical_run_token": "awCdMpT2JHUTLvxwQPnUtw",
+      "superseded_by": "current_preservation_evidence;ui_bootstrap_hold"
+    },
+    "login_m2_browser": "PREREQUISITES_VERIFIED;AUTHENTICATED_FLOW_STARTING_NO_PASS_CLAIM",
+    "final_high_review": {
+      "path": "pinky-lamb-cms/.local/cache/cms-recovery-001/v2/runs/_vF9sDOU_CWCviFzs9bcFw/final-factual-report-review-20261013-075220.json",
+      "sha256": "83a18f5535b3bb36847ab712eb27391b4e11a42937c34fc1af566b2198e28e75",
+      "verdict": "PASS_FACTUAL_DIAGNOSTIC_REPORT_ONLY",
+      "goal": "HOLD_GOAL_NOT_ACHIEVED",
+      "reviewed_at_utc": "2026-10-13T07:52:20.840404Z",
+      "implementation_native_lifecycle_release": false
+    },
+    "report": "FACTUAL_HTML_AND_THREE_REAL_ANONYMOUS_UI_PNG;HIGH_FACTUAL_REVIEW_PASS;AUTHENTICATED_FEATURE_UI_NOT_RUN",
+    "next_material_scope": "AUTHORIZED_FOCUSED_VITE_FIX_AND_EXACTLY_ONE_ADDITIONAL_SLOT3;NO_MILESTONE_EXPANSION"
+  },
+  "current_limitations": [
+    "READ_ONLY_LOCAL_RECOVERY",
+    "PREVIEW_HORIZONTAL_CLIPPING_WITHIN_EXISTING_PARENT",
+    "LARGE_SECTIONS_BOUNDED_VIEWPORT",
+    "HISTORICAL_TIMEOUT2124_PRIVATE_SCRATCH_RETAINED_CLEANUP_UNKNOWN"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "packageResult": "final-package.json",
+  "rootDocumentationFilesChecked": [
+    "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/verification-results.md"
+  ],
+  "currentLocalLinks": 23,
+  "reviewedHashesMatched": 19,
+  "sourceReviewReused": "Source/inputs unchanged; only factual mutable coordinator records completed",
+  "jsonRecordsValid": true,
+  "approvedScopeComplete": true,
+  "cmsRuntime": "NOT_RUN",
+  "newNativeBehavior": "NOT_RUN"
+}

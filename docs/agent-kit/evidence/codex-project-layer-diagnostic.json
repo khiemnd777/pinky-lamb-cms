@@ -1,0 +1,12 @@
+{
+  "observedAtUtc": "2026-10-12T15:02:32.853441+00:00",
+  "schema": "Installed CLI ConfigReadParams has cwd/includeLayers",
+  "command": "Owned app-server initialize -> config/read {cwd:PROJECT_ROOT,includeLayers:true}",
+  "rawConfigPersisted": false,
+  "configWriteOperations": "NONE",
+  "modelTurn": "NOT_RUN",
+  "status": "BLOCKED_OR_PARTIAL",
+  "reason": "argument of type 'NoneType' is not iterable",
+  "ownedProcessExitCode": 0,
+  "stderrLineCountNoContentsPersisted": 1
+}

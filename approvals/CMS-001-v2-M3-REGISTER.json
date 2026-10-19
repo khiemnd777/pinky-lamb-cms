@@ -1,0 +1,1761 @@
+{
+  "schema_version": 1,
+  "proposal_id": "CMS-001",
+  "proposal_version": 2,
+  "milestone": "M3",
+  "bundle_revision": 1,
+  "status": "IN_PROGRESS",
+  "requested_scope": [
+    "local",
+    "emulators"
+  ],
+  "approved_by": "Khiêm (direct human user in current Codex chat)",
+  "approved_at": "2026-10-11T15:59:29.096271+00:00",
+  "approval_evidence": {
+    "quote": "Approved CMS-001 v2 — M3 local/emulators. Triển khai và kiểm thử đúng phạm vi M3 đã trình. Chỉ dùng demo-pinky-lamb-cms và emulators tại localhost, không production.",
+    "source": "Direct human message in current Codex chat",
+    "approved_by": "Khiêm (direct human user in current Codex chat)",
+    "recorded_at_utc": "2026-10-11T15:59:29.096271+00:00",
+    "timestamp_basis": "Approval observation time, not server message timestamp",
+    "proposal_id": "CMS-001",
+    "proposal_version": 2,
+    "milestone": "M3",
+    "bundle_revision": 1,
+    "canonical_scope_sha256": "b010e76ed0de56f494d98066a3f5bf9fc5bee1795189b4bed7bb827052dbba0e",
+    "documents": [
+      {
+        "path": "pinky-lamb-cms/docs/CMS-001-v2-M3-PROPOSAL.md",
+        "size_bytes": 32611,
+        "sha256": "c3997da91abb86f5c1294dce47123ee402fdb574f5e171ff6be3ceed1596c351"
+      },
+      {
+        "path": "pinky-lamb-cms/tasks/M3-plan.md",
+        "size_bytes": 32637,
+        "sha256": "469a3bf1bf8028abf179b0064abd83117acb0b6ef93314f36e771d1eafba83f8"
+      },
+      {
+        "path": "pinky-lamb-cms/docs/M3-PLANNING-REVIEW.md",
+        "size_bytes": 4990,
+        "sha256": "7ae0822a8248623567b069fdc158e99c354dd53182da8e62d3f2b3e9661bc043"
+      }
+    ],
+    "environment": [
+      "local",
+      "emulators"
+    ],
+    "demo_project_id": "demo-pinky-lamb-cms",
+    "production_scope": "EXCLUDED_NOT_PLANNED"
+  },
+  "approved_scope": {
+    "milestone": "M3",
+    "bundle_revision": 1,
+    "environment": [
+      "local",
+      "emulators"
+    ],
+    "canonical_scope_sha256": "b010e76ed0de56f494d98066a3f5bf9fc5bee1795189b4bed7bb827052dbba0e",
+    "task_ids": [
+      "CMS-M3-00",
+      "CMS-M3-01",
+      "CMS-M3-02",
+      "CMS-M3-03",
+      "CMS-M3-04",
+      "CMS-M3-05",
+      "CMS-M3-06",
+      "CMS-M3-07",
+      "CMS-M3-08",
+      "CMS-M3-09",
+      "CMS-M3-10",
+      "CMS-M3-11",
+      "CMS-M3-12",
+      "CMS-M3-13",
+      "CMS-M3-14",
+      "CMS-M3-15",
+      "CMS-M3-16",
+      "CMS-M3-17",
+      "CMS-M3-18",
+      "CMS-M3-19",
+      "CMS-M3-20",
+      "CMS-M3-21",
+      "CMS-M3-22",
+      "CMS-M3-23",
+      "CMS-M3-24",
+      "CMS-M3-25",
+      "CMS-M3-26",
+      "CMS-M3-27",
+      "CMS-M3-28",
+      "CMS-M3-29",
+      "CMS-M3-30",
+      "CMS-M3-31",
+      "CMS-M3-32",
+      "CMS-M3-33",
+      "CMS-M3-34",
+      "CMS-M3-35",
+      "CMS-M3-36",
+      "CMS-M3-37",
+      "CMS-M3-38"
+    ],
+    "scope_file": "approvals/CMS-001-v2-M3.scope.json"
+  },
+  "planning_request_evidence": {
+    "quote": "Accepted CMS-001 v2 — M2 local/emulators. Lập và trình phạm vi, kế hoạch M3 theo CMS-001 v2 để tôi duyệt. Giữ local/emulators và chỉ triển khai sau Approved riêng.",
+    "source": "Direct human message in current Codex chat",
+    "authority": "PLANNING_DOCUMENT_REVIEW_ONLY"
+  },
+  "dependency_gate": {
+    "m1_accepted": true,
+    "m2_accepted_closed": true,
+    "m2_register": "approvals/CMS-001-v2-M2-REGISTER.json",
+    "m2_register_sha256": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618"
+  },
+  "scope_file": "approvals/CMS-001-v2-M3.scope.json",
+  "canonical_scope_sha256": "b010e76ed0de56f494d98066a3f5bf9fc5bee1795189b4bed7bb827052dbba0e",
+  "scope_hash_algorithm": "SHA-256 of UTF-8 JSON recursively sorted keys, compact separators, ensure_ascii=false",
+  "proposal_file": "pinky-lamb-cms/docs/CMS-001-v2-M3-PROPOSAL.md",
+  "proposal_sha256": "c3997da91abb86f5c1294dce47123ee402fdb574f5e171ff6be3ceed1596c351",
+  "plan_file": "pinky-lamb-cms/tasks/M3-plan.md",
+  "plan_sha256": "469a3bf1bf8028abf179b0064abd83117acb0b6ef93314f36e771d1eafba83f8",
+  "proposal_hash_status": "FROZEN_FOR_REVIEW",
+  "execution_record": {
+    "status": "IN_PROGRESS",
+    "tasks": [
+      {
+        "id": "CMS-M3-00",
+        "status": "DONE",
+        "completed_at_utc": "2026-10-11T15:59:29.096271+00:00",
+        "evidence": "pinky-lamb-cms/.local/cache/m3/approval-base-audit.json",
+        "limits": "Authority/base/hash audit only; runtime/native/setup NOT_RUN",
+        "independent_review": {
+          "status": "PASS_AUTHORITY_BASE_ONLY",
+          "reviewer": "actual High /root/m1_architect",
+          "observed_at_utc": "2026-10-11T16:03:24.432153+00:00",
+          "limits": "No native/runtime test"
+        }
+      },
+      {
+        "id": "CMS-M3-01",
+        "status": "DONE_HIGH_SETUP_WITH_APPROVED_PDF_AMENDMENTS",
+        "owner": "/root/m1_worker",
+        "requested_effort": "MEDIUM",
+        "runtime_observation": "Existing Medium worker reported Medium active; reused without settings change",
+        "started_observed_at_utc": "2026-10-11T16:03:24.432153+00:00",
+        "scope": "Exact task01 five paths plus approved local tool/dependency generated directories",
+        "limits": "Routine built-in fixture-decoder correction identity PASS; actual native/task02 pending, PDFHOLD",
+        "last_observed_at_utc": "2026-10-11T16:59:27.330066+00:00",
+        "evidence": "pinky-lamb-cms/.local/cache/m3/task01-fixture-rebuild/evidence-index.json",
+        "evidence_sha256": "765e09cc5b832b0bfc253ec7dd3818eb0488fdfa8a10f2796936290200f57bd5",
+        "independent_review": {
+          "status": "PASS_SETUP_IDENTITY_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task01-fixture-rebuild/independent-review-observation.json",
+          "observation_sha256": "565e607f1b6b36bb7aa05ebae5374b4d624f9346c0d0ab894467eaa269b2c360"
+        },
+        "completed_observed_at_utc": "2026-10-11T16:44:40.349228+00:00",
+        "correction": "Only internal wrapped_avframe/pcm_s16le fixture decoders, public MOV/H264/AAC input whitelist unchanged; archive previous193 installedfiles/source evidence before reconfigure",
+        "final_pdf_setup_review": {
+          "status": "PASS_SETUP_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-full-setup-review.json",
+          "observation_sha256": "1bfc8128c4c210969d5e0c04fba40ed3486390b776ebd2b1864f7972462bb7e4"
+        }
+      },
+      {
+        "id": "CMS-M3-02",
+        "status": "DONE_NATIVE_AUDIT_HIGH_PASS",
+        "owner": "/root/m1_worker",
+        "requested_effort": "MEDIUM",
+        "started_observed_at_utc": "2026-10-11T16:44:40.349228+00:00",
+        "evidence": "pinky-lamb-cms/.local/cache/m3/task02/final-evidence-index.json",
+        "evidence_sha256": "347dd2db82881d2449b1a6ec511528a9b7288b1727903ff6bedd538af267c495",
+        "results": {
+          "passed": 18,
+          "failed": 0,
+          "skipped": 0,
+          "focused_lint_exit": 0,
+          "root_rehash_entries": 478,
+          "video": "PASS_UNAFFECTED_HARDWARE_NATIVE_PIPELINES",
+          "pdf": "SECURITY_HOLD",
+          "native_process_observations": 44,
+          "all_reaped": true
+        },
+        "resumed_observed_at_utc": "2026-10-11T16:59:27.330066+00:00",
+        "frozen_observed_at_utc": "2026-10-11T17:16:23.448439+00:00",
+        "independent_review": {
+          "status": "PASS_UNAFFECTED_CAPABILITIES_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task02/independent-review-observation.json",
+          "observation_sha256": "3d21ae721e2effc7f4d3c36ff4fae9a1408ccd13867d2214ba9a76d7d79d656f"
+        },
+        "final_native_evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pb-cmap-attachment-supplement/evidence-index.json",
+        "final_native_evidence_sha256": "7e710f6bd99537666fa70b0f5c956ad1501d552fabcec6281e3e21d28df82236",
+        "final_native_results": {
+          "passed": 36,
+          "failed": 0,
+          "skipped": 0,
+          "duration_ms": 190608.346208,
+          "image_video_regression": 18,
+          "focused_lint_exit": 0
+        },
+        "final_independent_review": {
+          "status": "PASS_NATIVE_PDF_AUDIT_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-native01Pb-final-review.json",
+          "observation_sha256": "8db995b1ce9290478e934894d7104074914a24065e4b9eae824450e1e7f48ae7"
+        },
+        "limits": "Native capability/security audit with declared best-effort/stage limits; not M3AC/E2E/acceptance"
+      },
+      {
+        "id": "CMS-M3-03",
+        "status": "DONE_HIGH_STORAGE_SETUP_GUARD_PASS",
+        "owner": "/root/runtime_custody",
+        "requested_effort": "MEDIUM",
+        "started_observed_at_utc": "2026-10-12T03:01:21.603034+00:00",
+        "prerequisite": {
+          "status": "PASS_NATIVE_PDF_AUDIT_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-native01Pb-final-review.json",
+          "observation_sha256": "8db995b1ce9290478e934894d7104074914a24065e4b9eae824450e1e7f48ae7"
+        },
+        "scope": "Exact five approved paths; Storage-only temporary read-only gate with fixed demo/bucket/ports, zero retained-media before own runtime stop; no Auth reconstruction or existing Firestore/Docker lifecycle",
+        "evidence": "pinky-lamb-cms/.local/cache/m3/task03/evidence-index.json",
+        "evidence_sha256": "84858c4c02f1af55a7d1b7e10ebb24fbb2ef6ff3d49ae2274b682cbde7e03978",
+        "interim_review": {
+          "status": "HOLD_RUNTIME_PREFLIGHT",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task03-review/independent-interim-runtime-preflight-hold.json",
+          "observation_sha256": "6aab50e3691ba430c0343c5f6ae8a794d89ea49c20814fd1ea402d37b379c33e"
+        },
+        "interim_results": {
+          "unit_pass": 37,
+          "unit_fail": 0,
+          "lint_exit": 0,
+          "Storage_readonly_GET_LIST403": 8,
+          "corrected_guarded_launch_shutdown": "PASS_OWNED_REAPED_AFTER_PRIVATE_CUSTODY_ZERO_BLOBS",
+          "CLI": 75567,
+          "JVM": 75580,
+          "custody_files": 5,
+          "custody_bytes": 8858,
+          "retained_objects": 0
+        },
+        "completed_observed_at_utc": "2026-10-12T03:53:45.497288+00:00",
+        "final_evidence": "pinky-lamb-cms/.local/cache/m3/task03-runtime-preflight-supplement/evidence-index.json",
+        "final_evidence_sha256": "0d466059ca9c88518b56f58925b6e1de7f8a430dc91dad5d96b748d9d42861f4",
+        "final_independent_review": {
+          "status": "PASS_STORAGE_SETUP_GUARD_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task03-review/independent-final-runtime-preflight-review.json",
+          "observation_sha256": "59e0c7f36cb00af56670e232803ad695dbd6e2d6d2cbf304bb1ec0574536e422"
+        },
+        "final_results": {
+          "unit_passed": 42,
+          "unit_failed": 0,
+          "focused_lint_diagnostics": 0,
+          "Storage_readonly_GET_LIST403": 8,
+          "custody_files": 5,
+          "custody_bytes": 8858,
+          "CLI": 76592,
+          "JVM": 76605,
+          "exit_close_code": 0,
+          "final_group_empty": true,
+          "protected_entries": 1693,
+          "pin_mismatches": 0
+        },
+        "limits": [
+          "No approved full-suite producer; no integration/E2E/seed/Auth/Firestore API/recovery execution",
+          "Storage read checks are not application ACL/upload/M3AC/E2E",
+          "Best-effort filesystem/process controls, not hard OS sandbox/RSS/retention atomic; JAR publisher signature NOT_VERIFIED",
+          "No user Accepted/M4/production/LOCAL_COMPLETE"
+        ]
+      },
+      {
+        "id": "CMS-M3-04",
+        "status": "HOLD_OPAQUE_BLOB_PREVIEW",
+        "prerequisite": {
+          "status": "PASS_STORAGE_SETUP_GUARD_ONLY",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task03-review/independent-final-runtime-preflight-review.json",
+          "sha256": "59e0c7f36cb00af56670e232803ad695dbd6e2d6d2cbf304bb1ec0574536e422"
+        },
+        "released_observed_at_utc": "2026-10-12T03:53:45.497288+00:00",
+        "scope": "Exact five original04 paths; isolated QA4173; CMS5173 stopped until privacy/CSP gate and availability",
+        "owner": "/root/runtime_custody",
+        "requested_effort": "MEDIUM",
+        "started_observed_at_utc": "2026-10-12T04:05:56.449944+00:00",
+        "files": [
+          "pinky-lamb-cms/vite.config.mjs",
+          "pinky-lamb-cms/eslint.config.mjs",
+          "pinky-lamb-cms/tests/media-private-files.local.test.mjs",
+          "pinky-lamb-cms/admin/config-local.mjs",
+          "pinky-lamb-cms/admin/index.html"
+        ],
+        "runtime_boundary": "Isolated fixed QA4173 actualVite/opaqueBlob; CMS5173stopped, noAuth/API/data/recovery",
+        "frozen_observed_at_utc": "2026-10-12T04:24:46.973594+00:00",
+        "evidence": "pinky-lamb-cms/.local/cache/m3/task04/implementation/evidence-index.json",
+        "evidence_sha256": "45385dde6aeef15aa4ce36b15c434192964cd3633e9cc93ea65e1a71d3dbb1ab",
+        "independent_review": {
+          "status": "HOLD_OPAQUE_BLOB_PREVIEW",
+          "observation": "pinky-lamb-cms/.local/cache/m3/task04/independent-final-review.json",
+          "sha256": "fb822b8857b169e403ebb9d7b39759e7dd1a16f851f170aaa4be48df72999728"
+        },
+        "results": {
+          "HTTP403": 49,
+          "browser_suite_pass": 5,
+          "browser_suite_total": 6,
+          "browser_suite_exit": 1,
+          "lint_diagnostics": 0,
+          "build_modules": 139,
+          "parent_image_dimensions": [
+            1600,
+            1067
+          ],
+          "parent_video_dimensions": [
+            64,
+            48
+          ],
+          "parent_video_frames": 4,
+          "parent_video_time": 0.007664,
+          "opaque_image_width": 0,
+          "opaque_video_frames": 0,
+          "opaque_video_error": 4,
+          "opaque_origin": "null",
+          "DOMSecurityError": 3,
+          "script_connect_probe_hits": 0,
+          "cleanup_urls_revoked": 2,
+          "cleanup_frames_left": 0
+        },
+        "required": [
+          "Positive safe Blob image/video in opaque sandbox failed; do not release task05/dependent preview"
+        ],
+        "limits": [
+          "Object/embed console empty; NOT independently proven",
+          "Different origin/storage key mechanism is spec-backed inference, not Chromium internals verified",
+          "No authenticated App/E2E/ACL/recovery or all-browser claim",
+          "No allow-same-origin/scripts/dataURL/fallback introduced",
+          "CMS5173 remains stopped; only ownQA4173 was used and closed",
+          "Finaltest differs native source only two unused imports removed; semantic equivalence checked"
+        ]
+      },
+      {
+        "id": "CMS-M3-05",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-06",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-07",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-08",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-09",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-10",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-11",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-12",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-13",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-14",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-15",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-16",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-17",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-18",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-19",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-20",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-21",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-22",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-23",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-24",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-25",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-26",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-27",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-28",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-29",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-30",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-31",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-32",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-33",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-34",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-35",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-36",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-37",
+        "status": "PLANNED_APPROVED"
+      },
+      {
+        "id": "CMS-M3-38",
+        "status": "PLANNED_APPROVED"
+      }
+    ],
+    "tests_status": "VERIFIER9_PASS_NATIVE36_PASS_LINT_PASS_EXISTING153_UNIT_BUILD_PASS_M3_FEATURE_GATES_NOT_RUN",
+    "runtime_changes": "LOCAL_SETUP_OWNED_NATIVE_FIXTURES_ONLY_NO_EMULATOR_DATA_MUTATION_OWNED_VITE_STOPPED",
+    "dependency_installation": "EXACT_APPROVED_APP_NATIVE_VERIFIER_PDF_STORAGE_GUARD_DONE",
+    "milestone_closed": false,
+    "milestone_acceptance": null,
+    "cms_complete": false,
+    "local_acceptance": null,
+    "started_at_utc": "2026-10-11T15:59:29.096271+00:00",
+    "base_audit": "pinky-lamb-cms/.local/cache/m3/approval-base-audit.json",
+    "base_audit_sha256": "803c5ffad11fbced6b804c8cc0a38fbe1b2a26e4cc4c27fb6675925968a517fa",
+    "pre_approval_register_sha256": "65f1ad1f290ebe6f0e5b041554f73c763b89d6b3d6eb0fb72acf04d37b54bbff",
+    "checkpoints": {
+      "V": {
+        "status": "PASS",
+        "observation": "pinky-lamb-cms/.local/cache/m3/verifier-setup/independent-V-review-observation.json",
+        "observation_sha256": "7af3eb465901f5a40c815acca81987b720e866608eca94d31ee4e86cdfc0f460"
+      }
+    },
+    "acceptance_criteria": [
+      {
+        "id": "M3-AC01",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC02",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC03",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC04",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC05",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC06",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC07",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC08",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC09",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC10",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC11",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC12",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC13",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC14",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC15",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC16",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC17",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "M3-AC18",
+        "status": "NOT_RUN"
+      }
+    ],
+    "note": "PDF prerequisites/native + original03HighPASS; original04 privacyHTTP/lint/buildPASS but opaqueBlob required5/6exit1→HighHOLD. R1presentedawaitsdirectApproved; preview alternativeplanningonly. NoM4/production/Accepted/LOCAL_COMPLETE.",
+    "blocked_dependencies": [
+      {
+        "task": "CMS-M3-01",
+        "reason": "No existing maintained OpenPGP verifier in checked local paths; new tooling outside exact dependency allowlist requires supplemental Approved",
+        "amendment_id": "M3-TOOL-01",
+        "status": "RESOLVED_APPROVED_VERIFIER_GATE_PASS",
+        "original_m3_approval": "REMAINS_VALID",
+        "downstream": "Verifier prerequisite resolved; original01 done/setup,02 unaffected passed but newPDF gate blocks03–38"
+      },
+      {
+        "task": "CMS-M3-02",
+        "component": "PDF",
+        "status": "RESOLVED_APPROVED_SETUP_NATIVE_HIGH_PASS",
+        "reason": "Approved PDF01/PDF02 setup and final valid-native fixtures reviewed; exact frozen evidence passes",
+        "references": [
+          "https://ubuntu.com/security/CVE-2026-102621",
+          "https://ubuntu.com/security/CVE-2026-93653",
+          "https://ubuntu.com/security/notices/USN-8894-1"
+        ],
+        "downstream": "Original task03 released; Auth reconstruction needs separate recovery scope/Approved",
+        "amendment_id": "M3-PDF-01"
+      },
+      {
+        "task": "CMS-M3-04",
+        "status": "HOLD_OPAQUE_BLOB_PREVIEW",
+        "reason": "Opaque Blob positivefailed; new1filedata candidate prototypeplanningHighPASS only; separatehumanApproved then01Va/01Vb; nofinalintegration release",
+        "downstream": "Original05–38 not released by this gate; no preview/CMS5173 release",
+        "amendment_id": "M3-PREVIEW-01",
+        "amendment_status": "AWAITING_APPROVAL"
+      }
+    ],
+    "dependency_regression": {
+      "status": "PASS_EXISTING_SUITES_ONLY",
+      "actual_effort": "MEDIUM",
+      "owner": "/root/m1_contract_worker",
+      "evidence_index": "pinky-lamb-cms/.local/cache/m3/task01-regression/evidence-index.json",
+      "evidence_index_sha256": "b6e435f0203110b82644545e58ee7530c04d5eb22d7091eeb932bcee8a8c2425",
+      "results": {
+        "lint": "PASS",
+        "unit": {
+          "passed": 153,
+          "failed": 0,
+          "skipped": 0,
+          "durationMs": 16343.72225
+        },
+        "buildAdmin": "PASS"
+      },
+      "root_pin_review": "pinky-lamb-cms/.local/cache/m3/task01-regression/root-review.json",
+      "limits": "Existing M1/M2 regression after installed dependencies; M3 feature tests/native/build still NOT_RUN"
+    },
+    "operational_protection": {
+      "reason": "Existing M2 Vite private routes exposed new setup tool-lock metadata until planned task04",
+      "status": "OWNED_VITE_STOPPED_PENDING_TASK04_PRIVACY_GATE",
+      "vite_pid": 62367,
+      "port": 5173,
+      "emulator_pids_unchanged": [
+        65777,
+        65804
+      ],
+      "evidence": "pinky-lamb-cms/.local/cache/m3/task01-private-setup-audit/evidence-index.json",
+      "evidence_sha256": "66f0b3751bd0f5198cb4f29e9d6c1d993123a588364084aeb9628a5b86c4baf3",
+      "limits": "No metadata body printed; source privacy fix NOT_RUN; no data reset/reseed"
+    },
+    "runtime_incident": {
+      "status": "OPEN_RECOVERY_NOT_RUN",
+      "detected_heartbeat_local": "2026-10-12 04:00 Asia/Ho_Chi_Minh",
+      "cause": "UNKNOWN",
+      "auth": "UNKNOWN_NOT_EXPORTED",
+      "firestore": "ALIVE_LOOPBACK_PID65804_AT_LAST_READ_ONLY_OBSERVATION",
+      "copy_review": "pinky-lamb-cms/.local/cache/m3/overnight-coordination/runtime-incident-0403/independent-root-review.json",
+      "copy_review_sha256": "3886614c6b8d09fe7dfed3649f0cf14cfae9b415c7340163d7a8c658d1cbc207",
+      "restore": "NOT_RUN",
+      "no_reset_reseed": true,
+      "limits": "Current incident supersedes historical emulator_pids_unchanged snapshot; no recovered Auth state or application health claim"
+    },
+    "visual_delta_report": {
+      "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/after-pdf02-1055/report.html",
+      "manifest_sha256": "5a3e229fa7ad4a0735c659471e0553697bf2dc06ceeab953d98af0589df23877",
+      "High_root_review": "pinky-lamb-cms/.local/cache/m3/report-after-pdf02/root-high-review.json",
+      "High_root_review_sha256": "1ed08eb908bbf53c950baf71ea3a6139e33ae2c5862bb7bc66f16d3e2b2aa9d7",
+      "snapshot": "10:58:07GMT7plusR1planning11:00/11:01delta; notproductUI/E2E"
+    },
+    "visual_report_history": [
+      {
+        "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/after-task04-hold-1135/report.html",
+        "manifest_sha256": "da42da19b8f0305d587182885a4ddd0d57adc60ca2ce892cacbdc065a11b61ac",
+        "High_root_review": "pinky-lamb-cms/.local/cache/m3/report-task04-hold/root-high-review.json",
+        "High_root_review_sha256": "08982f6e31d4132c489a23c271460d6740b3a6a582f0ad7650432aeba80f1c5b",
+        "snapshot": "11:36:12 GMT+7; current task04HOLD; controlled fixture only, not authenticatedCMSUI/E2E",
+        "root_review": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+        "root_pins_checked": 36,
+        "root_pin_mismatches": 0,
+        "native_png_embeds_unchanged": 3,
+        "prior_report_pins_unchanged": 14
+      },
+      {
+        "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/checkpoint-r1-native-hold-152141-revision2/report.html",
+        "manifest_sha256": "b33803171d01b7173582ebd3ff7a1c82349b269c9aadaffc2b90a7998680b041",
+        "High_root_review": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/report-checkpoint-152141-root-high-review.json",
+        "High_root_review_sha256": "89a0d6b2ccdfbb2609d4df9f07c3ce5edf84b7155207323584d3b12764827127",
+        "snapshot": "15:21:41 GMT+7; first01RbHOLD/correctionIN_PROGRESS; no readiness/CMS E2E",
+        "root_review": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+        "root_pins_checked": 79,
+        "root_pin_mismatches": 0,
+        "prior_report_pins_unchanged": 44
+      },
+      {
+        "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-m3-hold-r2-readiness-corrected-164620/report.html",
+        "manifest_sha256": "1853b4e7acc1c5f508e36a67ee4f2c7e39ede96cd841cf5d5c875175efd70dea",
+        "High_root_review": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/final-report-164620-root-high-review.json",
+        "High_root_review_sha256": "1b6d664a746d85d9ddf9812c32f94cd9dcce1f5dc73e66317b44baf207ea51a1",
+        "snapshot": "16:46:20GMT+7; R1nativeHOLD/previewHOLD/R2planningPASSawaitingApproved",
+        "root_review": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+        "root_pins_checked": 173,
+        "root_pin_mismatches": 0,
+        "native_png_embeds_unchanged": 2,
+        "prior_report_pins_unchanged": 114
+      }
+    ],
+    "latest_visual_report": {
+      "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-m3-hold-r2-readiness-corrected-164620/report.html",
+      "manifest_sha256": "1853b4e7acc1c5f508e36a67ee4f2c7e39ede96cd841cf5d5c875175efd70dea",
+      "High_root_review": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/final-report-164620-root-high-review.json",
+      "High_root_review_sha256": "1b6d664a746d85d9ddf9812c32f94cd9dcce1f5dc73e66317b44baf207ea51a1",
+      "snapshot": "16:46:20GMT+7; R1nativeHOLD/previewHOLD/R2planningPASSawaitingApproved",
+      "root_review": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+      "root_pins_checked": 173,
+      "root_pin_mismatches": 0,
+      "native_png_embeds_unchanged": 2,
+      "prior_report_pins_unchanged": 114
+    },
+    "current_disposition": {
+      "observed_at_utc": "2026-10-12T12:32:48.305853+00:00",
+      "M3": "IN_PROGRESS_NOT_ACCEPTED",
+      "R2": "HOLD_FIRST_CAUSE_UNKNOWN",
+      "current_code": "SOURCE_ONLY_HIGH_PASS_64PURE_22SAFE_LINT0_NATIVE_NOT_RUN",
+      "R3": "AWAITING_APPROVAL_HIGH_PLANNING_PASS_125TYPED0MISMATCH",
+      "02d": "NOT_RELEASED",
+      "02e": "NOT_RELEASED",
+      "original04": "HOLD_PRIVACY_OPAQUE_BLOB",
+      "original05": "NOT_RELEASED",
+      "runtime_metadata_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/report-current-process-listeners.json",
+        "type": "regular",
+        "bytes": 1622,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "a4196ebf0e406aeb133eaf1d38f25c615ce2510903bbd093d2bbc3c26fc04551"
+      },
+      "LOCAL_COMPLETE": false,
+      "M4": "NOT_OPENED",
+      "production": "EXCLUDED_NOT_PLANNED"
+    },
+    "reports": [
+      {
+        "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/report.html",
+        "index": {
+          "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/handoff-index.json",
+          "type": "regular",
+          "bytes": 4996,
+          "mode": "0o600",
+          "links": 1,
+          "uid": 501,
+          "sha256": "3550e223551005948095c062a50777ff02b1bab90fe973683d424ab3ea80d235"
+        },
+        "manifest": {
+          "path": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/evidence-manifest.json",
+          "bytes": 83039,
+          "sha256": "a14b30aff960be02269527fedb614ecafb5c51f0318101532347f17648e456e6",
+          "mode": "0o600"
+        },
+        "root_high_review": {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/final-report-193522-root-high-review.json",
+          "type": "regular",
+          "bytes": 62894,
+          "mode": "0o600",
+          "links": 1,
+          "uid": 501,
+          "sha256": "9ab32c15dfdc5e9e7a7c5b1012d6859ee2f3f1090783c3621208f4bc141db7d4"
+        },
+        "status": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+        "snapshot": "2026-10-12T12:35:22.664693+00:00",
+        "pages": [
+          {
+            "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-1.png",
+            "type": "regular",
+            "bytes": 259937,
+            "mode": "0o600",
+            "links": 1,
+            "uid": 501,
+            "sha256": "4656711574de5c5560a57d36f30cecc40b87d834473dd2c762b7f9d28763ff6f"
+          },
+          {
+            "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-2.png",
+            "type": "regular",
+            "bytes": 230019,
+            "mode": "0o600",
+            "links": 1,
+            "uid": 501,
+            "sha256": "b41cc6a9bf951907bb20a759e3a410a53be153c7278e6443da28091f4f626ec9"
+          },
+          {
+            "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-3.png",
+            "type": "regular",
+            "bytes": 340076,
+            "mode": "0o600",
+            "links": 1,
+            "uid": 501,
+            "sha256": "8f967cb808a698cd0966b1b1ec008417f6444bb23e28e88e95b0734b56e10e63"
+          }
+        ],
+        "description": "R2C_HOLD/currentcode-onlyPASS/R3planningPASSawaitingApproved; noM3acceptance/E2E/LOCAL_COMPLETE"
+      }
+    ],
+    "latest_followup_report": {
+      "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/report.html",
+      "index": {
+        "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/handoff-index.json",
+        "type": "regular",
+        "bytes": 4996,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "3550e223551005948095c062a50777ff02b1bab90fe973683d424ab3ea80d235"
+      },
+      "manifest": {
+        "path": "/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/evidence-manifest.json",
+        "bytes": 83039,
+        "sha256": "a14b30aff960be02269527fedb614ecafb5c51f0318101532347f17648e456e6",
+        "mode": "0o600"
+      },
+      "root_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/final-report-193522-root-high-review.json",
+        "type": "regular",
+        "bytes": 62894,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "9ab32c15dfdc5e9e7a7c5b1012d6859ee2f3f1090783c3621208f4bc141db7d4"
+      },
+      "status": "PASS_SOURCE_SNAPSHOT_VISUAL_ONLY",
+      "snapshot": "2026-10-12T12:35:22.664693+00:00",
+      "pages": [
+        {
+          "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-1.png",
+          "type": "regular",
+          "bytes": 259937,
+          "mode": "0o600",
+          "links": 1,
+          "uid": 501,
+          "sha256": "4656711574de5c5560a57d36f30cecc40b87d834473dd2c762b7f9d28763ff6f"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-2.png",
+          "type": "regular",
+          "bytes": 230019,
+          "mode": "0o600",
+          "links": 1,
+          "uid": 501,
+          "sha256": "b41cc6a9bf951907bb20a759e3a410a53be153c7278e6443da28091f4f626ec9"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/test-outputs/m3/overnight-2026-10-12/final-r2-c-hold-r3-plan-193522-revision2/page-3.png",
+          "type": "regular",
+          "bytes": 340076,
+          "mode": "0o600",
+          "links": 1,
+          "uid": 501,
+          "sha256": "8f967cb808a698cd0966b1b1ec008417f6444bb23e28e88e95b0734b56e10e63"
+        }
+      ],
+      "description": "R2C_HOLD/currentcode-onlyPASS/R3planningPASSawaitingApproved; noM3acceptance/E2E/LOCAL_COMPLETE"
+    }
+  },
+  "technical_planning_review": {
+    "status": "PASS_PLANNING_ONLY",
+    "path": "pinky-lamb-cms/docs/M3-PLANNING-REVIEW.md",
+    "sha256": "7ae0822a8248623567b069fdc158e99c354dd53182da8e62d3f2b3e9661bc043",
+    "scope": "Planning document/source/hash/path audit only; no implementation authority",
+    "reviewer": "Root High + independent actual High /root/m1_architect",
+    "observation_path": "pinky-lamb-cms/.local/cache/m3/independent-planning-review-observation.json",
+    "observation_sha256": "2aa09526b44630fe83df88d1e4d7d3dea7890d04ae7c4f20ecfd16b64c92c4b6"
+  },
+  "production_scope": "EXCLUDED_NOT_PLANNED",
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/CMS-001-v2-M3-PROPOSAL.md",
+      "size_bytes": 32611,
+      "sha256": "c3997da91abb86f5c1294dce47123ee402fdb574f5e171ff6be3ceed1596c351"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/M3-plan.md",
+      "size_bytes": 32637,
+      "sha256": "469a3bf1bf8028abf179b0064abd83117acb0b6ef93314f36e771d1eafba83f8"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M3-PLANNING-REVIEW.md",
+      "size_bytes": 4990,
+      "sha256": "7ae0822a8248623567b069fdc158e99c354dd53182da8e62d3f2b3e9661bc043"
+    }
+  ],
+  "milestone_acceptance": null,
+  "note": "M3 direct human Approved valid for frozen bundle revision1. Resume approved scope until review-ready; human Accepted needed to close. M4/production excluded.",
+  "freeze_observed_at_utc": "2026-10-11T15:55:43.503723+00:00",
+  "pending_amendments": [
+    {
+      "id": "M3-RUNTIME-03",
+      "revision": 1,
+      "freeze_generation": 1,
+      "status": "AWAITING_APPROVAL",
+      "required_approval_quote": "Approved CMS-001 v2 — M3-RUNTIME-03 local/emulators",
+      "approved_by": null,
+      "approved_at": null,
+      "approval_evidence": null,
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-retry-amendment/revision1-final-generation1/M3-RUNTIME-03-PROPOSAL.md",
+        "type": "regular",
+        "bytes": 13360,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "de0bd65c7694b6cb5191d6ca3c9cae544105fcef3c9933945f4181d175b14d2b"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/runtime-policy-retry-amendment/revision1-final-generation1/M3-RUNTIME-03.scope.json",
+      "scope_file_sha256": "f4c2676ad903a066655bf64be4d9c2682afec350f1f47bc8889d8d5e6a33dcd2",
+      "canonical_scope_sha256": "42dbd162d8a51d5828ca831e30f03aee2d59ad3a733a64f8e583ca4b17eeb1a6",
+      "freeze_receipt": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-retry-amendment/revision1-final-generation1/freeze-receipt.json",
+        "type": "regular",
+        "bytes": 2143,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "8c790be6a27db0f10070ca3f3a0797014e8b41d45ff22dd941e4c442fd98618b"
+      },
+      "source_union_paths": [
+        "pinky-lamb-cms/scripts/local-guard.mjs",
+        "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+        "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+        "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md"
+      ],
+      "mutable_base": [
+        {
+          "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+          "bytes": 125128,
+          "mode": "0o644",
+          "links": 1,
+          "sha256": "fc0d7520f9428becc58373dec45ea47b15f5f5fa5a084f6ce7901bf8885b5efe"
+        },
+        {
+          "path": "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+          "bytes": 50716,
+          "mode": "0o644",
+          "links": 1,
+          "sha256": "ede470eca79b5a67d0664ff5b2fd3a8c21ef3e5ed59baf6977943e39192b7a67"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+          "bytes": 63326,
+          "mode": "0o644",
+          "links": 1,
+          "sha256": "3cba02a7c5462b52ee811b656f88a0f57d78e5efbf6ca4655fde3972f8afa32a"
+        },
+        {
+          "path": "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+          "bytes": 24116,
+          "mode": "0o644",
+          "links": 1,
+          "sha256": "b1735d23d51bafc2e0aef927d92576b3ce19dc6b11c943c677b114d0ce7b2c1b"
+        }
+      ],
+      "independent_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-retry-amendment/revision1-final-generation1/independent-planning-review.json",
+        "type": "regular",
+        "bytes": 3126,
+        "mode": "0o600",
+        "links": 1,
+        "uid": 501,
+        "sha256": "27ffe94fa8c0e2368f07b4ae741b2107a8f40a02a5ae4396527173b7054ef89b"
+      },
+      "implementation": "NOT_IMPLEMENTED",
+      "native": "NOT_RUN",
+      "graph": "03aHigh→one03bHigh→one03cHigh;no02d/e/lifecycle/Authcreate/previewbridge",
+      "production_scope": "EXCLUDED_NOT_PLANNED",
+      "source_base_status": "125typed/121distinct0mismatchindependentHigh",
+      "presentation": "EXACT_FROZEN_SCOPE_QUESTION_DISPATCHED_NOT_HUMAN_APPROVED",
+      "presentation_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-retry-amendment/revision1-final-generation1/presentation-observation.json",
+        "sha256": "bae8d29de190fb8c1862b757c3296f4ee4916a63dcae0acbc1c247a992188adf"
+      }
+    }
+  ],
+  "approved_amendments": [
+    {
+      "id": "M3-TOOL-01",
+      "revision": 1,
+      "status": "IMPLEMENTED_REVIEWED",
+      "approved_by": "Khiêm (direct human user)",
+      "approval_evidence": {
+        "quote": "Approved CMS-001 v2 — M3-TOOL-01 local/emulators. Bổ sung verifier, tiếp tục triển khai và kiểm thử M3 đúng phạm vi đã duyệt. Chỉ dùng demo-pinky-lamb-cms và emulators tại localhost, không production.",
+        "source": "Direct human message in current Codex chat",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-11T16:19:09.342445+00:00",
+        "timestamp_basis": "Observation time, not server message timestamp",
+        "amendment_id": "M3-TOOL-01",
+        "revision": 1,
+        "scope_canonical_sha256": "3efba5500e25aceae3f622f57c6dcbc3a4d2c94215a686274d98b30c5787458c",
+        "proposal_sha256": "e02f38c3c69af5404d26e50906aeecd2535665f2516bf3d52da10d93944a1d1c",
+        "scope_file_sha256": "829d569f64468e6ce667e40db5452315029ec2ea11bc8987e873956593f7068a",
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "demo_project_id": "demo-pinky-lamb-cms",
+        "production_scope": "EXCLUDED_NOT_PLANNED"
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/verifier-amendment/M3-TOOL-01-PROPOSAL.md",
+        "exists": true,
+        "size_bytes": 7175,
+        "sha256": "e02f38c3c69af5404d26e50906aeecd2535665f2516bf3d52da10d93944a1d1c"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/verifier-amendment/M3-TOOL-01.scope.json",
+      "scope_file_sha256": "829d569f64468e6ce667e40db5452315029ec2ea11bc8987e873956593f7068a",
+      "canonical_scope_sha256": "3efba5500e25aceae3f622f57c6dcbc3a4d2c94215a686274d98b30c5787458c",
+      "implementation": "DONE",
+      "scope": "Isolated OpenPGP.js6.3.2 setup verifier only; two new source paths, two four-file Medium tasks; no product behavior/caps/ACL changes",
+      "independent_review": {
+        "status": "PASS_PLANNING_ONLY",
+        "observation": "pinky-lamb-cms/.local/cache/m3/verifier-amendment/independent-review-observation.json",
+        "observation_sha256": "48e27afa6da061504684ead3cc3a49a70a9cc80c0e6c0d6683f63bb315ab8f04"
+      },
+      "approved_at": "2026-10-11T16:19:09.342445+00:00",
+      "execution": {
+        "tasks": [
+          {
+            "id": "CMS-M3-01Va",
+            "status": "DONE",
+            "owner": "/root/m1_worker",
+            "requested_effort": "MEDIUM",
+            "files": [
+              "pinky-lamb-cms/.local/tools/m3/source-verifier/package.json",
+              "pinky-lamb-cms/.local/tools/m3/source-verifier/package-lock.json",
+              "pinky-lamb-cms/contracts/media-tool-lock.json",
+              "pinky-lamb-cms/docs/M3-DEPENDENCIES.md"
+            ],
+            "completed_observed_at_utc": "2026-10-11T16:24:22.762664+00:00",
+            "evidence": "pinky-lamb-cms/.local/cache/m3/verifier-setup/task01Va-evidence-index.json",
+            "evidence_sha256": "8afe259f37f247c157125898610ea3d60845207bb0ee720f50e1030e074e8274",
+            "independent_review": "pinky-lamb-cms/.local/cache/m3/verifier-setup/independent-Va-review-observation.json"
+          },
+          {
+            "id": "CMS-M3-01Vb",
+            "status": "DONE",
+            "owner": "/root/m1_worker",
+            "requested_effort": "MEDIUM",
+            "files": [
+              "pinky-lamb-cms/scripts/verify-ffmpeg-source.mjs",
+              "pinky-lamb-cms/tests/ffmpeg-source-verification.test.mjs",
+              "pinky-lamb-cms/contracts/media-tool-lock.json",
+              "pinky-lamb-cms/docs/M3-DEPENDENCIES.md"
+            ],
+            "started_observed_at_utc": "2026-10-11T16:24:22.762664+00:00",
+            "frozen_observed_at_utc": "2026-10-11T16:33:11.708094+00:00",
+            "evidence": "pinky-lamb-cms/.local/cache/m3/verifier-setup/task01Vb-evidence-index.json",
+            "evidence_sha256": "8513f9631a07d5101af8a01d5892d3b20f6bab91d478a97739e23ca06ff821d2",
+            "root_pin_review": {
+              "status": "PASS_BYTES_ONLY",
+              "files": 265,
+              "owned_fixture_symlinks": 6,
+              "mismatches": 0
+            },
+            "test_results": {
+              "passed": 9,
+              "failed": 0,
+              "skipped": 0,
+              "focused_lint_exit": 0,
+              "official_detached_signature": "PASS_DEFAULT_POLICY"
+            }
+          }
+        ],
+        "checkpoint_v": {
+          "status": "PASS",
+          "observation": "pinky-lamb-cms/.local/cache/m3/verifier-setup/independent-V-review-observation.json",
+          "observation_sha256": "7af3eb465901f5a40c815acca81987b720e866608eca94d31ee4e86cdfc0f460"
+        },
+        "original_task01_build": "DONE_SIGNED_SOURCE_SETUP_IDENTITY"
+      }
+    },
+    {
+      "id": "M3-PDF-01",
+      "revision": 1,
+      "status": "IMPLEMENTED_REVIEWED",
+      "approved_by": "Khiêm (direct human user)",
+      "approval_evidence": {
+        "quote": "Approved CMS-001 v2 — M3-PDF-01 local/emulators",
+        "source": "Direct human reply to request_user_input_async in current Codex chat",
+        "question_item_id": "[\"request_user_input_async\",\"call_b57b242b07bd4a1ba0cd195a1ebb0248\",0]",
+        "question": "Để tiếp tục pipeline M3 trong đêm, anh có duyệt gói M3-PDF-01 revision1 vừa trình không? Gói thay tool PDF sang Poppler 26.10/Cairo và thêm CMake 4.4.4/pkgconf 3.0.8 isolated; giữ nguyên chức năng, caps, demo project và localhost.",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-11T23:39:29.377757+00:00",
+        "timestamp_basis": "Observation time, not server message timestamp",
+        "amendment_id": "M3-PDF-01",
+        "revision": 1,
+        "scope_canonical_sha256": "90a4dfbf81a46eee9a6ba4d96fe4e317fedfb3d425adaf296ba8c63d9ae57aae",
+        "scope_file_sha256": "5a8f589c0a9f41975d4dd7e5379a8c38d91c98d2ba8b6227c3ffdc5c9be66a22",
+        "proposal_sha256": "19baf6c4d9beb8a94113675375975432f43561c2974044ad061dfad929f58d8b",
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "demo_project_id": "demo-pinky-lamb-cms",
+        "production_scope": "EXCLUDED_NOT_PLANNED",
+        "parent_m3_approved_scope_unchanged": true
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/M3-PDF-01-PROPOSAL.md",
+        "exists": true,
+        "size_bytes": 13988,
+        "sha256": "19baf6c4d9beb8a94113675375975432f43561c2974044ad061dfad929f58d8b"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/M3-PDF-01.scope.json",
+      "scope_file_sha256": "5a8f589c0a9f41975d4dd7e5379a8c38d91c98d2ba8b6227c3ffdc5c9be66a22",
+      "canonical_scope_sha256": "90a4dfbf81a46eee9a6ba4d96fe4e317fedfb3d425adaf296ba8c63d9ae57aae",
+      "source_union_paths": [
+        "pinky-lamb-cms/contracts/media-tool-lock.json",
+        "pinky-lamb-cms/docs/M3-DEPENDENCIES.md",
+        "pinky-lamb-cms/scripts/media-tool-audit.mjs",
+        "pinky-lamb-cms/tests/media-tools.local.test.mjs"
+      ],
+      "new_application_source_union_paths": [],
+      "scope": "PDF prerequisite Poppler26.10.0/Cairo isolated exactCMake4.4.4+pkgconf3.0.8 and closed bundled closure; no app deps/caps/roles/rights/ACL changes",
+      "implementation": "FULL_SETUP_AND_NATIVE_HIGH_PASS",
+      "independent_review": {
+        "status": "PASS_PLANNING_ONLY",
+        "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/independent-review-observation.json",
+        "observation_sha256": "40483dcb38cf5a59f8c63b1c092026a115d591693273cda70af8dc164797b4d3"
+      },
+      "recorded_at_utc": "2026-10-11T17:19:30.451523+00:00",
+      "current_m3_approval": "REMAINS_VALID",
+      "future_release": "Original task03 graph after separate Approved plus actualnativePDF andHighgates",
+      "approved_at": "2026-10-11T23:39:29.377757+00:00",
+      "execution": {
+        "tasks": [
+          {
+            "id": "CMS-M3-01Pa",
+            "status": "DONE_FULL_HIGH_SETUP_PASS",
+            "files": [
+              "pinky-lamb-cms/contracts/media-tool-lock.json",
+              "pinky-lamb-cms/docs/M3-DEPENDENCIES.md"
+            ],
+            "owner_effort": "MEDIUM",
+            "owner": "/root/runtime_custody",
+            "requested_effort": "MEDIUM",
+            "runtime_observation": "Reused actual GPT-6.1 Sol Medium worker via followup_task; no settings change",
+            "started_observed_at_utc": "2026-10-11T23:40:34.681289+00:00",
+            "limits": "Missing exactFreeType/zlibdevheaders; unapproved implicitXcodetoolchaininclude root must be excluded before resumedbuild; no completeclosedclosure/PDFPASS",
+            "frozen_observed_at_utc": "2026-10-11T23:45:13.917315+00:00",
+            "evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pa-setup/evidence-index.json",
+            "evidence_sha256": "d58bd8c191af8fe15a23e83cb36cf1fc5246716a5230a127d174f3f83ecd8754",
+            "independent_review": {
+              "status": "PASS_PARTIAL_SETUP_BYTES_ONLY",
+              "gate": "HOLD_CLOSED_HEADERS",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/01Pa-independent-review.json",
+              "observation_sha256": "d150860254d4f46a4ab72c36ad74f7d7d69c40d828f4fb970eefcb360415c428"
+            },
+            "results": {
+              "cmake4.4.4": "PASS_ARTIFACT_EXTRACT_IDENTITY",
+              "pkgconf3.0.8": "PASS_CONFIGURE_BUILD_INSTALL_IDENTITY",
+              "poppler26.10.0": "CONFIGURE_EXIT1_MISSING_FREETYPE_HEADERS",
+              "pdf_utilities_build": "NOT_RUN",
+              "native_pdf": "NOT_RUN",
+              "source_changes": 0,
+              "index_regular_files": 10756,
+              "index_raw_links": 14,
+              "mismatches": 0
+            },
+            "resumed_observed_at_utc": "2026-10-12T01:40:30.902769+00:00",
+            "header_gate_observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-header-review.json",
+            "header_gate_sha256": "9af830f7a12e95201049f13a937e8d3a4c7579d75d5b6051e249a00734957e1a",
+            "resumed_setup_evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pa-resume-headers/evidence-index.json",
+            "resumed_setup_evidence_sha256": "d2df4cd0cc08b4f59bbc08b8f25e388033dda13bcc4aedbd7f086177c37ffa3b",
+            "resumed_setup_interim_review": {
+              "status": "HOLD_FULL_SETUP_RUNTIME_CACHE_POLICY",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-full-setup-interim-review.json",
+              "observation_sha256": "9b186d1d99ce0e9da0c4a3a94309f05feb60eb53a22b8253b091f0f0af478d22"
+            },
+            "cache_policy_supplement": {
+              "path": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pa-readonly-cache/evidence-index.json",
+              "sha256": "4863388e98afd3096d255e15209c6310dc626ae76ec4a5cd14ad2bf62027880c"
+            },
+            "full_setup_review": {
+              "status": "PASS_SETUP_ONLY",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-full-setup-review.json",
+              "observation_sha256": "1bfc8128c4c210969d5e0c04fba40ed3486390b776ebd2b1864f7972462bb7e4"
+            }
+          },
+          {
+            "id": "CMS-M3-01Pb",
+            "status": "DONE_HIGH_NATIVE_PDF_PASS",
+            "files": [
+              "pinky-lamb-cms/scripts/media-tool-audit.mjs",
+              "pinky-lamb-cms/tests/media-tools.local.test.mjs"
+            ],
+            "owner_effort": "MEDIUM",
+            "owner": "/root/runtime_custody",
+            "requested_effort": "MEDIUM",
+            "started_observed_at_utc": "2026-10-12T02:06:12.481108+00:00",
+            "setup_review_observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-full-setup-review.json",
+            "setup_review_sha256": "1bfc8128c4c210969d5e0c04fba40ed3486390b776ebd2b1864f7972462bb7e4",
+            "evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pb-audit/evidence-index.json",
+            "evidence_sha256": "cf0e728becf8bbe60d5fb3b3db8621ab7f4c5e9739ba0cae495bc6d9ca471bd3",
+            "interim_independent_review": {
+              "status": "HOLD_VALID_ATTACHMENT_CMAP_NATIVE_COVERAGE",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-native01Pb-interim-hold.json",
+              "observation_sha256": "b7425d6ad06756a9ce1222aaf7a2bb7364c47064c4f8d87f1959b76fc166baa6"
+            },
+            "results": {
+              "native": {
+                "passed": 34,
+                "failed": 0,
+                "skipped": 0,
+                "image_video_regression": 18
+              },
+              "focused_lint_exit": 0,
+              "native_observations": 138,
+              "all_reaped": true
+            },
+            "correction": "Two valid external-reference fixtures within same source scope; existing frozen bytes retained",
+            "completed_observed_at_utc": "2026-10-12T03:01:21.603034+00:00",
+            "final_evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Pb-cmap-attachment-supplement/evidence-index.json",
+            "final_evidence_sha256": "7e710f6bd99537666fa70b0f5c956ad1501d552fabcec6281e3e21d28df82236",
+            "final_independent_review": {
+              "status": "PASS_NATIVE_PDF_AUDIT_ONLY",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-native01Pb-final-review.json",
+              "observation_sha256": "8db995b1ce9290478e934894d7104074914a24065e4b9eae824450e1e7f48ae7"
+            },
+            "final_results": {
+              "passed": 36,
+              "failed": 0,
+              "skipped": 0,
+              "duration_ms": 190608.346208,
+              "image_video_regression": 18,
+              "focused_lint_exit": 0
+            },
+            "limits": "Native capability/security audit with declared best-effort/stage limits; not M3AC/E2E/acceptance"
+          }
+        ],
+        "gate": "HIGH_NATIVE_PDF_PASS_ORIGINAL03_RELEASED",
+        "reviewer": "actual High /root/pdf_setup_reviewer read-only plus root High integration"
+      },
+      "approval_base_audit": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/approved-resume-0638/approval-base-audit.json",
+      "approval_base_audit_sha256": "9b249ef9de9e033012f7cce88cc239ed1c890b8e9e14ddaadb4e4776fd1e03aa"
+    },
+    {
+      "id": "M3-PDF-02",
+      "revision": 1,
+      "status": "IMPLEMENTED_REVIEWED",
+      "approved_by": "Khiêm (direct human user)",
+      "approval_evidence": {
+        "quote": "Approved CMS-001 v2 — M3-PDF-02 local/emulators",
+        "source": "Direct human reply to request_user_input_async in current Codex chat",
+        "question_item_id": "[\"request_user_input_async\",\"call_b9bf19f203e14bb398895c5930ba2c5e\",0]",
+        "question": "Anh có duyệt M3-PDF-02 revision1 để bổ sung đúng hai development artifacts FreeType 2.14.3/zlib 1.3.2, chỉ lấy headers/.pc/notices và giữ nguyên runtime libraries, rồi tiếp tục01Pa/01Pb sau từng High gate không?",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-12T01:27:58.110422+00:00",
+        "timestamp_basis": "Observation time, not server message timestamp",
+        "amendment_id": "M3-PDF-02",
+        "revision": 1,
+        "scope_canonical_sha256": "637591dd49a4dabfc792e177fedcd52fe43a6c7887b968f9fd84bc933d664388",
+        "scope_file_sha256": "c5856bdf60473bd44e7678d7b3756700ac16591c1ab0981ce0359fc6a9a23bad",
+        "proposal_sha256": "6357f444377496c17e26e151cc7bfcb736317e3faf64d2d8c7250127620ac620",
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "demo_project_id": "demo-pinky-lamb-cms",
+        "production_scope": "EXCLUDED_NOT_PLANNED",
+        "parent_m3_and_pdf01_approved_scope_unchanged": true
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/M3-PDF-02-PROPOSAL.md",
+        "size_bytes": 10516,
+        "sha256": "6357f444377496c17e26e151cc7bfcb736317e3faf64d2d8c7250127620ac620"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/M3-PDF-02.scope.json",
+      "scope_file_sha256": "c5856bdf60473bd44e7678d7b3756700ac16591c1ab0981ce0359fc6a9a23bad",
+      "canonical_scope_sha256": "637591dd49a4dabfc792e177fedcd52fe43a6c7887b968f9fd84bc933d664388",
+      "source_union_paths": [
+        "pinky-lamb-cms/contracts/media-tool-lock.json",
+        "pinky-lamb-cms/docs/M3-DEPENDENCIES.md"
+      ],
+      "new_application_source_union_paths": [],
+      "scope": "Exact selective developmentheaders/.pc/notices fromfreetype2.14.3hce30654_0 andzlib1.3.2h8088a28_2;existingruntimebytesunchanged;noappdeps/global/newlibrary/newcodec",
+      "implementation": "SELECTIVE_HEADERS_HIGH_PASS",
+      "independent_review": {
+        "status": "PASS_PLANNING_ONLY",
+        "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/independent-review-observation.json",
+        "observation_sha256": "583c5b031865ac9745be0daea33e0c8a5b53491148d77ac44459143fdb8294c1"
+      },
+      "recorded_at_utc": "2026-10-11T23:56:14.297723+00:00",
+      "current_m3_and_pdf01_approvals": "REMAIN_VALID",
+      "future_release": "01Ph→Highheadergate→original01Pa→Highfullsetup→01Pb→HighPDFgate→original03graph;runtimeincidentseparate",
+      "approved_at": "2026-10-12T01:27:58.110422+00:00",
+      "approval_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/approval-observation.json",
+        "sha256": "2523e25ef4a9aeb9d993c5af671f59b8bf6d767e1236eb50ea5441c387fc8772"
+      },
+      "approval_base_audit": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/approval-base-audit.json",
+      "approval_base_audit_sha256": "e902f3387ee4fb1c4e09dcc035874941663da4e4b466b2128134436aef4ea3c6",
+      "execution": {
+        "tasks": [
+          {
+            "id": "CMS-M3-01Ph",
+            "status": "DONE_HIGH_HEADER_PASS",
+            "files": [
+              "pinky-lamb-cms/contracts/media-tool-lock.json",
+              "pinky-lamb-cms/docs/M3-DEPENDENCIES.md"
+            ],
+            "owner": "/root/runtime_custody",
+            "requested_effort": "MEDIUM",
+            "runtime_observation": "Reusing actual GPT-6.1 Sol Medium worker without settings change",
+            "progress_observed_at_utc": "2026-10-12T01:33:08.822404+00:00",
+            "progress": "Two exactarchives downloaded and nativeexistingZstd decoded; inspection/sourcePC relocation stillinprogress; noHighheaderPASS yet",
+            "gate": "HIGH_HEADER_GATE_NOT_RUN",
+            "frozen_observed_at_utc": "2026-10-12T01:36:23.772504+00:00",
+            "evidence": "pinky-lamb-cms/.local/cache/m3/pdf-tools/01Ph-headers/evidence-index.json",
+            "evidence_sha256": "0a042f273100710c653e14192b8d251f42182a6c2a19ce90e7525ea7b94165a6",
+            "independent_review": {
+              "status": "PASS_HEADER_ONLY",
+              "observation": "pinky-lamb-cms/.local/cache/m3/pdf-tool-amendment/header-amendment/approved-resume-0824/independent-header-review.json",
+              "observation_sha256": "9af830f7a12e95201049f13a937e8d3a4c7579d75d5b6051e249a00734957e1a"
+            }
+          }
+        ],
+        "gate": "HEADERS_SETUP_NATIVE_HIGH_PASS_ORIGINAL03_DONE"
+      }
+    },
+    {
+      "id": "M3-RUNTIME-01",
+      "revision": 1,
+      "status": "HOLD",
+      "approved_by": "Khiêm (direct human user)",
+      "approved_at": null,
+      "approval_evidence": {
+        "quote": "Approved CMS-001 v2 — M3-RUNTIME-01 local/emulators",
+        "source": "Direct human user send_user_message_question_reply in this conversation",
+        "questionItemId": "[\"request_user_input_async\",\"call_d6c6ea6f13b34d098027f8c9b506ceef\",0]",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-12T05:51:23.982253+00:00",
+        "server_message_timestamp": "UNKNOWN_NOT_SUPPLIED",
+        "timestamp_basis": "Actual root observation/record time, not inferred sender time",
+        "proposal_sha256": "55103f5ba5b492103f5bb23385351d98420433b3669cb66ebe5e86fce1e75b58",
+        "scope_sha256": "812ad8e6a00acfaf69d00ab81ec50b2553ee06401c73ae8a51b75342fcc70222",
+        "canonical_scope_sha256": "096238cf9ddbbee674ba6e516dbf58d33660cb16a58c9dad496d5c3f1e8eb2df",
+        "revision": 1,
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "base_audit": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/approval-base-audit.json",
+        "base_audit_sha256": "4a63fa7d709afe783405c1eb30350b2923c882761257d3f449f55d3ca93d2874"
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery-amendment/revision1-final/M3-RUNTIME-01-PROPOSAL.md",
+        "type": "file",
+        "bytes": 28036,
+        "mode": "0o644",
+        "links": 1,
+        "sha256": "55103f5ba5b492103f5bb23385351d98420433b3669cb66ebe5e86fce1e75b58"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/runtime-recovery-amendment/revision1-final/M3-RUNTIME-01.scope.json",
+      "scope_file_sha256": "812ad8e6a00acfaf69d00ab81ec50b2553ee06401c73ae8a51b75342fcc70222",
+      "canonical_scope_sha256": "096238cf9ddbbee674ba6e516dbf58d33660cb16a58c9dad496d5c3f1e8eb2df",
+      "source_union_paths": [
+        "pinky-lamb-cms/scripts/local-guard.mjs",
+        "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+        "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+        "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md"
+      ],
+      "new_application_source_paths": [
+        "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+        "pinky-lamb-cms/tests/runtime-recovery.test.mjs"
+      ],
+      "scope": "Fixed8loopbackruntimeprofiles +get/create-missing onlyexact7knownAuthfixtures; noexistingaccountupdate/Firestorewrites/lifecycle; privateAuth-onlycustody; two sequentialMedium/Highgates",
+      "independent_review": {
+        "status": "PASS_PLANNING_ONLY",
+        "observation": "pinky-lamb-cms/.local/cache/m3/runtime-recovery-amendment/revision1-final/independent-planning-review.json",
+        "sha256": "1a85fcf202f11a83e0ae1bfb22843a96ab949ff6c163145f09d54fa24d00bca0"
+      },
+      "recorded_at_utc": "2026-10-12T04:01:57.671136+00:00",
+      "current_m3_approval": "REMAINS_VALID",
+      "implementation": "CODE_GATE_PASS_NATIVE_READINESS_HOLD_NEW_LIFECYCLE_APPROVAL_REQUIRED",
+      "presentation": "DIRECT_HUMAN_APPROVED_VALID_FROZEN_BUNDLE",
+      "gate_status": {
+        "01Ra": "RENEWED_PASS_CODE_UNIT_ONLY",
+        "01Rb": "HOLD_STARTUP_WORKER_MODULE_LOAD"
+      },
+      "routine_unix_representation_guide": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/R1-unix-source-guide.json",
+        "sha256": "a3230e21af0566e8549f309e8577177cd2c70138519bf5c3c6a6650fc5ae376f"
+      },
+      "01Ra_resume_observed_at_utc": "2026-10-12T07:07:37.161072+00:00",
+      "preliminary_01Ra_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/R1-01Ra-preliminary-high-findings.json",
+        "sha256": "cb8d65491c11ed5b099abdb45bc6604efa72c8ac5a9f9bc4fa313a07dbc384f3"
+      },
+      "final_01Ra_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/continuation-prior-gates-4fcdaadd-6aaa-4f0f-b33b-1d9267b64b6f/01Ra-high-review.json",
+        "sha256": "b3ebbc88d5579da5f5a873328f79fcda2d15a36b81539c02e483e995d8a895ea",
+        "status": "HISTORICAL_FIRST_CODE_GATE_NOT_CURRENT_SOURCE_RELEASE"
+      },
+      "01Rb_release": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/continuation-prior-gates-4fcdaadd-6aaa-4f0f-b33b-1d9267b64b6f/01Ra-high-release.json",
+        "sha256": "a58151e85f5b29a2de16e29800bfa431f7681189fff6e514106b0b1283dd5967",
+        "recorded_at_utc": "2026-10-12T07:56:16.800558+00:00",
+        "status": "HISTORICAL_FIRST_CODE_GATE_NOT_CURRENT_SOURCE_RELEASE"
+      },
+      "01Rb_first_hold": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Rb-2e1a90bb-6820-45a4-85e3-9e0d493e1ebb/evidence-index.json",
+        "sha256": "c4684992548d04ab394d5a7563888820d87fec50987a2840fae5cfae7265f02f"
+      },
+      "same_slice_continuation_design": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Rb-continuation-high-design.json",
+        "sha256": "e4680ea42198164cdfb1ff056ce2bfa6073d33cf996d05ccbf24943c5146ad79"
+      },
+      "historical_01Ra_gate": "PASS_CODE_UNIT_ONLY_2026-10-12T07:54:14Z",
+      "continuation_draft_high_findings": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/R1-continuation-draft-high-findings.json",
+        "sha256": "7e07b9c8c0be0af73023f300160798e075125787d23603062505342055e60a30"
+      },
+      "renewed_01Ra_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Ra-continuation-high-review.json",
+        "sha256": "05426ce11d994a63655f0e5e829483b8e563acfa3594ae15f7dbd65f8a3d2610",
+        "atUtc": "2026-10-12T08:52:59Z"
+      },
+      "renewed_01Rb_release": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Ra-high-release.json",
+        "sha256": "340010cd79bab02bad63dcf1d8f45a2d758c5050df2719abc2781e6f1794e59f"
+      },
+      "renewed_01Ra_index": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Ra-continuation-bc39c67a-05cb-4bdc-90b7-24c838d25ce6/final-7d338038-a08f-43fa-9bbd-d52b42860f7d/evidence-index.json",
+        "sha256": "25404d1a57cde04985ea42fa92df5b6d20ee5adeaf44dd057656be91c60f061f"
+      },
+      "final_01Rb_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Rb-continuation-high-hold.json",
+        "sha256": "aab34ede089bf63628c1312ac5843e9d5d2ad2f245f51b436c666823b3e90d61",
+        "atUtc": "2026-10-12T09:11:55Z"
+      },
+      "native_continuation_index": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Rb-continuation-47d63faa-2ba9-4f03-867b-572f8f680817/evidence-index.json",
+        "sha256": "22de81e8bd9623f453c885d3272a86670d01ae0d109a0057c4953bb0aaa6eb43",
+        "regular": 30,
+        "bytes": 5404117,
+        "directories": 9
+      },
+      "native_continuation_details_index": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-recovery/01Rb-continuation-details-685054b5-f080-4ce5-bf9d-9fbc6a26e9a6/evidence-index.json",
+        "sha256": "e382d9042ba5ae1038f71c45a15270a1d89d7eee11250fef2b2fbcb41da231db",
+        "regular": 10,
+        "bytes": 87295
+      }
+    },
+    {
+      "id": "M3-PREVIEW-01",
+      "revision": 1,
+      "freeze_generation": 2,
+      "status": "HOLD",
+      "approved_by": "Khiêm (direct human user)",
+      "approved_at": null,
+      "approval_evidence": {
+        "quote": "Approved CMS-001 v2 — M3-PREVIEW-01 local/emulators",
+        "source": "Direct human user send_user_message_question_reply in this conversation",
+        "questionItemId": "[\"request_user_input_async\",\"call_45fc135885ac4db1b2e040fd9951bfe1\",0]",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-12T05:51:23.982253+00:00",
+        "server_message_timestamp": "UNKNOWN_NOT_SUPPLIED",
+        "timestamp_basis": "Actual root observation/record time, not inferred sender time",
+        "proposal_sha256": "782cbed270160c4222c152c989d74c172dca4152ad709d42c85b41a7b7927de0",
+        "scope_sha256": "740b73f46796df11fbb301c5bf3b2cf5d5232d1fbbd034fc1be0b6d09e0fd205",
+        "canonical_scope_sha256": "c9ee76dd4c2a4fc6c658c3986335ed54b3fc1b116e517aa1f764481a0a0e29c6",
+        "revision": 1,
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "base_audit": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/approval-base-audit.json",
+        "base_audit_sha256": "4a63fa7d709afe783405c1eb30350b2923c882761257d3f449f55d3ca93d2874"
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/preview-transport-amendment/revision1-final/M3-PREVIEW-01-PROPOSAL.md",
+        "bytes": 10606,
+        "sha256": "782cbed270160c4222c152c989d74c172dca4152ad709d42c85b41a7b7927de0"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/preview-transport-amendment/revision1-final/M3-PREVIEW-01.scope.json",
+      "scope_file_sha256": "740b73f46796df11fbb301c5bf3b2cf5d5232d1fbbd034fc1be0b6d09e0fd205",
+      "canonical_scope_sha256": "c9ee76dd4c2a4fc6c658c3986335ed54b3fc1b116e517aa1f764481a0a0e29c6",
+      "source_union_paths": [
+        "pinky-lamb-cms/tests/media-preview-transport.local.test.mjs"
+      ],
+      "scope": "Bounded data:image/media opaque-sandbox prototype only, unchanged shippedCSP/product;01Va→High→01Vb→High; finalintegration needs newscope/Approved",
+      "independent_review": {
+        "status": "PASS_PLANNING_ONLY",
+        "observation": "pinky-lamb-cms/.local/cache/m3/preview-transport-amendment/revision1-final/independent-planning-review.json",
+        "sha256": "f94dcccc689051ffc637e9949cbbf5a3db34bfa7bd37fd37c61009a5e804879c"
+      },
+      "recorded_at_utc": "2026-10-12T04:45:32.701520+00:00",
+      "current_m3_approval": "REMAINS_VALID",
+      "implementation": "RESEARCH_COMPLETED_HIGH_RESOURCE_HOLD",
+      "prototype_tests": "01Va_NATIVE_PASS_01Vb_PARTIAL_HOLD_REMAINING_NOT_RUN",
+      "presentation": "DIRECT_HUMAN_APPROVED_VALID_FROZEN_BUNDLE",
+      "dependent_release": "NO_ORIGINAL04_OR05_RELEASE_BY_PROTOTYPE_PASS",
+      "presentation_observation": "pinky-lamb-cms/.local/cache/m3/preview-transport-amendment/revision1-final/presentation-observation.json",
+      "presentation_observation_sha256": "d966a91523c58acddba0f1faf5a9ff3511ffa096e00fa6246304825127b83d06",
+      "gate_status": {
+        "01Va": "PASS_PRIMITIVE_AND_NEGATIVES_ONLY",
+        "01Vb": "HOLD_TRANSPORT_RESOURCE_OR_SECURITY"
+      },
+      "01Va_interim_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/01Va-independent-interim-hold.json",
+        "sha256": "ba0328e278285381abc327eccf6c51b6c98d64e7fb85ff259d9feee288597c2a"
+      },
+      "final_01Va_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/01Va-independent-final-pass.json",
+        "sha256": "706f83d6d8fa6c8d32a39260ec85e0e7a06783ad4f09316bf37b2a1525783efc"
+      },
+      "temp_source_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/chromium-private-temp-source-observation.json",
+        "sha256": "4234fbd78a5c97e0e8d29584ab5839f3a50f392ec395e0417aca9e334a85f377"
+      },
+      "01Vb_sequencing_high_interpretation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/01Vb-sequencing-high-interpretation.json",
+        "sha256": "9d7ca2aa279a717567d73175b4cca89ff7d8143acdd708d7c1036cc26dc9befe"
+      },
+      "final_01Vb_high_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/approved-runtime-preview-resume-20261012-1250/01Vb-independent-final-hold.json",
+        "sha256": "1e78657694355ed6b6066f810724d9447b16692dfd214e382264e3a10c581b23"
+      }
+    },
+    {
+      "id": "M3-RUNTIME-02",
+      "revision": 1,
+      "freeze_generation": 3,
+      "status": "HOLD",
+      "approved_by": "Khiêm (direct human user)",
+      "approved_at": null,
+      "approval_evidence": {
+        "kind": "ACTUAL_DIRECT_HUMAN_APPROVED_OBSERVATION",
+        "amendment_id": "M3-RUNTIME-02",
+        "revision": 1,
+        "freeze_generation": 3,
+        "quote": "Approved CMS-001 v2 — M3-RUNTIME-02 local/emulators",
+        "questionItemId": "[\"request_user_input_async\",\"call_8666bb0d2a474bf1833f72c0eae9f6a6\",0]",
+        "source": "Direct human user send_user_message_question_reply in current Codex chat",
+        "approved_by": "Khiêm (direct human user)",
+        "recorded_at_utc": "2026-10-12T10:32:08.108572+00:00",
+        "server_message_timestamp": "UNKNOWN_NOT_SUPPLIED",
+        "timestamp_basis": "Actual root observation/record time, not inferred sender timestamp",
+        "proposal_sha256": "788b0b0c1cc3fc5af1fa132e37e6e098ad9650b3058b4bcf921cb4c6a5b683f5",
+        "scope_sha256": "e428d68386c619c8e47e55fcc5f668cbb66fe125fef987e36543f6be9452fb67",
+        "canonical_scope_sha256": "7b229ac74c1d3b0663e492f43c87d0f028131e53d5489270ebe1659f89926b08",
+        "planning_review_sha256": "ec8deed69013330d65c60c315bc8b7a8b641a2ec4de384a5b8784593bc82394f",
+        "presentation_observation_sha256": "beeb136f8d5ccb727b44778f1628977f5a985672343d50895bf57b0bd66c4411",
+        "base_audit": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/approval-base-audit.json",
+        "base_audit_sha256": "c332eb8b7fa7a8728e70887e91aef5523bb0318a89b8fe403c158a30b8bc59bd",
+        "environment": [
+          "local",
+          "emulators"
+        ],
+        "demo_project_id": "demo-pinky-lamb-cms",
+        "production_scope": "EXCLUDED_NOT_PLANNED",
+        "gate_release": "02a CODE_UNIT_ONLY;02b→02c→02d→02e require sequential actual High releases"
+      },
+      "proposal": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-amendment/revision1-final-generation3/M3-RUNTIME-02-PROPOSAL.md",
+        "type": "file",
+        "bytes": 15900,
+        "mode": "0o600",
+        "links": 1,
+        "sha256": "788b0b0c1cc3fc5af1fa132e37e6e098ad9650b3058b4bcf921cb4c6a5b683f5"
+      },
+      "scope_file": "pinky-lamb-cms/.local/cache/m3/runtime-policy-amendment/revision1-final-generation3/M3-RUNTIME-02.scope.json",
+      "scope_file_sha256": "e428d68386c619c8e47e55fcc5f668cbb66fe125fef987e36543f6be9452fb67",
+      "canonical_scope_sha256": "7b229ac74c1d3b0663e492f43c87d0f028131e53d5489270ebe1659f89926b08",
+      "source_union_paths": [
+        "pinky-lamb-cms/scripts/local-guard.mjs",
+        "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+        "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+        "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md"
+      ],
+      "independent_review": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-amendment/revision1-final-generation3/independent-planning-review.json",
+        "sha256": "ec8deed69013330d65c60c315bc8b7a8b641a2ec4de384a5b8784593bc82394f",
+        "status": "PASS_PLANNING_ONLY",
+        "atUtc": "2026-10-12T09:39:11Z"
+      },
+      "implementation": "02c_HOLD_FIRST_CAUSE_UNKNOWN;SOURCE_ONLY_CORRECTION_HIGH_PASS;FRESH_NATIVE_NOT_AUTHORIZED",
+      "scope": "Same4paths/5sequentialgates; loaderfooter+normalizedIPC+sanitizedtrace; conditional exactly-owned lifecycle onlyzeroAuth/tenant/Storage/privatecustody/knownquiet; R1recoveryoracles thereafter",
+      "required_approval_quote": "Approved CMS-001 v2 — M3-RUNTIME-02 local/emulators",
+      "production_scope": "EXCLUDED_NOT_PLANNED",
+      "presentation_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-amendment/revision1-final-generation3/presentation-observation.json",
+        "sha256": "beeb136f8d5ccb727b44778f1628977f5a985672343d50895bf57b0bd66c4411"
+      },
+      "presentation": "EXACT_FROZEN_SCOPE_QUESTION_DELIVERED_NO_HUMAN_APPROVAL",
+      "gate_status": {
+        "02a": "HISTORICAL_PASS;CURRENT_SOURCE_ONLY_CORRECTION_PASS_NO_NATIVE_RELEASE",
+        "02b": "HISTORICAL_PASS_STALE_CURRENT_SOURCE_ARRAY",
+        "02c": "HOLD_FIRST_CAUSE_UNKNOWN_ADMISSION_CONSUMED",
+        "02d": "NOT_RELEASED",
+        "02e": "NOT_RELEASED"
+      },
+      "approval_observation": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/approval-observation.json",
+        "sha256": "0ec43f80afffc60642f129c4f64dcf554a57266f2e1498e9263372b817ef4f83"
+      },
+      "source_base_audit": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/approval-base-audit.json",
+        "sha256": "c332eb8b7fa7a8728e70887e91aef5523bb0318a89b8fe403c158a30b8bc59bd"
+      },
+      "implementation_reviews": [
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/02a-first-freeze-high-hold.json",
+          "sha256": "f81437e253cb64b8087fa324d1aecad69709e1632c9717d0dd1868a3dd1906b8",
+          "status": "HOLD_REQUIRED_HISTORICAL_BINDING",
+          "atUtc": "2026-10-12T11:14:19.968363Z"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/02a-historical-supplement-high-hold.json",
+          "sha256": "f28ff7cb8f89941fb1a2690c899e863c5ea7b12a32eec3e755fa33a6fd015d68",
+          "status": "HOLD_FIXTURE_NAMESPACE",
+          "atUtc": "2026-10-12T11:22:34.471081Z"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02a-high-review.json",
+          "sha256": "3d7f922f5a722307cc6554b90b49e95c643d23b5ec8400791017b6344839979f",
+          "status": "PASS_CODE_UNIT_ONLY",
+          "atUtc": "2026-10-12T11:29:19.452952Z"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02b-high-review.json",
+          "sha256": "db6df4c06f0b9f9b69cc14e29790291f4994144e3f07f27655bd4a8d21ac6bc5",
+          "status": "PASS_NATIVE_CONTROL_ONLY",
+          "atUtc": "2026-10-12T11:42:55.259996Z"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02c-high-review.json",
+          "sha256": "ba5b33ea29ef405d07c91b0b5bd61073e2b05b40981b6ad72d0b964f36a8fc11",
+          "status": "HOLD_FIRST_CAUSE_UNKNOWN",
+          "atUtc": "2026-10-12T12:06:59.994427Z"
+        },
+        {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/02a-stage-code-high-review.json",
+          "sha256": "bbefa3e84b2c6a703bff9572ed939d3e24a876ac541e2a3961e8719e7f3ff1ba",
+          "status": "PASS_CODE_UNIT_ONLY",
+          "atUtc": "2026-10-12T12:19:56.591197Z"
+        }
+      ],
+      "first_code_freeze": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02a-96a29eba-cca3-4fa1-a9cb-9f30c32df5b2/evidence-index.json",
+        "sha256": "c147de1a2da086f848da83bcc5715a3e991fa37a3b026779fce0743c7b3813c2",
+        "historical_unit_pass": 56,
+        "historical_safe_pass": 22,
+        "lint": 0,
+        "native": "NOT_RUN"
+      },
+      "known_artifact_delta": {
+        "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/02a-unintended-fixture-exact-audit.json",
+        "sha256": "7383c4d150d5b9d2a321b179d399ba2438fc6d2ebc0bd79b447c45a843cf3987",
+        "kind": "EXACT_UNINTENDED_18B_SYNTHETIC_LATCH_ADDITION",
+        "subtree_unchanged": false
+      },
+      "native_control_gate": {
+        "review": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02b-high-review.json",
+        "review_sha256": "db6df4c06f0b9f9b69cc14e29790291f4994144e3f07f27655bd4a8d21ac6bc5",
+        "release": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02b-high-release.json",
+        "release_sha256": "7def7913d565afea407d8d87e83a517e52ac03197e938b0fb609e1d694bae13a",
+        "evidence": {
+          "path": ".local/cache/m3/runtime-policy-correction/02b-native-controls.json",
+          "sha256": "2bc2fa05573f51ca27594a307f1011a167f133d2ef4dde3e11b97008272e5127"
+        },
+        "current_source_status": "HISTORICAL_STALE_SOURCE_ARRAY"
+      },
+      "historical_code_gate": {
+        "review": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02a-high-review.json",
+        "review_sha256": "3d7f922f5a722307cc6554b90b49e95c643d23b5ec8400791017b6344839979f",
+        "release": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02a-high-release.json",
+        "release_sha256": "47636e7bd6e2684d96cb14b4b0a7050d647dc95aef433c4189687f92540946f1",
+        "source_snapshot": {
+          "path": ".local/cache/m3/runtime-policy-correction/02a-fixture-binding-68d07b06-73e7-49c7-ab8f-3364dd5eb55f/source-snapshot.json",
+          "sha256": "46a70cb9cd129d75e1abe72b2f8a8948dca38361ef110404e47621530f6e27cb"
+        },
+        "sources": [
+          {
+            "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+            "bytes": 125128,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "fc0d7520f9428becc58373dec45ea47b15f5f5fa5a084f6ce7901bf8885b5efe"
+          },
+          {
+            "path": "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+            "bytes": 47953,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "5341effdf6ece5354f65e577c6bb0bdf4917ae32d4b1ab3d4d616e930d063432"
+          },
+          {
+            "path": "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+            "bytes": 59966,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "92f934acdfc127c0e7c55eae0757ce81e47dc8358f382dcc79f81cb64dfa65b9"
+          },
+          {
+            "path": "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+            "bytes": 22685,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "f41aa67790544d48bbf42293d6f71b3b362099142127afe4b891b3859a1b70ec"
+          }
+        ],
+        "counts": {
+          "pure_pass": 59,
+          "pure_fail": 0,
+          "safe_legacy_pass": 22,
+          "safe_legacy_fail": 0,
+          "other_legacy_not_selected": 20,
+          "lint_errors": 0,
+          "HTTP": 0,
+          "sockets": 0,
+          "guard_module_top_level_await": 0
+        },
+        "current_source_status": "STALE_SOURCE_ARRAY"
+      },
+      "source_only_correction": {
+        "review": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/approved-resume-20261012-1730/02a-stage-code-high-review.json",
+        "sha256": "bbefa3e84b2c6a703bff9572ed939d3e24a876ac541e2a3961e8719e7f3ff1ba",
+        "status": "PASS_CODE_UNIT_ONLY",
+        "atUtc": "2026-10-12T12:19:56.591197Z",
+        "sources": [
+          {
+            "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+            "bytes": 125128,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "fc0d7520f9428becc58373dec45ea47b15f5f5fa5a084f6ce7901bf8885b5efe"
+          },
+          {
+            "path": "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+            "bytes": 50716,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "ede470eca79b5a67d0664ff5b2fd3a8c21ef3e5ed59baf6977943e39192b7a67"
+          },
+          {
+            "path": "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+            "bytes": 63326,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "3cba02a7c5462b52ee811b656f88a0f57d78e5efbf6ca4655fde3972f8afa32a"
+          },
+          {
+            "path": "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+            "bytes": 24116,
+            "mode": "0o644",
+            "links": 1,
+            "sha256": "b1735d23d51bafc2e0aef927d92576b3ce19dc6b11c943c677b114d0ce7b2c1b"
+          }
+        ],
+        "counts": {
+          "pure_pass": 64,
+          "pure_fail": 0,
+          "safe_legacy_pass": 22,
+          "safe_legacy_fail": 0,
+          "other_legacy_not_selected": 20,
+          "lint_errors": 0,
+          "all_command_exit_codes": 0,
+          "HTTP": 0,
+          "socket": 0,
+          "guard_module_top_level_await": 0,
+          "functions_ast_parity": 35
+        },
+        "native_release": false
+      },
+      "preservation_hold": {
+        "review": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02c-high-review.json",
+        "sha256": "ba5b33ea29ef405d07c91b0b5bd61073e2b05b40981b6ad72d0b964f36a8fc11",
+        "status": "HOLD_FIRST_CAUSE_UNKNOWN",
+        "atUtc": "2026-10-12T12:06:59.994427Z",
+        "evidence_index": {
+          "path": "pinky-lamb-cms/.local/cache/m3/runtime-policy-correction/02c-native-0d0beab2-9f62-494b-919d-9c56b3667ab1/final-evidence-index.json",
+          "sha256": "5b1dc8c264d65d3e1fa608dc6f37426a32f64eca3bf92f0b01e882af11e43520"
+        },
+        "admission": "CONSUMED_RETAINED_NO_REPLAY",
+        "signal_or_auth_create": "NOT_RUN"
+      },
+      "execution_disposition_at_utc": "2026-10-12T12:22:09.995080+00:00"
+    }
+  ]
+}

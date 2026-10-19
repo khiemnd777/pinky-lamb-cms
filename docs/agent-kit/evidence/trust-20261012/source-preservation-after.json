@@ -1,0 +1,40 @@
+{
+  "observedAtUtc": "2026-10-12T15:50:34.349885+00:00",
+  "status": "PASS",
+  "protectedBeforeRecordCount": 4094,
+  "emulatorDataRecords": 746,
+  "changedExistingPaths": [
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/verification-results.md"
+  ],
+  "addedPaths": [
+    "docs/agent-kit/evidence/trust-20261012",
+    "docs/agent-kit/evidence/trust-20261012/config-change.json",
+    "docs/agent-kit/evidence/trust-20261012/current-chat-registry-lookup.json",
+    "docs/agent-kit/evidence/trust-20261012/ephemeral-read-surface.json",
+    "docs/agent-kit/evidence/trust-20261012/extractor-validation.json",
+    "docs/agent-kit/evidence/trust-20261012/final-config-observation.json",
+    "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt2-153858588045.json",
+    "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer-attempt3-154509589242.json",
+    "docs/agent-kit/evidence/trust-20261012/fresh-native-probe-kit-explorer.json",
+    "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-source.py",
+    "docs/agent-kit/evidence/trust-20261012/fresh-probe-controller-v3-source.py",
+    "docs/agent-kit/evidence/trust-20261012/native-config-read-helper.py",
+    "docs/agent-kit/evidence/trust-20261012/native-project-layer.json",
+    "docs/agent-kit/evidence/trust-20261012/native-prompt-helper.py",
+    "docs/agent-kit/evidence/trust-20261012/native-prompt-projection.json",
+    "docs/agent-kit/evidence/trust-20261012/preflight.json",
+    "docs/agent-kit/evidence/trust-20261012/protocol-read-surface.json",
+    "docs/agent-kit/evidence/trust-20261012/root-final-static-observation.json",
+    "docs/agent-kit/evidence/trust-20261012/source-before.json",
+    "docs/agent-kit/evidence/trust-20261012/source-preservation-after.json",
+    "docs/agent-kit/evidence/trust-20261012/static-after.json",
+    "docs/agent-kit/evidence/trust-20261012/trust-write-helper.py",
+    "docs/agent-kit/tasks/AGENT-TRUST-001.md"
+  ],
+  "unexpectedChanges": [],
+  "unexpectedAdditions": [],
+  "emulatorTypedInventoryEqual": true,
+  "coreLockSha256": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+}

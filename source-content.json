@@ -1,0 +1,363 @@
+{
+  "company": {
+    "name": "Pinky Lamb",
+    "descriptor": "Independent Creative Production Agency & IP Studio",
+    "descriptorVi": "Creative Production Agency & IP Studio độc lập tại Việt Nam",
+    "tagline": "The house of all cutest things",
+    "intro": "Pinky Lamb là agency sản xuất sáng tạo và IP studio độc lập tại Việt Nam, hoạt động trong lĩnh vực sáng tạo thương hiệu, phim và nội dung, sự kiện và trải nghiệm, cùng phát triển IP nguyên bản.",
+    "experienceStatement": "Hơn 15 năm kinh nghiệm biến ý tưởng sáng tạo thành những sản phẩm và trải nghiệm thực tế.",
+    "internationalStatement": "Đặt nền tảng tại Việt Nam, sáng tạo cho thương hiệu và khán giả trên thế giới.",
+    "collaborationStatement": "Kinh nghiệm làm việc cùng các thương hiệu, CEO, CMO và đối tác quốc tế trong nhiều ngành.",
+    "ipStatement": "Song song với dự án khách hàng, Pinky Lamb phát triển ý tưởng nguyên bản với định hướng mở rộng thành trải nghiệm, format và thương hiệu dài hạn.",
+    "contactHeading": "Let’s create something memorable.",
+    "sourcePages": [
+      1,
+      2,
+      3,
+      47
+    ],
+    "sourceNotes": [
+      "15+ năm là kinh nghiệm được credential tự giới thiệu; không phải dữ kiện xác nhận năm thành lập công ty.",
+      "Không đưa claim về franchise Pinkyverse hoặc bất kỳ IP cụ thể nào vì credential không nêu."
+    ]
+  },
+  "services": [
+    {
+      "id": "brand-creative",
+      "number": "01",
+      "title": "Brand & Creative",
+      "titleVi": "Thương hiệu & sáng tạo",
+      "summary": "Phát triển concept và ngôn ngữ sáng tạo cho thương hiệu. Từ nhân vật thương hiệu đến key visual, mỗi ý tưởng được định hướng để bước vào sản xuất.",
+      "scope": [
+        "Ý tưởng & concept",
+        "Nhân vật thương hiệu",
+        "Key visual"
+      ],
+      "sourcePages": [
+        4,
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "film-content",
+      "number": "02",
+      "title": "Film & Content Production",
+      "titleVi": "Phim & nội dung",
+      "summary": "Từ phim doanh nghiệp, TVC đến viral video và hoạt hình. Chúng tôi phát triển ý tưởng và đưa câu chuyện thương hiệu lên hình.",
+      "scope": [
+        "Video thương hiệu",
+        "TVC & viral video",
+        "Hậu kỳ hoạt hình"
+      ],
+      "sourcePages": [
+        4,
+        6,
+        7,
+        12,
+        14,
+        18
+      ]
+    },
+    {
+      "id": "events-experiences",
+      "number": "03",
+      "title": "Events & Experiences",
+      "titleVi": "Sự kiện & trải nghiệm",
+      "summary": "Hội nghị, lễ khai mạc, ký kết, concert hay lễ hội. Chúng tôi kết nối nội dung, sản xuất và truyền thông để tạo nên trải nghiệm trực tiếp.",
+      "scope": [
+        "Hội nghị doanh nghiệp",
+        "Lễ khai mạc & ký kết",
+        "Concert & lễ hội"
+      ],
+      "sourcePages": [
+        4,
+        21,
+        22,
+        27,
+        28,
+        32,
+        35,
+        39
+      ]
+    },
+    {
+      "id": "exhibition-activation",
+      "number": "04",
+      "title": "Exhibition & Activation",
+      "titleVi": "Triển lãm & activation",
+      "summary": "Đưa thương hiệu vào những không gian gặp gỡ thực tế. Từ lễ khai mạc triển lãm đến sự kiện bên lề và trải nghiệm đăng ký, đón tiếp.",
+      "scope": [
+        "Lễ khai mạc triển lãm",
+        "Sự kiện bên lề",
+        "Dịch vụ đăng ký"
+      ],
+      "sourcePages": [
+        4,
+        22,
+        24,
+        25,
+        26,
+        31,
+        34
+      ]
+    },
+    {
+      "id": "integrated-communications",
+      "number": "05",
+      "title": "Integrated Communications",
+      "titleVi": "Truyền thông tích hợp",
+      "summary": "Kết hợp PR, nội dung social và hoạt động cùng KOL/KOC để triển khai truyền thông thương hiệu. Phạm vi công việc bao gồm advertorial, seeding, campaign và talent booking.",
+      "scope": [
+        "PR & advertorial",
+        "Social campaign & seeding",
+        "KOL/KOC & talent booking"
+      ],
+      "sourcePages": [
+        4,
+        7,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "original-ip",
+      "number": "06",
+      "title": "Original IP Development",
+      "titleVi": "Phát triển IP nguyên bản",
+      "summary": "Phát triển các ý tưởng sáng tạo nguyên bản với định hướng mở rộng dài hạn thành trải nghiệm, format và thương hiệu.",
+      "scope": [
+        "Ý tưởng nguyên bản",
+        "Format & trải nghiệm",
+        "Định hướng thương hiệu IP"
+      ],
+      "sourcePages": [
+        3,
+        4
+      ],
+      "sourceNote": "Đây là dịch vụ/định hướng được credential giới thiệu. Không có căn cứ để khẳng định một franchise Pinkyverse hay IP cụ thể đã tồn tại."
+    }
+  ],
+  "projects": [
+    {
+      "id": "wayfair",
+      "title": "Wayfair Global Selling Vietnam Summit",
+      "client": "Wayfair",
+      "year": 2026,
+      "category": "events",
+      "eyebrow": "Hội nghị · 2026",
+      "summary": "Hội nghị Wayfair Global Selling Vietnam Summit 2026, với không gian sân khấu và các khu vực đón tiếp mang nhận diện Wayfair.",
+      "scope": [],
+      "image": "wayfair-summit-2026",
+      "gallery": [
+        "wayfair-summit-2026",
+        "wayfair-team-2026",
+        "wayfair-registration-2026"
+      ],
+      "sourcePage": 21,
+      "sourceNote": "Trang 21 ghi tên sự kiện và ảnh; không nêu các vai trò thực hiện chi tiết. Summary mô tả nội dung nhìn thấy trong ảnh, không tự gán các vai trò concept, thiết kế hay vận hành."
+    },
+    {
+      "id": "sony",
+      "title": "Karaoke ULT Speakers",
+      "client": "Sony",
+      "year": 2025,
+      "category": "film",
+      "eyebrow": "Film & Content · 2025",
+      "summary": "Phát triển concept và sản xuất video cho dòng loa karaoke ULT của Sony.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Sản xuất video"
+      ],
+      "image": "sony-ult-2025",
+      "gallery": [
+        "sony-ult-2025"
+      ],
+      "sourcePage": 6
+    },
+    {
+      "id": "diag",
+      "title": "Brand Awareness Strategy",
+      "client": "Diag",
+      "year": 2022,
+      "category": "communications",
+      "eyebrow": "Truyền thông thương hiệu · 2022",
+      "summary": "Triển khai nội dung và truyền thông thương hiệu với nhân vật Lab Bot, video doanh nghiệp, PR và các hoạt động social.",
+      "scope": [
+        "Thiết kế nhân vật Lab Bot",
+        "Sản xuất video doanh nghiệp",
+        "PR advertorial",
+        "Social & group seeding",
+        "Booking và quản lý KOL/KOC trên TikTok",
+        "Chuỗi video trong giai đoạn COVID-19"
+      ],
+      "image": "diag-awareness-2022",
+      "gallery": [
+        "diag-awareness-2022"
+      ],
+      "sourcePage": 7,
+      "sourcePages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "vifa",
+      "title": "VIFA EXPO 2026",
+      "client": "VIFA EXPO",
+      "year": 2026,
+      "category": "events",
+      "eyebrow": "Triển lãm · 2026",
+      "summary": "Lễ khai mạc và dịch vụ đăng ký cho Vietnam International Furniture & Home Accessories 2026.",
+      "scope": [
+        "Lễ khai mạc",
+        "Dịch vụ đăng ký"
+      ],
+      "image": "vifa-opening-2026",
+      "gallery": [
+        "vifa-opening-2026",
+        "vifa-fair-2026"
+      ],
+      "sourcePage": 22,
+      "sourceNote": "Tên rút gọn VIFA EXPO xuất hiện trên ảnh sự kiện. Tên đầy đủ trong tiêu đề PDF: Vietnam International Furniture & Home Accessories 2026."
+    },
+    {
+      "id": "petrosetco",
+      "title": "New Year Party 2026",
+      "client": "Petrosetco Distribution",
+      "year": 2026,
+      "category": "events",
+      "eyebrow": "Sự kiện doanh nghiệp · 2026",
+      "summary": "Đêm tiệc năm mới 2026 của Petrosetco Distribution, với sân khấu trình diễn mang sắc màu Tết.",
+      "scope": [],
+      "image": "petrosetco-party-2026",
+      "gallery": [
+        "petrosetco-party-2026",
+        "petrosetco-guests-2026",
+        "petrosetco-fireworks-2026"
+      ],
+      "sourcePage": 20,
+      "sourceNote": "Trang 20 ghi tên sự kiện và ảnh; không nêu các vai trò thực hiện chi tiết."
+    },
+    {
+      "id": "varna",
+      "title": "Thanh Xuân Hoàng Kim",
+      "client": "NutiFood · VARNA ELITE",
+      "year": 2023,
+      "category": "communications",
+      "eyebrow": "Brand campaign · 2023",
+      "summary": "Concept, hình ảnh và hoạt động social cho VARNA ELITE, kết hợp KOL và bộ ảnh của chiến dịch Thanh Xuân Hoàng Kim.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Booking KOL",
+        "Photoshoot",
+        "Social media"
+      ],
+      "image": "varna-elite-2023",
+      "gallery": [
+        "varna-elite-2023",
+        "varna-elite-collage-2023",
+        "varna-elite-lifestyle-2023"
+      ],
+      "sourcePage": 9
+    },
+    {
+      "id": "samsung",
+      "title": "Samsung Flip 2 · Teacher’s Day",
+      "client": "Samsung",
+      "year": 2019,
+      "category": "film",
+      "eyebrow": "Viral video · 2019",
+      "summary": "Phát triển concept và sản xuất video viral cho Samsung Flip 2 nhân dịp Ngày Nhà giáo Việt Nam 20/11/2019.",
+      "scope": [
+        "Concept & ý tưởng",
+        "Sản xuất video"
+      ],
+      "image": "samsung-flip2-2019",
+      "gallery": [
+        "samsung-flip2-2019"
+      ],
+      "sourcePage": 14
+    },
+    {
+      "id": "psd",
+      "title": "Partner Year End Party",
+      "client": "PSD · Dell · Microsoft",
+      "year": 2025,
+      "category": "events",
+      "eyebrow": "Sự kiện đối tác · 2025",
+      "summary": "Đêm tiệc cuối năm 2025 dành cho đối tác PSD – Dell – Microsoft.",
+      "scope": [],
+      "image": "psd-dell-microsoft-2025",
+      "gallery": [
+        "psd-dell-microsoft-2025",
+        "psd-dell-microsoft-stage-2025",
+        "psd-dell-microsoft-guests-2025"
+      ],
+      "sourcePage": 23,
+      "sourceNote": "Trang 23 ghi tên sự kiện và ảnh; không nêu các vai trò thực hiện chi tiết."
+    }
+  ],
+  "contact": {
+    "email": "pinkylamb.co@gmail.com",
+    "phoneDisplay": "+84 33 233 8667",
+    "phoneHref": "tel:+84332338667",
+    "officeDisplay": "(028) 22 101 441",
+    "officeHref": "tel:+842822101441",
+    "person": "Ms. Bao Ngoc (Christy)",
+    "address": "981 Hong Bang St., Binh Tay Ward, HCMC, Vietnam",
+    "website": "https://www.pinkylamb.com",
+    "facebook": "https://www.facebook.com/pinkylamb.media",
+    "sourcePage": 47
+  },
+  "assetFiles": {
+    "sony-ult-2025": "sony-ult-2025.png",
+    "diag-awareness-2022": "diag-awareness-2022.jpeg",
+    "varna-elite-2023": "varna-elite-2023.jpeg",
+    "skechers-campaign": "skechers-campaign.jpeg",
+    "dongtam-tvc-2022": "dongtam-tvc-2022.jpeg",
+    "baemin-shopping": "baemin-shopping.jpeg",
+    "petrosetco-party-2026": "petrosetco-party-2026.jpeg",
+    "wayfair-summit-2026": "wayfair-summit-2026.jpeg",
+    "wayfair-team-2026": "wayfair-team-2026.jpeg",
+    "wayfair-registration-2026": "wayfair-registration-2026.jpeg",
+    "vifa-opening-2026": "vifa-opening-2026.jpeg",
+    "vifa-fair-2026": "vifa-fair-2026.jpeg",
+    "psd-dell-microsoft-2025": "psd-dell-microsoft-2025.jpeg",
+    "samsung-psd-2024": "samsung-psd-2024.jpeg",
+    "aqua-conference-2023": "aqua-conference-2023.jpeg",
+    "piano-forte-opus-1": "piano-forte-opus-1.jpeg",
+    "nhatrang-festival-2019": "nhatrang-festival-2019.png",
+    "stage-production-design": "stage-production-design.jpeg",
+    "product-photography-red": "product-photography-red.jpeg",
+    "food-photography": "food-photography.jpeg",
+    "pinky-lamb-logo-badge": "pinky-lamb-logo-badge.png",
+    "client-wayfair": "client-wayfair.png",
+    "client-sony": "client-sony.png",
+    "client-samsung": "client-samsung.png",
+    "client-aqua": "client-aqua.png",
+    "client-manulife": "client-manulife.png",
+    "client-guardian": "client-guardian.jpeg",
+    "client-diag": "client-diag.png",
+    "samsung-flip2-2019": "samsung-flip2-2019.jpeg",
+    "varna-elite-collage-2023": "varna-elite-collage-2023.jpeg",
+    "varna-elite-lifestyle-2023": "varna-elite-lifestyle-2023.jpeg",
+    "petrosetco-guests-2026": "petrosetco-guests-2026.jpeg",
+    "petrosetco-fireworks-2026": "petrosetco-fireworks-2026.jpeg",
+    "psd-dell-microsoft-stage-2025": "psd-dell-microsoft-stage-2025.jpeg",
+    "psd-dell-microsoft-guests-2025": "psd-dell-microsoft-guests-2025.jpeg"
+  },
+  "source": {
+    "title": "Pinky Lamb Credential 2026",
+    "pageCount": 48,
+    "localPdf": "Pinky-Lamb-Credential-2026.pdf",
+    "driveFileId": "10FWIOIIc9jpAPEfXUCeP7qoR9NgjMcqb",
+    "notes": [
+      "Tên dịch vụ nằm ở trang 4. Chi tiết phạm vi được đối chiếu thêm với trang 3 và các case tương ứng; trang 4 tự thân không liệt kê hạng mục chi tiết.",
+      "Các sourceNote/sourceNotes/sourcePages là metadata kiểm chứng cho người triển khai; không đưa nguyên văn vào UI.",
+      "Không dùng các số lượt tiếp cận hoặc follower của riêng chiến dịch làm thành tích tổng của agency."
+    ]
+  }
+}

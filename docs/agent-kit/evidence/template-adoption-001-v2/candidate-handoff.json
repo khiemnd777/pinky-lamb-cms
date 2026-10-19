@@ -1,0 +1,151 @@
+{
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "result": "CANDIDATE_READY_FOR_SOURCE_REVIEW",
+  "candidateRoot": "/private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/candidate",
+  "observedRoute": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "thread": "01a13e01-8177-7401-900f-a8c7cd67e50a",
+    "parentVerified": true
+  },
+  "paths": [
+    {
+      "path": ".agents/references/template-application.md",
+      "sha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0",
+      "bytes": 4249
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97",
+      "bytes": 22210
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc",
+      "bytes": 13229
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "sha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348",
+      "bytes": 11164
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee",
+      "bytes": 13370
+    },
+    {
+      "path": ".claude/references/template-application.md",
+      "sha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0",
+      "bytes": 4249
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97",
+      "bytes": 22210
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc",
+      "bytes": 13229
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "sha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348",
+      "bytes": 11164
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee",
+      "bytes": 13370
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "sha256": "402c6c9f4f55995e113d74ab53022e5ac410c39fc5bc219eed8dc8677f1c1906",
+      "bytes": 9308
+    },
+    {
+      "path": "docs/agent-kit/cms-template-acceptance.md",
+      "sha256": "22c35ed316947b0febc6d8a6f5cd513ad3cff5f391393c562328b877c9296fde",
+      "bytes": 11965
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "sha256": "4b840a1f948c31926afaeda8937aadfe8880fa1f2f8bb740a7d85a5a7a0d3392",
+      "bytes": 5767
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest-current.json",
+      "sha256": "88dec2dc4e5b103a8476318b3af985760a6d0bd749c0e3e528d55222dc39f245",
+      "bytes": 57114
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "sha256": "6ebef36700db51d40d2d40afebfb5a8a0de242ec14feca8286e47287d6c35c31",
+      "bytes": 12588
+    },
+    {
+      "path": "docs/agent-kit/template-application-acceptance.md",
+      "sha256": "10863f2317d04f29220f705b4007950a786c24151c63f0311eb3bddc18bb7ce5",
+      "bytes": 4610
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "sha256": "82f4501c8953d5e70ad37d2b5b976653ed3d12ec23cb2257cc35562bca7e3e30",
+      "bytes": 26571
+    },
+    {
+      "path": "engineering/PINKY-TEMPLATE-ADOPTION-001-v2-LOCK.json",
+      "sha256": "87fd98bcbeb55e36c000b40221a11a283181be75dae67a285604f29892bfd441",
+      "bytes": 41493
+    },
+    {
+      "path": "engineering/agent-kit/verify-template-adoption.py",
+      "sha256": "b632a51ddea728c78f88a54614a0cbdfa57a19460cf4d1b03fc70242b6cc4238",
+      "bytes": 12204
+    }
+  ],
+  "commands": [
+    {
+      "command": "python3 -B /private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/finish.py",
+      "result": "19candidate paths;78maintainedfiles;28mirrorpairs"
+    },
+    {
+      "command": "python3 -B /private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/test-candidate.py",
+      "result": "PASS",
+      "cases": 13
+    },
+    {
+      "command": "python3 -B /private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/candidate/engineering/agent-kit/verify-template-adoption.py --root /private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/fixture",
+      "result": "PASS;183package+656CMSstatic protected;75links"
+    },
+    {
+      "command": "python3 -B /private/tmp/pinky-lamb-template-adoption-001-v2-vprpczg6/handoff.py",
+      "result": "source18pins/source10skillsrefs/genericchecklist exact transformations;checkerAST"
+    }
+  ],
+  "initialFailure": "synthetic-results-first.json retained; fixed duplicate link relocation and harness bytecode side effect without inventory exemptions",
+  "sourceTransforms": {
+    "skillsAndReference": "Exact upstream919ce6b bytes except one-pass project-doc link relocation;mirrors byte-identical",
+    "genericChecklist": "Exact source except ../.agents -> ../../.agents",
+    "workflowAndCoordination": "Only old-new upstream textual deltas integrated; project overlays preserved",
+    "cmsMapping": "CurrentCMS-UX-002v2 source/evidence-specific mapping; future rowsNOT_RUN; no competing current status",
+    "metadata": "Preserve74old origins;add4maintained;20original/6adapted;priorDoD/using006adaptation untouched",
+    "lockChecker": "Frozen183package/656source;exact19owned;17contentamendments+checkerhash+canonical-lockanchor;11exactmutableevidencepaths;failclosedno-rebaseline"
+  },
+  "evidence": [
+    "source-checks.json",
+    "synthetic-results.json",
+    "synthetic-results-first.json",
+    "candidate.diff"
+  ],
+  "notRun": [
+    "nativeV31behavior",
+    "CMSruntime/tests/build/HTTP/browser",
+    "emulatordata/globalinventory",
+    "humanCMSacceptance",
+    "Git/deploy"
+  ],
+  "repositoryWrites": "NONE;19candidates only in assigned temporary staging;rootownsactualapplicationandsharedrecords",
+  "next": "Root High source review; apply exact reviewed candidates through ordinary runtime approval; root final checker and shared integration records"
+}

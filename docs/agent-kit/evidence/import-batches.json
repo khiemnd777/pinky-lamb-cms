@@ -1,0 +1,213 @@
+{
+  "sourceCommit": "22c2a20359072dcb510f3329b97161b16f947fb2",
+  "batches": [
+    {
+      "batch": 1,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/ADDY-AGENT-SKILLS-LICENSE",
+        ".agents/references/accessibility-checklist.md",
+        ".agents/references/definition-of-done.md",
+        ".agents/references/observability-checklist.md",
+        ".agents/references/orchestration-patterns.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 2,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/references/performance-checklist.md",
+        ".agents/references/security-checklist.md",
+        ".agents/references/testing-patterns.md",
+        ".agents/skills/api-and-interface-design/SKILL.md",
+        ".agents/skills/code-review-and-quality/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 3,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/skills/code-simplification/SKILL.md",
+        ".agents/skills/context-engineering/SKILL.md",
+        ".agents/skills/debugging-and-error-recovery/SKILL.md",
+        ".agents/skills/documentation-and-adrs/SKILL.md",
+        ".agents/skills/frontend-ui-engineering/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 4,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/skills/incremental-implementation/SKILL.md",
+        ".agents/skills/observability-and-instrumentation/SKILL.md",
+        ".agents/skills/performance-optimization/SKILL.md",
+        ".agents/skills/performance-optimization/references/optimization-patterns.md",
+        ".agents/skills/planning-and-task-breakdown/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 5,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/skills/security-and-hardening/SKILL.md",
+        ".agents/skills/security-and-hardening/references/hardening-patterns.md",
+        ".agents/skills/source-driven-development/SKILL.md",
+        ".agents/skills/spec-driven-development/SKILL.md",
+        ".agents/skills/technote/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 6,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".agents/skills/test-driven-development/SKILL.md",
+        ".agents/skills/using-agent-skills/SKILL.md",
+        ".claude/ADDY-AGENT-SKILLS-LICENSE",
+        ".claude/agents/kit-explorer.md",
+        ".claude/agents/kit-implementer.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 7,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/agents/kit-reviewer.md",
+        ".claude/references/accessibility-checklist.md",
+        ".claude/references/definition-of-done.md",
+        ".claude/references/observability-checklist.md",
+        ".claude/references/orchestration-patterns.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 8,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/references/performance-checklist.md",
+        ".claude/references/security-checklist.md",
+        ".claude/references/testing-patterns.md",
+        ".claude/skills/api-and-interface-design/SKILL.md",
+        ".claude/skills/code-review-and-quality/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 9,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/skills/code-simplification/SKILL.md",
+        ".claude/skills/context-engineering/SKILL.md",
+        ".claude/skills/debugging-and-error-recovery/SKILL.md",
+        ".claude/skills/documentation-and-adrs/SKILL.md",
+        ".claude/skills/frontend-ui-engineering/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 10,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/skills/incremental-implementation/SKILL.md",
+        ".claude/skills/observability-and-instrumentation/SKILL.md",
+        ".claude/skills/performance-optimization/SKILL.md",
+        ".claude/skills/performance-optimization/references/optimization-patterns.md",
+        ".claude/skills/planning-and-task-breakdown/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 11,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/skills/security-and-hardening/SKILL.md",
+        ".claude/skills/security-and-hardening/references/hardening-patterns.md",
+        ".claude/skills/source-driven-development/SKILL.md",
+        ".claude/skills/spec-driven-development/SKILL.md",
+        ".claude/skills/technote/SKILL.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 12,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        ".claude/skills/test-driven-development/SKILL.md",
+        ".claude/skills/using-agent-skills/SKILL.md",
+        ".codex/agents/kit-explorer.toml",
+        ".codex/agents/kit-implementer.toml",
+        ".codex/agents/kit-reviewer.toml"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 13,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        "CLAUDE.md",
+        "engineering/agent-kit/LICENSE",
+        "docs/agent-kit/agent-compatibility.md",
+        "docs/agent-kit/agent-coordination-templates.md",
+        "docs/agent-kit/model-routing.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 14,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        "docs/agent-kit/project-context.md",
+        "docs/agent-kit/project-plan.md",
+        "docs/agent-kit/project-state.md",
+        "docs/agent-kit/roles/coordinator.md",
+        "docs/agent-kit/roles/explorer.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 15,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        "docs/agent-kit/roles/implementer.md",
+        "docs/agent-kit/roles/reviewer.md",
+        "docs/agent-kit/skills-catalog.md",
+        "docs/agent-kit/skills-manifest.json",
+        "docs/agent-kit/tasks/README.md"
+      ],
+      "byteVerification": "PASS"
+    },
+    {
+      "batch": 16,
+      "owner": "agent_setup",
+      "responsibility": "Pinned skills/references, namespace docs and native role adapters",
+      "files": [
+        "docs/agent-kit/team-policy.md",
+        "docs/agent-kit/team-workflow.md",
+        "docs/agent-kit/technote.md",
+        "docs/agent-kit/verification-guide.md",
+        "docs/agent-kit/verification-results.md"
+      ],
+      "byteVerification": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,1228 @@
+{
+  "schema_version": 1,
+  "proposal_id": "CMS-001",
+  "proposal_version": 2,
+  "milestone": "M2",
+  "bundle_revision": 1,
+  "status": "AWAITING_APPROVAL",
+  "implementation_status": "NOT_STARTED",
+  "document_hash_freeze_status": "FROZEN_FOR_REVIEW",
+  "environment": [
+    "local",
+    "emulators"
+  ],
+  "isolated_root": "pinky-lamb-cms/",
+  "demo_project_id": "demo-pinky-lamb-cms",
+  "local_endpoints": {
+    "auth": "127.0.0.1:9099",
+    "firestore": "127.0.0.1:8080",
+    "functions": "127.0.0.1:5001",
+    "hosting": "127.0.0.1:5010",
+    "admin": "127.0.0.1:5173",
+    "qa": "127.0.0.1:4173"
+  },
+  "implementation_gates": {
+    "m1_user_accepted": false,
+    "m1_status_observed": "REVIEW_READY",
+    "m2_human_approved": false,
+    "note": "Direct human M1 acceptance and separate M2 Approved required; examples in proposal are not evidence."
+  },
+  "scope": [
+    "Full-site typed content/editors with current baseline controlled templates",
+    "Explicit OWNER import into home-v2, current M1 Hero/SEO preservation and pinned provenance mapping",
+    "Record add/edit/visibility archive/reorder within caps; manual CAS Save/idempotency",
+    "Version-compatible immutable snapshot/review and protected exact-value source checks",
+    "Authenticated full-site draft/snapshot preview plus APPROVED unpublished static QA export",
+    "Relevant M1+M2 tests, High checkpoints and local evidence/runbook/handoff"
+  ],
+  "excluded_actions": [
+    "M3 upload/Storage/quarantine/private new media/source uploads",
+    "M4 publication/current pointer/releases/rollback/full backup-restore",
+    "Cloud or production planning/deployment/live writes",
+    "Real accounts/PII/Firebase login/ADC/Blaze/billing/IAM",
+    "New variants/theme/page-builder/artwork generation",
+    "Backend lead/email/analytics/AI/payment/blog/portal/multilingual routes",
+    "Membership administration/self-review override/role-combination/autosave",
+    "Dependency upgrades/new packages/global tooling/plugin/Codex/sandbox/approval policy changes",
+    "Reset/reseed/delete M1/M2 drafts or immutable history"
+  ],
+  "draft_versions": {
+    "preserved": {
+      "draft_id": "home",
+      "schema_version": 1,
+      "template_version": "m1-hero-split-v1"
+    },
+    "proposed": {
+      "draft_id": "home-v2",
+      "schema_version": 2,
+      "template_version": "m2-site-baseline-v1"
+    }
+  },
+  "caps": {
+    "raw_mutation_bytes": 65536,
+    "logical_content_bytes": 262144,
+    "persisted_draft_bytes": 262144,
+    "snapshot_bytes": 262144,
+    "private_read_response_bytes": 262144,
+    "qa_input_bytes": 1048576,
+    "source_check_record_bytes": 8192,
+    "source_check_page_bytes": 131072,
+    "source_checks_per_action": 16,
+    "source_check_page_size": 50,
+    "source_group_envelope_max": 61,
+    "services": 12,
+    "projects": 24,
+    "client_logos": 12,
+    "gallery_additional_images": 12
+  },
+  "source_policy": "Exact canonical-value digest, immutable source checks; editor cannot verify and no actor can check/review own submitted Snapshot. New/changed factual groups require SOURCE_CHECKED for APPROVED/full QA. Unchanged imported baseline remains UNVERIFIED with warnings. Creative declaration explicit; legal rights not certified.",
+  "allowed_source_paths_relative_to_isolated_root": [
+    "admin/admin.css",
+    "admin/auth.mjs",
+    "admin/index.html",
+    "admin/preview.mjs",
+    "admin/review.mjs",
+    "admin/site-about-ip-editor.mjs",
+    "admin/site-contact-footer-editor.mjs",
+    "admin/site-editor.mjs",
+    "admin/site-fields.mjs",
+    "admin/site-services-editor.mjs",
+    "admin/site-settings-editor.mjs",
+    "admin/site-work-editor.mjs",
+    "admin/source-review.mjs",
+    "cms-api/authorization.mjs",
+    "cms-api/import-site.mjs",
+    "cms-api/index.mjs",
+    "cms-api/reviews.mjs",
+    "cms-api/routes.mjs",
+    "cms-api/site-drafts.mjs",
+    "cms-api/site-reviews.mjs",
+    "cms-api/site-snapshots.mjs",
+    "cms-api/snapshots.mjs",
+    "cms-api/source-checks.mjs",
+    "contracts/baseline-provenance.json",
+    "contracts/baseline-site.json",
+    "contracts/content-version.mjs",
+    "contracts/site-draft.mjs",
+    "contracts/site-records.mjs",
+    "contracts/site-settings.mjs",
+    "contracts/site.mjs",
+    "contracts/source-checks.mjs",
+    "docs/LOCAL-RUNBOOK.md",
+    "docs/M2-IMPORT-MAP.md",
+    "docs/M2-REVIEW.md",
+    "docs/PROJECT-STATE.md",
+    "docs/QA-M2.md",
+    "eslint.config.mjs",
+    "preview/site-interactions.css",
+    "preview/site-interactions.mjs",
+    "preview/site-public-data.mjs",
+    "preview/site-renderer.mjs",
+    "preview/site-sections.mjs",
+    "scripts/export-local.mjs",
+    "scripts/export-site-local.mjs",
+    "scripts/local-guard.mjs",
+    "scripts/map-baseline-site.mjs",
+    "tests/acl.rules.test.mjs",
+    "tests/fixtures/approved-site.json",
+    "tests/fixtures/m2-malicious.json",
+    "tests/fixtures/m2-tamper.json",
+    "tests/local-guard.test.mjs",
+    "tests/m1-compat.integration.test.mjs",
+    "tests/m2.e2e.test.mjs",
+    "tests/site-abuse.integration.test.mjs",
+    "tests/site-contract.test.mjs",
+    "tests/site-drafts.integration.test.mjs",
+    "tests/site-export.test.mjs",
+    "tests/site-hash.test.mjs",
+    "tests/site-import-map.test.mjs",
+    "tests/site-import.integration.test.mjs",
+    "tests/site-manifest.test.mjs",
+    "tests/site-private-files.local.test.mjs",
+    "tests/site-public.local.test.mjs",
+    "tests/site-records.local.test.mjs",
+    "tests/site-records.test.mjs",
+    "tests/site-renderer.test.mjs",
+    "tests/site-reviews.integration.test.mjs",
+    "tests/site-sections.local.test.mjs",
+    "tests/site-settings.local.test.mjs",
+    "tests/site-settings.test.mjs",
+    "tests/site-snapshots.integration.test.mjs",
+    "tests/site-source-coverage.test.mjs",
+    "tests/site-workflow.local.test.mjs",
+    "tests/source-checks.integration.test.mjs",
+    "vite.config.mjs"
+  ],
+  "allowed_ledger_paths_relative_to_repo_root": [
+    "approvals/APPROVAL-REGISTER.json",
+    "approvals/CMS-001-v2-M2-REGISTER.json"
+  ],
+  "frozen_review_bundle_paths_relative_to_repo_root": [
+    "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md",
+    "pinky-lamb-cms/tasks/M2-plan.md",
+    "approvals/CMS-001-v2-M2.scope.json",
+    "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md"
+  ],
+  "generated_output_allowlist_relative_to_isolated_root": [
+    ".local/cache/m2/",
+    ".local/test-results/",
+    ".local/test-outputs/m2/",
+    ".preview-output/m2/",
+    "admin-dist/"
+  ],
+  "read_only_paths_relative_to_isolated_root": [
+    "public-baseline/",
+    "contracts/hero.mjs",
+    "contracts/draft.mjs",
+    "contracts/legacy-assets.json",
+    "preview/hero-renderer.mjs",
+    "infra-local/firebase.json",
+    "infra-local/firestore.rules",
+    "package.json",
+    "package-lock.json",
+    "cms-api/package.json",
+    "scripts/seed-emulators.mjs"
+  ],
+  "task_ids": [
+    "CMS-M2-00",
+    "CMS-M2-00b",
+    "CMS-M2-01a",
+    "CMS-M2-01b",
+    "CMS-M2-02",
+    "CMS-M2-03",
+    "CMS-M2-04",
+    "CMS-M2-05a",
+    "CMS-M2-05b",
+    "CMS-M2-06",
+    "CMS-M2-07",
+    "CMS-M2-08",
+    "CMS-M2-09",
+    "CMS-M2-10",
+    "CMS-M2-11",
+    "CMS-M2-12",
+    "CMS-M2-13",
+    "CMS-M2-14",
+    "CMS-M2-15",
+    "CMS-M2-16",
+    "CMS-M2-17",
+    "CMS-M2-18",
+    "CMS-M2-19"
+  ],
+  "execution_order": [
+    "CMS-M2-00",
+    "CMS-M2-00b",
+    "CMS-M2-01a",
+    "CMS-M2-01b",
+    "CHECKPOINT_A",
+    "CMS-M2-02",
+    "CMS-M2-03",
+    "CHECKPOINT_B",
+    "CMS-M2-04",
+    "CMS-M2-06",
+    "CMS-M2-05a",
+    "CHECKPOINT_C",
+    "CMS-M2-05b",
+    "CMS-M2-07",
+    "CMS-M2-08",
+    "CHECKPOINT_D",
+    "CMS-M2-09",
+    "CMS-M2-10",
+    "CHECKPOINT_E",
+    "CMS-M2-11",
+    "CMS-M2-12",
+    "CMS-M2-13",
+    "CHECKPOINT_F",
+    "CMS-M2-14",
+    "CMS-M2-15",
+    "CHECKPOINT_G",
+    "CMS-M2-16",
+    "CMS-M2-17",
+    "CHECKPOINT_H",
+    "CMS-M2-18",
+    "CMS-M2-19"
+  ],
+  "tasks": [
+    {
+      "id": "CMS-M2-00",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "HIGH",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/docs/M2-REVIEW.md",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "approvals/APPROVAL-REGISTER.json",
+          "writer_role": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-00b",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/local-guard.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/eslint.config.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/vite.config.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-private-files.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-01a",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/contracts/site-settings.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/site-records.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-settings.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-records.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-01b",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/contracts/site.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/site-draft.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/content-version.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-contract.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/fixtures/m2-malicious.json",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-02",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/scripts/map-baseline-site.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/baseline-site.json",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/baseline-provenance.json",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/docs/M2-IMPORT-MAP.md",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-import-map.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-03",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/cms-api/import-site.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/routes.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/index.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/authorization.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-import.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-04",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/cms-api/site-drafts.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/routes.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/index.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-drafts.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-05a",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/contracts/source-checks.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/source-checks.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/source-checks.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-05b",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/cms-api/routes.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/index.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/authorization.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/source-checks.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-06",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/cms-api/site-snapshots.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/snapshots.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/routes.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-snapshots.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/m1-compat.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-07",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/cms-api/site-reviews.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/cms-api/reviews.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/contracts/source-checks.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-reviews.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/source-checks.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-08",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/preview/site-renderer.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/preview/site-sections.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/preview/site-public-data.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-renderer.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-09",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/preview/site-interactions.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/preview/site-interactions.css",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-public.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-10",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/scripts/export-site-local.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/scripts/export-local.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-export.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/fixtures/approved-site.json",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-11",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/admin/site-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-fields.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/auth.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/index.html",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/admin.css",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-12",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/admin/site-settings-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-settings.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-13",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/admin/site-work-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-services-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-records.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-14",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/admin/site-about-ip-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-contact-footer-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-sections.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-15",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/admin/preview.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/review.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/source-review.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/admin/site-editor.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-workflow.local.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-16",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/local-guard.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/acl.rules.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-abuse.integration.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/eslint.config.mjs",
+          "writer_role": "MEDIUM_IMPLEMENTATION"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-17",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/tests/m2.e2e.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-manifest.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-hash.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/site-source-coverage.test.mjs",
+          "writer_role": "MEDIUM_QA"
+        },
+        {
+          "path": "pinky-lamb-cms/tests/fixtures/m2-tamper.json",
+          "writer_role": "MEDIUM_QA"
+        }
+      ]
+    },
+    {
+      "id": "CMS-M2-18",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "MEDIUM",
+      "max_files": 5,
+      "files": []
+    },
+    {
+      "id": "CMS-M2-19",
+      "status": "PLANNED_WAIT_APPROVAL",
+      "owner_effort": "HIGH",
+      "max_files": 5,
+      "files": [
+        {
+          "path": "pinky-lamb-cms/docs/M2-REVIEW.md",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "pinky-lamb-cms/docs/QA-M2.md",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "pinky-lamb-cms/docs/LOCAL-RUNBOOK.md",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "pinky-lamb-cms/docs/PROJECT-STATE.md",
+          "writer_role": "HIGH"
+        },
+        {
+          "path": "approvals/CMS-001-v2-M2-REGISTER.json",
+          "writer_role": "HIGH"
+        }
+      ]
+    }
+  ],
+  "checkpoint_writer": {
+    "role": "HIGH",
+    "path": "pinky-lamb-cms/docs/M2-REVIEW.md"
+  },
+  "acceptance_ids": [
+    "M2-AC01",
+    "M2-AC02",
+    "M2-AC03",
+    "M2-AC04",
+    "M2-AC05",
+    "M2-AC06",
+    "M2-AC07",
+    "M2-AC08",
+    "M2-AC09",
+    "M2-AC10",
+    "M2-AC11",
+    "M2-AC12",
+    "M2-AC13",
+    "M2-AC14",
+    "M2-AC15"
+  ],
+  "acceptance_reference": "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md §8",
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/CMS-001-v2-M2-PROPOSAL.md",
+      "sha256": "5d4bdccfba26a902dfd21b604eeb5bc05d47588f17a7fe07488fe9e5e323ecd3"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/M2-plan.md",
+      "sha256": "e51a02944dbd73e5309eeabc195a8b95bbcd1caefe290ecf92094eb512290f2d"
+    },
+    {
+      "path": "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md",
+      "sha256": "a27111520288d3d78d21a0378592ce92e1486977ca4946bc7058ec0d04c902a8"
+    }
+  ],
+  "base": {
+    "kind": "export_without_git",
+    "baseline_source_commit_provenance": "739fbe1752fdda64e328f4b46cecd292059b05b1",
+    "actual_git_head": null,
+    "m1_source_inventory": [
+      {
+        "path": ".gitignore",
+        "size_bytes": 130,
+        "sha256": "c29fae28e12987e4e71c0472c4bec9aa2ffa4c7ec91a5dab57435a507863ea4b"
+      },
+      {
+        "path": "admin/admin.css",
+        "size_bytes": 3750,
+        "sha256": "442c3a0722f8df4d8736066fa7a350677c1b7d5a93f700a324e85ef2a0ef243a"
+      },
+      {
+        "path": "admin/auth.mjs",
+        "size_bytes": 4852,
+        "sha256": "af668cbaf9584fd4b6926f45ed049615d943fdc968ed04d153f0169c2e0088ad"
+      },
+      {
+        "path": "admin/config-local.mjs",
+        "size_bytes": 587,
+        "sha256": "6579fb359a68a922f622f713d4d4dfd2438bea8779c8b14648a0e262dae9187e"
+      },
+      {
+        "path": "admin/hero-editor.mjs",
+        "size_bytes": 15705,
+        "sha256": "dd47b66c81cb81a19f4f4d7cda730e8847e9dfbb12096f9af9b68357e1ad9de9"
+      },
+      {
+        "path": "admin/index.html",
+        "size_bytes": 2035,
+        "sha256": "f1070467ab1f71c9e364170fcb447bcd2b6de127e51541a539868d86e329db25"
+      },
+      {
+        "path": "admin/media-picker.mjs",
+        "size_bytes": 2748,
+        "sha256": "84798ae25f5121a81171ed033dc145676016e7377eab9041cd965f9f300a1ffd"
+      },
+      {
+        "path": "admin/preview.mjs",
+        "size_bytes": 5626,
+        "sha256": "1e1f038c2735d9b3cc2ebdffcfb13c716c2c343f89be4e4911d968f1380a1260"
+      },
+      {
+        "path": "admin/review.mjs",
+        "size_bytes": 7487,
+        "sha256": "d35527e742d70adffa517bb9e80ccd5c85d1c609534cffcd3eb3d100620044bd"
+      },
+      {
+        "path": "cms-api/authorization.mjs",
+        "size_bytes": 2786,
+        "sha256": "0c69e6b0d4d556f0feaef8963d6434175f3ab80304dd50109d09ce0da0508f3c"
+      },
+      {
+        "path": "cms-api/drafts.mjs",
+        "size_bytes": 7726,
+        "sha256": "a5133511a2c3aad217d1fceaf24f30aeb27818f937b73d19eef966d9de99eed7"
+      },
+      {
+        "path": "cms-api/index.mjs",
+        "size_bytes": 2962,
+        "sha256": "889748c5154df9b8cae1a258e6f9c5d3fc599e196b14d392d7b4c24f12bd96be"
+      },
+      {
+        "path": "cms-api/package.json",
+        "size_bytes": 273,
+        "sha256": "9286f0676ee8c420e599827a7aaea28360e76227cd3dc508353b794f5c30fb8e"
+      },
+      {
+        "path": "cms-api/reviews.mjs",
+        "size_bytes": 5333,
+        "sha256": "d6ba3bfcb767ebe22b6173756770fe66a38ddb5cfb37f96009bef714224db1c2"
+      },
+      {
+        "path": "cms-api/routes.mjs",
+        "size_bytes": 3198,
+        "sha256": "f7f5449b1d4bf6c8abea168a9204b581629dd28b708fe4488fbfd9ae24b0afbc"
+      },
+      {
+        "path": "cms-api/snapshots.mjs",
+        "size_bytes": 12125,
+        "sha256": "e5884eb4e2c709085711afa942e254b8cd416273021843424b3c7b89ee47bf78"
+      },
+      {
+        "path": "contracts/draft.mjs",
+        "size_bytes": 2510,
+        "sha256": "aa37c802395ef120191dec488c55f95c8336be21df7ebdb3652a9b8dc5e445f3"
+      },
+      {
+        "path": "contracts/errors.mjs",
+        "size_bytes": 3261,
+        "sha256": "e017d6d29b12274de531c3426d59926f837e46c1b3100bb01a9264b00dee7609"
+      },
+      {
+        "path": "contracts/hero.mjs",
+        "size_bytes": 5062,
+        "sha256": "8ac039cdd35098c3d26dd81e7e27c3023e8d8cf2151dbd365d1b550e183eceb9"
+      },
+      {
+        "path": "contracts/legacy-assets.json",
+        "size_bytes": 20137,
+        "sha256": "26ae46ffbd72bb6a4d3f001f9e7e5601f25eb29db93360a86ec91549f1016b5e"
+      },
+      {
+        "path": "docs/ADR-001.md",
+        "size_bytes": 12813,
+        "sha256": "9044d1d72a8a9a9b17599b9383669e542862f7ab6f5cf8f33d72cae251c95738"
+      },
+      {
+        "path": "docs/CHECKPOINT-A.md",
+        "size_bytes": 9168,
+        "sha256": "7e1af1dd9f6d55bcf6d72aac85ef492fe7337ecdb02cd71d6d8b32f315bdbaaf"
+      },
+      {
+        "path": "docs/CHECKPOINT-B.md",
+        "size_bytes": 9810,
+        "sha256": "605a87a6e8be20c69eb88d4cea91e851f1dcb3c1f629f02c2c073b4aedcc7652"
+      },
+      {
+        "path": "docs/DEPENDENCIES.md",
+        "size_bytes": 14739,
+        "sha256": "c8db1a2b5a2ada2015eaa00835c2b9ddcb87beb96fbeec4ac363626b11ee6c52"
+      },
+      {
+        "path": "docs/LOCAL-RUNBOOK.md",
+        "size_bytes": 8403,
+        "sha256": "bb87aa06111a54d6b9a8f2cd0cedb40b44530153749f72a9bc48dec7bbcd0791"
+      },
+      {
+        "path": "docs/M1-REVIEW.md",
+        "size_bytes": 10052,
+        "sha256": "5fd013e87bcdf1387044798a0cf02aae4f8759fd469071cb54ca19e8cc1af251"
+      },
+      {
+        "path": "docs/PROJECT-STATE.md",
+        "size_bytes": 2260,
+        "sha256": "a8a9c0424b9834b0db86dd2df866c60232350493ff55debf0391993a4a96b41b"
+      },
+      {
+        "path": "docs/QA-M1.md",
+        "size_bytes": 8810,
+        "sha256": "bba773918394543e25772a5bd179fa202bb6d940f48aeb2e9c8daa39a05022d5"
+      },
+      {
+        "path": "docs/SPEC-cms-content.md",
+        "size_bytes": 39338,
+        "sha256": "786d54aae0110cc752ae933b62b9b3cf7dd827999c7cffed4ff0b9f552329f2e"
+      },
+      {
+        "path": "docs/SPEC-cms-identity.md",
+        "size_bytes": 19544,
+        "sha256": "cd84de58e4b8d5e48d1e0bea86e442ccffaf2ad4472a84ce3b57aa7fc0727de1"
+      },
+      {
+        "path": "eslint.config.mjs",
+        "size_bytes": 521,
+        "sha256": "32ef4528a265a2a1bcd57478574a9cd30332614cdeb420a7b11d647fdf01dd65"
+      },
+      {
+        "path": "infra-local/firebase.json",
+        "size_bytes": 1315,
+        "sha256": "636d3dc1e0486b13a731f97fe959c04b742745311bbfd8e9b84f63f196db78ac"
+      },
+      {
+        "path": "infra-local/firestore.rules",
+        "size_bytes": 229,
+        "sha256": "c26d81412146f210eafc466649f636a7902d68834ddce44f49f6725c9809a268"
+      },
+      {
+        "path": "package-lock.json",
+        "size_bytes": 427691,
+        "sha256": "6f116655a61641393ecad84c64eff7e72c7c81a3aa9d7f957d9cb8f81ee023ea"
+      },
+      {
+        "path": "package.json",
+        "size_bytes": 1172,
+        "sha256": "a93f640fbeeba8723d567679c68993555e5bc8b5c2bf3d2fc3383175d738e54d"
+      },
+      {
+        "path": "preview/hero-renderer.mjs",
+        "size_bytes": 9372,
+        "sha256": "36d5cc9bda0b4f65c4d6846c2e9ee7025c9219991aa8b2eac77bc3e3c1b7fbe2"
+      },
+      {
+        "path": "preview/preview.css",
+        "size_bytes": 903,
+        "sha256": "0e2c21605908f2082287183e38e29b34a8da76bc2b67e1fd0c6660f221148070"
+      },
+      {
+        "path": "scripts/export-local.mjs",
+        "size_bytes": 12874,
+        "sha256": "b4f5c7a4e2e1543d05d8ac8debf67c95ad9705415abdbd3d02b35386a901060e"
+      },
+      {
+        "path": "scripts/local-guard.mjs",
+        "size_bytes": 17442,
+        "sha256": "f59bee8ff80a31d100c8e1348eda1532e30de5e4561c64f49136fe3a2d12d7ff"
+      },
+      {
+        "path": "scripts/seed-emulators.mjs",
+        "size_bytes": 3771,
+        "sha256": "183a3f874e89634036e5b1fa3f2b2290e7b87810fa2c8ea4ed04c2506190fa42"
+      },
+      {
+        "path": "tests/acl.rules.test.mjs",
+        "size_bytes": 8493,
+        "sha256": "28a17855a798d6dbc8340daf266e3f1dd5f16b861f9451b3d4ea3bf28b0cd954"
+      },
+      {
+        "path": "tests/drafts.integration.test.mjs",
+        "size_bytes": 13722,
+        "sha256": "c45a459d9a77f5ea518094e3408697574b8e6306c3bae09bde872d7866b83f55"
+      },
+      {
+        "path": "tests/fixtures/approved-hero.json",
+        "size_bytes": 5409,
+        "sha256": "364f4c393753a8505694efd7f454bfa8740e3c7ba2d51fe5252450397364fd3d"
+      },
+      {
+        "path": "tests/fixtures/malicious-hero.json",
+        "size_bytes": 930,
+        "sha256": "670749fb60c69935911ec5a9873862c6254b4c758421939cd1a63b0f100e5f67"
+      },
+      {
+        "path": "tests/hero-contract.test.mjs",
+        "size_bytes": 7174,
+        "sha256": "593d3715f333e4e3902f54a2427e7bf400db700091a6e37f6dccec66a3358fff"
+      },
+      {
+        "path": "tests/hero-editor.local.test.mjs",
+        "size_bytes": 27623,
+        "sha256": "177ec6c32f912c37e979f395ef5e9ee7d42dcdb58a01a2d1c2c69b430aa73f4a"
+      },
+      {
+        "path": "tests/hero-renderer.test.mjs",
+        "size_bytes": 5041,
+        "sha256": "91e7a407a2d8cc455eb57664788907b40ea4df645fc92a59c9b99104a37bb581"
+      },
+      {
+        "path": "tests/local-guard.test.mjs",
+        "size_bytes": 8095,
+        "sha256": "936e6da272d2abedec06766ea7b01c50369b9febd97a6f3474b1a93e0d2ef99b"
+      },
+      {
+        "path": "tests/login.local.test.mjs",
+        "size_bytes": 10554,
+        "sha256": "9aed9f42e1df620196194a472cd5274215274b480f75685bbaa1b4bb7121c928"
+      },
+      {
+        "path": "tests/m1.e2e.test.mjs",
+        "size_bytes": 33165,
+        "sha256": "b60aae6b2824062a07ecbad7301b3fe4e0d521ef2b71a79d97afca43093fe694"
+      },
+      {
+        "path": "tests/review.integration.test.mjs",
+        "size_bytes": 19769,
+        "sha256": "f21d88818c6ba66b6789c3f7a55ec8d45eceeaf2228b09a82f52594ba2fcc492"
+      },
+      {
+        "path": "vite.config.mjs",
+        "size_bytes": 1792,
+        "sha256": "7dda3e8c71048137694516bb3f0e9982b6f805d2216277b1d0bf6d5d64f8f3b9"
+      }
+    ],
+    "m1_source_count": 52,
+    "m1_preservation_evidence_path": "pinky-lamb-cms/.local/cache/preservation-final.json",
+    "m1_preservation_evidence_sha256": "4c8994f4a39f03be455f562d8a99ff12cb48b2e4b6c44d046371c43c167754f8",
+    "m1_scope_path": "approvals/CMS-001-v2.scope.json",
+    "m1_scope_file_sha256": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30",
+    "m1_canonical_scope_sha256": "f9cf3bca6fe7efb3dd8a697d05a97f0b9a420388eea8a2a564b9569d3ba99211",
+    "m1_register_sha256_before_acceptance": "1395c5e8cfd879cda10144861c4e25c15f14d1fc3d7aa4ed68bfb57c44aead9c",
+    "frozen_root_documents": [
+      {
+        "path": "docs/CMS-PROPOSAL-CMS-001-v2.md",
+        "sha256": "d9a5b04f332f9c554a674686e6ed90d1c678f94bc741f6e8575b8a1dfb6ec597"
+      },
+      {
+        "path": "docs/CMS-ARCHITECTURE.md",
+        "sha256": "605136a3d01b455ea9d82e256cf10945b977df62b0de1306f34940e016983087"
+      },
+      {
+        "path": "tasks/plan.md",
+        "sha256": "33b9d6f7b005acc36b2c7c7cde836dcc1e84270dce7beb497fe0451247176ab9"
+      },
+      {
+        "path": "tasks/todo.md",
+        "sha256": "53e531ee4a1d710be762d184372a6544ed84a795256a3c62a293a7c7334ff51b"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "e8c8d8a08b2db7e82bf7a2d8bf09639d4e5fd5b430a3ec83ba4d1e8eab552522"
+      },
+      {
+        "path": "docs/APPROVAL-PROTOCOL.md",
+        "sha256": "d2fa05f7c28680d90a220e11ebf49aa4868f6de6684bef87c7e55bc799e36ba5"
+      },
+      {
+        "path": "docs/ENGINEERING-WORKFLOW.md",
+        "sha256": "51dfa8f35b76ed4963ff3c6928b288d5ef469a0d9d21d4332b3318045ccc65f0"
+      },
+      {
+        "path": "engineering/SKILLS-LOCK.json",
+        "sha256": "527c5c89fd1295df633e68a14b75fe431fac582bcc8120830fb346acf19f0dfc"
+      },
+      {
+        "path": "docs/QA-AND-DOD.md",
+        "sha256": "b3febad0c9d5d72f5033162d22324bb2aa30dd9d909b7047ca3ecd1deb84931f"
+      },
+      {
+        "path": "PROMPT-CODEX-GPT-6.1-SOL-HIGH.md",
+        "sha256": "51238ef9be3fa8b4bbee623072682965d7c40c999ffed116a6319129a58f98d7"
+      },
+      {
+        "path": "START-HERE.md",
+        "sha256": "f963761e4f535681be14825697e527d2dd78aaa6af89f511a5d9531c532e184a"
+      },
+      {
+        "path": "README.md",
+        "sha256": "b0fe3fb31b500caea99ab638e684984348147fcd609e93799d93453f55bad6f6"
+      },
+      {
+        "path": "docs/IMPLEMENTATION-PLAN.md",
+        "sha256": "f72ee32fc6980d0c28f1495fb8bb56ef4de3df36931a77e889bcc30fc3756fdf"
+      },
+      {
+        "path": "docs/DEPLOYMENT.md",
+        "sha256": "a0318c31163614d777eb8799dd5f64dc5757e26c9536feab221281b2c55374c7"
+      },
+      {
+        "path": "docs/HANDOFF-REVIEW.md",
+        "sha256": "47dbc7ee3eaa64842486ff52fe60611ead258348853bd018a48ee78e143341f5"
+      },
+      {
+        "path": "docs/PROJECT-STATE.md",
+        "sha256": "a4da36940c038f785a35ced106eac9eb87d750fc547b76a320c0c369e042e9b5"
+      },
+      {
+        "path": "docs/HANDOFF-NOTES.md",
+        "sha256": "8ff5eb25abc0addab50d0a54387f28f3afbb318091a9ecc0f358ab798c652f37"
+      },
+      {
+        "path": "DESIGN.md",
+        "sha256": "408bd9897c3409230690597f14e21a42c686f32a344c9ad7934c86337ce51743"
+      }
+    ],
+    "baseline_inventory_reference": "approvals/CMS-001-v2.scope.json:baseline_preserved_file_inventory",
+    "baseline_count": 93,
+    "readonly_public_copy_count": 40,
+    "vendor_commit": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
+    "vendor_lock_path": "engineering/SKILLS-LOCK.json",
+    "vendor_entries": 212,
+    "lockfile_sha256": "6f116655a61641393ecad84c64eff7e72c7c81a3aa9d7f957d9cb8f81ee023ea",
+    "permitted_preimplementation_m1_register_delta": "Only record direct human M1 acceptance/Closed with quote/time/reference; preserve execution records and approval history. Other base drift must be reviewed."
+  },
+  "freeze_observed_at_utc": "2026-10-11T07:53:25.500755+00:00",
+  "local_completion": "M2_REVIEW_READY_TARGET_NOT_LOCAL_COMPLETE",
+  "production_scope": "EXCLUDED_NOT_PLANNED",
+  "planning_review": {
+    "status": "PASS_PLANNING_ONLY",
+    "reviewer": "Existing High architect /root/m1_architect; scoped read-only review",
+    "review_file": "pinky-lamb-cms/docs/M2-PLANNING-REVIEW.md",
+    "implementation_authorized": false,
+    "runtime_checks_m2": "NOT_RUN"
+  },
+  "planning_preservation_checks": {
+    "observed_at_utc": "2026-10-11T07:51:34.405991+00:00",
+    "status": "PASS_STATIC_PLANNING_PRESERVATION",
+    "m1_source_hashes_unchanged": 52,
+    "baseline_hashes_unchanged": 93,
+    "root_frozen_documents_unchanged": 18,
+    "readonly_public_copies_unchanged": 40,
+    "vendor_entries_unchanged": 212,
+    "historical_root_manifest_entries": 328,
+    "historical_root_manifest_only_difference": "approvals/APPROVAL-REGISTER.json",
+    "m1_register_unchanged_from_m2_base": true,
+    "m2_implementation_source_edits": 0
+  }
+}

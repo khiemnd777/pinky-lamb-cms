@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "appliedPaths": 19,
+  "beforePackageRecords": 183,
+  "protectedCmsSourceRecords": 656,
+  "allAfterHashes": "MATCH",
+  "helperSha256": "324e776013bd190763b017d424244d90e361a43d131ae845846acc980e9dd00a",
+  "runtimeApproval": "Ordinary require_escalated approval for exact protected package application; exit0"
+}

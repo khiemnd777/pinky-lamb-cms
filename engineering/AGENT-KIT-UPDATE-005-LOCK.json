@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-005 v1",
+  "approvalSource": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-005.md",
+  "baseline": {
+    "path": "docs/agent-kit/evidence/update-005-preflight.json",
+    "sha256": "ab007b17ead33c66a1e309b554fd27fc93abe3222c63781ddc5c74700297e280"
+  },
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "51b1c810a9920be7fe3957ce454fc25fedf7b155",
+    "headCommit": "ea72429b4c3cd80296b7ad75139431eb944aa319",
+    "fetchedPayloadSha256": "1fecaff645c5a0030bb887f6b94a9c92379ed135504de940e4715f76bdf2bbe0",
+    "fetchedFiles": [
+      {
+        "path": ".claude/agents/kit-explorer.md",
+        "gitBlobSha": "7b981060db63dc30325f703b0e10879d7afb2d6f",
+        "contentSha256": "5e730d6658025cfaf47755cb85a9dc6981b3f262b1c528e29d08f855137ac308",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/.claude/agents/kit-explorer.md"
+      },
+      {
+        "path": ".claude/agents/kit-reviewer.md",
+        "gitBlobSha": "c458dfb71ae212905e668b5a78cb40517ec1ebb4",
+        "contentSha256": "3520b42ee31bbe644ca46c9f70c78371c7f81dce3a437e6375afaacc8099162b",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/.claude/agents/kit-reviewer.md"
+      },
+      {
+        "path": ".codex/agents/kit-explorer.toml",
+        "gitBlobSha": "48c9b4ed684c618b22c96b63c02c87c035a42ddf",
+        "contentSha256": "029bb3067023a52f6e6b8b7a282dc740b6c3ffb10290d23296f1681978508a92",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/.codex/agents/kit-explorer.toml"
+      },
+      {
+        "path": ".codex/agents/kit-reviewer.toml",
+        "gitBlobSha": "f8d2a2457c0463a7291631aa57d7f92bb31799ff",
+        "contentSha256": "deabc935e33f879a5a136c41178dd45e9b46eaecfd13a058e060e58cbd298873",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/.codex/agents/kit-reviewer.toml"
+      },
+      {
+        "path": "AGENTS.md",
+        "gitBlobSha": "413e74c0d95d960711afae70d1c92304989acd89",
+        "contentSha256": "0fc15c9d3713cdc7db79babf4b73498b039a5229b7fc68863b3aafc07df307b1",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/AGENTS.md"
+      },
+      {
+        "path": "README.md",
+        "gitBlobSha": "92a9565dfc6019e0af08848ae95fb65e7a50f841",
+        "contentSha256": "97c9c3b68c9e23acfd7d7c7e788a02a656bfd4f00ba5bcfd7a8293b58f76c4b7",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/README.md"
+      },
+      {
+        "path": "docs/agent-compatibility.md",
+        "gitBlobSha": "73205e01c3744fde1a9c913e464ef947ff506880",
+        "contentSha256": "c92514826b98a19118bbf275f9cc9b98269e8ae71263c775639c5417604e643c",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/agent-compatibility.md"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "ffd95e68559e36736a3dbfcaaa41d424d145b499",
+        "contentSha256": "81f1cd71103c895016a4bfbaf83ccf2ff115d9f9994340596d32a017ec52f125",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/agent-coordination-templates.md"
+      },
+      {
+        "path": "docs/model-routing.md",
+        "gitBlobSha": "0df223c66abeb436c57ba00af2149b6d6add9b65",
+        "contentSha256": "2f1ba8e4b5122c9ddf835c7abcff8274f99e6561bc088a5b88e6ea33667a812e",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/model-routing.md"
+      },
+      {
+        "path": "docs/roles/explorer.md",
+        "gitBlobSha": "1cbb932b0fce87275782b589d1d6125d42735bd7",
+        "contentSha256": "904314740059decec76d09c7ac43e593f05c68c3dd0398bd5de2c6122b6545c4",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/roles/explorer.md"
+      },
+      {
+        "path": "docs/roles/reviewer.md",
+        "gitBlobSha": "34cf78020b90f3f21aa09f7ded32f3f2c2dc0542",
+        "contentSha256": "389bfdf6b0b94ae829adc8417e5046ba344419469714f62e7173a35a0b1d3288",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/roles/reviewer.md"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "1a76ef239506d268fef06ab56d5cbc9c69d3b904",
+        "contentSha256": "1f6c5910890ed9bcd66f446a4ca7a87aca1dd08f05c5e9d4e94bfaea97a1fc74",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/skills-manifest.json"
+      },
+      {
+        "path": "docs/tasks/TASK-001.md",
+        "gitBlobSha": "1fa808b1f116bdf26b45752aab746e756000d8df",
+        "contentSha256": "c42dff5e50c1d0bccfaf94a05ffe520ca5a1aac55f8b777fa97b61f5a3322ffb",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/tasks/TASK-001.md"
+      },
+      {
+        "path": "docs/tasks/TASK-002.md",
+        "gitBlobSha": "394dce3ebd98f4141109b2ff30ceca69952e28c4",
+        "contentSha256": "abc95b34bfc1c66a68a761a28c50a7cdde4c99475f9a8a5c032578bcbc24a580",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/tasks/TASK-002.md"
+      },
+      {
+        "path": "docs/tasks/TASK-003.md",
+        "gitBlobSha": "add9c865f79f956619159e0535449ec725f6abc5",
+        "contentSha256": "90a2c5249eb5e2e64c57d9cb27f6a5997640eb2dca08edda89e4a5b5a53a9147",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/tasks/TASK-003.md"
+      },
+      {
+        "path": "docs/team-policy.md",
+        "gitBlobSha": "d12034f9cb9b58bd68f18fddc22a1249100a29d9",
+        "contentSha256": "3057a612eaf71173a1c7df4d9de48152210f927f89be6a4f6339b5a87e571f8b",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/team-policy.md"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "98803fecb53d7ee9f9195024f9be9202d1fbdd33",
+        "contentSha256": "c957c7cd1415194d8d1e09beb38e81b97e127c2f693c73bf2a8eddf130f79144",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/verification-guide.md"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "b46869c981a4e6b2854d23d71599ad1681befe3f",
+        "contentSha256": "61d490157ba7accace64d8225996074f5a49831738c26fcb8fe2d9b478b9395c",
+        "url": "https://github.com/khiemnd777/agent-kit/blob/ea72429b4c3cd80296b7ad75139431eb944aa319/docs/verification-results.md"
+      }
+    ]
+  },
+  "amendments": [
+    {
+      "path": ".claude/agents/kit-explorer.md",
+      "fromSha256": "2deb9c3ce2e3fa0b8a6bff8bf11eb944116757ab6a6324d102f314101e257739",
+      "toSha256": "8e80a38f893020cf12fe0c0b709c7d9d22c474af250a89a6398dccc2b70d141a"
+    },
+    {
+      "path": ".claude/agents/kit-reviewer.md",
+      "fromSha256": "154237d54143bbade7e7417b75b971d23c7e0ab4a638905ec5b415fc6d43b4f3",
+      "toSha256": "bed4a31fa817e0f11286e4d5a313c9b18b996931235268b342b4c1f4780ff60e"
+    },
+    {
+      "path": ".codex/agents/kit-explorer.toml",
+      "fromSha256": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      "toSha256": "bf9999b74d053d03de528eb4aafa9067603d77f85eeb52227398710e85666fdd"
+    },
+    {
+      "path": ".codex/agents/kit-reviewer.toml",
+      "fromSha256": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "toSha256": "66e55e7be64e5e6f1ec233680cf9df4cd0e5d9a52c64a25d7a79c4e220895f53"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "fromSha256": "eb099b185d4b0273f0a07a62a38a5510c62257149dd467e6b3156ecb9e86e7cb",
+      "toSha256": "763b198c109b1ccea1d687e2f0b2c30689e08dac2967f459e7508ee18665e1e3"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "fromSha256": "ce547974c6911c0d7f51ae9005fe41a00df0447880676646f1eea2f6ef38b652",
+      "toSha256": "2b11ac4f30a1aaa29453083d986f1c74a01a8cdb64225bdda5c4daddb97f0082"
+    },
+    {
+      "path": "docs/agent-kit/roles/explorer.md",
+      "fromSha256": "ea503477bd5b2ef3982de5ecced8ccd0d64f2cde7eb1ab135ada92d8e22aad90",
+      "toSha256": "5a37196f9aa95ffbd554115c3aabbd979c785eb59ba011e8541ad0817af8fdee"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "fromSha256": "2751a2920f6c80b5985060e885358ba9358fbd21b567bd67c15822a7b7a10755",
+      "toSha256": "c046dcc66faa52747cc4367a2600dea4877f28f7c20a86edfb1a5b01a976e16f"
+    },
+    {
+      "path": "docs/agent-kit/model-routing.md",
+      "fromSha256": "a3c7c2340cbbc8d5bbbbecf581878038b9e7c67eec320df5c2bd1ca7d1196ccb",
+      "toSha256": "ef6720e8654c15b64e06b7b957128be5c0bcf6cd05399df82026541a7df2c6eb"
+    },
+    {
+      "path": "docs/agent-kit/agent-compatibility.md",
+      "fromSha256": "ef2bd056132f44e6029109c472759a46923d8a9e52ef8d6c3ab168a1f4a18caf",
+      "toSha256": "6484c7d7f82a83a565267bc7716b3a9b9965a2da56da710044ce54c060397da7"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "fromSha256": "4cabd27549c0f1aade8cd7afc1a12c00253b76e82c2a33796a86b1c25677ca59",
+      "toSha256": "71722244561d932be2ff2f9caf2483d5c1951a2f417717e1c9bbce19a13d035e"
+    },
+    {
+      "path": "AGENTS.md",
+      "fromSha256": "fcf28a565c1b4449a59f846ac661a7e945475efcc8bc83fadafb6b638eaad03c",
+      "toSha256": "05c8979147391b5a4cf9da0f8a0ebf7a51b0052e5be82ec7b7a059e44cad2541"
+    }
+  ],
+  "checker": {
+    "path": "engineering/agent-kit/verify-role-update.py",
+    "sha256": "e7eac5db9501d7922fd9262c6db3ff64da95c028aa72bea543ab2cbbef63ee5f"
+  },
+  "historicalBoundary": "Preserve all prior receipts, base/004 locks/checkers and GLOBAL_PRESERVATION_HOLD. Current005 package and preservation only; native/V18/fixture/two-machine NOT_RUN; Permission003 CLOSED and twochilddirectwriteNOT_RUN; observed runtime Unknown."
+}

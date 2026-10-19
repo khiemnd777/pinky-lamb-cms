@@ -1,0 +1,49 @@
+{
+  "observedAtUtc": "2026-10-12T15:44:58.037112+00:00",
+  "selector": "kit-explorer",
+  "scope": "Root-controlled fresh ephemeral startup lookup only",
+  "rawPromptGlobalConfigPersisted": false,
+  "globalConfigurationWrites": "NONE",
+  "ephemeralRequested": true,
+  "attempt": "attempt3",
+  "controllerSourceSha256": "6bc817df101aebfbef96ca68dd04877930ff19b98e5e53847f33a4f2dda7d194",
+  "controllerVersion": "matched-native-output-and-owned-child-metadata-v3",
+  "requestedParentModel": "gpt-6.1-sol",
+  "requestedParentEffort": "high",
+  "promptSha256": "13fe0edf961d133c87939a1aeb871e0d7df9732d71d11817d8f9913fc54ba473",
+  "nativeAgentEvidence": [],
+  "rawNativeCalls": [
+    {
+      "name": "spawn_agent",
+      "agentType": "kit-explorer"
+    }
+  ],
+  "matchedSpawnOutputs": [
+    {
+      "callId": "call_7155c0a2aa6648e195874c8727865a51",
+      "selector": "kit-explorer",
+      "outputSha256": "0af426325fffdf2c069f0e7ee361a04cce4ccf747aab8d362d336959b6d7e3f5",
+      "outputBodyType": "str",
+      "resultStatus": "UNCLASSIFIED_NATIVE_OUTPUT",
+      "parsedObjectKeys": []
+    }
+  ],
+  "ownedChildStartedMetadata": [],
+  "toolTypesObserved": [
+    "agentMessage",
+    "userMessage"
+  ],
+  "modelTextIsDiscoveryProof": false,
+  "threadEphemeralObserved": true,
+  "parentConfiguredModel": "gpt-6.1-sol",
+  "parentConfiguredReasoningEffort": "high",
+  "parentConfiguredModelIsExecutionProof": false,
+  "nativeProjectAgentInstructionSourcePaths": [],
+  "parentTurnStatus": "completed",
+  "parentTurnErrorCode": null,
+  "childrenMetadata": [],
+  "violations": [],
+  "status": "MATCHED_NATIVE_OUTPUT_OR_OWNED_CHILD_METADATA",
+  "ownedProcessExitCode": 0,
+  "stderrBytesNoContentsPersisted": 3440
+}

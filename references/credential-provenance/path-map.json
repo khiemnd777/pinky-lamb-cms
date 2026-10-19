@@ -1,0 +1,420 @@
+{
+  "path_base": "handoff root (pinky-lamb/)",
+  "mappings": [
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/cover.png",
+      "handoff_path": "references/brand/cover-reference-v5-fresh-coral.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/palette.png",
+      "handoff_path": "references/brand/brand-palette-crystal-blossom-master-v15.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/diagonal.png",
+      "handoff_path": "references/brand/minimal-crystal-blossom-diagonal-v11.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/contact.png",
+      "handoff_path": "references/brand/contact-us-guideline-v2.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/upload/B02EC828-23B0-4B82-9786-EA852E0AC140.png",
+      "handoff_path": "references/brand/pinky-lamb-mascot-supplied.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/showreel-original.mp4",
+      "handoff_path": "references/video/showreel-2025-original.mp4",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-38.jpg",
+      "handoff_path": "references/video/showreel-frame-38s.jpg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-43.jpg",
+      "handoff_path": "references/video/showreel-frame-43s.jpg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-48.jpg",
+      "handoff_path": "references/video/showreel-frame-48s.jpg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/poster-55.jpg",
+      "handoff_path": "references/video/showreel-frame-55s.jpg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/brand-assets/showreel-poster.jpg",
+      "handoff_path": "references/video/showreel-frame-38s.jpg",
+      "reason": "Exact SHA-256 duplicate of poster-38.jpg; only one copy included."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/sony-ult-2025.png",
+      "handoff_path": "references/credential-selected/sony-ult-2025.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/diag-awareness-2022.jpeg",
+      "handoff_path": "references/credential-selected/diag-awareness-2022.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-2023.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/skechers-campaign.jpeg",
+      "handoff_path": "references/credential-selected/skechers-campaign.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/dongtam-tvc-2022.jpeg",
+      "handoff_path": "references/credential-selected/dongtam-tvc-2022.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/baemin-shopping.jpeg",
+      "handoff_path": "references/credential-selected/baemin-shopping.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-party-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-party-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-summit-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-summit-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-team-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-team-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/wayfair-registration-2026.jpeg",
+      "handoff_path": "references/credential-selected/wayfair-registration-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/vifa-opening-2026.jpeg",
+      "handoff_path": "references/credential-selected/vifa-opening-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/vifa-fair-2026.jpeg",
+      "handoff_path": "references/credential-selected/vifa-fair-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-2025.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/samsung-psd-2024.jpeg",
+      "handoff_path": "references/credential-selected/samsung-psd-2024.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/aqua-conference-2023.jpeg",
+      "handoff_path": "references/credential-selected/aqua-conference-2023.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/piano-forte-opus-1.jpeg",
+      "handoff_path": "references/credential-selected/piano-forte-opus-1.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/nhatrang-festival-2019.png",
+      "handoff_path": "references/credential-selected/nhatrang-festival-2019.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/stage-production-design.jpeg",
+      "handoff_path": "references/credential-selected/stage-production-design.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/product-photography-red.jpeg",
+      "handoff_path": "references/credential-selected/product-photography-red.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/food-photography.jpeg",
+      "handoff_path": "references/credential-selected/food-photography.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/pinky-lamb-logo-badge.png",
+      "handoff_path": "references/brand/pinky-lamb-logo-badge-credential-page06.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-wayfair.png",
+      "handoff_path": "references/credential-selected/client-wayfair.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-sony.png",
+      "handoff_path": "references/credential-selected/client-sony.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-samsung.png",
+      "handoff_path": "references/credential-selected/client-samsung.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-aqua.png",
+      "handoff_path": "references/credential-selected/client-aqua.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-manulife.png",
+      "handoff_path": "references/credential-selected/client-manulife.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-guardian.jpeg",
+      "handoff_path": "references/credential-selected/client-guardian.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/client-diag.png",
+      "handoff_path": "references/credential-selected/client-diag.png",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/samsung-flip2-2019.jpeg",
+      "handoff_path": "references/credential-selected/samsung-flip2-2019.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-collage-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-collage-2023.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/varna-elite-lifestyle-2023.jpeg",
+      "handoff_path": "references/credential-selected/varna-elite-lifestyle-2023.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-guests-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-guests-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/petrosetco-fireworks-2026.jpeg",
+      "handoff_path": "references/credential-selected/petrosetco-fireworks-2026.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-stage-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-stage-2025.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/psd-dell-microsoft-guests-2025.jpeg",
+      "handoff_path": "references/credential-selected/psd-dell-microsoft-guests-2025.jpeg",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/extracted.txt",
+      "handoff_path": "references/credential-provenance/credential-extracted.txt",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/scratch/5188ecdc77a1/credential-assets/selected/manifest.json",
+      "handoff_path": "references/credential-provenance/selected-manifest.original.json",
+      "reason": "Copied byte-for-byte."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "handoff_path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/abril-fatface-400.woff",
+      "handoff_path": "dist/assets/abril-fatface-400.woff",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/brand-diagonal.webp",
+      "handoff_path": "dist/assets/brand-diagonal.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-aqua.webp",
+      "handoff_path": "dist/assets/client-aqua.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-manulife.webp",
+      "handoff_path": "dist/assets/client-manulife.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-samsung.webp",
+      "handoff_path": "dist/assets/client-samsung.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-sony.webp",
+      "handoff_path": "dist/assets/client-sony.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/client-wayfair.webp",
+      "handoff_path": "dist/assets/client-wayfair.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/diag-awareness-2022.webp",
+      "handoff_path": "dist/assets/diag-awareness-2022.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/favicon.png",
+      "handoff_path": "dist/assets/favicon.png",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-400.woff",
+      "handoff_path": "dist/assets/montserrat-400.woff",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-600.woff",
+      "handoff_path": "dist/assets/montserrat-600.woff",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-700.woff",
+      "handoff_path": "dist/assets/montserrat-700.woff",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/montserrat-800.woff",
+      "handoff_path": "dist/assets/montserrat-800.woff",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-fireworks-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-fireworks-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-guests-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-guests-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/petrosetco-party-2026.webp",
+      "handoff_path": "dist/assets/petrosetco-party-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-hero.webp",
+      "handoff_path": "dist/assets/pinky-hero.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-logo.webp",
+      "handoff_path": "dist/assets/pinky-logo.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/pinky-mascot.webp",
+      "handoff_path": "dist/assets/pinky-mascot.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-2025.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "handoff_path": "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/samsung-flip2-2019.webp",
+      "handoff_path": "dist/assets/samsung-flip2-2019.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/showreel-2025.mp4",
+      "handoff_path": "dist/assets/showreel-2025.mp4",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/showreel-poster.webp",
+      "handoff_path": "dist/assets/showreel-poster.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/sony-ult-2025.webp",
+      "handoff_path": "dist/assets/sony-ult-2025.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-2023.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-collage-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-collage-2023.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/varna-elite-lifestyle-2023.webp",
+      "handoff_path": "dist/assets/varna-elite-lifestyle-2023.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/vifa-fair-2026.webp",
+      "handoff_path": "dist/assets/vifa-fair-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/vifa-opening-2026.webp",
+      "handoff_path": "dist/assets/vifa-opening-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-registration-2026.webp",
+      "handoff_path": "dist/assets/wayfair-registration-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-summit-2026.webp",
+      "handoff_path": "dist/assets/wayfair-summit-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    },
+    {
+      "original_path": "/workspace/sites/pinky-lamb-agency/dist/assets/wayfair-team-2026.webp",
+      "handoff_path": "dist/assets/wayfair-team-2026.webp",
+      "reason": "Already present in runtime dist; not duplicated."
+    }
+  ]
+}

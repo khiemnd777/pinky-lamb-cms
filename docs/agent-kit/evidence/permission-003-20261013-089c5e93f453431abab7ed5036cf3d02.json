@@ -1,0 +1,333 @@
+{
+  "status": "HOLD",
+  "observedAtUtc": "2026-10-13T00:40:34.108671+00:00",
+  "controllerSha256": "b72ddf8f9edfdc991c6901fd7c9ef3835c5699f884c3a9f0c8cc28aa9eacfbcb",
+  "configWrites": "NONE",
+  "actors": [
+    {
+      "role": "parent",
+      "nativeId": "01a132b4-3952-75a0-b480-6c29eb9e0a22",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "c9ec584bb0aec4952db4797d15b75cb9e4254ef5ec599e92487c402da5629edc"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "adc1e50426d41f4309d1a4a429ea1a7d94a30317b0dd43cb5b21e51424ff92d4"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "policy": "READ_ONLY_NO_WRITE_GRANTS_NETWORK_DISABLED",
+      "observedEffectiveContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "rolloutSha256": "d29230d8195ae2f867ac993f8465cf5863f6e9c2e092515ac10c659a9b5b12ca"
+    }
+  ],
+  "nativeCommands": [
+    {
+      "actor": "parent",
+      "exitCode": 0,
+      "actualFixtureResult": {
+        "create_errno": 1,
+        "modify_errno": 1,
+        "read": true
+      },
+      "itemId": "exec-254f64dc-f441-4de3-bb4b-9a00b8e2c010",
+      "observedNativeCommand": "/bin/zsh -lc \"python3 -c 'import errno,json,pathlib\np=pathlib.Path('\\\"'\\\"'/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02'\\\"'\\\"')\nr={'\\\"'\\\"'read'\\\"'\\\"':False,'\\\"'\\\"'create_errno'\\\"'\\\"':None,'\\\"'\\\"'modify_errno'\\\"'\\\"':None}\nr['\\\"'\\\"'read'\\\"'\\\"']=(p/'\\\"'\\\"'sentinel.txt'\\\"'\\\"').read_text()=='\\\"'\\\"'readonly-fixture-original\\\\n'\\\"'\\\"'\nfor action,path in [('\\\"'\\\"'create'\\\"'\\\"',p/'\\\"'\\\"'created.txt'\\\"'\\\"'),('\\\"'\\\"'modify'\\\"'\\\"',p/'\\\"'\\\"'sentinel.txt'\\\"'\\\"')]:\n try:\n  with path.open('\\\"'\\\"'w'\\\"'\\\"') as f:f.write('\\\"'\\\"'unexpected-write\\\\n'\\\"'\\\"')\n except OSError as e:r[action+'\\\"'\\\"'_errno'\\\"'\\\"']=e.errno\nprint('\\\"'\\\"'PINKY_READ_ONLY_FIXTURE_JSON:'\\\"'\\\"'+json.dumps(r,sort_keys=True))\n'\"",
+      "normalizationMethod": "EXACT_SDK_ZSH_DISPLAY_ARGV",
+      "source": "NATIVE_COMMAND_COMPLETED",
+      "commandSha256": "7aa93fcc8c58b40c3cfe04b836d90a4a0f5e3b81a446a0779bcd10e97a1e2b4e",
+      "outputSha256": "618d87188157847fa12332a35c7c40b49427e14af19404a5fb1c1b9e47afda12",
+      "postContext": {
+        "sandbox_policy": {
+          "type": "read-only"
+        },
+        "file_system_sandbox_policy": null,
+        "permission_profile": {
+          "type": "managed",
+          "file_system": {
+            "type": "restricted",
+            "entries": [
+              {
+                "path": {
+                  "type": "special",
+                  "value": {
+                    "kind": "root"
+                  }
+                },
+                "access": "read"
+              }
+            ]
+          },
+          "network": "restricted"
+        },
+        "approval_policy": "on-request",
+        "approvals_reviewer": "auto_review",
+        "model": "gpt-6.1-sol",
+        "effort": "high"
+      }
+    }
+  ],
+  "runId": "089c5e93f453431abab7ed5036cf3d02",
+  "fixtureRelativePath": "docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02",
+  "fixtureOwnerWritable": true,
+  "fixtureModes": [
+    "0o700",
+    "0o600"
+  ],
+  "scope": "App-server read-only parent fixture; exec launcher verified separately",
+  "nativeParentId": "01a132b4-3952-75a0-b480-6c29eb9e0a22",
+  "startupConfiguredRoute": {
+    "model": "gpt-6.1-sol",
+    "effort": "high"
+  },
+  "nativeParentRolloutRelative": "2026/10/13/rollout-2026-10-13T07-40-34-01a132b4-3952-75a0-b480-6c29eb9e0a22.jsonl",
+  "requestedSandboxObserved": {
+    "type": "readOnly",
+    "networkAccess": false
+  },
+  "parentApprovalDefaults": {
+    "policy": "on-request",
+    "reviewer": "auto_review"
+  },
+  "reason": "Missing actual completed sandboxed command evidence",
+  "cleanup": {
+    "status": "NORMAL",
+    "actions": [],
+    "errors": [],
+    "exitCode": 0
+  },
+  "ownedClientExitCode": 0,
+  "stderrBytesNoContentsSaved": 3048,
+  "sentinelUnchanged": true,
+  "createdFileAbsent": true,
+  "unexpectedNativeActivity": [],
+  "selectedSpawnOutputs": [
+    {
+      "namespace": "collaboration",
+      "name": "spawn_agent",
+      "role": "kit-explorer",
+      "callId": "call_zSryfxjv8YXjoJhSZBkyGJTj",
+      "outputSha256": "b5221a0813fb2e7f9dfd9e04a80eb797a1fd09f38d3ac4bf0cd1082f11bd2736"
+    },
+    {
+      "namespace": "collaboration",
+      "name": "spawn_agent",
+      "role": "kit-reviewer",
+      "callId": "call_uTTPpaKa3vruRSS0JM0k3n0i",
+      "outputSha256": "a6c322f6373df5dacbe6df6b24fdb3209179edcc784583a7d6fad000fcb9a0fc"
+    }
+  ],
+  "selectedWrapperOutputs": [
+    {
+      "callId": "call_lnGuSGyHyUz3dVBjkdiOQBgp",
+      "outputType": "list",
+      "outputSha256": "54d8872dcd37691c1ab2ed941ba40d3bab8db185088c2aa09d35fb1f31397822",
+      "format": "STANDALONE_EXIT_JSON"
+    }
+  ],
+  "ownedSubAgentActivity": [
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "started",
+      "callId": "call_zSryfxjv8YXjoJhSZBkyGJTj"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "started",
+      "callId": "call_zSryfxjv8YXjoJhSZBkyGJTj"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "started",
+      "callId": "call_uTTPpaKa3vruRSS0JM0k3n0i"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "started",
+      "callId": "call_uTTPpaKa3vruRSS0JM0k3n0i"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-5432-7ff3-82b2-9b3f12afd3b3"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-5432-7ff3-82b2-9b3f12afd3b3"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-5d09-7e32-ac63-65f6c7dad034"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-5d09-7e32-ac63-65f6c7dad034"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "interacted",
+      "callId": "call_nDRKUxAmQQYotHNTD6mElqjq"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "interacted",
+      "callId": "call_nDRKUxAmQQYotHNTD6mElqjq"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-b8f0-7583-b66f-3f200f135ce1"
+    },
+    {
+      "role": "kit-explorer",
+      "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+      "canonicalPath": "/root/permission_explorer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-b8f0-7583-b66f-3f200f135ce1"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "interacted",
+      "callId": "call_BUKGh83IzTbk6kA43FcmkcVO"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "interacted",
+      "callId": "call_BUKGh83IzTbk6kA43FcmkcVO"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-f5a1-7381-9896-dd9f0c982adb"
+    },
+    {
+      "role": "kit-reviewer",
+      "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+      "canonicalPath": "/root/permission_reviewer_ack",
+      "kind": "completed",
+      "callId": "subagent-completed-01a132b4-f5a1-7381-9896-dd9f0c982adb"
+    }
+  ]
+}

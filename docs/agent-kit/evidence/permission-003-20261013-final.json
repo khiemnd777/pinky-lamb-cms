@@ -1,0 +1,390 @@
+{
+  "task": "AGENT-PERMISSION-003",
+  "version": "v1",
+  "option": 1,
+  "state": "INTEGRATED_APPROVED_CLI_REVIEW_LANE",
+  "status": "PASS_PARENT_ENFORCEMENT_CHILD_POLICY_VERIFIED",
+  "finalStaticVerification": {
+    "command": "python3 -B docs/agent-kit/evidence/verify-setup.py",
+    "exitCode": 0,
+    "observation": {
+      "status": "PASS",
+      "observedAtUtc": "2026-10-13T00:50:44.467692+00:00",
+      "skillCounts": [
+        17,
+        17
+      ],
+      "mirrorPairs": 27,
+      "nativeAdaptersParsed": 6,
+      "unchangedOriginalEngineeringMirrorFiles": 52,
+      "markdownLinksChecked": 275,
+      "sourceRecordsPreservedExcludingAGENTS": 3942,
+      "emulatorRecordsPreserved": 746,
+      "AGENTS": "Original body preserved; scoped append only",
+      "quickValidate": "NOT_RUN missing PyYAML; required metadata separately checked with Ruby Psych/Python tomllib",
+      "nativeInvocation": "NOT_RUN",
+      "errors": []
+    }
+  },
+  "finalProtectedPreservation": {
+    "observedAtUtc": "2026-10-13T00:50:39.582481+00:00",
+    "status": "PASS",
+    "protectedHashes": {
+      "approvals/APPROVAL-REGISTER.json": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3",
+      "approvals/CMS-001-v2-M2-REGISTER.json": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618",
+      "approvals/CMS-001-v2-M2.scope.json": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4",
+      "approvals/CMS-001-v2-M3-REGISTER.json": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326",
+      "approvals/CMS-001-v2-M3.scope.json": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c",
+      "approvals/CMS-001-v2.scope.json": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30",
+      ".codex/agents/kit-explorer.toml": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      ".codex/agents/kit-implementer.toml": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      ".codex/agents/kit-reviewer.toml": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "engineering/AGENT-KIT-LOCK.json": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+    },
+    "globalConfigSha256": "ed81b2ba9a3d91971470fc5506b1bc2355f9784ad349e2c843926436e7f42c3f",
+    "globalConfigMode": "0o600",
+    "rawConfigSaved": false,
+    "errors": []
+  },
+  "approval": "Approved AGENT-PERMISSION-003 v1 — phương án 1: triển khai CLI review parent read-only riêng và kiểm thử từ chối ghi trên fixture. Giữ nguyên mã CMS, dữ liệu emulator, global config và các approval hiện hành.",
+  "launcherSmoke": {
+    "observedAtUtc": "2026-10-13T00:10:49Z",
+    "cliVersion": "0.162.0-alpha.17.2",
+    "initialOuterSandbox": {
+      "exitCode": 1,
+      "result": "OS_EPERM_BEFORE_NATIVE_START"
+    },
+    "reviewedOuterBootstrap": {
+      "approvalReview": "ALLOWED",
+      "innerSandboxChanged": false
+    },
+    "nativeSessionId": "01a13298-fb09-7d23-b353-a754efbd5557",
+    "nativeTurnId": "01a13298-fc01-7043-8ba7-32fb5f6ed23f",
+    "sessionSource": "exec",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "approvalPolicy": "on-request",
+    "approvalsReviewer": "auto_review",
+    "sandboxPolicy": {
+      "type": "read-only"
+    },
+    "permissionProfile": {
+      "type": "managed",
+      "file_system": {
+        "type": "restricted",
+        "entries": [
+          {
+            "path": {
+              "type": "special",
+              "value": {
+                "kind": "root"
+              }
+            },
+            "access": "read"
+          }
+        ]
+      },
+      "network": "restricted"
+    },
+    "toolCalls": 0,
+    "response": "ACK",
+    "exitCode": 0,
+    "enforcementProof": false,
+    "launcherSha256": "5e49614bcd0cf123301eaf62bdf436d25b87d86874631e9d5e38103a0e02fc4f"
+  },
+  "childWriteAttempts": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT",
+  "nativeExecutedActors": [
+    "parent"
+  ],
+  "verificationBoundary": "Three effective native read-only policies and actual parent filesystem enforcement. Direct child OS write attempts, independent MCP/connector permissions and provider execution identity are not verified.",
+  "independentReview": {
+    "agent": "/root/setup_review",
+    "recordedRoute": "gpt-6.1-sol / high",
+    "result": "CLEAR_NO_ACTIONABLE_FINDINGS",
+    "independentLocalTests": {
+      "command": "python3 -B engineering/agent-kit/test_review_read_only.py",
+      "count": 29,
+      "result": "PASS",
+      "exitCode": 0
+    }
+  },
+  "implementation": {
+    "agent": "/root/agent_setup",
+    "recordedRoute": "gpt-6.1-sol / medium",
+    "rootLocalTests": {
+      "command": "python3 -B engineering/agent-kit/test_review_read_only.py",
+      "count": 29,
+      "result": "PASS",
+      "exitCode": 0
+    },
+    "workerMutationCheck": {
+      "source": "WORKER_REPORTED",
+      "method": "IN_MEMORY_READ_ONLY_TO_WORKSPACE_WRITE",
+      "result": "SAFETY_TEST_FAILED_AS_EXPECTED",
+      "sourceMutationSaved": false
+    }
+  },
+  "preservationBoundary": "Protected source inventory excludes generated directories and node_modules and does not cover .local config/top-level logs; all emulator-data records are separately covered. Historical CMS ledgers/status and handoff snapshots remain unchanged.",
+  "noCmsActions": true,
+  "globalConfigWrites": false,
+  "existingApprovalWrites": false,
+  "adapterWrites": false,
+  "gitMutations": false,
+  "rawGlobalConfigOrCredentialsCopied": false,
+  "cmsDisposition": {
+    "M1": "Closed",
+    "M2": "Closed",
+    "M3": "In Progress",
+    "R2": "HOLD_FIRST_CAUSE_UNKNOWN",
+    "R3": "AWAITING_APPROVAL_HIGH_PLANNING_PASS_125TYPED0MISMATCH",
+    "M4": "Not Opened",
+    "LOCAL_COMPLETE": false
+  },
+  "integrationObservedAtUtc": "2026-10-13T00:50:31.912959+00:00",
+  "offlineAudit": {
+    "status": "PASS_PARENT_ENFORCEMENT_CHILD_POLICY_VERIFIED",
+    "childWriteAttempts": "NOT_RUN_HIGHER_PRIORITY_ROLE_CONSTRAINT",
+    "nativeExecutedActors": [
+      "parent"
+    ],
+    "observedAtUtc": "2026-10-13T00:47:16.270644+00:00",
+    "recoveryMethod": "READ_ONLY_EXISTING_OWNED_FILES_NO_NATIVE_CLIENT_OR_MODEL",
+    "historicalReceiptRelative": "docs/agent-kit/evidence/permission-003-20261013-089c5e93f453431abab7ed5036cf3d02.json",
+    "historicalStatusUnchanged": "HOLD",
+    "historicalReceiptSha256": "2ef7b56930edee46e8e7324cbfff5fa054c2873c9046589313f680b408ef7880",
+    "controllerSha256": "e8007bd2ef6374e15ed3c7395cbff7fa7988b462614470060d3d3afb5f05abb9",
+    "actors": [
+      {
+        "role": "parent",
+        "nativeId": "01a132b4-3952-75a0-b480-6c29eb9e0a22",
+        "effectiveContextCount": 4,
+        "postContext": {
+          "sandbox_policy": {
+            "type": "read-only"
+          },
+          "file_system_sandbox_policy": null,
+          "permission_profile": {
+            "type": "managed",
+            "file_system": {
+              "type": "restricted",
+              "entries": [
+                {
+                  "path": {
+                    "type": "special",
+                    "value": {
+                      "kind": "root"
+                    }
+                  },
+                  "access": "read"
+                }
+              ]
+            },
+            "network": "restricted"
+          },
+          "approval_policy": "on-request",
+          "approvals_reviewer": "auto_review",
+          "model": "gpt-6.1-sol",
+          "effort": "high"
+        },
+        "rolloutSha256": "15a644c35d2afab874027a3566b58a8da336f244ee8f13226b4f9e36928e042e"
+      },
+      {
+        "role": "kit-explorer",
+        "nativeId": "01a132b4-53d1-75c3-ba09-5fd2ca727a09",
+        "effectiveContextCount": 2,
+        "postContext": {
+          "sandbox_policy": {
+            "type": "read-only"
+          },
+          "file_system_sandbox_policy": null,
+          "permission_profile": {
+            "type": "managed",
+            "file_system": {
+              "type": "restricted",
+              "entries": [
+                {
+                  "path": {
+                    "type": "special",
+                    "value": {
+                      "kind": "root"
+                    }
+                  },
+                  "access": "read"
+                }
+              ]
+            },
+            "network": "restricted"
+          },
+          "approval_policy": "on-request",
+          "approvals_reviewer": "auto_review",
+          "model": "gpt-6.1-sol",
+          "effort": "high"
+        },
+        "rolloutSha256": "c3d2714065a77af1d04b9dc022a87874f724ffaf9a700f0d6d5f798c47052f2e"
+      },
+      {
+        "role": "kit-reviewer",
+        "nativeId": "01a132b4-5cbf-7981-a42d-fe22e41976cd",
+        "effectiveContextCount": 2,
+        "postContext": {
+          "sandbox_policy": {
+            "type": "read-only"
+          },
+          "file_system_sandbox_policy": null,
+          "permission_profile": {
+            "type": "managed",
+            "file_system": {
+              "type": "restricted",
+              "entries": [
+                {
+                  "path": {
+                    "type": "special",
+                    "value": {
+                      "kind": "root"
+                    }
+                  },
+                  "access": "read"
+                }
+              ]
+            },
+            "network": "restricted"
+          },
+          "approval_policy": "on-request",
+          "approvals_reviewer": "auto_review",
+          "model": "gpt-6.1-sol",
+          "effort": "high"
+        },
+        "rolloutSha256": "0b0c1a460b75b524d65f2d5900a1398d1a31a53e8b46416f6827817dfb7497aa"
+      }
+    ],
+    "nativeParentCommand": {
+      "actor": "parent",
+      "itemId": "exec-254f64dc-f441-4de3-bb4b-9a00b8e2c010",
+      "exitCode": 0,
+      "source": "OWNED_ROLLOUT_NATIVE_CORE_COMMAND_COMPLETED",
+      "observedNativeCommand": [
+        "/bin/zsh",
+        "-lc",
+        "python3 -c 'import errno,json,pathlib\np=pathlib.Path('\"'\"'/Users/khiemnguyen/Works/pinky-lamb/pinky-lamb/docs/agent-kit/evidence/permission-003-fixture/089c5e93f453431abab7ed5036cf3d02'\"'\"')\nr={'\"'\"'read'\"'\"':False,'\"'\"'create_errno'\"'\"':None,'\"'\"'modify_errno'\"'\"':None}\nr['\"'\"'read'\"'\"']=(p/'\"'\"'sentinel.txt'\"'\"').read_text()=='\"'\"'readonly-fixture-original\\n'\"'\"'\nfor action,path in [('\"'\"'create'\"'\"',p/'\"'\"'created.txt'\"'\"'),('\"'\"'modify'\"'\"',p/'\"'\"'sentinel.txt'\"'\"')]:\n try:\n  with path.open('\"'\"'w'\"'\"') as f:f.write('\"'\"'unexpected-write\\n'\"'\"')\n except OSError as e:r[action+'\"'\"'_errno'\"'\"']=e.errno\nprint('\"'\"'PINKY_READ_ONLY_FIXTURE_JSON:'\"'\"'+json.dumps(r,sort_keys=True))\n'"
+      ],
+      "normalizationMethod": "EXACT_NATIVE_ZSH_ARGV",
+      "actualFixtureResult": {
+        "create_errno": 1,
+        "modify_errno": 1,
+        "read": true
+      },
+      "outputSha256": "618d87188157847fa12332a35c7c40b49427e14af19404a5fb1c1b9e47afda12"
+    },
+    "sentinelUnchanged": true,
+    "createdFileAbsent": true,
+    "scope": "Three effective native policies plus parent OS denial; child physical write attempts NOT_RUN",
+    "parentChildPermissionSnapshotsEqual": true
+  },
+  "separateOsReceipt": {
+    "path": "docs/agent-kit/evidence/permission-003-os-20261013-06fd2e7e7bd44c3ca1ba90732f9f3122.json",
+    "observation": {
+      "status": "OS_NATIVE_READONLY_FIXTURE_PASS",
+      "runId": "06fd2e7e7bd44c3ca1ba90732f9f3122",
+      "observedAtUtc": "2026-10-13T00:25:38.931700+00:00",
+      "helperSha256": "0c053fe139031a3dcf5db9752cd464aab5703786015cbc4348c290087b15a74c",
+      "importedControllerSha256": "d1b3f010ad08e0ec1e8f0faa4c4ab0b83ff57dfafb7bee65b281f512f4d5d7d6",
+      "scope": "Standalone native command/exec OS sandbox only; no model turns or agent execution proof",
+      "modelTurns": "NOT_RUN",
+      "agentCommands": "NOT_RUN",
+      "configWrites": "NONE",
+      "fixtureRelativePath": "docs/agent-kit/evidence/permission-003-fixture/os-06fd2e7e7bd44c3ca1ba90732f9f3122",
+      "fixtureOwnerWritable": true,
+      "fixtureModes": [
+        "0o700",
+        "0o600"
+      ],
+      "startup": {
+        "nativeParentId": "01a132a6-90a9-7982-b1b2-94636bafc424",
+        "sandbox": {
+          "type": "readOnly",
+          "networkAccess": false
+        },
+        "model": "gpt-6.1-sol",
+        "effort": "high",
+        "approvalPolicy": "on-request",
+        "approvalsReviewer": "auto_review"
+      },
+      "commandRequestedSandbox": {
+        "type": "readOnly",
+        "networkAccess": false
+      },
+      "commandArgvSha256": "4fddea570e930eb2b3bc3c089e608b1046f77d5121072eb9abf3134012102645",
+      "exitCode": 0,
+      "stdoutSha256": "618d87188157847fa12332a35c7c40b49427e14af19404a5fb1c1b9e47afda12",
+      "stderrBytesNoContentsSaved": 0,
+      "actualFixtureResult": {
+        "create_errno": 1,
+        "modify_errno": 1,
+        "read": true
+      },
+      "sentinelUnchanged": true,
+      "createdFileAbsent": true,
+      "cleanup": {
+        "status": "NORMAL",
+        "actions": [],
+        "errors": [],
+        "exitCode": 0
+      },
+      "unexpectedNativeActivity": []
+    }
+  },
+  "preflightPreservation": {
+    "observedAtUtc": "2026-10-13T00:09:07.059601+00:00",
+    "status": "PASS",
+    "globalConfigSha256": "ed81b2ba9a3d91971470fc5506b1bc2355f9784ad349e2c843926436e7f42c3f",
+    "globalConfigMode": "0o600",
+    "protectedHashes": {
+      "approvals/APPROVAL-REGISTER.json": "ad804b8fb8249c6e8f814a0577917d562cb264e77a089584ec1ff90fd54e73f3",
+      "approvals/CMS-001-v2-M2-REGISTER.json": "08493e76ea8bcc60835ed88aafc33d321f82375cbc5a370d14e2dbe4e4770618",
+      "approvals/CMS-001-v2-M2.scope.json": "8f126af76bc971c98c68b6e0b79d7376e569ad634f94e56678bfe70344706ae4",
+      "approvals/CMS-001-v2-M3-REGISTER.json": "d65368fe2eeef760029d123d207c0715b2d07e23f09a23075f578c9bc3abb326",
+      "approvals/CMS-001-v2-M3.scope.json": "2236898302b271189f4375320b38648489bd95f9da8ae6290f43fba07979862c",
+      "approvals/CMS-001-v2.scope.json": "4cec4fba6e6b77c8f59d797c08b9483a54c6e7cf58bfb763d17700e74ceb2f30",
+      ".codex/agents/kit-explorer.toml": "4e198f33a063dd1e7cc2cd57f2efe8ea2125a5d5015101995ab57244242848ff",
+      ".codex/agents/kit-implementer.toml": "0b9e0ec020d6621e05e6ee21bcfcb7299ab93a7d49aa60e6a29a5f23d46b3428",
+      ".codex/agents/kit-reviewer.toml": "b08eb1383bf2a8d92ffa87d4a3f2451314295dcb2813afd5ab1d328b2d1d05fd",
+      "engineering/AGENT-KIT-LOCK.json": "d62e37c00a03b108074f4873bb241f9119960adc18a6f78f0044a17077426466"
+    },
+    "baselineSourceRecords": 3942,
+    "baselineEmulatorRecords": 746,
+    "staticVerification": "PASS 2026-10-13T00:08:34.065472+00:00"
+  },
+  "frozenImplementationSha256": {
+    "engineering/agent-kit/review-read-only.py": "5e49614bcd0cf123301eaf62bdf436d25b87d86874631e9d5e38103a0e02fc4f",
+    "engineering/agent-kit/verify-review-read-only.py": "e8007bd2ef6374e15ed3c7395cbff7fa7988b462614470060d3d3afb5f05abb9",
+    "engineering/agent-kit/verify-read-only-filesystem.py": "0c053fe139031a3dcf5db9752cd464aab5703786015cbc4348c290087b15a74c",
+    "engineering/agent-kit/test_review_read_only.py": "78e85cc890a906ffeac349946fdd5d3fffb99a1c25ea25ab18f9c33b3c24ab22"
+  },
+  "historicalReceipts": [
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-3dd47ed7bb374fa0b44bde86c85a92c3.json",
+      "retainedStatus": "HOLD_ABNORMAL_CLEANUP",
+      "sha256": "b87dd1b32ef615925f48686e2e066438d0633795d1c3a603d8ae930f00ff1034"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-97a8caaafb4e4c9d82ff327a1a1aecaa.json",
+      "retainedStatus": "HOLD_UNEXPECTED_NATIVE_ACTIVITY",
+      "sha256": "6de4ddff32a4a795359734b5b62cc946c05da119f653f40c72fd7d298cfa1ed4"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-8268636c590e4a03963244b3dc5b07ee.json",
+      "retainedStatus": "HOLD_UNEXPECTED_NATIVE_ACTIVITY",
+      "sha256": "8a5ddf57accdd82188d033e486538116a3b36468ccd5d8fe7c4224197aef8217"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-28bd58b1de39471dbc56cfeaeebdbe38.json",
+      "retainedStatus": "HOLD_UNEXPECTED_NATIVE_ACTIVITY",
+      "sha256": "270d78b83555f418b56d1fc28ab6ae184cf497cac408e909d97ba01f4611e80f"
+    },
+    {
+      "path": "docs/agent-kit/evidence/permission-003-20261013-089c5e93f453431abab7ed5036cf3d02.json",
+      "retainedStatus": "HOLD",
+      "sha256": "2ef7b56930edee46e8e7324cbfff5fa054c2873c9046589313f680b408ef7880"
+    }
+  ]
+}

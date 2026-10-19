@@ -1,0 +1,21 @@
+{
+  "observedAtUtc": "2026-10-12T15:21:54.095494+00:00",
+  "schema": "Installed CLI ConfigReadParams has cwd/includeLayers",
+  "command": "Owned app-server initialize -> config/read {cwd:PROJECT_ROOT,includeLayers:true}",
+  "rawConfigPersisted": false,
+  "configWriteOperations": "NONE",
+  "modelTurn": "NOT_RUN",
+  "status": "READ_PASS",
+  "projectLayers": [
+    {
+      "path": ".codex",
+      "disabledReason": null,
+      "kitAgentNames": []
+    }
+  ],
+  "effectiveKitAgents": [],
+  "nativeDefinitionDiscovery": "NOT_OBSERVED_BY_CONFIG_READ",
+  "responseErrorCode": null,
+  "ownedProcessExitCode": 0,
+  "stderrLineCountNoContentsPersisted": 0
+}

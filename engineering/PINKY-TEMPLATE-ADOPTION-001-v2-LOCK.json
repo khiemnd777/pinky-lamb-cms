@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "task": "PINKY-TEMPLATE-ADOPTION-001 v2",
+  "approvalSource": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+  "approvalReceipt": {
+    "path": "docs/agent-kit/evidence/template-adoption-001-v2/approval.json",
+    "sha256": "3ccdeb28b71816b71f188d10f233e1d24d7f7560c7f03dfaeed4f1426a5e4141"
+  },
+  "baseline": {
+    "path": "docs/agent-kit/evidence/template-adoption-001-v2/preflight.json",
+    "sha256": "1b432eda76107f3c138b45711fabd3fd0cf0150e76934be62954ccfec4ea44b4"
+  },
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+    "headCommit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+    "files": [
+      {
+        "path": ".agents/references/template-application.md",
+        "gitBlobSha": "814418a0c87005acccd68d7e2471ccff5c25ee0f",
+        "sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      {
+        "path": ".agents/skills/code-review-and-quality/SKILL.md",
+        "gitBlobSha": "c3b0bf8a8b86656771da16b8b11e2aa7efd4dba1",
+        "sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+      },
+      {
+        "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+        "gitBlobSha": "864bea089904a19c42ee15457d0c2392aa4a99fd",
+        "sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "b3a2f2de90bc43affea9b33c491eeb48f62b98b8",
+        "sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "dabefdc7e71c10298e670e48c4a6cd9d01255e7b",
+        "sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+      },
+      {
+        "path": ".claude/references/template-application.md",
+        "gitBlobSha": "814418a0c87005acccd68d7e2471ccff5c25ee0f",
+        "sha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c"
+      },
+      {
+        "path": ".claude/skills/code-review-and-quality/SKILL.md",
+        "gitBlobSha": "c3b0bf8a8b86656771da16b8b11e2aa7efd4dba1",
+        "sha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a"
+      },
+      {
+        "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+        "gitBlobSha": "864bea089904a19c42ee15457d0c2392aa4a99fd",
+        "sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "b3a2f2de90bc43affea9b33c491eeb48f62b98b8",
+        "sha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65"
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "dabefdc7e71c10298e670e48c4a6cd9d01255e7b",
+        "sha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "b4c3f7a6c3cd24be36692ae3bafc5da4862fce3b",
+        "sha256": "3c53a7b26b6d5d4bd2c1a0322dd61bd53d44d0859282527e724fb612298c4c6a"
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "gitBlobSha": "efc83600fdbfade45c1b44625e64286a7fa6c5c1",
+        "sha256": "c4aeedb0c5d5b6ca3b7cf302bb8e4f29da12157a92e185d511bf27db743c2545"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "77363d6ea1dc77277ae4adfca204ecce928befd0",
+        "sha256": "bc1074b5121407325292dade47644950c08d4f20235ed040537ea8903f14e0f4"
+      },
+      {
+        "path": "docs/tasks/TASK-005.md",
+        "gitBlobSha": "788b6379943943d1891ecc4ac8b9b459eb73aba5",
+        "sha256": "8323d7edd53a8a513afae8a63119e8acb4f8db90a70820e3b817b7e5398088df"
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "gitBlobSha": "a4659b280bb47c595830da8ccce818dca6edd5dc",
+        "sha256": "55b5e851751db91ed46314f9c41a1260bc59f4fbeb7ccf352ff9f8f15708cff7"
+      },
+      {
+        "path": "docs/template-application-acceptance.md",
+        "gitBlobSha": "11f3cb932aec8cb4d36a0cba71c07480b9bef5a7",
+        "sha256": "e11d640c7b9150120c10098d7c97f18a2d055b0d8ff9f9cf1b211435885069c4"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "038f9b28c9905f68fe32b1d0f83f967b4598c19e",
+        "sha256": "02f9a80234caf7bfa6d6e77e2dcf194ca39829451b8fc35bb1a699427c68c1e5"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "684a151a283730588f706a898c42ac046a2bb402",
+        "sha256": "1f461a9dde889ed645510bfaa7869686988fee2ea5d9011e69a3b13e34fdd19d"
+      }
+    ]
+  },
+  "ownedPaths": [
+    ".agents/references/template-application.md",
+    ".agents/skills/code-review-and-quality/SKILL.md",
+    ".agents/skills/frontend-ui-engineering/SKILL.md",
+    ".agents/skills/incremental-implementation/SKILL.md",
+    ".agents/skills/planning-and-task-breakdown/SKILL.md",
+    ".claude/references/template-application.md",
+    ".claude/skills/code-review-and-quality/SKILL.md",
+    ".claude/skills/frontend-ui-engineering/SKILL.md",
+    ".claude/skills/incremental-implementation/SKILL.md",
+    ".claude/skills/planning-and-task-breakdown/SKILL.md",
+    "docs/agent-kit/agent-coordination-templates.md",
+    "docs/agent-kit/cms-template-acceptance.md",
+    "docs/agent-kit/skills-catalog.md",
+    "docs/agent-kit/skills-manifest-current.json",
+    "docs/agent-kit/team-workflow.md",
+    "docs/agent-kit/template-application-acceptance.md",
+    "docs/agent-kit/verification-guide.md",
+    "engineering/PINKY-TEMPLATE-ADOPTION-001-v2-LOCK.json",
+    "engineering/agent-kit/verify-template-adoption.py"
+  ],
+  "amendments": [
+    {
+      "path": ".agents/references/template-application.md",
+      "beforeSha256": null,
+      "afterSha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0"
+    },
+    {
+      "path": ".agents/skills/code-review-and-quality/SKILL.md",
+      "beforeSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "afterSha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97"
+    },
+    {
+      "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "beforeSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "afterSha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc"
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "beforeSha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b",
+      "afterSha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348"
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "beforeSha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937",
+      "afterSha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee"
+    },
+    {
+      "path": ".claude/references/template-application.md",
+      "beforeSha256": null,
+      "afterSha256": "17efea72092fa1b90d9247e2c02ad87c1402399d6eaf7debd645b0745d1c7ee0"
+    },
+    {
+      "path": ".claude/skills/code-review-and-quality/SKILL.md",
+      "beforeSha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "afterSha256": "9eb5ed9ff0cb372fea4e14e86d193e9681830f04325be77cedcb676f40e93d97"
+    },
+    {
+      "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "beforeSha256": "549044e9bd8d7fe993ce8e5c0d2b0f5465650676dc15805329973f936179eb1e",
+      "afterSha256": "554e591bc1128a4d463dba5cfe54cdf10766c37486f3cc872b82f151bab044fc"
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "beforeSha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b",
+      "afterSha256": "887d96ab09ece37c4ca9a4053eada6f8a0f2c54f3ed597c1d2acc0a447b9a348"
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "beforeSha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937",
+      "afterSha256": "03e5a34fa6ca06fedcdb6ded075d9f72c74338e4a7135c94656ff57124d903ee"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "beforeSha256": "7c64baa8609ccd075473fb523421d43acc4658fc363cc0be82e4a198266c45df",
+      "afterSha256": "402c6c9f4f55995e113d74ab53022e5ac410c39fc5bc219eed8dc8677f1c1906"
+    },
+    {
+      "path": "docs/agent-kit/cms-template-acceptance.md",
+      "beforeSha256": null,
+      "afterSha256": "22c35ed316947b0febc6d8a6f5cd513ad3cff5f391393c562328b877c9296fde"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "beforeSha256": "9c0d7fb5704023a1f5b444e41cd3cb510529d606f14e4738f3f976a4a7e79f53",
+      "afterSha256": "4b840a1f948c31926afaeda8937aadfe8880fa1f2f8bb740a7d85a5a7a0d3392"
+    },
+    {
+      "path": "docs/agent-kit/skills-manifest-current.json",
+      "beforeSha256": "eccf0e842008f92b9dc68774982ef1d64841eb7131cb64862d93f45e9afbf8b5",
+      "afterSha256": "88dec2dc4e5b103a8476318b3af985760a6d0bd749c0e3e528d55222dc39f245"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "beforeSha256": "b80351b1ecfc35b099429bfbd6635b84d544e99f3dcd148454205887fdfa8a8a",
+      "afterSha256": "6ebef36700db51d40d2d40afebfb5a8a0de242ec14feca8286e47287d6c35c31"
+    },
+    {
+      "path": "docs/agent-kit/template-application-acceptance.md",
+      "beforeSha256": null,
+      "afterSha256": "10863f2317d04f29220f705b4007950a786c24151c63f0311eb3bddc18bb7ce5"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "beforeSha256": "3fc7e8930c6b26be9393b8c33bc942b359cf4321f6ec5307d78bfdd04a007a6f",
+      "afterSha256": "82f4501c8953d5e70ad37d2b5b976653ed3d12ec23cb2257cc35562bca7e3e30"
+    }
+  ],
+  "effectiveManifest": {
+    "path": "docs/agent-kit/skills-manifest-current.json",
+    "sha256": "88dec2dc4e5b103a8476318b3af985760a6d0bd749c0e3e528d55222dc39f245"
+  },
+  "newMaintainedFiles": [
+    ".agents/references/template-application.md",
+    ".claude/references/template-application.md",
+    "docs/agent-kit/cms-template-acceptance.md",
+    "docs/agent-kit/template-application-acceptance.md"
+  ],
+  "adaptationSource": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "commit": "919ce6b8d84c8ac5ad4ce473ad6e6c2c9973d2ac",
+    "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+    "previous_commit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c"
+  },
+  "preservedOrigins": {
+    ".agents/ADDY-AGENT-SKILLS-LICENSE": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "LICENSE",
+      "git_blob_sha": "d67778ada6b9cda6227e9130da182c13e73c8b2e"
+    },
+    ".agents/references/accessibility-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/accessibility-checklist.md",
+      "git_blob_sha": "c8c61e5f3d5a010a0d0ecb918bfaffe6c76fca78"
+    },
+    ".agents/references/definition-of-done.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/definition-of-done.md",
+      "git_blob_sha": "35e39f9e15f6dd0ff4725a6e5cbce7f2aa69064a"
+    },
+    ".agents/references/observability-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/observability-checklist.md",
+      "git_blob_sha": "ad40d7aa3fca5d2091fa45be234c14aee22c3588"
+    },
+    ".agents/references/orchestration-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/orchestration-patterns.md",
+      "git_blob_sha": "09cddd31d52a95be1d9bca814547d184b9945e44"
+    },
+    ".agents/references/performance-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/performance-checklist.md",
+      "git_blob_sha": "ba9744fe60dbe4f04f3f907029638d923158d7a2"
+    },
+    ".agents/references/security-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/security-checklist.md",
+      "git_blob_sha": "fc5e29b92c183fa69e0952b61a99761dc48b4c0b"
+    },
+    ".agents/references/testing-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/testing-patterns.md",
+      "git_blob_sha": "bc96e271ad241ca567f06d21c6ecc001455b80f1"
+    },
+    ".agents/skills/api-and-interface-design/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/api-and-interface-design/SKILL.md",
+      "git_blob_sha": "3e2e37f8f4fba2c66f9f1599eaf01a55ae3f3e33"
+    },
+    ".agents/skills/code-review-and-quality/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/code-review-and-quality/SKILL.md",
+      "git_blob_sha": "08209ff2208d2883d48d945f7754c428b77f8d87"
+    },
+    ".agents/skills/code-simplification/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/code-simplification/SKILL.md",
+      "git_blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347"
+    },
+    ".agents/skills/context-engineering/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/context-engineering/SKILL.md",
+      "git_blob_sha": "fb8bb5f85128302b231d301c1201da1e223f6869"
+    },
+    ".agents/skills/debugging-and-error-recovery/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/debugging-and-error-recovery/SKILL.md",
+      "git_blob_sha": "356da20365a7cd6825b4ffad14be39280c92cdfc"
+    },
+    ".agents/skills/documentation-and-adrs/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/documentation-and-adrs/SKILL.md",
+      "git_blob_sha": "e37c38f30d76263c77aacdb7dcbacceb1218bc80"
+    },
+    ".agents/skills/frontend-ui-engineering/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/frontend-ui-engineering/SKILL.md",
+      "git_blob_sha": "eaf0fa163876a5274674f42ea208742c50f27119"
+    },
+    ".agents/skills/incremental-implementation/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/incremental-implementation/SKILL.md",
+      "git_blob_sha": "9c4f49bc841adb3c0f98baaa9eabd435a5b64ef9"
+    },
+    ".agents/skills/observability-and-instrumentation/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/observability-and-instrumentation/SKILL.md",
+      "git_blob_sha": "84d9cb373467fe0e15236e190833ecc90f840c38"
+    },
+    ".agents/skills/performance-optimization/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/performance-optimization/SKILL.md",
+      "git_blob_sha": "498735724035f468737bd118f9c60676a013d544"
+    },
+    ".agents/skills/performance-optimization/references/optimization-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/performance-optimization/references/optimization-patterns.md",
+      "git_blob_sha": "63e27bcc7a051c3dc23c164f146f374e119874cc"
+    },
+    ".agents/skills/planning-and-task-breakdown/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/planning-and-task-breakdown/SKILL.md",
+      "git_blob_sha": "296249b64334bcfd1aeaefd27b9e3e5494e38ec0"
+    },
+    ".agents/skills/security-and-hardening/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/security-and-hardening/SKILL.md",
+      "git_blob_sha": "e80e1e9a4f5b2989308c376d4ea0d333fe2c26ef"
+    },
+    ".agents/skills/security-and-hardening/references/hardening-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/security-and-hardening/references/hardening-patterns.md",
+      "git_blob_sha": "9af2604409af9a085bad0b14a269a89a74d34084"
+    },
+    ".agents/skills/source-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/source-driven-development/SKILL.md",
+      "git_blob_sha": "2704f0e130bc4659951aa552373914b2d63d18c9"
+    },
+    ".agents/skills/spec-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/spec-driven-development/SKILL.md",
+      "git_blob_sha": "f54426bec00bcda5f700ab3368eed7203306830f"
+    },
+    ".agents/skills/technote/SKILL.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".agents/skills/test-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/test-driven-development/SKILL.md",
+      "git_blob_sha": "8898bcbba4c4f6acca473ece95e82105bd9cfea0"
+    },
+    ".agents/skills/using-agent-skills/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/using-agent-skills/SKILL.md",
+      "git_blob_sha": "d56ac03ab057036c1bdcc9127c88952758ee2f0d"
+    },
+    ".claude/ADDY-AGENT-SKILLS-LICENSE": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "LICENSE",
+      "git_blob_sha": "d67778ada6b9cda6227e9130da182c13e73c8b2e"
+    },
+    ".claude/agents/kit-explorer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".claude/agents/kit-implementer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".claude/agents/kit-reviewer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".claude/references/accessibility-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/accessibility-checklist.md",
+      "git_blob_sha": "c8c61e5f3d5a010a0d0ecb918bfaffe6c76fca78"
+    },
+    ".claude/references/definition-of-done.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/definition-of-done.md",
+      "git_blob_sha": "35e39f9e15f6dd0ff4725a6e5cbce7f2aa69064a"
+    },
+    ".claude/references/observability-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/observability-checklist.md",
+      "git_blob_sha": "ad40d7aa3fca5d2091fa45be234c14aee22c3588"
+    },
+    ".claude/references/orchestration-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/orchestration-patterns.md",
+      "git_blob_sha": "09cddd31d52a95be1d9bca814547d184b9945e44"
+    },
+    ".claude/references/performance-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/performance-checklist.md",
+      "git_blob_sha": "ba9744fe60dbe4f04f3f907029638d923158d7a2"
+    },
+    ".claude/references/security-checklist.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/security-checklist.md",
+      "git_blob_sha": "fc5e29b92c183fa69e0952b61a99761dc48b4c0b"
+    },
+    ".claude/references/testing-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "references/testing-patterns.md",
+      "git_blob_sha": "bc96e271ad241ca567f06d21c6ecc001455b80f1"
+    },
+    ".claude/skills/api-and-interface-design/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/api-and-interface-design/SKILL.md",
+      "git_blob_sha": "3e2e37f8f4fba2c66f9f1599eaf01a55ae3f3e33"
+    },
+    ".claude/skills/code-review-and-quality/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/code-review-and-quality/SKILL.md",
+      "git_blob_sha": "08209ff2208d2883d48d945f7754c428b77f8d87"
+    },
+    ".claude/skills/code-simplification/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/code-simplification/SKILL.md",
+      "git_blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347"
+    },
+    ".claude/skills/context-engineering/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/context-engineering/SKILL.md",
+      "git_blob_sha": "fb8bb5f85128302b231d301c1201da1e223f6869"
+    },
+    ".claude/skills/debugging-and-error-recovery/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/debugging-and-error-recovery/SKILL.md",
+      "git_blob_sha": "356da20365a7cd6825b4ffad14be39280c92cdfc"
+    },
+    ".claude/skills/documentation-and-adrs/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/documentation-and-adrs/SKILL.md",
+      "git_blob_sha": "e37c38f30d76263c77aacdb7dcbacceb1218bc80"
+    },
+    ".claude/skills/frontend-ui-engineering/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/frontend-ui-engineering/SKILL.md",
+      "git_blob_sha": "eaf0fa163876a5274674f42ea208742c50f27119"
+    },
+    ".claude/skills/incremental-implementation/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/incremental-implementation/SKILL.md",
+      "git_blob_sha": "9c4f49bc841adb3c0f98baaa9eabd435a5b64ef9"
+    },
+    ".claude/skills/observability-and-instrumentation/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/observability-and-instrumentation/SKILL.md",
+      "git_blob_sha": "84d9cb373467fe0e15236e190833ecc90f840c38"
+    },
+    ".claude/skills/performance-optimization/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/performance-optimization/SKILL.md",
+      "git_blob_sha": "498735724035f468737bd118f9c60676a013d544"
+    },
+    ".claude/skills/performance-optimization/references/optimization-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/performance-optimization/references/optimization-patterns.md",
+      "git_blob_sha": "63e27bcc7a051c3dc23c164f146f374e119874cc"
+    },
+    ".claude/skills/planning-and-task-breakdown/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/planning-and-task-breakdown/SKILL.md",
+      "git_blob_sha": "296249b64334bcfd1aeaefd27b9e3e5494e38ec0"
+    },
+    ".claude/skills/security-and-hardening/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/security-and-hardening/SKILL.md",
+      "git_blob_sha": "e80e1e9a4f5b2989308c376d4ea0d333fe2c26ef"
+    },
+    ".claude/skills/security-and-hardening/references/hardening-patterns.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/security-and-hardening/references/hardening-patterns.md",
+      "git_blob_sha": "9af2604409af9a085bad0b14a269a89a74d34084"
+    },
+    ".claude/skills/source-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/source-driven-development/SKILL.md",
+      "git_blob_sha": "2704f0e130bc4659951aa552373914b2d63d18c9"
+    },
+    ".claude/skills/spec-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/spec-driven-development/SKILL.md",
+      "git_blob_sha": "f54426bec00bcda5f700ab3368eed7203306830f"
+    },
+    ".claude/skills/technote/SKILL.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".claude/skills/test-driven-development/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/test-driven-development/SKILL.md",
+      "git_blob_sha": "8898bcbba4c4f6acca473ece95e82105bd9cfea0"
+    },
+    ".claude/skills/using-agent-skills/SKILL.md": {
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
+      "upstream_path": "skills/using-agent-skills/SKILL.md",
+      "git_blob_sha": "d56ac03ab057036c1bdcc9127c88952758ee2f0d"
+    },
+    ".codex/agents/kit-explorer.toml": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".codex/agents/kit-implementer.toml": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    ".codex/agents/kit-reviewer.toml": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "CLAUDE.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/agent-compatibility.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/agent-coordination-templates.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/model-routing.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/roles/coordinator.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/roles/explorer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/roles/implementer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/roles/reviewer.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/skills-catalog.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/team-policy.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/team-workflow.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/technote.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "docs/agent-kit/verification-guide.md": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    },
+    "engineering/agent-kit/LICENSE": {
+      "source": "agent-kit 22c2a20359072dcb510f3329b97161b16f947fb2; source/destination mapping in engineering/AGENT-KIT-LOCK.json",
+      "historical_manifest": "docs/agent-kit/skills-manifest.json"
+    }
+  },
+  "preservedNativeAgents": [
+    {
+      "name": "kit-explorer",
+      "role_source": "docs/agent-kit/roles/explorer.md",
+      "codex": ".codex/agents/kit-explorer.toml",
+      "claude": ".claude/agents/kit-explorer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    },
+    {
+      "name": "kit-implementer",
+      "role_source": "docs/agent-kit/roles/implementer.md",
+      "codex": ".codex/agents/kit-implementer.toml",
+      "claude": ".claude/agents/kit-implementer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    },
+    {
+      "name": "kit-reviewer",
+      "role_source": "docs/agent-kit/roles/reviewer.md",
+      "codex": ".codex/agents/kit-reviewer.toml",
+      "claude": ".claude/agents/kit-reviewer.md",
+      "model_policy": "Codex gpt-6.1-sol High explorer/reviewer; Medium implementer; Claude inherit with no unsupported project implementation"
+    }
+  ],
+  "sourceMappings": {
+    ".agents/references/template-application.md": {
+      "sourcePath": ".agents/references/template-application.md",
+      "sourceSha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".agents/skills/code-review-and-quality/SKILL.md": {
+      "sourcePath": ".agents/skills/code-review-and-quality/SKILL.md",
+      "sourceSha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".agents/skills/frontend-ui-engineering/SKILL.md": {
+      "sourcePath": ".agents/skills/frontend-ui-engineering/SKILL.md",
+      "sourceSha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".agents/skills/incremental-implementation/SKILL.md": {
+      "sourcePath": ".agents/skills/incremental-implementation/SKILL.md",
+      "sourceSha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".agents/skills/planning-and-task-breakdown/SKILL.md": {
+      "sourcePath": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "sourceSha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".claude/references/template-application.md": {
+      "sourcePath": ".claude/references/template-application.md",
+      "sourceSha256": "417c2f9ac2d50407e2ce438abe05ccf0730f10f27e8a0b59489b7d4ac8035b6c",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".claude/skills/code-review-and-quality/SKILL.md": {
+      "sourcePath": ".claude/skills/code-review-and-quality/SKILL.md",
+      "sourceSha256": "c4c025387b0ab6a63d822b9bc8289e2bdc23fee3fe292d29b7d3a14474c9459a",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".claude/skills/frontend-ui-engineering/SKILL.md": {
+      "sourcePath": ".claude/skills/frontend-ui-engineering/SKILL.md",
+      "sourceSha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".claude/skills/incremental-implementation/SKILL.md": {
+      "sourcePath": ".claude/skills/incremental-implementation/SKILL.md",
+      "sourceSha256": "4bbdc9ad0456e01cb59ef2b6487d1ff379f99582313ef947059da4ba3538ca65",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    ".claude/skills/planning-and-task-breakdown/SKILL.md": {
+      "sourcePath": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "sourceSha256": "84cdaf07b2734e6cee079c9b509a5a15ee4e00943adbb6586edc759caf6f02e8",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    "docs/agent-kit/agent-coordination-templates.md": {
+      "sourcePath": "docs/agent-coordination-templates.md",
+      "sourceSha256": "3c53a7b26b6d5d4bd2c1a0322dd61bd53d44d0859282527e724fb612298c4c6a",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    "docs/agent-kit/skills-catalog.md": {
+      "sourcePath": "docs/skills-catalog.md",
+      "sourceSha256": "c4aeedb0c5d5b6ca3b7cf302bb8e4f29da12157a92e185d511bf27db743c2545",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    "docs/agent-kit/team-workflow.md": {
+      "sourcePath": "docs/team-workflow.md",
+      "sourceSha256": "55b5e851751db91ed46314f9c41a1260bc59f4fbeb7ccf352ff9f8f15708cff7",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    "docs/agent-kit/template-application-acceptance.md": {
+      "sourcePath": "docs/template-application-acceptance.md",
+      "sourceSha256": "e11d640c7b9150120c10098d7c97f18a2d055b0d8ff9f9cf1b211435885069c4",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    },
+    "docs/agent-kit/verification-guide.md": {
+      "sourcePath": "docs/verification-guide.md",
+      "sourceSha256": "02f9a80234caf7bfa6d6e77e2dcf194ca39829451b8fc35bb1a699427c68c1e5",
+      "transformation": "Link relocation only for4skills/reference/checklist; selective upstream delta for workflow/coordination; source-aware local catalog/guide"
+    }
+  },
+  "mutableIntegrationPaths": [
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/verification-results.md",
+    "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
+    "docs/agent-kit/evidence/template-adoption-001-v2/routing.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/candidate-review.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/results.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/source-review.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/integration.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/apply.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/candidate-handoff.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/final-package.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/preservation.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/review-routing.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/source-checks.json"
+  ],
+  "addedPaths": [
+    ".agents/references/template-application.md",
+    ".claude/references/template-application.md",
+    "docs/agent-kit/cms-template-acceptance.md",
+    "docs/agent-kit/evidence/template-adoption-001-v2/approval.json",
+    "docs/agent-kit/evidence/template-adoption-001-v2/preflight.json",
+    "docs/agent-kit/template-application-acceptance.md",
+    "engineering/PINKY-TEMPLATE-ADOPTION-001-v2-LOCK.json",
+    "engineering/agent-kit/verify-template-adoption.py"
+  ],
+  "historicalBoundary": "Original manifests/locks/checkers/receipts preserved; no CMS data/runtime/emulator/global/native/production claim.",
+  "checker": {
+    "path": "engineering/agent-kit/verify-template-adoption.py",
+    "sha256": "b632a51ddea728c78f88a54614a0cbdfa57a19460cf4d1b03fc70242b6cc4238"
+  }
+}

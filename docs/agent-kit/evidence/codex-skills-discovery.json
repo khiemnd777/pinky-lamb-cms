@@ -1,0 +1,16 @@
+{
+  "observedAtUtc": "2026-10-12T14:56:33.713488+00:00",
+  "clientVersion": "0.162.0-alpha.17.2",
+  "commands": [
+    "codex app-server --listen stdio://",
+    "initialize",
+    "initialized",
+    "skills/list {cwds:[PROJECT_ROOT],forceReload:true}"
+  ],
+  "modelTurn": "NOT_RUN",
+  "globalConfigChanged": false,
+  "status": "BLOCKED_OR_PARTIAL",
+  "reason": "RPC response deadline; no payload persisted",
+  "processExitCode": 1,
+  "stderrLineCountNoContentsPersisted": 2
+}

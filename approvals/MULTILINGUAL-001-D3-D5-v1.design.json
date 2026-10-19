@@ -1,0 +1,79 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "design_id": "D3-D5",
+  "version": 1,
+  "status": "DESIGN_APPROVED",
+  "human_approval": {
+    "quote": "Approved MULTILINGUAL-001 D3-D5 design v1 và P3-REP v1. Triển khai và kiểm thử Project đại diện đúng bundle, giữ nguyên UI/UX đã duyệt.",
+    "source": "direct user message in current chat",
+    "recorded_at": "2026-10-16T10:02:55.613548+00:00",
+    "preapproval_snapshot": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-rep-v1/approved-20261016"
+  },
+  "implementation_authorized": false,
+  "sources": [
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.html",
+      "sha256": "ec1e8c471b8cf464a54230fca8e51769f527a73c4ac16a2062a898728b5f3885",
+      "size_bytes": 8628
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.css",
+      "sha256": "8167dee192eb8ca25daedbb9fad0f0c05706179894ca665adfa1289e33e7dd06",
+      "size_bytes": 9781
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.js",
+      "sha256": "3d936d85a365edeaf3caee115c6f5c41ff0ac61caf6feaa446c6b666c50c87b8",
+      "size_bytes": 58884
+    }
+  ],
+  "readme": {
+    "path": "mockups/MULTILINGUAL-D3-D5-DESIGN-v1.md",
+    "sha256": "98993feeaed7a864d91161d6a9e4e12f9914a817871c49ecfeb89c585910348f",
+    "size_bytes": 5666
+  },
+  "readonly_approved_cms_style": {
+    "path": "mockups/multilingual-p1-redesign-v1.css",
+    "sha256": "39dba8aa16cf2e4f5010b292d84e0f0aa63d5f21419b9b5b0ba86e13bf32d77b",
+    "size_bytes": 18964
+  },
+  "website_reference_pins": {
+    "path": "approvals/MULTILINGUAL-001-P7-template-v1.pins.json",
+    "sha256": "d63e5539b74936f205ae8c0071fee9d6a710698d7b65ad150fe8f850591de291",
+    "size_bytes": 18692
+  },
+  "views": [
+    "D3-PROJECT",
+    "D3-SERVICE",
+    "D4-GROUPS",
+    "D5-REVIEW"
+  ],
+  "url": "http://127.0.0.1:4187/mockups/multilingual-p3-p5-design-v1.html",
+  "runtime": "memory-only prototype, script-free same-origin measurement child preview; no CMS/API/Auth/storage writes",
+  "proposed_service_mapping": "one active-locale title plus localized subtitle preserves baseline secondary slot; no simultaneous bilingual edit fields",
+  "implementation_bundle": "approvals/MULTILINGUAL-001-P3-REP-v1.scope.json",
+  "required_human_quote": "Approved MULTILINGUAL-001 D3-D5 design v1 và P3-REP v1",
+  "evidence": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-design-v1/preparation-20261016",
+  "browser": "Edge via CUA; viewport emulation, not physical mobile",
+  "viewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "additional_checks": [
+    "Project controls at320x780 and768x1024",
+    "Review width320 and768",
+    "locale/dirty/source/saved preview",
+    "Project missing/loading/readonly/error/conflict/unknown/source drift",
+    "D4 rich headings/newline/bold/accent, logo identity and actual group fields",
+    "D5 snapshot locale/identity/self-review/request reason/retained note"
+  ],
+  "not_run": [
+    "CMS Project implementation/runtime save/CAS",
+    "real demo role matrix",
+    "full-site P4/P7 parity/CTA integration",
+    "language acceptance",
+    "P6 retained import",
+    "P7 Hosting activation"
+  ],
+  "recorded_at": "2026-10-16T08:21:35.613752+00:00"
+}

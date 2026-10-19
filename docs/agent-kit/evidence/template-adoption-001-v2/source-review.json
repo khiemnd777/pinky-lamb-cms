@@ -1,0 +1,23 @@
+{
+  "result": "PASS_SOURCE_PACKAGE",
+  "reviewer": "template_review",
+  "route": "Native turn_context gpt-6.1-sol/high; independently read by root",
+  "candidateHashesMatched": 19,
+  "sourcePinsMatched": 18,
+  "sourceTransformationsMatched": 10,
+  "workflowCoordinationDeltasMatched": 2,
+  "blockingFindings": [],
+  "independentCleanChecker": {
+    "result": "PASS",
+    "baselineRecords": 183,
+    "protectedCmsSourceRecords": 656,
+    "maintainedFiles": 78,
+    "mirrorPairs": 28,
+    "skillsPerRoot": 17,
+    "originalUpstreamFiles": 20,
+    "adaptedUpstreamFiles": 6,
+    "localLinks": 75
+  },
+  "syntheticEvidenceReviewed": "13PASS cases; reviewer did not repeat mutation suite",
+  "scope": "Frozen19candidate source/package only; no native V31/application/human acceptance proof"
+}

@@ -1,0 +1,21 @@
+{
+  "observedAtUtc": "2026-10-12T15:02:46.112886+00:00",
+  "schema": "Installed CLI ConfigReadParams has cwd/includeLayers",
+  "command": "Owned app-server initialize -> config/read {cwd:PROJECT_ROOT,includeLayers:true}",
+  "rawConfigPersisted": false,
+  "configWriteOperations": "NONE",
+  "modelTurn": "NOT_RUN",
+  "status": "READ_PASS",
+  "projectLayers": [
+    {
+      "path": ".codex",
+      "disabledReason": "To load project-local config, hooks, and exec policies, add [PRIVATE_PATH] as a trusted project in [PRIVATE_PATH]",
+      "kitAgentNames": []
+    }
+  ],
+  "effectiveKitAgents": [],
+  "nativeDefinitionDiscovery": "NOT_OBSERVED_BY_CONFIG_READ",
+  "responseErrorCode": null,
+  "ownedProcessExitCode": 0,
+  "stderrLineCountNoContentsPersisted": 1
+}

@@ -1,0 +1,16 @@
+{
+  "observedAtUtc": "2026-10-12T15:26:07.532506+00:00",
+  "source": "Installed generated experimental ThreadStartParams",
+  "schemaSha256": "80a40a7fac15b4bf70efb7f893fb353acc0a0d30c68f54aee4f01923deca85de",
+  "ephemeralSupported": true,
+  "agentRegistrySelectorFields": [],
+  "threadSourceMeaning": "Client-supplied analytics classification, not agent selection",
+  "sessionStartSourceValues": [
+    "startup",
+    "clear"
+  ],
+  "genericConfig": "Additional properties only; no documented role selector",
+  "threadStart": "NOT_RUN",
+  "modelTurn": "NOT_RUN",
+  "conclusion": "No safe named-agent ephemeral lookup is established by this schema"
+}

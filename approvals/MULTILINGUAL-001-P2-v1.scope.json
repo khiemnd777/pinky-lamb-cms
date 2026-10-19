@@ -1,0 +1,116 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "slice": "P2",
+  "version": 1,
+  "status": "REVIEW_READY",
+  "implementation_authorized": true,
+  "human_approval": {
+    "quote": "Approved MULTILINGUAL-001 P2 v1 — switch/navigation QA local theo mockup và scope đã trình",
+    "source": "Direct user message in current chat",
+    "observed_date": "2026-10-16",
+    "scope": "Exact approved mockup and 10 application paths; local QA only"
+  },
+  "planning_request": "P1 đã xong chưa? nếu xong thì qua P2 đi. lâu và chậm chạp quá!",
+  "P1_state": "CODE_COMPLETE_CORE_VERIFIED_ACCEPTANCE_OPEN; notclosedorwaived",
+  "mockup": [
+    {
+      "path": "mockups/multilingual-p2-switch-v1.html",
+      "sha256": "d985c68f91e3fbc1c3aa088519887c904444a2eab39fa53d4c8d29aaf7e840b8"
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.css",
+      "sha256": "79da8be13d6ad5e0c8cd17689b6b0063dd9c845d6140beac2210dceb8c9463c9"
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.js",
+      "sha256": "0ecb675bc7858da13974c16463a70be70ee1069dd9a458a58b5e84414397d417"
+    }
+  ],
+  "documents": [
+    {
+      "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P2-v1.md",
+      "sha256": "111ab8fc32c09fb8db0fa73622be7be36271eef5ac19325d4b8e8e4dcaa7c5d4"
+    },
+    {
+      "path": "pinky-lamb-cms/tasks/MULTILINGUAL-001-P2-v1.md",
+      "sha256": "84c58cb108229c94161d11a9ed1d38f4c538caa01b3408554c07ad61ee56adcc"
+    }
+  ],
+  "proposed_implementation_allowlist": [
+    {
+      "path": "pinky-lamb-cms/preview/site-sections.mjs",
+      "state": "EXISTING",
+      "sha256": "04eb271832b12edd7fac6e25baf49b04de8295354842ee2be4a88a5d49626fba"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.mjs",
+      "state": "EXISTING",
+      "sha256": "3c88e885dc657f26821e93f55a21cf54f793b6272259fc66c5aee97324e2dbe1"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.css",
+      "state": "EXISTING",
+      "sha256": "f35b12722387572ba34f60857a40029f0a6fd2877c0dd5e39613aa60667fa539"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale-copy.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-localized-qa.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-multilingual-shell-local.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-locale.test.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-locale-ui.local.test.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-shell-export.test.mjs",
+      "state": "ABSENT",
+      "sha256": null
+    }
+  ],
+  "protected": "All admin/cms-api/infra/baseline/P1Hero/mockups/evidence outside exact10paths readonly",
+  "runtime": {
+    "retained_writes": 0,
+    "emulator_lifecycle": false,
+    "auth_login_required": false,
+    "new_accounts_roles_tokens": false,
+    "installs": false,
+    "QA_origin_after_approval": "http://127.0.0.1:4175",
+    "hosting5010_activation": false,
+    "cloud_production": false
+  },
+  "tasks": [
+    "T00 design/baseline",
+    "T01 locale/context rules",
+    "T02 controls/guards",
+    "T03 QA3routes/export",
+    "T04 review/handoff"
+  ],
+  "rendered_mockup_evidence": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p2-v1/design-review-20261016/render-result.json",
+  "mockup_url": "http://127.0.0.1:4186/mockups/multilingual-p2-switch-v1.html",
+  "required_human_quote_example": "Approved MULTILINGUAL-001 P2 v1 — switch/navigation QA local theo mockup và scope đã trình",
+  "preflight": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p2-v1/implementation-20261016/preflight.json",
+  "execution_summary": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p2-v1/implementation-20261016/execution-summary.json",
+  "human_acceptance": "PENDING",
+  "completion_scope": "Code and scoped local verification complete; P1 acceptance and P3-P7 unchanged"
+}

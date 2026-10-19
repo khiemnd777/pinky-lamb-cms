@@ -1,0 +1,78 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "slice": "P1 v2-A2",
+  "version": 1,
+  "status": "CODE_COMPLETE_SCOPED_VERIFIED_P1_OPEN",
+  "implementation_authorized": true,
+  "parent_scope": "approvals/MULTILINGUAL-001-P1-v2.scope.json",
+  "document": {
+    "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v2-A2.md",
+    "sha256": "e154bf5cd296bdf87f3732dc476cb3c20f2e8c5e94af902d6507ce15d0a608ea"
+  },
+  "expected_source_digests": [
+    {
+      "path": "pinky-lamb-cms/admin/index.html",
+      "sha256": "523b422c7461c8b606d7fc3b61d143fbea0c715c976a7741bb262937a9488b65"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-preview.mjs",
+      "sha256": "5e9620e55c910a2db771a38a884086904622dceb6bb089573e3393f6443081a5"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-renderer.mjs",
+      "sha256": "67a4fecaaba627109e1f88b2a90fb608878b490fbbe12b190402bf0a29428fff"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-preview.test.mjs",
+      "sha256": "ff6578dd6b7d6548c066b8630c1e3ad01b76a600bd93d058360fdc8a1afa0f96"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-renderer.test.mjs",
+      "sha256": "5381cb1850ef7c8a4324f814ac07280eb68a1411a9b794f484cd45b6caa1a3eb"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-ui.local.test.mjs",
+      "sha256": "f4cbed263dd50b6412aebc1691c6d2805d00095442a2b0afc6df928b81789c13"
+    }
+  ],
+  "requested_delta": {
+    "parent_img_src": "'self' http://127.0.0.1:5010 blob: data:",
+    "qa2_private_child_img_src": "http://127.0.0.1:5010 blob: data:",
+    "image_representation": "canonical data:image URI generated only from authority MIME + verified length/SHA bytes",
+    "budget": "one shared aggregate Q=R+B+2H+32768 <=64MiB before image fetch/encoding; retained until teardown; no early settle/release",
+    "unchanged": [
+      "approved mockup and user controls",
+      "empty sandbox and srcdoc",
+      "script/connect/frame/default policies and all origins",
+      "one fixed stylesheet hash",
+      "Auth/ACL/routes/save/CAS/idempotency",
+      "QA1 and QA2 export profile",
+      "base data and sidecar identities"
+    ]
+  },
+  "global_security_impact": "parent image scheme allowance expands across CMS; explicit human approval required",
+  "runtime_authority": "inherits P1v2 named local runtime/data bounds only; 0 of16 successful commits used; no new roles/accounts/tokens/cloud/deploy",
+  "planning_review": "p1_v2_security_review: no actionable planning gaps after explicit formula/MIME clarification; not implementation approval",
+  "required_human_quote": "Approved MULTILINGUAL-001 P1 v2-A2 v1",
+  "human_approval": {
+    "quote": "Approved MULTILINGUAL-001 P1 v2-A2 v1",
+    "source": "direct user message in current chat",
+    "recorded_at": "2026-10-16T06:00:57.314845+00:00",
+    "approved_document_sha256": "e154bf5cd296bdf87f3732dc476cb3c20f2e8c5e94af902d6507ce15d0a608ea",
+    "preapproval_snapshot": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v2/a2-approved-20261016"
+  },
+  "execution_evidence": {
+    "source_freeze": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v2/source-a2-final-r2-20261016.json",
+    "summary": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p1-v2/execution-summary.json",
+    "unit": "64/64PASS",
+    "browser": "22PASS1AuthSKIP",
+    "live_core": "10PASS8restoredcommits",
+    "logout_A": "PASS",
+    "logout_B": "UNPROVEN",
+    "P1_closed": false
+  },
+  "current_document_version": {
+    "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P1-v2-A2.md",
+    "sha256": "483db632782ec2adfaa73638f0e4735b112f9def79f3b5db5e83c2926ab28451"
+  }
+}

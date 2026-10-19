@@ -1,0 +1,26 @@
+{
+  "observedAtUtc": "2026-10-12T14:56:54.095831+00:00",
+  "command": "codex debug prompt-input (no prompt, no model turn)",
+  "exitCode": 1,
+  "rawPromptPersisted": false,
+  "stderrBytesNoContentsPersisted": 148,
+  "nativeAgents": [
+    {
+      "name": "kit-explorer",
+      "presentInRenderedInputs": false,
+      "roleReferencePresent": false
+    },
+    {
+      "name": "kit-implementer",
+      "presentInRenderedInputs": false,
+      "roleReferencePresent": false
+    },
+    {
+      "name": "kit-reviewer",
+      "presentInRenderedInputs": false,
+      "roleReferencePresent": false
+    }
+  ],
+  "runtimeModelPermissions": "NOT_RUN",
+  "definitionDiscovery": "PARTIAL_INPUT_RENDER_ONLY"
+}

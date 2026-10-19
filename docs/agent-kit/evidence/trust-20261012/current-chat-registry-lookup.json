@@ -1,0 +1,34 @@
+{
+  "observationAtUtc": "2026-10-12T15:28:03.137095+00:00",
+  "source": "Root actual current-chat native registry lookup observations relayed directly",
+  "runtime": "Existing current Codex chat; not fresh app/client registry proof",
+  "command": "collaboration.spawn_agent agent_type exact names, startup-only/no-tool probe",
+  "status": "ACTUAL_SESSION_REGISTRY_LOOKUP_FAIL",
+  "lookups": [
+    {
+      "agentType": "kit-explorer",
+      "result": "IMMEDIATE_REJECTION",
+      "error": "unknown agent_type",
+      "childCreated": false,
+      "modelSessionCreated": false
+    },
+    {
+      "agentType": "kit-implementer",
+      "result": "IMMEDIATE_REJECTION",
+      "error": "unknown agent_type",
+      "childCreated": false,
+      "modelSessionCreated": false
+    },
+    {
+      "agentType": "kit-reviewer",
+      "result": "IMMEDIATE_REJECTION",
+      "error": "unknown agent_type",
+      "childCreated": false,
+      "modelSessionCreated": false
+    }
+  ],
+  "toolsDataActions": "NONE",
+  "trust": "Resolved and verified separately",
+  "cause": "UNKNOWN; cached session vs loader/version not verified",
+  "limits": "Not proof files absent or fresh session will fail; no registration/config edits attempted"
+}

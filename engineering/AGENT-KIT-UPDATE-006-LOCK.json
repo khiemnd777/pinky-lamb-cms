@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "task": "AGENT-KIT-UPDATE-006 v1",
+  "approvalSource": "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+  "baseline": {
+    "path": "docs/agent-kit/evidence/update-006-preflight.json",
+    "sha256": "3adc447e15c575907c8b6f407f08d2016bb3eb0662b4d4f5d742973ee9a5392d"
+  },
+  "source": {
+    "repository": "https://github.com/khiemnd777/agent-kit",
+    "baseCommit": "ea72429b4c3cd80296b7ad75139431eb944aa319",
+    "headCommit": "8fedcd0b08b256b08e50cfbcd12b3ccc80ed267c",
+    "gitHubMainComparison": "IDENTICAL observed by connector in preceding investigation",
+    "files": [
+      {
+        "path": ".agents/references/definition-of-done.md",
+        "gitBlobSha": "8d4cb8461da02e60c803c999d95860b41e6d2dab",
+        "sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+      },
+      {
+        "path": ".agents/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "1d58f4989171f7305eb3101c823225fbbbdfd959",
+        "sha256": "bcf76a9cd03b5991a0acd22553ed040fba8f03c58b16fa4882b38164f5dbe06d"
+      },
+      {
+        "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "b13b967edde53bd0b99eef14b25a87074a09a0b7",
+        "sha256": "eb494aacebd62152bafdb1410b17a2b033af8ca879d2e6cba9d0665cc092e397"
+      },
+      {
+        "path": ".agents/skills/using-agent-skills/SKILL.md",
+        "gitBlobSha": "7b9effcc6a48b12a4d2b7e2baa4eb3a9a00c0c07",
+        "sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+      },
+      {
+        "path": ".claude/references/definition-of-done.md",
+        "gitBlobSha": "8d4cb8461da02e60c803c999d95860b41e6d2dab",
+        "sha256": "efb615a93227d23fa85d77af206143a7baac1895956c0447fe28a2e0c64e75c3"
+      },
+      {
+        "path": ".claude/skills/incremental-implementation/SKILL.md",
+        "gitBlobSha": "1d58f4989171f7305eb3101c823225fbbbdfd959",
+        "sha256": "bcf76a9cd03b5991a0acd22553ed040fba8f03c58b16fa4882b38164f5dbe06d"
+      },
+      {
+        "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+        "gitBlobSha": "b13b967edde53bd0b99eef14b25a87074a09a0b7",
+        "sha256": "eb494aacebd62152bafdb1410b17a2b033af8ca879d2e6cba9d0665cc092e397"
+      },
+      {
+        "path": ".claude/skills/using-agent-skills/SKILL.md",
+        "gitBlobSha": "7b9effcc6a48b12a4d2b7e2baa4eb3a9a00c0c07",
+        "sha256": "fd309a442037a5c0bec7d966f0d35e8f413b73338a55852c3012e7ecc9b90183"
+      },
+      {
+        "path": "AGENTS.md",
+        "gitBlobSha": "c0ca319942614e2141ef87ebdc7a459c797d4038",
+        "sha256": "33a055c8a7fe372c9cfe9babc4338c4de643e48a0a39f00696bd392c0502d3e8"
+      },
+      {
+        "path": "README.md",
+        "gitBlobSha": "50192e980cf64b8a063f3c620c9a9a7e0b1a89b3",
+        "sha256": "1ae43e7d041fd78b1240fa800e8f21764779365e2fb51fe5868c6b1920eb61a3"
+      },
+      {
+        "path": "docs/agent-coordination-templates.md",
+        "gitBlobSha": "c11266120dc9e0dec5d88fe54e5ecc50fae5840b",
+        "sha256": "9e3e8da33e82a7337aaf06dfa67eec21b9e7d7db22b5bbfa511e698abe51e877"
+      },
+      {
+        "path": "docs/roles/coordinator.md",
+        "gitBlobSha": "219207c41dfb6d305c4f02346c1fff9a227ef7a1",
+        "sha256": "8f406eac3aaadaa173fe6c89131f4c5dbb9cfc66eaef06f65cfa929c6114f6d4"
+      },
+      {
+        "path": "docs/roles/implementer.md",
+        "gitBlobSha": "eb61fc342765df4be3de003f7954672c0f745465",
+        "sha256": "614723bc3e02240d1ae8d2e70abf7864802710a626e5dbcde4dc2a76acd14d95"
+      },
+      {
+        "path": "docs/roles/reviewer.md",
+        "gitBlobSha": "dfc3c234e217555692dc647fa6ff924e046f9b70",
+        "sha256": "0e265282a62bd2a789d93f98827d36c8b82f77ceb3ce79db2bece0280675ad6e"
+      },
+      {
+        "path": "docs/skills-catalog.md",
+        "gitBlobSha": "ead48b4f39c208366366eea191fe17e382fb0ddd",
+        "sha256": "67161d3874c46fa6b92b1893c601fef74f0ffa172ff983a80a7e4d6e1bc12b2c"
+      },
+      {
+        "path": "docs/skills-manifest.json",
+        "gitBlobSha": "92ddebf8be70b3589d4033c49f75799c068885a6",
+        "sha256": "606278b73ebdf12369a38d05c113f165ec8b6fff7a50371fccf7b8a855d719f8"
+      },
+      {
+        "path": "docs/tasks/TASK-004.md",
+        "gitBlobSha": "6bf5a001c8166be0f85855132363c9ce019e0224",
+        "sha256": "fd18a38238577e34bb5712fb9b36dcfbac1b8885501dcd997f0cc53ab9b25290"
+      },
+      {
+        "path": "docs/team-policy.md",
+        "gitBlobSha": "878e60ea5e83758c2340ca2fc3965b4a478b5642",
+        "sha256": "16607323712c0103ce25f2dedaa6431bfccf02145646bbbc42c6475644d2b9be"
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "gitBlobSha": "a604ac6e994944dd0a676328e7ef222944c46abe",
+        "sha256": "9fe3bf3fbbaaa1c583d824a8ede461c58b7056783af08eb5a6218e45cc2e3b99"
+      },
+      {
+        "path": "docs/verification-guide.md",
+        "gitBlobSha": "bf90a27275eaa12fab1a9d52f1e8076fc32b8abf",
+        "sha256": "6cca997d8b3516268fa06e7978f65f611791d3ae752f14c296f4f01b729182bd"
+      },
+      {
+        "path": "docs/verification-results.md",
+        "gitBlobSha": "23d2d36687c192612b14bfc29f7382327a7470c9",
+        "sha256": "cb5c9cd9c98f7d89745a1cc99962d1c6f5b85faaef8cf7be186453b5cb58ac0c"
+      }
+    ]
+  },
+  "amendments": [
+    {
+      "path": ".agents/references/definition-of-done.md",
+      "beforeSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "afterSha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03"
+    },
+    {
+      "path": ".agents/skills/incremental-implementation/SKILL.md",
+      "beforeSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "afterSha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b"
+    },
+    {
+      "path": ".agents/skills/planning-and-task-breakdown/SKILL.md",
+      "beforeSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "afterSha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937"
+    },
+    {
+      "path": ".agents/skills/using-agent-skills/SKILL.md",
+      "beforeSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "afterSha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb"
+    },
+    {
+      "path": ".claude/references/definition-of-done.md",
+      "beforeSha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee",
+      "afterSha256": "7b60dfc17a29d9f490c51e3173927f1f100052d96d807514357e1a5643326a03"
+    },
+    {
+      "path": ".claude/skills/incremental-implementation/SKILL.md",
+      "beforeSha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "afterSha256": "330090a4368ef7364bc455960546fe2e3dcc32f67b1dd816d11559651d92b89b"
+    },
+    {
+      "path": ".claude/skills/planning-and-task-breakdown/SKILL.md",
+      "beforeSha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "afterSha256": "fadc62fbe29ff9bfbf3c45a6e6b82da4cb8d81f60f742522e956deb9e4a95937"
+    },
+    {
+      "path": ".claude/skills/using-agent-skills/SKILL.md",
+      "beforeSha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "afterSha256": "cbb6bb0acd45fa30f2e3096ea66bf13f8ce5dafd2c5bcd6706c2013267338dbb"
+    },
+    {
+      "path": "AGENTS.md",
+      "beforeSha256": "05c8979147391b5a4cf9da0f8a0ebf7a51b0052e5be82ec7b7a059e44cad2541",
+      "afterSha256": "29d5786e7ebd06f04ca2c842b363ead83ac1317bc12b51c9793d9e598255f190"
+    },
+    {
+      "path": "docs/agent-kit/agent-coordination-templates.md",
+      "beforeSha256": "2b11ac4f30a1aaa29453083d986f1c74a01a8cdb64225bdda5c4daddb97f0082",
+      "afterSha256": "7c64baa8609ccd075473fb523421d43acc4658fc363cc0be82e4a198266c45df"
+    },
+    {
+      "path": "docs/agent-kit/roles/coordinator.md",
+      "beforeSha256": "8fe07bdee0e75b8f227266b5b49cdda727dff9e66bd5b2689f4bba31dddcd222",
+      "afterSha256": "635f513c7a6c0d9dd8c27edb9d34581681a82a9cc4ffc5809491920b2c38392a"
+    },
+    {
+      "path": "docs/agent-kit/roles/implementer.md",
+      "beforeSha256": "5d8c6a30bff0472830231f606aa69d08b9b2b819e158d7e8e295cab86cb42d40",
+      "afterSha256": "9bde5376f932abeb4c8caca022bfab3921a5cd6b8e4502a488ee68050346a921"
+    },
+    {
+      "path": "docs/agent-kit/roles/reviewer.md",
+      "beforeSha256": "c046dcc66faa52747cc4367a2600dea4877f28f7c20a86edfb1a5b01a976e16f",
+      "afterSha256": "ee6e5b3e17c672596971ab57522c36ac54b730436862d215a2fa58e1985a8d87"
+    },
+    {
+      "path": "docs/agent-kit/skills-catalog.md",
+      "beforeSha256": "5aae58c5e8453a463071b5c078e20d47a11377b964cecc6a2015fb85959f91b3",
+      "afterSha256": "9c0d7fb5704023a1f5b444e41cd3cb510529d606f14e4738f3f976a4a7e79f53"
+    },
+    {
+      "path": "docs/agent-kit/team-policy.md",
+      "beforeSha256": "763b198c109b1ccea1d687e2f0b2c30689e08dac2967f459e7508ee18665e1e3",
+      "afterSha256": "a2a7527dc97eca6293814c664b9b2def49d13a2834592aa5e9e15d7df9468d07"
+    },
+    {
+      "path": "docs/agent-kit/team-workflow.md",
+      "beforeSha256": "3e71af13a3e3c5150dcb089ded5c2115c82127faa7326d299efad9828b8d14e4",
+      "afterSha256": "b80351b1ecfc35b099429bfbd6635b84d544e99f3dcd148454205887fdfa8a8a"
+    },
+    {
+      "path": "docs/agent-kit/verification-guide.md",
+      "beforeSha256": "71722244561d932be2ff2f9caf2483d5c1951a2f417717e1c9bbce19a13d035e",
+      "afterSha256": "3fc7e8930c6b26be9393b8c33bc942b359cf4321f6ec5307d78bfdd04a007a6f"
+    }
+  ],
+  "effectiveManifest": {
+    "path": "docs/agent-kit/skills-manifest-current.json",
+    "sha256": "eccf0e842008f92b9dc68774982ef1d64841eb7131cb64862d93f45e9afbf8b5"
+  },
+  "mutableIntegrationPaths": [
+    "docs/agent-kit/project-context.md",
+    "docs/agent-kit/project-plan.md",
+    "docs/agent-kit/project-state.md",
+    "docs/agent-kit/verification-results.md",
+    "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+    "docs/agent-kit/evidence/update-006-preflight.json",
+    "docs/agent-kit/evidence/update-006-review.json",
+    "docs/agent-kit/evidence/update-006-results.json"
+  ],
+  "addedPaths": [
+    "docs/agent-kit/skills-manifest-current.json",
+    "engineering/AGENT-KIT-UPDATE-006-LOCK.json",
+    "engineering/agent-kit/verify-proportionate-update.py",
+    "docs/agent-kit/tasks/AGENT-KIT-UPDATE-006.md",
+    "docs/agent-kit/evidence/update-006-preflight.json",
+    "docs/agent-kit/evidence/update-006-review.json",
+    "docs/agent-kit/evidence/update-006-results.json"
+  ],
+  "historicalBoundary": "No rewrite or reclassification of historical locks/manifests/receipts, UPDATE-004 HOLD or Permission-003 CLOSED. Package checks only; native/CMS/emulator/global/production NOT_RUN.",
+  "checker": {
+    "path": "engineering/agent-kit/verify-proportionate-update.py",
+    "sha256": "e51ee049debb608ce5df191dcdaf0b353bcbf9574bba5a97d0b33affa574c2f4"
+  }
+}

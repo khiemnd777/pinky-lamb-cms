@@ -1,0 +1,2553 @@
+{
+  "proposal_id": "MULTILINGUAL-001",
+  "slice": "P3-REMAINDER",
+  "version": 1,
+  "status": "APPROVED_IN_PROGRESS",
+  "implementation_authorized": true,
+  "required_human_quote": "Approved MULTILINGUAL-001 P3-REMAINDER v1 — toàn bộ P3 còn lại local/emulators",
+  "canonical_tasks": "pinky-lamb-cms/tasks/MULTILINGUAL-001-v2.md",
+  "task_ids": [
+    "P3-04a",
+    "P3-04b",
+    "P3-05a",
+    "P3-05b"
+  ],
+  "document": {
+    "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P3-REMAINDER-v1.md",
+    "sha256": "e625d0b315675d057a656ba3edf29930fc01e9c074f6479ef389f90766844c90",
+    "size_bytes": 18853
+  },
+  "approved_design_sources": [
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.html",
+      "sha256": "ec1e8c471b8cf464a54230fca8e51769f527a73c4ac16a2062a898728b5f3885",
+      "size_bytes": 8628
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.css",
+      "sha256": "8167dee192eb8ca25daedbb9fad0f0c05706179894ca665adfa1289e33e7dd06",
+      "size_bytes": 9781
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.js",
+      "sha256": "3d936d85a365edeaf3caee115c6f5c41ff0ac61caf6feaa446c6b666c50c87b8",
+      "size_bytes": 58884
+    }
+  ],
+  "template_pins": {
+    "path": "approvals/MULTILINGUAL-001-P7-template-v1.pins.json",
+    "sha256": "d63e5539b74936f205ae8c0071fee9d6a710698d7b65ad150fe8f850591de291",
+    "size_bytes": 18692
+  },
+  "accepted_project": {
+    "path": "approvals/MULTILINGUAL-001-P3-REP-v1.acceptance.json",
+    "sha256": "209a4f45594f3a124dc41e6a25505a81eece4c09b1fa7ddbac395cf4555cc37b",
+    "size_bytes": 2152
+  },
+  "application_files": [
+    {
+      "path": "pinky-lamb-cms/cms-api/routes.mjs",
+      "sha256": "4b9ebce94d9fa56d4afb93565ab95a8679046902407a341195c9731cca63019b",
+      "size_bytes": 24326,
+      "action": "EDIT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/auth.mjs",
+      "sha256": "52be5b458295a5cede7c849c11a78a17ddaa63a160c6f9f4c5bc37e5c35d8c78",
+      "size_bytes": 24068,
+      "action": "EDIT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/service-localization.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/service-localization-records.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/work-services-localization.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/work-services-localization-records.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-locale-projection.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/service-localization-context.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/service-localizations.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/work-services-localization-context.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/work-services-localizations.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-locale-projections.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "API/contracts"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-media-editor.mjs",
+      "sha256": "a4028b4ae4ae702ee08d89d79390c1cbeea98c7316799b5292639380394c0277",
+      "size_bytes": 39522,
+      "action": "EDIT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-fields.mjs",
+      "sha256": "f4b46096f15588686b5af36b5d58222ed1515c64a4114a7f18589a453fc55073",
+      "size_bytes": 12930,
+      "action": "EDIT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/cms-shell.mjs",
+      "sha256": "23d5b5379d0af308ecc27537c5670ff38621f982c957d2e149d2832187f3700b",
+      "size_bytes": 24726,
+      "action": "EDIT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/service-localization-editor.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/service-localization-editor.css",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/service-localization-preview.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/work-services-localization-editor.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/admin/work-services-localization-preview.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "CMS"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/project-localization-renderer.mjs",
+      "sha256": "27c76bea5e43f792226ca208abf0600a814591de990b4dcdcb38e28d2c1e00a4",
+      "size_bytes": 9093,
+      "action": "EDIT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale.mjs",
+      "sha256": "472b23051a00ad847b8c5df22cea132ccb438de596e1ab5dcd6953a7fa03f52e",
+      "size_bytes": 2384,
+      "action": "EDIT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.mjs",
+      "sha256": "4de158f3307d28ad347389412eeac3ea691807c3e2b912665837cc7ad065f54b",
+      "size_bytes": 20562,
+      "action": "EDIT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-locale-copy.mjs",
+      "sha256": "4ff8f79cc6636e3b43ea39a3ac845d5cb33537a9f17c8f1c069d7935010c339f",
+      "size_bytes": 7006,
+      "action": "EDIT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-localized-qa.mjs",
+      "sha256": "585d9bf4216dbccdb6a1a20dd1a93e353643649b475155fed1110cf9fe6ca4ad",
+      "size_bytes": 11439,
+      "action": "EDIT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/service-localization-renderer.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/work-services-localization-renderer.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/preview/work-services-interactions.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "renderer/navigation"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/local-guard.mjs",
+      "sha256": "3ccf914fa565e025083ba6baa6e9004522dca2b9d33a7b73608194e0261d6b07",
+      "size_bytes": 131805,
+      "action": "EDIT",
+      "owner_group": "runner/export"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-multilingual-shell-local.mjs",
+      "sha256": "f0c8d5bd31197ed255e2a62d517cbb9e2447f77b61769bc437a2f32e5efb24e4",
+      "size_bytes": 9320,
+      "action": "EDIT",
+      "owner_group": "runner/export"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+      "sha256": "5c8963e32e4cf0e1d5163feb9a72f3e5020535e6860ad77ffd12710a795a7ccf",
+      "size_bytes": 8122,
+      "action": "EDIT",
+      "owner_group": "runner/export"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-work-services-local.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "runner/export"
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-p3-local.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "runner/export"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-renderer.test.mjs",
+      "sha256": "6161fe2ad487d92ab4e93cea5f6d1ebcaae755d4c495382af0f261896a4a1fc6",
+      "size_bytes": 5570,
+      "action": "EDIT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-locale.test.mjs",
+      "sha256": "a91d6da9997ab78f57dfebde337adb950eda4f2c5d46fd231a31a0b1d304a869",
+      "size_bytes": 2691,
+      "action": "EDIT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-locale-ui.local.test.mjs",
+      "sha256": "cb17d93f788cdc2af548e1dbafbea5ec7ec45285e27a60732cf3f1493d10ead0",
+      "size_bytes": 9717,
+      "action": "EDIT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-shell-export.test.mjs",
+      "sha256": "400ef65dc27f282f77b9a88e6cf7929e37648d7bcbca92dbad676bcb43697e2f",
+      "size_bytes": 5055,
+      "action": "EDIT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-contract.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-context.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-api.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-editor.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-preview.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/service-localization-renderer.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-localization-contract.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-localization-api.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-localization-editor.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-localization-renderer.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-locale-projection.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-export.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/work-services-runner.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-p3-ui.local.test.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/p3-localization-live.mjs",
+      "action": "CREATE",
+      "before": "ABSENT",
+      "owner_group": "checks"
+    }
+  ],
+  "readonly_dependencies": [
+    {
+      "path": "DESIGN.md",
+      "sha256": "408bd9897c3409230690597f14e21a42c686f32a344c9ad7934c86337ce51743",
+      "size_bytes": 19530
+    },
+    {
+      "path": "dist/app.js",
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32",
+      "size_bytes": 13918
+    },
+    {
+      "path": "dist/assets/Pinky-Lamb-Credential-2026.pdf",
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+      "size_bytes": 17349548
+    },
+    {
+      "path": "dist/assets/abril-fatface-400.woff",
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357",
+      "size_bytes": 26712
+    },
+    {
+      "path": "dist/assets/brand-diagonal.webp",
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+      "size_bytes": 12540
+    },
+    {
+      "path": "dist/assets/client-aqua.webp",
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+      "size_bytes": 17434
+    },
+    {
+      "path": "dist/assets/client-manulife.webp",
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+      "size_bytes": 6046
+    },
+    {
+      "path": "dist/assets/client-samsung.webp",
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+      "size_bytes": 26684
+    },
+    {
+      "path": "dist/assets/client-sony.webp",
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+      "size_bytes": 4806
+    },
+    {
+      "path": "dist/assets/client-wayfair.webp",
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+      "size_bytes": 12618
+    },
+    {
+      "path": "dist/assets/diag-awareness-2022.webp",
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+      "size_bytes": 32040
+    },
+    {
+      "path": "dist/assets/favicon.png",
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+      "size_bytes": 6186
+    },
+    {
+      "path": "dist/assets/montserrat-400.woff",
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1",
+      "size_bytes": 84072
+    },
+    {
+      "path": "dist/assets/montserrat-600.woff",
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f",
+      "size_bytes": 84976
+    },
+    {
+      "path": "dist/assets/montserrat-700.woff",
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03",
+      "size_bytes": 85620
+    },
+    {
+      "path": "dist/assets/montserrat-800.woff",
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1",
+      "size_bytes": 86676
+    },
+    {
+      "path": "dist/assets/petrosetco-fireworks-2026.webp",
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+      "size_bytes": 92836
+    },
+    {
+      "path": "dist/assets/petrosetco-guests-2026.webp",
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+      "size_bytes": 122614
+    },
+    {
+      "path": "dist/assets/petrosetco-party-2026.webp",
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+      "size_bytes": 115474
+    },
+    {
+      "path": "dist/assets/pinky-hero.webp",
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "size_bytes": 51282
+    },
+    {
+      "path": "dist/assets/pinky-logo.webp",
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+      "size_bytes": 28046
+    },
+    {
+      "path": "dist/assets/pinky-mascot.webp",
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+      "size_bytes": 61562
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-2025.webp",
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+      "size_bytes": 108712
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-guests-2025.webp",
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+      "size_bytes": 64474
+    },
+    {
+      "path": "dist/assets/psd-dell-microsoft-stage-2025.webp",
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+      "size_bytes": 78392
+    },
+    {
+      "path": "dist/assets/samsung-flip2-2019.webp",
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+      "size_bytes": 34148
+    },
+    {
+      "path": "dist/assets/showreel-2025.mp4",
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "size_bytes": 11403830
+    },
+    {
+      "path": "dist/assets/showreel-poster.webp",
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "size_bytes": 54698
+    },
+    {
+      "path": "dist/assets/sony-ult-2025.webp",
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+      "size_bytes": 56578
+    },
+    {
+      "path": "dist/assets/varna-elite-2023.webp",
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+      "size_bytes": 39670
+    },
+    {
+      "path": "dist/assets/varna-elite-collage-2023.webp",
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+      "size_bytes": 54590
+    },
+    {
+      "path": "dist/assets/varna-elite-lifestyle-2023.webp",
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+      "size_bytes": 35632
+    },
+    {
+      "path": "dist/assets/vifa-fair-2026.webp",
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+      "size_bytes": 117020
+    },
+    {
+      "path": "dist/assets/vifa-opening-2026.webp",
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+      "size_bytes": 182808
+    },
+    {
+      "path": "dist/assets/wayfair-registration-2026.webp",
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+      "size_bytes": 112116
+    },
+    {
+      "path": "dist/assets/wayfair-summit-2026.webp",
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+      "size_bytes": 47196
+    },
+    {
+      "path": "dist/assets/wayfair-team-2026.webp",
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+      "size_bytes": 61756
+    },
+    {
+      "path": "dist/content.js",
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63",
+      "size_bytes": 7705
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de",
+      "size_bytes": 18385
+    },
+    {
+      "path": "dist/styles.css",
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e",
+      "size_bytes": 44637
+    },
+    {
+      "path": "firebase.json",
+      "sha256": "9e35bc66462fac43141da983163a51119796d3ff31e78421b17a5ed682684acc",
+      "size_bytes": 812
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.css",
+      "sha256": "39dba8aa16cf2e4f5010b292d84e0f0aa63d5f21419b9b5b0ba86e13bf32d77b",
+      "size_bytes": 18964
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.html",
+      "sha256": "4ddbd2b856676920eeaebce5a90815f7a995909ad00e6fb0838898a56c182ded",
+      "size_bytes": 13971
+    },
+    {
+      "path": "mockups/multilingual-p1-redesign-v1.js",
+      "sha256": "b1a3b1f68fac1e4ec84ff33e80815c3f38e77539f783789b4bfd31fa4b320689",
+      "size_bytes": 14646
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.css",
+      "sha256": "79da8be13d6ad5e0c8cd17689b6b0063dd9c845d6140beac2210dceb8c9463c9",
+      "size_bytes": 12955
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.html",
+      "sha256": "d985c68f91e3fbc1c3aa088519887c904444a2eab39fa53d4c8d29aaf7e840b8",
+      "size_bytes": 9615
+    },
+    {
+      "path": "mockups/multilingual-p2-switch-v1.js",
+      "sha256": "0ecb675bc7858da13974c16463a70be70ee1069dd9a458a58b5e84414397d417",
+      "size_bytes": 15146
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.css",
+      "sha256": "8167dee192eb8ca25daedbb9fad0f0c05706179894ca665adfa1289e33e7dd06",
+      "size_bytes": 9781
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.html",
+      "sha256": "ec1e8c471b8cf464a54230fca8e51769f527a73c4ac16a2062a898728b5f3885",
+      "size_bytes": 8628
+    },
+    {
+      "path": "mockups/multilingual-p3-p5-design-v1.js",
+      "sha256": "3d936d85a365edeaf3caee115c6f5c41ff0ac61caf6feaa446c6b666c50c87b8",
+      "size_bytes": 58884
+    },
+    {
+      "path": "pinky-lamb-cms/admin/admin.css",
+      "sha256": "cbdc2b60d7aa8c695b6f89a0c8913fbcd278a5c22068a9b90586cefb2cd44e4f",
+      "size_bytes": 22903
+    },
+    {
+      "path": "pinky-lamb-cms/admin/cms-icons.mjs",
+      "sha256": "cc48e04cee95466e4070aa0d0a64d2cb10f139a973517518db45ebde7716e16f",
+      "size_bytes": 1596
+    },
+    {
+      "path": "pinky-lamb-cms/admin/cms-studio-shell.css",
+      "sha256": "1650419b5aebdbbbbd713ddec3ba0062ab9fc68e4df7d7db891648274540e278",
+      "size_bytes": 10545
+    },
+    {
+      "path": "pinky-lamb-cms/admin/config-local.mjs",
+      "sha256": "434b8008627a83d8b4c2d91c15b929d48ccf0e9204611e4568b5231af4dead4c",
+      "size_bytes": 776
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-editor.mjs",
+      "sha256": "c5901e81a114f33abc0f828c6e7c3d4324418dd556ced5f038cbde36b87eefcb",
+      "size_bytes": 20229
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-editor.css",
+      "sha256": "ab7040893ea3061f1989e2e75e76d0746db999bbf19c917bd237136fc1e3d162",
+      "size_bytes": 22848
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-editor.mjs",
+      "sha256": "9085762f3e9c381674839c98f48de99ff9f9a595ee972419fd511e72269f6134",
+      "size_bytes": 25918
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-preview.mjs",
+      "sha256": "6bad1facabb14c468aa9779234eb4880826026ac47b40543e539f214762494e2",
+      "size_bytes": 9165
+    },
+    {
+      "path": "pinky-lamb-cms/admin/hero-localization-text.mjs",
+      "sha256": "a9e72920d5e3185fc02e78d83a409edead0bc030965a98e67561816c706e06a7",
+      "size_bytes": 3182
+    },
+    {
+      "path": "pinky-lamb-cms/admin/index.html",
+      "sha256": "51c1411a68fbb077716dde3513dbc91e96180d7187a1bed7bcd1a022b0130ec8",
+      "size_bytes": 5683
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-file-preview.mjs",
+      "sha256": "5388d3c88c58e508a9f85afcfede4aed71240b505712e5034e6d92f6eb88f731",
+      "size_bytes": 14211
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-image-preview.mjs",
+      "sha256": "c50145aed419bf67259f52edd458d7bb336b4799dfe9a2f300e3daf1206c751d",
+      "size_bytes": 5528
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-library.mjs",
+      "sha256": "55c00dc4353f6535211b26a19edc5cb1073c2420cd55ee4bdf21a832f90079c1",
+      "size_bytes": 10145
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-picker.mjs",
+      "sha256": "84798ae25f5121a81171ed033dc145676016e7377eab9041cd965f9f300a1ffd",
+      "size_bytes": 2748
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-slot-picker.mjs",
+      "sha256": "ce48a418b31cbe746f87cfdc37291d667dbeeb21426adc2b6c7f1556b774e5aa",
+      "size_bytes": 10522
+    },
+    {
+      "path": "pinky-lamb-cms/admin/media-upload.mjs",
+      "sha256": "a4cb9ec328c7302f913d82340f377eab362cd61f61a31da820755feaf2d65a16",
+      "size_bytes": 11239
+    },
+    {
+      "path": "pinky-lamb-cms/admin/pinky-select.css",
+      "sha256": "ab4acf4110b60a9d45408d1f8de97400a323546809523c06f0f5735b264c2131",
+      "size_bytes": 1941
+    },
+    {
+      "path": "pinky-lamb-cms/admin/pinky-select.mjs",
+      "sha256": "676c99ae0e25ecc9bfd69fa3ab4f621b622deaa0e95c4f7ec4baccb14b45b336",
+      "size_bytes": 13665
+    },
+    {
+      "path": "pinky-lamb-cms/admin/preview.mjs",
+      "sha256": "7972fffbaa09eb2448ec1939fe500ebc2f07e3685df2e1b01f4079fa3cf8bcf6",
+      "size_bytes": 11272
+    },
+    {
+      "path": "pinky-lamb-cms/admin/project-localization-editor.css",
+      "sha256": "ded51d42a4249dca5369489800cef6713033fb0ae8643c8ead03d85e4705f354",
+      "size_bytes": 109281
+    },
+    {
+      "path": "pinky-lamb-cms/admin/project-localization-editor.mjs",
+      "sha256": "038a74bb0ec425559dac936abac64646adbba34d4b15900c37dd1abc527cb255",
+      "size_bytes": 25304
+    },
+    {
+      "path": "pinky-lamb-cms/admin/project-localization-preview.mjs",
+      "sha256": "8114d249ff7cd86d7267b8b4831d1d848fd38eceedaa926cdad581ad3b733aa0",
+      "size_bytes": 7800
+    },
+    {
+      "path": "pinky-lamb-cms/admin/review.mjs",
+      "sha256": "cf555327fe26712245f93d0a2d4e28bc4c61877aa84361c1ec19579b83ef595c",
+      "size_bytes": 23590
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-about-ip-editor.mjs",
+      "sha256": "2396f50648b1c4cee7c679060fbef2f3eaeafc02fec4f111c7d91c618f4bc090",
+      "size_bytes": 17933
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-collection-ui.mjs",
+      "sha256": "9ff09ca9f2ab39433d5459918c8c8f78fab7ff32c76e477c09c5dc1ca7a0b5ed",
+      "size_bytes": 30623
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-collections.css",
+      "sha256": "3b44cf27033eb1c51fef1bb26ad8ebf990d43d8c1835b86307144f86717062c7",
+      "size_bytes": 17793
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-contact-footer-editor.mjs",
+      "sha256": "8f2c3ae74ad8c9b69d8afeb9f7260de6c2acf3adc9dac55ee91e137958858181",
+      "size_bytes": 12668
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-content-ux.css",
+      "sha256": "4225f4732dfa5e570cb33b7dbdf78bbd251f5433b8f9fe4b59d7a6dc858ff7a6",
+      "size_bytes": 4659
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-editor.mjs",
+      "sha256": "0e07f465e14c828e48bc17502654e9a7178d9235d2768e959f214b14fceb7834",
+      "size_bytes": 21585
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-form-ui.mjs",
+      "sha256": "7367a5fe3761e7eb0e9162fc0cd0091f95ee3e9f540864eb635ddecdcb764287",
+      "size_bytes": 5957
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-group-dirty.mjs",
+      "sha256": "176f15fcf1eb126f5d0ab64dee5f712675153fd80c5f827838852c98446fbef6",
+      "size_bytes": 1869
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-legacy-history.mjs",
+      "sha256": "c5f367b79b43f0d44228e1f54e1c8ac25b1027ebeb4e172b4de19a6ba2b3df79",
+      "size_bytes": 1883
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-media-preview.mjs",
+      "sha256": "3e142a29697e60ff93a3d7a833d05eea226b35d64ed968580c5b9a1af92be0b2",
+      "size_bytes": 22938
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-services-editor.mjs",
+      "sha256": "dbcd040eb01e53fd829596654abb8cdf76b504bba89310a52b99abfce0503480",
+      "size_bytes": 9984
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-services-ux.css",
+      "sha256": "a0d7555e7c3123c34ec34a11987f6a20eb32a62a29988e9cf560e165c64a7a77",
+      "size_bytes": 2370
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-settings-editor.mjs",
+      "sha256": "77f352963bb01b1e8acdc363d44bfa2cad67f7ae398ef8bd718bc676c7a2bbb7",
+      "size_bytes": 46157
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-settings-ux.css",
+      "sha256": "bf50215dcf3060a7b57d1b61524554ee1325618821611dd42421feec4a5d8f3c",
+      "size_bytes": 11157
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-source-bindings.mjs",
+      "sha256": "766001062ef4b1206c6a1dec0774b8de7b56fe58a27a11ada59a4d2f2e85d6ea",
+      "size_bytes": 2494
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-ux.css",
+      "sha256": "70620a505500fb0c94588e44672d02d2fe77f95f34f17dfb5a4a584a05bfc48a",
+      "size_bytes": 34456
+    },
+    {
+      "path": "pinky-lamb-cms/admin/site-work-editor.mjs",
+      "sha256": "d5bfb1fc0da050a3a5bb7b138b97d041e9587451f05093b66929512cac65cecb",
+      "size_bytes": 16626
+    },
+    {
+      "path": "pinky-lamb-cms/admin/source-review.mjs",
+      "sha256": "c1692c9c48e7bbf130e1e6f22ffee653a018be99e8cfc505df3f764f5315f94c",
+      "size_bytes": 22230
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/authorization.mjs",
+      "sha256": "98a0165cd72d3b30c63488fb48edf185e3d99a9f71c5710bc597da9212ff6032",
+      "size_bytes": 2905
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/drafts.mjs",
+      "sha256": "a5133511a2c3aad217d1fceaf24f30aeb27818f937b73d19eef966d9de99eed7",
+      "size_bytes": 7726
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/hero-localization-context.mjs",
+      "sha256": "272daa5bcf190b516fe63926e6a7e4a5151b4a314fe742fbaa5b225b9948e644",
+      "size_bytes": 4648
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/hero-localizations.mjs",
+      "sha256": "666c78ea912aafda5e96effc475cd4068dccf0d5507bca985e44136ef4ea2f6c",
+      "size_bytes": 4335
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/import-site.mjs",
+      "sha256": "ab2d5855ad8d123c58e7240e969b97e037457e7193f485faad05c3b4dd0ae613",
+      "size_bytes": 13389
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/index.mjs",
+      "sha256": "161a70bf895bb1d4ed9140b2873fd77b324df7d17c7a2a85688854a89d942a3f",
+      "size_bytes": 3614
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-archive.mjs",
+      "sha256": "23a3062d2e482634f07e107cfe2c9ef9a728cc396ef30521fbf15f8733e790f4",
+      "size_bytes": 6598
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-cache.mjs",
+      "sha256": "c8052237de9a9980f028887075cd2d07fd3a89198646e0a00401e8434b25febd",
+      "size_bytes": 22147
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-images-runtime.mjs",
+      "sha256": "8f18b76f1d98a9deeba2d21f3ca2c08d4d0d137c0db1a78f85cd08d7a578fa45",
+      "size_bytes": 13349
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-images.mjs",
+      "sha256": "74be2f72849bb3f5553e84fcb408073d841d67bff0eadc59fd0e5e2c30e9b95b",
+      "size_bytes": 19973
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-jobs-domain.mjs",
+      "sha256": "3a15ff4db22c2805a349963537bb798ea04efde64396600d590607b385dd7279",
+      "size_bytes": 29691
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-library.mjs",
+      "sha256": "f7d28c9b8564568c70601cdf262478ff1e1fbed4965e22d232735fd0d2c46681",
+      "size_bytes": 3792
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-pdf-runtime.mjs",
+      "sha256": "696b633dd06df2c23a0a2093fbf0d81a477895d5e18f6b941fd6af8862d1f60d",
+      "size_bytes": 19527
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-pdf.mjs",
+      "sha256": "3929c7a25459422740a13ddadfd67836430a4d20099e5914ceb1edf2c2bc2ea9",
+      "size_bytes": 14408
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-processing-profile.mjs",
+      "sha256": "f9e0036b9fa2b3934c039e09c8c368d37f784d919daba23c2abb1d055ef55fcd",
+      "size_bytes": 3633
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-quota-domain.mjs",
+      "sha256": "2b626e35cd7beb5b706ca5ab1db8fdb1ad4ad5c5d432e5054ff9a61b72f7bc16",
+      "size_bytes": 21049
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-reads.mjs",
+      "sha256": "b984e41a92ebcb04c56ccbe347c2efab789e8af424c3f967dae6510c0701c811",
+      "size_bytes": 6106
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-recovery.mjs",
+      "sha256": "ef0eb0a4e28267b41c2f439b314763eb3e9509542ebe03c653fc208dd81a681c",
+      "size_bytes": 4106
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-domain.mjs",
+      "sha256": "1abc0b43f8fe2d9cfe6aa7c17d5345cc8dfd00949a39e1a4581217207fa76316",
+      "size_bytes": 52183
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-service.mjs",
+      "sha256": "f8a2e1a7a4928d1cdf2cff67a6f6dc571138ab0b926c86ea2305a0d9ffdedee8",
+      "size_bytes": 29164
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-upload-storage.mjs",
+      "sha256": "5e5cf7483ee0b8fe89ae61ca9438c0328a3897dc2d10cee1583e78cfed73fd9e",
+      "size_bytes": 6772
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video-job.mjs",
+      "sha256": "f2197500cba0a4ecf7def5d276dbb655836820c3977d3b125e26541acc6e37aa",
+      "size_bytes": 7878
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video-runtime.mjs",
+      "sha256": "5c4402a3e7d072b9c6cec6092d42a0ede045e3b591226c4abdc4575df6a3bfe0",
+      "size_bytes": 19046
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-video.mjs",
+      "sha256": "7bc872e249f87d4cb1e8e2dd11d1c85b3322200a02b197e984cd451bc6341a19",
+      "size_bytes": 20642
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/media-worker.mjs",
+      "sha256": "e61ebed0b705eed8f0a19d54f6656933e81feead15a6224b1fc278796574d74a",
+      "size_bytes": 34271
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/package.json",
+      "sha256": "b3bf0fea1373289d9af020e01b9ca8aa8daecbff65ab8295283bd8705cb16bef",
+      "size_bytes": 321
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/project-localization-context.mjs",
+      "sha256": "285f057dac0cfada84a4e765d78524cd4cec07d45f450de6cfd755bef5a76f64",
+      "size_bytes": 6932
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/project-localizations.mjs",
+      "sha256": "4bafc8ede3359203f1b3a90941bc5f8b6d9c90e8cbaba949f6e73cea9a651f86",
+      "size_bytes": 5824
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/reviews.mjs",
+      "sha256": "f2690154fca39d5c0fa033ce61030f88e0b9cc21ca5c1c921480769fc36de696",
+      "size_bytes": 6877
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-drafts.mjs",
+      "sha256": "7257ef5a34eed30402376b2044e10c06eae92bf84da82f2ada00f13410dd0848",
+      "size_bytes": 6878
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-reviews.mjs",
+      "sha256": "9e87e7547252403bd76e20635bfb5a27d44711de43aa04be544818b86cedb6c5",
+      "size_bytes": 9780
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-snapshots.mjs",
+      "sha256": "c9474e55afa1693efe4104530c9d585c9956109e94b1d978205bacba0ec50fab",
+      "size_bytes": 14591
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-context.mjs",
+      "sha256": "44432865bfb5a52a16a43edbb2c9b34d50bbeab4d7d80ab3c20441e56da0b3f5",
+      "size_bytes": 6766
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-drafts.mjs",
+      "sha256": "e5f0e21e1139e85481cccc96dfae36dc124c24188f6ea6e95c36673a9f948e51",
+      "size_bytes": 13104
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-media-provider.mjs",
+      "sha256": "42a455f8ba23782f6e035ad55abc76adec32e7fb92e2345c9d44a34b89f8ba0f",
+      "size_bytes": 9439
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-media-reads.mjs",
+      "sha256": "d61ab2690e3fc8efbc8ae71f583fee41d6afe36469ece4930a83cacb1927db0d",
+      "size_bytes": 8675
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-reviews.mjs",
+      "sha256": "14667421c67e6ea2d1b9dd07d55ddc491566c3a9e137ba6812be82b6946027ad",
+      "size_bytes": 4663
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-snapshots.mjs",
+      "sha256": "8a17726fbdf77c6899f49e7c132a582e20ea7364431edf4cdb044344cec7444d",
+      "size_bytes": 6976
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/site-v3-source-checks.mjs",
+      "sha256": "d31203b7f65ac19cafbce1c995b8422a870824974797049bc2e747b609a1334a",
+      "size_bytes": 6708
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/snapshots.mjs",
+      "sha256": "8355ef382ef954473f01613e9a2bf16879e0bb0a874fa004dc7c9211984fc387",
+      "size_bytes": 12936
+    },
+    {
+      "path": "pinky-lamb-cms/cms-api/source-checks.mjs",
+      "sha256": "d4ee1329c2ee1b5ed32c2321861f3f58c0336d6db6610f93554ff046647cd171",
+      "size_bytes": 12281
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/baseline-provenance.json",
+      "sha256": "35cdbbecd2693909ec0da732df97fbfe9d580cd6b9d52e999e8d578382710adb",
+      "size_bytes": 105368
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/baseline-site.json",
+      "sha256": "951dc4f9e9d6f2f3bc062d51401efc3f5cda93bcb699a427c2ca19cdec72d776",
+      "size_bytes": 26065
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/content-version.mjs",
+      "sha256": "1841db2df81c45e7c3be971c10e94436183c887bce29d422635333a20485c688",
+      "size_bytes": 1639
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/draft.mjs",
+      "sha256": "aa37c802395ef120191dec488c55f95c8336be21df7ebdb3652a9b8dc5e445f3",
+      "size_bytes": 2510
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/errors.mjs",
+      "sha256": "d228be75a9bb6d80b4353c50d537a2b31915d48da1b9387052e77e8bd92bc436",
+      "size_bytes": 3335
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/hero-localization-records.mjs",
+      "sha256": "09d488f42324393bc347a296a25714e6a433aa0aed9ef3014a63f5128d4dcd63",
+      "size_bytes": 6856
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/hero-localization.mjs",
+      "sha256": "29c910b12d7873eae3992209e83d1b3300a8d72bf3813b6e96ec6c65e63f908a",
+      "size_bytes": 3094
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/hero.mjs",
+      "sha256": "8ac039cdd35098c3d26dd81e7e27c3023e8d8cf2151dbd365d1b550e183eceb9",
+      "size_bytes": 5062
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/legacy-assets.json",
+      "sha256": "26ae46ffbd72bb6a4d3f001f9e7e5601f25eb29db93360a86ec91549f1016b5e",
+      "size_bytes": 20137
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-pdf-recovery-inputs.json",
+      "sha256": "78bbef256ac0714bfee2e4020286d4809211627b78efa7392743b1b27bb56f54",
+      "size_bytes": 8979
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-processing-r0-static-v2.mjs",
+      "sha256": "5e3468e42f1ef208c3145d50129b66e866ba6224300959ab02496a370e371c47",
+      "size_bytes": 100188
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-read-public.mjs",
+      "sha256": "d4b94d95d93258a9d29b8da05769a8b533c558815ec6c7bc10cafcd55891e21c",
+      "size_bytes": 7456
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-rights.mjs",
+      "sha256": "d90c1c27aede2043b24ec1a0d31df6c1a16aba3098547c3b485c5758ef0a21ba",
+      "size_bytes": 12586
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-tool-lock.json",
+      "sha256": "2c049b8684ba07916855f009b1a52af77650a118e96090fadc45453f4eb18081",
+      "size_bytes": 28875
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-upload.mjs",
+      "sha256": "f206d8aaf6d77b14d42b55278b817e7264a040d830c500f66286493c2f042c2d",
+      "size_bytes": 11717
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-attestations.mjs",
+      "sha256": "e24cbb33df598beaf127d0edd57e481755ddbffc942b619861f6c9a860bd30e9",
+      "size_bytes": 13220
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-authority-v2.mjs",
+      "sha256": "3b5de54b791621107d0f3371de4f9a517a5c537025f23f16d51b6dbb093bb988",
+      "size_bytes": 15733
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-authority.mjs",
+      "sha256": "579eb978e5dc76bf93234e259cb84c08ebb3137bde4e63cd64062e3bc22cf59d",
+      "size_bytes": 17630
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-content.mjs",
+      "sha256": "8828ebdd34245007561da9e670947c22598d12239f7431b99f04fd9cfb98e671",
+      "size_bytes": 18073
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-contract-v2.mjs",
+      "sha256": "dd057063e30f774cf3e93e5d3bea282bf74146baa36d0b78507e3f2e202aa770",
+      "size_bytes": 12707
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-contract.mjs",
+      "sha256": "37aa05c9f5f66ce8d3940964e05a289a44a733f255f2313cd098a4a14d03d00d",
+      "size_bytes": 11288
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-metadata-v2.mjs",
+      "sha256": "27a85dec64550258370163103f6ad555db76da8da6748a872efab29c915bfec6",
+      "size_bytes": 3847
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-metadata.mjs",
+      "sha256": "b03b246ad3c79d9dc919685a4a89a72205ce147b8ad20139014b351b47b01a9c",
+      "size_bytes": 5167
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-records-v2.mjs",
+      "sha256": "09f3b66edb4e7a2d2622e461f71ccb4a756ba6ecddf436129c7d6d73299da7d1",
+      "size_bytes": 17897
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-records.mjs",
+      "sha256": "d1b870044ce4abd44ed6b35a20d2d7beab7d6ca17f7cb6aeb21f402f9101b6d7",
+      "size_bytes": 19320
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-toolset-v2.mjs",
+      "sha256": "72c564f85d9f4ab9a8ef205177030f707307a4fd9e336bc68f8d5c1508a6447a",
+      "size_bytes": 48618
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media-v3-toolset.mjs",
+      "sha256": "85d9c11b3d29ea2f88879ca59117ff775844647719d56f55b407a3c613839e3c",
+      "size_bytes": 27631
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/media.mjs",
+      "sha256": "3c098ed4206ba441c6fa6d5a0a1132ff9ca868acb471ea72a9979fe0d0f2b1e1",
+      "size_bytes": 5407
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/project-localization-records.mjs",
+      "sha256": "05dad2bb2f65de90180384a9bd75d681ee282ac70e7c44b354f35dc57f318883",
+      "size_bytes": 7057
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/project-localization.mjs",
+      "sha256": "b8493447069f2f41b12668ba2abf7e1b8e8ea72c19b250ad74bb554bcc42df90",
+      "size_bytes": 3976
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-draft.mjs",
+      "sha256": "f09fb678b7800accb396f11c44ee9892470756ee162dbfa0bd68c24d1beb2584",
+      "size_bytes": 14243
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-records.mjs",
+      "sha256": "4e9454acf0f7f9392a7b48c4a3b7855663cd01d41dc2066d1f170b0e53a5adc0",
+      "size_bytes": 1818
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site-settings.mjs",
+      "sha256": "3863305e7d0a312e8d69c7c7cc4fa24dda54259fc843672bc171147212012091",
+      "size_bytes": 11175
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/site.mjs",
+      "sha256": "d4c4afbe203df6875911ffd27fb01c9e97e703a9f2b6fc01f7906c8f66d19305",
+      "size_bytes": 18383
+    },
+    {
+      "path": "pinky-lamb-cms/contracts/source-checks.mjs",
+      "sha256": "e15f83903dc76a559a842cf350a79c756383b405898ecd5c38ab095b602ad3f6",
+      "size_bytes": 10763
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firebase.json",
+      "sha256": "6f2f37059514d183f741ef8e00e423e452a083dcc91e63b2ac778932f6607505",
+      "size_bytes": 1499
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firebase.m2-recovery.json",
+      "sha256": "55706c43a7dbfcfa23d8ee1539b02c7922365d179bedb0ed094e39d9029fc088",
+      "size_bytes": 506
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firestore.indexes.json",
+      "sha256": "6742255415c36daf631b52f233039190af819205cc41fa58d07dd7d9e180c2b9",
+      "size_bytes": 44
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/firestore.rules",
+      "sha256": "c26d81412146f210eafc466649f636a7902d68834ddce44f49f6725c9809a268",
+      "size_bytes": 229
+    },
+    {
+      "path": "pinky-lamb-cms/infra-local/storage.rules",
+      "sha256": "d40a0afd90869f2a8c14bce3be4de65ffc0d4567583b8a6acae2ad6d0b8c79db",
+      "size_bytes": 191
+    },
+    {
+      "path": "pinky-lamb-cms/package-lock.json",
+      "sha256": "43a9dab5038690e07783a5b142a51f08d12e8af18c46e4a76cb2a0fe1fa35406",
+      "size_bytes": 448013
+    },
+    {
+      "path": "pinky-lamb-cms/package.json",
+      "sha256": "22a542cfe3f5484c4cdcad5b10734725326398ec5649b7cc9ae4565dbb41ba04",
+      "size_bytes": 1386
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-copy.mjs",
+      "sha256": "5cd76c87d3c4bd9ad02b2f42123fcdbd414f411487146e6d04fef054a88e6df7",
+      "size_bytes": 528
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-presentation.mjs",
+      "sha256": "53b3568443f63dd93b804464f8ceb35853605d04c32fb27660c9e022f780fbd8",
+      "size_bytes": 2983
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-localization-renderer.mjs",
+      "sha256": "22c2dc81129486377dc66f088eb0ec4366b93fe3ffcb0feafe837cc69690b5e8",
+      "size_bytes": 8710
+    },
+    {
+      "path": "pinky-lamb-cms/preview/hero-renderer.mjs",
+      "sha256": "36d5cc9bda0b4f65c4d6846c2e9ee7025c9219991aa8b2eac77bc3e3c1b7fbe2",
+      "size_bytes": 9372
+    },
+    {
+      "path": "pinky-lamb-cms/preview/preview.css",
+      "sha256": "c010d103e10829a20b17bad3b22ef4d0c17d5673ddd3218086d54695c94ee99e",
+      "size_bytes": 2953
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-interactions.css",
+      "sha256": "f9bfa6da071770fe0b2b2a27e2ffb303197fa50fcba0fbc8a61566ac035d7d5d",
+      "size_bytes": 14622
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-media-renderer.mjs",
+      "sha256": "bc867e69e9eafde848c7904ef5314494111aad115beef584c7fb7b4c6e93e704",
+      "size_bytes": 13018
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-public-data.mjs",
+      "sha256": "77eb0a7b9e64595061b24f8b9bdcc04885f6a09e8346cddf51b7ab6d8dcbd70a",
+      "size_bytes": 3406
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-renderer.mjs",
+      "sha256": "b2bb6d284c182e2d90fe6e7bbbdf8aa116dcf90e5fbe57b1f390a5b699de1928",
+      "size_bytes": 3202
+    },
+    {
+      "path": "pinky-lamb-cms/preview/site-sections.mjs",
+      "sha256": "ead10cbf484c6553fe4c688c4b87d7322bfdb78544f0d73f195e91bafe4fd9dc",
+      "size_bytes": 22991
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/FONT-NOTICES.txt",
+      "sha256": "a6851476c9681331829c76cfce22722c1d0f582e97a0e12e8aebbb719dfe2eff",
+      "size_bytes": 333
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/app.js",
+      "sha256": "3a0d2d5466f21f662c61870a851b10b7848c880ea90f75bcb3483d89d49fda32",
+      "size_bytes": 13918
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/Pinky-Lamb-Credential-2026.pdf",
+      "sha256": "6087d6465ad55ae8451e2f7f3df1512e1427b987c220d9358f8fc899abe2dcce",
+      "size_bytes": 17349548
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/abril-fatface-400.woff",
+      "sha256": "69bcdad947bd8e75608dd9b9c9316a52810a4741138dd8bb09b75408c30f7357",
+      "size_bytes": 26712
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/brand-diagonal.webp",
+      "sha256": "db4e953807bccc00738d0ef86abf0bfb10b064ca87766d7fe24a6d014425252a",
+      "size_bytes": 12540
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-aqua.webp",
+      "sha256": "ae48fec0fb2589281f92852aa68438910e62e99376be9d316fbc23d6f233dc35",
+      "size_bytes": 17434
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-manulife.webp",
+      "sha256": "8cfe37730f8de501a4d00d1ce79524400d5b8762ef6f98346782e877261fafdb",
+      "size_bytes": 6046
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-samsung.webp",
+      "sha256": "8e08722e2518b871ee2925f15abc1fbd5db4f63ee2addd62990bf47b1af5ef36",
+      "size_bytes": 26684
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-sony.webp",
+      "sha256": "e569fdcbdd37349cd70f65d21ae8f80fa7294dbff8db1af661310dc644e0886f",
+      "size_bytes": 4806
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/client-wayfair.webp",
+      "sha256": "756f4897b5f4b7198d331aa220338af6b836f985ff6d69a95e6455e6718423c8",
+      "size_bytes": 12618
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/diag-awareness-2022.webp",
+      "sha256": "10d659bad3fb0f410aa26f8070d7fb1156dd3192b701599186510d2dfdd5d025",
+      "size_bytes": 32040
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/favicon.png",
+      "sha256": "fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc",
+      "size_bytes": 6186
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-400.woff",
+      "sha256": "42970cee008d8fd45a7bb2836ea3212c11402aaa17a708990f68034846eda0f1",
+      "size_bytes": 84072
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-600.woff",
+      "sha256": "361d93dee1189f66e5ba91ac8eb3e0f99f599875b807e07e5738f3acb7ae861f",
+      "size_bytes": 84976
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-700.woff",
+      "sha256": "d0b09855fddfa2deb3cc3a5ca576d8d830d436178e39920c04a1526e1c46ec03",
+      "size_bytes": 85620
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/montserrat-800.woff",
+      "sha256": "ccaac20ea18265a297ff438ab2954f2395c97512c8b1f6ac862ad8363fd3a1d1",
+      "size_bytes": 86676
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-fireworks-2026.webp",
+      "sha256": "5e766ac200e564218847bf1169c5a16e3e7244a29ff80dae2a9c1e6c970ec7e7",
+      "size_bytes": 92836
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-guests-2026.webp",
+      "sha256": "6b565f3489d5e45a6afa94fb80cc80af598b7324b83f700e3761ddff75044968",
+      "size_bytes": 122614
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/petrosetco-party-2026.webp",
+      "sha256": "64bf5ee5768c1b5357560a0fd333ab3969f16f55469b12b7fa815b93d8293733",
+      "size_bytes": 115474
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-hero.webp",
+      "sha256": "aa4da85571bbfe81bcfce951ecac8a422cfb96415fb9d70fa5485fc89d7c5f63",
+      "size_bytes": 51282
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-logo.webp",
+      "sha256": "94a6077ba40575d6c544b77f5bd0a95952a4e22d8ebe8411ac8c20661cb803dd",
+      "size_bytes": 28046
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/pinky-mascot.webp",
+      "sha256": "a7b5dbd5ce3aba41395f8d48416f312fec1542af04c57afa49e1e961f2744d00",
+      "size_bytes": 61562
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-2025.webp",
+      "sha256": "acea013677dd343a58bd80570fb6bb1e6d9d1a3862efdfe6324a175751a8e1e4",
+      "size_bytes": 108712
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-guests-2025.webp",
+      "sha256": "c8655d5803c5df9d327bd85f6044a30cc5068dc6981534a499a24735e9ceca50",
+      "size_bytes": 64474
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/psd-dell-microsoft-stage-2025.webp",
+      "sha256": "04860477aa6faba25f78eb1d16574c796d3fdd6f7213856aea7fc25297da227f",
+      "size_bytes": 78392
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/samsung-flip2-2019.webp",
+      "sha256": "96bf63fb4388e41d81be5ef2aefeb4374fac5888f5766aac332a90219309460a",
+      "size_bytes": 34148
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/showreel-2025.mp4",
+      "sha256": "be8c124f6ac003bc2e7ae83ada63bd309e7da0b8c26ff7eba7cfeeace7307d92",
+      "size_bytes": 11403830
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/showreel-poster.webp",
+      "sha256": "4a6fe318eba873cd9615893c322a4d9b1bdc1e90fa571f1309b0af3ccf662ce4",
+      "size_bytes": 54698
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/sony-ult-2025.webp",
+      "sha256": "974007875aecf5d36c12e5c0f78595f4d0c7eb65c2f40271299fa9419fedf20a",
+      "size_bytes": 56578
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-2023.webp",
+      "sha256": "7746960f52ba17501327f3b79c53cf6db3c0edbc54ed5e6c460e4fae63269316",
+      "size_bytes": 39670
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-collage-2023.webp",
+      "sha256": "719a97585020e516f149d990334bc70036e6521768f5c73a973fa01f11b39d78",
+      "size_bytes": 54590
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/varna-elite-lifestyle-2023.webp",
+      "sha256": "05882c6ac0da80e034e1d9c795c2896aadafe7a0dd347f7aad83d40e94039d49",
+      "size_bytes": 35632
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/vifa-fair-2026.webp",
+      "sha256": "582252951c252608fe5111c5fc2e9090c1136356d5f5b5ae328ba300e14be450",
+      "size_bytes": 117020
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/vifa-opening-2026.webp",
+      "sha256": "e01630438426ca558d3e7a713ca1ce519b66842cf699d465276bde1af7ffe4aa",
+      "size_bytes": 182808
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-registration-2026.webp",
+      "sha256": "7c2fec6ae1eda773e3e7b630032bf146da92222c98402680b607682c85415248",
+      "size_bytes": 112116
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-summit-2026.webp",
+      "sha256": "01a6e9d1c04506302793dfba213fd05440d8490a9e305e0c6997045652ae28e4",
+      "size_bytes": 47196
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/assets/wayfair-team-2026.webp",
+      "sha256": "4b203f914175e0a2dbc9dc4d21fc147b21ad028647b4c4eec51a601842dd4d06",
+      "size_bytes": 61756
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/content.js",
+      "sha256": "0140b31e91742d75387860a565c8082f3e34d5dc4b79c3b92b69cc0dd2484a63",
+      "size_bytes": 7705
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/index.html",
+      "sha256": "4de13ed9a2b513458574b16fdaf9410422eb311ea23a0c4bce45b50a5d4630de",
+      "size_bytes": 18385
+    },
+    {
+      "path": "pinky-lamb-cms/public-baseline/styles.css",
+      "sha256": "511db2c926152e819f267fe187b47a9fba32b8bdc39877969157504d04dfa65e",
+      "size_bytes": 44637
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-hero-localization-local.mjs",
+      "sha256": "c28fb98cdb4e25b9288b85f0c9514294647966c42ed950863f6e7b2193f355fd",
+      "size_bytes": 5011
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-local.mjs",
+      "sha256": "8f334a08ee41b5f94590523094344bb4a0eca3280cc3ba3d754e281f2854d011",
+      "size_bytes": 13085
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-project-localization-local.mjs",
+      "sha256": "e8a7166997b12f620ccf80d8f59f07adbf4693288506643e384e4ef899d72157",
+      "size_bytes": 8728
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-site-local.mjs",
+      "sha256": "5f7ae6f108730385065d932a39237e948805d18b9c00b176362102500bc6e81e",
+      "size_bytes": 9681
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/export-site-media-local.mjs",
+      "sha256": "d0123c6874a65ed94a201c9ed3a40c7bace33c335e1aad5bf0c3581a8a3a1df6",
+      "size_bytes": 13113
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/m2-recovery-local.mjs",
+      "sha256": "e1bf8b05e1391610a9b9f8c81b09525183243b74908c2ac6163edc266f3edcd6",
+      "size_bytes": 68958
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/m2-recovery-profile.mjs",
+      "sha256": "77089f8ce60c82da62d3976d43fc3f128e816acd336e8e1a349747c9e872eea0",
+      "size_bytes": 36905
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/map-baseline-site.mjs",
+      "sha256": "b640c40dce496adc5861c1fca3d010615ffa058cfb1a15500d52291c31344338",
+      "size_bytes": 32901
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-pdf-package-reader.py",
+      "sha256": "d93de7b8baa691d92c258255da9a3f9ede34d643db14c68f1a30d801711fa36a",
+      "size_bytes": 13977
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-pdf-recovery.mjs",
+      "sha256": "962134f90f9d16204aec321c091da736158b340c737f650430e2c897330029ea",
+      "size_bytes": 7491
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-tool-audit.mjs",
+      "sha256": "38f0bedc69b9e006cf1e9a16ac010061691c1b2ea8a74dffbd0d4b127ab4bd7d",
+      "size_bytes": 34537
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/media-worker-local.mjs",
+      "sha256": "26ea911ccf50307002ec8a2737b5eba6b419fb5bbcbb057e18c2f7c67e9cb31a",
+      "size_bytes": 2483
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-p1-local.mjs",
+      "sha256": "6a37f86f2cba77720f78ae46d9083b3d2588a319b664cffbede4f0ed8210d0d1",
+      "size_bytes": 4998
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-p3-project-local.mjs",
+      "sha256": "8c04a02af1f6efc92f26a312a034d62d943b9ca35549400d82232a1bb034f4f1",
+      "size_bytes": 6313
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/recover-auth-local.mjs",
+      "sha256": "ede470eca79b5a67d0664ff5b2fd3a8c21ef3e5ed59baf6977943e39192b7a67",
+      "size_bytes": 50716
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/seed-emulators.mjs",
+      "sha256": "183a3f874e89634036e5b1fa3f2b2290e7b87810fa2c8ea4ed04c2506190fa42",
+      "size_bytes": 3771
+    },
+    {
+      "path": "pinky-lamb-cms/scripts/verify-ffmpeg-source.mjs",
+      "sha256": "05b7cb6e49ba1c9bfa3cabe450c128857b9f5530043cc3ba9c9a8af908232255",
+      "size_bytes": 9361
+    },
+    {
+      "path": "pinky-lamb-cms/tests/acl.rules.test.mjs",
+      "sha256": "cb1cd83d5749c154fd5a7826261332dcb8058dc1c2812ffcf81caf3b1e832f92",
+      "size_bytes": 12875
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-adapter-lifecycle-v3.test.mjs",
+      "sha256": "29c85226a4c2e2b962605263537dd01f967b2f386d54d7b813d76f49f8ee44dd",
+      "size_bytes": 5241
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-adapter-lifecycle.test.mjs",
+      "sha256": "e98a7afee9a2211139ec9599a606a6405b64cf0ae0fbb84df1cba1bbfa7016ed",
+      "size_bytes": 2046
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-collections.test.mjs",
+      "sha256": "ccd686d21235384f03c66f0b526c82ac5662d1d8bac0ee9c4f47b39f96d5f9f8",
+      "size_bytes": 20521
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-contact-footer.test.mjs",
+      "sha256": "1bdc968368f5319630b9526049ea83b93a7928521dd764e75649f3182a143352",
+      "size_bytes": 13380
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-content.test.mjs",
+      "sha256": "caec7fe2013bf98c7c29443132c3800e8fdb26bd2faf15c59153d42abd0d9f8e",
+      "size_bytes": 14160
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-dialog-focus.test.mjs",
+      "sha256": "afc88801a9f60fc549ecaebaccff9ee1c9bd44042f0f3b90685e01c6a8281272",
+      "size_bytes": 7968
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-fixture.test.mjs",
+      "sha256": "1ff373a05671c554088a79c0879b52c1b932997c1d5206e1e35e85c89cad5f69",
+      "size_bytes": 5333
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-gallery.test.mjs",
+      "sha256": "ff20e82483cb9587e36dcf7d83c5d05af39ea59f464d9b3854bfc8516d2f0e19",
+      "size_bytes": 8994
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-group-dirty.test.mjs",
+      "sha256": "7172f34072839c5d672cd1045e8d3bf2208704ecd7e2cc18707460be9dc07406",
+      "size_bytes": 1935
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-local-validation.test.mjs",
+      "sha256": "dba7d36fd65a0eb7f76a1282187af1fdfb61892f2b692a530e40195799958c0b",
+      "size_bytes": 10301
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-media-picker.test.mjs",
+      "sha256": "b4c06b8b1e5395ac9b249b303f96ac61d5f641d1f13d21d30d1e94b4cca2c0f7",
+      "size_bytes": 4213
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-navigation-focus.test.mjs",
+      "sha256": "1501f98ba91290d4c465f4c72fb3ca9d16e704d8d78a75ca38d50215b4076307",
+      "size_bytes": 4286
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-preview.test.mjs",
+      "sha256": "da0be6a528b0de95eb2af5fe67b4a90263350ac405868945cb807c8d424d360c",
+      "size_bytes": 6253
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-services.test.mjs",
+      "sha256": "4919573c3a8876ec08159514cde9feebcf209dc6c2c64ee3a5f6d9f49407c60f",
+      "size_bytes": 6319
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-settings-clients.test.mjs",
+      "sha256": "a319a76d2aaa4c420658361df8a1f210c1f20764bcf48ec40378b6c87552495c",
+      "size_bytes": 17327
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-shell.test.mjs",
+      "sha256": "936c1e6bc4fd86c43b22a1cb0315b563762691c6e3589c2faa7d59469b5c1cf4",
+      "size_bytes": 29886
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-source-bindings.test.mjs",
+      "sha256": "677ea8c3d7be669ea8c2fb4df695c540966f3f975f4f9c18877ca5e231a36b39",
+      "size_bytes": 5558
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-003-typed-runs.test.mjs",
+      "sha256": "c1af4bd8ed1adde6f288b0d3176ae34641c413b54bffe3928968eb760e381c3f",
+      "size_bytes": 11670
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-collections.test.mjs",
+      "sha256": "18534f5ab1df29851e5885fc5fda07b1c50636458e301d10e49ae8b0764fe1fd",
+      "size_bytes": 19223
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-forms.test.mjs",
+      "sha256": "6e22d4df31877f9acaf5b8a7c766b20f2c86b649a173c51674be82a47a0e0e7d",
+      "size_bytes": 12984
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-manifest.test.mjs",
+      "sha256": "6a3057e1de3985bbac2ac66981b0a96f961cea894cc066a35e3a1daaae0c7672",
+      "size_bytes": 4346
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-preview-queue.test.mjs",
+      "sha256": "de677f337927fe3031b575be0766c2881b648c70865503f9f4ff01bfb027491f",
+      "size_bytes": 3163
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-shell.test.mjs",
+      "sha256": "7ce06c53c472d5ba0c973de51c933f0d0a6025e2c67ab670eb53cf1a75b60df6",
+      "size_bytes": 11271
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-v3-session.test.mjs",
+      "sha256": "16eb550eee3f4015584f305fdb39706b6ce7323a0b549d91877af9659bf821dc",
+      "size_bytes": 5394
+    },
+    {
+      "path": "pinky-lamb-cms/tests/cms-ux-v3-workflow.test.mjs",
+      "sha256": "73e20112cdbc0ece3b731ab94c341984321d2c9b18a7d3376e34f1c58f0ef5b8",
+      "size_bytes": 9035
+    },
+    {
+      "path": "pinky-lamb-cms/tests/drafts.integration.test.mjs",
+      "sha256": "c45a459d9a77f5ea518094e3408697574b8e6306c3bae09bde872d7866b83f55",
+      "size_bytes": 13722
+    },
+    {
+      "path": "pinky-lamb-cms/tests/ffmpeg-source-verification.test.mjs",
+      "sha256": "ce50873285e76808051c2d5e926fab2bf0838d66a8c0b96caf3e808c9ec13e71",
+      "size_bytes": 6714
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/approved-hero.json",
+      "sha256": "364f4c393753a8505694efd7f454bfa8740e3c7ba2d51fe5252450397364fd3d",
+      "size_bytes": 5409
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/approved-site.json",
+      "sha256": "88023385223c78b50cd7b4cc521064ec7a40ef032e5e1c38e6e2c20820f4520a",
+      "size_bytes": 59681
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m2-malicious.json",
+      "sha256": "31ef8412b8e86e0024bab3803e31b88bc5e969178e352c89de1e5642684d62cc",
+      "size_bytes": 312
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m2-tamper.json",
+      "sha256": "7ffa165668032273d9a26142a46aeda45b189db106fd9140e448a97102a9e0b0",
+      "size_bytes": 237
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m3-no-rights-approval.json",
+      "sha256": "b6239f8d5430c0c7b16e5df9205712af3f9d2ca6036803ce8ea69846f2992dd8",
+      "size_bytes": 1821
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/m3-parallel-qa-matrix.json",
+      "sha256": "3901301aeb17f06d211ba74daf9f2e9f8209d3320b0db80c86114fb669a826e9",
+      "size_bytes": 25484
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/malicious-hero.json",
+      "sha256": "670749fb60c69935911ec5a9873862c6254b4c758421939cd1a63b0f100e5f67",
+      "size_bytes": 930
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-images.mjs",
+      "sha256": "76ef6714fe85327930dec2a5d72841015004b98a74d10b76840ac83ceb999a7d",
+      "size_bytes": 4419
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-pdf.mjs",
+      "sha256": "cfc80073d4ae0f008bd3b22fc93bf7ebc20531c6d123fabc3ce50df12aa0a124",
+      "size_bytes": 5091
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-attestations.json",
+      "sha256": "e2b1ddbe70afa10570b5cb38cf2465b27d2af9e76dce21ae356c0f02367a18c0",
+      "size_bytes": 207256
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-authority.json",
+      "sha256": "a26ae361c8ece635722d15bf275b5ca5a1a511f4df748745470292477ea5e808",
+      "size_bytes": 1647837
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-content.json",
+      "sha256": "7074842d92a314bedbf97c4991f97b19a1a4a3972b73c3d36e8bb1cfe1875038",
+      "size_bytes": 169426
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-contract-v2.json",
+      "sha256": "e5ffe521db451dc9eae67c7f409596f56893fcd587cd9e26124ea690b5d1406e",
+      "size_bytes": 56830
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-contract.json",
+      "sha256": "d4219f98d6f9cb8ea95333a01431dbaef05cebbe499cdf749bf180679acb1049",
+      "size_bytes": 25177
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-metadata-v2.json",
+      "sha256": "a7f4dc85f4db86f14d69ab70b2ab8fe44c6e05cc7ddb68c048ae76253de64b76",
+      "size_bytes": 6182
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-metadata.json",
+      "sha256": "56f8d680d65f9695946d43e25fdc0098b76355ce21392580d84b27233ea53a0d",
+      "size_bytes": 987
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-records.json",
+      "sha256": "78eebd221800e33bd1a398887d1a64fb2e1873c5a2befe572681789f84ae7936",
+      "size_bytes": 2464568
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-v3-toolset.json",
+      "sha256": "6ec4a0fc4dc691965d0e5ca8b9d31235fc9778c176ba9be8e4555103a9509725",
+      "size_bytes": 1542862
+    },
+    {
+      "path": "pinky-lamb-cms/tests/fixtures/media-video.mjs",
+      "sha256": "2a8fafe4749c69c189240107d445808bb51e65e64669402c7308449dd77b1e2a",
+      "size_bytes": 5739
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/cms-ux-003-fixture.mjs",
+      "sha256": "a87db47517c48384329333450cb074ede687784f8935aef182e21a59aed7fafe",
+      "size_bytes": 9501
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/cms-ux-003-isolation.mjs",
+      "sha256": "1e0190dba187f3bab1785dcc7efe1a316aa5363cd099a51c6c613bd216c8ef9f",
+      "size_bytes": 5173
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/m3-parallel-qa-oracle.mjs",
+      "sha256": "2d1130af4f5a01052f3b5ae6712fee75d0ba432296ab9981cb201439cb418eef",
+      "size_bytes": 5429
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+      "sha256": "a2c68c54860371ac39e5d2ba1366ba9ba4bae1e8e8ebd837bc88ff26c1e95852",
+      "size_bytes": 5735
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/pinky-select-ui.mjs",
+      "sha256": "d068eabd9ce041e63a9d8bae678fbcae0836dc6a2a1ac13536e37933e3b9473c",
+      "size_bytes": 4462
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+      "sha256": "6c532500e66f377b71e5d0b24db70785e1d2cd84d7f6a58a75e0301ebc91827c",
+      "size_bytes": 10573
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-contract.test.mjs",
+      "sha256": "593d3715f333e4e3902f54a2427e7bf400db700091a6e37f6dccec66a3358fff",
+      "size_bytes": 7174
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-editor.local.test.mjs",
+      "sha256": "1e274c9b63742198ab1c893dd5a456393c02234fae37d35cea77d0dfb1c0a315",
+      "size_bytes": 37106
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-api.test.mjs",
+      "sha256": "248fd4a80fb2f1a576cf7648ce4f03bb303c1582b23624944d1516d79259fd4a",
+      "size_bytes": 6458
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-context.test.mjs",
+      "sha256": "cfb21354f5290aa8bf9507b643836a56f3d7dcda93b6d10b5cfae6002f8c741d",
+      "size_bytes": 2577
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-contract.test.mjs",
+      "sha256": "06a753e2408534baf735eaf82cf1f9455b7d2231b80a28098e05e6ccd66f18b8",
+      "size_bytes": 3647
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-editor.test.mjs",
+      "sha256": "217130d6778727568e4467f372b68a22d22fb83510acf6ea6f5bf831078efed0",
+      "size_bytes": 5347
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-export.test.mjs",
+      "sha256": "0091f97f9261f6f45d9b350e7bb84973a3df924b16ab170bf736576e76db4e9a",
+      "size_bytes": 4039
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-preview.test.mjs",
+      "sha256": "505ce1d8dce87e9594a904af948f7b29eb1b23be6652864d1e79c32f96d9d759",
+      "size_bytes": 11671
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-renderer.test.mjs",
+      "sha256": "56a71338253a9c0d78d50d6abaec20131bb7fd61e1cdb0e35c2cdf61838bd45e",
+      "size_bytes": 7822
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-routes.test.mjs",
+      "sha256": "9d89c6d4b402d95d94c25f1843ff5eecb3de87dfb681ca44580a93d257abb3b1",
+      "size_bytes": 2422
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-runner.test.mjs",
+      "sha256": "b7cb22a88fe9ffccb419e2012d1ec91c83ea920e2a0fc3e555c39c9e49a38cb4",
+      "size_bytes": 2305
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-text.test.mjs",
+      "sha256": "5ce314f7bc39bfa9d74c5ac316152ab25b6268f5eedfbe1f73dd4d5fabd3c3ce",
+      "size_bytes": 2779
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-localization-ui.local.test.mjs",
+      "sha256": "0771a32c7103d4561aab565344c4cfea930c6439879c4334e4bf119fe309d42d",
+      "size_bytes": 74215
+    },
+    {
+      "path": "pinky-lamb-cms/tests/hero-renderer.test.mjs",
+      "sha256": "91e7a407a2d8cc455eb57664788907b40ea4df645fc92a59c9b99104a37bb581",
+      "size_bytes": 5041
+    },
+    {
+      "path": "pinky-lamb-cms/tests/home-v3-recovery-api.test.mjs",
+      "sha256": "340cf50df02ee3f0627331439947baa5e1e03e0bc522df90914314025abcf31d",
+      "size_bytes": 11267
+    },
+    {
+      "path": "pinky-lamb-cms/tests/home-v3-recovery-ui.test.mjs",
+      "sha256": "df2fbd0b0d182464a819fa970d0fc4b14e69de857428a4b7e80b30d6d6eacc57",
+      "size_bytes": 11070
+    },
+    {
+      "path": "pinky-lamb-cms/tests/local-guard.test.mjs",
+      "sha256": "147540d18c407729dca04cdc6b9dcb917888c7744d3f14b0cbfa44bf11c41e98",
+      "size_bytes": 33990
+    },
+    {
+      "path": "pinky-lamb-cms/tests/login.local.test.mjs",
+      "sha256": "9aed9f42e1df620196194a472cd5274215274b480f75685bbaa1b4bb7121c928",
+      "size_bytes": 10554
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m1-compat.integration.test.mjs",
+      "sha256": "11ed1604651f44cf9f58dea389984d288a1a1682fca18ee491c2dee140c3407c",
+      "size_bytes": 13958
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m1.e2e.test.mjs",
+      "sha256": "62d8fa8ca0f2ed65ff7ad396eeb9f48285e7c8183c30db580a67505587aebdd8",
+      "size_bytes": 35912
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+      "sha256": "a063e791aa219f9c2b6eacd14220f983249f18c08591d328166840ade03e02f9",
+      "size_bytes": 78996
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2-recovery.test.mjs",
+      "sha256": "75848ce9d9713b87cfdbdcdb90ded1ed627cb2d3713ac70721a4d79253b36d7e",
+      "size_bytes": 46930
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m2.e2e.test.mjs",
+      "sha256": "f3a27bbcc4bf1e165bd831cbf2729d8365848f341bdad951f9d48a2f7f8de2af",
+      "size_bytes": 54763
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m3-no-rights-approval.test.mjs",
+      "sha256": "ad55ea9828faca83937ac1e23e7fc66ec30a710a724e006e1c556bf603fa6446",
+      "size_bytes": 3795
+    },
+    {
+      "path": "pinky-lamb-cms/tests/m3-parallel-qa-oracle.test.mjs",
+      "sha256": "de16d44eea0dfd1aee7a31a7525d06da8dc6a54f8b289baa279b73eaeb9ec3ba",
+      "size_bytes": 6788
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-images.test.mjs",
+      "sha256": "27ee501a25d126e4fd2d44701b5e4258dae62850f3c1455a41dd6795ea9e4087",
+      "size_bytes": 26649
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-pdf-package-reader.test.py",
+      "sha256": "a24dc1e3c6e3ac4dfbfb2b2df9dd562c3f023da550e0349b319dc7260ed303d5",
+      "size_bytes": 11665
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-pdf.test.mjs",
+      "sha256": "39caf18dd9e01f3399d8d73b022d0fedaf98790f4b45b062166433d8f890f0d5",
+      "size_bytes": 9063
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-images.local.test.mjs",
+      "sha256": "0dcf49618b00c567eea75a2618b4bc8d58d076b09744dbbcccc1c64e6b4aceed",
+      "size_bytes": 19289
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-parent.local.test.mjs",
+      "sha256": "9441568e00f623ddd237d7d9b1012032eabbde3ec8190bb41faad5ed140103da",
+      "size_bytes": 27904
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-preview-transport.local.test.mjs",
+      "sha256": "44a4786d1cf2ed718c42c28a3ea49686f8864267dcf980c1640963dc6eca0c3c",
+      "size_bytes": 42268
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-private-files.local.test.mjs",
+      "sha256": "a87a8b20d6233486fceee0c4ed799e365ea406fefb004bfe275e250f270fdad3",
+      "size_bytes": 25548
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-rights-contract.test.mjs",
+      "sha256": "c32d78b97169ab332df6df3f3f78a984d4429d0e58d6bffa400185080c8e66e4",
+      "size_bytes": 11965
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-rights-policy.test.mjs",
+      "sha256": "2bd123d0662ebca5f226fb4b81193913e86e033b3dd1949de341d550b370f7b3",
+      "size_bytes": 16957
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-tool-scopes.test.mjs",
+      "sha256": "aee4900252d3f110903288f43c97ac106525f6a0f86e48232b873b1c31db359d",
+      "size_bytes": 9284
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-tools.local.test.mjs",
+      "sha256": "5514079826f3a63c9c71cdce39c6dae412733c7733ab4359998804d855620e6f",
+      "size_bytes": 47111
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-attestations.test.mjs",
+      "sha256": "3fa65dda4cee097155cce2cd7bd2b610f146b1fa582e20f75876dbc49fc58507",
+      "size_bytes": 14265
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-authority-v2.test.mjs",
+      "sha256": "3137bf645b3352c2f1d6512a7c0ce14e6b8be81aa8b0bd19f69a6f6081dabd7f",
+      "size_bytes": 3511
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-authority.test.mjs",
+      "sha256": "57987a29185432ee95a88430a7ae712f7ef1054a68da2fb33e062b8c1ef87b45",
+      "size_bytes": 15273
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-content.test.mjs",
+      "sha256": "eb0b0ee3160ef5b1e82ae779f34e9a3071eabe77093a5679dac71dff5bb333c1",
+      "size_bytes": 10537
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-contract-v2.test.mjs",
+      "sha256": "7c235282dd214a3c6e6f44d2961b2c17c1082dd6bd593deb5fd43763fb733856",
+      "size_bytes": 14027
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-contract.test.mjs",
+      "sha256": "4863cb881f27043b842c61f305142511df4a7c570c913fcd2896e17c1f68e895",
+      "size_bytes": 14473
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-metadata-v2.test.mjs",
+      "sha256": "dc59a874876e46f5e1eaf33c579e0f1f32bb75f7f1eddaedc33e8b4b03208383",
+      "size_bytes": 7362
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-metadata.test.mjs",
+      "sha256": "6754ff6947ba379f4db86d2e3ea4291bf3407b34f2312377d10a22ba0dcbfa79",
+      "size_bytes": 9422
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-records-v2.test.mjs",
+      "sha256": "27a158ae73df70713d6e71033c75b2c314eeb1ea278e20bb876471ef33717b5f",
+      "size_bytes": 3037
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-records.test.mjs",
+      "sha256": "866ce7a0c708598f2cbc9f73ba3b330732382f30ab14b3f23a1e9182b4a42665",
+      "size_bytes": 18412
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-v3-toolset.test.mjs",
+      "sha256": "c289c034f1f8be6408a6b4de1f0043bbea3d1268d49cc298a27c269a3a5a5244",
+      "size_bytes": 9495
+    },
+    {
+      "path": "pinky-lamb-cms/tests/media-video.test.mjs",
+      "sha256": "43555394fdd76d033d65a54c141efa093fcd8b453082f0556046caa24ff5de3a",
+      "size_bytes": 19625
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+      "sha256": "481daa60116fdf7022cafe199af52d9e59cf9bc896e179403e226335b9dce69d",
+      "size_bytes": 6842
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.test.mjs",
+      "sha256": "e61c441fdbd730517977f951642e38a2d4d4b170cc639112ba1fd8de6c61ce7a",
+      "size_bytes": 7903
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-api.test.mjs",
+      "sha256": "7df38ef7d9b38d9e4dd937d9a776a67ef6f8768ae8d9e4dd514a6a01b153e5b5",
+      "size_bytes": 7498
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-context.test.mjs",
+      "sha256": "f91c2ee1a474d48e0c8bbc3061f00c0539b5680235e9203c208050dea8fa9a43",
+      "size_bytes": 5097
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-contract.test.mjs",
+      "sha256": "dea43aab4f628e219da527f74fcf04d61837dab0232ddef7c37b6c871c4fb502",
+      "size_bytes": 4474
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-editor.test.mjs",
+      "sha256": "cbdee00f94223337637c273b8eb44a28ff1bfddc53af1d89dd632b25e7e18dea",
+      "size_bytes": 4926
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-export.test.mjs",
+      "sha256": "8c10325d4e629dd5036e6fcc372ad96bd7753b1c4b9539afe59fb24e09a7a81d",
+      "size_bytes": 4404
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-preview.test.mjs",
+      "sha256": "5ecf79783de4bb8eb93fdfb47e874de7cc79802584f4e8f7b8a6793662803145",
+      "size_bytes": 4189
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-routes.test.mjs",
+      "sha256": "06a9eb6da0ecc59db0dd5e1c1cd789e1838a7df36a18c7d48f75f7348212976e",
+      "size_bytes": 2222
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-runner.test.mjs",
+      "sha256": "57a96f1d02021786d0697c807d5e4f9cc9dac2e552ee3ba192d59d7dc607ff86",
+      "size_bytes": 3050
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-ui.local.test.mjs",
+      "sha256": "0043c4f2bddd8693bb824ccf198f65aa76f0131cd79ea42cc966f8c2c5859c70",
+      "size_bytes": 20718
+    },
+    {
+      "path": "pinky-lamb-cms/tests/review.integration.test.mjs",
+      "sha256": "f21d88818c6ba66b6789c3f7a55ec8d45eceeaf2228b09a82f52594ba2fcc492",
+      "size_bytes": 19769
+    },
+    {
+      "path": "pinky-lamb-cms/tests/runtime-recovery.test.mjs",
+      "sha256": "3cba02a7c5462b52ee811b656f88a0f57d78e5efbf6ca4655fde3972f8afa32a",
+      "size_bytes": 63326
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-abuse.integration.test.mjs",
+      "sha256": "b039319f9613fb4c29af433d8c70eb811f6799a09dc188346f61e381c3a15dac",
+      "size_bytes": 15462
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-contract.test.mjs",
+      "sha256": "18c5efefe6aed918ace3ff433912a901930fe31b20e7d6a9ab5c374c02d6e61b",
+      "size_bytes": 38174
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-drafts.integration.test.mjs",
+      "sha256": "23bfcdca24a535a951a6d9df64bb3da4d1ec59bb5c1ac9626da5062bdb81d1b0",
+      "size_bytes": 20226
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-export.test.mjs",
+      "sha256": "11157e17fdc7ba89e54a2bf0e9c963f598bb22b0d5fdbe8559f1dcd1291c3e1a",
+      "size_bytes": 17094
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-hash.test.mjs",
+      "sha256": "7e42bb450c4befc834feab469bccdb19bcac922f616045fd72f7e72f045ecac4",
+      "size_bytes": 2803
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-import-map.test.mjs",
+      "sha256": "e5e0ebc2bae7a3317a253650f157fbba89e69cb207041db35bde886da1260fe9",
+      "size_bytes": 18699
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-import.integration.test.mjs",
+      "sha256": "09d038401427f3f23e16b37fc43833871897f6bdbc3e59ee39778eadbf37e6fe",
+      "size_bytes": 19965
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-manifest.test.mjs",
+      "sha256": "6f951aa8076d5b7a594a056c0ce9b414a406ecaadb56476165f1a9d6b40026a5",
+      "size_bytes": 4191
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-private-files.local.test.mjs",
+      "sha256": "b3a5770d1d66dc8cf3bd182844d81a8ab4a129e962515374448f19d22816d99d",
+      "size_bytes": 6610
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-public.local.test.mjs",
+      "sha256": "95f2953af561beacdca9366d00d9f470f7b2a5decb3d75e02442c72659f39c55",
+      "size_bytes": 23693
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-records.local.test.mjs",
+      "sha256": "9d8a15fe9c3aaf1d5d6271603428192bd32b7edcf660a58fb6242a4e96abbe6e",
+      "size_bytes": 48746
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-records.test.mjs",
+      "sha256": "72396dba13d0b397debc874a6ac43b27ea329eb4baa18cf77e53f93ea933a493",
+      "size_bytes": 9621
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-renderer.test.mjs",
+      "sha256": "2c5c5a181a4931ae683cd05aaa35e397262f845fba9bebe7b280aa6e714bcd0a",
+      "size_bytes": 23689
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-reviews.integration.test.mjs",
+      "sha256": "ad4ccb4c696b00b9d2cd10f60a76edf4e2b44bcbe9e0880d136c7a58ba5cd12c",
+      "size_bytes": 31843
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-sections.local.test.mjs",
+      "sha256": "c201db12eeb9b14535f98abe34dfff5d2e84c8a19344f3d648069279d69b2045",
+      "size_bytes": 49370
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-settings.local.test.mjs",
+      "sha256": "84cf5bead5a90febd6884a708e8957c3e62d2242f2b4979e9fc39f7a4ecc5ba9",
+      "size_bytes": 36547
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-settings.test.mjs",
+      "sha256": "1daf828e54fa0f7168181be074bdda8b2a58018ff18882c94af967a92eee8752",
+      "size_bytes": 16010
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-snapshots.integration.test.mjs",
+      "sha256": "17ea24215b68c8ecf5e3b556ef26cc1a03129d8713a0809ca8eeba43b15ae383",
+      "size_bytes": 19796
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-source-coverage.test.mjs",
+      "sha256": "becbe789345663f8cf9fbd22a2a59f3bb0f844ffbf39d2b8330fa48fcb14f3a0",
+      "size_bytes": 7624
+    },
+    {
+      "path": "pinky-lamb-cms/tests/site-workflow.local.test.mjs",
+      "sha256": "fa7b00317b19104645278894501eaaf1f94ac4612fcc31bfeff41a97b159c2e6",
+      "size_bytes": 58479
+    },
+    {
+      "path": "pinky-lamb-cms/tests/source-checks.integration.test.mjs",
+      "sha256": "32e9c498e779bdfda063980c3e5844a42f2a2f39d4a55329a84d8c34d7e3fb63",
+      "size_bytes": 41321
+    },
+    {
+      "path": "pinky-lamb-cms/vite.config.mjs",
+      "sha256": "98e389b287a74b90982e2b75c221da412709c37a68b11afacab85ef2f18a1197",
+      "size_bytes": 10758
+    },
+    {
+      "path": "pinky-lamb-cms/admin/auth-session.mjs",
+      "sha256": "9200b19e77a332adb7ff5d886b61d8460b065b4c50119be76d99fc38b5706736",
+      "size_bytes": 2271
+    },
+    {
+      "path": "pinky-lamb-cms/tests/auth-session.test.mjs",
+      "sha256": "b93e01ce0da1b7e6c0a5fea64f8243d8c7b6b33d77f981a32783f9f23b4d04c9",
+      "size_bytes": 4040
+    },
+    {
+      "path": "pinky-lamb-cms/tests/auth-session-ui.local.test.mjs",
+      "sha256": "df8c0e83983565705ac59012880ff3e08ebc7c0d8cccff6487b370f574ad3d84",
+      "size_bytes": 9614
+    }
+  ],
+  "api": [
+    {
+      "path": "/api/cms/localizations/services/status",
+      "methods": [
+        "GET"
+      ],
+      "permission": "MEMBER_READ"
+    },
+    {
+      "path": "/api/cms/localizations/services/{serviceId}/{en|vi|ja}",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "permission": "MEMBER_READ / DRAFT_SAVE"
+    },
+    {
+      "path": "/api/cms/localizations/services/{serviceId}/{en|vi|ja}/qa",
+      "methods": [
+        "GET"
+      ],
+      "permission": "MEMBER_READ"
+    },
+    {
+      "path": "/api/cms/localizations/sections/{work|services}/{en|vi|ja}",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "permission": "MEMBER_READ / DRAFT_SAVE"
+    },
+    {
+      "path": "/api/cms/localizations/sections/{work|services}/{en|vi|ja}/qa",
+      "methods": [
+        "GET"
+      ],
+      "permission": "MEMBER_READ"
+    },
+    {
+      "path": "/api/cms/localizations/work-services/{en|vi|ja}/qa",
+      "methods": [
+        "GET"
+      ],
+      "permission": "MEMBER_READ"
+    }
+  ],
+  "source_inventory": {
+    "at": "2026-10-16T11:31:17.027Z",
+    "home_revision": 0,
+    "content_json_sha256": "19893485b8013ca6deaa0b3dc16f6a6e5f037dbc036911ec42a174469b0a66b7",
+    "project_ids": [
+      "wayfair",
+      "sony",
+      "diag",
+      "vifa",
+      "petrosetco",
+      "varna",
+      "samsung",
+      "psd"
+    ],
+    "service_ids": [
+      "brand-creative",
+      "film-content",
+      "events-experiences",
+      "exhibition-activation",
+      "integrated-communications",
+      "original-ip"
+    ],
+    "section_ids": [
+      "work",
+      "services"
+    ],
+    "evidence": {
+      "path": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-remainder-v1/preparation-20261016/inventory.private.json",
+      "sha256": "6733938b6e680f26797d31d304ba23a2e395481e22adf8d9dc130d994ab11de5",
+      "size_bytes": 6035
+    },
+    "target_before": {
+      "path": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-remainder-v1/preparation-20261016/target-before.private.json",
+      "sha256": "f692bb4855d3e926ca625a84dc5a77f20799e94739800b3411f6f3c216820ad4",
+      "size_bytes": 984
+    }
+  },
+  "runtime": {
+    "project_id": "demo-pinky-lamb-cms",
+    "ports": {
+      "cms": 5173,
+      "auth": 9099,
+      "firestore": 8080,
+      "functions": 5001,
+      "hosting_readonly": 5010,
+      "storage": 9199,
+      "qa_owned": 4188
+    },
+    "emulator_lifecycle": false,
+    "vite_only_restart_max": 1,
+    "vite_restart_condition": "proven stale backend ESM before normal login; exact owned process, never after authenticated owner without preserving/reporting impact",
+    "new_accounts_or_roles": false,
+    "credential_copy_export_or_storage_state": false,
+    "session_owner": "scripts/multilingual-browser-session.mjs",
+    "testing_policy": "pinky-lamb-cms/docs/MULTILINGUAL-001-TESTING-v2.md",
+    "output_roots": [
+      "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-remainder-v1/",
+      "pinky-lamb-cms/.local/exports/multilingual-001/p3-remainder-v1/",
+      "pinky-lamb-cms/.local/cache/multilingual-001/p3-remainder-v1/"
+    ],
+    "write_budget": {
+      "successful_commits_max": 16,
+      "planned_successful_commits": 14,
+      "document_writes_max": 32,
+      "new_operation_records_max": 16,
+      "draft_records_max": 9,
+      "exact_draft_paths": [
+        "cmsLocalizedServiceDrafts/home-v3--brand-creative--en",
+        "cmsLocalizedSectionDrafts/home-v3--work--en",
+        "cmsLocalizedSectionDrafts/home-v3--services--en",
+        "cmsLocalizedServiceDrafts/home-v3--brand-creative--vi",
+        "cmsLocalizedSectionDrafts/home-v3--work--vi",
+        "cmsLocalizedSectionDrafts/home-v3--services--vi",
+        "cmsLocalizedServiceDrafts/home-v3--brand-creative--ja",
+        "cmsLocalizedSectionDrafts/home-v3--work--ja",
+        "cmsLocalizedSectionDrafts/home-v3--services--ja"
+      ],
+      "operation_collections": [
+        "cmsLocalizedServiceOperations",
+        "cmsLocalizedSectionOperations"
+      ],
+      "other_writes": 0,
+      "project_localization_writes": 0,
+      "failed_or_replayed_intent_new_writes": 0
+    },
+    "persistent_test_profile": "pinky-lamb-cms/.local/cache/multilingual-001/browser-profile",
+    "finish_behavior": "release private page and close owned context, preserve SDK remembered Auth; explicit logout only as separately selected criterion"
+  },
+  "excluded": [
+    "P4 other groups/full dictionary/Contact Brief",
+    "P5 editorial/review and release eligibility",
+    "P6 bulk translation/import",
+    "P7 full website assembly/activation5010",
+    "P1/P2 acceptance closure",
+    "M3/M4/LOCAL_COMPLETE",
+    "baseline/config/package/lock/Auth ACL changes",
+    "Git/deployment/production"
+  ],
+  "prepared_at": "2026-10-16T11:38:26.833383+00:00",
+  "testing_policy": {
+    "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-TESTING-v2.md",
+    "sha256": "27a77950a4de2b8a2b94b24da6315f5741e22306f3d613f239933198acf46090",
+    "size_bytes": 10054
+  },
+  "harness_correction": {
+    "path": "approvals/MULTILINGUAL-001-HARNESS-v1.repair.json",
+    "sha256": "877a0d522b1cbf9759ba5728ece56e36d647ee62fc0ff6f65fc8ccb1bced0932",
+    "size_bytes": 3729
+  },
+  "harness_dependencies": [
+    {
+      "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+      "sha256": "5c8963e32e4cf0e1d5163feb9a72f3e5020535e6860ad77ffd12710a795a7ccf",
+      "size_bytes": 8122
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+      "sha256": "a2c68c54860371ac39e5d2ba1366ba9ba4bae1e8e8ebd837bc88ff26c1e95852",
+      "size_bytes": 5735
+    },
+    {
+      "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+      "sha256": "6c532500e66f377b71e5d0b24db70785e1d2cd84d7f6a58a75e0301ebc91827c",
+      "size_bytes": 10573
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.test.mjs",
+      "sha256": "e61c441fdbd730517977f951642e38a2d4d4b170cc639112ba1fd8de6c61ce7a",
+      "size_bytes": 7903
+    },
+    {
+      "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+      "sha256": "481daa60116fdf7022cafe199af52d9e59cf9bc896e179403e226335b9dce69d",
+      "size_bytes": 6842
+    },
+    {
+      "path": "pinky-lamb-cms/tests/project-localization-ui.local.test.mjs",
+      "sha256": "0043c4f2bddd8693bb824ccf198f65aa76f0131cd79ea42cc966f8c2c5859c70",
+      "size_bytes": 20718
+    }
+  ],
+  "auth_remember_amendment": {
+    "basis": "CMS-AUTH-REMEMBER-001 v1 approved separately",
+    "canonical_task": "pinky-lamb-cms/tasks/CMS-AUTH-REMEMBER-001.md",
+    "source_pins_refreshed": [
+      {
+        "path": "pinky-lamb-cms/admin/auth.mjs",
+        "before": "27483c22a875e678f0668bfbdca1b5bd799a974478fdb30440da2cbedf91b4ac",
+        "after": "52be5b458295a5cede7c849c11a78a17ddaa63a160c6f9f4c5bc37e5c35d8c78"
+      },
+      {
+        "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+        "before": "72016f2ae528e8edd9ca4730d366987e1e49e2b41a66e0bdb71ba73112cfac13",
+        "after": "5c8963e32e4cf0e1d5163feb9a72f3e5020535e6860ad77ffd12710a795a7ccf"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+        "before": "b449ed0ac5a68edded34dc39b77fb3bfa7921b077b08fec920b45cd51c12e004",
+        "after": "a2c68c54860371ac39e5d2ba1366ba9ba4bae1e8e8ebd837bc88ff26c1e95852"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+        "before": "6eaed97f20847c92845c05c278fcdfac028f1e09bd560170903dd6d1434e95a9",
+        "after": "788f6cb367c29dc55299e547d05ade7e801e00d3625980ad8e95bd075dd6eb5a"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/m2-recovery.local.test.mjs",
+        "before": "20b79e30267eca3c6f6629d3d5c5e309f974cd12b0775dd7db74ba3a83a61716",
+        "after": "a063e791aa219f9c2b6eacd14220f983249f18c08591d328166840ade03e02f9"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+        "before": "2c547a25c96371e022c754c55e53dd0e483eb52a2cda91fcee4c9c10b3c90e81",
+        "after": "481daa60116fdf7022cafe199af52d9e59cf9bc896e179403e226335b9dce69d"
+      },
+      {
+        "path": "pinky-lamb-cms/scripts/multilingual-browser-session.mjs",
+        "before": "72016f2ae528e8edd9ca4730d366987e1e49e2b41a66e0bdb71ba73112cfac13",
+        "after": "5c8963e32e4cf0e1d5163feb9a72f3e5020535e6860ad77ffd12710a795a7ccf"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/multilingual-browser-session.mjs",
+        "before": "b449ed0ac5a68edded34dc39b77fb3bfa7921b077b08fec920b45cd51c12e004",
+        "after": "a2c68c54860371ac39e5d2ba1366ba9ba4bae1e8e8ebd837bc88ff26c1e95852"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+        "before": "6eaed97f20847c92845c05c278fcdfac028f1e09bd560170903dd6d1434e95a9",
+        "after": "788f6cb367c29dc55299e547d05ade7e801e00d3625980ad8e95bd075dd6eb5a"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/multilingual-browser-session.local.test.mjs",
+        "before": "2c547a25c96371e022c754c55e53dd0e483eb52a2cda91fcee4c9c10b3c90e81",
+        "after": "481daa60116fdf7022cafe199af52d9e59cf9bc896e179403e226335b9dce69d"
+      },
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-TESTING-v2.md",
+        "before": "d805a400eadedf9fdd77a4ffb22a195b56b20efc05e983ac72b8251139ac9e36",
+        "after": "16200e89d7598560580bef240ed19be084583b19364b4ab4456332915787f14a"
+      },
+      {
+        "path": "pinky-lamb-cms/docs/MULTILINGUAL-001-P3-REMAINDER-v1.md",
+        "before": "d52c97883ff87d1261aecac82ed23a027e110a6517a595f3c45f0f8248c097e0",
+        "after": "e625d0b315675d057a656ba3edf29930fc01e9c074f6479ef389f90766844c90"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+        "before": "788f6cb367c29dc55299e547d05ade7e801e00d3625980ad8e95bd075dd6eb5a",
+        "after": "6c532500e66f377b71e5d0b24db70785e1d2cd84d7f6a58a75e0301ebc91827c",
+        "reason": "approved Auth live verification helper repair"
+      },
+      {
+        "path": "pinky-lamb-cms/tests/helpers/project-localization-live.mjs",
+        "before": "788f6cb367c29dc55299e547d05ade7e801e00d3625980ad8e95bd075dd6eb5a",
+        "after": "6c532500e66f377b71e5d0b24db70785e1d2cd84d7f6a58a75e0301ebc91827c",
+        "reason": "approved Auth live verification helper repair"
+      }
+    ],
+    "runtime_proof": "Verified scoped: actual normal OWNER refresh/newtab/close-reopen, one login; see canonical Auth task, human acceptance pending",
+    "scope_unchanged": "52 application paths; same API, 9 drafts, max16 commits/32 document writes; no P3 implementation permission"
+  },
+  "human_approval": {
+    "quote": "Approved MULTILINGUAL-001 P3-REMAINDER v1 — toàn bộ P3 còn lại local/emulators",
+    "source": "direct human user message in current chat",
+    "recorded_at": "2026-10-16T12:57:14.313384+00:00",
+    "before_snapshot": "pinky-lamb-cms/.local/test-outputs/multilingual-001/p3-remainder-v1/approved-20261016-v1"
+  }
+}
