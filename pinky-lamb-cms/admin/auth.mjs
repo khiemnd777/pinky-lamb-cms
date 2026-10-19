@@ -1,5 +1,5 @@
 import {createContentLocaleSession} from './content-locale-session.mjs';
-import {authFailureAction,persistenceHierarchy,rememberingAvailable} from './auth-session.mjs';
+import {authFailureAction,localSignInMessage,persistenceHierarchy,rememberingAvailable} from './auth-session.mjs';
 import {mountCmsShell} from './cms-shell.mjs';
 import {closePinkySelects,disposePinkySelects} from './pinky-select.mjs';
 import {mediaDerivativePublicSchema} from '../contracts/media-read-public.mjs';
@@ -24,7 +24,8 @@ else{
  sdk.connectAuthEmulator(auth,LOCAL.auth,{disableWarnings:true});
 }
 const canRemember=durable||await rememberingAvailable();
-await auth.authStateReady();
+let restorationFailed=false;
+try{await auth.authStateReady();}catch(error){restorationFailed=![401,403].includes(error?.status);}
 document.documentElement.dataset.cmsAuthPersistence=canRemember?'LOCAL_AVAILABLE':'MEMORY_ONLY';
 const element=id=>document.getElementById(id);
 const pending=new Set();const objectUrls=new Set();
@@ -35,6 +36,9 @@ if(RECOVERY_READ_ONLY){
 }
 const accessError='Không thể truy cập nội dung. Vui lòng kiểm tra quyền hoặc đăng nhập lại.';
 function announce(message){element('status').textContent=message;}
+function showEntryPath(path){
+ if(location.pathname!==path)history.replaceState(history.state,'',path);
+}
 const retryMessage='Chưa thể xác minh quyền truy cập. Vui lòng tải lại để thử kết nối; không cần nhập lại mật khẩu.';
 function holdIdentity(message=retryMessage){clearPrivate();element('login-panel').hidden=Boolean(auth.currentUser);element('logout').hidden=!auth.currentUser;document.documentElement.dataset.cmsAuthState='RETRY_REQUIRED';announce(message);}
 function clearPrivate(){
@@ -47,7 +51,7 @@ function clearPrivate(){
  element('session-panel').hidden=true;element('session-role').textContent='';
  document.dispatchEvent(new CustomEvent('cms:session',{detail:null}));
 }
-async function endSession(message=accessError){clearPrivate();document.documentElement.dataset.cmsAuthState='LOGIN_REQUIRED';announce(message);element('login-panel').hidden=false;element('logout').hidden=true;element('login-submit').disabled=false;await signOut(auth);}
+async function endSession(message=accessError){clearPrivate();document.documentElement.dataset.cmsAuthState='LOGIN_REQUIRED';showEntryPath('/login');announce(message);element('login-panel').hidden=false;element('logout').hidden=true;element('login-submit').disabled=false;await signOut(auth);}
 export function getSession(){return session?{...session}:null;}
 export function registerObjectUrl(url){objectUrls.add(url);}
 /** An opaque cursor must use the same canonical base64url/UTF-8 format as
@@ -195,7 +199,7 @@ export async function apiFetch(path,options={}){
 }
 element('login-form').addEventListener('submit',async event=>{
  event.preventDefault();element('login-submit').disabled=true;announce('Đang đăng nhập…');
- try{await signInWithEmailAndPassword(auth,element('email').value.trim(),element('password').value);}catch{announce('Không thể đăng nhập. Vui lòng kiểm tra thông tin và thử lại.');}
+ try{await signInWithEmailAndPassword(auth,element('email').value.trim(),element('password').value);}catch(error){announce(durable?localSignInMessage(error):'Không thể đăng nhập. Vui lòng kiểm tra thông tin và thử lại.');}
  finally{element('password').value='';element('login-submit').disabled=false;}
 });
 element('logout').addEventListener('click',()=>{if((editor && !editor.canLeave())||(review?.canLeave&&!review.canLeave()))return;void endSession('Bạn đã đăng xuất.');});
@@ -238,15 +242,15 @@ function selectResource(value){
  void mountResource(value,member).catch(error=>{if(error.name!=='AbortError' && session===member)announce('Không thể mở nội dung. Vui lòng thử lại.');}).finally(()=>{if(session===member && editorResource===value)shell.setBusy(false);});
 }
 let editorResource=RECOVERY_READ_ONLY?'home-v2':'home-v3';
-onAuthStateChanged(auth,async user=>{
+const onUserChanged=async user=>{
  clearPrivate();element('logout').hidden=!user;element('login-panel').hidden=Boolean(user);element('login-submit').disabled=false;
- if(!user){document.documentElement.dataset.cmsAuthState='LOGIN_REQUIRED';if(!canRemember)announce('Trình duyệt đang chặn lưu phiên. Đăng nhập chỉ được giữ trong lần mở hiện tại.');return;}
+ if(!user){document.documentElement.dataset.cmsAuthState='LOGIN_REQUIRED';showEntryPath('/login');if(!canRemember)announce('Trình duyệt đang chặn lưu phiên. Đăng nhập chỉ được giữ trong lần mở hiện tại.');return;}
  document.documentElement.dataset.cmsAuthState='AUTHORIZING';
  const current=generation;announce('Đang kiểm tra quyền truy cập…');
  try{
   const initial=await apiFetch(nativeContent?'/api/cms/workspace':'/api/cms/session');if(current!==generation)return;
   const member=nativeContent?initial.member:initial;workspaceBootstrap=nativeContent?initial:null;
-  session=Object.freeze(member);contentLocaleSession=createContentLocaleSession({getSession});element('session-role').textContent=member.role;element('session-panel').hidden=false;shell.setSession(member,{readOnly:RECOVERY_READ_ONLY});announce(canRemember?'':'Trình duyệt đang chặn lưu phiên. Phiên hiện tại có thể mất khi đóng hoặc tải lại.');element('session-ready').textContent='';
+  session=Object.freeze(member);showEntryPath('/');contentLocaleSession=createContentLocaleSession({getSession});element('session-role').textContent=member.role;element('session-panel').hidden=false;shell.setSession(member,{readOnly:RECOVERY_READ_ONLY});announce(canRemember?'':'Trình duyệt đang chặn lưu phiên. Phiên hiện tại có thể mất khi đóng hoặc tải lại.');element('session-ready').textContent='';
   editorResource=RECOVERY_READ_ONLY?'home-v2':'home-v3';await mountResource(editorResource,member);if(current!==generation)return;
   shell.setBusy(false);shell.refreshPanels();document.documentElement.dataset.cmsAuthState='AUTHORIZED';document.dispatchEvent(new CustomEvent('cms:session',{detail:{...member}}));
  }catch(error){
@@ -255,4 +259,14 @@ onAuthStateChanged(auth,async user=>{
    else holdIdentity();
   }
  }
-});
+};
+if(restorationFailed){
+ const retry=document.createElement('button');retry.type='button';retry.className='cms-primary';retry.textContent='Thử lại kết nối';
+ element('login-form').hidden=true;element('login-panel').hidden=false;element('login-panel').append(retry);
+ document.documentElement.dataset.cmsAuthState='RETRY_REQUIRED';announce('Chưa thể xác minh phiên đã lưu. Hãy thử lại kết nối; không cần nhập lại mật khẩu.');
+ retry.addEventListener('click',async()=>{
+  retry.disabled=true;announce('Đang kiểm tra phiên đã lưu…');
+  try{await auth.authStateReady();retry.remove();element('login-form').hidden=false;announce('');onAuthStateChanged(auth,onUserChanged);}
+  catch{announce('Chưa thể xác minh phiên đã lưu. Hãy thử lại kết nối; không cần nhập lại mật khẩu.');retry.disabled=false;}
+ });
+}else onAuthStateChanged(auth,onUserChanged);

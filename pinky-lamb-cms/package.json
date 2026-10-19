@@ -15,6 +15,7 @@
     "dev:local": "node scripts/local-guard.mjs dev",
     "emulators:local": "node scripts/local-guard.mjs emulators",
     "build:admin": "node scripts/local-guard.mjs build",
+    "build:admin:durable": "PINKY_LOCAL_DATA_MODE=durable PINKY_LOCAL_DATA_ROOT=\"$PWD/.cms-data-local\" .local/cache/node/node-v22.23.3-darwin-arm64/bin/node node_modules/vite/bin/vite.js build --configLoader native",
     "lint": "node scripts/local-guard.mjs lint",
     "test:unit": "node scripts/local-guard.mjs unit",
     "test:emulators": "node scripts/local-guard.mjs integration",

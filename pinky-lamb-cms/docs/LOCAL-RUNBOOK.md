@@ -3,10 +3,19 @@
 ## Cổng hiện hành — 19/10/2026
 
 - Admin/API: `http://127.0.0.1:5273/login`. Website dữ liệu CMS: `http://127.0.0.1:4189/`, `/vi/`, `/ja/`.
+- Nếu gõ `http://localhost:5273/` hoặc `/login`, server chuyển hướng sang địa chỉ Admin `127.0.0.1` trước khi dùng phiên đăng nhập. Chỉ GET/HEAD không có Origin được chuyển hướng; API/Auth và assets không dùng hostname `localhost`.
 - Preview dùng CSS, font và public legacy assets đã đóng gói trong artifact của `4189`. Media riêng tư tiếp tục đi qua API xác thực của CMS. Các URL nguồn lịch sử trong snapshot không được ghi lại; lớp transport ánh xạ chúng sang cổng hiện hành trước khi tải.
 - Không cần chạy template HTTP tại `5010`. CSP của CMS và preview không cho tải từ cổng đó. Khởi tạo nguồn, khi được duyệt riêng, đọc template đóng gói nguyên byte trên ổ đĩa và kiểm tra pin; startup không seed dữ liệu.
 - `make run` hiện được cấu hình mở CMS, worker và website `4189` theo pointer `.local/p7-v3/website-current.json`. Pointer phải tồn tại và trỏ đến artifact hợp lệ. Nếu thiếu pointer, launcher từ chối thay vì tự seed hoặc tạo bản website giả.
+- Khi chỉ build giao diện cho stack dữ liệu local đã cutover, chạy `npm run build:admin:durable` từ thư mục CMS. Lệnh `npm run build:admin` của profile emulator cũ sẽ từ chối ghi đè `admin-dist` nếu có marker cutover; `make run` vẫn build đúng profile durable tự động.
+- `make run` kiểm tra bản Admin vừa build có dấu Auth durable và entry asset trước khi mở website/Admin/worker. Built Admin cũng kiểm tra lại khi khởi động riêng. Nếu bundle sai hoặc thiếu, startup dừng với lỗi rõ ràng; không phục vụ form đăng nhập trỏ đến Auth emulator cũ.
 - Khi chạy lại, `make run` dừng CMS, website và worker cũ của đúng dự án, chờ tiến trình thoát và cả hai cổng trống rồi mới mở stack mới. Cơ chế này cũng xử lý launcher đã thoát nhưng server/worker còn chạy hoặc server mở riêng bằng đúng lệnh đã biết. Runner kiểm tra user, pinned Node/command, thư mục CMS, thời điểm tạo PID và chủ cổng; ứng dụng khác vẫn bị từ chối. Không cần sửa/xóa marker hoặc tự kill theo cổng.
+
+### Bảo vệ đăng nhập từ `make run` — 19/10/2026
+
+Sau cutover, `npm run build:admin` của profile emulator đã từng ghi đè bundle trong `admin-dist` mà built Admin phục vụ. Form đăng nhập khi đó dùng Auth emulator cũ; nhập đúng tài khoản local vẫn bị lỗi chung. `make run` nay build profile durable, xác nhận dấu Auth durable cùng entry asset trước khi mở stack; built Admin kiểm tra lại lúc mở riêng. Build profile emulator bị từ chối ghi đè sau cutover. Dấu bundle là kiểm tra tương thích build, không thay thế xác thực backend.
+
+Kiểm chứng: focused Node tests **PASS 20/20**, ESLint và `git diff --check` **PASS**. `make run` thực tế **PASS hai lần liên tiếp**: lần sau dừng stack trước, build lại durable, rồi đạt readiness Admin `5273`, website `4189` và anonymous session 401. Sau mỗi lần, tải lại tab Edge hiện có vẫn vào CMS với role `OWNER` tại `/` mà không nhập lại mật khẩu. Không dùng credential để thử đăng nhập mới trong lần kiểm tra này.
 
 Bằng chứng CMS/preview khi chuyển sang `4189` nằm trong [CMS-LOGO-LOCAL-001](../tasks/CMS-LOGO-LOCAL-001.md). Bằng chứng thay thế stack mới nằm trong mục dưới. Các bằng chứng ngày 17/10 vẫn giữ nguyên phạm vi lịch sử.
 
@@ -24,6 +33,36 @@ Kiểm chứng trên source hiện tại:
 - SQLite `integrity_check`: `ok`; số dòng và SHA-256 của toàn bộ `cms_documents`, `cms_collection_versions`, `cms_objects` giữ nguyên trước/sau hai lần chạy.
 
 Giới hạn: chưa kiểm thử trình duyệt/authenticated login hoặc toàn bộ nghiệp vụ CMS trong lần sửa lifecycle này. Không có deploy/Git hoặc kiểm chứng mất điện. Stack local mới được giữ chạy để Khiêm sử dụng; chạy lại `make run` sẽ thay stack đó theo cùng cơ chế.
+
+### Sửa shutdown chờ HTTP — 19/10/2026, sau khi chuyển sang built Admin
+
+Khiêm báo `make run` dừng ở `stopping previous Pinky Lamb stack before startup`. Tại lúc kiểm tra không còn stack bị treo. Restart thông thường chạy được; đã tái hiện một nguyên nhân cụ thể bằng HTTP request local gửi thiếu body: website và các worker thoát, riêng built Admin còn chờ `server.close()`, khiến launcher thay thế báo timeout sau 30 giây. Kết nối giả lập vẫn mở đến khi client tự đóng. Các lần PASS ở mục trước không bao phủ ca kết nối này.
+
+Phạm vi sửa theo yêu cầu hiện tại: `cms-api/local-admin-server.mjs`, `scripts/serve-cms-admin-local.mjs`, `scripts/run-durable-stack.mjs`, hai test file tương ứng và runbook này. Giữ các thay đổi UI đang có. Không sửa dữ liệu nguồn, seed/reset/import/migration, quy trình build hoặc quyền sở hữu tiến trình. Phiên chính tự review tuần tự; không có reviewer độc lập.
+
+- Built Admin ngừng nhận request mới; đóng socket chưa gửi đủ header/body để giải phóng shutdown. Request đã đầy đủ vẫn được xử lý và trả kết quả. Theo dõi Promise của CMS/Auth handler, chờ các handler kết thúc cả khi client đã ngắt, rồi entrypoint mới đóng database. Không force kill tiến trình hoặc đóng database để ép vượt tác vụ đang chạy.
+- Launcher giữ giới hạn chờ thay thế 30 giây và kiểm tra danh tính/chủ cổng. Mỗi 5 giây khi còn chờ, log tên thành phần và PID; lỗi timeout cũng ghi thành phần/PID. Shutdown của chính launcher dùng chung một Promise khi nhận nhiều signal và báo component chưa thoát.
+- Pinned Node `--test tests/local-admin-server.test.mjs tests/durable-stack-lifecycle.test.mjs tests/cms-website-origin.test.mjs`: **PASS 21/21**. Test transport dùng HTTP/socket thật trên cổng tạm với fixture cô lập; kiểm tra thiếu body/header, client ngắt khi command còn chạy và trả đủ response khi request hoàn chỉnh. Test lifecycle kiểm tra log/timeout và các bảo vệ cũ.
+- Pinned Node ESLint trên ba source file và hai test file bị sửa: **PASS**. `git diff --check` trên phạm vi sửa: **PASS**.
+- `make run` trên retained stack với cùng request giả lập gửi thiếu body: **PASS**; kết nối được đóng, Admin báo `stopped`, launcher cũ thoát mã 0 và stack mới đạt readiness `4189/` 200, `5273/login` 200, anonymous CMS session 401. Build có sẵn trong `make run` hoàn tất thành công. Không gửi command hoàn chỉnh hay đăng nhập bằng credentials thật để tạo ca lỗi.
+- Số dòng và SHA-256 toàn bộ `cms_documents`, `cms_collection_versions`, `cms_objects` không đổi sau kiểm chứng; SQLite integrity `ok`. Không suy kết quả này thành kiểm chứng mọi bảng hoặc toàn bộ nghiệp vụ CMS. Không có authenticated browser UAT, Git mutation hoặc deploy.
+
+Stack mới giữ chạy để sử dụng. Nếu một tác vụ thật không kết thúc, launcher vẫn từ chối chạy chồng; dùng tên/PID trong log để điều tra đúng tác vụ, không tự force kill hoặc xóa marker.
+
+### Sửa trang vào CMS qua localhost — 19/10/2026
+
+Khiêm báo ảnh Edge mở `http://localhost:5273/login` trả JSON `FORBIDDEN` sau `make run`. Đã quan sát đúng trang lỗi trong tab của Khiêm và xác định middleware chỉ cho Host `127.0.0.1:5273`. Đây là từ chối ở lớp hostname trước khi xử lý đăng nhập.
+
+Sửa `cms-api/local-admin-server.mjs` và regression test transport: GET/HEAD của đúng `/` hoặc `/login`, với Host `localhost:5273`, không có Origin, không có header trùng và kết nối loopback, nhận 302 đến đường dẫn tương ứng trên `http://127.0.0.1:5273`. Đích là hằng cố định, không lấy từ query; query không được chuyển tiếp. API/Auth, static assets, POST và Origin khác vẫn theo kiểm tra cũ. Cookie/session vẫn chỉ dùng origin chuẩn; không thêm trusted origin hoặc tắt phân quyền. Cập nhật runbook này là hồ sơ duy nhất của lần sửa; phiên chính tự review, không có reviewer độc lập.
+
+Kiểm chứng:
+
+- Pinned Node `--test tests/local-admin-server.test.mjs tests/durable-stack-lifecycle.test.mjs tests/cms-website-origin.test.mjs`: **PASS 21/21**. Đã thấy assertion GET localhost/login thất bại 403 thay vì 302 trước khi sửa. Sau sửa các ca GET/HEAD, query có đích ngoài, API/POST/Origin bị từ chối đều đạt cùng các hồi quy shutdown.
+- Pinned Node ESLint trên transport và test: **PASS**; `git diff --check` trên source/test/runbook: **PASS**. `make run` gồm Admin build và readiness: **PASS**.
+- Server thật: localhost/login trả 302 đến `http://127.0.0.1:5273/login`; canonical login 200; localhost CMS session 403; canonical anonymous session 401.
+- Tải lại đúng tab Edge từng báo lỗi: URL chuyển sang `127.0.0.1:5273/login`, CMS hiện workspace Đầu trang, Hero và SEO với role OWNER từ session có sẵn. Không nhập/xem credentials hoặc sửa/lưu nội dung. Không suy bằng chứng tải trang thành nghiệm thu toàn bộ CMS hay đăng nhập mới bằng mật khẩu.
+
+Stack mới và tab CMS được giữ mở. Không có Git mutation, migration hoặc deploy trong lần sửa này.
 
 ## LOCAL-DATA-001 v1 — runtime sau cutover (bằng chứng 17/10/2026)
 

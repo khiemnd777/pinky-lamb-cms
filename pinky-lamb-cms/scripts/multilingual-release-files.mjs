@@ -23,7 +23,7 @@ export function writeExclusive(relative,bytes){
  try{writeFileSync(fd,bytes);fsyncSync(fd);}finally{closeSync(fd);}return destination;
 }
 export function writeJsonExclusive(relative,value){return writeExclusive(relative,Buffer.from(JSON.stringify(value)+'\n'));}
-export function publicPath(value){if(value==='sitemap.xml')return value;if(typeof value!=='string'||value.length>220||! /^(?:(?:vi|ja)\/)?(?:index\.html|[A-Za-z0-9][A-Za-z0-9._-]*\.(?:css|js|mjs|txt)|assets\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:webp|png|jpe?g|svg|woff2?|pdf|mp4|css|js|mjs))$/.test(value)||value.includes('..'))throw Error('Invalid public artifact path');return value;}
+export function publicPath(value){if(value==='sitemap.xml')return value;if(typeof value!=='string'||value.length>220||! /^(?:assets\/cache\/[a-f0-9]{64}\.(?:webp|png|jpe?g|svg|woff2?|pdf|mp4|css|js|mjs|txt)|(?:(?:vi|ja)\/)?(?:index\.html|[A-Za-z0-9][A-Za-z0-9._-]*\.(?:css|js|mjs|txt)|assets\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:webp|png|jpe?g|svg|woff2?|pdf|mp4|css|js|mjs)))$/.test(value)||value.includes('..'))throw Error('Invalid public artifact path');return value;}
 export const PUBLIC_MIME=Object.freeze(['application/xml','text/html','text/css','text/javascript','text/plain','image/webp','image/png','image/jpeg','image/svg+xml','font/woff','font/woff2','application/pdf','video/mp4']);
 
 export function assertMultilingualToolingRuntime(){if(process.version!=='v22.23.3'||realpathSync(process.execPath)!==path.join(CMS_ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node')||realpathSync(process.cwd())!==CMS_ROOT||process.env.PINKY_NETWORK_FENCE!=='1')throw Error('Use the pinned local-guard multilingual command');validateRuntime();}

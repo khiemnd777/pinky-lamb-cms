@@ -100,7 +100,11 @@ export async function createLocalWebsiteService({options,library,storage}){
     const sourcePath=ROOT+'/'+job.id+'/release.json';
     if(existsSync(ownedFile(sourcePath,{missing:true}))){if(hash(readPrivateJson(sourcePath,12*1048576))!==hash(release))throw Error('Candidate release changed');}
     else writeJsonExclusive(sourcePath,release);
-    const artifact=exportMultilingualSite(bundle,'cms-'+job.id+'-'+job.exportAttempt);
+    const preserveDocuments=Object.fromEntries(['en','vi','ja'].filter(locale=>locale!==job.selection.resource.locale).map(locale=>{
+     const name=locale==='en'?'index.html':locale+'/index.html';
+     return [name,readPrivateBytes(job.base.artifact.relativeRoot+'/'+name)];
+    }));
+    const artifact=exportMultilingualSite(bundle,'cms-'+job.id+'-'+job.exportAttempt,{preserveDocuments});
     // Other locales must remain byte-identical, even across renderer/template changes.
     const before=readReleaseManifest(job.base.artifact.relativeRoot,job.base.artifact.manifestSha256),after=readReleaseManifest(artifact.root,artifact.manifestSha256);
     for(const locale of ['en','vi','ja'].filter(l=>l!==job.selection.resource.locale)){

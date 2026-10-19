@@ -8,20 +8,23 @@ class Element extends EventTarget{
  constructor(){super();this.hidden=false;this.disabled=false;this.value='';this.textContent='';this.children=[];this.dataset={};}
  replaceChildren(...children){this.children=children;}
  append(...children){this.children.push(...children);}
+ remove(){}
  querySelectorAll(){return [];}
  removeAttribute(){}
 }
-async function harness(){
+async function harness({readyFails=false}={}){
  const nodes=new Map(),document=new EventTarget();document.getElementById=id=>{if(!nodes.has(id))nodes.set(id,new Element());return nodes.get(id);};document.documentElement=new Element();document.querySelectorAll=()=>[];document.createElement=()=>new Element();
- let observer,signOuts=0,tokenCalls=0,readyCalls=0,deadline,fetcher=async()=>({status:200,ok:true,json:async()=>({uid:'synthetic-member',role:'OWNER',authzVersion:1})}),tokenError=null,mountError=null,persistences;
+ let pathname='/login',routeChanges=0;const location={get pathname(){return pathname;}};const history={state:null,replaceState(_state,_title,path){pathname=path;routeChanges++;}};
+ let observer,signOuts=0,tokenCalls=0,readyCalls=0,deadline,fetcher=async()=>({status:200,ok:true,json:async()=>({uid:'synthetic-member',role:'OWNER',authzVersion:1})}),tokenError=null,mountError=null,persistences,failReadiness=readyFails;
  const user={getIdToken:async()=>{tokenCalls++;if(tokenError)throw Object.assign(Error('synthetic Auth condition'),{code:tokenError});return 'synthetic-not-a-real-token';}};
- const auth={currentUser:user,authStateReady:async()=>{readyCalls++;}};
+ const auth={currentUser:user,authStateReady:async()=>{readyCalls++;if(failReadiness)throw Error('temporary Auth read failure');}};
  class CustomEvent extends Event{constructor(type,options){super(type);this.detail=options?.detail;}}
- const context=createContext({document,CustomEvent,Event,EventTarget,URL,URLSearchParams,Headers,TextDecoder,TextEncoder,Uint8Array,AbortController,DOMException,atob,btoa,console,
+ const context=createContext({document,location,history,CustomEvent,Event,EventTarget,URL,URLSearchParams,Headers,TextDecoder,TextEncoder,Uint8Array,AbortController,DOMException,atob,btoa,console,
   fetch:(...args)=>fetcher(...args),setTimeout:(fn,ms)=>{if(ms===15000){deadline=fn;return 'session-deadline';}return setTimeout(fn,ms);},clearTimeout:id=>{if(id!=='session-deadline')clearTimeout(id);}});
  const modules=new Map();
  const synthetic=(name,exports)=>{const module=new SyntheticModule(Object.keys(exports),function(){for(const [key,value]of Object.entries(exports))this.setExport(key,value);},{context,identifier:name});modules.set(name,module);};
  synthetic('./config-local.mjs',{assertLocalOrigin(){},firebaseConfig:{},LOCAL:{auth:'http://127.0.0.1:9099'},RECOVERY_READ_ONLY:false});
+ synthetic('./content-locale-session.mjs',{createContentLocaleSession:()=>({destroy(){}})});
  synthetic('./cms-shell.mjs',{mountCmsShell:()=>({setSession(){},setResource(){},setBusy(){},refreshPanels(){}})});
  synthetic('./pinky-select.mjs',{closePinkySelects(){},disposePinkySelects(){}});
  const parse=value=>value;synthetic('../contracts/media-read-public.mjs',{mediaDerivativePublicSchema:{parse}});synthetic('../contracts/hero.mjs',{resourceIdSchema:{parse},hashSchema:{parse},revisionSchema:{parse}});synthetic('../contracts/source-checks.mjs',{sourceCheckCursorSchema:{parse},sourceCheckQuerySchema:{parse}});synthetic('../preview/hero-renderer.mjs',{TEMPLATE_VERSION:'synthetic'});
@@ -33,13 +36,24 @@ async function harness(){
  const policy=new SourceTextModule(readFileSync(new URL('../admin/auth-session.mjs',import.meta.url),'utf8'),{context,identifier:'./auth-session.mjs'});modules.set('./auth-session.mjs',policy);
  const entry=new SourceTextModule(readFileSync(new URL('../admin/auth.mjs',import.meta.url),'utf8'),{context,identifier:'auth',importModuleDynamically:async name=>{const module=modules.get(name);assert.ok(module,'Unexpected module dependency');if(module.status==='unlinked')await module.link(()=>{throw Error('unexpected import');});if(module.status==='linked')await module.evaluate();return module;}});
  await entry.link(name=>{assert.ok(modules.has(name),`Missing synthetic dependency ${name}`);return modules.get(name);});await entry.evaluate();
- return {api:entry.namespace,auth,nodes,document,bootstrap:()=>observer(user),setResponse:next=>{fetcher=next;},setTokenError:code=>{tokenError=code;},setMountError:error=>{mountError=error;},expire:()=>deadline(),signOuts:()=>signOuts,tokenCalls:()=>tokenCalls,readyCalls:()=>readyCalls,persistences:()=>persistences,expectedPersistence:[indexedDBLocalPersistence,browserLocalPersistence,inMemoryPersistence]};
+ return {api:entry.namespace,auth,nodes,document,bootstrap:()=>observer(user),unauthenticated:()=>observer(null),pathname:()=>pathname,setPath:path=>{pathname=path;},routeChanges:()=>routeChanges,recoverReadiness:()=>{failReadiness=false;},setResponse:next=>{fetcher=next;},setTokenError:code=>{tokenError=code;},setMountError:error=>{mountError=error;},expire:()=>deadline(),signOuts:()=>signOuts,tokenCalls:()=>tokenCalls,readyCalls:()=>readyCalls,persistences:()=>persistences,expectedPersistence:[indexedDBLocalPersistence,browserLocalPersistence,inMemoryPersistence]};
 }
 const response=(status,code)=>{const body={error:{code,message:'Controlled failure'}};return {status,ok:status>=200&&status<300,json:async()=>body,body:new ReadableStream({start(controller){controller.enqueue(new TextEncoder().encode(JSON.stringify(body)));controller.close();}})};};
 
 test('SDK hydration and LOCAL hierarchy precede backend-authorized private mount; blocked storage is explicit',async()=>{
  const h=await harness();assert.equal(h.readyCalls(),1);assert.deepEqual([...h.persistences()],h.expectedPersistence);assert.equal(h.api.getSession(),null);assert.equal(h.nodes.get('login-panel').hidden,true);
- await h.bootstrap();assert.equal(h.api.getSession().role,'OWNER');assert.equal(h.document.documentElement.dataset.cmsAuthState,'AUTHORIZED');assert.equal(h.document.documentElement.dataset.cmsAuthPersistence,'MEMORY_ONLY');assert.match(h.nodes.get('status').textContent,/chặn lưu phiên/);
+ await h.bootstrap();assert.equal(h.api.getSession().role,'OWNER');assert.equal(h.pathname(),'/');assert.equal(h.document.documentElement.dataset.cmsAuthState,'AUTHORIZED');assert.equal(h.document.documentElement.dataset.cmsAuthPersistence,'MEMORY_ONLY');assert.match(h.nodes.get('status').textContent,/chặn lưu phiên/);
+});
+test('entry URL follows confirmed auth and logout without adding browser history',async()=>{
+ const h=await harness();h.setPath('/');await h.unauthenticated();assert.equal(h.pathname(),'/login');assert.equal(h.routeChanges(),1);
+ await h.bootstrap();assert.equal(h.pathname(),'/');assert.equal(h.routeChanges(),2);
+ await h.bootstrap();assert.equal(h.routeChanges(),2);
+ h.nodes.get('logout').dispatchEvent(new Event('click'));await new Promise(resolve=>setImmediate(resolve));assert.equal(h.pathname(),'/login');assert.equal(h.routeChanges(),3);
+});
+test('temporary startup Auth failure offers retry without signing out or asking for password',async()=>{
+ const h=await harness({readyFails:true});assert.equal(h.nodes.get('login-form').hidden,true);assert.equal(h.nodes.get('login-panel').hidden,false);assert.equal(h.document.documentElement.dataset.cmsAuthState,'RETRY_REQUIRED');assert.equal(h.signOuts(),0);
+ h.recoverReadiness();h.nodes.get('login-panel').children.at(-1).dispatchEvent(new Event('click'));await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(h.readyCalls(),2);assert.equal(h.nodes.get('login-form').hidden,false);await h.bootstrap();assert.equal(h.document.documentElement.dataset.cmsAuthState,'AUTHORIZED');assert.equal(h.signOuts(),0);
 });
 test('bootstrap transient network/5xx and mount failures keep identity with private UI closed',async()=>{
  for(const setup of [h=>h.setResponse(async()=>{throw new TypeError('Network unavailable');}),h=>h.setResponse(async()=>response(503,'UNAVAILABLE')),h=>h.setMountError(new TypeError('Mount network error')),h=>h.setTokenError('auth/network-request-failed')]){

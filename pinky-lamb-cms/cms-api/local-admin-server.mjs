@@ -1,17 +1,60 @@
 import path from 'node:path';
+import http from 'node:http';
 import {randomUUID} from 'node:crypto';
 import {existsSync,realpathSync,lstatSync} from 'node:fs';
 import express from 'express';
 import {ApiError,errorEnvelope} from '../contracts/errors.mjs';
 
 const privatePath=/(?:^|\/)(?:\.[^/]*|cms-api|contracts|scripts|tests|docs|node_modules)(?:\/|$)/i;
+
+export function createBuiltAdminServer(options){
+ const sockets=new Map(),operations=new Set();let stopping=false,closing;
+ const track=handler=>(req,res)=>{
+  const operation=Promise.resolve().then(()=>handler(req,res));operations.add(operation);
+  const settled=()=>operations.delete(operation);operation.then(settled,settled);return operation;
+ };
+ const app=createBuiltAdminApplication({...options,handleRequest:track(options.handleRequest),authHandler:track(options.authHandler)});
+ // Partial headers/bodies have not reached a CMS command. Abort only those
+ // connections; complete requests and dispatched operations still drain.
+ const closeIncomplete=(socket,requests)=>{if(stopping&&[...requests].every(req=>!req.complete))socket.destroy();};
+ const server=http.createServer((req,res)=>{
+  if(stopping){res.writeHead(503,{'Connection':'close'});res.end();return;}
+  const requests=sockets.get(req.socket);requests.add(req);
+  const finished=()=>{requests.delete(req);closeIncomplete(req.socket,requests);};
+  res.once('finish',finished);res.once('close',finished);
+  app(req,res);
+ });
+ server.on('connection',socket=>{sockets.set(socket,new Set());socket.once('close',()=>sockets.delete(socket));});
+ function close(){
+  if(closing)return closing;stopping=true;
+  closing=(async()=>{
+   await new Promise((resolve,reject)=>{
+    server.close(error=>error?reject(error):resolve());
+    for(const [socket,requests] of sockets)closeIncomplete(socket,requests);
+    server.closeIdleConnections();
+   });
+   // A disconnected client can leave an async handler running after the last
+   // socket closes. The database must remain open until that handler settles.
+   while(operations.size)await Promise.allSettled([...operations]);
+  })();
+  return closing;
+ }
+ return {server,close};
+}
+
 export function createBuiltAdminApplication({handleRequest,authHandler,buildRoot}){
  const index=path.join(buildRoot,'index.html');if(!existsSync(index)||realpathSync(buildRoot)!==buildRoot||realpathSync(index)!==index||!lstatSync(index).isFile()||lstatSync(index).nlink!==1)throw Error('Admin build required');
  const app=express();app.disable('x-powered-by');app.disable('etag');app.set('trust proxy',false);app.set('query parser','simple');
  const fail=(res,code)=>{if(res.headersSent){res.destroy();return;}const error=new ApiError(code);res.status(error.status).set({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}).json(errorEnvelope(error,randomUUID()));};
  app.use((req,res,next)=>{
   const duplicate=['host','origin','cookie','authorization'].some(name=>req.rawHeaders.filter((_v,i)=>i%2===0&&req.rawHeaders[i].toLowerCase()===name).length>1);
-  if(duplicate||req.headers.host!=='127.0.0.1:5273'||!['127.0.0.1','::ffff:127.0.0.1'].includes(req.socket.remoteAddress)||req.headers.origin&&req.headers.origin!=='http://127.0.0.1:5273'){fail(res,'FORBIDDEN');return;}
+  if(duplicate||!['127.0.0.1','::ffff:127.0.0.1'].includes(req.socket.remoteAddress)){fail(res,'FORBIDDEN');return;}
+  // Keep cookies, Auth and API on one origin. A typed localhost URL only
+  // redirects public entry pages; it never becomes an alternate API host.
+  if(req.headers.host==='localhost:5273'&&!req.headers.origin&&['GET','HEAD'].includes(req.method)&&['/','/login'].includes(req.path)){
+   res.set({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}).redirect(302,`http://127.0.0.1:5273${req.path}`);return;
+  }
+  if(req.headers.host!=='127.0.0.1:5273'||req.headers.origin&&req.headers.origin!=='http://127.0.0.1:5273'){fail(res,'FORBIDDEN');return;}
   res.set('X-Content-Type-Options','nosniff');next();
  });
  app.use((req,res,next)=>{

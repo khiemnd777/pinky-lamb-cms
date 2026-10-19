@@ -6,13 +6,13 @@ import {digest} from './multilingual-release-files.mjs';
 
 /** This owner can switch only its own :4189 listener. No emulator discovery, stop, or :5010 action exists here. */
 export async function startMultilingualQaHost(initial,{followWebsitePointer=false}={}){
- let current,handler;const prepare=artifact=>{
+ let current,handler,history=[];const prepare=(artifact,retainedArtifacts=[])=>{
   if(!artifact||Object.keys(artifact).sort().join(',')!=='manifestSha256,relativeRoot')throw Error('Exact QA artifact identity required');
   verifyReleaseFiles(artifact.relativeRoot,artifact.manifestSha256);
-  return createMultilingualSiteHandler({...artifact,port:4189});
+  return createMultilingualSiteHandler({...artifact,port:4189,retainedArtifacts});
  };
  handler=prepare(initial);current=structuredClone(initial);
- const follow=()=>{if(!followWebsitePointer)return;const next=readWebsitePointer()?.artifact;if(next&&canonicalJson(next)!==canonicalJson(current)){handler=prepare(next);current=structuredClone(next);}};
+ const follow=()=>{if(!followWebsitePointer)return;const pointer=readWebsitePointer(),next=pointer?.artifact,retainedArtifacts=pointer?.retainedArtifacts??[];if(next&&canonicalJson({next,retainedArtifacts})!==canonicalJson({next:current,retainedArtifacts:history})){handler=prepare(next,retainedArtifacts);current=structuredClone(next);history=structuredClone(retainedArtifacts);}};
  follow();
  const server=createServer((request,response)=>{try{follow();handler(request,response);}catch{response.writeHead(503,{'Cache-Control':'no-store'});response.end('Website release unavailable');}});
  await new Promise((resolve,reject)=>{server.once('error',reject);server.listen({host:'127.0.0.1',port:4189,exclusive:true},resolve);});

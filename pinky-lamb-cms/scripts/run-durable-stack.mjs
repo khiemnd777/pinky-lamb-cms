@@ -7,6 +7,7 @@ import {createHash,randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {setTimeout as delay} from 'node:timers/promises';
 import {DATA_ROOT,ROOT,validateLocalDataRuntime} from './local-data-guard.mjs';
+import {assertDurableAdminBuild} from './durable-admin-build.mjs';
 
 const NODE=path.join(ROOT,'.local/cache/node/node-v22.23.3-darwin-arm64/bin/node');
 const MARKER=path.join(DATA_ROOT,'cutover.json');
@@ -63,7 +64,7 @@ const processRuntime={components:discoverComponents,identity:componentIdentity,l
 
 // A crashed launcher cannot prove ownership with its PID. Recover only exact
 // same-user components in this CMS directory, including workers without a port.
-export async function stopPreviousComponents({parent=null,runtime=processRuntime,timeoutMs=30000}={}){
+export async function stopPreviousComponents({parent=null,runtime=processRuntime,timeoutMs=30000,log=console.log}={}){
  const components=runtime.components();
  if(components.some(identity=>!ownedComponentKind(identity)))throw Error('Component identity unavailable');
  for(const [port,kind] of [[5273,'admin'],[4189,'website']]){
@@ -72,7 +73,7 @@ export async function stopPreviousComponents({parent=null,runtime=processRuntime
  }
  const targets=parent?[...components,parent]:components;
  for(const identity of targets)if(!sameProcess(identity,runtime.identity(identity.pid)))throw Error('Process identity changed before stop');
- if(targets.length)console.log('LOCAL_DATA: stopping previous Pinky Lamb stack before startup');
+ if(targets.length)log('LOCAL_DATA: stopping previous Pinky Lamb stack before startup');
  const signals=[...components].reverse().filter(identity=>!parent||identity.ppid!==parent.pid).map(identity=>[identity,'SIGINT']);
  if(parent)signals.push([parent,'SIGTERM']);
  for(const [identity,signal] of signals){
@@ -80,11 +81,14 @@ export async function stopPreviousComponents({parent=null,runtime=processRuntime
   if(!sameProcess(identity,current))throw Error('Process identity changed before stop');
   try{runtime.signal(identity.pid,signal);}catch(error){if(error.code!=='ESRCH')throw error;}
  }
- const deadline=runtime.now()+timeoutMs;
+ const deadline=runtime.now()+timeoutMs;let nextReport=runtime.now()+5000;
+ const label=identity=>`${parent?.pid===identity.pid?'launcher':ownedComponentKind(identity)} PID ${identity.pid}`;
  while(true){
-  const alive=targets.some(identity=>runtime.identity(identity.pid)!==null);
-  if(!alive&&!(await runtime.busy(5273))&&!(await runtime.busy(4189)))return;
-  if(runtime.now()>=deadline)throw Error('Previous Pinky Lamb stack did not stop gracefully; no new instance started');
+  const alive=targets.filter(identity=>runtime.identity(identity.pid)!==null);
+  if(!alive.length&&!(await runtime.busy(5273))&&!(await runtime.busy(4189)))return;
+  const pending=alive.map(label).join(', ')||'ports 5273/4189';
+  if(runtime.now()>=deadline)throw Error(`Previous Pinky Lamb stack did not stop gracefully: ${pending}; no new instance started`);
+  if(runtime.now()>=nextReport){log(`LOCAL_DATA: waiting for ${pending}`);nextReport=runtime.now()+5000;}
   await runtime.sleep(250);
  }
 }
@@ -159,7 +163,15 @@ function launch(name,args,env,{oneShot=false}={}){
  row.done=new Promise(resolve=>{child.once('error',error=>{console.error(`LOCAL_DATA: ${name} unavailable: ${error.code}`);});child.once('close',(code,signal)=>{row.closed=true;row.code=code;resolve();if(!stopping&&(!oneShot||code!==0)){console.error(`LOCAL_DATA: ${name} exited: ${signal??code}`);void stop(1);}});});
  return row;
 }
-async function stop(code){if(stopping)return;stopping=true;process.exitCode=code;for(const row of [...children].reverse())if(!row.closed&&row.child.pid)row.child.kill('SIGINT');await Promise.all(children.map(row=>row.done));removeOwnedInstance();}
+let shutdownPromise;
+function stop(code){
+ if(shutdownPromise)return shutdownPromise;stopping=true;process.exitCode=code;
+ shutdownPromise=(async()=>{
+  for(const row of [...children].reverse())if(!row.closed&&row.child.pid)row.child.kill('SIGINT');
+  const report=setInterval(()=>{const pending=children.filter(row=>!row.closed).map(row=>`${row.name} PID ${row.child.pid}`);if(pending.length)console.log(`LOCAL_DATA: shutdown waiting for ${pending.join(', ')}`);},5000);report.unref();
+  try{await Promise.all(children.map(row=>row.done));removeOwnedInstance();}finally{clearInterval(report);}
+ })();return shutdownPromise;
+}
 async function ready(url,status){const deadline=Date.now()+60000;while(Date.now()<deadline&&!stopping){try{const response=await fetch(url,{signal:AbortSignal.timeout(1000),redirect:'error'});await response.body?.cancel();if(response.status===status)return;}catch{}await delay(500);}throw Error(`Readiness failed: ${url}`);}
 export async function runDurableStack(){
  if(process.argv.length!==2||fileURLToPath(import.meta.url)!==path.resolve(process.argv[1]))throw Error('Invalid durable launcher');
@@ -170,6 +182,7 @@ export async function runDurableStack(){
  await prepareInstance();
  if(stopping){removeOwnedInstance();return;}
  const build=launch('Admin build',['node_modules/vite/bin/vite.js','build','--configLoader','native'],env,{oneShot:true});await build.done;if(stopping)return;if(build.code!==0)throw Error('Admin build failed');
+ assertDurableAdminBuild(path.join(ROOT,'admin-dist'));
  launch('website',['scripts/serve-cms-website-local.mjs'],env);
  launch('admin',['scripts/serve-cms-admin-local.mjs'],env);
  launch('content',['scripts/content-worker-local.mjs'],env);

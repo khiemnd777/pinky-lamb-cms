@@ -6,6 +6,7 @@ import {ApiError,errorEnvelope} from './contracts/errors.mjs';
 import {existsSync,realpathSync} from 'node:fs';
 import { ROOT, validateRuntime,installNetworkFence } from './scripts/local-guard.mjs';
 import {validateLocalDataRuntime,installLocalDataNetworkFence} from './scripts/local-data-guard.mjs';
+import {DURABLE_AUTH_MARKER} from './scripts/durable-admin-build.mjs';
 import {m2Root,m2Environment,m2UiSources,m2Read} from './scripts/m2-recovery-profile.mjs';
 const privateNames=['legacy-assets.json','baseline-site.json','baseline-provenance.json','media-tool-lock.json','media-fixtures.json'];
 const privateSegment=/(?:^|\/)(?:\.local|\.cms-data-local|cms-api|cms-recovery-api|docs|tests|scripts|infra-local|quarantine|private|media-cache|media-scratch)(?:\/|$)|pinky-lamb-cms-(?:recovery-)?api-local|\.env(?:[/?]|$)/i;
@@ -44,10 +45,13 @@ export function recoveryHtml(html){
  const csp=matches[0][1].replaceAll('http://127.0.0.1:9099','http://127.0.0.1:9098').replaceAll('ws://127.0.0.1:5273','ws://127.0.0.1:5175');
  return html.replace(matches[0][0],matches[0][0].replace(matches[0][1],csp));
 }
-function durableHtml(html){
+export function durableHtml(html){
  const old=' http://127.0.0.1:9099';
- if(!html.includes(old))throw Error('Local Admin CSP unavailable');
- return html.replace(old,'');
+ if(!html.includes(old)||!html.includes('</head>'))throw Error('Local Admin CSP unavailable');
+ return html.replace(old,'').replace('</head>',`${DURABLE_AUTH_MARKER}</head>`);
+}
+export function assertAdminBuildMode({command,recovery,durable,cutoverPresent}){
+ if(command==='build'&&!recovery&&!durable&&cutoverPresent)throw Error('Durable local CMS is active; use npm run build:admin:durable');
 }
 export function recoveryBuildOutput(token){
  if(typeof token!=='string' || !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(token))throw new Error('M2 recovery build token required');
@@ -151,6 +155,7 @@ export function createLocalViteConfig({recovery=false,output,cache}={}){return {
 };}
 export default defineConfig(({mode,command})=>{
  const recovery=mode==='m2-recovery';let output,cache;
+ assertAdminBuildMode({command,recovery,durable:process.env.PINKY_LOCAL_DATA_MODE==='durable',cutoverPresent:existsSync(path.join(ROOT,'.cms-data-local','cutover.json'))});
  if(recovery){
   if(command==='build'){
    if(process.cwd()!==ROOT || process.version!=='v22.23.3' || process.execArgv.length || process.env.NODE_OPTIONS!==undefined || process.env.GOOGLE_APPLICATION_CREDENTIALS!==undefined || process.env.FIREBASE_TOKEN!==undefined)throw new Error('Exact recovery source-build operator required');

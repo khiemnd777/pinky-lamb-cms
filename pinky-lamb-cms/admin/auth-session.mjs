@@ -4,6 +4,13 @@ export function authFailureAction(error){
  if(terminalAuthCodes.has(error?.code)||error?.status===401||(error?.status===403&&error?.code!=='SELF_REVIEW_FORBIDDEN'))return 'SIGN_OUT';
  return 'KEEP_IDENTITY';
 }
+export function localSignInMessage(error){
+ if(error?.status===400)return 'Yêu cầu đăng nhập không hợp lệ (400). Vui lòng kiểm tra địa chỉ email rồi thử lại.';
+ if(error?.status===401)return 'Máy chủ Auth local từ chối thông tin đăng nhập (401). Vui lòng kiểm tra tài khoản và mật khẩu trong kho Auth local.';
+ if(error?.status===429)return 'Có quá nhiều lần đăng nhập. Vui lòng đợi rồi thử lại; phiên đã lưu không bị xóa.';
+ if(error?.status===403)return 'Yêu cầu đăng nhập bị từ chối (403). Hãy kiểm tra địa chỉ http://127.0.0.1:5273/login và quyền tài khoản.';
+ return 'Không thể kết nối dịch vụ đăng nhập local. Phiên đã lưu không bị xóa; vui lòng thử lại sau khi dịch vụ sẵn sàng.';
+}
 export function persistenceHierarchy(sdk){return [sdk.indexedDBLocalPersistence,sdk.browserLocalPersistence,sdk.inMemoryPersistence];}
 /** Probe only a disposable application-owned marker, never SDK/session data. */
 export async function rememberingAvailable({indexedDB=globalThis.indexedDB,storage=()=>globalThis.localStorage}={}){

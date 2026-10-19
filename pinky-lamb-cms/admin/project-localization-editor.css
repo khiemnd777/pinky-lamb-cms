@@ -489,3 +489,11 @@
  .cms-authenticated[data-cms-resource=home-v3]:has(.cms-editor-card[data-cms-pane=edit]:not([hidden]) #site-component-work:not([hidden]) .project-localization-editor) .admin-header{padding:17px 20px}
  .cms-authenticated[data-cms-resource=home-v3]:has(.cms-editor-card[data-cms-pane=edit]:not([hidden]) #site-component-work:not([hidden]) .project-localization-editor) .cms-header-title h1{font-size:16px}
 }
+
+/* Cover thumbnails stay visible in the project list at every viewport. */
+.project-localization-editor .project-list-thumbnail{display:grid;place-items:center;width:104px;height:66px;aspect-ratio:auto;flex:none;background:#f4eaf0;color:var(--rose)}
+.project-localization-editor .project-list-thumbnail .cms-image-thumbnail,.project-localization-editor .project-list-thumbnail .media-image-frame,.project-localization-editor .project-list-thumbnail .site-media-preview-content,.project-localization-editor .project-list-thumbnail .site-media-preview-viewport{display:block;width:100%;height:100%;min-height:0;border:0;border-radius:0}
+.project-localization-editor .project-list-thumbnail img,.project-localization-editor .project-list-thumbnail .ux-thumbnail-preview .site-media-preview-viewport img{width:100%;height:100%;object-fit:cover}
+.project-localization-editor .record-list td{padding-top:11px;padding-bottom:11px}
+@media(max-width:950px){.project-localization-editor .project-list-thumbnail{display:grid;width:88px;height:60px}}
+@media(max-width:700px){.project-localization-editor .project-list-thumbnail{width:78px;height:58px}.project-localization-editor .record-list tr{padding:12px}.project-localization-editor .record-list tr td{padding:0}.project-localization-editor .record-list td+td{margin-top:7px}.project-localization-editor .record-identity{gap:11px}}

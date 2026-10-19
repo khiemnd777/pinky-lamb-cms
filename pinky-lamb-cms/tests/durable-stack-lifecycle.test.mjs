@@ -64,6 +64,13 @@ test('waits for every component to exit, even after both ports are free',async()
  assert.ok(state.signals.every(([,signal])=>signal==='SIGINT'));
 });
 
+test('a slow stop reports pending components and identifies the timeout owner',async()=>{
+ const state=runtime([worker]),logs=[];state.signal=(pid,signal)=>state.signals.push([pid,signal]);
+ await assert.rejects(launcher.stopPreviousComponents({runtime:state,timeoutMs:5250,log:message=>logs.push(message)}),/did not stop gracefully: worker PID 103/);
+ assert.ok(logs.some(message=>message.includes('waiting for worker PID 103')));
+ assert.deepEqual(state.signals,[[103,'SIGINT']]);
+});
+
 test('a live verified launcher owns graceful shutdown of its children',async()=>{
  const parent=row(100,'scripts/run-durable-stack.mjs');const state=runtime();state.active.set(parent.pid,parent);
  state.components=()=>[website,admin,worker].map(identity=>({...identity,ppid:parent.pid}));

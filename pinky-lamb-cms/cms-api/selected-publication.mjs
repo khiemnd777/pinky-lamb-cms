@@ -4,6 +4,7 @@ import {parseWorkServicesQa} from '../contracts/site-locale-projection.mjs';
 import {assembleFullSiteQa} from './full-site-localizations.mjs';
 import {releaseSnapshotSetHash} from './localized-eligibility.mjs';
 import {hashProjectValue as hash} from './project-localization-context.mjs';
+import {MAX_RETAINED_WEBSITE_RELEASES} from '../scripts/local-website-pointer.mjs';
 
 const same=(a,b)=>hash(a)===hash(b);
 function blocked(message){const error=new ApiError('REVISION_CONFLICT');error.message=message;throw error;}
@@ -47,6 +48,7 @@ export async function runSelectedPublication(job,{request,actor},deps){
  if(!job.base){const base=readPointer();if(!base)blocked('Chưa có bản website đang chạy để giữ nguyên các nội dung khác.');job.base=base;save(job);}
  const base=await readRelease(job.base);targetPin(base,selection.resource,selection.expectedDependencyHash);
  if(!same(readPointer(),job.base)&&!(job.target&&same(readPointer(),job.target)))blocked('Website đã chuyển sang bản khác. Tải lại trước khi xuất bản.');
+ if(!job.target&&(job.base.retainedArtifacts??[]).length>=MAX_RETAINED_WEBSITE_RELEASES-1)blocked('Lịch sử tài nguyên website đã đạt giới hạn; cần bảo trì trước khi xuất bản tiếp.');
  await assertDraft();
  await stage(job,'Chuẩn bị đúng nội dung và ngôn ngữ đã chọn');
  // Pin the publication to the exact saved intent, including its note. A page reload
@@ -56,7 +58,8 @@ export async function runSelectedPublication(job,{request,actor},deps){
  if(!same(detail.snapshot.resource,selection.resource)||detail.snapshot.revision!==selection.expectedRevision||detail.snapshot.contentHash!==selection.expectedContentHash||detail.snapshot.snapshotHash!==job.publication.snapshotHash||detail.stale)blocked('Bản xuất bản không còn khớp nội dung đã chọn.');
  const release=replaceSelectedRelease(base,detail);
  if(!job.artifact){await stage(job,'Đóng gói bản website; giữ nguyên các nội dung khác');job.exportAttempt=(job.exportAttempt??0)+1;save(job);job.artifact=await exportRelease(job,release);save(job);}
- const next=job.target??{port:4189,activation:false,artifact:{relativeRoot:job.artifact.root,manifestSha256:job.artifact.manifestSha256},previous:job.base.artifact,previousReleaseSource:job.base.releaseSource??null,releaseId:job.artifact.releaseId,releaseSource:job.artifact.releaseSource,snapshotSetHash:release.snapshotSetHash,updatedAt:new Date().toISOString()};
+ const retainedArtifacts=[...(job.base.retainedArtifacts??[]),job.base.artifact].filter((artifact,index,all)=>all.findIndex(item=>item.manifestSha256===artifact.manifestSha256)===index);
+ const next=job.target??{port:4189,activation:false,artifact:{relativeRoot:job.artifact.root,manifestSha256:job.artifact.manifestSha256},previous:job.base.artifact,retainedArtifacts,previousReleaseSource:job.base.releaseSource??null,releaseId:job.artifact.releaseId,releaseSource:job.artifact.releaseSource,snapshotSetHash:release.snapshotSetHash,updatedAt:new Date().toISOString()};
  if(next.snapshotSetHash!==release.snapshotSetHash)throw Error('Candidate release identity mismatch');
  job.target=next;save(job);
  await assertDraft();await owner(request,actor);

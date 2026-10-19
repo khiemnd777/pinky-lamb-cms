@@ -144,11 +144,11 @@ export function mountSiteMediaEditor(root,{apiFetch,getSession,session,localeSes
  }
  function mount(){
   selectedGroup=fields?.getSelectedGroup()??selectedGroup;closePinkySelects(document);fields?.destroy();controllers=[];const catalog=saved.catalog.map(asset),uiContext={...context,siteUx:true,catalog,sourceIds:context.sourceCatalog.map(s=>s.id),importLineage:saved.importLineage,resolveMediaAsset:id=>selected.get(id)??catalog.find(a=>a.id===id)};
-  uiContext.mountMediaThumbnail=(host,id,{label}={})=>{
+  uiContext.mountMediaThumbnail=(host,id,{label,fit='cover'}={})=>{
    let viewer=null,disposedThumb=false;const selectedAsset=uiContext.resolveMediaAsset(id),kind=selectedAsset?.kind;host.replaceChildren(createCmsIcon(kind==='PDF'?'FileText':kind==='VIDEO'?'Clapperboard':'Image'),siteNode('span',label??selectedAsset?.label??id));if(kind!=='IMAGE')return ()=>host.replaceChildren();
    const actualSaved=saved;
    const begin=async()=>{if(disposedThumb||viewer||!active()||!id)return;const entry=actualSaved.catalog.find(value=>(value.source==='LEGACY'?value.asset.id:value.asset.assetId)===id);
-    try{if(entry?.source==='LEGACY'){const receipt=await manifestResolver.get(actualSaved);if(disposedThumb||!active()||saved!==actualSaved)return;const fullEntry=receipt.mediaManifest.find(value=>value.source==='LEGACY'&&value.asset.id===id);if(!fullEntry||fullEntry.asset.kind!=='IMAGE')throw Error('Legacy thumbnail not in verified saved manifest');host.replaceChildren();viewer=createSiteMediaPreview(host,{apiFetch,getSession,thumbnail:true});await viewer.showThumbnail(fullEntry,label);}else{host.replaceChildren();viewer=createImagePreview(host,{apiFetch,getSession});await viewer.show(id);}}
+    try{if(entry?.source==='LEGACY'){const receipt=await manifestResolver.get(actualSaved);if(disposedThumb||!active()||saved!==actualSaved)return;const fullEntry=receipt.mediaManifest.find(value=>value.source==='LEGACY'&&value.asset.id===id);if(!fullEntry||fullEntry.asset.kind!=='IMAGE')throw Error('Legacy thumbnail not in verified saved manifest');host.replaceChildren();viewer=createSiteMediaPreview(host,{apiFetch,getSession,thumbnail:true});await viewer.showThumbnail(fullEntry,label);}else{host.replaceChildren();viewer=createImagePreview(host,{apiFetch,getSession,thumbnail:true,fit});await viewer.show(id);}}
     catch{if(!disposedThumb&&active())host.replaceChildren(createCmsIcon('Image'),siteNode('span',label??selectedAsset?.label??id));}
    };
    const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();begin();}},{rootMargin:'100px'}):null;

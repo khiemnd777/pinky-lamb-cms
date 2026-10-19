@@ -60,8 +60,9 @@ test('P7 uses the original PNG favicon bytes and link for every locale and fixtu
    assert.equal(favicon.path,'assets/favicon.png');assert.equal(favicon.mimeType,'image/png');
    assert.equal(favicon.sha256,'fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc');
    const html=plan.files.find(file=>file.relative===prefix+'index.html').bytes.toString();
-   assert.match(html,/<link rel="icon" href="assets\/favicon\.png" type="image\/png">/);
-   assert.deepEqual(plan.files.find(file=>file.relative===prefix+'assets/favicon.png').bytes,expected);
+   assert.match(html,/<link rel="icon" href="\/assets\/cache\/fa1747f42e462ec10b01ae5c81ea7be0ce4b41157aef0ef1ca904a905a893adc\.png" type="image\/png">/);
+   assert.deepEqual(plan.files.find(file=>file.relative==='assets/favicon.png').bytes,expected);
+   assert.ok(plan.manifest.cacheAliases.some(alias=>alias.source==='assets/favicon.png'&&alias.path==='assets/cache/'+favicon.sha256+'.png'));
   }
  }
 });
