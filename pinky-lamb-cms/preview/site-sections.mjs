@@ -1,3 +1,5 @@
+import {renderPinkyVideoPlayer} from './pinky-video-player.mjs';
+import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {LOCALE_COPY} from './site-locale-copy.mjs';
 import {LOCALES} from './site-locale.mjs';
 import {escapeHtml} from './hero-renderer.mjs';
@@ -63,9 +65,9 @@ function services(section,data,options){
 }
 function showreel(section,data,options){
  const reel=data.settings.showreel;
- const banner=`${image(reel.poster,options,'loading="lazy"')}<span class="reel-overline">A GLIMPSE INTO OUR WORLD</span><span class="reel-title" style="${wrap}">${heading(section.reelHeading)}</span><span class="reel-play">${icon('play')}</span><span class="reel-bottom"><span>${escaped(reel.title)}</span><span>${duration(reel.durationSeconds)} ${icon('arrow')}</span></span>`;
+ const banner=`${image(reel.poster,options,'loading="lazy"')}<span class="reel-overline">A GLIMPSE INTO OUR WORLD</span><span class="reel-title" style="${wrap}">${heading(section.reelHeading)}</span><span class="reel-play">${icon('play')}</span><span class="reel-bottom"><span>${escaped(reel.title)}</span><span>${(isYoutubeReel(reel)?'':duration(reel.durationSeconds))} ${icon('arrow')}</span></span>`;
  const shell=options.mode==='PRIVATE'?`<div class="reel-banner">${banner}</div>`:link(banner,'#showreel',options,'reel-banner');
- const video=options.mode==='PRIVATE'?'':`<video id="showreel-video" controls playsinline preload="none" poster="${escaped(assetUrl(reel.poster.assetId,options))}" aria-label="${escaped(reel.title)}" style="max-width:100%"><source src="${escaped(assetUrl(reel.assetId,options))}" type="video/mp4">${link('Mở video showreel',assetUrl(reel.assetId,options),options)}</video>`;
+ const video=options.mode==='PRIVATE'?'':options.customPlayer?renderPinkyVideoPlayer(reel,{poster:assetUrl(reel.poster.assetId,options),videoUrl:isYoutubeReel(reel)?'':assetUrl(reel.assetId,options),locale:'vi'}):isYoutubeReel(reel)?'':`<video id="showreel-video" controls playsinline preload="none" poster="${escaped(assetUrl(reel.poster.assetId,options))}" aria-label="${escaped(reel.title)}" style="max-width:100%"><source src="${escaped(assetUrl(reel.assetId,options))}" type="video/mp4">${link('Mở video showreel',assetUrl(reel.assetId,options),options)}</video>`;
  const original=options.mode==='QA_EXPORT' && reel.originalSourceUrl?link('Xem video gốc ↗',reel.originalSourceUrl,options,'','target="_blank" rel="noopener noreferrer"'):'';
  return `${shell}<div id="showreel" style="${wrap}">${video}<div class="video-caption"><span>${copy(section.reelCaption)}</span>${original}</div></div>`;
 }

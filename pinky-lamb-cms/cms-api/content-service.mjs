@@ -1,3 +1,4 @@
+import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {randomUUID,createHash} from 'node:crypto';
 import {ApiError,validationError} from '../contracts/errors.mjs';
 import {contentGroupSchema,contentGroupSaveSchema} from '../contracts/content-workspace.mjs';
@@ -90,7 +91,7 @@ export function createContentService({db,authorize,mediaProvider}){
     const relink=value=>{if(!value||typeof value!=='object')return;if(value.kind==='CREDENTIAL'&&value.assetId===previous)value.assetId=nextId;for(const child of Object.values(value))relink(child);};relink(next);
    }
    const resolved=await trusted.selection(tx,next,record,undefined,selectedSiteV3AssetIds(current.content).filter(id=>!record.legacyCatalog.some(a=>a.id===id)));
-   const reel=resolved.expectedMediaVersions.find(v=>v.assetId===next.settings.showreel.assetId)??record.legacyCatalog.find(v=>v.id===next.settings.showreel.assetId);if(!reel)throw new ApiError('VALIDATION_ERROR');next.settings.showreel.durationSeconds=reel.durationSeconds;
+   if(!isYoutubeReel(next.settings.showreel)){const reel=resolved.expectedMediaVersions.find(v=>v.assetId===next.settings.showreel.assetId)??record.legacyCatalog.find(v=>v.id===next.settings.showreel.assetId);if(!reel||reel.kind!=='VIDEO'||!Number.isFinite(reel.durationSeconds)||reel.durationSeconds<=0)throw new ApiError('VALIDATION_ERROR');next.settings.showreel.durationSeconds=reel.durationSeconds;}
    const content=parseMediaV3Content(next,context.contentContext),stored=encodeStoredDraftV2({...current,revision:current.revision+1,updatedBy:actor.uid,updatedAt:at,lastEventId:eventId,content},context);
    const response={contractRevision:1,group,siteRevision:stored.revision,lastEventId:eventId,updatedAt:at};
    if((await authorize(request,'DRAFT_SAVE',tx)).uid!==actor.uid)throw new ApiError('FORBIDDEN');tx.set(targetRef,stored);tx.create(db.collection('cmsAudit').doc(eventId),{id:eventId,action:'CONTENT_GROUP_SAVED',actorUid:actor.uid,at,correlationId,group,requestHash:identity.requestHash,receipt:response});tx.create(intentRef,{contractRevision:1,requestHash:identity.requestHash,state:'COMPLETED',response,eventId});return response;

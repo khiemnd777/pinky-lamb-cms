@@ -141,9 +141,10 @@ function enhanceProjects(root, document) {
   update();
 }
 
-function enhanceReel(root, document) {
-  const video = root.querySelector('#showreel-video');
+async function enhanceReel(root, document) {
+  const custom=root.querySelector('[data-pinky-player]'),video=custom??root.querySelector('#showreel-video');
   if (!video || typeof document.defaultView.HTMLDialogElement?.prototype.showModal !== 'function') return;
+  const player=custom?(await import('./assets/pinky-video-runtime.mjs')).installPinkyVideoPlayer(custom):video;
   const shell = dialogShell(document, 'site-reel-dialog', video.getAttribute('aria-label') ?? 'Showreel');
   const status = document.createElement('p');
   status.className = 'reel-status';
@@ -153,7 +154,7 @@ function enhanceReel(root, document) {
   const originalParent = video.parentNode, originalNext = video.nextSibling;
   let trigger;
   shell.dialog.addEventListener('close', () => {
-    video.pause();
+    if(custom)player.stop();else player.pause();
     originalParent.insertBefore(video, originalNext?.parentNode === originalParent ? originalNext : null);
     if (trigger?.isConnected) trigger.focus();
   });
@@ -165,7 +166,7 @@ function enhanceReel(root, document) {
       shell.dialog.insertBefore(video, status);
       shell.dialog.showModal();
       shell.close.focus();
-      const playing = video.play();
+      const playing = player.play();
       playing?.catch(() => { status.textContent = 'Bạn có thể bấm phát để xem showreel.'; });
     });
   }

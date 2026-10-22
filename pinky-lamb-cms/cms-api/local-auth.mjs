@@ -4,9 +4,23 @@ import {randomBytes,randomUUID} from 'node:crypto';
 import {betterAuth} from 'better-auth';
 import {fromNodeHeaders} from 'better-auth/node';
 import {getMigrations} from 'better-auth/db/migration';
+import {createAuthMiddleware} from 'better-auth/api';
+import {setSessionCookie} from 'better-auth/cookies';
 
 const BASE_URL='http://127.0.0.1:5273';
 const SECRET_NAME='auth.secret';
+export const LOCAL_AUTH_COOKIE_PREFIX='pinky-lamb-local';
+export const LOCAL_AUTH_SESSION_SECONDS=30*24*60*60;
+/** Cookies have no port scope. A separate name prevents other localhost apps
+ * from overwriting Pinky's remembered identity. Legacy values still pass the
+ * normal signature, expiry and database checks; no identity is reconstructed. */
+function sessionHeaders(input){
+ const headers=new Headers(input),cookie=headers.get('cookie')??'',parts=cookie.split(';').map(v=>v.trim()),scoped=LOCAL_AUTH_COOKIE_PREFIX+'.session_token';
+ if(parts.some(v=>v.startsWith(scoped+'='))||parts.includes(LOCAL_AUTH_COOKIE_PREFIX+'.legacy_retired=1'))return headers;
+ const legacy=parts.filter(v=>v.startsWith('better-auth.session_token='));
+ if(legacy.length===1)headers.set('cookie',[...parts.filter(Boolean),scoped+legacy[0].slice('better-auth.session_token'.length)].join('; '));
+ return headers;
+}
 
 function syncDirectory(directory){const fd=fs.openSync(directory,'r');try{fs.fsyncSync(fd);}finally{fs.closeSync(fd);}}
 function readSecret(root,{create=false}={}){
@@ -31,7 +45,17 @@ export async function openLocalAuth({root,sqlite,create=false,allowEnrollment=fa
  const options={
   database:sqlite,secret,baseURL:BASE_URL,trustedOrigins:[BASE_URL],telemetry:{enabled:false},
   emailAndPassword:{enabled:true,disableSignUp:!allowEnrollment,requireEmailVerification:true,revokeSessionsOnPasswordReset:true},
-  session:{cookieCache:{enabled:false}},
+  advanced:{cookiePrefix:LOCAL_AUTH_COOKIE_PREFIX},
+  session:{expiresIn:LOCAL_AUTH_SESSION_SECONDS,updateAge:24*60*60,cookieCache:{enabled:false}},
+  hooks:{after:createAuthMiddleware(async ctx=>{
+   // Reissue a scoped persistent cookie on normal restoration, including a
+   // verified legacy session. Bound the cookie to the real database expiry.
+   const value=ctx.context.newSession??ctx.context.session;
+   // Never resurrect a different old default-cookie session after logout.
+   // This marker only disables compatibility; it never grants authentication.
+   if(ctx.path==='/sign-out'||ctx.path==='/sign-in/email'&&ctx.context.newSession||ctx.path==='/get-session'&&value?.session&&new Date(value.session.expiresAt).getTime()>Date.now())ctx.setCookie(LOCAL_AUTH_COOKIE_PREFIX+'.legacy_retired','1',{httpOnly:true,sameSite:'lax',path:'/',maxAge:LOCAL_AUTH_SESSION_SECONDS});
+   if(ctx.path==='/get-session'&&value?.session&&value.user){const remaining=Math.floor((new Date(value.session.expiresAt).getTime()-Date.now())/1000);if(remaining>0)await setSessionCookie(ctx,value,false,{maxAge:Math.min(remaining,LOCAL_AUTH_SESSION_SECONDS)});}
+  })},
  };
  if(create){
   const migration=await getMigrations(options);
@@ -53,13 +77,13 @@ export async function openLocalAuth({root,sqlite,create=false,allowEnrollment=fa
    enrolled INTEGER NOT NULL DEFAULT 0 CHECK(enrolled IN (0,1))
   );`);
  }
- const auth=betterAuth(options);
+ const engine=betterAuth(options),auth={...engine,handler:request=>engine.handler(new Request(request,{headers:sessionHeaders(request.headers)}))};
  const link=sqlite.prepare('SELECT auth_user_id,legacy_uid,email_normalized,source_disabled,enrolled FROM cms_auth_links WHERE auth_user_id=?');
  const legacy=sqlite.prepare('SELECT auth_user_id,legacy_uid,email_normalized,source_disabled,enrolled FROM cms_auth_links WHERE legacy_uid=?');
  const user=sqlite.prepare('SELECT id,email,emailVerified FROM user WHERE id=?');
  const sessionById=sqlite.prepare('SELECT id FROM session WHERE id=? AND userId=?');
  async function getSession(request){
-  const result=await auth.api.getSession({headers:fromNodeHeaders(request.headers),query:{disableCookieCache:true}});
+  const result=await auth.api.getSession({headers:sessionHeaders(fromNodeHeaders(request.headers)),query:{disableCookieCache:true}});
   if(!result?.user||!result?.session)return null;
   const linked=link.get(result.user.id);
   if(!linked||linked.source_disabled||!linked.enrolled||!result.user.emailVerified||linked.email_normalized!==String(result.user.email).trim().toLowerCase())return null;

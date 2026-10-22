@@ -1,3 +1,4 @@
+import {PINKY_VIDEO_STYLE,installPinkyVideoPlayer} from '../preview/pinky-video-player.mjs';
 import {constants,lstatSync,realpathSync,openSync,closeSync,fstatSync,readSync,writeSync,mkdirSync,fsyncSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -84,6 +85,7 @@ async function artifactInputs(validated){
  const pins=new Map(BASELINE_FILES.map(p=>[p.path,p.sha256]));
  for(const name of ['styles.css','FONT-NOTICES.txt',...BASELINE_FILES.filter(p=>/\.woff$/.test(p.path)).map(p=>p.path)])add(name,input(path.join(CMS,'public-baseline',name),16*MiB,{expectedHash:pins.get(name)}));
  for(const name of ['site-interactions.mjs','site-interactions.css'])add(name,input(path.join(CMS,'preview',name),MiB));
+ for(const [name,text] of [['assets/pinky-video.css',PINKY_VIDEO_STYLE],['assets/pinky-video-runtime.mjs','export const installPinkyVideoPlayer='+installPinkyVideoPlayer.toString()+';']]){const bytes=Buffer.from(text);add(name,{bytes,sizeBytes:bytes.length,sha256:sha(bytes)});}
  for(const entry of qa.snapshot.mediaManifest){
   const a=entry.asset,id=entry.source==='LEGACY'?a.id:a.assetId;
   if(entry.source==='LEGACY'){

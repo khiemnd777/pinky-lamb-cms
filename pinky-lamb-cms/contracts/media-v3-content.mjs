@@ -1,9 +1,10 @@
+import {showreelSourceSchema} from './showreel-source.mjs';
 import {z} from 'zod';
 import {ApiError,validationError} from './errors.mjs';
 import {resourceIdSchema,hashSchema} from './hero.mjs';
 import {plainText,stableIdSchema,slugSchema,yearSchema,SECTION_IDS,BODY_SECTION_IDS} from './site-settings.mjs';
 import {strictMediaV3JsonSchema} from './media-v3-metadata.mjs';
-import {imageReferenceSchema,videoPosterReferenceSchema} from './media-v3-contract.mjs';
+import {imageReferenceSchema} from './media-v3-contract.mjs';
 
 const strictSiteObject=shape=>strictMediaV3JsonSchema.pipe(z.strictObject(shape));
 const unique=(values,key=value=>value)=>new Set(values.map(key)).size===values.length;
@@ -46,7 +47,7 @@ export function createMediaV3ContentSchemas(contentContext){
   const headerSchema=strictSiteObject({descriptor:plainText(120),ctaLabel:plainText(80)});
   const brandSchema=strictSiteObject({name:z.literal('Pinky Lamb'),logo:assetUseSchema,tagline:plainText(300)});
   const credentialSchema=strictSiteObject({assetId:assetIdSchema,label:plainText(80),edition:plainText(120)});
-  const showreelSchema=strictSiteObject({assetId:assetIdSchema,poster:z.union([assetUseSchema,videoPosterReferenceSchema]),title:plainText(120),originalSourceUrl:plainText(2048).refine(value=>allowedShowreelSourceUrl!==undefined && value===allowedShowreelSourceUrl).optional(),durationSeconds:z.number().finite().positive()});
+  const showreelSchema=showreelSourceSchema({assetId:assetIdSchema,title:plainText(120),originalSourceUrl:plainText(2048).refine(value=>allowedShowreelSourceUrl!==undefined && value===allowedShowreelSourceUrl)});
   const phone=plainText(16).refine(value=>/^\+[1-9][0-9]{1,14}$/.test(value));
   const facebook=plainText(2048).refine(value=>{
     try{const url=new URL(value);return url.protocol==='https:' && url.hostname==='www.facebook.com' && !url.username && !url.password && !url.port && !url.search && !url.hash && url.href===value;}catch{return false;}

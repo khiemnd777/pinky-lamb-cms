@@ -36,3 +36,14 @@ test('every existing content kind and locale can replace its own pin while other
   assert.deepEqual(after.entries.filter(q=>q.locale!==r.locale),release.entries.filter(q=>q.locale!==r.locale));
  }
 });
+
+
+test('selected About publication accepts only Showreel source changes and keeps other locales frozen',async()=>{
+ const {mergeLocalizedGroup}=await import('../contracts/group-localization.mjs');
+ const {release}=releaseBytesFixture(),before=structuredClone(release),full=release.entries[0],qa=structuredClone(full.groups.about),old=qa.base.source.showreel;
+ qa.base.source.showreel={sourceType:'YOUTUBE',videoId:'M7lc1UVf-VE',title:old.title,poster:old.poster};qa.base.dependencyHash=hash(qa.base.source);qa.draft.dependencyHash=qa.base.dependencyHash;qa.draft.revision++;qa.group=mergeLocalizedGroup('about',qa.base.source,qa.draft.content);
+ const video=qa.mediaSlots.find(s=>s.slotId==='about/showreel');qa.mediaSlots=qa.mediaSlots.filter(s=>s!==video);qa.resources=qa.resources.filter(r=>r.id!==video.resourceId);
+ const detail={snapshot:{id:'selected-youtube',resource:{kind:'group',entityId:'about',locale:'en'},revision:qa.draft.revision,dependencyHash:qa.base.dependencyHash,contentHash:qa.draft.contentHash,snapshotHash:'a'.repeat(64),qa},review:{id:'review-youtube',outcome:'APPROVED',attestationSetHash:'b'.repeat(64)}};
+ const after=replaceSelectedRelease(release,detail);assert.equal(after.entries[0].groups.about.group.showreel.sourceType,'YOUTUBE');assert.deepEqual(after.entries.slice(1),before.entries.slice(1));assert.deepEqual(after.entries[0].hero,before.entries[0].hero);assert.deepEqual(after.entries[0].workServices,before.entries[0].workServices);
+ const changed=structuredClone(detail);changed.snapshot.qa.base.source.section.lead+='unrelated change';changed.snapshot.qa.group=mergeLocalizedGroup('about',changed.snapshot.qa.base.source,changed.snapshot.qa.draft.content);assert.throws(()=>replaceSelectedRelease(release,changed),/phụ thuộc/);
+});

@@ -23,7 +23,11 @@ export async function verifyImageBytes(payload,derivative,{decode=decodeWebP}={}
 }
 async function decodeWebP(bytes){const image=await createImageBitmap(new Blob([bytes],{type:'image/webp'}));try{return {width:image.width,height:image.height};}finally{image.close();}}
 export function selectImagePreviewDerivative(record,{thumbnail=false}={}){
- const derivative=record.derivatives.find(d=>d.key===(thumbnail?'image-320':'image-960'))??(thumbnail?record.derivatives.find(d=>d.key==='image-960'):null);
+ const kind=record.kind??'IMAGE';
+ let derivative;
+ if(kind==='IMAGE')derivative=record.derivatives.find(d=>d.key===(thumbnail?'image-320':'image-960'))??(thumbnail?record.derivatives.find(d=>d.key==='image-960'):null);
+ else if(thumbnail&&kind==='VIDEO')derivative=record.derivatives.find(d=>d.role==='POSTER'&&d.mime==='image/webp');
+ else if(thumbnail&&kind==='PDF')derivative=record.derivatives.find(d=>d.role==='PDF_PAGE'&&d.pageNumber===1&&d.mime==='image/webp');
  if(!derivative)throw Error('Ảnh chưa có phiên bản xem trước.');
  return derivative;
 }
@@ -37,7 +41,7 @@ export function createImagePreview(root,{apiFetch,getSession,decode,thumbnail=fa
   clear();if(destroyed)return;const current=revision,member=sessionKey();if(!member)return;controller=new AbortController();const signal=controller.signal;let reservation;status.textContent='Đang tải ảnh…';
   const active=()=>!destroyed&&!signal.aborted&&revision===current&&sessionKey()===member;
   try{
-   const record=mediaDetailPublicSchema.parse(await apiFetch(`/api/cms/media/${id}`,{signal}));if(!active())return;if(record.id!==id||record.isArchived||record.kind!=='IMAGE')throw Error('Phiên bản ảnh không hợp lệ.');
+   const record=mediaDetailPublicSchema.parse(await apiFetch(`/api/cms/media/${id}`,{signal}));if(!active())return;if(record.id!==id||record.isArchived||record.kind!=='IMAGE'&&(!thumbnail||!['VIDEO','PDF'].includes(record.kind)))throw Error('Phiên bản ảnh không hợp lệ.');
    if(record.status!=='READY'||!record.derivative){status.textContent='Ảnh chưa sẵn sàng để xem.';return;}
    const derivative=selectImagePreviewDerivative(record,{thumbnail});reservation=reserveImagePreview(derivative.bytes);
    const payload=await apiFetch(`/api/cms/media/${record.id}/derivatives/${derivative.key}`,{signal,responseType:'bytes',derivative});if(!active())return;

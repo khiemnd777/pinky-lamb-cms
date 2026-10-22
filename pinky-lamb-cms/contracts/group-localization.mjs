@@ -1,9 +1,10 @@
+import {showreelSourceSchema,isYoutubeReel} from './showreel-source.mjs';
 import {z} from 'zod';
 import {plainText,strictSiteObject,stableIdSchema} from './site-settings.mjs';
 import {revisionSchema,hashSchema,resourceIdSchema,assertEnvelopeSize} from './hero.mjs';
 import {localizedSectionHeadingSchema} from './work-services-localization.mjs';
 import {SERVICE_TEMPLATE_ID} from './service-localization.mjs';
-import {imageReferenceSchema,videoPosterReferenceSchema} from './media-v3-contract.mjs';
+import {imageReferenceSchema} from './media-v3-contract.mjs';
 import {ApiError,validationError} from './errors.mjs';
 export const GROUP_IDS=Object.freeze(['header','clients','about','ip-studio','contact','footer','seo']);
 export const GROUP_LOCALES=Object.freeze(['en','vi','ja']);
@@ -39,7 +40,7 @@ export function groupSourceMediaUses(id,source){
  const uses=[];const add=(slotId,image,role='IMAGE')=>{if(image)uses.push({slotId,assetId:image.assetId,role:image.derivativeRole==='POSTER'?'POSTER':role});};
  if(id==='header'){add('brand/logo',source.brand.logo);add('credential',source.credential,'PDF_DOWNLOAD');add('template/favicon',{assetId:'favicon'});add('template/brand-diagonal',{assetId:'brand-diagonal'});}
  if(id==='clients')for(const l of source.logos)add(`clients/${l.id}/image`,l.image);
- if(id==='about'){add('about/signature',source.section.signature.image);add('about/showreel',source.showreel,'VIDEO');add('about/poster',source.showreel.poster);}
+ if(id==='about'){add('about/signature',source.section.signature.image);if(!isYoutubeReel(source.showreel))add('about/showreel',source.showreel,'VIDEO');add('about/poster',source.showreel.poster);}
  if(id==='ip-studio'){add('ip-studio/image',source.section.image);if(source.section.action.kind==='CREDENTIAL')add('ip-studio/credential',source.section.action,'PDF_DOWNLOAD');}
  if(id==='contact')add('contact/illustration',source.contact.illustration);
  if(id==='seo')add('seo/share',source.seo.ogImage);
@@ -81,7 +82,7 @@ const sourceFooter=strictSiteObject({kind:z.literal('FOOTER'),sectionId:z.litera
 const sources={
  header:strictSiteObject({header:sourceHeader,brand:sourceBrand,nav:sourceNav,credential:sourceCredential,sectionOrder}),
  clients:strictSiteObject({section:sourceClients,logos:z.array(strictSiteObject({id:stableIdSchema,clientName:text(120),image:sourceImage,isVisible:z.boolean()})).max(12).refine(v=>unique(v,'id'))}),
- about:strictSiteObject({section:sourceAbout,showreel:strictSiteObject({assetId:resourceIdSchema,poster:z.union([sourceImage,videoPosterReferenceSchema]),title:text(120),durationSeconds:z.number().finite().positive(),originalSourceUrl:safeShowreelSource.optional()})}),
+ about:strictSiteObject({section:sourceAbout,showreel:showreelSourceSchema({assetId:resourceIdSchema,title:text(120),originalSourceUrl:safeShowreelSource})}),
  'ip-studio':strictSiteObject({section:sourceIp,ipServiceId:z.literal('original-ip').nullable()}),
  contact:strictSiteObject({section:sourceContact,contact:strictSiteObject({email:z.email().max(254),personName:text(120),personPhoneE164:phone,personPhoneLabel:text(80),officePhoneE164:phone,officePhoneLabel:text(80),addressLines:z.array(text(160)).min(1).max(4),facebookUrl:safeFacebook,illustration:sourceImage})}),
  footer:strictSiteObject({section:sourceFooter,copyright:strictSiteObject({startYear:z.number().int().min(1990).max(9999).optional(),label:text(240)}),brandName:z.literal('Pinky Lamb')}),

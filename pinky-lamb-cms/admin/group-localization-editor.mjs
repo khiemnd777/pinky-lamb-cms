@@ -9,7 +9,12 @@ const names={en:['Tiếng Anh','Anh'],vi:['Tiếng Việt','Việt'],ja:['Tiến
 const sectionNames={clients:'Khách hàng',work:'Dự án',services:'Dịch vụ',about:'Giới thiệu','ip-studio':'IP Studio',contact:'Liên hệ'};
 const menuLabel=id=>`Menu · ${sectionNames[id]??'Mục nội dung'}`;
 export const GROUP_LABELS={header:'Đầu trang',clients:'Khách hàng',about:'Giới thiệu','ip-studio':'IP Studio',contact:'Liên hệ',footer:'Chân trang',seo:'SEO & chia sẻ'};
-function blank(id,source){const value=groupContentFromSource(id,source);const clear=value=>typeof value==='string'?'':Array.isArray(value)?value.map(clear):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,['sectionId','clientId','assetId','emphasis'].includes(k)?v:clear(v)])):value;return clear(value);}
+function blank(id,source){const value=groupContentFromSource(id,source);const clear=value=>typeof value==='string'?'':Array.isArray(value)?value.map(clear):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,['sectionId','clientId','assetId','emphasis'].includes(k)?v:clear(v)])):value;const content=clear(value);
+ // These fields are rendered readonly from the shared source. Keeping them
+ // empty internally makes a first draft impossible to validate or save.
+ for(const key of ['heading','reelHeading','experienceLabel'])if(Object.hasOwn(value,key))content[key]=structuredClone(value[key]);
+ return content;
+}
 function reconcileGroupContent(id,content,source){
  const next=structuredClone(content);
  if(id==='header'){next.navLabels=source.nav.map(row=>({sectionId:row.sectionId,label:content.navLabels.find(old=>old.sectionId===row.sectionId)?.label??''}));if(source.brand.logo.isDecorative)next.logoAlt='';}

@@ -1,3 +1,4 @@
+import '../preview/pinky-video-player.css';
 import {createCmsIcon} from './cms-icons.mjs';
 import {assertLocalOrigin,LOCAL} from './config-local.mjs';
 import {composeDocument} from '../preview/hero-renderer.mjs';

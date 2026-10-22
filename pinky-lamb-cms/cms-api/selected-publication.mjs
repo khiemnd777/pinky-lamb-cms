@@ -1,3 +1,4 @@
+import {groupSourceSchema} from '../contracts/group-localization.mjs';
 import {ApiError} from '../contracts/errors.mjs';
 import {parseLocalizedReleaseBundle} from '../contracts/localized-review-records.mjs';
 import {parseWorkServicesQa} from '../contracts/site-locale-projection.mjs';
@@ -8,19 +9,32 @@ import {MAX_RETAINED_WEBSITE_RELEASES} from '../scripts/local-website-pointer.mj
 
 const same=(a,b)=>hash(a)===hash(b);
 function blocked(message){const error=new ApiError('REVISION_CONFLICT');error.message=message;throw error;}
-function targetPin(release,resource,dependencyHash){
+function targetPin(release,resource,dependencyHash,source){
  const full=release.entries.find(q=>q.locale===resource.locale),pin=full?.dependencyVector.resources.find(v=>same(v.resource,resource));
  if(!pin)blocked('Nội dung chưa có trong bản website đang chạy. Cần chuẩn bị riêng thay đổi cấu trúc website.');
- if(pin.dependencyHash!==dependencyHash)blocked('Nguồn hoặc media dùng chung đã thay đổi. Cần đối chiếu phạm vi phụ thuộc trước khi xuất bản riêng nội dung này.');
+ if(pin.dependencyHash!==dependencyHash&&!showreelOnlyChange(full,resource,source))blocked('Nguồn hoặc media dùng chung đã thay đổi. Cần đối chiếu phạm vi phụ thuộc trước khi xuất bản riêng nội dung này.');
  return {full,pin};
+}
+/** Only Showreel source changes may cross the old shared dependency pin.
+ * Other About facts and every other resource keep the existing strict boundary. */
+function showreelOnlyChange(full,resource,source){
+ if(resource.kind!=='group'||resource.entityId!=='about'||!source)return false;
+ const checked=groupSourceSchema('about').safeParse(source);if(!checked.success)return false;
+ const previous=full.groups.about.base.source,{showreel:old,...oldRest}=previous,{showreel:next,...nextRest}=checked.data;
+ return !same(old,next)&&same(oldRest,nextRest);
+}
+function assertUnchangedAboutMedia(previous,next){
+ const stable=qa=>qa.mediaSlots.filter(s=>!['about/showreel','about/poster'].includes(s.slotId)).map(slot=>({slot,resource:qa.resources.find(r=>r.id===slot.resourceId)}));
+ if(!same(stable(previous),stable(next)))blocked('Media ngoài Showreel đã thay đổi. Website giữ nguyên bản trước.');
 }
 /** Start from the live frozen bundle, never from current drafts or current approval pointers. */
 export function replaceSelectedRelease(input,detail){
  const release=structuredClone(parseLocalizedReleaseBundle(input));
  if(release.snapshotSetHash!==releaseSnapshotSetHash(release.entries))throw Error('Live release digest mismatch');
- const {snapshot,review}=detail,{resource}=snapshot,{full}=targetPin(release,resource,snapshot.dependencyHash),qa=structuredClone(snapshot.qa);
+ const {snapshot,review}=detail,{resource}=snapshot,{full}=targetPin(release,resource,snapshot.dependencyHash,snapshot.qa?.base?.source),qa=structuredClone(snapshot.qa);
  if(review?.outcome!=='APPROVED'||qa.draft.revision!==snapshot.revision||qa.draft.locale!==resource.locale||qa.draft.contentHash!==snapshot.contentHash||hash(qa.draft.content)!==snapshot.contentHash)throw Error('Selected snapshot identity mismatch');
  const work=full.workServices;
+ if(resource.kind==='group'&&resource.entityId==='about')assertUnchangedAboutMedia(full.groups.about,qa);
  if(resource.kind==='hero')full.hero=qa;
  else if(resource.kind==='group')full.groups[resource.entityId]=qa;
  else if(resource.kind==='section')work.sections[resource.entityId]=qa;
@@ -46,7 +60,7 @@ export async function runSelectedPublication(job,{request,actor},deps){
  const assertDraft=async()=>{const current=await editorial.readResource({request,resource:selection.resource});if(!current.draft||current.stale||current.draft.revision!==selection.expectedRevision||current.draft.contentHash!==selection.expectedContentHash||current.currentDependencyHash!==selection.expectedDependencyHash)blocked('Bản đã lưu hoặc nguồn đã thay đổi. Tải lại đúng nội dung trước khi xuất bản.');};
  await owner(request,actor);
  if(!job.base){const base=readPointer();if(!base)blocked('Chưa có bản website đang chạy để giữ nguyên các nội dung khác.');job.base=base;save(job);}
- const base=await readRelease(job.base);targetPin(base,selection.resource,selection.expectedDependencyHash);
+ const base=await readRelease(job.base);let selectedSource;if(selection.resource.kind==='group'&&selection.resource.entityId==='about'&&deps.readSelectedSource)selectedSource=await deps.readSelectedSource(selection.resource);targetPin(base,selection.resource,selection.expectedDependencyHash,selectedSource);
  if(!same(readPointer(),job.base)&&!(job.target&&same(readPointer(),job.target)))blocked('Website đã chuyển sang bản khác. Tải lại trước khi xuất bản.');
  if(!job.target&&(job.base.retainedArtifacts??[]).length>=MAX_RETAINED_WEBSITE_RELEASES-1)blocked('Lịch sử tài nguyên website đã đạt giới hạn; cần bảo trì trước khi xuất bản tiếp.');
  await assertDraft();

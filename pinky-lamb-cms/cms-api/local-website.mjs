@@ -1,3 +1,4 @@
+import {readSelectedShowreelResource} from './selected-publication-media.mjs';
 import {readReleaseManifest} from '../scripts/multilingual-site-artifact.mjs';
 import {loadMediaProcessingProfile} from './media-processing-profile.mjs';
 import {createPdfLocalRecovery} from './pdf-local-recovery.mjs';
@@ -81,6 +82,7 @@ export async function createLocalWebsiteService({options,library,storage}){
  }
  async function publish(job,request,actor){
   return runSelectedPublication(job,{request,actor},{editorial,owner,readPointer:readWebsitePointer,writePointer:writeWebsitePointer,save,stage,
+   readSelectedSource:async resource=>(await (await createGroupLocalizationService(options)).readDraft({request,groupId:resource.entityId,locale:resource.locale})).base.source,
    readRelease:async pointer=>{
     const manifest=readReleaseManifest(pointer.artifact.relativeRoot,pointer.artifact.manifestSha256);
     if(manifest.qaFixture||manifest.releaseId!==pointer.releaseId)throw Error('Cần bản website CMS thật để xuất bản riêng nội dung.');
@@ -91,10 +93,10 @@ export async function createLocalWebsiteService({options,library,storage}){
     return release;
    },
    exportRelease:async(job,release)=>{
-    const bundle=await packageReleaseResources(release,{readResource:descriptor=>{
+    const bundle=await packageReleaseResources(release,{readResource:async descriptor=>{
      // Retained bytes come from the live artifact, not today's media catalog or drafts.
      const manifest=readReleaseManifest(job.base.artifact.relativeRoot,job.base.artifact.manifestSha256),pin=manifest.files.find(f=>f.path===descriptor.path&&f.sha256===descriptor.sha256&&f.sizeBytes===descriptor.sizeBytes);
-     if(!pin)throw Error('Media phụ thuộc đã thay đổi; cần xác định phạm vi cập nhật riêng.');
+     if(!pin)return readSelectedShowreelResource({descriptor,release,selection:job.selection,library,storage});
      return readPrivateBytes(job.base.artifact.relativeRoot+'/'+pin.path,64*1048576);
     }});
     const sourcePath=ROOT+'/'+job.id+'/release.json';

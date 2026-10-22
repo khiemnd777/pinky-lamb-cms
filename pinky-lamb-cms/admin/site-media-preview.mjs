@@ -1,3 +1,5 @@
+import {renderPinkyVideoPlayer,installPinkyVideoPlayer} from '../preview/pinky-video-player.mjs';
+import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {z} from 'zod';
 import {revisionSchema,hashSchema} from '../contracts/hero.mjs';
 import {createCmsIcon} from './cms-icons.mjs';
@@ -82,6 +84,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
  const active=run=>!destroyed&&current===run&&!run.controller.signal.aborted&&run.revision===revision&&run.member&&run.member===sessionKey();
  function guard(run){if(active(run))return;if(current===run)clear();throw new DOMException('Phiên đã thay đổi.','AbortError');}
  function dispose(run){
+  run.player?.destroy();run.player=null;
   if(run.frame){run.frame.removeAttribute('srcdoc');run.frame.src='about:blank';run.frame.remove();run.frame=null;}
   if(run.link){run.link.removeAttribute('href');run.link.remove();run.link=null;}
   for(const resource of [...run.resources]){
@@ -136,6 +139,8 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
   }finally{bytes=null;blob=null;try{if(reader){try{await reader.cancel();}finally{reader.releaseLock();}}}finally{try{bitmap?.close();}finally{if(!transferred)reservation.release();reservation.settle();}}}
  }
  function frame(run,html,title){guard(run);if(run.frame){run.frame.removeAttribute('srcdoc');run.frame.src='about:blank';run.frame.remove();}const f=doc.createElement('iframe');run.frame=f;f.className='media-image-frame';f.title=title;f.setAttribute('sandbox','');f.srcdoc=html;host.prepend(f);}
+ function focusVideo(run,videoUrl,poster){guard(run);const holder=doc.createElement('div');holder.innerHTML=renderPinkyVideoPlayer(run.selection.content.settings.showreel,{poster,videoUrl,locale:'vi'});host.append(holder);run.player=installPinkyVideoPlayer(holder.querySelector('[data-pinky-player]'));}
+ async function focusYoutube(selection){const run=start(selection);if(!run)return;run.busy=true;try{addControls(run);const p=selection.content.settings.showreel.poster,entry=selection.manifest.find(e=>idOf(e)===p.assetId),poster=entry.source==='LEGACY'?await legacyBinary(run,entry):await binary(run,entry,entry.asset.derivatives.find(d=>d.role==='IMAGE'&&d.targetWidth===1920));guard(run);focusVideo(run,'',poster);status.textContent='Video YouTube của bản đã lưu.';}catch{dispose(run);if(active(run))status.textContent='Không thể xem video. Hãy thử lại.';}finally{run.busy=false;if(active(run)){refresh.disabled=false;run.buttons.forEach(b=>{b.disabled=false;});}}}
  async function focus(selection,entry,mode,page=1){
   const run=start(selection);if(!run)return;run.busy=true;status.textContent='Đang tải tài nguyên đã xử lý…';
   try{
@@ -144,11 +149,11 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
     if(mode==='VIDEO'){
      const posterEntry=selection.manifest.find(e=>idOf(e)===selection.content.settings.showreel.poster.assetId);
      const poster=posterEntry.source==='LEGACY'?await legacyBinary(run,posterEntry):await binary(run,posterEntry,posterEntry.asset.derivatives.find(d=>d.role===(posterEntry.asset.kind==='VIDEO'?'POSTER':'IMAGE')&&(d.role!=='IMAGE'||d.targetWidth===1920)));guard(run);
-     const video=await legacyBinary(run,entry);guard(run);frame(run,focusDocument(video,poster,true),'Video LEGACY đã bàn giao');
+     const video=await legacyBinary(run,entry);guard(run);focusVideo(run,video,poster);
     }else{const url=await legacyBinary(run,entry);guard(run);const link=doc.createElement('a');run.link=link;link.href=url;link.download=idOf(entry)+'.pdf';link.textContent='Tải PDF LEGACY đã bàn giao';link.addEventListener('click',e=>{if(!active(run))e.preventDefault();});host.append(link);}
    }else if(mode==='VIDEO'){
     const poster=await binary(run,entry,entry.asset.derivatives.find(d=>d.role==='POSTER'));guard(run);
-    const video=await binary(run,entry,entry.asset.derivatives.find(d=>d.role==='VIDEO'));guard(run);frame(run,focusDocument(video,poster,true),'Xem video');
+    const video=await binary(run,entry,entry.asset.derivatives.find(d=>d.role==='VIDEO'));guard(run);focusVideo(run,video,poster);
    }else if(mode==='PDF_PAGE'){
     const pages=entry.asset.derivatives.filter(d=>d.role==='PDF_PAGE').sort((a,b)=>a.pageNumber-b.pageNumber),d=pages[page-1];if(!d||d.pageNumber!==page)throw Error('Page mismatch');
     const image=await binary(run,entry,d);guard(run);frame(run,focusDocument(image),'Trang '+page+' của PDF');
@@ -163,6 +168,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
   finally{run.busy=false;if(active(run)){refresh.disabled=false;run.buttons.forEach(b=>{b.disabled=false;});}}
  }
  function addControls(run){
+  if(isYoutubeReel(run.selection.content.settings.showreel)&&run.selection.content.sections.some(s=>s.sectionId==='about'&&s.isVisible!==false)){const b=doc.createElement('button');b.type='button';b.textContent='Xem video YouTube';b.disabled=run.busy;b.addEventListener('click',()=>{if(active(run)&&!run.busy)void focusYoutube(run.selection);});run.buttons.push(b);actions.append(b);}
   const visible=new Set(collectVisibleSiteMediaReferences(run.selection.content).map(r=>r.id));
   for(const entry of run.selection.manifest){
    if(!visible.has(idOf(entry))||!['PDF','VIDEO'].includes(entry.asset.kind))continue;

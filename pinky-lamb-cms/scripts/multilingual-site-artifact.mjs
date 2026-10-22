@@ -1,3 +1,4 @@
+import {videoByteRange} from './video-byte-range.mjs';
 import {lstatSync,readdirSync} from 'node:fs';
 import path from 'node:path';
 import {parseLocaleURL} from '../preview/site-locale.mjs';
@@ -66,11 +67,18 @@ export function createMultilingualSiteHandler({relativeRoot,manifestSha256,port=
   try{
    const bytes=readPrivateBytes((cached?.release.relativeRoot??relativeRoot)+'/'+(cached?.name??name),64*1048576);if(bytes.length!==meta.sizeBytes||digest(bytes)!==meta.sha256)return fail(409);
    const document=manifest.cacheVersion===1&&!manifest.qaFixture&&(name.endsWith('index.html')||name==='sitemap.xml');
-   const headers={'Content-Type':meta.mimeType,'Content-Length':bytes.length,'X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cache-Control':cached&&!manifest.qaFixture?PUBLIC_ASSET_CACHE_CONTROL:document?PUBLIC_DOCUMENT_CACHE_CONTROL:'no-store','X-Robots-Tag':'noindex, nofollow'};
+   const headers={'Content-Type':meta.mimeType,'Content-Length':bytes.length,'X-Content-Type-Options':'nosniff','Referrer-Policy':meta.mimeType==='text/html'?'strict-origin-when-cross-origin':'no-referrer','Cache-Control':cached&&!manifest.qaFixture?PUBLIC_ASSET_CACHE_CONTROL:document?PUBLIC_DOCUMENT_CACHE_CONTROL:'no-store','X-Robots-Tag':'noindex, nofollow'};
    if(document){headers.ETag=`"${meta.sha256}"`;if(request.headers['if-none-match']?.split(',').some(tag=>tag.trim()===headers.ETag||tag.trim()===`W/${headers.ETag}`)){delete headers['Content-Length'];response.writeHead(304,headers);response.end();return;}}
    if(manifest.qaFixture===true)headers['X-Pinky-Content']='local-qa-fixture';
    if(name.startsWith('assets/'))headers['Access-Control-Allow-Origin']='*';
    if(name==='index.html')headers['Access-Control-Allow-Origin']='http://127.0.0.1:5273';
+   if(meta.mimeType==='video/mp4'){
+    headers['Accept-Ranges']='bytes';headers.ETag=`"${meta.sha256}"`;
+    if(request.method==='GET'&&request.headers.range!==undefined&&(!request.headers['if-range']||request.headers['if-range']===headers.ETag)){
+     let range;try{range=videoByteRange(request.headers.range,bytes.length);}catch{headers['Content-Range']=`bytes */${bytes.length}`;headers['Content-Length']=0;response.writeHead(416,headers);response.end();return;}
+     headers['Content-Range']=`bytes ${range.start}-${range.end}/${bytes.length}`;headers['Content-Length']=range.end-range.start+1;response.writeHead(206,headers);response.end(bytes.subarray(range.start,range.end+1));return;
+    }
+   }
    response.writeHead(200,headers);response.end(request.method==='HEAD'?undefined:bytes);
   }catch{return fail(409);}
  };

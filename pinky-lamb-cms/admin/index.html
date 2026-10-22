@@ -2,8 +2,9 @@
 <html lang="vi">
 <head>
  <meta charset="utf-8">
+ <meta name="referrer" content="strict-origin-when-cross-origin">
  <meta name="viewport" content="width=device-width,initial-scale=1">
- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' http://127.0.0.1:4189 'sha256-LUurLxGYmH8/qGgtEuJZNLEMZmViXPAiQvfIwvnn/BI='; style-src-attr 'unsafe-inline'; connect-src 'self' http://127.0.0.1:4189 http://127.0.0.1:9099 ws://127.0.0.1:5273; img-src 'self' http://127.0.0.1:4189 blob: data:; media-src blob:; font-src 'self' http://127.0.0.1:4189; frame-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.youtube.com https://s.ytimg.com; style-src 'self' http://127.0.0.1:4189 'sha256-LUurLxGYmH8/qGgtEuJZNLEMZmViXPAiQvfIwvnn/BI='; style-src-attr 'unsafe-inline'; connect-src 'self' http://127.0.0.1:4189 http://127.0.0.1:9099 ws://127.0.0.1:5273; img-src 'self' http://127.0.0.1:4189 blob: data:; media-src blob:; font-src 'self' http://127.0.0.1:4189; frame-src 'self' https://www.youtube.com; base-uri 'none'; form-action 'none'; object-src 'none'">
  <meta name="referrer" content="no-referrer">
  <link rel="license" href="/assets/FONT-NOTICES.txt">
  <title>Pinky Lamb — Quản trị nội dung</title>
@@ -28,6 +29,7 @@
    <form id="login-form">
     <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" required maxlength="254">
     <label for="password">Mật khẩu</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256">
+    <p class="field-hint">Tự động ghi nhớ đăng nhập trên trình duyệt này trong 30 ngày; gia hạn khi sử dụng.</p>
     <button id="login-submit" type="submit">Đăng nhập</button>
    </form>
   </section>

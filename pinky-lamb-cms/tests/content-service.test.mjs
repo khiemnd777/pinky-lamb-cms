@@ -60,3 +60,20 @@ test('native localized projections preserve existing DTOs and refresh Hero globa
  const read=await f.service.readGroup({request:{},group:'work'}),content=structuredClone(read.content);content.projects[0].title='Synthetic unrelated project title';await f.service.saveGroup(command('work',read,content));assert.equal(readLocalizedProjection(f.db,{kind:'HERO_LOCALIZATION',locale:'en'}),null);await worker.tick();
  const after=readLocalizedProjection(f.db,{kind:'HERO_LOCALIZATION',locale:'en'});assert.equal(after.base.revision,before.base.revision+1);assert.notEqual(after.base.contentHash,before.base.contentHash);assert.equal(after.base.dependencyHash,before.base.dependencyHash);assert.deepEqual(after,await hero.readDraft({request:{},locale:'en'}));
 });
+
+test('native About command selects YouTube, preserves uploaded media, rejects mixed inputs and returns to Firebase',async t=>{
+ const f=await fixture(t),{createSiteV3MediaProvider}=await import('../cms-api/site-v3-media-provider.mjs'),{createContentService}=await import('../cms-api/content-service.mjs');
+ // Exercise the real authoritative media resolver and SQLite transaction, not the fixture resolver.
+ const service=createContentService({...f.options,mediaProvider:createSiteV3MediaProvider({db:f.db})});
+ const read=await service.readGroup({request:{},group:'about'}),original=structuredClone(read.content.settings.showreel),beforeCount=f.db.sqlite.prepare('SELECT count(*) AS n FROM cms_documents').get().n;
+ const content=structuredClone(read.content);content.settings.showreel={sourceType:'YOUTUBE',videoId:'M7lc1UVf-VE',title:original.title,poster:original.poster};
+ const saved=await service.saveGroup(command('about',read,content,'synthetic-youtube-save'));
+ assert.equal(saved.read.content.settings.showreel.sourceType,'YOUTUBE');assert.ok(!saved.read.catalog.some(e=>e.asset.kind==='VIDEO'));
+ assert.ok(!Object.hasOwn(saved.read.content.settings.showreel,'durationSeconds'));assert.ok(f.db.sqlite.prepare('SELECT count(*) AS n FROM cms_documents').get().n>=beforeCount);
+ assert.deepEqual(await service.saveGroup(command('about',read,content,'synthetic-youtube-save')),saved);
+ const broken=structuredClone(saved.read.content);broken.settings.showreel.assetId=original.assetId;
+ const before=JSON.parse(f.db.content.assemble().body);await assert.rejects(service.saveGroup(command('about',saved.read,broken,'synthetic-mixed-source')),e=>e.code==='VALIDATION_ERROR');assert.deepEqual(JSON.parse(f.db.content.assemble().body),before);
+ const restored=structuredClone(saved.read.content);restored.settings.showreel={...original,sourceType:'FIREBASE',durationSeconds:999};
+ const back=await service.saveGroup(command('about',saved.read,restored,'synthetic-firebase-save'));assert.equal(back.read.content.settings.showreel.assetId,original.assetId);assert.equal(back.read.content.settings.showreel.durationSeconds,original.durationSeconds);
+ await assert.rejects(service.saveGroup(command('about',read,content,'synthetic-stale-youtube')),e=>e.code==='REVISION_CONFLICT');
+});

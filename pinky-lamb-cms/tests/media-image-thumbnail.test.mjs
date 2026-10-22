@@ -18,3 +18,13 @@ test('thumbnail document bounds the image and escapes the file name',()=>{
  assert.doesNotMatch(html,/<bad>/);
  assert.match(imagePreviewDocument(new Uint8Array([1]),'x',{thumbnail:true,fit:'invalid'}),/object-fit:cover/);
 });
+
+test('VIDEO thumbnails select the verified poster, never MP4; PDF thumbnails use page one',()=>{
+ const poster={key:'video-poster',role:'POSTER',mime:'image/webp'},video={key:'video-720',role:'VIDEO',mime:'video/mp4'};
+ assert.equal(selectImagePreviewDerivative({kind:'VIDEO',derivatives:[video,poster]},{thumbnail:true}),poster);
+ assert.throws(()=>selectImagePreviewDerivative({kind:'VIDEO',derivatives:[video]},{thumbnail:true}));
+ assert.throws(()=>selectImagePreviewDerivative({kind:'VIDEO',derivatives:[video,poster]}));
+ const page={key:'pdf-page-1',role:'PDF_PAGE',pageNumber:1,mime:'image/webp'};
+ assert.equal(selectImagePreviewDerivative({kind:'PDF',derivatives:[{...page,pageNumber:2},page]},{thumbnail:true}),page);
+ assert.throws(()=>selectImagePreviewDerivative({kind:'VIDEO',derivatives:[{...poster,mime:'video/mp4'}]},{thumbnail:true}));
+});

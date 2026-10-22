@@ -1,3 +1,4 @@
+import {isYoutubeReel,parseYoutubeVideoId} from '../contracts/showreel-source.mjs';
 import {createFormTabs,moveFields} from './site-form-ui.mjs';
 import {siteNode,siteHeadingNode} from './site-fields.mjs';
 import {createSiteFieldTools} from './site-settings-editor.mjs';
@@ -5,7 +6,7 @@ import {renderSiteSourceBindings} from './site-source-bindings.mjs';
 
 export const APPROVED_SHOWREEL_SOURCE_URL='https://drive.google.com/file/d/1I5v6s_z_Tbd1l1FVHLkTe7bAd1LQIl7b/view';
 export function mountSiteAboutIp(container,{content,context,onChange,mode='ALL'}){
- let disposed=false,selectedTab;let tabs;let thumbnail=null;let updateContext=()=>{};const tools=createSiteFieldTools({content,context,onChange,redraw});
+ const sourceDrafts=new Map();let disposed=false,selectedTab;let tabs;let thumbnail=null;let updateContext=()=>{};const tools=createSiteFieldTools({content,context,onChange,redraw});
  function clearThumbnail(){thumbnail?.cleanup?.();thumbnail=null;}
  function contextThumbnail(parent,assetId,options){const key=JSON.stringify([assetId,options.slot??'IMAGE']);if(thumbnail?.key!==key){clearThumbnail();const host=siteNode('div',undefined,{class:'ux-media-thumb'});const asset=context.resolveMediaAsset?.(assetId);if(asset?.width>0&&asset?.height>0)host.style?.setProperty('--context-media-ratio',`${asset.width} / ${asset.height}`);parent.append(host);thumbnail={key,host,cleanup:context.mountMediaThumbnail?.(host,assetId,options)};}parent.append(thumbnail.host);return thumbnail.host;}
  const about=content.sections.find(section=>section.sectionId==='about'),ip=content.sections.find(section=>section.sectionId==='ip-studio');
@@ -49,15 +50,29 @@ export function mountSiteAboutIp(container,{content,context,onChange,mode='ALL'}
   aboutFields.append(siteNode('p','Tổng nội dung dài của Giới thiệu tối đa 4.000 ký tự; tiêu đề được tính riêng.'));
   renderSiteSourceBindings(tools,aboutFields,content,context,'sections/about/facts','site-about');
   const reel=tools.group(container,'Video showreel','site-showreel-fields','settings.showreel');
+  tools.select(reel,'site-showreel-source-type','Nguồn video',isYoutubeReel(content.settings.showreel)?'YOUTUBE':'FIREBASE',[['FIREBASE','Upload trực tiếp Firebase'],['YOUTUBE','Link YouTube']],type=>{
+   const old=content.settings.showreel,previous=isYoutubeReel(old)?'YOUTUBE':'FIREBASE';sourceDrafts.set(previous,structuredClone(old));
+   const common={title:old.title,poster:structuredClone(old.poster)};
+   if(type==='YOUTUBE'&&common.poster.derivativeRole==='POSTER')common.poster={assetId:'',alt:old.poster.alt,isDecorative:old.poster.isDecorative};
+   content.settings.showreel=sourceDrafts.has(type)?{...structuredClone(sourceDrafts.get(type)),title:old.title}:type==='YOUTUBE'?{...common,sourceType:'YOUTUBE',videoId:''}:{...common,sourceType:'FIREBASE',assetId:'',durationSeconds:0};
+  },{path:'settings.showreel.sourceType',refresh:true});
+  if(isYoutubeReel(content.settings.showreel)){
+   const input=tools.input(reel,'site-showreel-youtube-url','Link YouTube',/^[A-Za-z0-9_-]{11}$/.test(content.settings.showreel.videoId)?`https://www.youtube.com/watch?v=${content.settings.showreel.videoId}`:content.settings.showreel.videoId,value=>{try{content.settings.showreel.videoId=parseYoutubeVideoId(value);}catch{content.settings.showreel.videoId=value;}},{max:2048,path:'settings.showreel.videoId',hint:'Dán link một video cho phép nhúng. Chọn ảnh đại diện riêng; thời lượng lấy khi phát.'});
+   input.addEventListener('input',()=>{try{parseYoutubeVideoId(input.value);input.setCustomValidity('');}catch(error){input.setCustomValidity(error.message);}});
+   reel.append(siteNode('p','YouTube có thể hiển thị tên kênh, tiêu đề hoặc logo khi phát và tạm dừng.'));
+  }else{
   const videos=()=>context.catalog.filter(asset=>asset.kind==='VIDEO' && asset.status==='LEGACY_READY' && Number.isFinite(asset.durationSeconds) && asset.durationSeconds>0).map(asset=>[asset.id,asset.label??asset.id]);
   if(typeof context.openMediaPicker==='function')tools.picker(reel,'site-showreel','Chọn video','VIDEO',()=>content.settings.showreel.assetId,id=>{const asset=context.resolveMediaAsset(id);content.settings.showreel.assetId=id;content.settings.showreel.durationSeconds=asset.durationSeconds;},{path:'settings.showreel.assetId'});
   else tools.select(reel,'site-showreel-asset','Video trong danh mục',content.settings.showreel.assetId,videos,id=>{const asset=context.catalog.find(value=>value.id===id);content.settings.showreel.assetId=id;content.settings.showreel.durationSeconds=asset.durationSeconds;},{path:'settings.showreel.assetId',refresh:true});
-  tools.input(reel,'site-showreel-duration','Thời lượng từ danh mục (giây)',content.settings.showreel.durationSeconds,()=>{},{readonly:true,path:'settings.showreel.durationSeconds',hint:'Thời lượng lấy từ video trong danh mục; không nhập thủ công.'});
+  tools.input(reel,'site-showreel-duration','Thời lượng từ danh mục (giây)',content.settings.showreel.assetId?content.settings.showreel.durationSeconds:undefined,()=>{},{readonly:true,path:'settings.showreel.durationSeconds',hint:'Thời lượng lấy từ video trong danh mục; không nhập thủ công.'});
+  }
   tools.input(reel,'site-showreel-title','Tên showreel',content.settings.showreel.title,value=>{content.settings.showreel.title=value;},{max:120,path:'settings.showreel.title'});
-  if(typeof context.openMediaPicker==='function')tools.select(reel,'site-showreel-poster-kind','Nguồn ảnh đại diện',content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO_POSTER':'IMAGE',[['IMAGE','Ảnh riêng'],['VIDEO_POSTER','Poster từ video READY']],kind=>{if(kind==='VIDEO_POSTER')content.settings.showreel.poster={...content.settings.showreel.poster,assetId:content.settings.showreel.assetId,derivativeRole:'POSTER'};else delete content.settings.showreel.poster.derivativeRole;},{refresh:true});
+  if(!isYoutubeReel(content.settings.showreel)&&typeof context.openMediaPicker==='function')tools.select(reel,'site-showreel-poster-kind','Nguồn ảnh đại diện',content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO_POSTER':'IMAGE',[['IMAGE','Ảnh riêng'],['VIDEO_POSTER','Poster từ video READY']],kind=>{if(kind==='VIDEO_POSTER')content.settings.showreel.poster={...content.settings.showreel.poster,assetId:content.settings.showreel.assetId,derivativeRole:'POSTER'};else delete content.settings.showreel.poster.derivativeRole;},{refresh:true});
   tools.image(reel,content.settings.showreel.poster,'settings.showreel.poster','site-showreel-poster','ảnh đại diện showreel');
+  if(!isYoutubeReel(content.settings.showreel)){
   tools.checkbox(reel,'site-showreel-source-enabled','Hiện liên kết video gốc đã bàn giao',content.settings.showreel.originalSourceUrl!==undefined,checked=>{if(checked)content.settings.showreel.originalSourceUrl=APPROVED_SHOWREEL_SOURCE_URL;else delete content.settings.showreel.originalSourceUrl;},{path:'settings.showreel.originalSourceUrl',refresh:true});
   reel.append(siteNode('p',content.settings.showreel.originalSourceUrl!==undefined?'Đang dùng liên kết video gốc cố định của bản bàn giao.':'Liên kết video gốc đang được bỏ.'));
+  }
   renderSiteSourceBindings(tools,reel,content,context,'settings/showreel/facts','site-showreel');
   const credential=tools.group(container,'Hồ sơ năng lực','site-credential-fields','settings.credential');
   tools.picker(credential,'site-credential','Chọn hồ sơ PDF','PDF',()=>content.settings.credential.assetId,id=>{content.settings.credential.assetId=id;},{path:'settings.credential.assetId'});
@@ -94,7 +109,7 @@ export function mountSiteAboutIp(container,{content,context,onChange,mode='ALL'}
     const cta=siteNode('div',undefined,{class:'ux-content-reference'});cta.append(siteNode('p','Nút trên website: Làm quen với Pinky — dùng chung hồ sơ PDF.'),siteNode('a','Chỉnh hồ sơ năng lực',{href:'#site-credential-pick'}));intro.append(cta);
     cta.querySelector('a').addEventListener('click',event=>{event.preventDefault();tabs.select('site-about-credential-panel');container.querySelector('#site-credential-pick')?.focus();});
     const aside=siteNode('aside',undefined,{class:'ux-content-context','aria-label':'Minh họa Giới thiệu'});container.append(aside);
-    updateContext=()=>{aside.replaceChildren(siteNode('p','GIỚI THIỆU · XEM NHANH',{class:'ux-content-eyebrow'}),siteHeadingNode(about.heading),siteNode('p',about.lead),siteNode('p',about.experienceFact.value,{class:'ux-context-experience'}),siteNode('strong',about.experienceFact.label));contextThumbnail(aside,content.settings.showreel.poster.assetId,{label:'Poster showreel',slot:content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO_POSTER':'IMAGE'});const seconds=content.settings.showreel.durationSeconds,title=siteNode('p',content.settings.showreel.title);title.append(siteNode('span',`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`,{class:'cms-badge'}));aside.append(title);const usage=credential.querySelector('.ux-credential-usage');if(usage)usage.textContent=`${content.projects.filter(project=>Number.isInteger(project.publicCredentialPage)).length} dự án có thông tin tham chiếu Credential.`;};
+    updateContext=()=>{aside.replaceChildren(siteNode('p','GIỚI THIỆU · XEM NHANH',{class:'ux-content-eyebrow'}),siteHeadingNode(about.heading),siteNode('p',about.lead),siteNode('p',about.experienceFact.value,{class:'ux-context-experience'}),siteNode('strong',about.experienceFact.label));contextThumbnail(aside,content.settings.showreel.poster.assetId,{label:'Poster showreel',slot:content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO_POSTER':'IMAGE'});const seconds=content.settings.showreel.durationSeconds,title=siteNode('p',content.settings.showreel.title);title.append(siteNode('span',isYoutubeReel(content.settings.showreel)?'YouTube':`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`,{class:'cms-badge'}));aside.append(title);const usage=credential.querySelector('.ux-credential-usage');if(usage)usage.textContent=`${content.projects.filter(project=>Number.isInteger(project.publicCredentialPage)).length} dự án có thông tin tham chiếu Credential.`;};
     for(const panel of ['site-about-content-panel','site-about-experience-panel','site-about-showreel-panel','site-about-credential-panel'])tabs.panel(panel).classList.add('ux-content-surface');
    }else if(mode==='IP'){
     const ipFields=container.querySelector('#site-ip-fields');ipFields.classList.add('ux-content-surface');

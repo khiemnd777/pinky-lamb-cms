@@ -1,3 +1,4 @@
+import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {z} from 'zod';
 import {createMediaV3ContentSchemas} from '../contracts/media-v3-content.mjs';
 import {strictMediaV2JsonSchema} from '../contracts/media-v3-metadata-v2.mjs';
@@ -29,7 +30,7 @@ export function collectSiteMediaReferenceIds(content){
  strictMediaV2JsonSchema.parse(content);
  const refs=[],use=(value,kind,poster=false)=>{if(!value||typeof value.assetId!=='string')fail();refs.push({id:value.assetId,kind,poster});};
  use(content.hero.image,'IMAGE');use(content.seo.ogImage,'IMAGE');use(content.settings.brand.logo,'IMAGE');use(content.settings.contact.illustration,'IMAGE');
- use(content.settings.credential,'PDF');use(content.settings.showreel,'VIDEO');
+ use(content.settings.credential,'PDF');if(!isYoutubeReel(content.settings.showreel))use(content.settings.showreel,'VIDEO');
  use(content.settings.showreel.poster,content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO':'IMAGE',content.settings.showreel.poster.derivativeRole==='POSTER');
  content.settings.clientLogos.forEach(v=>use(v.image,'IMAGE'));
  content.projects.forEach(v=>{use(v.cover,'IMAGE');v.gallery.forEach(g=>use(g,'IMAGE'));});
@@ -49,7 +50,7 @@ export function collectVisibleSiteMediaReferences(content){
  if(visible.has('clients'))content.settings.clientLogos.filter(v=>v.isVisible).forEach(v=>use(v.image,'IMAGE'));
  if(visible.has('work')){use(content.settings.credential,'PDF');content.projects.filter(v=>v.isVisible).forEach(v=>{use(v.cover,'IMAGE');v.gallery.forEach(g=>use(g,'IMAGE'));});}
  if(visible.has('about')){
-  const about=sections.find(s=>s.kind==='ABOUT');use(about.signature.image,'IMAGE');use(content.settings.credential,'PDF');use(content.settings.showreel,'VIDEO');
+  const about=sections.find(s=>s.kind==='ABOUT');use(about.signature.image,'IMAGE');use(content.settings.credential,'PDF');if(!isYoutubeReel(content.settings.showreel))use(content.settings.showreel,'VIDEO');
   const p=content.settings.showreel.poster;use(p,p.derivativeRole==='POSTER'?'VIDEO':'IMAGE',p.derivativeRole==='POSTER');
  }
  if(visible.has('ip-studio'))use(sections.find(s=>s.kind==='IP').image,'IMAGE');
@@ -75,8 +76,8 @@ export function projectSiteMediaPublicData(content,options){
   const field=ref.poster?'poster':ref.kind==='IMAGE'?'image':ref.kind==='PDF'?'download':'video';
   if(!o.resources[ref.id]?.[field])fail();
  }
- const reel=value.settings.showreel,video=manifest.get(reel.assetId).asset,pdf=manifest.get(value.settings.credential.assetId).asset;
- if(video.durationSeconds!==reel.durationSeconds||value.projects.some(p=>p.publicCredentialPage!==undefined&&p.publicCredentialPage>(pdf.pageCount??48)))fail();
+ const reel=value.settings.showreel,video=isYoutubeReel(reel)?null:manifest.get(reel.assetId).asset,pdf=manifest.get(value.settings.credential.assetId).asset;
+ if(video&&video.durationSeconds!==reel.durationSeconds||value.projects.some(p=>p.publicCredentialPage!==undefined&&p.publicCredentialPage>(pdf.pageCount??48)))fail();
  const assets={};
  for(const [id,e] of manifest){
   const a=e.asset,r=o.resources[id],field=a.kind==='IMAGE'?'image':a.kind==='PDF'?'download':'video';
@@ -111,7 +112,7 @@ export function projectSiteMediaPublicData(content,options){
 }
 export function renderSiteMediaDocument(content,options){
  const projection=projectSiteMediaPublicData(content,options),{data,publicAssets:assets,mode}=projection,base=new URL(projection.localBaseUrl);
- const context={assets,mode,localBaseUrl:base.href},e=escapeHtml,resource=p=>e(new URL(p,base).href),og=assets[data.seo.ogImage.assetId];
+ const context={assets,mode,localBaseUrl:base.href,customPlayer:mode==='QA_EXPORT'},e=escapeHtml,resource=p=>e(new URL(p,base).href),og=assets[data.seo.ogImage.assetId];
  const csp=mode==='PRIVATE'?`default-src 'none'; script-src 'none'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; style-src ${base.origin}; style-src-attr 'unsafe-inline'; img-src ${base.origin} blob:; font-src ${base.origin}; media-src ${base.origin} blob:`:`default-src 'self'; script-src 'self'; connect-src 'none'; form-action mailto:; base-uri 'none'; object-src 'none'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'`;
  const seo=`<title>${e(data.seo.title)}</title><meta name="description" content="${e(data.seo.description)}"><meta property="og:title" content="${e(data.seo.ogTitle)}"><meta property="og:description" content="${e(data.seo.ogDescription)}"><meta property="og:image" content="${resource(og.path)}"><meta property="og:image:alt" content="${e(data.seo.ogImage.alt)}">`;
  let body=`${renderSiteHeader(data,context)}<main id="main" style="overflow-x:clip">${renderSiteHero(data,context)}${renderSiteSections(data,context)}</main>${renderSiteFooter(data,context)}`;
@@ -119,8 +120,9 @@ export function renderSiteMediaDocument(content,options){
  // URL. Before that, keep the actual poster/banner and omit a video src entirely.
  if(mode==='PRIVATE'&&data.settings.showreel){const reel=data.settings.showreel,video=assets[reel.assetId],poster=assets[reel.poster.assetId];if(video?.path)body=body.replace('<div id="showreel"',`<video controls playsinline preload="none" poster="${resource(poster.path)}" aria-label="${e(reel.title)}" style="max-width:100%"><source src="${resource(video.path)}" type="video/mp4"></video><div id="showreel"`);}
  if(mode==='PRIVATE')body+=projection.mediaIntents.map(i=>`<span hidden data-media-intent="${i.action}" data-media-asset-id="${e(i.assetId)}"></span>`).join('');
+ const playerCsp=mode==='QA_EXPORT'&&isYoutubeReel(data.settings.showreel)?csp.replace("script-src 'self'","script-src 'self' https://www.youtube.com https://s.ytimg.com")+"; frame-src https://www.youtube.com":csp;
  const notice=mode==='QA_EXPORT'?'<p id="local-qa-notice" role="note">Bản thử local — chưa xuất bản</p>':'';
- const html=`<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="${e(csp)}">${seo}<link rel="icon" href="${resource(assets.favicon.path)}"><link rel="stylesheet" href="${resource('styles.css')}"></head><body>${notice}${SITE_SVG_DEFS}${body}</body></html>`;
+ const html=`<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="${e(playerCsp)}">${seo}${mode==='QA_EXPORT'?'<link rel="stylesheet" href="assets/pinky-video.css">':''}<link rel="icon" href="${resource(assets.favicon.path)}"><link rel="stylesheet" href="${resource('styles.css')}"></head><body>${notice}${SITE_SVG_DEFS}${body}</body></html>`;
  if((html.match(/<h1\b/g)??[]).length!==1||/<script\b|<base\b/i.test(html))fail();
  // M2 section helpers suppress link hrefs in PRIVATE mode. Pending PDF/VIDEO
  // must remain metadata only; never serialize an absent path as a URL.
