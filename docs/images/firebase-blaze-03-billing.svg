@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Liên kết thanh toán để dùng Blaze</title><desc id="desc">Kiểm tra Firebase project, chọn Cloud Billing account của Client, xác nhận phương thức thanh toán và kiểm tra trạng thái Blaze.</desc>
+  <rect width="1200" height="360" rx="22" fill="#fcf6f9"/><text x="42" y="54" fill="#37243b" font-family="Arial,sans-serif" font-size="28" font-weight="700">Bước 2 · Liên kết thanh toán của Client</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="42" y="88" width="350" height="204" rx="18" fill="#fff" stroke="#e5d5df" stroke-width="2"/><text x="67" y="128" fill="#9b3068" font-size="19" font-weight="700">A · Đúng project?</text><text x="67" y="163" fill="#37243b" font-size="17">Kiểm tên và Project ID</text><text x="67" y="191" fill="#63576a" font-size="16">trước khi chọn nâng cấp.</text><rect x="67" y="218" width="296" height="48" rx="10" fill="#fff0f5"/><text x="87" y="248" fill="#9b3068" font-size="16" font-weight="700">Firebase Console → Blaze</text>
+    <text x="406" y="200" fill="#9b3068" font-size="28">→</text>
+    <rect x="443" y="88" width="350" height="204" rx="18" fill="#fff" stroke="#e5d5df" stroke-width="2"/><text x="468" y="128" fill="#9b3068" font-size="19" font-weight="700">B · Đúng billing account?</text><text x="468" y="163" fill="#37243b" font-size="17">Client chọn hoặc tạo account.</text><text x="468" y="191" fill="#63576a" font-size="16">Tự nhập hồ sơ và phương thức trả tiền.</text><rect x="468" y="218" width="296" height="48" rx="10" fill="#fff0f5"/><text x="488" y="248" fill="#9b3068" font-size="16" font-weight="700">Cloud Billing của Client</text>
+    <text x="807" y="200" fill="#9b3068" font-size="28">→</text>
+    <rect x="844" y="88" width="314" height="204" rx="18" fill="#fff" stroke="#e5d5df" stroke-width="2"/><text x="869" y="128" fill="#9b3068" font-size="19" font-weight="700">C · Kiểm tra kết quả</text><text x="869" y="163" fill="#37243b" font-size="17">Project hiển thị Blaze.</text><text x="869" y="191" fill="#63576a" font-size="16">Bật email cảnh báo chi phí.</text><rect x="869" y="218" width="260" height="48" rx="10" fill="#fff0f5"/><text x="889" y="248" fill="#9b3068" font-size="16" font-weight="700">Blaze + Budget alerts</text>
+  </g>
+  <text x="42" y="333" fill="#806d79" font-family="Arial,sans-serif" font-size="14">Sơ đồ minh họa • không phải ảnh chụp giao diện • budget alerts không tự chặn chi phí</text>
+</svg>

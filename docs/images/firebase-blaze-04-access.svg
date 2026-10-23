@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Client cấp quyền kỹ thuật cho tài khoản riêng</title><desc id="desc">Client kiểm tra Project ID, thêm khiemnd777@gmail.com, cấp quyền Hosting phù hợp và giữ quyền sở hữu cùng thanh toán.</desc>
+  <rect width="1200" height="330" rx="22" fill="#f4f9f7"/><text x="42" y="54" fill="#203b33" font-family="Arial,sans-serif" font-size="28" font-weight="700">Bước 4 · Client cấp quyền kỹ thuật</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="42" y="88" width="1116" height="191" rx="18" fill="#fff" stroke="#cee4da" stroke-width="2"/>
+    <rect x="67" y="113" width="250" height="140" rx="14" fill="#e5f5ed"/><text x="91" y="154" fill="#206447" font-size="19" font-weight="700">1. Kiểm Project ID</text><text x="91" y="187" fill="#3b5a4c" font-size="16">Đúng project của Client</text><text x="91" y="214" fill="#3b5a4c" font-size="16">trước khi cấp quyền</text>
+    <text x="329" y="191" fill="#2b9364" font-size="28">→</text>
+    <rect x="366" y="113" width="250" height="140" rx="14" fill="#e5f5ed"/><text x="390" y="154" fill="#206447" font-size="19" font-weight="700">2. Thêm thành viên</text><text x="390" y="187" fill="#3b5a4c" font-size="16">khiemnd777@gmail.com</text><text x="390" y="214" fill="#3b5a4c" font-size="16">tài khoản riêng</text>
+    <text x="628" y="191" fill="#2b9364" font-size="28">→</text>
+    <rect x="665" y="113" width="225" height="140" rx="14" fill="#e5f5ed"/><text x="689" y="154" fill="#206447" font-size="19" font-weight="700">3. Quyền Hosting</text><text x="689" y="187" fill="#3b5a4c" font-size="16">Hosting Admin và</text><text x="689" y="214" fill="#3b5a4c" font-size="16">API Keys Viewer</text>
+    <text x="902" y="191" fill="#2b9364" font-size="28">→</text>
+    <rect x="939" y="113" width="194" height="140" rx="14" fill="#e5f5ed"/><text x="963" y="154" fill="#206447" font-size="19" font-weight="700">4. Client giữ</text><text x="963" y="187" fill="#3b5a4c" font-size="16">quyền sở hữu và</text><text x="963" y="214" fill="#3b5a4c" font-size="16">thanh toán</text>
+  </g>
+  <text x="42" y="310" fill="#597869" font-family="Arial,sans-serif" font-size="14">Sơ đồ minh họa • cấp quyền IAM không tự phê duyệt lần triển khai cụ thể</text>
+</svg>

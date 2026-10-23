@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tổng quan đăng ký Firebase Blaze</title><desc id="desc">Gmail của Client dẫn tới Firebase project, Cloud Billing account, gói Blaze và cảnh báo chi phí.</desc>
+  <rect width="1200" height="300" rx="22" fill="#f6f5fb"/>
+  <text x="42" y="54" fill="#28233f" font-family="Arial,sans-serif" font-size="28" font-weight="700">Từ Gmail đến Firebase Blaze</text>
+  <text x="42" y="85" fill="#635e70" font-family="Arial,sans-serif" font-size="16">Client giữ quyền sở hữu project và thanh toán</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="42" y="120" width="205" height="118" rx="18" fill="#fff" stroke="#d9d5e7" stroke-width="2"/><circle cx="144" cy="152" r="17" fill="#ffe1eb"/><text x="144" y="158" fill="#a83268" font-size="19">1</text><text x="144" y="198" fill="#28233f" font-size="18" font-weight="700">Gmail Client</text>
+    <rect x="270" y="120" width="205" height="118" rx="18" fill="#fff" stroke="#d9d5e7" stroke-width="2"/><circle cx="372" cy="152" r="17" fill="#ffe1eb"/><text x="372" y="158" fill="#a83268" font-size="19">2</text><text x="372" y="198" fill="#28233f" font-size="18" font-weight="700">Firebase project</text>
+    <rect x="498" y="120" width="205" height="118" rx="18" fill="#fff" stroke="#d9d5e7" stroke-width="2"/><circle cx="600" cy="152" r="17" fill="#ffe1eb"/><text x="600" y="158" fill="#a83268" font-size="19">3</text><text x="600" y="188" fill="#28233f" font-size="18" font-weight="700">Cloud Billing</text><text x="600" y="211" fill="#635e70" font-size="15">của Client</text>
+    <rect x="726" y="120" width="205" height="118" rx="18" fill="#fff" stroke="#d9d5e7" stroke-width="2"/><circle cx="828" cy="152" r="17" fill="#ffe1eb"/><text x="828" y="158" fill="#a83268" font-size="19">4</text><text x="828" y="198" fill="#28233f" font-size="18" font-weight="700">Blaze</text>
+    <rect x="954" y="120" width="205" height="118" rx="18" fill="#fff" stroke="#d9d5e7" stroke-width="2"/><circle cx="1056" cy="152" r="17" fill="#ffe1eb"/><text x="1056" y="158" fill="#a83268" font-size="19">5</text><text x="1056" y="188" fill="#28233f" font-size="18" font-weight="700">Cảnh báo</text><text x="1056" y="211" fill="#635e70" font-size="15">chi phí</text>
+    <text x="259" y="188" fill="#a83268" font-size="25">→</text><text x="487" y="188" fill="#a83268" font-size="25">→</text><text x="715" y="188" fill="#a83268" font-size="25">→</text><text x="943" y="188" fill="#a83268" font-size="25">→</text>
+  </g>
+  <text x="42" y="272" fill="#635e70" font-family="Arial,sans-serif" font-size="14">Sơ đồ minh họa • không phải ảnh chụp giao diện</text>
+</svg>
