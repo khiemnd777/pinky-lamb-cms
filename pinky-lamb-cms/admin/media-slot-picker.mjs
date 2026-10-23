@@ -1,3 +1,4 @@
+import {mountFileSources} from './file-sources.mjs';
 import {mediaIdSchema,mediaPublicSchema,mediaDetailPublicSchema} from '../contracts/media-read-public.mjs';
 import {safeCatalogV2Schema} from '../contracts/media-v3-records-v2.mjs';
 import {createCmsIcon} from './cms-icons.mjs';
@@ -18,12 +19,13 @@ export function openMediaSlotPicker({apiFetch,getSession,kind,selectedId,onSelec
  dialog.className='ux-media-picker';header.className='ux-media-picker-header';body.className='ux-media-picker-body';footer.className='ux-media-picker-footer';legacyList.className=list.className='ux-media-picker-grid';legacyHeading.textContent='Tài nguyên đã lưu';readyHeading.textContent='Tài nguyên sẵn sàng';
  for(const button of [back,next,close,confirm])button.type='button';back.textContent='Trang trước';next.textContent='Trang sau';close.textContent='Đóng';confirm.textContent='Dùng tài nguyên này';confirm.className='primary';confirm.disabled=true;
  header.append(title,close);body.append(search,status,legacyHeading,legacyList,readyHeading,list);footer.append(back,next,confirm);dialog.append(header,body,footer);document.body.append(dialog);
+ const fileRoot=document.createElement('div');body.append(fileRoot);const fileSources=kind==='VIDEO'?null:mountFileSources(fileRoot,{apiFetch,getSession,kind,onSelect:chosen=>{const invalid=kind==='PDF'?requiredPages.filter(p=>p.pageNumber>chosen.asset.pageCount):[];if(invalid.length){status.textContent='PDF không đủ số trang cho liên kết dự án.';onInvalidPages?.(invalid);return;}onSelect(chosen);finish();}});
  let removed=false,busy=false,serial=0,controller,cursor=null,nextCursor=null,history=[],items=[],selection=null;const thumbnailCleanups=[];
  const memberKey=()=>{const s=getSession();return s?JSON.stringify([s.uid,s.role,s.authzVersion]):null;},member=memberKey();
  const active=n=>!removed&&n===serial&&!controller?.signal.aborted&&member&&memberKey()===member;
  const allowed=id=>!allowedIds||allowedIds.includes(id);
  function clearThumbnails(){for(const cleanup of thumbnailCleanups.splice(0))cleanup?.();}
- function finish(){if(removed)return;removed=true;serial++;controller?.abort();clearThumbnails();document.removeEventListener('cms:session',finish);dialog.remove();if(previous?.isConnected)previous.focus();}
+ function finish(){if(removed)return;removed=true;fileSources?.destroy();serial++;controller?.abort();clearThumbnails();document.removeEventListener('cms:session',finish);dialog.remove();if(previous?.isConnected)previous.focus();}
  function check(n){if(!active(n)){if(memberKey()!==member)finish();throw new DOMException('Phiên đã thay đổi.','AbortError');}}
  function controls(){back.disabled=busy||!history.length;next.disabled=busy||!nextCursor;search.disabled=busy;confirm.disabled=busy||!selection;for(const button of [...legacyList.querySelectorAll('button'),...list.querySelectorAll('button')])button.disabled=busy;}
  async function choose(selection){

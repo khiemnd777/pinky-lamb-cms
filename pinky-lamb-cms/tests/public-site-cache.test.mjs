@@ -51,7 +51,8 @@ test('versioned public assets, HTML validation and retained release bytes surviv
   assert.equal(call(after,'/assets/cache/'+'0'.repeat(64)+'.css').status,404);
   const moduleEntry=old.manifest.cacheAliases.find(alias=>alias.source.endsWith('/site-locale.mjs'));
   assert.ok(moduleEntry);assert.equal(call(before,'/'+moduleEntry.path).status,200);
-  const cachedScript=old.files.find(file=>file.relative.startsWith('assets/cache/')&&file.mimeType==='text/javascript');
+  const scriptPath=publicHtml.match(/<script[^>]+src="\/([^"]+\.js)"/)[1];
+  const cachedScript=old.files.find(file=>file.relative===scriptPath);
   assert.match(cachedScript.bytes.toString(),new RegExp('./'+path.basename(moduleEntry.path).replaceAll('.','\\.')));
   writeFileSync(path.join(CMS_ROOT,old.relativeRoot,cachedStyle.relative),'changed bytes');
   assert.equal(call(after,'/'+cachedStyle.relative).status,409,'a corrupted retained asset fails closed');

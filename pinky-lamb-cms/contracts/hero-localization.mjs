@@ -27,7 +27,7 @@ export function mergeLocalizedHero(base,input){
  if(Boolean(base.secondaryAction)!==Boolean(content.secondaryAction))throw new ApiError('VALIDATION_ERROR');
  const hero={...base,...content,heading:base.heading,primaryAction:{...base.primaryAction,...content.primaryAction},...(base.secondaryAction?{secondaryAction:{...base.secondaryAction,...content.secondaryAction}}:{}),image:{...base.image,...content.image}};
  const catalog=[{id:base.image.assetId,kind:'IMAGE',status:'LEGACY_READY'},...([base.primaryAction,base.secondaryAction].filter(a=>a?.kind==='CREDENTIAL').map(a=>({id:a.assetId,kind:'PDF',status:'LEGACY_READY'})))];
- return createHeroSchemas(catalog).heroSchema.parse(hero);
+ return createHeroSchemas(catalog,{allowFiles:true}).heroSchema.parse(hero);
 }
 export function parseLocalizedHeroSave(input,base){
  try{const parsed=localizedHeroSaveSchema.parse(input);assertHeroBytes(parsed);mergeLocalizedHero(base.hero,parsed.content);return parsed;}catch(error){throw validationError(error);}

@@ -4,7 +4,7 @@ import {digest,publicPath} from './multilingual-release-files.mjs';
 export const PUBLIC_ASSET_CACHE_SECONDS=30*24*60*60;
 export const PUBLIC_ASSET_CACHE_CONTROL=`public, max-age=${PUBLIC_ASSET_CACHE_SECONDS}, immutable`;
 export const PUBLIC_DOCUMENT_CACHE_CONTROL='public, no-cache';
-export const CACHE_PATH=/^assets\/cache\/([a-f0-9]{64})\.(css|js|mjs|txt|webp|png|jpg|jpeg|svg|woff|woff2|pdf|mp4)$/;
+export const CACHE_PATH=/^assets\/cache\/([a-f0-9]{64})\.(css|js|mjs|txt|webp|png|jpg|jpeg|svg|woff|woff2|pdf|doc|docx|xls|xlsx|mp4)$/;
 
 export function cachedAssetPath(source,sha256){
  publicPath(source);
@@ -25,11 +25,12 @@ export function versionPublicReleaseFiles(files){
   files.set(name,{relative:name,bytes,mimeType});
  };
  for(const file of originals){
+  if(CACHE_PATH.test(file.relative)){if(!cachePathMatches(file.relative,digest(file.bytes)))throw Error('Preversioned asset identity mismatch');continue;}
   if(file.mimeType==='text/html'||file.mimeType==='application/xml'||file.mimeType==='text/css'||file.relative.endsWith('/full-site-qa.js')||file.relative==='assets/full-site-qa.js')continue;
   if(file.mimeType==='text/javascript'&&!/(?:^|\/)site-locale\.mjs$|(?:^|\/)full-site-locale-copy\.mjs$/.test(file.relative))continue;
   const name=cachedAssetPath(file.relative,digest(file.bytes));
   versioned.set(file.relative,name);
-  if(!aliases.some(alias=>alias.path===name))aliases.push({path:name,source:file.relative});
+  if(!files.has(name)&&!aliases.some(alias=>alias.path===name))aliases.push({path:name,source:file.relative});
  }
  for(const file of originals.filter(file=>file.mimeType==='text/css')){
   const css=file.bytes.toString('utf8').replace(/url\((['"]?)(assets\/[A-Za-z0-9._-]+)\1\)/g,(_match,quote,target)=>{

@@ -5,7 +5,7 @@ import {parseLocaleURL} from '../preview/site-locale.mjs';
 import {digest,ownedFile,readPrivateBytes,publicPath,PUBLIC_MIME} from './multilingual-release-files.mjs';
 import {CACHE_PATH,PUBLIC_ASSET_CACHE_CONTROL,PUBLIC_DOCUMENT_CACHE_CONTROL,cachePathMatches} from './public-cache-policy.mjs';
 
-export function mimeFor(name){const ext=path.extname(name);return {'.xml':'application/xml','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.txt':'text/plain','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.woff':'font/woff','.woff2':'font/woff2','.svg':'image/svg+xml','.pdf':'application/pdf','.mp4':'video/mp4'}[ext];}
+export function mimeFor(name){const ext=path.extname(name);return {'.xml':'application/xml','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.txt':'text/plain','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.woff':'font/woff','.woff2':'font/woff2','.svg':'image/svg+xml','.doc':'application/msword','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','.xls':'application/vnd.ms-excel','.xlsx':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','.pdf':'application/pdf','.mp4':'video/mp4'}[ext];}
 export function readReleaseManifest(relativeRoot,manifestSha256){
  if(!/^\.local\/releases\/multilingual-001\/[A-Za-z0-9_-]+\/public$/.test(relativeRoot))throw Error('Invalid release root');
  const bytes=readPrivateBytes(relativeRoot+'/manifest.json',4*1048576);

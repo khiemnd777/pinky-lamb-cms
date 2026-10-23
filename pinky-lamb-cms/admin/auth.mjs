@@ -1,3 +1,5 @@
+import {isAllowedFileRequest} from '../contracts/file-http.mjs';
+import {readBoundedResponse} from '../contracts/file-detection.mjs';
 import {createContentLocaleSession} from './content-locale-session.mjs';
 import {authFailureAction,localSignInMessage,persistenceHierarchy,rememberingAvailable} from './auth-session.mjs';
 import {mountCmsShell} from './cms-shell.mjs';
@@ -78,6 +80,7 @@ export function isAllowedSourceCheckRequest(path,method){
 }
 /** Closed same-origin media transport; this grants no server authorization. */
 export function isAllowedMediaRequest(path,method){
+ if(isAllowedFileRequest(path,method))return true;
  if(typeof path!=='string'||path.length>4096||!path.startsWith('/api/cms/media')||path.includes('#'))return false;
  const url=new URL(path,'http://127.0.0.1:5273');
  if(method==='GET'){
@@ -111,7 +114,7 @@ export function isAllowedMediaSiteRequest(path,method){
  }
  if(url.search)return false;
  if(pathname==='/api/cms/localizations/website/status')return path===pathname&&method==='GET';
- if(/^\/api\/cms\/localizations\/website\/(seed|publish|rollback|retry-media|recover-pdf)$/.test(pathname))return path===pathname&&method==='POST';
+ if(/^\/api\/cms\/localizations\/website\/(seed|prepare|publish|rollback|retry-media|recover-pdf)$/.test(pathname))return path===pathname&&method==='POST';
  if(pathname.startsWith('/api/cms/localizations/editorial/')){
   if(path!==pathname)return false;
   if(['/api/cms/localizations/editorial/rebase','/api/cms/localizations/editorial/publish'].includes(pathname))return method==='POST';
@@ -157,12 +160,14 @@ async function mediaJson(response,signal,cap=2*1048576){
 /** Private requests share one session generation. Stale responses cannot repopulate UI. */
 export async function apiFetch(path,options={}){
  const timedRead=nativeContent&&(options.method??'GET')==='GET'&&(path==='/api/cms/workspace'||path.startsWith('/api/cms/content/groups/')||path==='/api/cms/localizations/editorial/readiness'),readStart=timedRead?performance.now():0;
- const method=(options.method??'GET').toUpperCase(),media=isAllowedMediaRequest(path,method),mediaSite=isAllowedMediaSiteRequest(path,method),{responseType,derivative:expectedDerivative,maxBytes:requestedMax,...transportOptions}=options;if(responseType!==undefined&&responseType!=='bytes')throw new Error('Yêu cầu không hợp lệ.');if(responseType==='bytes'&&(!(media||mediaSite)||method!=='GET'||!mediaBytesRoute(path)))throw new Error('Yêu cầu không hợp lệ.');
+ const fileBytes=/^\/api\/cms\/files\/[A-Za-z0-9_-]{1,100}\/bytes$/.test(path);
+ const method=(options.method??'GET').toUpperCase(),media=isAllowedMediaRequest(path,method),mediaSite=isAllowedMediaSiteRequest(path,method),{responseType,derivative:expectedDerivative,maxBytes:requestedMax,...transportOptions}=options;if(responseType!==undefined&&responseType!=='bytes')throw new Error('Yêu cầu không hợp lệ.');if(responseType==='bytes'&&(!(media||mediaSite)||method!=='GET'||!(fileBytes||mediaBytesRoute(path))))throw new Error('Yêu cầu không hợp lệ.');
  if(RECOVERY_READ_ONLY && !(method==='GET' && (path==='/api/cms/session' || path==='/api/cms/drafts/home-v2' || /^\/api\/cms\/snapshots\/[A-Za-z0-9_-]{1,128}$/.test(path) || isAllowedSourceCheckRequest(path,method))))throw new Error('Yêu cầu không hợp lệ.');
  const legacy=/^\/api\/cms\/(?:session|drafts\/home|snapshots(?:\/[A-Za-z0-9_-]+)?|reviews)$/.test(path);
  const site=(path==='/api/cms/drafts/home-v2' && ['GET','PATCH'].includes(method)) || (path==='/api/cms/drafts/home-v2/import' && method==='POST');
  if(!legacy && !site && !isAllowedSourceCheckRequest(path,method)&&!media&&!mediaSite)throw new Error('Yêu cầu không hợp lệ.');
- let byteDerivative,byteCap;if(responseType==='bytes'){byteDerivative=mediaDerivativePublicSchema.parse(expectedDerivative);if(mediaBytesRoute(path)[1]!==byteDerivative.key)throw new Error('Phiên bản media không khớp.');byteCap=requestedMax??(byteDerivative.role==='IMAGE'?12*1048576:64*1048576);if(!Number.isSafeInteger(byteCap)||byteCap<1||byteCap>64*1048576||byteDerivative.bytes>byteCap)throw new Error('Media vượt giới hạn.');}
+ let byteDerivative,byteCap;if(responseType==='bytes'&&!fileBytes){byteDerivative=mediaDerivativePublicSchema.parse(expectedDerivative);if(mediaBytesRoute(path)[1]!==byteDerivative.key)throw new Error('Phiên bản media không khớp.');byteCap=requestedMax??(byteDerivative.role==='IMAGE'?12*1048576:64*1048576);if(!Number.isSafeInteger(byteCap)||byteCap<1||byteCap>64*1048576||byteDerivative.bytes>byteCap)throw new Error('Media vượt giới hạn.');}
+ if(fileBytes&&(!Number.isSafeInteger(requestedMax)||requestedMax<1||requestedMax>25*1048576))throw Error('File vượt giới hạn.');
  if(mediaSite&&options.body!==undefined&&(typeof options.body!=='string'||new TextEncoder().encode(options.body).length>256*1024))throw new Error('Nội dung vượt giới hạn.');
  const callerHeaders=media||mediaSite?mediaCallerHeaders(options.headers):options.headers;
  const current=generation;const user=auth.currentUser;if(!user)throw new Error(accessError);
@@ -180,7 +185,7 @@ export async function apiFetch(path,options={}){
   }
   if(current!==generation||controller.signal.aborted)throw new DOMException('Phiên đã kết thúc.','AbortError');
   if(response.status===401){await endSession();throw Object.assign(new Error(accessError),{status:401});}
-  let body;try{body=response.ok&&responseType==='bytes'?await mediaBytes(response,controller.signal,byteDerivative,byteCap):mediaSite?await mediaJson(response,controller.signal,mediaSiteJsonLimit(path)):media?await mediaJson(response,controller.signal):await response.json();}catch(error){if(response.status===403&&current===generation&&!controller.signal.aborted){await endSession();throw Object.assign(new Error(accessError),{status:403});}throw error;}
+  let body;try{body=response.ok&&responseType==='bytes'?fileBytes?{bytes:await readBoundedResponse(response,{signal:controller.signal,limit:requestedMax})}:await mediaBytes(response,controller.signal,byteDerivative,byteCap):mediaSite?await mediaJson(response,controller.signal,mediaSiteJsonLimit(path)):media?await mediaJson(response,controller.signal):await response.json();}catch(error){if(response.status===403&&current===generation&&!controller.signal.aborted){await endSession();throw Object.assign(new Error(accessError),{status:403});}throw error;}
   if(current!==generation||controller.signal.aborted)throw new DOMException('Phiên đã kết thúc.','AbortError');
   if(response.status===403 && body.error?.code!=='SELF_REVIEW_FORBIDDEN'){await endSession();throw Object.assign(new Error(accessError),{status:403});}
   if(!response.ok){const error=new Error(body.error?.message??'Không thể xử lý yêu cầu.');error.code=body.error?.code;error.status=response.status;error.fieldErrors=body.error?.fieldErrors;if(/^\/api\/cms\/localizations\/(projects|services|sections|groups)\//.test(path)&&['DEPENDENCY_REBASE_REQUIRED','LOCALIZED_REVISION_CONFLICT'].includes(body.error?.reason))error.reason=body.error.reason;throw error;}

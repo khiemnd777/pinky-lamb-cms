@@ -1,3 +1,4 @@
+import {fileRoute,createFileResourceService} from './file-resources.mjs';
 import {existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {ApiError,errorEnvelope,validationError} from '../contracts/errors.mjs';
@@ -5,7 +6,7 @@ import {parseJsonBody,idempotencyKeySchema,resourceIdSchema,revisionSchema} from
 import {createSiteDraftService} from './site-drafts.mjs';
 import {createSiteImportService} from './import-site.mjs';
 import {createDraftService} from './drafts.mjs';
-import {mediaReadRoute,handleMediaReadRequest,mediaReadDependencies} from './media-reads.mjs';
+import {mediaReadRoute,handleMediaReadRequest,mediaReadDependencies,reserveMediaReadBytes} from './media-reads.mjs';
 import {siteV3MediaReadRoute,handleSiteV3MediaReadRequest} from './site-v3-media-reads.mjs';
 
 let siteV3Defaults;
@@ -19,11 +20,12 @@ export async function siteV3Dependencies(){
 }
 
 export function routeDefinition(pathname){
+ const file=fileRoute(pathname);if(file)return file;
  if(pathname==='/api/cms/workspace')return {methods:['GET'],kind:'CONTENT_BOOTSTRAP'};
  const contentGroup=/^\/api\/cms\/content\/groups\/(settings|clients|work|services|about|ip|contact|footer|structure)$/.exec(pathname);
  if(contentGroup)return {methods:['GET','PATCH'],kind:'CONTENT_GROUP',group:contentGroup[1]};
  if(pathname==='/api/cms/localizations/website/status')return {methods:['GET'],kind:'LOCAL_WEBSITE_STATUS'};
- const website=/^\/api\/cms\/localizations\/website\/(seed|publish|rollback|retry-media|recover-pdf)$/.exec(pathname);
+ const website=/^\/api\/cms\/localizations\/website\/(seed|prepare|publish|rollback|retry-media|recover-pdf)$/.exec(pathname);
  if(website)return {methods:['POST'],kind:'LOCAL_WEBSITE_'+website[1].replace('-','_').toUpperCase()};
  if(pathname==='/api/cms/localizations/groups/status')return {methods:['GET'],kind:'GROUP_LOCALIZATION_STATUS'};
  const group=/^\/api\/cms\/localizations\/groups\/(header|clients|about|ip-studio|contact|footer|seo)\/(en|vi|ja)(\/qa)?$(?![\s\S])/.exec(pathname);
@@ -239,7 +241,7 @@ export async function dispatchRequest(request,response,actor,correlationId){
   const pathname=request.path??new URL(request.url,'http://127.0.0.1').pathname;
   const route=routeDefinition(pathname);
   if(!route.methods.includes(request.method)){response.set('Allow',route.methods.join(', '));throw new ApiError('METHOD_NOT_ALLOWED');}
-  if((route.kind!=='LOCALIZED_EDITORIAL_QUEUE' && route.kind!=='SOURCE_LIST' && route.kind!=='SITE_V3_SOURCE_LIST' && route.kind!=='SITE_V3_DRAFT_PREVIEW' && !route.kind.startsWith('MEDIA_READ') && Object.keys(request.query??{}).length) || (request.method==='GET' && request.rawBody?.byteLength))throw new ApiError('BAD_REQUEST');
+  if((route.kind!=='FILE_RESOURCES' && route.kind!=='LOCALIZED_EDITORIAL_QUEUE' && route.kind!=='SOURCE_LIST' && route.kind!=='SITE_V3_SOURCE_LIST' && route.kind!=='SITE_V3_DRAFT_PREVIEW' && !route.kind.startsWith('MEDIA_READ') && Object.keys(request.query??{}).length) || (request.method==='GET' && request.rawBody?.byteLength))throw new ApiError('BAD_REQUEST');
   const context={request,actor,correlationId};
   if(request.method==='GET'&&['HERO_LOCALIZATION','GROUP_LOCALIZATION','PROJECT_LOCALIZATION','SERVICE_LOCALIZATION','SECTION_LOCALIZATION','GROUP_LOCALIZATION_STATUS','PROJECT_LOCALIZATION_STATUS','SERVICE_LOCALIZATION_STATUS'].includes(route.kind)){
    const {options}=await siteV3Dependencies();if(options.db.content){const {readLocalizedProjection}=await import('./content-localized-reads.mjs');await options.authorize(request,'MEMBER_READ');const result=readLocalizedProjection(options.db,route);if(result){response.status(200).json(result);return;}}
@@ -252,7 +254,7 @@ export async function dispatchRequest(request,response,actor,correlationId){
   if(route.kind.startsWith('LOCAL_WEBSITE_')){
    if(new URL(request.originalUrl??request.url,'http://127.0.0.1').search)throw new ApiError('BAD_REQUEST');
    const deps=await siteV3Dependencies(),{createLocalWebsiteService}=await import('./local-website.mjs'),service=await createLocalWebsiteService(deps);
-   let result;if(route.kind==='LOCAL_WEBSITE_STATUS')result=await service.status(context);else{const {body,key:commandKey}=parseMediaMutation(request);if(route.kind!=='LOCAL_WEBSITE_PUBLISH'&&Object.keys(body).length)throw new ApiError('BAD_REQUEST');result=route.kind==='LOCAL_WEBSITE_RECOVER_PDF'?await service.recoverPdf({...context,commandKey}):route.kind==='LOCAL_WEBSITE_RETRY_MEDIA'?await service.retryMedia({...context,commandKey}):route.kind==='LOCAL_WEBSITE_ROLLBACK'?await service.rollback({...context,commandKey}):await service.start({...context,commandKey,body,kind:route.kind==='LOCAL_WEBSITE_SEED'?'SEED':'PUBLISH'});}
+   let result;if(route.kind==='LOCAL_WEBSITE_STATUS')result=await service.status(context);else{const {body,key:commandKey}=parseMediaMutation(request);if(!['LOCAL_WEBSITE_PUBLISH','LOCAL_WEBSITE_PREPARE'].includes(route.kind)&&Object.keys(body).length)throw new ApiError('BAD_REQUEST');result=route.kind==='LOCAL_WEBSITE_PREPARE'?await service.prepare({...context,body}):route.kind==='LOCAL_WEBSITE_RECOVER_PDF'?await service.recoverPdf({...context,commandKey}):route.kind==='LOCAL_WEBSITE_RETRY_MEDIA'?await service.retryMedia({...context,commandKey}):route.kind==='LOCAL_WEBSITE_ROLLBACK'?await service.rollback({...context,commandKey}):await service.start({...context,commandKey,body,kind:route.kind==='LOCAL_WEBSITE_SEED'?'SEED':'PUBLISH'});}
    response.status(200).json(result);return;
   }
   if(route.kind.startsWith('LOCALIZED_EDITORIAL')){
@@ -321,6 +323,21 @@ export async function dispatchRequest(request,response,actor,correlationId){
     else{result=await service.writeSourceChecks({...context,...parseMediaMutation(request,262144)});status=201;}
    }
    response.status(status).json(result);return;
+  }
+  if(route.kind.startsWith('FILE_')){
+   const {options,storage}=await siteV3Dependencies(),service=createFileResourceService({...options,storage,hosts:(process.env.PINKY_EXTERNAL_FILE_HOSTS??'').split(',').filter(Boolean)});
+   const url=new URL(request.originalUrl??request.url,'http://127.0.0.1');
+   if(route.kind==='FILE_POLICY'){response.status(200).json({hosts:service.hosts()});return;}
+   if(request.method==='GET'&&route.kind==='FILE_RESOURCES'){if([...url.searchParams.keys()].some(k=>!['kind','source','cursor'].includes(k))||[...url.searchParams.keys()].some(k=>url.searchParams.getAll(k).length!==1))throw new ApiError('BAD_REQUEST');response.status(200).json(await service.list({request,kind:url.searchParams.get('kind')??undefined,source:url.searchParams.get('source')??undefined,cursor:url.searchParams.get('cursor')??undefined}));return;}
+   if(url.search)throw new ApiError('BAD_REQUEST');
+   if(route.operation==='bytes'){
+    const asset=await service.detail({request,id:route.id}),release=reserveMediaReadBytes(asset.sizeBytes);let reading=true,closed=false;
+    const close=()=>{closed=true;if(!reading)release();};response.once('finish',close);response.once('close',close);
+    try{const result=await service.bytes({request,id:route.id});reading=false;if(closed||response.destroyed){release();return;}response.set('Content-Type',result.asset.mimeType).set('Content-Length',String(result.bytes.length)).set('Content-Disposition','attachment; filename="'+encodeURIComponent(result.asset.downloadName)+'"').status(200).end(result.bytes);}catch(error){reading=false;release();response.removeListener('finish',close);response.removeListener('close',close);throw error;}return;
+   }
+   if(route.operation==='detail'){response.status(200).json(await service.detail({request,id:route.id}));return;}
+   if(route.index!==null&&route.index!==undefined){const part=parseMediaPart(request);response.status(200).json(await service.part({request,id:route.id,index:route.index,bytes:part.bytes,key:part.key}));return;}
+   const args={request,...parseMediaMutation(request),id:route.id};response.status(200).json(await (route.operation==='complete'?service.complete(args):route.operation==='archive'?service.archive(args):service.create(args)));return;
   }
   if(route.kind==='MEDIA_ARCHIVE'){
    const [{createMediaArchiveService},{db,authorize}]=await Promise.all([import('./media-archive.mjs'),import('./authorization.mjs')]);

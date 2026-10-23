@@ -1,3 +1,5 @@
+import {prepareSharedFilePlan} from './shared-file-publication.mjs';
+import {websitePublishSchema} from '../contracts/website-publication.mjs';
 import {createHash,randomUUID} from 'node:crypto';
 import {ApiError,validationError} from '../contracts/errors.mjs';
 import {idempotencyKeySchema,resourceIdSchema,MAX_REVISION,assertEnvelopeSize} from '../contracts/hero.mjs';
@@ -58,6 +60,30 @@ export async function createLocalizedEditorialService(options={}){
    tx.set(pointer,{snapshotId:id,snapshotHash:snapshot.snapshotHash,submittedAt:at,revision:snapshot.revision,resource:snapshot.resource,reviewId:publicationId});op.commit(receipt,at);return receipt;
   });
  }
+ /** Owner confirms a file-only plan. Dependent snapshots retain live copy and never write drafts or their latest approval pointers. */
+ async function filePlan(tx,{request,actor,base,selection}){
+  await checkActor(request,'DRAFT_PUBLISH',actor,tx);const b=parsed(websitePublishSchema,selection),plan=await prepareSharedFilePlan({release:base,selection:b,readCurrent:r=>context.readResource(tx,r)});
+  if(!plan||!b.fileConfirmation||plan.hash!==b.fileConfirmation.hash||plan.baseSnapshotSetHash!==b.fileConfirmation.baseSnapshotSetHash)conflict();return plan;
+ }
+ async function assertSharedFiles(args){return db.runTransaction(async tx=>{const plan=await filePlan(tx,args);if(plan.hash!==args.planHash)conflict();return true;});}
+ async function publishSharedFiles({request,actor,base,selection,key}){
+  const at=now();return db.runTransaction(async tx=>{
+   const op=await operation(tx,{request,actor,key,action:'DRAFT_PUBLISH',body:{command:'SHARED_FILES',selection,baseSnapshotSetHash:base.snapshotSetHash}}),plan=await filePlan(tx,{request,actor,base,selection});
+   if(op.receipt){if(op.receipt.planHash!==plan.hash)conflict();const details=[];for(const receipt of op.receipt.receipts)details.push(await readTrustedSnapshot(tx,receipt.snapshotId));return {plan,details,publication:op.receipt.publication};}
+   const selectedPointer=coll('cmsLocalizedApprovals').doc(resourceKey(selection.resource)),previous=await tx.get(selectedPointer);if(previous.exists&&previous.data().revision>selection.expectedRevision)throw new ApiError('REVIEW_STATE_CONFLICT');
+   const details=[],receipts=[];
+   for(const target of plan.targets){
+    if(target.claims.some(c=>c.required&&!c.sourceIds.length))throw new ApiError('VALIDATION_ERROR');
+    const id='lp-'+randomUUID(),publicationId=randomUUID(),payload={contractRevision:1,workflow:'SINGLE_ADMIN_PUBLISH',id,resource:target.resource,revision:target.qa.draft.revision,dependencyHash:target.qa.draft.dependencyHash,contentHash:target.qa.draft.contentHash,submittedAt:at,submittedBy:actor.uid,message:target.previousPin.snapshotId+' · Cập nhật file dùng chung · '+plan.hash,qa:target.qa,claims:target.claims,sourceCatalog:target.sourceCatalog,sourceProvenance:target.sourceProvenance};
+    const snapshot=localizedSnapshotSchema.parse({...payload,snapshotHash:hashProjectValue(payload)});if(Buffer.byteLength(JSON.stringify(snapshot))>524288)throw new ApiError('PAYLOAD_TOO_LARGE');
+    const review=localizedReviewSchema.parse({workflow:'SINGLE_ADMIN_PUBLISH',id:publicationId,snapshotId:id,snapshotHash:snapshot.snapshotHash,outcome:'APPROVED',reviewedBy:actor.uid,reviewedAt:at,sourceRevision:0,sourceCheckIds:[],attestationSetHash:localizedAttestationHash([])}),reviewState=localizedReviewStateSchema.parse({snapshotId:id,reviewRevision:1,sourceRevision:0,status:'APPROVED',reviewId:publicationId,activeSourceCheckIds:{},updatedAt:at});
+    details.push({snapshot,review,reviewState,sourceChecks:[]});receipts.push(localizedPublishReceiptSchema.parse({snapshotId:id,snapshotHash:snapshot.snapshotHash,publicationId,resource:target.resource,revision:snapshot.revision,status:'PUBLISHED'}));
+   }
+   await checkActor(request,'DRAFT_PUBLISH',actor,tx);
+   for(const detail of details){const {snapshot,review,reviewState}=detail;tx.create(snapshotRef(snapshot.id),{id:snapshot.id,submittedAt:at,snapshotHash:snapshot.snapshotHash,payloadJson:JSON.stringify(snapshot)});tx.create(stateRef(snapshot.id),reviewState);tx.create(coll('cmsLocalizedReviews').doc(review.id),{payloadJson:JSON.stringify(review)});for(const status of ['all','APPROVED'])for(const ref of queueRefs(snapshot.resource,status,snapshot.id))tx.create(ref,{id:snapshot.id,snapshotId:snapshot.id});}
+   const publication=receipts.find(r=>same(r.resource,selection.resource)),selected=details.find(d=>same(d.snapshot.resource,selection.resource));tx.set(selectedPointer,{snapshotId:publication.snapshotId,snapshotHash:publication.snapshotHash,submittedAt:at,revision:publication.revision,resource:publication.resource,reviewId:selected.review.id});op.commit({planHash:plan.hash,publication,receipts},at);return {plan,details,publication};
+  });
+ }
  async function submitSnapshot({request,actor,body,key}){
   const b=parsed(localizedSubmitSchema,body),at=now(),id=`ls-${at.replace(/[^0-9]/g,'')}-${randomUUID()}`;
   return db.runTransaction(async tx=>{const op=await operation(tx,{request,actor,key,action:'SNAPSHOT_SUBMIT',body:b});if(op.receipt)return op.receipt;const r=await context.readResource(tx,b.resource);if(!r.draft)throw new ApiError('NOT_FOUND');if(r.stale||r.draft.revision!==b.expectedRevision||r.dependencyHash!==b.expectedDependencyHash||r.draft.contentHash!==b.expectedContentHash)conflict();
@@ -87,5 +113,5 @@ export async function createLocalizedEditorialService(options={}){
  async function readResource({request,resource}){return db.runTransaction(async tx=>{await authorize(request,'MEMBER_READ',tx);const r=await context.readResource(tx,resource,{qa:false});await authorize(request,'MEMBER_READ',tx);return parseLocalizedResourceRead({contractRevision:1,resource:r.resource,draft:r.draft,currentDependencyHash:r.dependencyHash,previousDependencyHash:r.previousDependencyHash,stale:r.stale,claims:r.claims,sourceCatalog:r.sourceCatalog,sourceProvenance:r.sourceProvenance});});}
  async function readQueue({request,query={}}){const q=parsed(localizedQueueQuerySchema,query);return db.runTransaction(async tx=>{const actor=await authorize(request,'MEMBER_READ',tx);let cursor=null;if(q.cursor){try{const bytes=Buffer.from(q.cursor,'base64url');if(bytes.toString('base64url')!==q.cursor)throw Error();cursor=JSON.parse(bytes.toString('utf8'));if(Object.keys(cursor).sort().join(',')!=='kind,lastId,locale,status,version'||cursor.version!==1||cursor.locale!==(q.locale??null)||cursor.kind!==(q.kind??null)||cursor.status!==(q.status??null))throw Error();resourceIdSchema.parse(cursor.lastId);}catch{throw new ApiError('VALIDATION_ERROR');}}
    let queryRef=coll('cmsLocalizedQueues').doc(`${q.locale??'all'}--${q.kind??'all'}--${q.status??'all'}`).collection('items').orderBy('id','desc');if(cursor)queryRef=queryRef.startAfter(cursor.lastId);const pageSize=q.pageSize??24,docs=await tx.get(queryRef.limit(pageSize+1)),selected=docs.docs.slice(0,pageSize),items=[];for(const d of selected){const v=await readTrustedSnapshot(tx,d.id),{stale}=await fresh(tx,v.snapshot);items.push({snapshot:summary(v.snapshot),reviewState:v.reviewState,stale,canReview:!stale&&v.reviewState.status==='SUBMITTED'&&actor.uid!==v.snapshot.submittedBy&&['OWNER','REVIEWER'].includes(actor.role)});}await authorize(request,'MEMBER_READ',tx);return localizedQueueSchema.parse({contractRevision:1,items,nextCursor:docs.docs.length>pageSize?Buffer.from(JSON.stringify({version:1,locale:q.locale??null,kind:q.kind??null,status:q.status??null,lastId:selected.at(-1).id})).toString('base64url'):null});});}
- return {context,readTrustedSnapshot,readSnapshot,readResource,readQueue,submitSnapshot,publishDraft,writeSourceChecks,submitReview,rebaseDraft,fresh};
+ return {context,publishSharedFiles,assertSharedFiles,readTrustedSnapshot,readSnapshot,readResource,readQueue,submitSnapshot,publishDraft,writeSourceChecks,submitReview,rebaseDraft,fresh};
 }

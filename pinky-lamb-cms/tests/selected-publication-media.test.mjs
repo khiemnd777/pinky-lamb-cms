@@ -1,7 +1,8 @@
+import {publicMediaDerivative} from '../contracts/media-read-public.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {readSelectedShowreelResource} from '../cms-api/selected-publication-media.mjs';
+import {readSelectedShowreelResource,readPublicationFileResource} from '../cms-api/selected-publication-media.mjs';
 const bytes=Buffer.from('synthetic video derivative'),sha=createHash('sha256').update(bytes).digest('hex');
 function fixture(){
  const derivative={key:'video-main',role:'VIDEO',mimeType:'video/mp4',sizeBytes:bytes.length,sha256:sha,generation:'1',width:1280,height:720,durationSeconds:10};
@@ -13,4 +14,10 @@ function fixture(){
 test('selected Showreel packages only the exact immutable derivative bytes',async()=>{const {args}=fixture();assert.ok((await readSelectedShowreelResource(args)).equals(bytes));});
 test('new unrelated media, mismatched generations and corrupt bytes fail closed',async()=>{
  for(const mutate of [f=>{f.args.selection.resource.entityId='contact';},f=>{f.args.descriptor={...f.args.descriptor,id:'foreign'};},f=>{f.version.storage.derivatives[0].generation='2';},f=>{f.args.storage.readDerivative=async()=>Buffer.from('tampered');}]){const f=fixture();mutate(f);await assert.rejects(readSelectedShowreelResource(f.args));}
+});
+
+test('confirmed shared file plan reads exact hosted IMAGE/PDF derivatives and rejects unrelated media or stale/corrupt bytes',async()=>{
+ for(const role of ['IMAGE','PDF_DOWNLOAD']){const derivative={key:role==='IMAGE'?'image-960':'pdf-download',role,mimeType:role==='IMAGE'?'image/webp':'application/pdf',sizeBytes:bytes.length,sha256:sha,generation:'1',...(role==='IMAGE'?{width:960,height:640,targetWidth:960}:{})},version={status:'READY',readyVersion:{derivatives:[derivative]},storage:{derivatives:[{...derivative,objectKey:'private/synthetic-file'}]}},descriptor={id:'shared-media',path:'assets/shared-media.'+(role==='IMAGE'?'webp':'pdf'),mimeType:derivative.mimeType,sizeBytes:bytes.length,sha256:sha,derivative:publicMediaDerivative(derivative)},args={descriptor,allowed:[structuredClone(descriptor)],library:{readVersion:async()=>version},storage:{readDerivative:async()=>bytes}};
+ assert.ok((await readPublicationFileResource(args)).equals(bytes));await assert.rejects(readPublicationFileResource({...args,allowed:[]}),{code:'REVISION_CONFLICT'});version.storage.derivatives[0].generation='2';await assert.rejects(readPublicationFileResource(args),{code:'REVISION_CONFLICT'});version.storage.derivatives[0].generation='1';await assert.rejects(readPublicationFileResource({...args,storage:{readDerivative:async()=>Buffer.from('corrupt')}}),{code:'INTERNAL_ERROR'});
+ }
 });

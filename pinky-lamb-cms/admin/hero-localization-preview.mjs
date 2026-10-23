@@ -1,3 +1,5 @@
+import {mountPreviewFileActions} from './preview-file-actions.mjs';
+import {loadFileBytes} from '../reader/pinky-reader.mjs';
 import {localizedPrivateResourcePath,localizedResourceTransportUrl} from '../preview/localized-resource-transport.mjs';
 import {parseHeroQa,heroQaResourceSchema} from '../contracts/hero-localization-records.mjs';
 import {renderLocalizedHeroDocument,validateHeroQaRelationships,validateHeroPreviewImageResource} from '../preview/hero-localization-renderer.mjs';
@@ -21,6 +23,7 @@ function imageDataUri(bytes,mime){
 export async function readHeroQaResource(resource,{apiFetch,signal,fetchStatic=fetch}){
  resource=heroQaResourceSchema.parse(resource);let bytes;
  if(resource.inlineBase64!==undefined){const raw=atob(resource.inlineBase64);if(btoa(raw)!==resource.inlineBase64)throw Error('CSS encoding không hợp lệ.');bytes=Uint8Array.from(raw,char=>char.charCodeAt(0));}
+ else if(resource.file){bytes=(await loadFileBytes(resource,{signal})).bytes;}
  else if(resource.derivative){const payload=await apiFetch(localizedPrivateResourcePath(resource),{signal,responseType:'bytes',derivative:resource.derivative,maxBytes:12*1024*1024});bytes=payload.bytes;}
  else{
   const url=new URL(localizedResourceTransportUrl(resource));
@@ -48,7 +51,7 @@ export function createHeroLocalizationPreview(root,{apiFetch,getSession}){
  const resizeObserver=typeof doc.defaultView.ResizeObserver==='function'?new doc.defaultView.ResizeObserver(()=>resize()):null;resizeObserver?.observe(root);
  let generation=0,controller,destroyed=false,urls=[],releases=[],currentRun=null;const identity=()=>{const s=getSession();return s?JSON.stringify([s.uid,s.role,s.authzVersion]):null;};
  function clear(){
-  generation++;controller?.abort();frame.removeAttribute('srcdoc');frame.src='about:blank';frame.hidden=true;measure.replaceChildren();measurement=null;
+  currentRun?.fileActions?.destroy();generation++;controller?.abort();frame.removeAttribute('srcdoc');frame.src='about:blank';frame.hidden=true;measure.replaceChildren();measurement=null;
   if(currentRun){currentRun.retired=true;for(const key of Object.keys(currentRun.resourceUrls))delete currentRun.resourceUrls[key];if(currentRun.settled)currentRun.release();currentRun=null;}
   for(const url of urls)URL.revokeObjectURL(url);urls=[];for(const release of releases)release();releases=[];status.textContent='';root.style.height='';
  }
@@ -73,7 +76,7 @@ export function createHeroLocalizationPreview(root,{apiFetch,getSession}){
     const reservation=await acquireMediaPreviewBinary(resource.sizeBytes,clear,{signal});try{guard();const bytes=await readHeroQaResource(resource,{apiFetch,signal});guard();const url=URL.createObjectURL(new Blob([bytes],{type:resource.mimeType}));urls.push(url);releases.push(reservation.release);resourceUrls[resource.id]=url;}finally{reservation.settle();if(!resourceUrls[resource.id])reservation.release();}
    }
    }
-   guard();const html=renderLocalizedHeroDocument(qa,{resourceUrls});frame.srcdoc=html;frame.hidden=false;status.textContent='';const parsed=new doc.defaultView.DOMParser().parseFromString(html,'text/html');measurement=parsed.querySelector('main');measure.replaceChildren(measurement);for(const image of measure.querySelectorAll('img'))image.addEventListener('load',()=>resize(),{once:true});doc.fonts?.ready.then(()=>{if(n===generation)resize();});resize();
+   guard();const html=renderLocalizedHeroDocument(qa,{resourceUrls});frame.srcdoc=html;if(currentRun)currentRun.fileActions=mountPreviewFileActions(root,{resources:qa.resources,apiFetch,getSession});frame.hidden=false;status.textContent='';const parsed=new doc.defaultView.DOMParser().parseFromString(html,'text/html');measurement=parsed.querySelector('main');measure.replaceChildren(measurement);for(const image of measure.querySelectorAll('img'))image.addEventListener('load',()=>resize(),{once:true});doc.fonts?.ready.then(()=>{if(n===generation)resize();});resize();
   }catch(error){for(const key of Object.keys(run.resourceUrls))delete run.resourceUrls[key];if(n===generation&&member===identity()){clear();status.textContent=error.message||'Không thể xem Hero.';}else{run.retired=true;if(run.settled)run.release();}}
  }
  doc.addEventListener('cms:session',sessionChanged);

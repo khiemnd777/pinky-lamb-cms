@@ -1,5 +1,6 @@
+import {websitePublishSchema} from '../contracts/website-publication.mjs';
 import {canonicalJson} from '../contracts/draft.mjs';
-import {localizedPublishSchema,selectedWebsiteReceiptSchema} from '../contracts/localized-review-records.mjs';
+import {selectedWebsiteReceiptSchema} from '../contracts/localized-review-records.mjs';
 
 function delay(ms,signal){return new Promise((resolve,reject)=>{
  signal?.throwIfAborted();const abort=()=>{clearTimeout(timer);reject(signal.reason??new DOMException('Aborted','AbortError'));};
@@ -7,7 +8,7 @@ function delay(ms,signal){return new Promise((resolve,reject)=>{
 });}
 /** Keep the command key/body on uncertain results; never automatically restart a blocked job. */
 export async function publishSelectedWebsite({apiFetch,body,key,signal,onProgress=()=>{},wait=delay,maxPolls=300}){
- localizedPublishSchema.parse(body);
+ websitePublishSchema.parse(body);
  let job=await apiFetch('/api/cms/localizations/website/publish',{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':key},body:JSON.stringify(body),signal});
  const id=job.id;
  for(let poll=0;poll<=maxPolls;poll++){

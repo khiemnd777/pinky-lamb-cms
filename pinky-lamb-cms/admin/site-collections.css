@@ -15,7 +15,7 @@
 .ux-table-thumbnail{display:inline-flex;width:64px;height:44px;vertical-align:middle;margin-right:12px;border-radius:6px;overflow:hidden;background:#f6f1f3}
 .ux-table-thumbnail img{width:100%;height:100%;object-fit:cover}
 .ux-table-footer{padding:12px 16px;border-top:1px solid var(--line,#e8dfe4);font-size:12px;color:var(--muted,#786773)}
-.ux-sort-tools{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ux-sort-tools{display:flex;align-items:center;gap:var(--cms-control-gap,8px);flex-wrap:wrap}
 .ux-table td.ux-sort-tools{display:table-cell;min-width:190px;white-space:nowrap}
 .ux-sort-tools button{min-width:44px;min-height:44px;padding:8px}
 .ux-sort-tools .ps-trigger{width:64px;min-width:64px}
@@ -42,7 +42,7 @@
 .ux-dialog-guard[hidden]{display:none}
 .ux-dialog-guard button{margin:8px 8px 0 0}
 .site-dialog-footer{position:sticky;bottom:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#fff}
-@media(max-width:600px){.ux-toolbar input[type=search]{max-width:none;flex-basis:100%}.ux-toolbar>.ps-trigger{flex:1;min-width:120px}.ux-toolbar>button:last-child{margin-left:0}.ux-record-fields [data-dialog-tab-panel="0"]{grid-template-columns:1fr}.ux-dialog-save-note{max-width:none;width:100%;margin:0}.site-dialog-footer>button{flex:1}.ux-sort-tools{gap:2px}.site-record-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}}
+@media(max-width:600px){.ux-toolbar input[type=search]{max-width:none;flex-basis:100%}.ux-toolbar>.ps-trigger{flex:1;min-width:120px}.ux-toolbar>button:last-child{margin-left:0}.ux-record-fields [data-dialog-tab-panel="0"]{grid-template-columns:1fr}.ux-dialog-save-note{max-width:none;width:100%;margin:0}.site-dialog-footer>button{flex:1}.ux-sort-tools{gap:var(--cms-control-gap,8px)}.site-record-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}}
 
 /* Normal mode keeps the template table compact; ordering controls are explicit. */
 .ux-table-wrap>.ux-table{table-layout:auto;min-width:0}

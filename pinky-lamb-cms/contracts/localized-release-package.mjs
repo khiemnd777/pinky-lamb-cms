@@ -9,6 +9,7 @@ export const localizedReleasePackageSchema=z.strictObject({release:z.unknown(),f
 export function releaseResourceDescriptors(input){
  const release=parseLocalizedReleaseBundle(input),resources=new Map();let bytes=0;
  for(const entry of release.entries)for(const descriptor of entry.resources){
+  if(descriptor.file?.source.kind==='EXTERNAL')continue;
   const previous=resources.get(descriptor.path);
   if(previous&&canonicalJson(previous)!==canonicalJson(descriptor))throw Error('Incompatible release resource identity');
   if(!previous){resources.set(descriptor.path,descriptor);bytes+=descriptor.sizeBytes;}

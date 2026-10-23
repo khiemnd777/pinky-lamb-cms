@@ -230,7 +230,7 @@
 .hero-preview-measure{container-type:inline-size;container-name:hero-measure;position:fixed;left:-20000px;top:0;visibility:hidden;pointer-events:none;width:1200px;--ink:#382c35;--rose:#a53560;--muted:#786c73;font:13px/1.6 Montserrat,Arial,sans-serif}
 .hero-preview-measure main{margin:0;padding:0;max-width:none}
 .hero-preview-measure img{max-width:none}
-.cms-authenticated[data-hero-context=true] .cms-editor-card{padding:0;border:0;background:transparent;box-shadow:none}
-.cms-authenticated[data-hero-context=true] .cms-editor-card>.cms-card-head{display:none}
+.cms-authenticated[data-hero-context=true] .cms-editor-card[data-cms-pane=edit]{padding:0;border:0;background:transparent;box-shadow:none}
+.cms-authenticated[data-hero-context=true] .cms-editor-card[data-cms-pane=edit]>.cms-card-head{display:none}
 .cms-authenticated[data-hero-context=true] .cms-header-title h1{font-family:Montserrat,Arial,sans-serif;font-weight:700}
 .cms-authenticated[data-hero-context=true] .cms-card-subtitle{margin:0 0 4px}

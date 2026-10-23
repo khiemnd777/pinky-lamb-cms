@@ -1,3 +1,4 @@
+import {sharedFileSummarySchema} from './shared-file-publication.mjs';
 import {z} from 'zod';
 import {strictSiteObject,plainText} from './site-settings.mjs';
 import {resourceIdSchema,revisionSchema,hashSchema} from './hero.mjs';
@@ -59,4 +60,4 @@ export const localizedRebaseReceiptSchema=exact({contractRevision:z.literal(1),r
 export const localizedPublishSchema=localizedSubmitSchema;
 const publicationReceiptFields={snapshotId:resourceIdSchema,snapshotHash:hashSchema,publicationId:resourceIdSchema,resource:localizedResourceIdentitySchema,revision:revisionSchema.refine(n=>n>0)};
 export const localizedPublishReceiptSchema=exact({...publicationReceiptFields,status:z.literal('PUBLISHED')});
-export const selectedWebsiteReceiptSchema=exact({...publicationReceiptFields,status:z.literal('PUBLISHED_ON_WEBSITE'),port:z.literal(4189),activation:z.literal(false),releaseId:resourceIdSchema,snapshotSetHash:hashSchema,artifact:exact({relativeRoot:z.string().regex(/^\.local\/releases\/multilingual-001\/[A-Za-z0-9_-]+\/public$/),manifestSha256:hashSchema})});
+export const selectedWebsiteReceiptSchema=exact({...publicationReceiptFields,status:z.literal('PUBLISHED_ON_WEBSITE'),fileUpdate:sharedFileSummarySchema.optional(),port:z.literal(4189),activation:z.literal(false),releaseId:resourceIdSchema,snapshotSetHash:hashSchema,artifact:exact({relativeRoot:z.string().regex(/^\.local\/releases\/multilingual-001\/[A-Za-z0-9_-]+\/public$/),manifestSha256:hashSchema})});

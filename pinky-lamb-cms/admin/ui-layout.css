@@ -1,0 +1,80 @@
+/* Canonical rules: docs/agent-kit/ui-layout-contract.md. Components own inner spacing. */
+:root{--cms-space-1:4px;--cms-space-2:8px;--cms-space-3:12px;--cms-space-4:16px;--cms-space-6:24px;--cms-space-8:32px;--cms-control-gap:var(--cms-space-2);--cms-page-inset:32px;--cms-card-inset:24px;--cms-control-size:44px}
+input[type=checkbox],input[type=radio]{width:20px;height:20px;min-width:20px;min-height:20px;padding:0;flex:0 0 20px;accent-color:var(--rose);vertical-align:middle}
+.cms-check-field{display:flex;align-items:center;gap:var(--cms-space-2);min-height:44px;margin:0;font-weight:400}
+.cms-check-field input{order:-1}
+.cms-control-group,.cms-media-pagination,.cms-media-job-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--cms-control-gap);min-width:0}
+.cms-control-group>button,.cms-media-pagination>button{max-width:100%;white-space:normal;overflow-wrap:anywhere;margin:0;min-height:44px}
+.cms-file-sources{display:grid;gap:16px;padding:var(--cms-card-inset);min-width:0;max-width:100%}
+.cms-file-sources.cms-file-embedded{border:0;background:transparent;box-shadow:none;padding:0;border-radius:0}
+.cms-file-sources>.cms-upload-form{display:grid;gap:16px;margin:0;padding:0;border:0;max-width:none}
+.cms-file-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;min-width:0}
+.cms-file-embedded .cms-file-fields{grid-template-columns:minmax(0,1fr)}
+.cms-file-fields>label{display:grid;align-content:start;gap:8px;margin:0;min-width:0}
+.cms-file-fields>.cms-check-field{display:flex;grid-column:1/-1}
+.cms-file-fields input,.cms-file-fields select{min-width:0;max-width:100%}
+.cms-file-status{margin:0;overflow-wrap:anywhere}
+.cms-file-status:empty,.cms-file-list:empty{display:none}
+.cms-file-list{display:grid;gap:12px;min-width:0}
+.cms-file-row{padding-block:12px;border-bottom:1px solid var(--line)}
+.cms-file-row>button{font-size:12px}
+.cms-file-sources>.cms-upload-form>.cms-file-actions{grid-column:1/-1}
+.media-upload.cms-editor-card{padding:var(--cms-card-inset);display:grid;gap:16px;margin:0 0 24px;min-width:0}
+.media-upload>.cms-card-head{padding:0;border:0}
+.cms-intake-tabs{border-bottom:1px solid var(--line);padding-bottom:16px}
+.cms-intake-tabs>[aria-selected=true]{background:var(--blush);border-color:var(--rose);color:var(--rose)}
+.media-upload .cms-intake-device>.cms-upload-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0;padding:0;border:0;min-width:0}
+.media-upload .cms-upload-form>label{display:grid;gap:8px;margin:0;min-width:0}
+.media-upload .cms-upload-form>.cms-check-field{display:flex}
+.media-upload .cms-upload-form>.cms-control-group{grid-column:1/-1}
+.media-upload .cms-media-status,.media-upload .cms-media-job-actions{margin:16px 0 0}
+.media-upload .cms-media-status:empty,.media-upload .cms-media-job-actions:not(:has(button:not([hidden]))){display:none}
+.media-upload progress{display:block;width:100%;height:8px;margin-top:16px}
+.cms-office-upload{margin-top:16px}
+.media-library.cms-editor-card{padding:var(--cms-card-inset);min-width:0}
+.media-library .cms-media-filters{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-block:16px}
+.media-library .cms-media-filters label{gap:8px}
+.media-library .cms-media-list{gap:16px;margin-block:16px}
+.media-library .cms-media-card-meta{flex-wrap:wrap;gap:8px;overflow-wrap:anywhere}
+.media-library .cms-media-list .cms-media-card .cms-media-name{white-space:normal;overflow-wrap:anywhere}
+.media-library .cms-media-thumb img{width:100%;height:100%;object-fit:contain}
+.media-library .cms-media-search{display:grid;gap:8px;margin:16px 0;min-width:0}.cms-media-search>input{width:100%;min-width:0}
+.cms-authenticated[data-cms-resource=media] .cms-content-header{display:none}
+.media-archive-pending{display:grid;gap:12px}
+.media-archive-pending p{display:flex;flex-wrap:wrap;gap:8px;align-items:center;overflow-wrap:anywhere}
+.cms-publication-preparation{display:grid;gap:16px;min-width:0}
+.cms-publication-preparation>ul{margin:0;padding-inline-start:24px;overflow-wrap:anywhere}
+.cms-publication-actions{margin-top:0}
+.ux-media-picker .ux-media-picker-body{display:grid;align-content:start;gap:16px}
+.ux-media-picker .ux-media-picker-body>h3{margin:8px 0 0}
+.ux-media-picker .ux-media-picker-footer{flex-wrap:wrap;gap:8px}
+.ux-media-picker .ux-media-picker-footer>button{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.ux-media-picker .ux-media-picker-footer>.primary{margin-left:auto}
+.ux-media-picker .ux-media-picker-option{min-width:0;overflow-wrap:anywhere}
+.site-record-dialog .site-dialog-footer{gap:8px;flex-wrap:wrap}
+.cms-saved-preview-dialog .cms-saved-preview-header{flex-wrap:wrap;gap:16px}
+.cms-authenticated .admin-header{gap:16px;min-width:0}
+.cms-header-title{min-width:0;overflow-wrap:anywhere}
+.cms-top-actions{flex-wrap:wrap;min-width:0}
+.cms-top-actions>button{white-space:normal;overflow-wrap:anywhere}
+.cms-content-header{flex-wrap:wrap;gap:16px}
+.cms-authenticated[data-cms-resource] .cms-workspace{padding-inline:var(--cms-page-inset)}
+#private-content>.cms-editor-card+.cms-editor-card{margin-top:24px}
+#login-panel{display:grid;gap:16px}
+#login-form{display:grid;gap:8px}
+#login-form label{margin:0}
+#login-form input+label{margin-top:8px}
+#login-form button{margin-top:8px;justify-self:start}
+@media(max-width:1180px){:root{--cms-page-inset:24px}}
+@media(max-width:720px){:root{--cms-page-inset:16px;--cms-card-inset:16px}
+ .cms-file-fields,.media-upload .cms-intake-device>.cms-upload-form,.media-library .cms-media-filters{grid-template-columns:minmax(0,1fr)}
+ .media-library .cms-media-list{gap:12px}
+ .ux-media-picker{width:100%;height:100dvh;max-height:100dvh;margin:0}
+ .ux-media-picker .ux-media-picker-body,.ux-media-picker .ux-media-picker-header,.ux-media-picker .ux-media-picker-footer{padding:16px}
+ .ux-media-picker .ux-media-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .ux-media-picker .ux-media-picker-footer>.primary{margin-left:0;flex-basis:100%}
+ .cms-mobile-actions{gap:8px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+ .cms-authenticated[data-cms-resource] .cms-workspace{padding-bottom:calc(var(--cms-mobile-actions-height,100px) + 16px + env(safe-area-inset-bottom))}
+ .cms-top-actions{gap:8px}
+}
+@media(max-width:380px){:root{--cms-page-inset:12px}.ux-media-picker .ux-media-picker-grid,.media-library .cms-media-list{grid-template-columns:minmax(0,1fr)}}

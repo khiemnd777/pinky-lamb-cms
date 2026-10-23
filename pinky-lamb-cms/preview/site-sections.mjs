@@ -23,7 +23,7 @@ function link(label,href,options,classes='',attributes=''){
  return options.mode==='PRIVATE'?`<a class="${classes}" style="${wrap}">${label}</a>`:`<a class="${classes}" href="${escaped(href)}" style="${wrap}" ${attributes}>${label}</a>`;
 }
 function action(value,data,options,classes='underlined-link'){
- const href=value.kind==='SECTION'?`#${value.sectionId}`:value.kind==='CREDENTIAL'?assetUrl(value.assetId,options):'#showreel';
+ const href=value.kind==='SECTION'?`#${value.sectionId}`:['CREDENTIAL','FILE'].includes(value.kind)?assetUrl(value.assetId,options):'#showreel';
  return link(`${escaped(value.label)} ${icon('arrow')}`,href,options,classes,value.kind==='CREDENTIAL'?'target="_blank" rel="noopener noreferrer"':'');
 }
 export function renderSiteHeader(data,options){

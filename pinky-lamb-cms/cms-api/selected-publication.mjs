@@ -1,3 +1,4 @@
+import {prepareSharedFilePlan,applySharedFilePlan,sharedFilePlanSummary} from './shared-file-publication.mjs';
 import {groupSourceSchema} from '../contracts/group-localization.mjs';
 import {ApiError} from '../contracts/errors.mjs';
 import {parseLocalizedReleaseBundle} from '../contracts/localized-review-records.mjs';
@@ -9,7 +10,7 @@ import {MAX_RETAINED_WEBSITE_RELEASES} from '../scripts/local-website-pointer.mj
 
 const same=(a,b)=>hash(a)===hash(b);
 function blocked(message){const error=new ApiError('REVISION_CONFLICT');error.message=message;throw error;}
-function targetPin(release,resource,dependencyHash,source){
+export function targetPin(release,resource,dependencyHash,source){
  const full=release.entries.find(q=>q.locale===resource.locale),pin=full?.dependencyVector.resources.find(v=>same(v.resource,resource));
  if(!pin)blocked('Nội dung chưa có trong bản website đang chạy. Cần chuẩn bị riêng thay đổi cấu trúc website.');
  if(pin.dependencyHash!==dependencyHash&&!showreelOnlyChange(full,resource,source))blocked('Nguồn hoặc media dùng chung đã thay đổi. Cần đối chiếu phạm vi phụ thuộc trước khi xuất bản riêng nội dung này.');
@@ -60,27 +61,42 @@ export async function runSelectedPublication(job,{request,actor},deps){
  const assertDraft=async()=>{const current=await editorial.readResource({request,resource:selection.resource});if(!current.draft||current.stale||current.draft.revision!==selection.expectedRevision||current.draft.contentHash!==selection.expectedContentHash||current.currentDependencyHash!==selection.expectedDependencyHash)blocked('Bản đã lưu hoặc nguồn đã thay đổi. Tải lại đúng nội dung trước khi xuất bản.');};
  await owner(request,actor);
  if(!job.base){const base=readPointer();if(!base)blocked('Chưa có bản website đang chạy để giữ nguyên các nội dung khác.');job.base=base;save(job);}
- const base=await readRelease(job.base);let selectedSource;if(selection.resource.kind==='group'&&selection.resource.entityId==='about'&&deps.readSelectedSource)selectedSource=await deps.readSelectedSource(selection.resource);targetPin(base,selection.resource,selection.expectedDependencyHash,selectedSource);
+ const base=await readRelease(job.base);let selectedSource;if(selection.resource.kind==='group'&&selection.resource.entityId==='about'&&deps.readSelectedSource)selectedSource=await deps.readSelectedSource(selection.resource);if(!selection.fileConfirmation)targetPin(base,selection.resource,selection.expectedDependencyHash,selectedSource);
  if(!same(readPointer(),job.base)&&!(job.target&&same(readPointer(),job.target)))blocked('Website đã chuyển sang bản khác. Tải lại trước khi xuất bản.');
  if(!job.target&&(job.base.retainedArtifacts??[]).length>=MAX_RETAINED_WEBSITE_RELEASES-1)blocked('Lịch sử tài nguyên website đã đạt giới hạn; cần bảo trì trước khi xuất bản tiếp.');
  await assertDraft();
  await stage(job,'Chuẩn bị đúng nội dung và ngôn ngữ đã chọn');
  // Pin the publication to the exact saved intent, including its note. A page reload
  // can create a new website job but must not duplicate the immutable CMS history.
- if(!job.publication){job.publication=await editorial.publishDraft({request,actor,body:selection,key:'selected_'+hash({actorUid:actor.uid,selection})});save(job);}
+ if(selection.fileConfirmation){if(!job.filePublication){job.filePublication=await editorial.publishSharedFiles({request,actor,base,selection,key:'shared_'+hash({actorUid:actor.uid,selection})});job.publication=job.filePublication.publication;save(job);}await editorial.assertSharedFiles({request,actor,base,selection,planHash:job.filePublication.plan.hash});}
+ else if(!job.publication){job.publication=await editorial.publishDraft({request,actor,body:selection,key:'selected_'+hash({actorUid:actor.uid,selection})});save(job);}
  const detail=await editorial.readSnapshot({request,id:job.publication.snapshotId});
  if(!same(detail.snapshot.resource,selection.resource)||detail.snapshot.revision!==selection.expectedRevision||detail.snapshot.contentHash!==selection.expectedContentHash||detail.snapshot.snapshotHash!==job.publication.snapshotHash||detail.stale)blocked('Bản xuất bản không còn khớp nội dung đã chọn.');
- const release=replaceSelectedRelease(base,detail);
+ const release=job.filePublication?replaceSharedFileRelease(base,job.filePublication.plan,job.filePublication.details):replaceSelectedRelease(base,detail);
  if(!job.artifact){await stage(job,'Đóng gói bản website; giữ nguyên các nội dung khác');job.exportAttempt=(job.exportAttempt??0)+1;save(job);job.artifact=await exportRelease(job,release);save(job);}
  const retainedArtifacts=[...(job.base.retainedArtifacts??[]),job.base.artifact].filter((artifact,index,all)=>all.findIndex(item=>item.manifestSha256===artifact.manifestSha256)===index);
  const next=job.target??{port:4189,activation:false,artifact:{relativeRoot:job.artifact.root,manifestSha256:job.artifact.manifestSha256},previous:job.base.artifact,retainedArtifacts,previousReleaseSource:job.base.releaseSource??null,releaseId:job.artifact.releaseId,releaseSource:job.artifact.releaseSource,snapshotSetHash:release.snapshotSetHash,updatedAt:new Date().toISOString()};
  if(next.snapshotSetHash!==release.snapshotSetHash)throw Error('Candidate release identity mismatch');
  job.target=next;save(job);
- await assertDraft();await owner(request,actor);
+ await assertDraft();if(job.filePublication)await editorial.assertSharedFiles({request,actor,base,selection,planHash:job.filePublication.plan.hash});await owner(request,actor);
  const current=readPointer();if(!same(current,job.base)&&!same(current,next))blocked('Website đã chuyển sang bản khác. Tải lại trước khi xuất bản.');
  await stage(job,'Cập nhật và kiểm tra website :4189');
- try{if(!same(current,next))writePointer(next);await verifyWebsite(next);await owner(request,actor);if(!same(readPointer(),next))blocked('Website đã thay đổi trong lúc kiểm tra.');}
+ try{if(!same(current,next))writePointer(next);await verifyWebsite(next);await assertDraft();if(job.filePublication)await editorial.assertSharedFiles({request,actor,base,selection,planHash:job.filePublication.plan.hash});await owner(request,actor);if(!same(readPointer(),next))blocked('Website đã thay đổi trong lúc kiểm tra.');}
  catch(error){if(same(readPointer(),next))writePointer(job.base);throw error;}
- job.result={...job.publication,status:'PUBLISHED_ON_WEBSITE',port:4189,activation:false,releaseId:next.releaseId,snapshotSetHash:next.snapshotSetHash,artifact:next.artifact};
+ job.result={...job.publication,...(job.filePublication?{fileUpdate:sharedFilePlanSummary(job.filePublication.plan)}:{}),status:'PUBLISHED_ON_WEBSITE',port:4189,activation:false,releaseId:next.releaseId,snapshotSetHash:next.snapshotSetHash,artifact:next.artifact};
  save(job);return job.result;
+}
+
+export function replaceSharedFileRelease(base,plan,details){return applySharedFilePlan(base,plan,details,{assemble:assembleFullSiteQa,parse:parseLocalizedReleaseBundle,parseWork:parseWorkServicesQa,snapshotSetHash:releaseSnapshotSetHash});}
+export async function prepareWebsitePublication({release,selection,readCurrent}){
+ const current=await readCurrent(selection.resource);if(!current.draft||current.stale||current.draft.revision!==selection.expectedRevision||current.dependencyHash!==selection.expectedDependencyHash||current.draft.contentHash!==selection.expectedContentHash)blocked('Bản đã lưu hoặc nguồn đã thay đổi. Tải lại trước khi chuẩn bị xuất bản.');
+ const source=selection.resource.kind==='group'&&selection.resource.entityId==='about'?current.base.source:undefined;const read=resource=>same(resource,selection.resource)?Promise.resolve(current):readCurrent(resource);
+ let plan;
+ try{plan=await prepareSharedFilePlan({release,selection,readCurrent:read});}catch(error){
+  if(!showreelOnlyChange(release.entries.find(q=>q.locale===selection.resource.locale),selection.resource,source))throw error;
+ }
+ if(!plan){targetPin(release,selection.resource,selection.expectedDependencyHash,source);return {mode:'SELECTED',selection};}
+ const details=plan.targets.map((t,i)=>({snapshot:{resource:t.resource,qa:t.qa,dependencyHash:t.qa.draft.dependencyHash,id:'preview-file-'+i,snapshotHash:plan.hash},review:{outcome:'APPROVED',id:'preview-file-review-'+i,attestationSetHash:plan.hash}}));
+ const preview=replaceSharedFileRelease(release,plan,details);
+ return {mode:'SHARED_FILES',selection,...sharedFilePlanSummary(plan),previews:preview.entries.filter(q=>plan.targets.some(t=>t.resource.locale===q.locale))};
 }

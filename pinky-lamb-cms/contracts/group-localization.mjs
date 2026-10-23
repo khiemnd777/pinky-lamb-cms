@@ -41,7 +41,7 @@ export function groupSourceMediaUses(id,source){
  if(id==='header'){add('brand/logo',source.brand.logo);add('credential',source.credential,'PDF_DOWNLOAD');add('template/favicon',{assetId:'favicon'});add('template/brand-diagonal',{assetId:'brand-diagonal'});}
  if(id==='clients')for(const l of source.logos)add(`clients/${l.id}/image`,l.image);
  if(id==='about'){add('about/signature',source.section.signature.image);if(!isYoutubeReel(source.showreel))add('about/showreel',source.showreel,'VIDEO');add('about/poster',source.showreel.poster);}
- if(id==='ip-studio'){add('ip-studio/image',source.section.image);if(source.section.action.kind==='CREDENTIAL')add('ip-studio/credential',source.section.action,'PDF_DOWNLOAD');}
+ if(id==='ip-studio'){add('ip-studio/image',source.section.image);if(source.section.action.kind==='CREDENTIAL')add('ip-studio/credential',source.section.action,'PDF_DOWNLOAD');if(source.section.action.kind==='FILE')add('ip-studio/file',source.section.action,'FILE_DOWNLOAD');}
  if(id==='contact')add('contact/illustration',source.contact.illustration);
  if(id==='seo')add('seo/share',source.seo.ogImage);
  return uses;
@@ -69,7 +69,7 @@ export function mergeLocalizedGroup(id,source,input){
  return {...source,seo:{...source.seo,title:c.title,description:c.description,ogTitle:c.ogTitle,ogDescription:c.ogDescription,ogImage:imageAlt(source.seo.ogImage,c.shareAlt)}};
 }
 const sourceImage=imageReferenceSchema,sourceAction=z.union([
- strictSiteObject({kind:z.literal('SECTION'),sectionId:z.enum(['work','services','about','ip-studio','contact']),label:text(80)}),strictSiteObject({kind:z.literal('SHOWREEL'),label:text(80)}),strictSiteObject({kind:z.literal('CREDENTIAL'),assetId:resourceIdSchema,label:text(80)})
+ strictSiteObject({kind:z.literal('SECTION'),sectionId:z.enum(['work','services','about','ip-studio','contact']),label:text(80)}),strictSiteObject({kind:z.literal('SHOWREEL'),label:text(80)}),strictSiteObject({kind:z.literal('CREDENTIAL'),assetId:resourceIdSchema,label:text(80)}),strictSiteObject({kind:z.literal('FILE'),assetId:resourceIdSchema,label:text(80)})
 ]);
 const sourceCommon={isVisible:z.boolean(),heading},sourceHeader=strictSiteObject({descriptor:text(120),ctaLabel:text(80)}),sourceBrand=strictSiteObject({name:z.literal('Pinky Lamb'),logo:sourceImage,tagline:text(300)}),sourceCredential=strictSiteObject({assetId:resourceIdSchema,label:text(80),edition:text(120)}),sourceNav=z.array(strictSiteObject({sectionId:z.enum(['clients','work','services','about','ip-studio','contact']),label:text(80)})).max(6).refine(v=>unique(v,'sectionId'));
 const sectionOrder=z.array(z.enum(['work','services','about','ip-studio'])).length(4).refine(v=>new Set(v).size===4);

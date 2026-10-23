@@ -42,7 +42,8 @@ export function createMediaV3ContentSchemas(contentContext){
   const actionSchema=z.union([
     strictSiteObject({kind:z.literal('SECTION'),sectionId:z.enum(ACTION_IDS),label:plainText(80)}),
     strictSiteObject({kind:z.literal('SHOWREEL'),label:plainText(80)}),
-    strictSiteObject({kind:z.literal('CREDENTIAL'),assetId:assetIdSchema,label:plainText(80)})
+    strictSiteObject({kind:z.literal('CREDENTIAL'),assetId:assetIdSchema,label:plainText(80)}),
+    strictSiteObject({kind:z.literal('FILE'),assetId:assetIdSchema,label:plainText(80)})
   ]);
   const headerSchema=strictSiteObject({descriptor:plainText(120),ctaLabel:plainText(80)});
   const brandSchema=strictSiteObject({name:z.literal('Pinky Lamb'),logo:assetUseSchema,tagline:plainText(300)});

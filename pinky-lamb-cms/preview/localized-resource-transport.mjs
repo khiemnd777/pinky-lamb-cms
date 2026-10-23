@@ -1,3 +1,4 @@
+import {fileQaResourceSchema} from '../contracts/file-resource.mjs';
 // Frozen QA URLs remain part of persisted snapshot/hash identity. Resolve only
 // their closed capabilities into current transport. Static assets come from the
 // CMS website at :4189; the historical :5010 identity is never fetched.
@@ -7,6 +8,7 @@ export function localizedPrivateResourcePath(resource){
  return url.pathname;
 }
 export function localizedResourceTransportUrl(resource){
+ if(resource.file){fileQaResourceSchema.parse(resource);return resource.file.source.kind==='EXTERNAL'?resource.file.source.url:`http://127.0.0.1:5273/api/cms/files/${resource.id}/bytes`;}
  if(resource.derivative)return `http://127.0.0.1:5273${localizedPrivateResourcePath(resource)}`;
  const url=new URL(resource.url);
  if(url.href!==resource.url||url.username||url.password||url.origin!=='http://127.0.0.1:5010'||url.pathname!==`/${resource.path}`||url.search||url.hash)throw Error('Invalid static resource');

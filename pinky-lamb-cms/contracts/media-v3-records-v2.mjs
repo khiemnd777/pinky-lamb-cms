@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {fileEntrySchema} from './file-resource.mjs';
 import {ApiError,validationError} from './errors.mjs';
 import {resourceIdSchema,hashSchema,revisionSchema} from './hero.mjs';
 import {plainText} from './site-settings.mjs';
@@ -27,7 +28,7 @@ const versionSafeSchema=z.union([
 ]);
 const effectiveId=entry=>entry.source==='LEGACY'?entry.asset.id:entry.asset.assetId;
 const compareEntries=(a,b)=>compare(a.source,b.source)||compare(effectiveId(a),effectiveId(b));
-export const safeCatalogV2Schema=strictMediaV2JsonSchema.pipe(z.array(z.union([exact({source:z.literal('LEGACY'),asset:legacySafeSchema}),exact({source:z.literal('MEDIA_VERSION'),asset:versionSafeSchema})])).max(128).refine(values=>unique(values.map(effectiveId)) && values.filter(value=>value.source==='LEGACY').length<=64 && values.filter(value=>value.source==='MEDIA_VERSION').length<=64 && values.every((value,index)=>index===0 || compareEntries(values[index-1],value)<0)));
+export const safeCatalogV2Schema=strictMediaV2JsonSchema.pipe(z.array(z.union([exact({source:z.literal('LEGACY'),asset:legacySafeSchema}),exact({source:z.literal('MEDIA_VERSION'),asset:versionSafeSchema}),fileEntrySchema])).max(128).refine(values=>unique(values.map(effectiveId)) && values.filter(value=>value.source==='LEGACY').length<=64 && values.filter(value=>value.source==='MEDIA_VERSION').length<=64 && values.every((value,index)=>index===0 || compareEntries(values[index-1],value)<0)));
 const supportedPaths=['hero/facts','seo/facts','settings/brand/facts','settings/contact/facts','settings/credential/facts','settings/showreel/facts','sections/about/facts','sections/ip-studio/facts','sections/footer/facts','creative-copy','projects/*/facts','services/*/facts','clientLogos/*/facts'];
 const sourceCatalogSchema=z.array(exact({id:resourceIdSchema,kind:z.enum(['CREDENTIAL','SUPPLIED_FILE']),title:plainText(120),sha256:digestSchema,pageCount:z.literal(48).optional(),publicCredentialUrl:z.literal('http://127.0.0.1:5010/assets/Pinky-Lamb-Credential-2026.pdf').optional(),supportedClaimPaths:z.array(z.enum(supportedPaths)).max(13).refine(unique),excerpt:plainText(1000,{multiline:true}).optional()}).refine(value=>value.kind==='CREDENTIAL'?value.pageCount===48 && value.publicCredentialUrl!==undefined:value.pageCount===undefined && value.publicCredentialUrl===undefined)).max(16).refine(values=>unique(values.map(value=>value.id)));
 const rawSourceRefSchema=exact({id:z.string().regex(/^source-[a-f0-9]{64}$/),kind:z.literal('SUPPLIED_FILE'),privateDocumentId:z.string().regex(/^legacy-source-[a-f0-9]{64}$/),claimBindings:z.array(z.unknown()).max(0),verification:z.literal('UNVERIFIED')});

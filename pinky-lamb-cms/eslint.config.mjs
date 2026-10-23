@@ -17,7 +17,7 @@ const privateMediaRule={meta:{type:'problem',schema:[],messages:{private:'Privat
 export default [
  {ignores:['node_modules/**','.local/**','public-baseline/**','admin-dist/**','.preview-output/**']},
  {files:['**/*.mjs'],languageOptions:{ecmaVersion:2024,sourceType:'module'},rules:{'no-unused-vars':['error',{argsIgnorePattern:'^_',caughtErrors:'none'}],'no-constant-condition':'error','no-unreachable':'error','no-dupe-keys':'error','constructor-super':'error','valid-typeof':'error','no-unsafe-finally':'error'}},
- {files:['admin/**/*.mjs','preview/**/*.mjs','contracts/**/*.mjs'],plugins:{'pinky-media':{rules:{'private-imports':privateMediaRule}}},rules:{
+ {files:['admin/**/*.mjs','preview/**/*.mjs','contracts/**/*.mjs','reader/**/*.mjs'],plugins:{'pinky-media':{rules:{'private-imports':privateMediaRule}}},rules:{
   'pinky-media/private-imports':'error',
   'no-restricted-imports':['error',{paths:builtins.map(name=>({name,message})),patterns:[{group:['**/cms-api/**','**/scripts/**','**/legacy-assets.json*','**/baseline-site.json*','**/baseline-provenance.json*','node:*'],message},{regex:builtinSuffixPattern,caseSensitive:true,message}]}],
   'no-restricted-syntax':['error',

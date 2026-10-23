@@ -18,6 +18,7 @@ export async function buildLocalizedReleaseHandoff(input,{apiFetch,signal,assert
  for(const resource of resources.values()){
   assertCurrent();signal?.throwIfAborted();let bytes;
   if(resource.inlineBase64!==undefined){const text=atob(resource.inlineBase64);if(btoa(text)!==resource.inlineBase64)throw Error('Dữ liệu tài nguyên không hợp lệ.');bytes=Uint8Array.from(text,value=>value.charCodeAt(0));}
+  else if(resource.file?.source.kind==='HOSTED'){bytes=(await apiFetch(`/api/cms/files/${resource.id}/bytes`,{signal,responseType:'bytes',maxBytes:resource.sizeBytes})).bytes;}
   else if(resource.derivative){
    bytes=(await apiFetch(localizedPrivateResourcePath(resource),{signal,responseType:'bytes',derivative:resource.derivative,maxBytes:resource.sizeBytes})).bytes;
   }else{

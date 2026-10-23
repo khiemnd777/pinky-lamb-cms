@@ -15,7 +15,7 @@ export const submitMessageSchema=text(500,{empty:true,multiline:true});
 export const reviewNoteSchema=text(1000,{empty:true,multiline:true});
 /** @typedef {{id:string,kind:'IMAGE'|'VIDEO'|'PDF',status:string}} SafeAsset */
 /** @param {SafeAsset[]} safeCatalog Explicit public-safe metadata; never import private catalog here. */
-export function createHeroSchemas(safeCatalog){
+export function createHeroSchemas(safeCatalog,{allowFiles=false}={}){
  if(!Array.isArray(safeCatalog))throw new ApiError('VALIDATION_ERROR');
  const assets=new Map();for(const entry of safeCatalog){if(!entry || !assetId.safeParse(entry.id).success || !['IMAGE','VIDEO','PDF'].includes(entry.kind) || typeof entry.status!=='string' || assets.has(entry.id))throw new ApiError('VALIDATION_ERROR');assets.set(entry.id,{kind:entry.kind,status:entry.status});}
  const allowed=(id,kind)=>assets.get(id)?.kind===kind && assets.get(id)?.status==='LEGACY_READY';
@@ -24,7 +24,7 @@ export function createHeroSchemas(safeCatalog){
  const action=z.discriminatedUnion('kind',[
   z.strictObject({kind:z.literal('SECTION'),sectionId:z.enum(['work','services','about','ip-studio','contact']),label:text(80)}),
   z.strictObject({kind:z.literal('SHOWREEL'),label:text(80)}),
-  z.strictObject({kind:z.literal('CREDENTIAL'),assetId:assetId.refine(id=>allowed(id,'PDF')),label:text(80)})
+  z.strictObject({kind:z.literal('CREDENTIAL'),assetId:assetId.refine(id=>allowed(id,'PDF')),label:text(80)}),...(allowFiles?[z.strictObject({kind:z.literal('FILE'),assetId,label:text(80)})]:[])
  ]);
  const use=(decorative)=>z.strictObject({assetId:assetId.refine(id=>allowed(id,'IMAGE')),alt:text(300,{empty:true,visible:false}),isDecorative:z.boolean(),focalPoint:z.strictObject({x:z.number().min(0).max(1),y:z.number().min(0).max(1)}).optional()}).refine(v=>v.isDecorative?decorative && v.alt==='':v.alt.trim().length>0,'Giá trị không hợp lệ.');
  const heroSchema=z.strictObject({kind:z.literal('HERO'),variant:z.literal('hero-split'),heading:z.strictObject({lines:z.array(runs(8,100)).min(1).max(3)}),eyebrow:text(120),description:runs(12,1000),primaryAction:action,secondaryAction:action.optional(),footnote:text(240,{empty:true,multiline:true}),note:text(300,{empty:true,multiline:true}),image:use(true)});

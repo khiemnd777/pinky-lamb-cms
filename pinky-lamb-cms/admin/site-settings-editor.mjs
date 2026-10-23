@@ -1,3 +1,4 @@
+import {mountFileSources} from './file-sources.mjs';
 import {siteNode,siteButton,SITE_SECTION_LABELS} from './site-fields.mjs';
 import {createFormTabs,createFormSorts} from './site-form-ui.mjs';
 import {createRecordDialog} from './site-collection-ui.mjs';
@@ -114,13 +115,15 @@ export function createSiteFieldTools({content,context,onChange,redraw}){
  }
  function sectionOptions(ids,current){return ids.filter(id=>id===current || content.sections.find(section=>section.sectionId===id)?.isVisible===true).map(id=>{const hidden=content.sections.find(section=>section.sectionId===id)?.isVisible!==true;return [id,`${SITE_SECTION_LABELS[id]}${hidden?' — đang ẩn':''}`,hidden];});}
  function action(parent,value,path,prefix,label,set){
-  select(parent,`${prefix}-kind`,`${label} — loại`,value.kind,()=>[['SECTION','Đi đến mục'],['SHOWREEL','Xem showreel',content.sections.find(section=>section.sectionId==='about')?.isVisible!==true],['CREDENTIAL','Hồ sơ năng lực']],kind=>{
+  select(parent,`${prefix}-kind`,`${label} — loại`,value.kind,()=>[['SECTION','Đi đến mục'],['SHOWREEL','Xem showreel',content.sections.find(section=>section.sectionId==='about')?.isVisible!==true],['CREDENTIAL','Hồ sơ năng lực'],['FILE','Ảnh / tài liệu']],kind=>{
    if(kind==='SECTION')set({kind,sectionId:sectionOptions(ACTION_SECTIONS).at(0)?.[0]??'contact',label:value.label});
+   else if(kind==='FILE')set({kind,assetId:content.settings.credential.assetId,label:value.label});
    else if(kind==='CREDENTIAL')set({kind,assetId:content.settings.credential.assetId,label:value.label});
    else set({kind,label:value.label});
   },{path:`${path}.kind`,refresh:true});
   input(parent,`${prefix}-label`,`${label} — nhãn`,value.label,text=>{value.label=text;},{max:80,path:`${path}.label`});
   if(value.kind==='SECTION')select(parent,`${prefix}-section`,`${label} — mục`,value.sectionId,()=>sectionOptions(ACTION_SECTIONS,value.sectionId),id=>{value.sectionId=id;},{path:`${path}.sectionId`});
+  if(value.kind==='FILE'){const host=siteNode('div'),chosen=siteNode('p',(context.resolveMediaAsset?.(value.assetId)??context.catalog.find(a=>a.id===value.assetId))?.label??'Chọn ảnh hoặc tài liệu');parent.append(chosen,host);if(context.fileSources){const panel=mountFileSources(host,{...context.fileSources,onSelect:entry=>{value.assetId=entry.asset.assetId;chosen.textContent=entry.asset.name;change();}});cleanups.push({root:host,cleanup:()=>panel.destroy()});}else host.textContent='Mở trình biên tập hiện hành để chọn file.';}
   if(value.kind==='CREDENTIAL')picker(parent,prefix,`Chọn PDF cho ${label}`,'PDF',()=>value.assetId,id=>{value.assetId=id;},{path:`${path}.assetId`,allowedIds:[content.settings.credential.assetId]});
  }
  function move(list,index,offset){sorts.move(list,index,offset);}

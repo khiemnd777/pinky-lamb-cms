@@ -182,13 +182,29 @@ test('localized D5 owns review chrome synchronously and after async context even
  const contentHeader=f.ids.get('cms-body').querySelector('.cms-content-header');
  f.instance.refreshPanels();assert.equal(contentHeader.hidden,false);assert.equal(f.ids.get('cms-action-host').querySelectorAll('button').length,1);
  f.ids.get('cms-management-nav').querySelectorAll('button')[1].click();
- const assertReview=()=>{assert.equal(f.header.querySelector('h1').textContent,'Gửi và duyệt');assert.equal(contentHeader.hidden,true);assert.equal(workflow.hidden,false);assert.equal(legacy.hidden,true);assert.equal(legacy.parentNode,root,'History remains mounted without deleting records');assert.equal(f.ids.get('cms-legacy-access').hidden,true);assert.equal(f.ids.get('cms-action-host').querySelectorAll('button').length,0);for(const id of ['cms-context-status','cms-preview-shortcut','cms-send-shortcut','cms-mobile-actions','cms-mobile-send'])assert.equal(f.ids.get(id).hidden,true,id);};
+ const assertReview=()=>{assert.equal(f.header.querySelector('h1').textContent,'Xuất bản');assert.equal(contentHeader.hidden,true);assert.equal(workflow.hidden,false);assert.equal(legacy.hidden,true);assert.equal(legacy.parentNode,root,'History remains mounted without deleting records');assert.equal(f.ids.get('cms-legacy-access').hidden,true);assert.equal(f.ids.get('cms-action-host').querySelectorAll('button').length,0);for(const id of ['cms-context-status','cms-preview-shortcut','cms-send-shortcut','cms-mobile-actions','cms-mobile-send'])assert.equal(f.ids.get(id).hidden,true,id);};
  assertReview();
  f.view.dispatchEvent(new f.view.CustomEvent('cms:localized-review-context',{detail:{active:true,requestTransition:()=>true}}));
  await new Promise(resolve=>setImmediate(resolve));f.instance.refreshPanels();assertReview();assert.equal(f.stats.limitHit,false);
  f.ids.get('cms-edit-tab').click();await new Promise(resolve=>setImmediate(resolve));assert.equal(contentHeader.hidden,false);assert.equal(workflow.hidden,true);assert.equal(f.ids.get('cms-action-host').querySelectorAll('button').length,1);
  // Delayed visibility events from the old renderer cannot override another resource.
- f.instance.setResource('media');f.view.dispatchEvent(new f.view.CustomEvent('cms:localized-review-context',{detail:{active:true,requestTransition:()=>true}}));assert.equal(f.header.querySelector('h1').textContent,'Toàn website');assert.equal(contentHeader.hidden,false);
+ f.instance.setResource('media');f.view.dispatchEvent(new f.view.CustomEvent('cms:localized-review-context',{detail:{active:true,requestTransition:()=>true}}));assert.equal(f.header.querySelector('h1').textContent,'Thư viện media');assert.equal(contentHeader.hidden,false);
  f.instance.setResource('home');f.ids.get('cms-review-tab').click();await new Promise(resolve=>setImmediate(resolve));assert.equal(f.ids.get('cms-legacy-access').hidden,false);assert.equal(legacy.hidden,false,'Legacy context retains its original history access');
  f.instance.destroy();assert.equal(contentHeader.hidden,false);
+});
+
+
+test('shared-mode page headings keep canonical group identity without localization events',async()=>{
+ const f=await shell();f.instance.setSession({role:'OWNER'});
+ for(const [key,label]of [['ip','IP Studio'],['about','Giới thiệu'],['settings','Đầu trang, Hero và SEO']]){
+  f.view.dispatchEvent(new f.view.CustomEvent('cms:site-navigation',{detail:{node:f.doc.createElement('nav'),groupId:'site-component-'+key}}));
+  assert.equal(f.header.querySelector('h1').textContent,label);
+ }
+ f.instance.setResource('media');assert.equal(f.header.querySelector('h1').textContent,'Thư viện media');f.instance.destroy();
+});
+
+test('wrapped mobile action height is measured and removed when shell is destroyed',async()=>{
+ const f=await shell({mobile:true}),body=f.ids.get('cms-body'),bar=f.ids.get('cms-mobile-actions');
+ bar.hidden=false;bar.getBoundingClientRect=()=>({height:176.2});f.resizeObservers[0].callback();assert.equal(body.style.getPropertyValue('--cms-mobile-actions-height'),'177px');
+ bar.hidden=true;f.resizeObservers[0].callback();assert.equal(body.style.getPropertyValue('--cms-mobile-actions-height'),'0px');f.instance.destroy();assert.equal(body.style.getPropertyValue('--cms-mobile-actions-height'),'');
 });

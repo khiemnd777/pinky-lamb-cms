@@ -34,8 +34,8 @@ export function collectSiteMediaReferenceIds(content){
  use(content.settings.showreel.poster,content.settings.showreel.poster.derivativeRole==='POSTER'?'VIDEO':'IMAGE',content.settings.showreel.poster.derivativeRole==='POSTER');
  content.settings.clientLogos.forEach(v=>use(v.image,'IMAGE'));
  content.projects.forEach(v=>{use(v.cover,'IMAGE');v.gallery.forEach(g=>use(g,'IMAGE'));});
- content.sections.forEach(v=>{if(v.signature)use(v.signature.image,'IMAGE');if(v.image)use(v.image,'IMAGE');if(v.action?.kind==='CREDENTIAL')use(v.action,'PDF');});
- for(const action of [content.hero.primaryAction,content.hero.secondaryAction])if(action?.kind==='CREDENTIAL')use(action,'PDF');
+ content.sections.forEach(v=>{if(v.signature)use(v.signature.image,'IMAGE');if(v.image)use(v.image,'IMAGE');if(v.action?.kind==='CREDENTIAL')use(v.action,'PDF');if(v.action?.kind==='FILE')use(v.action,'FILE');});
+ for(const action of [content.hero.primaryAction,content.hero.secondaryAction])if(action?.kind==='CREDENTIAL')use(action,'PDF');else if(action?.kind==='FILE')use(action,'FILE');
  refs.push({id:'brand-diagonal',kind:'IMAGE',poster:false},{id:'favicon',kind:'IMAGE',poster:false});
  return refs;
 }
@@ -46,7 +46,7 @@ export function collectVisibleSiteMediaReferences(content){
  const refs=[],use=(v,kind,poster=false)=>{if(!v||typeof v.assetId!=='string')fail();refs.push({id:v.assetId,kind,poster});};
  const sections=content.sections.filter(s=>s.isVisible!==false),visible=new Set(sections.map(s=>s.sectionId));
  use(content.hero.image,'IMAGE');use(content.seo.ogImage,'IMAGE');use(content.settings.brand.logo,'IMAGE');use(content.settings.contact.illustration,'IMAGE');
- for(const action of [content.hero.primaryAction,content.hero.secondaryAction,...sections.map(s=>s.action)])if(action?.kind==='CREDENTIAL')use(action,'PDF');
+ for(const action of [content.hero.primaryAction,content.hero.secondaryAction,...sections.map(s=>s.action)])if(action?.kind==='CREDENTIAL')use(action,'PDF');else if(action?.kind==='FILE')use(action,'FILE');
  if(visible.has('clients'))content.settings.clientLogos.filter(v=>v.isVisible).forEach(v=>use(v.image,'IMAGE'));
  if(visible.has('work')){use(content.settings.credential,'PDF');content.projects.filter(v=>v.isVisible).forEach(v=>{use(v.cover,'IMAGE');v.gallery.forEach(g=>use(g,'IMAGE'));});}
  if(visible.has('about')){
@@ -67,12 +67,12 @@ export function projectSiteMediaPublicData(content,options){
  const manifest=new Map(o.mediaManifest.map(e=>[idOf(e),e])),refs=collectSiteMediaReferenceIds(value);
  const selected=new Set(refs.map(r=>r.id));
  if(selected.size!==manifest.size||[...manifest.keys()].some(id=>!selected.has(id))||Object.keys(o.resources).some(id=>!selected.has(id)))fail();
- for(const ref of refs){const e=manifest.get(ref.id);if(!e||e.asset.kind!==ref.kind||(ref.poster&&e.source!=='MEDIA_VERSION'))fail();}
+ for(const ref of refs){const e=manifest.get(ref.id);if(!e||(ref.kind==='FILE'?!['IMAGE','PDF','WORD','EXCEL'].includes(e.asset.kind):e.asset.kind!==ref.kind)||(ref.poster&&e.source!=='MEDIA_VERSION'))fail();}
  const visibleRefs=collectVisibleSiteMediaReferences(value),visibleIds=new Set(visibleRefs.map(r=>r.id));
  if(o.mode==='PRIVATE'&&Object.keys(o.resources).some(id=>!visibleIds.has(id)))fail();
  if(o.mode==='QA_EXPORT'&&[...manifest].some(([id,e])=>e.asset.kind==='PDF'&&!o.resources[id]?.download))fail();
  for(const ref of visibleRefs){
-  if(['PDF','VIDEO'].includes(ref.kind)&&!ref.poster&&o.mode==='PRIVATE')continue;
+  if(['PDF','VIDEO','FILE'].includes(ref.kind)&&!ref.poster&&o.mode==='PRIVATE')continue;
   const field=ref.poster?'poster':ref.kind==='IMAGE'?'image':ref.kind==='PDF'?'download':'video';
   if(!o.resources[ref.id]?.[field])fail();
  }

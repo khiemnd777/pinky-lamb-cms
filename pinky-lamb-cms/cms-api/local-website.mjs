@@ -1,4 +1,5 @@
-import {readSelectedShowreelResource} from './selected-publication-media.mjs';
+import {websitePublishSchema} from '../contracts/website-publication.mjs';
+import {readSelectedShowreelResource,readPublicationFileResource} from './selected-publication-media.mjs';
 import {readReleaseManifest} from '../scripts/multilingual-site-artifact.mjs';
 import {loadMediaProcessingProfile} from './media-processing-profile.mjs';
 import {createPdfLocalRecovery} from './pdf-local-recovery.mjs';
@@ -12,7 +13,7 @@ import {readWebsitePointer,writeWebsitePointer,previousWebsitePointer} from '../
 import {packageReleaseResources,exportMultilingualSite} from '../scripts/export-multilingual-site-local.mjs';
 import {createSiteV3DraftService} from './site-v3-drafts.mjs';
 import {createLocalizedEditorialService} from './localized-editorial.mjs';
-import {runSelectedPublication} from './selected-publication.mjs';
+import {runSelectedPublication,prepareWebsitePublication} from './selected-publication.mjs';
 import {localizedPublishSchema,parseLocalizedReleaseBundle} from '../contracts/localized-review-records.mjs';
 import {releaseSnapshotSetHash} from './localized-eligibility.mjs';
 import {createHeroLocalizationService} from './hero-localizations.mjs';
@@ -80,10 +81,7 @@ export async function createLocalWebsiteService({options,library,storage}){
   put(ROOT+'/'+job.id+'/translation-review.json',{at:at(),sourceManifestHash:hash(job.source),review:'Source facts, names, dates, scope and language consistency reviewed against captured source. EN/JA are translated content; no claim of independent native-language review.',headings:'Shared English headings from approved template',resources:job.resources});
   job.result={sourceManifestHash:hash(job.source),media:job.media.length,resources:job.resources.length,backup:job.backup,sourceRoot,publication:'NOT_PUBLISHED'};
  }
- async function publish(job,request,actor){
-  return runSelectedPublication(job,{request,actor},{editorial,owner,readPointer:readWebsitePointer,writePointer:writeWebsitePointer,save,stage,
-   readSelectedSource:async resource=>(await (await createGroupLocalizationService(options)).readDraft({request,groupId:resource.entityId,locale:resource.locale})).base.source,
-   readRelease:async pointer=>{
+ async function readLiveRelease(pointer){
     const manifest=readReleaseManifest(pointer.artifact.relativeRoot,pointer.artifact.manifestSha256);
     if(manifest.qaFixture||manifest.releaseId!==pointer.releaseId)throw Error('Cần bản website CMS thật để xuất bản riêng nội dung.');
     const source=pointer.releaseSource??{path:ROOT+'/'+pointer.releaseId.replace(/^cms-/,'')+'/release.json'};
@@ -91,25 +89,38 @@ export async function createLocalWebsiteService({options,library,storage}){
     const release=parseLocalizedReleaseBundle(readPrivateJson(source.path,12*1048576));
     if(source.sha256&&source.sha256!==hash(release)||release.snapshotSetHash!==pointer.snapshotSetHash||release.snapshotSetHash!==manifest.snapshotSetHash||release.snapshotSetHash!==releaseSnapshotSetHash(release.entries))throw Error('Frozen live release mismatch');
     return release;
-   },
+ }
+ async function selectedSource(request,resource){return (await (await createGroupLocalizationService(options)).readDraft({request,groupId:resource.entityId,locale:resource.locale})).base.source;}
+ async function prepare({request,actor,body}){
+  await owner(request,actor);const parsed=localizedPublishSchema.safeParse(body);if(!parsed.success)throw new ApiError('VALIDATION_ERROR');const selection=parsed.data,pointer=readWebsitePointer();if(!pointer)throw new ApiError('NOT_FOUND');const release=await readLiveRelease(pointer);
+  const result=await db.runTransaction(async tx=>{const current=await authorize(request,'DRAFT_PUBLISH',tx);if(current.role!=='OWNER'||current.uid!==actor.uid)throw new ApiError('FORBIDDEN');return prepareWebsitePublication({release,selection,readCurrent:resource=>editorial.context.readResource(tx,resource)});});
+  await owner(request,actor);if(!same(pointer,readWebsitePointer()))throw new ApiError('REVISION_CONFLICT');return result;
+ }
+ async function publish(job,request,actor){
+  return runSelectedPublication(job,{request,actor},{editorial,owner,readPointer:readWebsitePointer,writePointer:writeWebsitePointer,save,stage,
+   readSelectedSource:resource=>selectedSource(request,resource),
+   readRelease:readLiveRelease,
    exportRelease:async(job,release)=>{
     const bundle=await packageReleaseResources(release,{readResource:async descriptor=>{
      // Retained bytes come from the live artifact, not today's media catalog or drafts.
      const manifest=readReleaseManifest(job.base.artifact.relativeRoot,job.base.artifact.manifestSha256),pin=manifest.files.find(f=>f.path===descriptor.path&&f.sha256===descriptor.sha256&&f.sizeBytes===descriptor.sizeBytes);
+     if(!pin&&descriptor.file?.source.kind==='HOSTED'){const row=await db.collection('cmsFileResources').doc(descriptor.id).get(),record=row.data();if(!row.exists||!same(record.asset,descriptor.file)||record.state!=='INSPECTED')throw Error('Frozen file mismatch');return storage.readDerivative(record.object);}
+     if(!pin&&job.filePublication)return readPublicationFileResource({descriptor,allowed:job.filePublication.plan.descriptors,library,storage});
      if(!pin)return readSelectedShowreelResource({descriptor,release,selection:job.selection,library,storage});
      return readPrivateBytes(job.base.artifact.relativeRoot+'/'+pin.path,64*1048576);
     }});
     const sourcePath=ROOT+'/'+job.id+'/release.json';
     if(existsSync(ownedFile(sourcePath,{missing:true}))){if(hash(readPrivateJson(sourcePath,12*1048576))!==hash(release))throw Error('Candidate release changed');}
     else writeJsonExclusive(sourcePath,release);
-    const preserveDocuments=Object.fromEntries(['en','vi','ja'].filter(locale=>locale!==job.selection.resource.locale).map(locale=>{
+    const changedLocales=new Set(job.filePublication?job.filePublication.plan.targets.map(t=>t.resource.locale):[job.selection.resource.locale]);
+    const preserveDocuments=Object.fromEntries(['en','vi','ja'].filter(locale=>!changedLocales.has(locale)).map(locale=>{
      const name=locale==='en'?'index.html':locale+'/index.html';
      return [name,readPrivateBytes(job.base.artifact.relativeRoot+'/'+name)];
     }));
     const artifact=exportMultilingualSite(bundle,'cms-'+job.id+'-'+job.exportAttempt,{preserveDocuments});
     // Other locales must remain byte-identical, even across renderer/template changes.
     const before=readReleaseManifest(job.base.artifact.relativeRoot,job.base.artifact.manifestSha256),after=readReleaseManifest(artifact.root,artifact.manifestSha256);
-    for(const locale of ['en','vi','ja'].filter(l=>l!==job.selection.resource.locale)){
+    for(const locale of ['en','vi','ja'].filter(l=>!changedLocales.has(l))){
      const document=locale==='en'?'index.html':locale+'/index.html';
      if(before.files.find(f=>f.path===document)?.sha256!==after.files.find(f=>f.path===document)?.sha256)throw Error('Bộ dựng làm thay đổi ngôn ngữ không được chọn. Website giữ nguyên bản trước.');
     }
@@ -128,7 +139,7 @@ export async function createLocalWebsiteService({options,library,storage}){
  async function status({request}){await owner(request);const latest=get(LATEST),job=latest?get(ROOT+'/'+latest.id+'.json'):null;if(job?.state==='RUNNING'&&running!==job.id){job.state='BLOCKED';job.error={code:'INTERRUPTED',message:'Tác vụ bị ngắt khi CMS khởi động lại. Dữ liệu và journal được giữ để tiếp tục có kiểm soát.'};save(job);}const seedJob=get(SEED)?get(ROOT+'/'+get(SEED).id+'.json'):null;let blockedMedia=null;if(seedJob?.state==='BLOCKED'){const pending=Object.entries(seedJob.operations??{}).find(([name,op])=>name.startsWith('media-complete-')&&op.receipt&&!seedJob.retiredMedia?.includes(op.receipt.jobId)&&!seedJob.media.some(m=>m.jobId===op.receipt.jobId));if(pending)blockedMedia=await (await createMediaUploadService()).readJobSummary({request,jobId:pending[1].receipt.jobId});}return {job:summary(job),website:readWebsitePointer(),seed:summary(seedJob),blockedMedia,pdfRecoveryAvailable:['5a4c6354-3173-4b27-b60e-f9b35122aa25','259047bb-f62d-4bed-ac48-8c80bc01b182','48b96365-cf97-40cd-b584-caa4e6188d87','724af3e2-0f4c-422b-96f7-e7d54f984fde','795db8e3-d77c-44b6-b826-549ff2e9305b'].includes(blockedMedia?.jobId)&&!seedJob.retiredMedia?.includes(blockedMedia.jobId)};}
  async function start({request,actor,kind,commandKey,body={}}){
   await owner(request,actor);let selection=null;
-  if(kind==='PUBLISH'){const parsed=localizedPublishSchema.safeParse(body);if(!parsed.success)throw new ApiError('VALIDATION_ERROR');selection=parsed.data;}
+  if(kind==='PUBLISH'){const parsed=websitePublishSchema.safeParse(body);if(!parsed.success)throw new ApiError('VALIDATION_ERROR');selection=parsed.data;}
   const commandPath=ROOT+'/command-'+digest(actor.uid+':'+commandKey)+'.json',existing=get(commandPath);let job;
   if(existing){
    if(existing.kind!==kind)throw new ApiError('IDEMPOTENCY_PAYLOAD_MISMATCH');job=get(ROOT+'/'+existing.id+'.json');
@@ -148,5 +159,5 @@ export async function createLocalWebsiteService({options,library,storage}){
  async function retryMedia({request,actor}){await owner(request,actor);if(running)throw new ApiError('IDEMPOTENCY_IN_PROGRESS');const seedJob=get(SEED)?get(ROOT+'/'+get(SEED).id+'.json'):null;if(seedJob?.state!=='BLOCKED')throw new ApiError('REVIEW_STATE_CONFLICT');const pending=Object.entries(seedJob.operations??{}).find(([name,op])=>name.startsWith('media-complete-')&&op.receipt&&!seedJob.retiredMedia?.includes(op.receipt.jobId)&&!seedJob.media.some(m=>m.jobId===op.receipt.jobId));if(!pending)throw new ApiError('NOT_FOUND');const upload=await createMediaUploadService(),jobId=pending[1].receipt.jobId,current=await upload.readJobSummary({request,jobId});if(!current.canRetry)throw new ApiError('REVIEW_STATE_CONFLICT');return action(seedJob,'retry-media-'+jobId,{jobId,expectedJobRevision:current.jobRevision},(body,k)=>upload.retryJob({request,actor,jobId,body:{expectedJobRevision:body.expectedJobRevision},key:k}));}
  async function rollback({request,actor,commandKey}){await owner(request,actor);const commandPath=ROOT+'/command-'+digest(actor.uid+':'+commandKey)+'.json',existing=get(commandPath);if(existing){if(existing.kind!=='ROLLBACK')throw new ApiError('IDEMPOTENCY_PAYLOAD_MISMATCH');return existing.receipt;}if(running)throw new ApiError('IDEMPOTENCY_IN_PROGRESS');const current=readWebsitePointer();if(!current?.previous)throw new ApiError('NOT_FOUND');const restored=readReleaseManifest(current.previous.relativeRoot,current.previous.manifestSha256),next=previousWebsitePointer(current,restored,at());writeWebsitePointer(next);const receipt={port:4189,activation:false,artifact:next.artifact};put(commandPath,{kind:'ROLLBACK',receipt});return receipt;}
  async function recoverPdf({request,actor}){await owner(request,actor);if(running)throw new ApiError('IDEMPOTENCY_IN_PROGRESS');const seedJob=get(SEED)?get(ROOT+'/'+get(SEED).id+'.json'):null;if(seedJob?.state!=='BLOCKED')throw new ApiError('REVIEW_STATE_CONFLICT');const recovery=createPdfLocalRecovery({db,authorize,storage}),next=seedJob.retiredMedia?.includes('5a4c6354-3173-4b27-b60e-f9b35122aa25');const pending=Object.entries(seedJob.operations??{}).find(([name,op])=>name.startsWith('media-complete-credential')&&op.receipt&&!seedJob.retiredMedia?.includes(op.receipt.jobId)&&!seedJob.media.some(m=>m.jobId===op.receipt.jobId));if(!pending)throw new ApiError('NOT_FOUND');const receipt=await (next?recovery.retireClosed:recovery.recover)({request,actor,jobId:pending[1].receipt.jobId});seedJob.retiredMedia=[...new Set([...(seedJob.retiredMedia??[]),receipt.jobId])];if(receipt.jobId==='795db8e3-d77c-44b6-b826-549ff2e9305b'){const p=loadMediaProcessingProfile('PDF');if(p.profileId!=='M3-PDF-LOCAL-5')throw new ApiError('LOCAL_RUNTIME_UNAVAILABLE');seedJob.heldMedia=[];seedJob.mediaReplacement={...seedJob.mediaReplacement,credential:'-pdf-local-5'};seedJob.approvedPdfProfile={...seedJob.approvedPdfProfile,profileId:p.profileId,processingRecipeSha256:p.processingRecipeSha256,toolSetSha256:p.toolSetSha256};}else if(receipt.jobId==='724af3e2-0f4c-422b-96f7-e7d54f984fde'){const p=loadMediaProcessingProfile('PDF');if(p.profileId!=='M3-PDF-LOCAL-4')throw new ApiError('LOCAL_RUNTIME_UNAVAILABLE');seedJob.heldMedia=[];seedJob.mediaReplacement={...seedJob.mediaReplacement,credential:'-pdf-local-4'};seedJob.approvedPdfProfile={...seedJob.approvedPdfProfile,profileId:p.profileId,processingRecipeSha256:p.processingRecipeSha256,toolSetSha256:p.toolSetSha256};}else if(receipt.jobId==='48b96365-cf97-40cd-b584-caa4e6188d87')seedJob.heldMedia=['credential'];else seedJob.mediaReplacement={...seedJob.mediaReplacement,credential:next?'-pdf-local-2':'-pdf-local-1'};seedJob.recoveries=[...(seedJob.recoveries??(seedJob.recovery?[seedJob.recovery]:[])),receipt];seedJob.recovery=receipt;save(seedJob);return receipt;}
- return {status,start,rollback,retryMedia,recoverPdf};
+ return {status,prepare,start,rollback,retryMedia,recoverPdf};
 }

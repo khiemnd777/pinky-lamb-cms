@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {fileEntrySchema} from './file-resource.mjs';
 import {plainText} from './site-settings.mjs';
 import {strictMediaV2JsonSchema} from './media-v3-metadata-v2.mjs';
 import {siteMediaEntrySchema} from './site-draft.mjs';
@@ -106,7 +107,7 @@ export const mediaV2ContextSchema=exact({legacyCatalog:z.array(siteMediaEntrySch
 });
 export const v2MediaManifestEntrySchema=strictMediaV2JsonSchema.pipe(z.union([
   exact({source:z.literal('LEGACY'),asset:siteMediaEntrySchema}),
-  exact({source:z.literal('MEDIA_VERSION'),asset:immutableManifestAssetV2Schema})
+  exact({source:z.literal('MEDIA_VERSION'),asset:immutableManifestAssetV2Schema}),fileEntrySchema
 ]));
 const compare=(a,b)=>a<b?-1:a>b?1:0;
 const effectiveId=entry=>entry.source==='LEGACY'?entry.asset.id:entry.asset.assetId;
@@ -117,7 +118,7 @@ export const v2MediaManifestSchema=strictMediaV2JsonSchema.pipe(z.array(v2MediaM
   const ids=values.map(effectiveId);
   return new Set(ids).size===ids.length && values.reduce((sum,entry)=>sum+(entry.source==='MEDIA_VERSION'?entry.asset.derivatives.length:0),0)<=256 &&
     values.every((entry,index)=>(index===0 || compareEntries(values[index-1],entry)<0) &&
-      (entry.source==='LEGACY' || entry.asset.derivatives.every((d,index)=>index===0 || compareDerivatives(entry.asset.derivatives[index-1],d)<0)));
+      (entry.source!=='MEDIA_VERSION' || entry.asset.derivatives.every((d,index)=>index===0 || compareDerivatives(entry.asset.derivatives[index-1],d)<0)));
 });
 
 /** Validate entries, preserve all present fields, and sort a fresh complete

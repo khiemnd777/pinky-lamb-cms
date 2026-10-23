@@ -1,3 +1,5 @@
+import {mountPreviewFileActions,mediaEntryResource} from './preview-file-actions.mjs';
+import {loadFileBytes} from '../reader/pinky-reader.mjs';
 import {renderPinkyVideoPlayer,installPinkyVideoPlayer} from '../preview/pinky-video-player.mjs';
 import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {z} from 'zod';
@@ -84,6 +86,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
  const active=run=>!destroyed&&current===run&&!run.controller.signal.aborted&&run.revision===revision&&run.member&&run.member===sessionKey();
  function guard(run){if(active(run))return;if(current===run)clear();throw new DOMException('Phiên đã thay đổi.','AbortError');}
  function dispose(run){
+  run.fileActions?.destroy();run.fileActions=null;
   run.player?.destroy();run.player=null;
   if(run.frame){run.frame.removeAttribute('srcdoc');run.frame.src='about:blank';run.frame.remove();run.frame=null;}
   if(run.link){run.link.removeAttribute('href');run.link.remove();run.link=null;}
@@ -168,10 +171,11 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
   finally{run.busy=false;if(active(run)){refresh.disabled=false;run.buttons.forEach(b=>{b.disabled=false;});}}
  }
  function addControls(run){
+  if(!thumbnail&&!run.fileActions)run.fileActions=mountPreviewFileActions(actions,{apiFetch,getSession,resources:run.selection.manifest.filter(e=>e.asset.kind!=='VIDEO').map(e=>mediaEntryResource(e,{snapshotId:run.selection.snapshotId}))});
   if(isYoutubeReel(run.selection.content.settings.showreel)&&run.selection.content.sections.some(s=>s.sectionId==='about'&&s.isVisible!==false)){const b=doc.createElement('button');b.type='button';b.textContent='Xem video YouTube';b.disabled=run.busy;b.addEventListener('click',()=>{if(active(run)&&!run.busy)void focusYoutube(run.selection);});run.buttons.push(b);actions.append(b);}
   const visible=new Set(collectVisibleSiteMediaReferences(run.selection.content).map(r=>r.id));
   for(const entry of run.selection.manifest){
-   if(!visible.has(idOf(entry))||!['PDF','VIDEO'].includes(entry.asset.kind))continue;
+   if(!visible.has(idOf(entry))||entry.asset.kind!=='VIDEO')continue;
    for(const [label,mode] of entry.asset.kind==='VIDEO'?[['Tải và xem video','VIDEO']]:entry.source==='LEGACY'?[['Chuẩn bị tải PDF LEGACY','PDF_DOWNLOAD']]:[['Xem các trang PDF','PDF_PAGE'],['Chuẩn bị tải PDF','PDF_DOWNLOAD']]){
     const b=doc.createElement('button');b.type='button';b.textContent=label+' — '+idOf(entry);b.addEventListener('click',()=>{if(active(run)&&!run.busy)void focus(run.selection,entry,mode);});run.buttons.push(b);b.disabled=run.busy;actions.append(b);
    }
@@ -188,6 +192,7 @@ export function createSiteMediaPreview(root,{apiFetch,getSession,thumbnail=false
     const id=idOf(entry);
     if(entry.source==='LEGACY'){if(entry.asset.kind==='IMAGE'&&ids.has(id))resources[id]={image:entry.asset.legacyPath};continue;}
     if(!ids.has(id))continue;
+    if(entry.source==='FILE_RESOURCE'){if(entry.asset.kind==='IMAGE'){const result=await loadFileBytes(mediaEntryResource(entry),{signal:run.controller.signal});guard(run);const url=URL.createObjectURL(new Blob([result.bytes],{type:entry.asset.mimeType}));run.resources.add({url,release(){}});resources[id]={image:url};}continue;}
     if(entry.asset.kind==='IMAGE'){const d=entry.asset.derivatives.find(d=>d.role==='IMAGE'&&d.targetWidth===1920);resources[id]={image:await binary(run,entry,d)};guard(run);}
     else if(entry.asset.kind==='VIDEO'){resources[id]={poster:await binary(run,entry,entry.asset.derivatives.find(d=>d.role==='POSTER'))};guard(run);}
    }

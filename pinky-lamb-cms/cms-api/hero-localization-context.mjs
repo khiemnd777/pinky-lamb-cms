@@ -1,3 +1,5 @@
+import {selectedResource} from './project-localization-context.mjs';
+import {fileQaResource} from '../contracts/file-resource.mjs';
 import {hashHeroValue,heroDependencyHash} from './hero-localization-dependency.mjs';
 export {hashHeroValue} from './hero-localization-dependency.mjs';
 import {HERO_PRESENTATION_ID,HERO_PRESENTATION_RESOURCE_ID,HERO_PRESENTATION_CSS,HERO_PRESENTATION_SHA256} from '../preview/hero-localization-presentation.mjs';
@@ -32,6 +34,7 @@ export function projectHeroQaContext(current,record,selected){
   function selectedImage(imageId){const entry=selected.orderedManifest.find(e=>(e.source==='LEGACY'?e.asset.id:e.asset.assetId)===imageId);
   if(!entry||entry.asset.kind!=='IMAGE')throw new ApiError('VALIDATION_ERROR');
   let image;
+  if(entry.source==='FILE_RESOURCE')return fileQaResource(entry.asset);
   if(entry.source==='LEGACY'){
    const asset=record.legacyCatalog.find(a=>a.id===imageId);if(!asset)throw new ApiError('INTERNAL_ERROR');
    image=heroQaResourceSchema.parse({id:imageId,path:asset.legacyPath,url:`http://127.0.0.1:5010/${asset.legacyPath}`,mimeType:asset.mimeType,sizeBytes:asset.sizeBytes,sha256:asset.sha256,width:asset.width,height:asset.height});
@@ -43,6 +46,7 @@ export function projectHeroQaContext(current,record,selected){
   const image=selectedImage(current.content.hero.image.assetId),logo=selectedImage(current.content.settings.brand.logo.assetId),css=Buffer.from(HERO_PRESENTATION_CSS);
   const presentation={id:HERO_PRESENTATION_ID,brand:{name:current.content.settings.brand.name,tagline:current.content.settings.brand.tagline,logoResourceId:logo.id},stylesheetResourceId:HERO_PRESENTATION_RESOURCE_ID};
   const resources=[image,...(logo.id===image.id?[]:[logo]),{id:HERO_PRESENTATION_RESOURCE_ID,path:'assets/hero-presentation-v1.css',sourceKind:'APPLICATION_INLINE',mimeType:'text/css',sizeBytes:css.length,sha256:HERO_PRESENTATION_SHA256,inlineBase64:css.toString('base64')},staticResource('styles','styles.css','text/css'),...['abril-fatface-400','montserrat-400','montserrat-600','montserrat-700','montserrat-800'].map(name=>staticResource(name,`assets/${name}.woff`,'font/woff'))];
+  for(const action of [current.content.hero.primaryAction,current.content.hero.secondaryAction].filter(a=>a?.kind==='FILE')){const entry=selected.orderedManifest.find(e=>e.asset.assetId===action.assetId);if(!entry||!['IMAGE','PDF','WORD','EXCEL'].includes(entry.asset.kind))throw new ApiError('VALIDATION_ERROR');const resource=selectedResource(entry,entry.asset.kind);if(!resources.some(r=>r.id===resource.id))resources.push(resource);}
   const base={revision:current.revision,contentHash:hashHeroValue(current.content),hero:current.content.hero};
   base.dependencyHash=heroDependencyHash(current,record,{base,resources,presentation});
   return {base,resources,presentation};

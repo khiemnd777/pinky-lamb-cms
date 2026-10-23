@@ -1,3 +1,4 @@
+import {fileAssetSchema} from '../contracts/file-resource.mjs';
 import {isYoutubeReel} from '../contracts/showreel-source.mjs';
 import {randomUUID,createHash} from 'node:crypto';
 import {ApiError,validationError} from '../contracts/errors.mjs';
@@ -41,6 +42,7 @@ function sourceContext(db){
 function catalogFor(db,content,imported){
  const ids=selectedIds(content),entries=[];
  for(const assetId of ids){const legacy=imported.legacyCatalog.find(a=>a.id===assetId);if(legacy){entries.push({source:'LEGACY',asset:{id:legacy.id,kind:legacy.kind,status:'LEGACY_READY',legacyPath:legacy.legacyPath,label:legacy.legacyPath.split('/').at(-1),...Object.fromEntries(['width','height','durationSeconds'].filter(k=>legacy[k]!==undefined).map(k=>[k,legacy[k]]))}});continue;}
+  if(assetId.startsWith('file-')){const row=db.row('cmsFileResources/'+assetId);if(!row)throw new ApiError('NOT_FOUND');const value=JSON.parse(row.body);if(value.state!=='INSPECTED')throw new ApiError('VALIDATION_ERROR');entries.push({source:'FILE_RESOURCE',asset:fileAssetSchema.parse(value.asset)});continue;}
   const source=db.row('cmsMediaVersions/'+assetId);if(!source)throw new ApiError('NOT_FOUND');const version=JSON.parse(source.body);
   if(version.status!=='READY')throw new ApiError('VALIDATION_ERROR');
   // Read DTOs expose only public dimensions/status. Authority remains the

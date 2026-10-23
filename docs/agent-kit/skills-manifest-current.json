@@ -195,7 +195,7 @@
     {
       "canonical": ".agents/skills/frontend-ui-engineering/SKILL.md",
       "mirror": ".claude/skills/frontend-ui-engineering/SKILL.md",
-      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2"
+      "sha256": "611bea51e3849fa0a244c53146ceff061bbe57112ad031e7a7d45d64b7d29e0c"
     },
     {
       "canonical": ".agents/skills/incremental-implementation/SKILL.md",
@@ -730,7 +730,7 @@
     },
     {
       "path": ".agents/skills/frontend-ui-engineering/SKILL.md",
-      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+      "sha256": "611bea51e3849fa0a244c53146ceff061bbe57112ad031e7a7d45d64b7d29e0c",
       "origin": {
         "repository": "https://github.com/addyosmani/agent-skills",
         "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
@@ -765,6 +765,13 @@
             "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
             "source_sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
           }
+        },
+        {
+          "task": "pinky-lamb-cms/tasks/UI-LAYOUT-004.md",
+          "date": "2026-10-23",
+          "before_sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+          "after_sha256": "611bea51e3849fa0a244c53146ceff061bbe57112ad031e7a7d45d64b7d29e0c",
+          "reason": "Human-approved v4 UI discovery: AGENTS to single UI contract, checklist and rendered verification; retained original provenance"
         }
       ]
     },
@@ -1619,7 +1626,7 @@
     },
     {
       "path": ".claude/skills/frontend-ui-engineering/SKILL.md",
-      "sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+      "sha256": "611bea51e3849fa0a244c53146ceff061bbe57112ad031e7a7d45d64b7d29e0c",
       "origin": {
         "repository": "https://github.com/addyosmani/agent-skills",
         "commit": "1401c8b8030e023baeebb31781a6653fe8e93026",
@@ -1654,6 +1661,13 @@
             "approval": "docs/agent-kit/tasks/PINKY-TEMPLATE-ADOPTION-001.md",
             "source_sha256": "03e47e8cb21fa917afec3863f63dbe5bf0c3b83a52c37f83407fa7e499571cf0"
           }
+        },
+        {
+          "task": "pinky-lamb-cms/tasks/UI-LAYOUT-004.md",
+          "date": "2026-10-23",
+          "before_sha256": "c6f0620ee9cfc1518a42890e623c7e33c79c00e68d4166824a4d643cd6d4bca2",
+          "after_sha256": "611bea51e3849fa0a244c53146ceff061bbe57112ad031e7a7d45d64b7d29e0c",
+          "reason": "Human-approved v4 UI discovery: AGENTS to single UI contract, checklist and rendered verification; retained original provenance"
         }
       ]
     },
@@ -2062,7 +2076,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "309565cd6c3409852ec9d843d2422038f6332c69aaee97d825da84e122c1fb62",
+      "sha256": "9357ffded88b7dde9121b974216c7b98d6be6d19988d4ada5f7092ab77421d4f",
       "origin": {
         "source": "Pinky Lamb repository-local instructions; prior bytes retained in the amendment baseline",
         "record": "docs/agent-kit/tasks/AGENT-POLICY-LOOP-001.md"
@@ -2090,6 +2104,13 @@
           "before_sha256": "4cf8a29157c4539c50e44cd9314e721ac9c0f1833271b140dfabef6145ef4e38",
           "after_sha256": "309565cd6c3409852ec9d843d2422038f6332c69aaee97d825da84e122c1fb62",
           "reason": "Align active entrypoints with human-confirmed project closure and the retained non-blocking model routing"
+        },
+        {
+          "task": "pinky-lamb-cms/tasks/UI-LAYOUT-004.md",
+          "date": "2026-10-23",
+          "before_sha256": "309565cd6c3409852ec9d843d2422038f6332c69aaee97d825da84e122c1fb62",
+          "after_sha256": "9357ffded88b7dde9121b974216c7b98d6be6d19988d4ada5f7092ab77421d4f",
+          "reason": "Human-approved v4 UI discovery: AGENTS to single UI contract, checklist and rendered verification; retained original provenance"
         }
       ]
     },
@@ -2600,6 +2621,14 @@
           "reason": "Track active project entrypoints that previously continued the historical M1 setup"
         }
       ]
+    },
+    {
+      "path": "docs/agent-kit/ui-layout-contract.md",
+      "sha256": "fa6924bacc23f4b4834b4779857e5ae489a786d78c8ac1ffcb070974894a9150",
+      "origin": {
+        "source": "Pinky Lamb repository-local UI contract, approved v4",
+        "record": "pinky-lamb-cms/tasks/UI-LAYOUT-004.md"
+      }
     }
   ],
   "excluded_mutable_paths": [
@@ -2795,6 +2824,20 @@
         "docs/QA-AND-DOD.md"
       ],
       "historical_boundary": "New human-confirmed closure records and original task/evidence/native/skill/data sources preserved; no runtime/harness/Git action"
+    },
+    {
+      "task": "pinky-lamb-cms/tasks/UI-LAYOUT-004.md",
+      "approval_source": "Direct human approval of v4 implementation on 2026-10-23; local only, preserve data, no publish/deploy",
+      "previous_effective_manifest_sha256": "c71cfc7e8911b6f24e8ed28da9fa119b47e4f2f0a8056aa33785ff50b3d1882b",
+      "changed_maintained_paths": [
+        "AGENTS.md",
+        ".agents/skills/frontend-ui-engineering/SKILL.md",
+        ".claude/skills/frontend-ui-engineering/SKILL.md"
+      ],
+      "added_inventory_paths": [
+        "docs/agent-kit/ui-layout-contract.md"
+      ],
+      "historical_boundary": "No historical manifests, outcomes or unrelated digest mismatches rewritten. UI checks recorded in the product task."
     }
   ],
   "entrypoint_alignment": {

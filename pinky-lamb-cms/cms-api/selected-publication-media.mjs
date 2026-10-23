@@ -22,3 +22,13 @@ export async function readSelectedShowreelResource({descriptor,release,selection
   const current=await library.readVersion(slot.assetId);if(!same(current,version))throw new ApiError('REVISION_CONFLICT');return bytes;
  }finally{releaseBytes();}
 }
+
+/** New public bytes must be an exact descriptor in the confirmed file plan. */
+export async function readPublicationFileResource({descriptor,allowed,library,storage}){
+ if(!allowed.some(r=>same(r,descriptor)))throw new ApiError('REVISION_CONFLICT');
+ if(!descriptor.derivative)return readPinnedReleaseResource(descriptor);
+ if(!['application/pdf','image/webp','image/png','image/jpeg'].includes(descriptor.mimeType))throw new ApiError('VALIDATION_ERROR');
+ const version=await library.readVersion(descriptor.id),derivative=version.readyVersion?.derivatives.find(d=>d.key===descriptor.derivative.key),object=version.storage?.derivatives.find(d=>d.key===descriptor.derivative.key);
+ if(version.status!=='READY'||!derivative||!object||!['IMAGE','PDF_DOWNLOAD'].includes(derivative.role)||!same(publicMediaDerivative(derivative),descriptor.derivative)||!['key','generation','sizeBytes','mimeType','sha256'].every(k=>object[k]===derivative[k])||derivative.sha256!==descriptor.sha256||derivative.sizeBytes!==descriptor.sizeBytes||derivative.mimeType!==descriptor.mimeType)throw new ApiError('REVISION_CONFLICT');
+ const releaseBytes=reserveMediaReadBytes(descriptor.sizeBytes);try{const bytes=await storage.readDerivative({key:object.objectKey,generation:object.generation,sizeBytes:object.sizeBytes,sha256:object.sha256});if(!Buffer.isBuffer(bytes)||bytes.length!==descriptor.sizeBytes||createHash('sha256').update(bytes).digest('hex')!==descriptor.sha256)throw new ApiError('INTERNAL_ERROR');if(!same(await library.readVersion(descriptor.id),version))throw new ApiError('REVISION_CONFLICT');return bytes;}finally{releaseBytes();}
+}

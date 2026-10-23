@@ -11,7 +11,7 @@ export function validateHeroQaRelationships(input){
  const qa=parseHeroQa(input),image=qa.resources.find(r=>r.id===qa.hero?.image?.assetId);
  if(!image||!image.mimeType.startsWith('image/')||canonicalJson(localizedHeroFromBase(qa.hero))!==canonicalJson(qa.draft.content))throw Error('Nội dung QA không khớp bản đã lưu.');
  const catalog=[{id:image.id,kind:'IMAGE',status:'LEGACY_READY'},...[qa.hero.primaryAction,qa.hero.secondaryAction].filter(a=>a?.kind==='CREDENTIAL').map(a=>({id:a.assetId,kind:'PDF',status:'LEGACY_READY'}))];
- createHeroSchemas(catalog).heroSchema.parse(qa.hero);if(qa.contractRevision===2){const stylesheet=qa.resources.find(r=>r.id===qa.presentation.stylesheetResourceId);const expected=new TextEncoder().encode(HERO_PRESENTATION_CSS);let raw='';for(const byte of expected)raw+=String.fromCharCode(byte);if(stylesheet.sha256!==HERO_PRESENTATION_SHA256||stylesheet.sizeBytes!==expected.length||stylesheet.inlineBase64!==btoa(raw))throw Error('Presentation stylesheet không khớp nguồn.');}return qa;
+ createHeroSchemas(catalog,{allowFiles:true}).heroSchema.parse(qa.hero);if(qa.contractRevision===2){const stylesheet=qa.resources.find(r=>r.id===qa.presentation.stylesheetResourceId);const expected=new TextEncoder().encode(HERO_PRESENTATION_CSS);let raw='';for(const byte of expected)raw+=String.fromCharCode(byte);if(stylesheet.sha256!==HERO_PRESENTATION_SHA256||stylesheet.sizeBytes!==expected.length||stylesheet.inlineBase64!==btoa(raw))throw Error('Presentation stylesheet không khớp nguồn.');}return qa;
 }
 function renderLegacyLocalizedHeroDocument(input,{mode='PRIVATE',resourceUrls={}}={}){
  const qa=validateHeroQaRelationships(input),e=escapeHtml,copy=HERO_QA_COPY[qa.draft.locale];

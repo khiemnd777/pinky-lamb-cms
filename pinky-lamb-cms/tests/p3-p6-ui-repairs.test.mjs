@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mountSharedLocalizationWorkspace} from '../admin/shared-localization-workspace.mjs';
-import {mountLocalizationReviewEditor} from '../admin/localization-review-editor.mjs';
+import {registerHooks} from 'node:module';
+// The DOM fixture has no CSS/worker execution; the browser suite checks their real Vite output.
+const assets=registerHooks({load(url,context,next){if(url.endsWith('.css'))return {format:'module',shortCircuit:true,source:'export {};'};if(url.endsWith('pdf.worker.mjs?url'))return {format:'module',shortCircuit:true,source:'export default "/fixture-worker.mjs";'};return next(url,context);}});
+const {mountLocalizationReviewEditor}=await import('../admin/localization-review-editor.mjs');assets.deregister();
 import {createLocalizedEditorialService} from '../cms-api/localized-editorial.mjs';
 import {editorialFixture} from './localized-editorial-api.test.mjs';
 
@@ -23,7 +26,7 @@ class Element{
  remove(){if(this.parentNode)this.parentNode.children=this.parentNode.children.filter(node=>node!==this);}
  all(){return this.children.flatMap(node=>[node,...node.all()]);}
 }
-function dom(){const doc={addEventListener(){},removeEventListener(){},createElement(tag){return new Element(this,tag);},getElementById(id){return this.body.all().find(node=>node.id===id)??null;}};doc.defaultView={setTimeout,clearTimeout,addEventListener(){},removeEventListener(){},dispatchEvent(){},confirm:()=>true,CustomEvent:class{constructor(type,{detail}){this.type=type;this.detail=detail;}},MutationObserver:class{observe(){}disconnect(){}}};doc.body=new Element(doc,'body');doc.activeElement=doc.body;const root=new Element(doc,'main');doc.body.append(root);return {doc,root};}
+function dom(){const doc={documentElement:{lang:'vi'},addEventListener(){},removeEventListener(){},createElement(tag){return new Element(this,tag);},getElementById(id){return this.body.all().find(node=>node.id===id)??null;}};doc.defaultView={setTimeout,clearTimeout,addEventListener(){},removeEventListener(){},dispatchEvent(){},confirm:()=>true,CustomEvent:class{constructor(type,{detail}){this.type=type;this.detail=detail;}},MutationObserver:class{observe(){}disconnect(){}}};doc.body=new Element(doc,'body');doc.activeElement=doc.body;const root=new Element(doc,'main');doc.body.append(root);return {doc,root};}
 function workspace(){const {doc,root}=dom(),content={projects:[],services:[],settings:{contact:{email:'before@example.test'}}},context={siteUx:true},calls=[];let deny=false,staged=false,sharedActive=false,localizedActive=false,changed=0,destroyed=0;const target=new Element(doc,'input');
  const options={content,context,onChange:()=>changed++},editor=mountSharedLocalizationWorkspace(root,options,{key:'work',mountShared(host,received){assert.equal(received.content,content);assert.equal(received.context,context);host.append(target);return {setGroupActive:value=>sharedActive=value,setDisabled:value=>calls.push(['disable',value]),refreshReferences:()=>calls.push(['references']),hasPendingInput:()=>staged,revealValidationPath:path=>{calls.push(['reveal',path]);return target;},destroy(){destroyed++;}};},mountLocalized(_host,received){assert.equal(received.content,content);return {setGroupActive(value){localizedActive=value;received.onContext?.({active:value});},requestTransition:async target=>{calls.push(['transition',target]);return !deny;},canLeave:()=>!deny,hasPendingInput:()=>deny,destroy(){destroyed++;}};}}),host=root.children[0],tabs=host.children[0];
  return {doc,root,editor,tabs,host,content,options,calls,target,active:()=>({sharedActive,localizedActive}),deny:value=>deny=value,stage:value=>staged=value,changed:()=>changed,destroyed:()=>destroyed};
@@ -51,6 +54,7 @@ test('P5 filter labels have unique stable associations and focus survives redraw
 test('P5 single Admin draft detail has one Publish action and no reviewer or source-attestation form',async()=>{
  const f=editorialFixture();f.setActor('admin','OWNER');const api=await createLocalizedEditorialService({resourceContext:f.context}),r=await f.context.readResource(null,f.resource),{root}=dom();
  const editor=mountLocalizationReviewEditor(root,{getSession:()=>({uid:'admin',role:'OWNER',authzVersion:1}),getContent:()=>({projects:[],services:[{id:'brand-creative',title:'Brand & Creative'}]}),apiFetch:async(path,options)=>{
+  if(path==='/api/cms/localizations/website/prepare')return {mode:'SELECTED',selection:JSON.parse(options.body)};
   if(path==='/api/cms/localizations/website/publish'){const body=JSON.parse(options.body);assert.deepEqual(body.resource,f.resource);assert.equal(body.expectedRevision,r.draft.revision);const receipt=await api.publishDraft({request:{},actor:f.actor(),key:options.headers['Idempotency-Key'],body});return {id:'ui-job',kind:'PUBLISH',state:'COMPLETED',selection:body,result:{...receipt,status:'PUBLISHED_ON_WEBSITE',port:4189,activation:false,releaseId:'ui-release',snapshotSetHash:'a'.repeat(64),artifact:{relativeRoot:'.local/releases/multilingual-001/ui-release/public',manifestSha256:'b'.repeat(64)}}};}
   if(path.startsWith('/api/cms/localizations/editorial/snapshots/'))return api.readSnapshot({request:{},id:path.split('/').at(-1)});
   if(path.endsWith('/services/status'))return {contractRevision:1,draftId:'home-v3',services:[{serviceId:'brand-creative',sourceTitle:'Brand & Creative',isVisible:true,locales:{en:{revision:r.draft.revision,dependencyHash:r.dependencyHash,contentHash:r.draft.contentHash,updatedAt:r.draft.updatedAt,stale:false},vi:null,ja:null}}]};

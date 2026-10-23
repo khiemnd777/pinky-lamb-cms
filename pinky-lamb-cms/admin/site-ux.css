@@ -56,7 +56,7 @@ button:has(>.cms-lucide){display:inline-flex;align-items:center;justify-content:
 @media(max-width:600px){
  .cms-authenticated[data-cms-resource=home-v3] .run-row,.ux-dialog .run-row{grid-template-columns:minmax(0,1fr);gap:10px;min-width:0;width:100%}
  .cms-authenticated[data-cms-resource=home-v3] .run-row>.editor-field,.ux-dialog .run-row>.editor-field{width:100%;min-width:0;max-width:100%}
- .cms-authenticated[data-cms-resource=home-v3] .run-row textarea,.ux-dialog .run-row textarea{width:100%;min-width:0;min-height:88px;height:auto;font-size:16px}
+ .cms-authenticated[data-cms-resource=home-v3] .run-row textarea,.ux-dialog .run-row textarea{width:100%;min-width:0;min-height:96px;height:auto;font-size:16px}
  .cms-authenticated[data-cms-resource=home-v3] .run-row>.editor-field:nth-child(2)>label,.ux-dialog .run-row>.editor-field:nth-child(2)>label{min-height:24px;margin-bottom:6px}
  .cms-authenticated[data-cms-resource=home-v3] .run-label-row,.ux-dialog .run-label-row{min-width:0;gap:8px}
  .cms-authenticated[data-cms-resource=home-v3] .run-row .ps-trigger,.ux-dialog .run-row .ps-trigger{width:100%;min-width:0}
@@ -84,7 +84,7 @@ button:has(>.cms-lucide){display:inline-flex;align-items:center;justify-content:
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-run-text-field .field-hint{font-size:10px;margin-top:4px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-run-group{gap:8px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-heading-line{padding:12px;background:#fcfafb;gap:8px;border:1px solid var(--line);border-radius:8px;margin:0 0 12px}
-:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-tools{display:flex;align-items:center;justify-content:flex-start;gap:2px;flex-wrap:nowrap;min-width:0;width:max-content;max-width:100%}
+:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-tools{display:flex;align-items:center;justify-content:flex-start;gap:var(--cms-control-gap,8px);flex-wrap:nowrap;min-width:0;width:max-content;max-width:100%}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-tools>button{width:44px;min-width:44px;height:44px;min-height:44px;padding:10px;border-color:transparent;background:transparent;flex:0 0 44px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-tools>.ps-trigger{width:64px!important;min-width:64px!important;max-width:64px;flex:0 0 64px;padding:8px!important;font-size:12px!important;min-height:44px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-source-disclosure{border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;margin:24px 0 0;padding:16px 0 0}
@@ -119,14 +119,14 @@ button:has(>.cms-lucide){display:inline-flex;align-items:center;justify-content:
 .ux-rich-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;font-size:12px}
 .ux-rich-toolbar>.ux-order-toggle{padding:8px 10px;font-size:11px;min-height:44px;background:transparent;border-color:var(--line)}
 .ux-sort-compact:not(.ux-order-expanded) .ux-sort-tools>:not(.site-sort-handle){display:none}
-:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-sort-tools{min-width:44px;width:max-content;margin:0;gap:2px;align-self:center}
+:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-sort-tools{min-width:44px;width:max-content;margin:0;gap:var(--cms-control-gap,8px);align-self:center}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-typed-run[data-site-run-path]{grid-template-columns:44px minmax(0,1fr) 130px 44px;grid-template-areas:"sort text emphasis remove";gap:6px 8px;padding:8px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact.ux-order-expanded .ux-typed-run[data-site-run-path]{grid-template-columns:minmax(0,1fr) 130px 44px;grid-template-areas:"sort sort sort" "text emphasis remove"}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-run-text-field>.run-field-header{min-height:18px;height:18px;margin:0 0 4px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-run-style-field>label{min-height:18px;height:18px;margin:0 0 4px}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-run-text-field :is(input,textarea){min-height:44px;height:44px;padding:10px 12px}
 .ux-sort-compact .ux-typed-run>.run-remove{grid-area:remove;align-self:start;margin:22px 0 0}
-:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-heading-line{display:grid;grid-template-columns:44px minmax(0,1fr) 88px;grid-template-areas:"sort title remove" "runs runs runs";gap:4px 8px;padding:4px 8px;margin:0 0 4px;background:transparent;border-radius:8px}
+:is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-heading-line{display:grid;grid-template-columns:44px minmax(0,1fr) 96px;grid-template-areas:"sort title remove" "runs runs runs";gap:4px 8px;padding:4px 8px;margin:0 0 4px;background:transparent;border-radius:8px}
 .ux-sort-compact .ux-heading-line>h4{grid-area:title;align-self:center;font-size:11px;color:var(--muted)}
 .ux-sort-compact .ux-heading-line>.ux-sort-tools{grid-area:sort}
 .ux-sort-compact .ux-heading-line>.ux-run-group{grid-area:runs;gap:4px}
@@ -144,21 +144,21 @@ button:has(>.cms-lucide){display:inline-flex;align-items:center;justify-content:
 .ux-service-visibility-note>.cms-lucide{width:16px;height:16px;margin-top:2px}
 
 /* Keep adding/removing a line's segments in its header instead of another row. */
-.ux-heading-actions{grid-area:remove;display:flex;gap:0;justify-content:end}
+.ux-heading-actions{grid-area:remove;display:flex;gap:var(--cms-control-gap,8px);justify-content:end}
 .ux-heading-actions>button{width:44px;min-width:44px;min-height:44px;height:44px;padding:10px;margin:0!important;background:transparent;border-color:transparent}
 :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact .ux-run-style-field .ps-trigger{font-size:12px;min-height:44px;height:44px;gap:6px;padding:8px;white-space:nowrap}
 .ux-sort-compact .ux-run-caption{display:flex;justify-content:space-between;align-items:start;gap:8px;min-width:0;min-height:16px}
 .ux-sort-compact .ux-run-caption .field-hint{margin:0!important;font-size:9px!important;line-height:16px}
 .ux-sort-compact .ux-run-caption .ux-field-counter{margin-left:auto;line-height:16px;font-size:9px}
 @media(max-width:720px){
- :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:minmax(0,1fr) 44px 88px!important;grid-template-areas:"sort sort sort" "title title remove" "runs runs runs"}
+ :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:minmax(0,1fr) 44px 96px!important;grid-template-areas:"sort sort sort" "title title remove" "runs runs runs"}
 }
 
-.ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:208px minmax(0,1fr) 88px!important}
+.ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:208px minmax(0,1fr) 96px!important}
 .ux-sort-compact:not(.ux-order-expanded) .ux-typed-run>.run-remove:disabled{display:none}
 .ux-sort-compact .ux-run-caption:empty{display:none}
 @media(max-width:720px){
  :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact:not(.ux-order-expanded) .ux-typed-run[data-site-run-path]:has(>.run-remove:disabled){grid-template-columns:44px minmax(0,1fr) 120px;grid-template-areas:"sort text emphasis"}
- :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:minmax(0,1fr) 44px 88px!important}
+ :is(.cms-authenticated[data-cms-resource=home-v3],.site-record-dialog) .ux-sort-compact.ux-order-expanded .ux-heading-line{grid-template-columns:minmax(0,1fr) 44px 96px!important}
 }
 .ux-sort-compact .ux-run-caption .ux-field-counter{flex:0 0 auto;white-space:nowrap}

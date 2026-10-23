@@ -1,3 +1,4 @@
+import {fileReaderArtifacts} from './file-reader-artifacts.mjs';
 import {readMultilingualSession,createMultilingualReleaseReader} from './multilingual-cms-transport.mjs';
 import {constants,openSync,fstatSync,readFileSync,closeSync,mkdirSync,lstatSync,realpathSync} from 'node:fs';
 import path from 'node:path';
@@ -15,7 +16,7 @@ import {assertMultilingualToolingRuntime,CMS_ROOT,digest,runId,ownedFile,readPri
 import {versionPublicReleaseFiles} from './public-cache-policy.mjs';
 const bundleSchema=localizedReleasePackageSchema;
 const hash=value=>digest(canonicalJson(value));
-export async function packageReleaseResources(release,{readResource=readPinnedReleaseResource}={}){const {resources}=releaseResourceDescriptors(release);if(typeof readResource!=='function')throw Error('Resource byte reader required');const files=[];for(const descriptor of resources.values()){const bytes=Buffer.from(await readResource(descriptor));if(bytes.length!==descriptor.sizeBytes||digest(bytes)!==descriptor.sha256)throw Error('Resource packaging mismatch');files.push({path:descriptor.path,base64:bytes.toString('base64')});}return bundleSchema.parse({release,files});}
+export async function packageReleaseResources(release,{readResource=readPinnedReleaseResource}={}){const {resources}=releaseResourceDescriptors(release);if(typeof readResource!=='function')throw Error('Resource byte reader required');const files=[];for(const descriptor of resources.values()){if(descriptor.file?.source.kind==='EXTERNAL')continue;const bytes=Buffer.from(await readResource(descriptor));if(bytes.length!==descriptor.sizeBytes||digest(bytes)!==descriptor.sha256)throw Error('Resource packaging mismatch');files.push({path:descriptor.path,base64:bytes.toString('base64')});}return bundleSchema.parse({release,files});}
 /** Browser handoffs omit legacy bytes. Only the exact checked-in baseline pins may fill those omissions. */
 export async function completeReleaseHandoff(input){
  const bundle=bundleSchema.parse(input),{resources}=releaseResourceDescriptors(bundle.release),provided=new Map();
@@ -42,15 +43,15 @@ export function planMultilingualSiteExport(input,id,{preserveDocuments={}}={}){
   const qa=validateLocalizedFullSiteQaRelationships(parseFullSiteQa(input));if(hash({mode:qa.mode,locale:qa.locale,dependencyVector:qa.dependencyVector,policy:qa.policy})!==qa.dependencyHash)throw Error('Projection digest mismatch');if(qa.mode!=='APPROVED_RELEASE'||qa.dependencyVector.resources.some(r=>!r.snapshotId))throw Error('Only frozen approved snapshots can be released');if(seen.has(qa.locale))throw Error('Duplicate release locale');seen.add(qa.locale);
   sourceHash??=qa.dependencyVector.sourceHash;templateIdentity??=qa.templateIdentity;policyHash??=hash(qa.policy);
   if(sourceHash!==qa.dependencyVector.sourceHash||templateIdentity!==qa.templateIdentity||policyHash!==hash(qa.policy))throw Error('Mixed source, media, policy or availability release');
-  const prefix=qa.locale==='en'?'':`${qa.locale}/`,resources=new Set();
+  const prefix=qa.locale==='en'?'':`${qa.locale}/`,resources=new Set();const readerEntry=fileReaderArtifacts().find(f=>f.path==='assets/pinky-files.mjs').cachePath,readerScript=FULL_SITE_QA_SCRIPT.replace("'/assets/pinky-files.mjs'",JSON.stringify('/'+readerEntry));
   // Media identities are shared across locales. Store each verified resource once;
   // localized document-relative asset requests resolve through the manifest-only alias.
   for(const file of bundle.files){const descriptor=qa.resources.find(r=>r.path===file.path);if(!descriptor)continue;if(resources.has(file.path))throw Error('Duplicate public bytes');resources.add(file.path);const bytes=Buffer.from(file.base64,'base64');if(bytes.toString('base64')!==file.base64||bytes.length!==descriptor.sizeBytes||digest(bytes)!==descriptor.sha256)throw Error('Resource integrity mismatch');add(file.path,bytes,descriptor.mimeType);}
-  if(qa.resources.some(r=>!resources.has(r.path)))throw Error('Missing mandatory resource');
+  if(qa.resources.some(r=>r.file?.source.kind!=='EXTERNAL'&&!resources.has(r.path)))throw Error('Missing mandatory resource');
   for(const part of [qa.hero,...Object.values(qa.groups),...Object.values(qa.workServices.sections),...qa.workServices.projects,...qa.workServices.services])if(hash(part.draft.content)!==part.draft.contentHash)throw Error('Frozen content hash mismatch');
   const document=renderLocalizedFullSiteDocument(qa,{mode:'QA_EXPORT',canonicalBaseUrl:'http://127.0.0.1:4189/',availableLocales:bundle.release.entries.map(entry=>entry.locale)});
   add(prefix+'index.html',Buffer.from(document),'text/html');
-  add(prefix+FULL_SITE_QA_SCRIPT_PATH,Buffer.from(FULL_SITE_QA_SCRIPT),'text/javascript');add(prefix+FULL_SITE_QA_STYLE_PATH,Buffer.from(FULL_SITE_QA_STYLE),'text/css');
+  add(prefix+FULL_SITE_QA_SCRIPT_PATH,Buffer.from(readerScript),'text/javascript');add(prefix+FULL_SITE_QA_STYLE_PATH,Buffer.from(FULL_SITE_QA_STYLE),'text/css');
   for(const name of ['site-locale.mjs','full-site-locale-copy.mjs'])add(prefix+'assets/'+name,readFileSync(new URL('../preview/'+name,import.meta.url)),'text/javascript');
   identities.push({locale:qa.locale,templateIdentity:qa.templateIdentity,dependencyHash:qa.dependencyHash,dependencyVector:qa.dependencyVector});
  }
@@ -58,6 +59,7 @@ export function planMultilingualSiteExport(input,id,{preserveDocuments={}}={}){
  add('sitemap.xml',Buffer.from(renderMultilingualSitemap(bundle.release)),'application/xml');
  // Retain public callers' legacy paths/bytes. Never copy the old index or raw CMS sources; the pinned public app.js remains available to legacy callers.
  const compatibility=[];for(const pin of BASELINE_FILES){if(pin.path==='index.html')continue;const mimeType=mimeFor(pin.path);if(!mimeType)throw Error('Unsupported legacy compatibility type');const bytes=baselineBytes(pin.path,pin.sha256);add(pin.path,bytes,mimeType);compatibility.push({path:pin.path,sha256:pin.sha256});}
+ for(const file of fileReaderArtifacts())add(file.path,file.bytes,file.mimeType);
  const cacheAliases=versionPublicReleaseFiles(files);
  for(const [name,bytes] of Object.entries(preserveDocuments)){
   if(!['index.html','vi/index.html','ja/index.html'].includes(name)||!Buffer.isBuffer(bytes)||!files.has(name))throw Error('Invalid preserved public document');
@@ -67,6 +69,7 @@ export function planMultilingualSiteExport(input,id,{preserveDocuments={}}={}){
  if(total>256*1048576||files.size>2048)throw Error('Versioned release exceeds public budget');
  const ordered=[...files.values()].sort((a,b)=>a.relative.localeCompare(b.relative,'en'));
  const manifest={contractRevision:1,kind:'MULTILINGUAL_SITE_RELEASE',cacheVersion:1,cacheAliases,presentation:{renderer:'full-site-localization-renderer-v1',rendererSha256:digest(readFileSync(new URL('../preview/full-site-localization-renderer.mjs',import.meta.url))),dictionary:'full-site-locale-copy-v1',dictionarySha256:digest(readFileSync(new URL('../preview/full-site-locale-copy.mjs',import.meta.url))),scriptSha256:digest(FULL_SITE_QA_SCRIPT),stylesheetSha256:digest(FULL_SITE_QA_STYLE)},releaseId:id,templateIdentity,sourceHash,availabilityHashes:identities.map(i=>({locale:i.locale,hash:i.dependencyVector.availabilityHash})),snapshotSetHash:bundle.release.snapshotSetHash,policy:bundle.release.entries[0].policy,identities,compatibility,files:ordered.map(f=>({path:f.relative,sizeBytes:f.bytes.length,sha256:digest(f.bytes),mimeType:f.mimeType}))};
+ manifest.externalResources=[...new Map(bundle.release.entries.flatMap(q=>q.resources.filter(r=>r.file?.source.kind==='EXTERNAL')).map(r=>[r.id,r])).values()].map(r=>{const copy=structuredClone(r);delete copy.file.rightsConfirmed;return copy;});
  manifest.qaFixture=bundle.qaFixture===true;
  return {relativeRoot:`.local/releases/multilingual-001/${id}/public`,files:ordered,manifest};
 }

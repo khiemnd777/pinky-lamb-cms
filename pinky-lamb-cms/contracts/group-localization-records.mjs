@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {fileQaResourceSchema} from './file-resource.mjs';
 import {strictSiteObject} from './site-settings.mjs';
 import {resourceIdSchema,hashSchema,revisionSchema,assertEnvelopeSize} from './hero.mjs';
 import {groupIdSchema,groupLocaleSchema,groupBaseSchema,groupContentSchema,groupSourceMediaUses,mergeLocalizedGroup,GROUP_TEMPLATE_ID} from './group-localization.mjs';
@@ -12,8 +13,8 @@ const auxiliaryResourceSchema=strictSiteObject({id:resourceIdSchema,assetId:reso
  if(r.derivative){const d=r.derivative,poster=d.role==='POSTER';return ['VIDEO','POSTER'].includes(d.role)&&r.id===(poster?r.assetId+'-poster':r.assetId)&&r.path===`assets/${r.assetId}-${d.key}.${poster?'webp':'mp4'}`&&r.url===`http://127.0.0.1:5173/api/cms/media/${r.assetId}/derivatives/${d.key}`&&r.sizeBytes===d.bytes&&r.sha256===d.sha256&&r.mimeType===d.mime&&r.mimeType===(poster?'image/webp':'video/mp4')&&r.sizeBytes<=(poster?12:64)*1048576&&r.width===d.width&&r.height===d.height&&r.durationSeconds===d.durationSeconds;}
  return r.mimeType==='video/mp4'&&r.path.endsWith('.mp4')&&r.id===r.assetId&&r.url===`http://127.0.0.1:5010/${r.path}`;
 });
-export const localizedQaResourceSchema=z.union([projectQaResourceSchema,heroQaResourceSchema,auxiliaryResourceSchema]);
-export const groupMediaSlotSchema=strictSiteObject({slotId:z.string().min(1).max(160),assetId:resourceIdSchema,resourceId:resourceIdSchema,role:z.enum(['IMAGE','VIDEO','POSTER','PDF_DOWNLOAD'])});
+export const localizedQaResourceSchema=z.union([projectQaResourceSchema,heroQaResourceSchema,auxiliaryResourceSchema,fileQaResourceSchema]);
+export const groupMediaSlotSchema=strictSiteObject({slotId:z.string().min(1).max(160),assetId:resourceIdSchema,resourceId:resourceIdSchema,role:z.enum(['IMAGE','VIDEO','POSTER','PDF_DOWNLOAD','FILE_DOWNLOAD'])});
 const identity={contractRevision:z.literal(1),draftId:z.literal('home-v3'),groupId:groupIdSchema,locale:groupLocaleSchema};
 const receipt={...identity,revision:revisionSchema.refine(n=>n>=1),dependencyHash:hashSchema,contentHash:hashSchema,updatedAt:z.string().datetime().length(24)};
 export const groupReceiptSchema=strictSiteObject(receipt);
@@ -23,7 +24,7 @@ export const groupStatusSchema=strictSiteObject({contractRevision:z.literal(1),d
 export const groupQaSchema=strictSiteObject({contractRevision:z.literal(1),kind:z.literal('LOCALIZED_GROUP_QA'),templateIdentity:z.literal(GROUP_TEMPLATE_ID),draft:groupDraftSchema,base:groupBaseSchema,group:z.record(z.string(),z.unknown()),mediaSlots:z.array(groupMediaSlotSchema).max(32),resources:z.array(localizedQaResourceSchema).max(64)}).superRefine((v,ctx)=>{
  const fail=()=>ctx.addIssue({code:'custom',message:'Invalid localized group closure'}),uses=groupSourceMediaUses(v.draft.groupId,v.base.source),templateIds=['styles','abril-fatface-400','montserrat-400','montserrat-600','montserrat-700','montserrat-800'];
  if(v.draft.groupId!==v.base.groupId||v.draft.dependencyHash!==v.base.dependencyHash||v.mediaSlots.length!==uses.length||new Set(v.mediaSlots.map(s=>s.slotId)).size!==v.mediaSlots.length||new Set(v.resources.map(r=>r.id)).size!==v.resources.length||new Set(v.resources.map(r=>r.path)).size!==v.resources.length||!templateResourcesSchema.safeParse(v.resources.filter(r=>templateIds.includes(r.id))).success)fail();
- const expected=new Set(templateIds);for(const use of uses){const slot=v.mediaSlots.find(s=>s.slotId===use.slotId),r=v.resources.find(r=>r.id===slot?.resourceId),expectedId=use.role==='POSTER'?use.assetId+'-poster':use.assetId;if(!slot||slot.assetId!==use.assetId||slot.role!==use.role||slot.resourceId!==expectedId||!r||(use.role==='IMAGE'||use.role==='POSTER'?!r.mimeType.startsWith('image/'):use.role==='VIDEO'?r.mimeType!=='video/mp4':r.mimeType!=='application/pdf'))fail();expected.add(expectedId);}
+ const expected=new Set(templateIds);for(const use of uses){const slot=v.mediaSlots.find(s=>s.slotId===use.slotId),r=v.resources.find(r=>r.id===slot?.resourceId),expectedId=use.role==='POSTER'?use.assetId+'-poster':use.assetId;if(!slot||slot.assetId!==use.assetId||slot.role!==use.role||slot.resourceId!==expectedId||!r||(use.role==='IMAGE'||use.role==='POSTER'?!r.mimeType.startsWith('image/'):use.role==='VIDEO'?r.mimeType!=='video/mp4':use.role==='FILE_DOWNLOAD'?!r.file&&!r.mimeType.startsWith('image/')&&r.mimeType!=='application/pdf':r.mimeType!=='application/pdf'))fail();expected.add(expectedId);}
  if(v.resources.length!==expected.size||v.resources.some(r=>!expected.has(r.id)))fail();
  try{if(canonicalJson(v.group)!==canonicalJson(mergeLocalizedGroup(v.draft.groupId,v.base.source,v.draft.content)))fail();}catch{fail();}
 });

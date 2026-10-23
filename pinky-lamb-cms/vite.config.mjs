@@ -23,7 +23,7 @@ export function privateFile(value){
   return privateSegment.test(decoded) || privateNames.some(name=>parts.includes(name)) ||
     basename.startsWith('.env') || /\.(?:pem|key)$/.test(basename);
 }
-function allowedBrowserFile(absolute){absolute=path.resolve(absolute);return ['admin','preview','contracts','node_modules'].some(name=>absolute===path.join(ROOT,name)||absolute.startsWith(path.join(ROOT,name)+path.sep));}
+function allowedBrowserFile(absolute){absolute=path.resolve(absolute);return ['admin','preview','contracts','reader','node_modules'].some(name=>absolute===path.join(ROOT,name)||absolute.startsWith(path.join(ROOT,name)+path.sep));}
 function privateImports(){
   return {name:'deny-private-browser-imports',enforce:'pre',
     async resolveId(source,importer){
@@ -48,7 +48,8 @@ export function recoveryHtml(html){
 export function durableHtml(html){
  const old=' http://127.0.0.1:9099';
  if(!html.includes(old)||!html.includes('</head>'))throw Error('Local Admin CSP unavailable');
- return html.replace(old,'').replace('</head>',`${DURABLE_AUTH_MARKER}</head>`);
+ const hosts=(process.env.PINKY_EXTERNAL_FILE_HOSTS??'').split(',').filter(Boolean);if(hosts.some(host=>!/^([a-z0-9-]+\.)+[a-z][a-z0-9-]+$/.test(host)||/(^|\.)(localhost|local|internal|lan)$/.test(host)))throw Error('Invalid external file host policy');
+ return html.replace(old,'').replace("connect-src 'self'","connect-src 'self' "+hosts.map(host=>'https://'+host).join(' ')).replace('</head>',`${DURABLE_AUTH_MARKER}</head>`);
 }
 export function assertAdminBuildMode({command,recovery,durable,cutoverPresent}){
  if(command==='build'&&!recovery&&!durable&&cutoverPresent)throw Error('Durable local CMS is active; use npm run build:admin:durable');

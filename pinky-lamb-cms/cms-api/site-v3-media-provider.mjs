@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {fileAssetSchema} from '../contracts/file-resource.mjs';
 import {ApiError} from '../contracts/errors.mjs';
 import {resourceIdSchema,hashSchema} from '../contracts/hero.mjs';
 import {mediaAssetIdSchema} from '../contracts/media-upload.mjs';
@@ -49,6 +50,7 @@ function validateUses(content,entries){
    const location=path.join('/');let kind;
    if(location==='settings/showreel')kind='VIDEO';
    else if(location==='settings/credential'||value.kind==='CREDENTIAL')kind='PDF';
+   else if(value.kind==='FILE'){demand(['IMAGE','PDF','WORD','EXCEL'].includes(entry.asset.kind),'VALIDATION_ERROR');kind=entry.asset.kind;}
    else{
     demand(Object.hasOwn(value,'alt')&&Object.hasOwn(value,'isDecorative'),'VALIDATION_ERROR');
     kind=value.derivativeRole==='POSTER'?'VIDEO':'IMAGE';
@@ -124,6 +126,10 @@ export function createSiteV3MediaProvider({db,library,writeVerification=false}){
    if(legacyAsset){
     const entry={source:'LEGACY',asset:legacyAsset};if(pin)demand(same(pin,entry));orderedManifest.push(entry);continue;
    }
+   if(assetId.startsWith('file-')){
+    const row=await read(transaction,ref('cmsFileResources',assetId));demand(row.state==='INSPECTED','VALIDATION_ERROR');
+    const asset=fileAssetSchema.parse(row.asset);demand(asset.assetId===assetId);demand(!row.archived||pin||existing.has(assetId),'VALIDATION_ERROR');const entry={source:'FILE_RESOURCE',asset};if(pin)demand(same(pin,entry));orderedManifest.push(entry);continue;
+   }
    if(pin)demand(pin.source==='MEDIA_VERSION');
    const version=await readAuthority(transaction,assetId);
    const entry={source:'MEDIA_VERSION',asset:immutableManifestAssetFromReadyVersionV2(version)};
@@ -131,7 +137,7 @@ export function createSiteV3MediaProvider({db,library,writeVerification=false}){
    expectedMediaVersions.push(version);orderedManifest.push(entry);
   }
   orderedManifest.sort(entryOrder);v2MediaManifestSchema.parse(orderedManifest);validateUses(selected,orderedManifest);
-  const safeCatalog=safeCatalogV2Schema.parse([...catalog.map(legacySafe),...expectedMediaVersions.map(version=>({source:'MEDIA_VERSION',asset:safeMetadataFromReadyVersionV2(version)}))].sort(entryOrder));
+  const safeCatalog=safeCatalogV2Schema.parse([...catalog.map(legacySafe),...expectedMediaVersions.map(version=>({source:'MEDIA_VERSION',asset:safeMetadataFromReadyVersionV2(version)})),...orderedManifest.filter(e=>e.source==='FILE_RESOURCE')].sort(entryOrder));
   return {orderedManifest,expectedMediaVersions,safeCatalog};
  }
  return Object.freeze({resolveSelection});

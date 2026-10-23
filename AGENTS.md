@@ -28,6 +28,10 @@ The plans closed in [tasks/plan.md](tasks/plan.md) stay closed. A new request us
 
 For approved-template work preserve the actual approved structure, controls, interaction and responsive behavior. Compare each affected rendered screen with the reference at matched viewport/zoom/state. A representative screen is early feedback only when an unresolved design choice would be replicated. [CMS acceptance mapping](docs/agent-kit/cms-template-acceptance.md) is a scoped selection guide; unrelated lifecycle failures do not block independent visual repairs, and source/build does not prove visual fidelity.
 
+## UI tasks — required discovery and verification
+
+For every task creating or changing a page, module, component, CSS, dialog or responsive UI, read [the UI layout contract](docs/agent-kit/ui-layout-contract.md) before edits. Follow **AGENTS.md → UI contract → applicable checklist → rendered verification → evidence report**. This applies to new UI and repairs; skill selection or memory is not the trigger. Reuse layout tokens/components, map affected consumers, keep inner spacing owned by the component and verify nested controls at affected viewports/states. Record justified exceptions. Source/build alone is not UI verification; report NOT_RUN where observation is missing. Use the same task record and existing tests, with no extra approval/receipt lifecycle. This rule grants no data, service, Git or release authority.
+
 ## Skills, models and optional agents
 
 Select only relevant local entrypoints from [the catalog](docs/agent-kit/skills-catalog.md). Seventeen `.agents/skills` entries and byte-identical `.claude/skills` mirrors are the active aids. Historical vendor/router/locks are provenance; do not activate or execute them as another workflow.

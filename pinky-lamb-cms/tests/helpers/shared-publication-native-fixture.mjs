@@ -1,0 +1,29 @@
+import path from 'node:path';
+import {createNativeContentFixture} from './content-native-fixture.mjs';
+
+
+
+
+
+
+
+
+
+import {localizedHeroFromBase} from '../../contracts/hero-localization.mjs';
+import {localizedProjectFromBase} from '../../contracts/project-localization.mjs';
+import {GROUP_IDS,groupContentFromSource} from '../../contracts/group-localization.mjs';
+import {packageReleaseResources,readPinnedReleaseResource} from '../../scripts/export-multilingual-site-local.mjs';
+const [{createSiteV3MediaProvider},{createLocalMediaStore},{createFileResourceService},{createContentService},{createLocalizedResourceContext},{createLocalizedEditorialService},{createFullSiteLocalizationService,assembleFullSiteQa},{releaseSnapshotSetHash},{hashProjectValue:hash}]=await Promise.all([import('../../cms-api/site-v3-media-provider.mjs'),import('../../cms-api/local-media-store.mjs'),import('../../cms-api/file-resources.mjs'),import('../../cms-api/content-service.mjs'),import('../../cms-api/localized-resource-context.mjs'),import('../../cms-api/localized-editorial.mjs'),import('../../cms-api/full-site-localizations.mjs'),import('../../cms-api/localized-eligibility.mjs'),import('../../cms-api/project-localization-context.mjs')]);
+export async function sharedPublicationNativeFixture(){
+ const f=await createNativeContentFixture(),storage=createLocalMediaStore({root:path.dirname(f.db.sqlite.name),sqlite:f.db.sqlite}),options={...f.options,mediaProvider:createSiteV3MediaProvider({db:f.db})},content=createContentService(options),context=await createLocalizedResourceContext(options),editorial=await createLocalizedEditorialService({resourceContext:context}),files=createFileResourceService({db:f.db,authorize:options.authorize,storage,hosts:['media.example.org']}),home=await f.db.runTransaction(async tx=>(await context.home(tx)).current.content);
+ const identities=locale=>[{kind:'hero',entityId:'home-v3',locale},...GROUP_IDS.map(entityId=>({kind:'group',entityId,locale})),...['work','services'].map(entityId=>({kind:'section',entityId,locale})),...home.projects.map(p=>({kind:'project',entityId:p.id,locale})),...home.services.map(s=>({kind:'service',entityId:s.id,locale}))];
+ for(const locale of ['en','vi','ja'])for(const resource of identities(locale))await f.db.runTransaction(async tx=>{
+  const r=await context.readResource(tx,resource),b=r.base;let copy;
+  if(resource.kind==='hero')copy=localizedHeroFromBase(b.hero);else if(resource.kind==='group')copy=groupContentFromSource(resource.entityId,b.source);else if(resource.kind==='project')copy=localizedProjectFromBase(b.project);else if(resource.kind==='service')copy={title:b.service.title,subtitle:b.service.titleVi,summary:b.service.summary,scope:b.service.scope};else copy={eyebrow:resource.entityId==='work'?'DỰ ÁN':'DỊCH VỤ',heading:b.section.heading,intro:b.section.intro,...(resource.entityId==='work'?{loadMoreLabel:'Xem thêm'}:{})};
+  const d={contractRevision:1,draftId:'home-v3',locale,revision:1,dependencyHash:r.dependencyHash,contentHash:hash(copy),content:copy,updatedAt:'2026-10-22T00:00:00.000Z',...(resource.kind==='hero'?{baseRevision:b.revision,baseContentHash:b.contentHash}:{[resource.kind+'Id']:resource.entityId})};const qa=r.buildQa(d);tx.set(r.ref,r.encode(qa.draft,'synthetic-owner'));if(resource.kind==='hero')tx.set(f.db.collection('cmsLocalizedHeroBases').doc(`home-v3--${locale}--1`),{contentHash:d.contentHash,baseRevision:d.baseRevision,baseContentHash:d.baseContentHash,dependencyHash:d.dependencyHash});
+ });
+ const full=await createFullSiteLocalizationService(options),entries=[];for(const locale of ['en','vi','ja']){const qa=await full.readQa({request:{},locale}),snapshotIds={},approvalPins={};qa.workServices.mode='APPROVED_RELEASE';for(const p of qa.dependencyVector.resources){const k=`${p.resource.kind}/${p.resource.entityId}`;snapshotIds[k]='baseline-'+p.resource.kind+'-'+p.resource.entityId+'-'+locale;approvalPins[k]={snapshotHash:hash(k),reviewId:snapshotIds[k]+'-review',attestationSetHash:hash([])};}entries.push(assembleFullSiteQa({locale,hero:qa.hero,groups:qa.groups,workServices:qa.workServices,mode:'APPROVED_RELEASE',snapshotIds,approvalPins,sourceHash:qa.dependencyVector.sourceHash,availabilityHash:qa.dependencyVector.availabilityHash,heroDependencyHash:qa.dependencyVector.resources.find(p=>p.resource.kind==='hero').dependencyHash}));}
+ const release={contractRevision:1,kind:'MULTILINGUAL_SITE_RELEASE_BUNDLE',mode:'APPROVED_RELEASE',entries,snapshotSetHash:releaseSnapshotSetHash(entries)},original=await packageReleaseResources(release,{readResource:readPinnedReleaseResource});
+ async function replaceCredential(asset){const read=await content.readGroup({request:{},group:'about'}),next=structuredClone(read.content);next.settings.credential.assetId=asset.assetId;await content.saveGroup({request:{},actor:{uid:'synthetic-owner'},group:'about',key:'replace-credential-'+asset.assetId,body:{expected:read.entities.map(({kind,id,revision})=>({kind,id,revision})),content:next},correlationId:'shared-file-test'});const resource=identities('en').find(r=>r.kind==='project'),r=await editorial.readResource({request:{},resource});await editorial.rebaseDraft({request:{},actor:{uid:'synthetic-owner'},key:'rebase-shared-selected',body:{resource,expectedRevision:r.draft.revision,expectedContentHash:r.draft.contentHash,expectedDependencyHash:r.currentDependencyHash,previousDependencyHash:r.previousDependencyHash,acknowledgeSourceChange:true,content:r.draft.content}});const latest=await editorial.readResource({request:{},resource});return {resource,expectedRevision:latest.draft.revision,expectedContentHash:latest.draft.contentHash,expectedDependencyHash:latest.currentDependencyHash};}
+ return {...f,options,storage,content,context,editorial,files,release,original,replaceCredential};
+}

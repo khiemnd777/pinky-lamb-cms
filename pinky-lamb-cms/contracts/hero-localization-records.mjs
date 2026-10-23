@@ -1,4 +1,6 @@
+import {projectQaResourceSchema} from './project-localization-records.mjs';
 import {z} from 'zod';
+import {fileQaResourceSchema} from './file-resource.mjs';
 import {strictSiteObject} from './site-settings.mjs';
 import {heroLocaleSchema,localizedHeroContentSchema,mergeLocalizedHero,assertHeroBytes} from './hero-localization.mjs';
 import {revisionSchema,hashSchema,resourceIdSchema} from './hero.mjs';
@@ -30,12 +32,12 @@ const legacyHeroQaResourceSchema=strictSiteObject({id:resourceIdSchema,path:z.st
  return resource.id==='styles'&&resource.path==='styles.css'&&resource.url==='http://127.0.0.1:5010/styles.css'&&resource.mimeType==='text/css'&&resource.sizeBytes<=65536&&decodedSize===resource.sizeBytes&&resource.derivative===undefined&&resource.width===undefined&&resource.height===undefined;
 });
 const presentationResourceSchema=strictSiteObject({id:z.literal(HERO_PRESENTATION_RESOURCE_ID),path:z.literal('assets/hero-presentation-v1.css'),sourceKind:z.literal('APPLICATION_INLINE'),mimeType:z.literal('text/css'),sizeBytes:z.number().int().positive().max(65536),sha256:z.literal(HERO_PRESENTATION_SHA256),inlineBase64:z.string().max(87384).regex(/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$(?![\s\S])/)}).refine(r=>r.inlineBase64.length/4*3-(r.inlineBase64.endsWith('==')?2:r.inlineBase64.endsWith('=')?1:0)===r.sizeBytes);
-export const heroQaResourceSchema=z.union([legacyHeroQaResourceSchema,presentationResourceSchema]);
+export const heroQaResourceSchema=z.union([legacyHeroQaResourceSchema,presentationResourceSchema,fileQaResourceSchema,projectQaResourceSchema]);
 const presentationSchema=strictSiteObject({id:z.literal(HERO_PRESENTATION_ID),brand:strictSiteObject({name:z.string().min(1).max(120),tagline:z.string().max(300),logoResourceId:resourceIdSchema}),stylesheetResourceId:z.literal(HERO_PRESENTATION_RESOURCE_ID)});
 const resourcesCheck=(value,ctx)=>{const ids=value.resources.map(r=>r.id),paths=value.resources.map(r=>r.path);if(new Set(ids).size!==ids.length||new Set(paths).size!==paths.length||!ids.includes('styles'))ctx.addIssue({code:'custom',message:'Invalid resources'});};
 export const heroQaV1Schema=strictSiteObject({contractRevision:z.literal(1),kind:z.literal('LOCALIZED_HERO_QA'),draft:localizedHeroDraftSchema,hero:z.unknown(),resources:z.array(legacyHeroQaResourceSchema).min(2).max(8)}).superRefine(resourcesCheck);
-export const heroQaV2Schema=strictSiteObject({contractRevision:z.literal(2),kind:z.literal('LOCALIZED_HERO_QA'),draft:localizedHeroDraftSchema,hero:z.unknown(),presentation:presentationSchema,resources:z.array(heroQaResourceSchema).min(3).max(9)}).superRefine((value,ctx)=>{
- resourcesCheck(value,ctx);const expected=new Set([value.hero?.image?.assetId,value.presentation.brand.logoResourceId,'styles',HERO_PRESENTATION_RESOURCE_ID,...['abril-fatface-400','montserrat-400','montserrat-600','montserrat-700','montserrat-800']]);
+export const heroQaV2Schema=strictSiteObject({contractRevision:z.literal(2),kind:z.literal('LOCALIZED_HERO_QA'),draft:localizedHeroDraftSchema,hero:z.unknown(),presentation:presentationSchema,resources:z.array(heroQaResourceSchema).min(3).max(11)}).superRefine((value,ctx)=>{
+ resourcesCheck(value,ctx);const expected=new Set([...[value.hero?.primaryAction,value.hero?.secondaryAction].filter(a=>a?.kind==='FILE').map(a=>a.assetId),value.hero?.image?.assetId,value.presentation.brand.logoResourceId,'styles',HERO_PRESENTATION_RESOURCE_ID,...['abril-fatface-400','montserrat-400','montserrat-600','montserrat-700','montserrat-800']]);
  const css=value.resources.find(r=>r.id===HERO_PRESENTATION_RESOURCE_ID),logo=value.resources.find(r=>r.id===value.presentation.brand.logoResourceId);
  if(!css||css.sourceKind!=='APPLICATION_INLINE'||!logo?.mimeType.startsWith('image/')||value.resources.length!==expected.size||value.resources.some(r=>!expected.has(r.id)))ctx.addIssue({code:'custom',message:'Invalid presentation closure'});
  for(const r of value.resources){if(r.id==='styles'&&(r.path!=='styles.css'||r.mimeType!=='text/css'))ctx.addIssue({code:'custom',message:'Invalid baseline stylesheet'});if(/^(?:abril-fatface|montserrat)-/.test(r.id)&&(r.path!==`assets/${r.id}.woff`||r.mimeType!=='font/woff'))ctx.addIssue({code:'custom',message:'Invalid font role'});}
