@@ -11,7 +11,7 @@ export const READER_STYLE=`
 .pinky-reader-file-icon{display:grid;place-items:center;width:40px;height:44px;flex-shrink:0;border:1px solid #f0dfe5;border-radius:12px;background:#fcf2f5;color:#a24765}
 .pinky-reader-file-icon svg{width:21px;height:21px}
 .pinky-reader nav{padding:10px 20px;background:#fcfafb}
-.pinky-reader-controls{display:flex;align-items:center;gap:2px;padding:2px;border:1px solid #e8e2e6;border-radius:12px;background:#fff}
+.pinky-reader-controls{display:flex;align-items:center;gap:8px;padding:2px;border:1px solid #e8e2e6;border-radius:12px;background:#fff}
 .pinky-reader button,.pinky-reader input{box-sizing:border-box;min-height:44px;font:inherit}
 .pinky-reader button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;padding:0;border:0;border-radius:9px;background:transparent;color:#5c5360;cursor:pointer;transition:background-color .15s,color .15s,box-shadow .15s}
 .pinky-reader button:not(:disabled):hover{background:#f3edf0;color:#8e3f5d}
@@ -31,7 +31,7 @@ export const READER_STYLE=`
 .pinky-reader-page canvas,.pinky-reader-page img{display:block}
 .pinky-reader-page .textLayer{--total-scale-factor:var(--scale-factor);--scale-round-x:1px;--scale-round-y:1px;position:absolute;inset:0;overflow:hidden;line-height:1;opacity:1}.pinky-reader-page .textLayer :is(span,br){color:transparent;position:absolute;font-size:calc(var(--total-scale-factor) * var(--font-height));transform:rotate(var(--rotate,0deg)) scaleX(var(--scale-x,1));white-space:pre;transform-origin:0 0;cursor:text}.pinky-reader-page .textLayer ::selection{background:#ee708580}
 .pinky-reader-error{color:#a84450}
-@media(max-width:600px){.pinky-reader{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}.pinky-reader header{padding:10px 12px}.pinky-reader nav{padding:8px;gap:6px}.pinky-reader-controls{gap:0;padding:1px;border-radius:10px}.pinky-reader-controls>span{padding:0 3px}}
+@media(max-width:600px){.pinky-reader{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}.pinky-reader header{padding:10px 12px}.pinky-reader nav{padding:8px;gap:8px}.pinky-reader-controls{gap:8px;padding:1px;border-radius:10px}.pinky-reader-controls>span{padding:0 3px}}
 @media(prefers-reduced-motion:reduce){.pinky-reader button{transition:none}}
 `;
 const COPY={vi:{close:'Đóng',prev:'Trước',next:'Sau',fit:'Vừa chiều rộng',download:'Tải xuống',page:'Trang',zoomOut:'Thu nhỏ',zoomIn:'Phóng to',loading:'Đang tải file…',error:'Không thể đọc file. Kiểm tra nguồn hoặc thử lại.',retry:'Thử lại',sent:'Đã chuyển yêu cầu tải cho trình duyệt.',bounds:'Trang yêu cầu không tồn tại. Đang mở trang 1.'},en:{close:'Close',prev:'Previous',next:'Next',fit:'Fit width',download:'Download',page:'Page',zoomOut:'Zoom out',zoomIn:'Zoom in',loading:'Loading file…',error:'Cannot read this file. Check its source or retry.',retry:'Retry',sent:'Download handed to your browser.',bounds:'Requested page does not exist. Opening page 1.'},ja:{close:'閉じる',prev:'前へ',next:'次へ',fit:'幅に合わせる',download:'ダウンロード',page:'ページ',zoomOut:'縮小',zoomIn:'拡大',loading:'読み込み中…',error:'ファイルを読み込めません。再試行してください。',retry:'再試行',sent:'ダウンロードをブラウザーに渡しました。',bounds:'指定ページがありません。1ページ目を表示します。'}};
